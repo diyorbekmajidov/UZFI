@@ -4,3 +4,4 @@ django-ckeditor
 django-cors-headers
 Pillow
 django-ckeditor
+django-modeltranslation
