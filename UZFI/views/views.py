@@ -30,3 +30,35 @@ class CouncilsListCreate(ListCreateAPIView):
 class CouncilsRetrieveUpdate(RetrieveUpdateDestroyAPIView):
     queryset = Councils.objects.all()
     serializer_class = CouncilsSerializer
+
+class RequisitesListCreate(ListCreateAPIView):
+    queryset = Requisites.objects.all()
+    serializer_class = RequisitesSerializer
+
+class RequisitesRetrieveUpdate(RetrieveUpdateDestroyAPIView):
+    queryset = Requisites.objects.all()
+    serializer_class = RequisitesSerializer
+
+class FinancialStatementsListCreate(ListCreateAPIView):
+    queryset = FinancialStatements.objects.all()
+    serializer_class = FinancialStatementsSerializer
+
+class FinancialStatementsRetrieveUpdate(RetrieveUpdateDestroyAPIView):
+    queryset = FinancialStatements.objects.all()
+    serializer_class = FinancialStatementsSerializer
+
+class VacanciesListCreate(ListCreateAPIView):
+    queryset = Vacancies.objects.all()
+    serializer_class = VacanciesSerializer
+
+class VacanciesRetrieveUpdate(RetrieveUpdateDestroyAPIView):
+    queryset = Vacancies.objects.all()
+    serializer_class = VacanciesSerializer
+
+class OpenDataListCreate(ListCreateAPIView):
+    queryset = OpenData.objects.all()
+    serializer_class = OpenDataSerializer
+
+class OpenDataRetrieveUpdate(RetrieveUpdateDestroyAPIView):
+    queryset = OpenData.objects.all()
+    serializer_class = OpenDataSerializer

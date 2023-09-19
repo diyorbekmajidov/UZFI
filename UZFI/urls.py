@@ -6,7 +6,15 @@ from .views import (
     DocumentCreate,
     DocumentRetrieveUpdate,
     CouncilsListCreate,
-    CouncilsRetrieveUpdate
+    CouncilsRetrieveUpdate,
+    RequisitesListCreate,
+    RequisitesRetrieveUpdate,
+    FinancialStatementsListCreate,
+    FinancialStatementsRetrieveUpdate,
+    VacanciesListCreate,
+    VacanciesListCreate,
+    OpenDataListCreate,
+    OpenDataRetrieveUpdate,
 )
 
 urlpatterns = [
@@ -18,4 +26,16 @@ urlpatterns = [
 
     path('councils/', CouncilsListCreate.as_view(), name='councils'),
     path('councils/<int:pk>/',CouncilsRetrieveUpdate.as_view() , name='council'),
+
+    path('requisites/', RequisitesListCreate.as_view(), name='requisites'),
+    path('requisites/<int:pk>/',RequisitesRetrieveUpdate.as_view() , name='requisites'),
+
+    path('financial_statements/', FinancialStatementsListCreate.as_view(), name='financial_statements'),
+    path('financial_statements/<int:pk>/', FinancialStatementsRetrieveUpdate.as_view(), name='financial_statements'),
+
+    path('vacancies/', VacanciesListCreate.as_view(), name='vacancies'),
+    path('vacancies/<int:pk>/', VacanciesListCreate.as_view(), name='vacancies'),
+
+    path('opendata/', OpenDataListCreate.as_view(), name='opendata'),
+    path('opendata/<int:pk>/', OpenDataRetrieveUpdate.as_view(), name='opendata'),
 ]
