@@ -55,7 +55,7 @@ class Requisites(models.Model):
 
 class FinancialStatements(models.Model):
     report_type  = models.CharField(max_length=100)
-    chorak       = models.CharField(max_length=100)
+    quarter       = models.CharField(max_length=100)
     pdf_file     = models.FileField(upload_to='pdf/')
 
     def __str__(self):
