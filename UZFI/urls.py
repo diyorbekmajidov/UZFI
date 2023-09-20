@@ -15,6 +15,8 @@ from .views import (
     VacanciesListCreate,
     OpenDataListCreate,
     OpenDataRetrieveUpdate,
+    FacultyListCreate,
+    FacultyRetrieveUpdate,
 )
 
 urlpatterns = [
@@ -38,4 +40,7 @@ urlpatterns = [
 
     path('opendata/', OpenDataListCreate.as_view(), name='opendata'),
     path('opendata/<int:pk>/', OpenDataRetrieveUpdate.as_view(), name='opendata'),
+
+    path('faculty/', FacultyListCreate.as_view(), name='faculty'),
+    path('faculty/<int:pk>/', FacultyRetrieveUpdate.as_view(), name='faculty'),
 ]

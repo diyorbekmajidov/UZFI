@@ -35,3 +35,8 @@ class VacanciesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vacancies
         fields = '__all__'
+
+class FacultySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Faculty
+        fields = '__all__'

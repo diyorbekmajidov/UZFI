@@ -62,3 +62,11 @@ class OpenDataListCreate(ListCreateAPIView):
 class OpenDataRetrieveUpdate(RetrieveUpdateDestroyAPIView):
     queryset = OpenData.objects.all()
     serializer_class = OpenDataSerializer
+
+class FacultyListCreate(ListCreateAPIView):
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
+
+class FacultyRetrieveUpdate(RetrieveUpdateDestroyAPIView):
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
