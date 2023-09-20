@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'UZFI.apps.UzfiConfig',
+    'Nevs.apps.NevsConfig',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
