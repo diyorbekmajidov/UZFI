@@ -6,7 +6,10 @@ from .models import (
     Charter,
     Document,
     Councils,
-    Requisites
+    Requisites,
+    Faculty,
+    Dekan,
+    Kafedra
 )
 
 @register(OpenData)
@@ -36,3 +39,15 @@ class CouncilsTranslationOptions(TranslationOptions):
 @register(Requisites)
 class RequisitesTranslationOptions(TranslationOptions):
     fields = ('unversit_name','address')
+
+@register(Faculty)
+class FacultyTranslationOptions(TranslationOptions):
+    fields = ('name','body',)
+
+@register(Dekan)
+class DekanTranslationOptions(TranslationOptions):
+    fields = ('name','body','faculty','acceptance','address','duties')
+
+@register(Kafedra)
+class KafedraTranslationOptions(TranslationOptions):
+    fields = ('name','about','faculty',)
