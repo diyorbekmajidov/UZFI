@@ -134,7 +134,7 @@ from django.utils.translation import gettext_lazy as _
 
 LANGUAGES = (      
    ('en', _('English')),
-#    ('uz', _('Uzbek')),
+   ('uz', _('Uzbek')),
    ('ru', _('Russian')),
 )
 MODELTRANSNSLATION_DEFAULT_LANGUAGE = 'uz'
