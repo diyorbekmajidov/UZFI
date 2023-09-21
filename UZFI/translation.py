@@ -9,7 +9,8 @@ from .models import (
     Requisites,
     Faculty,
     Dekan,
-    Kafedra
+    Kafedra,
+    KafedraManager
 )
 
 @register(OpenData)
@@ -51,3 +52,7 @@ class DekanTranslationOptions(TranslationOptions):
 @register(Kafedra)
 class KafedraTranslationOptions(TranslationOptions):
     fields = ('name','about',)
+
+@register(KafedraManager)
+class KafedraManagerTranslationOptions(TranslationOptions):
+    fields = ('name','acceptance','address','duties')
