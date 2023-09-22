@@ -48,7 +48,7 @@ class FacultyTranslationOptions(TranslationOptions):
 
 @register(Dekan)
 class DekanTranslationOptions(TranslationOptions):
-    fields = ('name','faculty','acceptance','address','duties')
+    fields = ('acceptance','address','duties')
 
 @register(Kafedra)
 class KafedraTranslationOptions(TranslationOptions):
@@ -56,8 +56,8 @@ class KafedraTranslationOptions(TranslationOptions):
 
 @register(KafedraManager)
 class KafedraManagerTranslationOptions(TranslationOptions):
-    fields = ('name','acceptance','address','duties')
+    fields = ('acceptance','address','duties')
 
 @register(KafedraTeacher)
 class KafedraTeacherTranslationOptions(TranslationOptions):
-    fields = ('name','biography','address',)
+    fields = ('biography','address',)

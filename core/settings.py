@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-n7n#2gfmi$$h4in)l1dkm#gk%t%^5t=8no&qd&v4jsz5epegjp
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'UZFI.User'
 
 
 # Application definition
