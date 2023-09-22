@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from .models.models import *
 
 class CharterSerializer(serializers.ModelSerializer):
     class Meta:
