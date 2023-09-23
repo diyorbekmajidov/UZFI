@@ -10,8 +10,6 @@ class User(AbstractUser):
         MANAGER = "MANAGER", "MANAGER"
 
     role = models.CharField(max_length=50, choices=Role.choices)
-    is_dekan = models.BooleanField(default=False)
-    is_manager = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.pk:
