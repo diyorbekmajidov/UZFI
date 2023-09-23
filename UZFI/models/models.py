@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields import RichTextField
+from .user import User
 
 
 
@@ -90,6 +91,7 @@ class Faculty(models.Model):
         return self.name
     
 class Dekan(models.Model):
+    dekan        = models.OneToOneField(User, on_delete=models.CASCADE)
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     name         = models.CharField(max_length=100)
     email        = models.CharField(max_length=100)
