@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models.models import *
 
+
 class CharterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Charter
@@ -40,3 +41,12 @@ class FacultySerializer(serializers.ModelSerializer):
     class Meta:
         model = Faculty
         fields = '__all__'
+
+class DekanSerializer(serializers.ModelSerializer):
+    dekan = serializers.SerializerMethodField()
+    class Meta :
+        models = Dekan
+        fields = "__all__"
+
+    # def get_dekan(self, obj):
+    #     return 

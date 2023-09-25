@@ -8,6 +8,7 @@ class User(AbstractUser):
         ADMIN = 'admin'
         DEKAN   = "DEKAN", "DEKAN"
         MANAGER = "MANAGER", "MANAGER"
+        TEACHER = "TEACHER", "TEACHER"
 
     role = models.CharField(max_length=50, choices=Role.choices)
 
