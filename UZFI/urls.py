@@ -19,6 +19,7 @@ from .views import (
     FacultyRetrieveUpdate,
     # DekanApiview,
     DekanGetApiview,
+    Register,
 
 )
 
@@ -48,5 +49,6 @@ urlpatterns = [
     path('faculty/<int:pk>/', FacultyRetrieveUpdate.as_view(), name='faculty'),
 
     # path('dekan/', DekanApiview.as_view(), name='dekan'),
-    path('dekanget/', DekanGetApiview.as_view())
+    path('dekanget/', DekanGetApiview.as_view()),
+    path('register/', Register.as_view()),
 ]
