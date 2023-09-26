@@ -84,8 +84,8 @@ class Vacancies(models.Model):
 
 
 class Faculty(models.Model):
-    name = models.CharField(max_length=100)
-    body = RichTextUploadingField()
+    name = models.CharField(max_length=100, blank=True, null=True)
+    body = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return self.name

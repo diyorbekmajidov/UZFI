@@ -48,7 +48,15 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class DekanSerializer(serializers.ModelSerializer):
+    # dekan = UserSerializer(read_only=True)
     class Meta :
         model = Dekan
-        fields = "__all__"
+        fields = '__all__'
+        
 
+    # def get_dekan(self, obj):
+    #     print(obj.dekan.id)
+    #     return obj.dekan.username
+    
+    
+        
