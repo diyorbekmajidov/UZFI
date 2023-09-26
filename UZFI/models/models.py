@@ -98,8 +98,8 @@ class Dekan(models.Model):
     phone        = models.CharField(max_length=100, blank=True, null=True)
     acceptance   = models.CharField(max_length=200, blank=True, null=True)
     address      = models.CharField(max_length=100, blank=True, null=True)
-    img          = models.ImageField(upload_to='img/',default='')
-    duties       = RichTextUploadingField()
+    img          = models.ImageField(upload_to='img/',blank=True, null=True)
+    duties       = RichTextUploadingField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update  = models.DateTimeField(auto_now=True)
 

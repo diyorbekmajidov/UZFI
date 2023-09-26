@@ -17,7 +17,7 @@ from .views import (
     OpenDataRetrieveUpdate,
     FacultyListCreate,
     FacultyRetrieveUpdate,
-    # DekanApiview,
+    DekanApiview,
     DekanGetApiview,
     Register,
     LogOut,
@@ -50,9 +50,9 @@ urlpatterns = [
     path('faculty/', FacultyListCreate.as_view(), name='faculty'),
     path('faculty/<int:pk>/', FacultyRetrieveUpdate.as_view(), name='faculty'),
 
-    # path('dekan/', DekanApiview.as_view(), name='dekan'),
+    path('dekan/', DekanApiview.as_view(), name='dekan'),
     path('dekanget/', DekanGetApiview.as_view()),
-    
+
     path('register/', Register.as_view()),
     path('logout/', LogOut.as_view()),
     path('login/', Login.as_view()),

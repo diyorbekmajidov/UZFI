@@ -42,16 +42,13 @@ class FacultySerializer(serializers.ModelSerializer):
         model = Faculty
         fields = '__all__'
 
-class DekanSerializer(serializers.ModelSerializer):
-    dekan = serializers.SerializerMethodField()
-    class Meta :
-        models = Dekan
-        fields = "__all__"
-
-    # def get_dekan(self, obj):
-    #     return 
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+
+class DekanSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = Dekan
+        fields = "__all__"
+
