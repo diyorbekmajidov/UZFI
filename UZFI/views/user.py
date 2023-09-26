@@ -9,6 +9,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.models import User
 
 class Register(APIView):
     def post(self, request):
@@ -20,3 +21,24 @@ class Register(APIView):
             token = Token.objects.create(user=serializer.instance)
             return Response({'token': token.key}, status=status.HTTP_201_CREATED)
         return Response(serializer.error_messages)
+    
+class LogOut(APIView):
+    authentication_classes = [TokenAuthentication]
+
+    def post (self, request):
+        request.user.auth_token.delete()
+        return Response({"message": "Successfully logged out"}, status=status.HTTP_200_OK)
+    
+class Login(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        user = request.user
+        token = Token.objects.get_or_create(user=user)
+        if token:
+            token[0].delete()
+        token= Token.objects.create(user=user)
+        return Response({"token":token.key})
+    
+# class GetUserRole(APIView):
+#     def get(self, request):
+#         role = User.objects.all(role )

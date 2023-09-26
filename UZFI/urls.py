@@ -20,6 +20,8 @@ from .views import (
     # DekanApiview,
     DekanGetApiview,
     Register,
+    LogOut,
+    Login,
 
 )
 
@@ -50,5 +52,8 @@ urlpatterns = [
 
     # path('dekan/', DekanApiview.as_view(), name='dekan'),
     path('dekanget/', DekanGetApiview.as_view()),
+    
     path('register/', Register.as_view()),
+    path('logout/', LogOut.as_view()),
+    path('login/', Login.as_view()),
 ]
