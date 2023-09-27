@@ -52,13 +52,15 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
-    'default': {
+    'default':{
         'toolbar': 'full',
-        'removePlugins': 'exportpdf',
-        'extraPlugins': ",".join([
-            "html5video",
-        ])
-        
+        'removePlugins':'exportpdf',
+        'extraPlugins': ','.join(
+            [
+                'codesnippet','widget','html5video'
+                
+            ]
+        ),       
     }
 }
 
@@ -150,10 +152,10 @@ LANGUAGES = (
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 import os
 STATIC_URL = 'static/'
-STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

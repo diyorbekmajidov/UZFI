@@ -25,7 +25,7 @@ class News_Content(models.Model):
 
 class Vedio_New(models.Model):
     title         = models.CharField(max_length=255)
-    body          = RichTextUploadingField()
+    body          = RichTextUploadingField(null=True, config_name = 'default')
     views         = models.IntegerField(default=0)
     date_created  = models.DateTimeField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
