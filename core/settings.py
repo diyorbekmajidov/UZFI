@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz-uz'
 
 TIME_ZONE = 'UTC'
 
@@ -141,7 +141,7 @@ LANGUAGES = (
    ('uz', _('Uzbek')),
    ('ru', _('Russian')),
 )
-MODELTRANSNSLATION_DEFAULT_LANGUAGE = 'uz'
+# MODELTRANSNSLATION_DEFAULT_LANGUAGE = 'uz's
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
