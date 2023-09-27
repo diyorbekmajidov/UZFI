@@ -42,17 +42,26 @@ class FacultySerializer(serializers.ModelSerializer):
         model = Faculty
         fields = '__all__'
 
+class FacultySerializer1(serializers.ModelSerializer):
+    class Meta:
+        model = Faculty
+        fields = ['id', 'name']
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ["username", "role"]
 
 class DekanSerializer(serializers.ModelSerializer):
+    dekan = UserSerializer()
+    faculty = FacultySerializer1()
     class Meta :
         model = Dekan
-        fields = '__all__'
-        depth  = 2
-        
+        fields = ["id", "dekan", "faculty", "name", "img", "phone","address_uz","address_en","address_ru", 
+                  "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
+                  "date_created", "date_update",
+                  ]
+        # depth  = 2
 
 
     

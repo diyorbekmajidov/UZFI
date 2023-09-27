@@ -31,3 +31,11 @@ class DekanGetApiview(APIView):
         print(dekan.faculty)
         serializers = DekanSerializer(dekan)
         return Response(serializers.data)
+    
+    def put(self, request):
+        dekan = Dekan.objects.get(dekan=request.user)
+        serializer = DekanSerializer(dekan, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
