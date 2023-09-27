@@ -55,6 +55,9 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'removePlugins': 'exportpdf',
+        'extraPlugins': ",".join([
+            "html5video",
+        ])
         
     }
 }
