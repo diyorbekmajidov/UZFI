@@ -10,3 +10,17 @@ from .serializers import *
 class NewsCategoryListCreate(ListCreateAPIView):
     queryset = NewsCategory.objects.all()
     serializer_class = NewsCategorySerializer
+
+
+class NewsContentApiview(APIView):
+    def get(self, request):
+        news_content = News_Content.objects.all()
+        serializer = NewsContentSerializer(news_content, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = NewsContentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
