@@ -7,7 +7,7 @@ class User(AbstractUser):
     class Role(models.TextChoices):
         ADMIN = 'admin'
         DEKAN   = "DEKAN", "DEKAN"
-        MANAGER = "MANAGER", "MANAGER"
+        MANAGER = "KAFEDRAMANAGER", "KAFEDRAMANAGER"
         TEACHER = "TEACHER", "TEACHER"
 
     role = models.CharField(max_length=50, choices=Role.choices)
