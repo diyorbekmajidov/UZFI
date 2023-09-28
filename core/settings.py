@@ -57,7 +57,7 @@ CKEDITOR_CONFIGS = {
         'removePlugins':'exportpdf',
         'extraPlugins': ','.join(
             [
-                'codesnippet','widget','html5video'
+                'codesnippet','widget','html5video','youtube'
                 
             ]
         ),       
@@ -140,13 +140,12 @@ USE_TZ = True
 
 from django.utils.translation import gettext_lazy as _
 
-
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 LANGUAGES = (      
    ('en', _('English')),
    ('uz', _('Uzbek')),
    ('ru', _('Russian')),
 )
-# MODELTRANSNSLATION_DEFAULT_LANGUAGE = 'uz's
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
