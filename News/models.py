@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 from UZFI.models import Dekan
 
 class NewsCategory(models.Model):
-    new_category = models.CharField(max_length=255,unique=True)
+    new_category = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.new_category
