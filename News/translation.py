@@ -1,7 +1,8 @@
 from modeltranslation.translator import  TranslationOptions, register
 from .models import (
     NewsCategory,
-    News_Content)
+    News_Content,
+    Vedio_New,)
 
 @register(NewsCategory)
 class NewsCategoryTranslationOptions(TranslationOptions):
@@ -10,3 +11,7 @@ class NewsCategoryTranslationOptions(TranslationOptions):
 @register(News_Content)
 class News_ContentTranslationOptions(TranslationOptions):
     fields = ('title','body',)
+
+@register(Vedio_New)
+class Vedio_NewTranslationOptions(TranslationOptions):
+    fields = ('title',)
