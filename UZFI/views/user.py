@@ -33,11 +33,12 @@ class Login(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request):
         user = request.user
+        print(user)
         token = Token.objects.get_or_create(user=user)
         if token:
             token[0].delete()
         token= Token.objects.create(user=user)
-        return Response({"token":token.key})
+        return Response({"token": token.key}, status=status.HTTP_200_OK)
     
 # class GetUserRole(APIView):
 #     def get(self, request):

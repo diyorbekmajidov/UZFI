@@ -8,6 +8,7 @@ from .models.models import (
     Councils,
     Requisites,
     Faculty,
+    Direction,
     Dekan,
     Kafedra,
     KafedraManager,
@@ -61,3 +62,7 @@ class KafedraManagerTranslationOptions(TranslationOptions):
 @register(KafedraTeacher)
 class KafedraTeacherTranslationOptions(TranslationOptions):
     fields = ('biography','address',)
+
+@register(Direction)
+class DirectionTranslationOptions(TranslationOptions):
+    fields = ('name','about',)

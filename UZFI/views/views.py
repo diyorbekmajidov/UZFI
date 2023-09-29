@@ -70,3 +70,11 @@ class FacultyListCreate(ListCreateAPIView):
 class FacultyRetrieveUpdate(RetrieveUpdateDestroyAPIView):
     queryset = Faculty.objects.all()
     serializer_class = FacultySerializer
+
+class DirectionListCreate(ListCreateAPIView):
+    queryset = Direction.objects.all()
+    serializer_class = DirectionSerializer
+
+class DirectionRetrieveUpdate(RetrieveUpdateDestroyAPIView):
+    queryset = Direction.objects.all()
+    serializer_class = DirectionSerializer

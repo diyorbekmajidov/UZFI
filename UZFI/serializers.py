@@ -47,13 +47,24 @@ class FacultySerializer1(serializers.ModelSerializer):
         model = Faculty
         fields = ['id', 'name']
 
+class DirectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Direction
+        fields = '__all__'
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+        fields = '__all__'
+
+class UserSerializer1(serializers.ModelSerializer):
+    class Meta:
+        model = User
         fields = ["username", "role"]
+        
 
 class DekanSerializer(serializers.ModelSerializer):
-    dekan = UserSerializer()
+    dekan = UserSerializer1()
     faculty = FacultySerializer1()
     class Meta :
         model = Dekan

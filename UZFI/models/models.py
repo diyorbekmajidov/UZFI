@@ -116,6 +116,16 @@ class Kafedra(models.Model):
     def __str__(self):
         return self.name
     
+class Direction(models.Model):
+    faculty    = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    name       = models.CharField(max_length=150)
+    about      = RichTextUploadingField(blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.name
+
 class KafedraManager(models.Model):
     kafedramanager = models.OneToOneField(User, on_delete=models.CASCADE)
     kafedra        = models.ForeignKey(Kafedra, on_delete=models.CASCADE)
