@@ -48,6 +48,7 @@ class FacultySerializer1(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 class DirectionSerializer(serializers.ModelSerializer):
+    faculty = FacultySerializer1()
     class Meta:
         model = Direction
         fields = '__all__'
