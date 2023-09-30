@@ -6,7 +6,18 @@ from UZFI.serializers import *
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
 class DekanApiview(APIView):
+    @swagger_auto_schema(
+        request_body=DekanSerializer,
+        operation_description='Create Dekan',
+        responses={
+            200: 'User crate dekan'
+        }
+    )
+
     def post(self, request):
         data = request.data
         dekan = request.data['dekan']

@@ -5,3 +5,4 @@ django-cors-headers
 Pillow
 django-ckeditor
 django-modeltranslation
+drf-yasg

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'ckeditor',
+    'drf_yasg',
     'ckeditor_uploader',
     'UZFI.apps.UzfiConfig',
     'News.apps.NewsConfig',
