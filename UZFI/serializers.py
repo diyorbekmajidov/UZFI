@@ -79,23 +79,31 @@ class GetDekanSerializer(serializers.ModelSerializer):
                   "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
                   "date_created", "date_update",
                   ]
-        depth = 2
+
+class KafedraSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = Kafedra
+        fields = "__all__"
+
+class KafedraSerializer1(serializers.ModelSerializer):
+    class Meta :
+        model = Kafedra
+        fields = ["id", "name"]
 
 class KafedraManagerSerializer(serializers.ModelSerializer):
     class Meta :
         model = KafedraManager
         fields = "__all__"
-        # depth = 2
         
 
 class GetKafedraManagerSerializer(serializers.ModelSerializer):
     kafedramanager = UserSerializer1()
-
+    kafedra = KafedraSerializer1()
     class Meta :
         model = KafedraManager
-        fields = ["id", "kafedramanager", "name", "img", "phone","address_uz","address_en","address_ru", 
+        fields = ["id", "kafedramanager", "kafedra", "name", "img", "phone","address_uz","address_en","address_ru", 
                   "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
                   "date_created", "date_update",
                   ]
-        depth = 2
+        # depth = 2
 

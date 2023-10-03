@@ -78,3 +78,7 @@ class DirectionListCreate(ListCreateAPIView):
 class DirectionRetrieveUpdate(RetrieveUpdateDestroyAPIView):
     queryset = Direction.objects.all()
     serializer_class = DirectionSerializer
+
+class KafedraListCreate(ListCreateAPIView):
+    queryset = Kafedra.objects.all()
+    serializer_class = KafedraSerializer    
