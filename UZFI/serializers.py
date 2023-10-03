@@ -61,7 +61,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UserSerializer1(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["username", "role"]
+        fields = ["id","username", "role"]
         
 
 class DekanSerializer(serializers.ModelSerializer):
@@ -74,7 +74,14 @@ class DekanSerializer(serializers.ModelSerializer):
                   "date_created", "date_update",
                   ]
         # depth  = 2
-
+class KafedraManagerSerializer(serializers.ModelSerializer):
+    kafedramanager = UserSerializer1()
+    class Meta :
+        model = KafedraManager
+        fields = [
+            "id","kafedramanager","kafedra"
+        ]
+        
 
     
     

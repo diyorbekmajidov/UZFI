@@ -42,4 +42,6 @@ class Login(APIView):
     
 # class GetUserRole(APIView):
 #     def get(self, request):
-#         role = User.objects.all(role )
+#         role = User.objects.all()
+#         serializer = UserSerializer1(role, many=True)
+#         return Response(serializer.data)

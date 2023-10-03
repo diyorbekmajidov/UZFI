@@ -11,7 +11,14 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Snippets API",
       default_version='v1',
-      description="Test description",
+      description='''HEMIS Oliygoh tizimini boshqa axborot tizimlari bilan integratsiya qilish uchun API. So'rovlar uchun qaytadigan ma'lumotlar til parametri l berilmagan holatda o'zbek tilida qaytadi. 
+      Kerakli tildagi natijalarni olish uchun mos til kodi so'rovga qo'shiladi, masalan: data/schedule-list?l=ru-RU so'rovida ma'lumotlar rus tilida qaytadi. 
+      Til parametri uchun quyidagi qiymatlar mavjud:
+      uz-UZ (o'zbek lotin)
+      oz-UZ (o'zbek kirill)
+      ru-RU (ruscha)
+      en-US (inglizcha)
+      ''',
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
