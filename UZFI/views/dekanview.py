@@ -42,7 +42,6 @@ class DekanGetApiview(APIView):
 
     def get(self, request):
         dekan = Dekan.objects.get(dekan=request.user)
-        print(dekan.faculty)
         serializers = GetDekanSerializer(dekan)
         return Response(serializers.data)
     
