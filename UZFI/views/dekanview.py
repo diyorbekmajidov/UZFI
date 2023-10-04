@@ -22,13 +22,12 @@ class DekanApiview(APIView):
     def post(self, request):
             data = request.data
             dekan = request.data['dekan']
-            print(dekan)
             faculty = request.data['faculty']
             role = User.objects.get(username=dekan).role
             if role == 'DEKAN':
                 data['faculty'] = Faculty.objects.get(name=faculty).id
                 data['dekan'] = User.objects.get(username=dekan).id
-                print(data)
+                # print(data)
                 serializer = DekanSerializer(data=data)
                 if serializer.is_valid():
                     serializer.save()
@@ -39,6 +38,15 @@ class DekanApiview(APIView):
 class DekanGetApiview(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+
+    # @swagger_auto_schema(
+    #      request_body = GetDekanSerializer,
+    #      operation_description = '''Dekanni get qilish uchun, token yuborish kerak usha dekan malumotlari qaytadi.
+    #        Va undan tashqari dekan update va dekan delet''',
+    #      responses = {
+    #          200: 'Dekanni get qilish'
+    #      }
+    #      )
 
     def get(self, request):
         dekan = Dekan.objects.get(dekan=request.user)

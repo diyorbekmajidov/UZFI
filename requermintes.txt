@@ -6,3 +6,4 @@ Pillow
 django-ckeditor
 django-modeltranslation
 drf-yasg
+django-jazzmin
