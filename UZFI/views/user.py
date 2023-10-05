@@ -9,8 +9,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-from django.contrib.auth.models import User
-
+from UZFI.models.user import User
 class Register(APIView):
     def post(self, request):
         data = request.data
@@ -33,12 +32,12 @@ class Login(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request):
         user = request.user
-        print(user)
+        role = User.objects.get(username = user).role
         token = Token.objects.get_or_create(user=user)
         if token:
             token[0].delete()
         token= Token.objects.create(user=user)
-        return Response({"token": token.key}, status=status.HTTP_200_OK)
+        return Response({"token": token.key,"role":role}, status=status.HTTP_200_OK)
     
 # class GetUserRole(APIView):
 #     def get(self, request):
