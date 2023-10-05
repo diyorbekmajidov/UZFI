@@ -1,17 +1,22 @@
 from django.contrib import admin
-from django.contrib.auth import get_user_model
-User = get_user_model()
-# Register your models here.
 from .models.models import *
+from django.contrib.auth.admin import UserAdmin
 
-class DekanAdmin(admin.ModelAdmin):
-    list_display = ['name', 'faculty', 'email', 'phone', 'acceptance']
-    list_filter = ['dekan__role']  # dekan roli uchun filtrlash
-    # search_fields = ['name', 'email', 'phone', 'acceptance']
+class UserAdmin(admin.ModelAdmin):
+
+    # list_display = ('username', 'email','role',)
+    fieldsets = (
+        (None, {'fields': ('username', 'email','role','password')}),
+
+    )
+    search_fields =  ('username',)
+    ordering = ('username','role')
+    filter_horizontal = ()
 
 
-admin.site.register(User)
-admin.site.register(Dekan,DekanAdmin)
+
+admin.site.register(User, UserAdmin)
+admin.site.register(Dekan)
 admin.site.register(Charter)
 admin.site.register(Document)
 admin.site.register(Councils)
