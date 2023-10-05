@@ -3,15 +3,12 @@ from .models.models import *
 from django.contrib.auth.admin import UserAdmin
 
 class UserAdmin(admin.ModelAdmin):
-
-    # list_display = ('username', 'email','role',)
     fieldsets = (
-        (None, {'fields': ('username', 'email','role','password')}),
+        (None, {'fields': ('username','role','password')}),
 
     )
     search_fields =  ('username',)
     ordering = ('username','role')
-    filter_horizontal = ()
 
 
 
