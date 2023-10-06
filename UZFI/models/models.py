@@ -80,7 +80,15 @@ class Vacancies(models.Model):
     def __str__(self):
         return self.name
     
+class ScientificWork(models.Model):
+    article_name     = models.CharField(max_length=100, blank=True, null=True)
+    article_level    = models.CharField(max_length=100, blank=True, null=True)
+    publication_date = models.DateField(blank=True, null=True)
+    link             = models.CharField(max_length=100, blank=True, null=True)
+    pdf_file         = models.FileField()
 
+    def __str__(self) -> str:
+        return self.article_name
 
 
 class Faculty(models.Model):
@@ -93,6 +101,7 @@ class Faculty(models.Model):
 class Dekan(models.Model):
     dekan        = models.OneToOneField(User, on_delete=models.CASCADE)
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
     name         = models.CharField(max_length=100, blank=True, null=True)
     email        = models.CharField(max_length=100, blank=True, null=True)
     phone        = models.CharField(max_length=100, blank=True, null=True)
@@ -100,6 +109,7 @@ class Dekan(models.Model):
     address      = models.CharField(max_length=100, blank=True, null=True)
     img          = models.ImageField(upload_to='img/',blank=True, null=True)
     duties       = RichTextUploadingField(blank=True, null=True)
+    biography    = RichTextUploadingField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update  = models.DateTimeField(auto_now=True)
 
