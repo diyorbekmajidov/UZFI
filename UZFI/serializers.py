@@ -80,11 +80,6 @@ class GetDekanSerializer(serializers.ModelSerializer):
                   "date_created", "date_update",
                   ]
 
-class GetAllDekanSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Dekan
-        fields = ["id","name"]
-
 class KafedraSerializer(serializers.ModelSerializer):
     class Meta :
         model = Kafedra

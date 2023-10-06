@@ -13,7 +13,11 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 class AllDekan(ListCreateAPIView):
     queryset = Dekan.objects.all()
     serializer_class = GetDekanSerializer
-
+class GetDekanById(APIView):
+    def get(self, request, pk):
+        data = Dekan.objects.get(id=pk)
+        serializers = GetDekanSerializer(data)
+        return Response(serializers.data)
 
 class DekanApiview(APIView):
     @swagger_auto_schema(
