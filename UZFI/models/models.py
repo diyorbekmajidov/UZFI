@@ -93,7 +93,7 @@ class Faculty(models.Model):
 class Dekan(models.Model):
     dekan        = models.OneToOneField(User, on_delete=models.CASCADE)
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE)
-    name         = models.CharField(max_length=100)
+    name         = models.CharField(max_length=100, blank=True, null=True)
     email        = models.CharField(max_length=100, blank=True, null=True)
     phone        = models.CharField(max_length=100, blank=True, null=True)
     acceptance   = models.CharField(max_length=200, blank=True, null=True)
