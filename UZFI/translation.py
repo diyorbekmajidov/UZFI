@@ -12,6 +12,7 @@ from .models.models import (
     Dekan,
     Kafedra,
     KafedraManager,
+    ScientificWork,
 )
 
 @register(OpenData)
@@ -62,3 +63,7 @@ class KafedraManagerTranslationOptions(TranslationOptions):
 @register(Direction)
 class DirectionTranslationOptions(TranslationOptions):
     fields = ('name','about',)
+
+@register(ScientificWork)
+class ScientificWorkTranslationOptions(TranslationOptions):
+    fields = ("article_name","article_level",)

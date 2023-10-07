@@ -85,7 +85,7 @@ class ScientificWork(models.Model):
     article_level    = models.CharField(max_length=100, blank=True, null=True)
     publication_date = models.DateField(blank=True, null=True)
     link             = models.CharField(max_length=100, blank=True, null=True)
-    pdf_file         = models.FileField()
+    pdf_file         = models.FileField(upload_to='pdf/')
 
     def __str__(self) -> str:
         return self.article_name
