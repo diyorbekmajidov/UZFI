@@ -15,9 +15,12 @@ class AllDekan(ListCreateAPIView):
     serializer_class = GetDekanSerializer
 class GetDekanById(APIView):
     def get(self, request, pk):
-        data = Dekan.objects.get(id=pk)
-        serializers = GetDekanSerializer(data)
-        return Response(serializers.data)
+        try:
+            data = Dekan.objects.get(id=pk)
+            serializers = GetDekanSerializer(data)
+            return Response(serializers.data)
+        except:
+            return Response({"403":"user topilmadi"})
 
 class DekanApiview(APIView):
     @swagger_auto_schema(
