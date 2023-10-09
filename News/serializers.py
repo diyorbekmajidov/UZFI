@@ -15,3 +15,9 @@ class NewsContentSerializer(serializers.ModelSerializer):
 
     def get_yangiliklar(self, obj):
         return [x.new_category for x in obj.yangiliklar.all() ]
+    
+
+class UserNewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = News_Content
+        fields = '__all__'

@@ -12,7 +12,7 @@ from rest_framework.pagination import PageNumberPagination
 class NewsPagination(PageNumberPagination):
     page_size = 2
     page_size_query_param = 'page_size'
-    max_page_size = 1000
+    max_page_size = 10000
 
 
 class NewsCategoryListCreate(ListCreateAPIView):
@@ -53,12 +53,11 @@ class GetUserNews(APIView):
     permission_classes     = [IsAuthenticated]
 
     def get(self, request):
-        user = request.user
-        dekan = Dekan.objects.get(dekan=user)
-        news = News_Content.objects.filter(dekan=dekan)
-        print(news)
-        # for i in news:
-        #     print(type(i.dekan))
-        #     if i.dekan == user:
-        #         print('adf')
-        return Response({"ok":200})
+        try:
+            user = request.user
+            dekan = Dekan.objects.get(dekan=user)
+            news = News_Content.objects.filter(dekan=dekan)
+            serializers = UserNewsSerializer(news, many=True)
+            return Response(serializers.data)
+        except:
+            return Response({"200":"bu userga tegishli yangililar yuq"})
