@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 
 class NewsPagination(PageNumberPagination):
-    page_size = 2
+    page_size = 10
     page_size_query_param = 'page_size'
     max_page_size = 10000
 
@@ -58,6 +58,7 @@ class GetUserNews(APIView):
             dekan = Dekan.objects.get(dekan=user)
             news = News_Content.objects.filter(dekan=dekan)
             serializers = UserNewsSerializer(news, many=True)
+            # pagination_class = NewsPagination
             return Response(serializers.data)
         except:
-            return Response({"200":"bu userga tegishli yangililar yuq"})
+            return Response({"200":"Bu userga tegishli yangililar yuq."})
