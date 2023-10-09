@@ -1,10 +1,12 @@
 from django.contrib import admin
 from .models.models import *
 from django.contrib.auth.admin import UserAdmin
+from .models.models import User
 
-class UserAdmin(admin.ModelAdmin):
-    fieldsets = (
-        (None, {'fields': ('username','role','password')}),
+class MyUserAdmin(UserAdmin):
+    model = User
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ('role',)}),
 
     )
     search_fields =  ('username',)
@@ -12,7 +14,7 @@ class UserAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(User, UserAdmin)
+admin.site.register(User, MyUserAdmin)
 admin.site.register(Dekan)
 admin.site.register(Charter)
 admin.site.register(Document)
