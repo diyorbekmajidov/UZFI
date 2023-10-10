@@ -48,17 +48,17 @@ class NewsContentApiviewGet(APIView):
         news_content.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-class GetUserNews(APIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes     = [IsAuthenticated]
 
-    def get(self, request):
-        try:
-            user = request.user
-            dekan = Dekan.objects.get(dekan=user)
-            news = News_Content.objects.filter(dekan=dekan)
-            serializers = UserNewsSerializer(news, many=True)
-            # pagination_class = NewsPagination
-            return Response(serializers.data)
-        except:
-            return Response({"200":"Bu userga tegishli yangililar yuq."})
+class GetUserNews(ListAPIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    pagination_class = NewsPagination
+    serializer_class = UserNewsSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        dekan = Dekan.objects.filter(dekan=user).first()
+        if dekan:
+            return News_Content.objects.filter(dekan=dekan)
+        else:
+            return News_Content.objects.none()
