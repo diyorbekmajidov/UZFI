@@ -6,11 +6,11 @@ from .models.models import User
 
 class MyUserAdmin(UserAdmin):
     model = User
-    fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('role',)}),
+
+    add_fieldsets = (
+        (None, {'fields': ('username', 'password1', 'password2','role')}),
+        ('Personal info', {'fields': ('first_name', 'last_name')}),
     )
-    search_fields =  ('username',)
-    ordering = ('username','role')
 
 admin.site.register(User,MyUserAdmin)
 
