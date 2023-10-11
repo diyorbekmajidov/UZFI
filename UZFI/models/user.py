@@ -5,9 +5,10 @@ from django.db import models
 
 class User(AbstractUser):
     class Role(models.TextChoices):
-        ADMIN = 'admin'
-        DEKAN   = "DEKAN", "DEKAN"
-        MANAGER = "KAFEDRAMANAGER", "KAFEDRAMANAGER"
+        DEKAN     = "DEKAN", "DEKAN"
+        REKTOR    = "REKTOR", "REKTOR"
+        PROREKTOR = "PROREKTOR", "PROREKTOR"
+        MANAGER   = "KAFEDRAMANAGER", "KAFEDRAMANAGER"
 
     role = models.CharField(max_length=50, choices=Role.choices)
 

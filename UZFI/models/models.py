@@ -24,7 +24,6 @@ class Document(models.Model):
     def __str__(self):
         return self.document_type
     
-    
 class Councils(models.Model):
     title        = RichTextField()
     body         = RichTextUploadingField()
@@ -51,7 +50,6 @@ class Requisites(models.Model):
     def __str__(self):
         return self.unversit_name
     
-
 class FinancialStatements(models.Model):
     report_type = models.CharField(max_length=100)
     quarter     = models.CharField(max_length=100)
@@ -67,7 +65,6 @@ class OpenData(models.Model):
     def __str__(self):
         return self.name
     
-
 class Vacancies(models.Model):
     name         = RichTextField()
     body         = RichTextUploadingField()
@@ -89,7 +86,6 @@ class ScientificWork(models.Model):
 
     def __str__(self) -> str:
         return self.article_name
-
 
 class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -150,10 +146,7 @@ class KafedraManager(models.Model):
     date_update    = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
-    
-
-    
+        return self.name   
 
 class CentersDepartments(models.Model):
     name = models.CharField(max_length=100)
