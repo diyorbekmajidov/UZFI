@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from UZFI.models.models import *
+from UZFI.models import *
 from UZFI.serializers import *
 
 from django.contrib.auth.hashers import make_password

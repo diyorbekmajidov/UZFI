@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models.models import *
 from django.contrib.auth.admin import UserAdmin
 from modeltranslation.admin import TranslationAdmin
 from .models.models import User
+from .models import *
 
 class MyUserAdmin(UserAdmin):
     model = User
@@ -13,6 +13,7 @@ class MyUserAdmin(UserAdmin):
     )
 
 admin.site.register(User,MyUserAdmin)
+admin.site.register(Leadership)
 
 @admin.register(OpenData)
 class OpenDataAdmin(TranslationAdmin):

@@ -94,23 +94,23 @@ class Faculty(models.Model):
     def __str__(self):
         return self.name
     
-class Dekan(models.Model):
-    dekan        = models.OneToOneField(User, on_delete=models.CASCADE, related_name='dekan')
-    faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='faculty')
-    scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
-    name         = models.CharField(max_length=100, blank=True, null=True)
-    email        = models.CharField(max_length=100, blank=True, null=True)
-    phone        = models.CharField(max_length=100, blank=True, null=True)
-    acceptance   = models.CharField(max_length=200, blank=True, null=True)
-    address      = models.CharField(max_length=100, blank=True, null=True)
-    img          = models.ImageField(upload_to='img/',blank=True, null=True)
-    duties       = RichTextUploadingField(blank=True, null=True)
-    biography    = RichTextUploadingField(blank=True, null=True)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_update  = models.DateTimeField(auto_now=True)
+# class Dekan(models.Model):
+#     dekan        = models.OneToOneField(User, on_delete=models.CASCADE, related_name='dekan')
+#     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='faculty')
+#     scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
+#     name         = models.CharField(max_length=100, blank=True, null=True)
+#     email        = models.CharField(max_length=100, blank=True, null=True)
+#     phone        = models.CharField(max_length=100, blank=True, null=True)
+#     acceptance   = models.CharField(max_length=200, blank=True, null=True)
+#     address      = models.CharField(max_length=100, blank=True, null=True)
+#     img          = models.ImageField(upload_to='img/',blank=True, null=True)
+#     duties       = RichTextUploadingField(blank=True, null=True)
+#     biography    = RichTextUploadingField(blank=True, null=True)
+#     date_created = models.DateTimeField(auto_now_add=True)
+#     date_update  = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
     
 class Kafedra(models.Model):
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE)
@@ -132,21 +132,21 @@ class Direction(models.Model):
     def __str__(self) -> str:
         return self.name
 
-class KafedraManager(models.Model):
-    kafedramanager = models.OneToOneField(User, on_delete=models.CASCADE)
-    kafedra        = models.ForeignKey(Kafedra, on_delete=models.CASCADE)
-    name           = models.CharField(max_length=100, blank=True, null=True)
-    email          = models.CharField(max_length=100, blank=True, null=True)
-    phone          = models.CharField(max_length=100, blank=True, null=True)
-    acceptance     = models.CharField(max_length=200, blank=True, null=True)
-    address        = models.CharField(max_length=100, blank=True, null=True)
-    img            = models.ImageField(upload_to='img/', blank=True, null=True)
-    duties         = RichTextUploadingField(blank=True, null=True)
-    date_created   = models.DateTimeField(auto_now_add=True)
-    date_update    = models.DateTimeField(auto_now=True)
+# class KafedraManager(models.Model):
+#     kafedramanager = models.OneToOneField(User, on_delete=models.CASCADE)
+#     kafedra        = models.ForeignKey(Kafedra, on_delete=models.CASCADE)
+#     name           = models.CharField(max_length=100, blank=True, null=True)
+#     email          = models.CharField(max_length=100, blank=True, null=True)
+#     phone          = models.CharField(max_length=100, blank=True, null=True)
+#     acceptance     = models.CharField(max_length=200, blank=True, null=True)
+#     address        = models.CharField(max_length=100, blank=True, null=True)
+#     img            = models.ImageField(upload_to='img/', blank=True, null=True)
+#     duties         = RichTextUploadingField(blank=True, null=True)
+#     date_created   = models.DateTimeField(auto_now_add=True)
+#     date_update    = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name   
+#     def __str__(self):
+#         return self.name   
 
 class CentersDepartments(models.Model):
     name = models.CharField(max_length=100)

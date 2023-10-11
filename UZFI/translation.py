@@ -1,5 +1,5 @@
 from modeltranslation.translator import  TranslationOptions, register
-from .models.models import (
+from .models import (
     OpenData,
     FinancialStatements,
     Vacancies,
