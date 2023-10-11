@@ -5,12 +5,11 @@ from .models.models import User
 
 class MyUserAdmin(UserAdmin):
     model = User
-    fieldsets = UserAdmin.fieldsets + (
+    add_fieldsets = UserAdmin.add_fieldsets + (
         (None, {'fields': ('role',)}),
-
     )
-    search_fields =  ('username',)
-    ordering = ('username','role')
+    # search_fields =  ('username',)
+    # ordering = ('username','role')
 
 
 

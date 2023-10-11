@@ -138,22 +138,28 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'uz-uz'
+LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 from django.utils.translation import gettext_lazy as _
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 LANGUAGES = (      
    ('en', _('English')),
    ('uz', _('Uzbek')),
    ('ru', _('Russian')),
 )
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+LOCALE_PATH = [
+    BASE_DIR / 'locals'
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
