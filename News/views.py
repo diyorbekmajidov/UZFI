@@ -62,3 +62,8 @@ class GetUserNews(ListAPIView):
             return News_Content.objects.filter(dekan=dekan)
         else:
             return News_Content.objects.none()
+
+
+class LastNewsApiview(ListAPIView):
+    queryset = News_Content.objects.order_by('-date_created')[:10]
+    serializer_class = NewsContentSerializer
