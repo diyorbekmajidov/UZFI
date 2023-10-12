@@ -38,7 +38,5 @@ class GetAllKafedraManager(ListCreateAPIView):
     serializer_class = GetKafedraManagerSerializer
 
 class KafedraManagerGet(RetrieveDestroyAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
     queryset = KafedraManager.objects.all()
     serializer_class = GetKafedraManagerSerializer
