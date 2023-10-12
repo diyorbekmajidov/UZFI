@@ -22,31 +22,31 @@ class GetDekanById(APIView):
         except:
             return Response({"403":"user topilmadi"})
 
-class DekanApiview(APIView):
-    @swagger_auto_schema(
-        request_body=DekanSerializer,
-        operation_description='''Create Dekan:User yaratilgan bulishi lozim. data ni str kurinishda yuborish kerak dekan  name id emas,
-        faculty ham huddi shu kurinishda''',
-        responses={
-            200: 'User crate dekan'
-        }
-    )
+# class DekanApiview(APIView):
+#     @swagger_auto_schema(
+#         request_body=DekanSerializer,
+#         operation_description='''Create Dekan:User yaratilgan bulishi lozim. data ni str kurinishda yuborish kerak dekan  name id emas,
+#         faculty ham huddi shu kurinishda''',
+#         responses={
+#             200: 'User crate dekan'
+#         }
+#     )
 
-    def post(self, request):
-            data = request.data
-            dekan = request.data['dekan']
-            faculty = request.data['faculty']
-            role = User.objects.get(username=dekan).role
-            if role == 'DEKAN':
-                data['faculty'] = Faculty.objects.get(name=faculty).id
-                data['dekan'] = User.objects.get(username=dekan).id
-                # print(data)
-                serializer = DekanSerializer(data=data)
-                if serializer.is_valid():
-                    serializer.save()
-                    return Response(serializer.data, status=status.HTTP_201_CREATED)
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            return Response({'error': 'Sizning role noto\'g\'ri'}, status=status.HTTP_400_BAD_REQUEST)
+    # def post(self, request):
+    #         data = request.data
+    #         dekan = request.data['dekan']
+    #         faculty = request.data['faculty']
+    #         role = User.objects.get(username=dekan).role
+    #         if role == 'DEKAN':
+    #             data['faculty'] = Faculty.objects.get(name=faculty).id
+    #             data['dekan'] = User.objects.get(username=dekan).id
+    #             # print(data)
+    #             serializer = DekanSerializer(data=data)
+    #             if serializer.is_valid():
+    #                 serializer.save()
+    #                 return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #         return Response({'error': 'Sizning role noto\'g\'ri'}, status=status.HTTP_400_BAD_REQUEST)
     
     
     

@@ -19,12 +19,10 @@ from .views import (
     FacultyRetrieveUpdate,
     DirectionListCreate,
     DirectionRetrieveUpdate,
-    DekanApiview,
     DekanGetApiview,
     AllDekan,
     GetDekanById,
     KafedraListCreate,
-    KafedraManagerApiview,
     KafedraManagerGet,
     Register,
     LogOut,
@@ -60,13 +58,12 @@ urlpatterns = [
     path('direction/', DirectionListCreate.as_view(), name='direction'),
     path('direction/<int:pk>/', DirectionRetrieveUpdate.as_view(), name='direction'),
 
-    path('dekan/', DekanApiview.as_view(), name='dekan'),
+    # path('dekan/', DekanApiview.as_view(), name='dekan'),
     path('dekanget/', DekanGetApiview.as_view()),
     path('alldekan/', AllDekan.as_view()),
     path('getdekanbyid/<int:pk>/', GetDekanById.as_view()),
     
     path('kafedra/', KafedraListCreate.as_view(), name='kafedra'),
-    path('kafedramanager/', KafedraManagerApiview.as_view(), name='kafedramanager'),
     path('kafedramanagerget/', KafedraManagerGet.as_view()),
 
     path('register/', Register.as_view()),
