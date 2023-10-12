@@ -106,9 +106,5 @@ class GetKafedraManagerSerializer(serializers.ModelSerializer):
     kafedra = KafedraSerializer1()
     class Meta :
         model = KafedraManager
-        fields = ["id", "kafedramanager", "kafedra", "name", "img", "phone","address_uz","address_en","address_ru", 
-                  "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
-                  "date_created", "date_update",
-                  ]
-        # depth = 2
+        fields = "__all__"
 

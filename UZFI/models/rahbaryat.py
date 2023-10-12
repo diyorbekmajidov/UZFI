@@ -42,8 +42,9 @@ class Dekan(models.Model):
     
 
 class KafedraManager(models.Model):
-    kafedramanager = models.OneToOneField(User, on_delete=models.CASCADE)
-    kafedra        = models.ForeignKey(Kafedra, on_delete=models.CASCADE)
+    kafedramanager = models.OneToOneField(User, on_delete=models.CASCADE, related_name='kafedramanager')
+    kafedra        = models.ForeignKey(Kafedra, on_delete=models.CASCADE, related_name='kafedra')
+    scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
     name           = models.CharField(max_length=100, blank=True, null=True)
     email          = models.CharField(max_length=100, blank=True, null=True)
     phone          = models.CharField(max_length=100, blank=True, null=True)

@@ -39,8 +39,4 @@ class Login(APIView):
         token= Token.objects.create(user=user)
         return Response({"token": token.key,"role":role}, status=status.HTTP_200_OK)
     
-# class GetUserRole(APIView):
-#     def get(self, request):
-#         role = User.objects.all()
-#         serializer = UserSerializer1(role, many=True)
-#         return Response(serializer.data)
+
