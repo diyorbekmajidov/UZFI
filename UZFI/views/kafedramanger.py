@@ -21,7 +21,7 @@ class KafedraManagerApview(APIView):
     
     def put(self, request):
         kafedramanager = KafedraManager.objects.get(kafedramanager=request.user)
-        serializers =  KafedraManagerSerializer(kafedramanager, request.data)
+        serializers =  KafedraManagerSerializer(kafedramanager, request.data, partial=True)
         if serializers.is_valid():
             serializers.save()
             return Response(serializers.data)

@@ -61,7 +61,7 @@ class DekanGetApiview(APIView):
     
     def put(self, request):
         dekan = Dekan.objects.get(dekan=request.user)
-        serializer = DekanSerializer(dekan, data=request.data)
+        serializer = DekanSerializer(dekan, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
