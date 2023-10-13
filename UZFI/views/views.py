@@ -92,10 +92,15 @@ class ScientificWorkAPIView(APIView):
     permission_classes = [IsAuthenticated]
     
     def post(self, request):
-        data = request.data
+        data = request.data.copy()
         data['user'] = request.user.id
-        serializers = ScientificWorkSerializer(data=data)
-        if serializers.is_valid():
-            serializers.save()
-            return Response(serializers.data)
-        return Response(serializers.errors)
+        serializer = ScientificWorkSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def get(self, request):
+        data = ScientificWork.objects.filter(user=request.user)
+        serializers = ScientificWorkSerializer(data, many = True)
+        return Response(serializers.data)
