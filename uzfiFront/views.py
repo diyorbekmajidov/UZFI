@@ -7,4 +7,4 @@ from django.http import HttpRequest, HttpResponse, JsonResponse
 
 class Index(View):
     def get(self, req:HttpRequest, *args, **kwargs):
-        return HttpResponse('Hello')
+        return render(req, 'index.html')
