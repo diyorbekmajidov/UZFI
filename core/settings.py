@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'UZFI.apps.UzfiConfig',
     'News.apps.NewsConfig',
+
+
+    'uzfiFront.apps.UzfifrontConfig'
 ]
 
 # REST_FRAMEWORK = {
