@@ -64,6 +64,7 @@ class UserSerializer1(serializers.ModelSerializer):
         fields = ["id","username", "role"]
 
 class ScientificWorkSerializer(serializers.ModelSerializer):
+    # user = serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = ScientificWork
         fields = '__all__'      
