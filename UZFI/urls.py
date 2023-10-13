@@ -25,6 +25,7 @@ from .views import (
     KafedraManagerGet,
     KafedraManagerApview,
     GetAllKafedraManager,
+    ScientificWorkAPIView,
     Register,
     LogOut,
     Login,
@@ -58,6 +59,8 @@ urlpatterns = [
 
     path('direction/', DirectionListCreate.as_view(), name='direction'),
     path('direction/<int:pk>/', DirectionRetrieveUpdate.as_view(), name='direction'),
+
+    path('scientificwork/', ScientificWorkAPIView.as_view()),
 
     path('dekanget/', DekanGetApiview.as_view()),
     path('alldekan/', AllDekan.as_view()),

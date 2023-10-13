@@ -6,6 +6,9 @@ from UZFI.models.models import *
 from UZFI.serializers import *
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
 
 class CharterListCreate(ListCreateAPIView):
     queryset = Charter.objects.all()
@@ -82,3 +85,17 @@ class DirectionRetrieveUpdate(RetrieveUpdateDestroyAPIView):
 class KafedraListCreate(ListCreateAPIView):
     queryset = Kafedra.objects.all()
     serializer_class = KafedraSerializer    
+
+
+class ScientificWorkAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        data = request.data
+        data['user'] = request.user.id
+        serializers = ScientificWorkSerializer(data=data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data)
+        return Response(serializers.errors)

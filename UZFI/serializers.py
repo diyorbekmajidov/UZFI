@@ -104,6 +104,7 @@ class KafedraManagerSerializer(serializers.ModelSerializer):
 class GetKafedraManagerSerializer(serializers.ModelSerializer):
     kafedramanager = UserSerializer1()
     kafedra = KafedraSerializer1()
+    scientific_work = ScientificWorkSerializer()
     class Meta :
         model = KafedraManager
         fields = "__all__"

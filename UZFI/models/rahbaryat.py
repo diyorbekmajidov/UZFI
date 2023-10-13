@@ -6,7 +6,7 @@ from .models import ScientificWork,Faculty, Kafedra
 
 class Leadership(models.Model):
     rector       = models.OneToOneField(User, on_delete=models.CASCADE , related_name="rector")
-    scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
+    # scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
     first_name   = models.CharField(max_length=200, blank=True, null=True)
     email        = models.CharField(max_length=100, blank=True, null=True)
     phone        = models.CharField(max_length=100, blank=True, null=True)
@@ -25,7 +25,7 @@ class Leadership(models.Model):
 class Dekan(models.Model):
     dekan        = models.OneToOneField(User, on_delete=models.CASCADE, related_name='dekan')
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='faculty')
-    scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
+    # scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
     name         = models.CharField(max_length=100, blank=True, null=True)
     email        = models.CharField(max_length=100, blank=True, null=True)
     phone        = models.CharField(max_length=100, blank=True, null=True)
@@ -44,7 +44,7 @@ class Dekan(models.Model):
 class KafedraManager(models.Model):
     kafedramanager = models.OneToOneField(User, on_delete=models.CASCADE, related_name='kafedramanager')
     kafedra        = models.ForeignKey(Kafedra, on_delete=models.CASCADE, related_name='kafedra')
-    scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
+    # scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
     name           = models.CharField(max_length=100, blank=True, null=True)
     email          = models.CharField(max_length=100, blank=True, null=True)
     phone          = models.CharField(max_length=100, blank=True, null=True)
