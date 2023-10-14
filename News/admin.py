@@ -4,6 +4,8 @@ from modeltranslation.admin import TranslationAdmin
 # Register your models here.
 from .models import *
 
+admin.site.register(PopularStudents)
+
 @admin.register(NewsCategory)
 class NewsCategoryAdmin(TranslationAdmin):
     list_display = ('new_category',)

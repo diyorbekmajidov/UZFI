@@ -1,7 +1,5 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-from ckeditor.fields import RichTextField
-# Create your models here.
 from UZFI.models import Dekan
 
 class NewsCategory(models.Model):
@@ -32,3 +30,14 @@ class Vedio_New(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class PopularStudents(models.Model):
+    student_name  = models.CharField(max_length=150)
+    body          = RichTextUploadingField()
+    img           = models.ImageField(upload_to='img')
+    date_created  = models.DateTimeField(auto_now_add=True)
+    date_update   = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.student_name
