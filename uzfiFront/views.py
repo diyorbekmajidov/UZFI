@@ -59,3 +59,31 @@ class FinancialReports(View):
 
 
         return render(req, {'uz':'uz', 'ru':'ru', 'en':'en'}.get(req.GET.get('lang'), 'uz') + '/financial.html', {'data':data}) 
+
+
+class Leadership(View):
+    def get(self, req:HttpRequest, *args, **kwargs):
+        return HttpResponse('Leadership')
+
+
+class OrganizationStructure(View):
+    def get(self, req:HttpRequest, *args, **kwargs):
+        return HttpResponse('OrganizationStructure')
+
+
+class Requisties(View):
+    def get(self, req:HttpRequest, *args, **kwargs):
+        return HttpResponse('Requisties')
+
+class FamousGraduators(View):
+    def get(self, req:HttpRequest, *args, **kwargs):
+        return HttpResponse('FamousGraduators')
+
+
+class OpenData(View):
+    def get(self, req:HttpRequest, *args, **kwargs):
+        return HttpResponse('OpenData')
+    
+class Departments(View):
+    def get(self, req:HttpRequest, *args, **kwargs):
+        return HttpResponse('Departments')
