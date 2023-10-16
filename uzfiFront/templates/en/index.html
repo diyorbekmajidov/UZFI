@@ -6,6 +6,7 @@
 {% block content %}
 
 {% load static %}
+{% load i18n %}
 
 <div class="page-content bg-white">
   <!-- Main Slider -->
@@ -227,7 +228,7 @@
                 margin-right: 5px;
               "
             >
-              READ MORE
+            {% blocktranslate %}  READ MORE {% endblocktranslate %}
             </div>
             <div
               class="tp-caption Newspaper-Button rev-btn"

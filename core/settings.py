@@ -87,7 +87,7 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates/')],
+        'DIRS': [os.path.join(BASE_DIR,'uzfiFront/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,18 +146,23 @@ USE_L10N = True
 
 USE_TZ = True
 
-from django.utils.translation import gettext_lazy as _
 
-LANGUAGES = (      
-   ('en', _('English')),
-   ('uz', _('Uzbek')),
-   ('ru', _('Russian')),
+gettext = lambda s: s
+LANGUAGES = (
+    ('uz',  gettext('Uzbek')),
+    ('ru',  gettext('Russian')),
+    ('en',  gettext('English')),
+    
 )
+
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
-LOCALE_PATH = [
-    BASE_DIR / 'locals'
-]
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

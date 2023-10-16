@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from .views import (
-    CharterListCreate,
+    CharterApview,
     CharterRetrieveUpdate,
     DocumentCreate,
     DocumentRetrieveUpdate,
@@ -33,7 +33,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('charter/', CharterListCreate.as_view(), name='charter'),
+    path('charter/', CharterApview.as_view(), name='charter'),
     path('charter/<int:pk>/', CharterRetrieveUpdate.as_view(), name='charter-detail'),
 
     path('document/', DocumentCreate.as_view(), name='document'),

@@ -10,13 +10,17 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 
-class CharterListCreate(ListCreateAPIView):
-    queryset = Charter.objects.all()
-    serializer_class = CharterSerializer
+class CharterApview(APIView):
+    def get(self, request):
+        charter = Charter.objects.all()
+        serializers = CharterSerializer(charter, many = True) 
+        return render(request, 'charter.html',{"data":serializers.data})
+    
 
 class CharterRetrieveUpdate(RetrieveUpdateDestroyAPIView):
     queryset = Charter.objects.all()
     serializer_class = CharterSerializer
+
 
 class DocumentCreate(ListCreateAPIView):
     queryset = Document.objects.all()
