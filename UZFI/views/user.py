@@ -37,6 +37,6 @@ class Login(APIView):
         if token:
             token[0].delete()
         token= Token.objects.create(user=user)
-        return Response({"token": token.key,"role":role}, status=status.HTTP_200_OK)
+        return render(request, 'registration/login.html',)
     
 

@@ -25,6 +25,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('uzfi/', include('UZFI.urls')),

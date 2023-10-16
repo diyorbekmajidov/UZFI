@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}UZFI  | Nizom{% endblock %}
+
+{% block content %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" ">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">Устав института</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+                <div class="heading-bx left">
+                    <h2 class="m-b10 title-head">Устав <span></span></h2>
+                </div>
+
+
+                <div class="ttr-accordion m-b30 faq-bx" id="charter_accordion">
+
+
+
+              
+  {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+	<p>Your account doesn't have access to this page. To proceed,
+	please login with an account that has access.</p>
+  {% else %}
+	<p>Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <table>
+	<tr>
+	  <td>{{ form.username.label_tag }}</td>
+	  <td>{{ form.username }}</td>
+	</tr>
+	<tr>
+	  <td>{{ form.password.label_tag }}</td>
+	  <td>{{ form.password }}</td>
+	</tr>
+  </table>
+  <input type="submit" value="login">
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+        <!-- Our Story ==== -->
+        <div class="section-area section-sp1 ">
+            <div class="container">
+
+            </div>
+        </div>
+        <!-- Our Story END ==== -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+
+
+
+{% endblock content %}
