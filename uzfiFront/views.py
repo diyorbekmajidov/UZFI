@@ -20,7 +20,7 @@ class Charter(View):
     def get(self, req: HttpRequest, *args, **kwargs):
         data = []
         MODEL_DATA = UZFI_Charter.objects.all()
-        for i, z in zip(MODEL_DATA, range(MODEL_DATA.__len__())): data.append({'data': {'title_en':i.title_en,'title_uz':i.title_uz,'title_ru':i.title_ru,'body_en':i.body_en,'body_uz':i.body_uz,'body_ru':i.body_ru,}, 'id': z})
+        for i, z in zip(MODEL_DATA, range(MODEL_DATA.__len__())): data.append({'data': {'title_en':i.title_en,'title_uz':i.title_uz,'title_ru':i.title_ru,'body_en':i.body_en,'body_uz':i.body_uz,'body_ru':i.body_ru,}, 'id': z, 'path':req.path})
         
         return render(req, {'uz':'uz', 'ru':'ru', 'en':'en'}.get(req.GET.get('lang'), 'uz') + '/charter.html', {'data':data}) 
     
@@ -55,7 +55,7 @@ class FinancialReports(View):
     def get(self, req: HttpRequest, *args, **kwargs):
         data = []
         MODEL_DATA = UZFI_FinancialStatements.objects.all()
-        for i, z in zip(MODEL_DATA, range(1, MODEL_DATA.__len__()+1)): data.append({'data': {'report_type_en':i.report_type_en,'report_type_uz':i.report_type_uz,'report_type_ru':i.report_type_ru,'quarter_en':i.quarter,'quarter_uz':i.quarter_uz,'quarter_ru':i.quarter_ru,'pdf_file':i.pdf_file.url, 'date':i.date_created.strftime('%d.%m.%Y')}, 'id': z})
+        for i, z in zip(MODEL_DATA, range(1, MODEL_DATA.__len__()+1)): data.append({'data': {'report_type_en':i.report_type_en,'report_type_uz':i.report_type_uz,'report_type_ru':i.report_type_ru,'quarter_en':i.quarter,'quarter_uz':i.quarter_uz,'quarter_ru':i.quarter_ru,'pdf_file':i.pdf_file.url}, 'id': z})
 
 
         return render(req, {'uz':'uz', 'ru':'ru', 'en':'en'}.get(req.GET.get('lang'), 'uz') + '/financial.html', {'data':data}) 
