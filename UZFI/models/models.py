@@ -25,6 +25,7 @@ class Document(models.Model):
         return self.document_type
     
 class Councils(models.Model):
+    id           = models.AutoField(primary_key=True)
     title        = RichTextField()
     body         = RichTextUploadingField()
     date_created = models.DateTimeField(auto_now_add=True)
@@ -54,6 +55,7 @@ class FinancialStatements(models.Model):
     report_type = models.CharField(max_length=100)
     quarter     = models.CharField(max_length=100)
     pdf_file    = models.FileField(upload_to='pdf/')
+    # date_created  = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.report_type

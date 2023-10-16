@@ -4076,3 +4076,16 @@ button.back-to-top {
 	z-index: 999;
 	display: none;
 }
+
+
+.councils-item {
+	/* box-shadow: 0 0 25px 0 rgba(29, 25, 0, 0.25); */
+	border: 1px solid rgba(159,171,185,.2);
+	background-color: #f9fafc;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.councils-item:hover {
+	transform: translateY(-3px);
+}
