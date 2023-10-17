@@ -15,60 +15,44 @@ class CharterApview(APIView):
         charter = Charter.objects.all()
         serializers = CharterSerializer(charter, many = True) 
         return render(request, 'charter.html',{"data":serializers.data})
-    
 
-class CharterRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = Charter.objects.all()
-    serializer_class = CharterSerializer
+class DocumentCreateApview(APIView):
+    def get(self,request):
+        document = Document.objects.all()
+        serializers = DocumentSerializer(document, many = True)
+        return render(request, '.html',{"data":serializers.data})
+
+class CouncilsListApview(APIView):
+    def get(self, request):
+        councils = Councils.objects.all()
+        serializers = CouncilsSerializer(councils, many = True)
+        return render(request, '.html',{"data":serializers.data})
 
 
-class DocumentCreate(ListCreateAPIView):
-    queryset = Document.objects.all()
-    serializer_class = DocumentSerializer
+class RequisitesApview(APIView):
+    def get(self, request):
+        requisites = Requisites.objects.last()
+        serializers = RequisitesSerializer(requisites)
+        return render(request, '.html',{"data":serializers.data})
 
-class DocumentRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = Document.objects.all()
-    serializer_class = DocumentSerializer
+class FinancialStatementsApview(APIView):
+    def get(self, request):
+        financialstatements = FinancialStatements.objects.all()
+        serializers = FinancialStatementsSerializer(financialstatements, many = True)
+        return render(request, '.html',{"data":serializers.data})
 
-class CouncilsListCreate(ListCreateAPIView):
-    queryset = Councils.objects.all()
-    serializer_class = CouncilsSerializer
 
-class CouncilsRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = Councils.objects.all()
-    serializer_class = CouncilsSerializer
+class VacanciesApview(APIView):
+    def get(self, request):
+        vacancies = Vacancies.objects.all()
+        serializers = VacanciesSerializer(vacancies, many = True)
+        return render(request, '.html',{"data":serializers.data})
 
-class RequisitesListCreate(ListCreateAPIView):
-    queryset = Requisites.objects.all()
-    serializer_class = RequisitesSerializer
-
-class RequisitesRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = Requisites.objects.all()
-    serializer_class = RequisitesSerializer
-
-class FinancialStatementsListCreate(ListCreateAPIView):
-    queryset = FinancialStatements.objects.all()
-    serializer_class = FinancialStatementsSerializer
-
-class FinancialStatementsRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = FinancialStatements.objects.all()
-    serializer_class = FinancialStatementsSerializer
-
-class VacanciesListCreate(ListCreateAPIView):
-    queryset = Vacancies.objects.all()
-    serializer_class = VacanciesSerializer
-
-class VacanciesRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = Vacancies.objects.all()
-    serializer_class = VacanciesSerializer
-
-class OpenDataListCreate(ListCreateAPIView):
-    queryset = OpenData.objects.all()
-    serializer_class = OpenDataSerializer
-
-class OpenDataRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = OpenData.objects.all()
-    serializer_class = OpenDataSerializer
+class OpenDataApview(APIView):
+    def get(self, request):
+        opendata = OpenData.objects.all()
+        serializers = OpenDataSerializer(opendata, many = True)
+        return render(request, '.html',{"data":serializers.data})
 
 class FacultyListCreate(ListCreateAPIView):
     queryset = Faculty.objects.all()
