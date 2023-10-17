@@ -1,95 +1,87 @@
-{% extends "base.html" %}
-
-{% block title %}UZFI  | Nizom{% endblock %}
-
+{% extends "base.html" %} {% block title %}UZFI | Nizom{% endblock %} 
 {% block content %}
 
+{% load static %}
+
 <div class="page-content">
-    <!-- Page Heading Box ==== -->
-    <div class="page-banner ovbl-dark" ">
-        <div class="container">
-            <div class="page-banner-entry">
-                <h1 class="text-white">Устав института</h1>
-            </div>
+  <!-- Page Heading Box ==== -->
+
+
+  <!-- Page Heading Box END ==== -->
+
+  <!-- Page Content Box ==== -->
+  <div class="content-block">
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %} {% if next %} {% if user.is_authenticated %}
+    <p>
+      Your account doesn't have access to this page. To proceed, please login
+      with an account that has access.
+    </p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %} {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="account-form">
+        <div
+          class="account-head"
+          style="background-image: url({% static "assets/images/background/bg2.jpg" %})"
+        >
+          <a href="index.html"
+            ><img
+              src="assets/images/uzfi.png"
+              alt=""
+              style="height: 200px; width: auto"
+          /></a>
         </div>
-    </div>
-
-    <!-- Page Heading Box END ==== -->
-
-
-    <!-- Page Content Box ==== -->
-    <div class="content-block">
-
-        <!-- FAQS  News -->
-        <div class="section-area section-sp2">
-            <div class="container">
-
-                <div class="heading-bx left">
-                    <h2 class="m-b10 title-head">Устав <span></span></h2>
+        <div class="account-form-inner">
+          <div class="account-container">
+            <div class="heading-bx left">
+              <h2 class="title-head">Login to your <span>Account</span></h2>
+            </div>
+            <form class="contact-bx" id="login">
+              <div class="row placeani">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Name</label>
+                      {{ form.username }}
+                    </div>
+                  </div>
                 </div>
-
-
-                <div class="ttr-accordion m-b30 faq-bx" id="charter_accordion">
-
-
-
-              
-  {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
-{% if next %}
-  {% if user.is_authenticated %}
-	<p>Your account doesn't have access to this page. To proceed,
-	please login with an account that has access.</p>
-  {% else %}
-	<p>Please login to see this page.</p>
-  {% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  <table>
-	<tr>
-	  <td>{{ form.username.label_tag }}</td>
-	  <td>{{ form.username }}</td>
-	</tr>
-	<tr>
-	  <td>{{ form.password.label_tag }}</td>
-	  <td>{{ form.password }}</td>
-	</tr>
-  </table>
-  <input type="submit" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Password</label>
+                      {{ form.password }}
+                    </div>
+                  </div>
                 </div>
-
-
-            </div>
+                <div class="col-lg-12">
+                  <a href="{% url 'password_reset' %}" class="ml-auto">
+                    Lost password?</a
+                  >
+                </div>
+                <div class="col-lg-12 m-b30">
+                  <button
+                    name="login_page_submit_button"
+                    type="submit"
+                    value="Submit"
+                    class="btn button-md"
+                  >
+                    Login
+                  </button>
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <!-- FAQS  News End -->
+      </div>
+    </form>
 
-
-        <!-- Our Story ==== -->
-        <div class="section-area section-sp1 ">
-            <div class="container">
-
-            </div>
-        </div>
-        <!-- Our Story END ==== -->
-
-
-    </div>
-    <!-- Page Content Box END ==== -->
-
+    {% endblock content %}
+  </div>
 </div>
-
-
-
-
-
-{% endblock content %}
