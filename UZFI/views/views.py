@@ -20,13 +20,13 @@ class DocumentCreateApview(APIView):
     def get(self,request):
         document = Document.objects.all()
         serializers = DocumentSerializer(document, many = True)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'documents.html',{"data":serializers.data})
 
 class CouncilsListApview(APIView):
     def get(self, request):
         councils = Councils.objects.all()
         serializers = CouncilsSerializer(councils, many = True)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'councils.html',{"data":serializers.data})
 
 class RequisitesApview(APIView):
     def get(self, request):
