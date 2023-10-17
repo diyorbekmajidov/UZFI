@@ -28,7 +28,6 @@ class CouncilsListApview(APIView):
         serializers = CouncilsSerializer(councils, many = True)
         return render(request, '.html',{"data":serializers.data})
 
-
 class RequisitesApview(APIView):
     def get(self, request):
         requisites = Requisites.objects.last()
@@ -40,7 +39,6 @@ class FinancialStatementsApview(APIView):
         financialstatements = FinancialStatements.objects.all()
         serializers = FinancialStatementsSerializer(financialstatements, many = True)
         return render(request, '.html',{"data":serializers.data})
-
 
 class VacanciesApview(APIView):
     def get(self, request):
@@ -54,19 +52,13 @@ class OpenDataApview(APIView):
         serializers = OpenDataSerializer(opendata, many = True)
         return render(request, '.html',{"data":serializers.data})
 
-class FacultyListCreate(ListCreateAPIView):
-    queryset = Faculty.objects.all()
-    serializer_class = FacultySerializer
-
-class FacultyRetrieveUpdate(RetrieveUpdateDestroyAPIView):
-    queryset = Faculty.objects.all()
-    serializer_class = FacultySerializer
+class FacultyApview(APIView):
+    def get(self, request):
+        faculty = Faculty.objects.all()
+        serializers = FacultySerializer(faculty, many = True)
+        return render(request, '.html',{"data":serializers.data})
 
 class DirectionListCreate(ListCreateAPIView):
-    queryset = Direction.objects.all()
-    serializer_class = DirectionSerializer
-
-class DirectionRetrieveUpdate(RetrieveUpdateDestroyAPIView):
     queryset = Direction.objects.all()
     serializer_class = DirectionSerializer
 

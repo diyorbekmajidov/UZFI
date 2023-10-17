@@ -8,10 +8,8 @@ from .views import (
     FinancialStatementsApview,
     VacanciesApview,
     OpenDataApview,
-    FacultyListCreate,
-    FacultyRetrieveUpdate,
+    FacultyApview,
     DirectionListCreate,
-    DirectionRetrieveUpdate,
     DekanGetApiview,
     AllDekan,
     GetDekanById,
@@ -40,11 +38,9 @@ urlpatterns = [
 
     path('opendata/', OpenDataApview.as_view(), name='opendata'),
 
-    path('faculty/', FacultyListCreate.as_view(), name='faculty'),
-    path('faculty/<int:pk>/', FacultyRetrieveUpdate.as_view(), name='faculty'),
+    path('faculty/', FacultyApview.as_view(), name='faculty'),
 
     path('direction/', DirectionListCreate.as_view(), name='direction'),
-    path('direction/<int:pk>/', DirectionRetrieveUpdate.as_view(), name='direction'),
 
     path('scientificwork/', ScientificWorkAPIView.as_view()),
 
@@ -59,6 +55,4 @@ urlpatterns = [
     path('register/', Register.as_view()),
     path('logout/', LogOut.as_view()),
     path('login/', Login.as_view()),
-
-   
 ]
