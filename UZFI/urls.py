@@ -3,7 +3,8 @@ from . import views
 from .views import (
     CharterApview,
     DocumentCreateApview,
-    CouncilsListApview,
+    CouncilsApview,
+    CouncilsByIdApview,
     RequisitesApview,
     FinancialStatementsApview,
     VacanciesApview,
@@ -28,7 +29,8 @@ urlpatterns = [
 
     path('document/', DocumentCreateApview.as_view(), name='document'),
 
-    path('councils/', CouncilsListApview.as_view(), name='councils'),
+    path('councils/', CouncilsApview.as_view(), name='councils'),
+    path('councils/<int:pk>/', CouncilsByIdApview.as_view()),
 
     path('requisites/', RequisitesApview.as_view(), name='requisites'),
 

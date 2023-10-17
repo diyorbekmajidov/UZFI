@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from UZFI.models.models import *
 from UZFI.serializers import *
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView
 
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -22,12 +22,18 @@ class DocumentCreateApview(APIView):
         serializers = DocumentSerializer(document, many = True)
         return render(request, 'documents.html',{"data":serializers.data})
 
-class CouncilsListApview(APIView):
+class CouncilsApview(APIView):
     def get(self, request):
         councils = Councils.objects.all()
         serializers = CouncilsSerializer(councils, many = True)
         return render(request, 'councils.html',{"data":serializers.data})
-
+    
+class CouncilsByIdApview(APIView):
+    def get(self, request, pk):
+        councils = Councils.objects.get(id = pk)
+        serializers = CouncilsSerializer(councils)
+        return render(request, '.html',{"data":serializers.data})
+    
 class RequisitesApview(APIView):
     def get(self, request):
         requisites = Requisites.objects.last()
