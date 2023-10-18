@@ -21,6 +21,7 @@ from .views import (
     Register,
     logout,
     Login,
+    Dashboard
 
 )
 
@@ -57,4 +58,5 @@ urlpatterns = [
     path('register/', Register.as_view()),
     path('logout/', views.logout),
     path('login/', Login.as_view()),
+    path('dashboard/', Dashboard.as_view(), name='dashboard')
 ]

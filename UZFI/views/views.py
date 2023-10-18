@@ -16,17 +16,9 @@ from rest_framework.permissions import IsAuthenticated
 
 class CharterApview(TemplateView):
     def get(self, request):
-        user = self.request.user
-        dekan = Dekan.objects.filter(dekan=user).first()
-        print(dekan)
-        if dekan:
-            data = News_Content.objects.filter(dekan=dekan)
-            print(data)
-            return render(request, 'charter.html',{"data":data})
-        else :
-            charter = Charter.objects.all()
-            serializers = CharterSerializer(charter, many = True) 
-            return render(request, 'charter.html',{"data":serializers.data})
+        charter = Charter.objects.all()
+        serializers = CharterSerializer(charter, many = True) 
+        return render(request, 'charter.html',{"data":serializers.data})
 
 class DocumentCreateApview(APIView):
     def get(self,request):
