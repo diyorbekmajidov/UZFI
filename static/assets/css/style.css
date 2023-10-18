@@ -4052,6 +4052,13 @@ button.back-to-top {
 	background-color: rgba(2, 0, 11, 0.8);
 	color: #ffffff;
 }
+.faculty-item-bg {
+
+	transition: .3s;
+}
+.faculty-item-bg:hover  {
+	transform: translateY(-3px);
+}
 
 
 /* .faculties .faculty-item-hover::after {
