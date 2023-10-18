@@ -28,7 +28,7 @@ from .views import (
 urlpatterns = [
     path('charter/', CharterApview.as_view(), name='charter'),
 
-    path('document/', DocumentCreateApview.as_view(), name='document'),
+    path('documents/', DocumentCreateApview.as_view(), name='document'),
 
     path('councils/', CouncilsApview.as_view(), name='councils'),
     path('councils/<int:pk>/', CouncilsByIdApview.as_view()),
@@ -57,6 +57,6 @@ urlpatterns = [
 
     path('register/', Register.as_view()),
     path('logout/', views.logout),
-    path('login/', Login.as_view(), name='login'),
+    path('login/', Login.as_view()),
     path('dashboard/', Dashboard.as_view(), name='dashboard')
 ]
