@@ -32,11 +32,11 @@ class Dashboard(TemplateView):
     def get(self, request):
         user = self.request.user
         dekan = Dekan.objects.filter(dekan=user).first()
-        print(dekan)
         if dekan:
             data = News_Content.objects.filter(dekan=dekan)
-            print(data)
-            return render(request, 'dashboard.html',{"data":data})
+            dekan_data = Dekan.objects.get(dekan=dekan)
+            serializers = GetDekanSerializer(dekan_data)
+            return render(request, 'dashboard.html',{"data":data},{'dekan':serializers.data})
         else :
             return redirect('/login/')
     
