@@ -46,7 +46,7 @@ urlpatterns = [
     path('faculty/', FacultyApview.as_view(), name='faculty'),
     path('faculty/<int:pk>/',FacultyByIdApview.as_view()),
 
-    path('direction/', DirectionApview.as_view(), name='direction'),
+    path('direction/<int:pk>/', DirectionApview.as_view(), name='direction'),
     path('kafedra/', KafedraApview.as_view()),
 
     path('scientificwork/', ScientificWorkAPIView.as_view()),

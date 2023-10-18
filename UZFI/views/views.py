@@ -97,7 +97,7 @@ class DirectionApview(APIView):
     def get(self, request, pk):
         direction = Direction.objects.get(id=pk)
         serializers = DirectionSerializer(direction)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'destinations-item.html',{"data":serializers.data})
 
 class KafedraApview(APIView):
     def get(self, request):
