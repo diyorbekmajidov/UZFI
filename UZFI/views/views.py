@@ -7,7 +7,6 @@ from UZFI.models.models import *
 from UZFI.serializers import *
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
 from django.urls import reverse_lazy
-from rest_framework.generics import ListCreateAPIView
 from News.models import *
 from News.serializers import NewsContentSerializer
 
@@ -16,7 +15,6 @@ from rest_framework.permissions import IsAuthenticated
 
 
 class Index(TemplateView):
-    # template_name = 'index.html'
 
     def get(self, request):
         faculty = Faculty.objects.all()

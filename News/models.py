@@ -15,7 +15,7 @@ class News_Content(models.Model):
     body          = RichTextUploadingField()
     views         = models.IntegerField(default=0)
     date_created  = models.DateTimeField(auto_now_add=True)
-    date_update   = models.DateTimeField(auto_now=True)
+    date_update   = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.title
