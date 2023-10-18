@@ -1,20 +1,32 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.views.generic import TemplateView
 from rest_framework import status
 from UZFI.models.models import *
 from UZFI.serializers import *
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
+from django.urls import reverse_lazy
 from rest_framework.generics import ListCreateAPIView
+from News.models import *
 
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 
-class CharterApview(APIView):
+class CharterApview(TemplateView):
     def get(self, request):
-        charter = Charter.objects.all()
-        serializers = CharterSerializer(charter, many = True) 
-        return render(request, 'charter.html',{"data":serializers.data})
+        user = self.request.user
+        dekan = Dekan.objects.filter(dekan=user).first()
+        print(dekan)
+        if dekan:
+            data = News_Content.objects.filter(dekan=dekan)
+            print(data)
+            return render(request, 'charter.html',{"data":data})
+        else :
+            charter = Charter.objects.all()
+            serializers = CharterSerializer(charter, many = True) 
+            return render(request, 'charter.html',{"data":serializers.data})
 
 class DocumentCreateApview(APIView):
     def get(self,request):

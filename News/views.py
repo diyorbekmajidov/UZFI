@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
+from django.urls import reverse_lazy
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView,ListAPIView
 from .models import *
 from .serializers import *
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 
@@ -50,11 +51,19 @@ class NewsContentApiviewGet(APIView):
     
 
 class GetUserNews(ListAPIView):
-    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     pagination_class = NewsPagination
     serializer_class = UserNewsSerializer
 
+    def get_queryset(self):
+        user = self.request.user
+        dekan = Dekan.objects.filter(dekan=user).first()
+        if dekan:
+            return News_Content.objects.filter(dekan=dekan)
+        else:
+            return News_Content.objects.none()
+        
+class GetUserNewsTemplateView(TemplateView):
     def get_queryset(self):
         user = self.request.user
         dekan = Dekan.objects.filter(dekan=user).first()
