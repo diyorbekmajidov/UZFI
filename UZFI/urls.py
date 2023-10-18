@@ -33,7 +33,7 @@ urlpatterns = [
     path('councils/', CouncilsApview.as_view(), name='councils'),
     path('councils/<int:pk>/', CouncilsByIdApview.as_view()),
 
-    path('requisites/', RequisitesApview.as_view(), name='requisites'),
+    path('requisties/', RequisitesApview.as_view(), name='requisties'),
 
     path('financial-reports/', FinancialStatementsApview.as_view(), name='financial-reports'),
 
