@@ -79,7 +79,7 @@ class FacultyApview(APIView):
     def get(self, request):
         faculty = Faculty.objects.all()
         serializers = FacultySerializer(faculty, many = True)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'faculties.html',{"data":serializers.data})
     
 class FacultyByIdApview(APIView):
     def get(self, request, pk):
@@ -87,7 +87,7 @@ class FacultyByIdApview(APIView):
         dekan = Dekan.objects.get(faculty = pk)
         serializers1 = GetDekanSerializer(dekan)
         serializers = FacultySerializer(faculty)
-        return render(request, '.html',
+        return render(request, 'faculties-id.html',
             {"faculty":serializers.data,
              "dekan": serializers1.data
              })
