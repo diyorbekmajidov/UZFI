@@ -43,6 +43,10 @@ class Dashboard(TemplateView):
                        })
         if user.role == 'MANAGER':
             manager = KafedraManager.objects.filter(kafedra = user )
+            serializers = GetKafedraManagerSerializer(manager , many = True)
+            return render(request, 'dashboard.html',
+            {'data_news':serializers.data,
+                       })
 
         
     

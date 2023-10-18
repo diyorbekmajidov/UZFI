@@ -85,8 +85,12 @@ class FacultyByIdApview(APIView):
     def get(self, request, pk):
         faculty = Faculty.objects.get(id = pk)
         dekan = Dekan.objects.get(faculty = pk)
+        serializers1 = GetDekanSerializer(dekan)
         serializers = FacultySerializer(faculty)
-        return Response(serializers.data)
+        return render(request, '.html',
+            {"faculty":serializers.data,
+             "dekan": serializers1.data
+             })
 
 
 class DirectionListCreate(ListCreateAPIView):
