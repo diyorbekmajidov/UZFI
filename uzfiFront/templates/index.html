@@ -603,7 +603,7 @@
           
           {% for i in faculty%}
           <div class="col-md-6 faculty-item-bg">
-              <a href="#">
+              <a href="/uzfi/faculties/{{i.id}}">
             <div
               class="faculty-item-hover my-3 rounded"
               style="
@@ -649,7 +649,21 @@
           <div
             class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0 put-destinations"
           >
-
+          {% for i in direction %}
+             <div class="item">
+									<div class="cours-bx">
+										<div class="action-box">
+											<img src="{% static "assets/images/courses/pic1.jpg" %}" alt="">
+											<a href="#" class="btn">Ko'proq o'qish</a>
+										</div>
+										<div class="info-bx text-center">
+											<h5><a href="#">{{i.name}}</a></h5>
+											<span><a href="/uzfi/faculties/{{i.faculty.id}}">{{i.faculty.name}}</a></span>
+										</div>
+										
+									</div>
+								</div> 
+          {% endfor %}
           </div>
         </div>
       </div>
