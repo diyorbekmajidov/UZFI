@@ -35,7 +35,7 @@ urlpatterns = [
 
     path('requisites/', RequisitesApview.as_view(), name='requisites'),
 
-    path('financial_statements/', FinancialStatementsApview.as_view(), name='financial_statements'),
+    path('financial-reports/', FinancialStatementsApview.as_view(), name='financial-reports'),
 
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
 
