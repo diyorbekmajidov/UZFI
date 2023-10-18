@@ -87,7 +87,7 @@ class FacultyByIdApview(APIView):
         dekan = Dekan.objects.get(faculty = pk)
         serializers1 = GetDekanSerializer(dekan)
         serializers = FacultySerializer(faculty)
-        return render(request, 'faculties-id.html',
+        return render(request, 'faculties-item.html',
             {"faculty":serializers.data,
              "dekan": serializers1.data
              })
