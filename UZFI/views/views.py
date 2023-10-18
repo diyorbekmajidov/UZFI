@@ -25,7 +25,7 @@ class Index(TemplateView):
         serializers1 = DirectionSerializer(direction, many = True)
 
         queryset = News_Content.objects.order_by('-date_created')[:10]
-        serializer_class = NewsContentSerializer(queryset)
+        serializer_class = NewsContentSerializer(queryset , many = True)
         return render(request, 'index.html',
              {"faculty":serializers.data,
               "direction":serializers1.data,
