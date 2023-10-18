@@ -5,6 +5,7 @@ from rest_framework import status
 from UZFI.models import *
 from UZFI.serializers import *
 from News.models import *
+from News.serializers import *
 
 from django.contrib.auth.hashers import make_password
 from rest_framework.authtoken.models import Token
@@ -12,7 +13,6 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
 from django.contrib.auth import logout
-from UZFI.models.user import User
 class Register(APIView):
     def post(self, request):
         data = request.data
@@ -34,17 +34,22 @@ class Dashboard(TemplateView):
         dekan = Dekan.objects.filter(dekan=user).first()
         if dekan:
             data = News_Content.objects.filter(dekan=dekan)
-            dekan_data = Dekan.objects.get(dekan=dekan)
-            serializers = GetDekanSerializer(dekan_data)
-            return render(request, 'dashboard.html',{"data":data},{'dekan':serializers.data})
-        else :
-            return redirect('/login/')
+            serializers = UserNewsSerializer(data, many = True)
+            dekan_data = Dekan.objects.filter(dekan=user)
+            serializers1 = GetDekanSerializer(dekan_data , many = True)
+            print(serializers1.data)
+        return render(request, 'dashboard.html',
+        {'data_news':serializers.data,
+         'dekan_data':serializers1.data
+                       })
+        # else :
+        # return Response({'s':"ok"})
     
 class Login(TemplateView):
+    template_name = 'index.html'
     def get(self, request, *args, **kwargs):
-        print(self.request.user.is_authenticated)
+        print('s')
         if self.request.user.is_authenticated:
-            print(self.request.user)
             return HttpResponseRedirect(reverse_lazy('dashboard'))
         return HttpResponse('dsa')
     

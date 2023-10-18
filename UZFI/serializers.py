@@ -78,10 +78,10 @@ class DekanSerializer(serializers.ModelSerializer):
 class GetDekanSerializer(serializers.ModelSerializer):
     dekan = UserSerializer1()
     faculty = FacultySerializer1()
-    scientific_work = ScientificWorkSerializer()
+    # scientific_work = ScientificWorkSerializer()
     class Meta :
         model = Dekan
-        fields = ["id", "dekan","scientific_work", "faculty", "name", "img", "phone","address_uz","address_en","address_ru", 
+        fields = ["id", "dekan", "faculty", "name", "img", "phone","address_uz","address_en","address_ru", 
                   "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
                   "date_created", "date_update",
                   ]
