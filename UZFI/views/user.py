@@ -37,7 +37,6 @@ class Dashboard(TemplateView):
             serializers = UserNewsSerializer(data, many = True)
             dekan_data = Dekan.objects.filter(dekan=user)
             serializers1 = GetDekanSerializer(dekan_data , many = True)
-            print(serializers1.data)
         return render(request, 'dashboard.html',
         {'data_news':serializers.data,
          'dekan_data':serializers1.data
