@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Fakultet{% endblock %}
+{% block title %}UZFI  | {{data.name}}{% endblock %}
 
 {% block content %}
 
@@ -15,7 +15,7 @@
     <div class="page-banner ovbl-dark" style="background-image:url({% static "/assets/images/courses/pic1.jpg" %});">
         <div class="container">
             <div class="page-banner-entry">
-                <h1 class="text-white">{{direction.name}}</h1>
+                <h1 class="text-white">{{data.name}}</h1>
             </div>
         </div>
     </div>
@@ -31,13 +31,13 @@
             <div class="container">
 
                 <div class="container heading-bx left">
-                    <a href="/uzif/faculty/{{faculty.id}}"><strong>{{faculty.name}}</strong> fakukulteti sahifasiga tashrif buyurish </a>
+                    <a href="/uzfi/faculty/{{data.faculty.id}}"><strong>{{data.faculty.name}}</strong> fakulteti sahifasiga tashrif buyurish </a>
                 </div>
 
 
                 
                 <div>
-                    {{direction.body|safe}}
+                    {{data.about|safe}}
                 </div>
 
 
