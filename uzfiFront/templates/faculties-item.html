@@ -1,0 +1,56 @@
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}UZFI  | Fakultet{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "/assets/images/courses/pic1.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{{faculty.name}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+                <div class="container heading-bx left">
+                    <h2 class="title-head">Fakultet dekani</h2>
+                    <a href="/uzif/dekan/{{dekan.id}}"><strong>{{dekan.name}}</strong> sahifasiga tashrif buyurish </a>
+                </div>
+
+
+                
+                <div>
+                    {{faculty.body|safe}}
+                </div>
+
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}

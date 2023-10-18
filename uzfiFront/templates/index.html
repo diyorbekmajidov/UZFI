@@ -603,7 +603,7 @@
           
           {% for i in faculty%}
           <div class="col-md-6 faculty-item-bg">
-              <a href="/uzfi/faculties/{{i.id}}">
+              <a href="/uzfi/faculty/{{i.id}}/">
             <div
               class="faculty-item-hover my-3 rounded"
               style="
@@ -636,12 +636,12 @@
         <div class="row">
           <div class="col-md-12 heading-bx left">
             <h2 class="title-head">
-              Destinations <span>of the institute </span>
+              Institut <span>yo'nalishlari </span>
             </h2>
             <p>
-              Explore the rich culture of Uzbekistan and the pristine
-              natural beauty of Finland at the Institute, where East and
-              West converge to offer an unforgettable educational journey
+              O'zbekistonning boy madaniyati va beg'ubor tabiati bilan tanishing
+               Institutda Finlyandiyaning tabiiy go'zalligi, Sharqiy va
+               G'arb unutilmas ta'lim sayohatini taklif qilish uchun birlashadi
             </p>
           </div>
         </div>
@@ -654,11 +654,11 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											<img src="{% static "assets/images/courses/pic1.jpg" %}" alt="">
-											<a href="#" class="btn">Ko'proq o'qish</a>
+											<a href="/uzfi/direction/{{i.id}}/" class="btn">Ko'proq o'qish</a>
 										</div>
 										<div class="info-bx text-center">
-											<h5><a href="#">{{i.name}}</a></h5>
-											<span><a href="/uzfi/faculties/{{i.faculty.id}}">{{i.faculty.name}}</a></span>
+											<h5><a href="/uzfi/direction/{{i.id}}/">{{i.name}}</a></h5>
+											<span><a href="/uzfi/faculty/{{i.faculty.id}}/">{{i.faculty.name}}</a></span>
 										</div>
 										
 									</div>
@@ -702,8 +702,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center text-white">
-            <h2>UZBEK - FINNISH PEDAGOGICAL INSTITUTE</h2>
-            <h5>Own Your Feature Learning New Skills</h5>
+            <h2>O'ZBEKISTON - FINLANDIYA PEDAGOGIK INSTITUTI</h2>
+            <h5>Yangi ko'nikmalarni o'rganish xususiyatiga egalik qiling</h5>
             <!-- <form class="cours-search">
             <div class="input-group">
               <input type="text" class="form-control"
@@ -725,7 +725,7 @@
                     ><span class="counter">15</span>
                   </h3>
                 </div>
-                <span class="cours-search-text">15 Faculties</span>
+                <span class="cours-search-text">15 ta Fakultet</span>
               </div>
             </div>
 
@@ -738,7 +738,7 @@
                   </h3>
                 </div>
                 <span class="cours-search-text"
-                  >Over 10 thousand student</span
+                  >10 mingdan ortiq talabalar</span
                 >
               </div>
             </div>
@@ -751,7 +751,7 @@
                     ><span class="counter">17</span>
                   </h3>
                 </div>
-                <span class="cours-search-text">17 destinations</span>
+                <span class="cours-search-text">17 ta yo'nalish</span>
               </div>
             </div>
           </div>
