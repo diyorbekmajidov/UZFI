@@ -9,6 +9,7 @@ from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirec
 from django.urls import reverse_lazy
 from rest_framework.generics import ListCreateAPIView
 from News.models import *
+from News.serializers import NewsContentSerializer
 
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -22,9 +23,13 @@ class Index(TemplateView):
         serializers = FacultySerializer(faculty, many = True)
         direction  = Direction.objects.all()
         serializers1 = DirectionSerializer(direction, many = True)
+
+        queryset = News_Content.objects.order_by('-date_created')[:10]
+        serializer_class = NewsContentSerializer(queryset)
         return render(request, 'index.html',
              {"faculty":serializers.data,
               "direction":serializers1.data,
+              "news":serializer_class.data
               })
 
 class CharterApview(TemplateView):
@@ -97,7 +102,7 @@ class DirectionApview(APIView):
     def get(self, request, pk):
         direction = Direction.objects.get(id=pk)
         serializers = DirectionSerializer(direction)
-        return render(request, 'destinations-item.html',{"data":serializers.data})
+        return render(request, 'destinations-item.html',{"data":serializers.data, })
 
 class KafedraApview(APIView):
     def get(self, request):
