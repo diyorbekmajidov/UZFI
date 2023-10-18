@@ -31,18 +31,20 @@ def logout(request):
 class Dashboard(TemplateView):
     def get(self, request):
         user = self.request.user
-        dekan = Dekan.objects.filter(dekan=user).first()
-        if dekan:
+        if user.role == 'Dekan':
+            dekan = Dekan.objects.filter(dekan=user).first()
             data = News_Content.objects.filter(dekan=dekan)
             serializers = UserNewsSerializer(data, many = True)
             dekan_data = Dekan.objects.filter(dekan=user)
             serializers1 = GetDekanSerializer(dekan_data , many = True)
-        return render(request, 'dashboard.html',
-        {'data_news':serializers.data,
-         'dekan_data':serializers1.data
+            return render(request, 'dashboard.html',
+            {'data_news':serializers.data,
+            'dekan_data':serializers1.data
                        })
-        # else :
-        # return Response({'s':"ok"})
+        if user.role == 'MANAGER':
+            manager = KafedraManager.objects.filter(kafedra = user )
+
+        
     
 class Login(TemplateView):
     template_name = 'index.html'

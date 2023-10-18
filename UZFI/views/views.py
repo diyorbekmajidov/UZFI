@@ -15,7 +15,17 @@ from rest_framework.permissions import IsAuthenticated
 
 
 class Index(TemplateView):
-    template_name = 'index.html'
+    # template_name = 'index.html'
+
+    def get(self, request):
+        faculty = Faculty.objects.all()
+        serializers = FacultySerializer(faculty, many = True)
+        direction  = Direction.objects.all()
+        serializers1 = DirectionSerializer(direction, many = True)
+        return render(request, 'index.html',
+             {"faculty":serializers.data,
+              "direction":serializers1.data,
+              })
 
 class CharterApview(TemplateView):
     def get(self, request):
@@ -70,6 +80,14 @@ class FacultyApview(APIView):
         faculty = Faculty.objects.all()
         serializers = FacultySerializer(faculty, many = True)
         return render(request, '.html',{"data":serializers.data})
+    
+class FacultyByIdApview(APIView):
+    def get(self, request, pk):
+        faculty = Faculty.objects.get(id = pk)
+        dekan = Dekan.objects.get(faculty = pk)
+        serializers = FacultySerializer(faculty)
+        return Response(serializers.data)
+
 
 class DirectionListCreate(ListCreateAPIView):
     queryset = Direction.objects.all()

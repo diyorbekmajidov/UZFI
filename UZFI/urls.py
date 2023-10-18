@@ -10,6 +10,7 @@ from .views import (
     VacanciesApview,
     OpenDataApview,
     FacultyApview,
+    FacultyByIdApview,
     DirectionListCreate,
     DekanGetApiview,
     AllDekan,
@@ -42,6 +43,7 @@ urlpatterns = [
     path('opendata/', OpenDataApview.as_view(), name='opendata'),
 
     path('faculty/', FacultyApview.as_view(), name='faculty'),
+    path('faculty/<int:pk>/',FacultyByIdApview.as_view()),
 
     path('direction/', DirectionListCreate.as_view(), name='direction'),
 
