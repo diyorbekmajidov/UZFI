@@ -14,6 +14,9 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 
+class Index(TemplateView):
+    template_name = 'index.html'
+
 class CharterApview(TemplateView):
     def get(self, request):
         charter = Charter.objects.all()
