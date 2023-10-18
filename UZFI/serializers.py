@@ -81,10 +81,7 @@ class GetDekanSerializer(serializers.ModelSerializer):
     # scientific_work = ScientificWorkSerializer()
     class Meta :
         model = Dekan
-        fields = ["id", "dekan", "faculty", "name", "img", "phone","address_uz","address_en","address_ru", 
-                  "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
-                  "date_created", "date_update",
-                  ]
+        fields = '__all__'
 
 class KafedraSerializer(serializers.ModelSerializer):
     class Meta :

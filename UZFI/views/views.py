@@ -97,10 +97,11 @@ class DirectionListCreate(ListCreateAPIView):
     queryset = Direction.objects.all()
     serializer_class = DirectionSerializer
 
-class KafedraListCreate(ListCreateAPIView):
-    queryset = Kafedra.objects.all()
-    serializer_class = KafedraSerializer    
-
+class KafedraApview(APIView):
+    def get(self, request):
+        kafedra = Kafedra.objects.all()
+        serializers = KafedraSerializer(kafedra, many = True)
+        return render(request, '.html',{"data":serializers.data})
 
 class ScientificWorkAPIView(APIView):
     authentication_classes = [TokenAuthentication]
