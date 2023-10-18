@@ -39,7 +39,7 @@ class CouncilsByIdApview(APIView):
     def get(self, request, pk):
         councils = Councils.objects.get(id = pk)
         serializers = CouncilsSerializer(councils)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'councils-item.html',{"data":serializers.data})
     
 class RequisitesApview(APIView):
     def get(self, request):
