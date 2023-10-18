@@ -45,7 +45,7 @@ class RequisitesApview(APIView):
     def get(self, request):
         requisites = Requisites.objects.last()
         serializers = RequisitesSerializer(requisites)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'requesties.html',{"data":serializers.data})
 
 class FinancialStatementsApview(APIView):
     def get(self, request):
