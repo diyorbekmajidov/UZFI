@@ -93,9 +93,11 @@ class FacultyByIdApview(APIView):
              })
 
 
-class DirectionListCreate(ListCreateAPIView):
-    queryset = Direction.objects.all()
-    serializer_class = DirectionSerializer
+class DirectionApview(APIView):
+    def get(self, request, pk):
+        direction = Direction.objects.get(id=pk)
+        serializers = DirectionSerializer(direction)
+        return render(request, '.html',{"data":serializers.data})
 
 class KafedraApview(APIView):
     def get(self, request):
