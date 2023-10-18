@@ -19,7 +19,7 @@ from .views import (
     GetAllKafedraManager,
     ScientificWorkAPIView,
     Register,
-    LogOut,
+    logout,
     Login,
 
 )
@@ -55,6 +55,6 @@ urlpatterns = [
     path('kafedramanager/', KafedraManagerApview.as_view(),),
 
     path('register/', Register.as_view()),
-    path('logout/', LogOut.as_view()),
+    path('logout/', views.logout),
     path('login/', Login.as_view()),
 ]

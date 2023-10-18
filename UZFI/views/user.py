@@ -7,8 +7,8 @@ from UZFI.serializers import *
 
 from django.contrib.auth.hashers import make_password
 from rest_framework.authtoken.models import Token
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import logout
 from UZFI.models.user import User
 class Register(APIView):
     def post(self, request):
@@ -21,12 +21,9 @@ class Register(APIView):
             return Response({'token': token.key}, status=status.HTTP_201_CREATED)
         return Response(serializer.error_messages)
     
-class LogOut(APIView):
-    authentication_classes = [TokenAuthentication]
-
-    def post (self, request):
-        request.user.auth_token.delete()
-        return Response({"message": "Successfully logged out"}, status=status.HTTP_200_OK)
+def logout(request):
+    logout(request)
+    return render(request, 'endix.html')
     
 class Login(APIView):
     permission_classes = [IsAuthenticated]
@@ -37,6 +34,6 @@ class Login(APIView):
         if token:
             token[0].delete()
         token= Token.objects.create(user=user)
-        return render(request, 'registration/login.html',)
+        return render(request, 'registration/login.html',{"user":user})
     
 
