@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+
 from .views import (
     CharterApview,
     DocumentCreateApview,
@@ -28,6 +29,7 @@ from .views import (
 )
 
 urlpatterns = [
+    # path('', Index.as_view()),
     path('charter/', CharterApview.as_view(), name='charter'),
 
     path('documents/', DocumentCreateApview.as_view(), name='document'),
