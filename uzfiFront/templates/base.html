@@ -127,7 +127,7 @@
 			  <div class="topbar-right">
 				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
 					<input name="next" type="hidden" value="{{ redirect_to }}">
-					<select name="language" id="languages">
+					<select name="language">
 						{% get_current_language as LANGUAGE_CODE %}
 						{% get_available_languages as LANGUAGES %}
 						{% get_language_info_list for LANGUAGES as languages %}
@@ -137,12 +137,9 @@
 								{{ language.name_local }} ({{ language.code }})
 							</option>
 						{% endfor %}
-							<script>
-								$('#list').change(function() {
-									console.log(l)
-								});
-							</script>
+
 					</select>
+					<input type="submit" value="Go">
 				</form>
 			  </div>
 			</div>
