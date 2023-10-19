@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView,ListAPIView
+from django.views.generic import ListView
 from .models import *
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
@@ -16,20 +17,23 @@ class NewsPagination(PageNumberPagination):
     max_page_size = 10000
 
 
-class NewsCategoryListCreate(ListCreateAPIView):
+class NewsCategoryListCreate(ListCreateAPIView): 
     queryset = NewsCategory.objects.all()
     serializer_class = NewsCategorySerializer
 
 
-class NewsContentListAPIView(ListAPIView):
-    queryset = News_Content.objects.all()
-    serializer_class = NewsContentSerializer
-    pagination_class = NewsPagination
-
-    # def get(self, request, *args, **kwargs):
-    #     news_content_list = News_Content.objects.all()
-    #     serializer = NewsContentSerializer(news_content_list, many=True)
-    #     return Response(serializer.data )
+class NewsContentListAPIView(ListView):
+    # queryset = News_Content.objects.all()
+    # serializer_class = NewsContentSerializer
+    # pagination_class = NewsPagination
+    model = News_Content
+    paginate_by = 10
+    def get(self, request, *args, **kwargs):
+        
+        news_content_list = News_Content.objects.all()
+        serializer = NewsContentSerializer(news_content_list, many=True)
+        context = serializer.data
+        return render(request, '.html', {"data":serializer.data})
 
     
 

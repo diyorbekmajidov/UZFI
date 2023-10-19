@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-from UZFI.models import Dekan
+from UZFI.models import Dekan,KafedraManager,Leadership
 
 class NewsCategory(models.Model):
     new_category = models.CharField(max_length=255)
@@ -11,6 +11,8 @@ class NewsCategory(models.Model):
 class News_Content(models.Model):
     yangiliklar   = models.ManyToManyField(NewsCategory)
     dekan         = models.ForeignKey(Dekan, on_delete=models.CASCADE, blank=True, null=True)
+    kafedramanager= models.ForeignKey(KafedraManager, on_delete=models.CASCADE, blank=True, null = True)
+    Leadership    = models.ForeignKey(Leadership, on_delete=models.CASCADE, blank=True, null = True)
     title         = models.CharField(max_length=255)
     img           = models.ImageField(upload_to='img/')
     body          = RichTextUploadingField()
