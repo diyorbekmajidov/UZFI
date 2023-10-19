@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -123,16 +125,20 @@
 				</ul>
 			  </div>
 			  <div class="topbar-right">
-				<ul>
-				  <li>
-					<select class="header-lang-bx">
-					  <option data-icon="flag flag-uk">English</option>
-					  <option data-icon="flag flag-uz"><a href='{{path}}?lang=uz'>O'zbekcha</a></option>
-					  <option data-icon="flag flag-ru"><a href='{{path}}?lang=ru'>Ruscha</a></option>
+				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+					<input name="next" type="hidden" value="{{ redirect_to }}">
+					<select name="language">
+						{% get_current_language as LANGUAGE_CODE %}
+						{% get_available_languages as LANGUAGES %}
+						{% get_language_info_list for LANGUAGES as languages %}
+						{% for language in languages %}
+							<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+								{{ language.name_local }} ({{ language.code }})
+							</option>
+						{% endfor %}
 					</select>
-				  </li>
-				  <li><a href="/accounts/login/">Kirish</a></li>
-				</ul>
+					<input type="submit" value="Go">
+				</form>
 			  </div>
 			</div>
 		  </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-16 16:50+0500\n"
+"POT-Creation-Date: 2023-10-19 13:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: uzfiFront/templates/en/index.html:231
+#: uzfiFront/templates/index.html:231
 msgid "  READ MORE "
 msgstr "Hammasini o'qish"
 

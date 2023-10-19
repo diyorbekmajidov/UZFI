@@ -30,21 +30,21 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('uzfi/', include('UZFI.urls')),
-    path('news/', include('News.urls')),
+    # path('uzfi/', include('UZFI.urls')),
+    # path('news/', include('News.urls')),
 
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-]
-# ]+i18n_patterns (
-#     path('i18n/', include('django.conf.urls.i18n')),
-#     path('uzfi/', include('UZFI.urls')),
-#     path('news/', include('News.urls'))
-# )
-urlpatterns=[
-    *i18n_patterns(*urlpatterns, prefix_default_language=False),
-    ]
+
+]+i18n_patterns (
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('uzfi/', include('UZFI.urls')),
+    path('news/', include('News.urls'))
+)
+# urlpatterns=[
+#     *i18n_patterns(*urlpatterns, prefix_default_language=False),
+#     ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
