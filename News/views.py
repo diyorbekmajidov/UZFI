@@ -33,7 +33,7 @@ class NewsContentListAPIView(ListView):
         news_content_list = News_Content.objects.all()
         serializer = NewsContentSerializer(news_content_list, many=True)
         context = serializer.data
-        return render(request, '.html', {"data":serializer.data})
+        return render(request, 'news.html', {"data":serializer.data})
 
     
 
