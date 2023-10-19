@@ -138,12 +138,12 @@
 						{% endfor %}
 					</select>
 					 <script>
-						$('select[name="language"]').change(function() {
-							console.log("Hello")
+						$('select[name="language"]').change(function(e) {
 							  const url = window.location.href;
 							  const languageCode = url.match(/\/([a-z]{2})\//)[1];
-							  const newurl = url.replace('/' + languageCode + '/', '/' + (languageCode === 'uz' ? 'ru' : 'uz') + '/');
-							  window.location.href = newurl;
+							  let newurl = this.value;
+							  if (languageCode == newurl) {console.log('Default')}
+							  else {window.location.href = url.replace('/' + languageCode + '/', '/' + newurl + '/')}
 						});
 					  </script>
 				</form>
