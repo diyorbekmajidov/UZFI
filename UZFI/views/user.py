@@ -48,12 +48,11 @@ class Dashboard(TemplateView):
             {'data_news':serializers.data,
                        })
 
-        
+        return render(request, 'dashboard.html')
     
 class Login(TemplateView):
     template_name = 'index.html'
     def get(self, request, *args, **kwargs):
-        print('s')
         if self.request.user.is_authenticated:
             return HttpResponseRedirect(reverse_lazy('dashboard'))
         return HttpResponse('dsa')

@@ -12,10 +12,11 @@ class News_Content(models.Model):
     yangiliklar   = models.ManyToManyField(NewsCategory)
     dekan         = models.ForeignKey(Dekan, on_delete=models.CASCADE, blank=True, null=True)
     title         = models.CharField(max_length=255)
+    img           = models.ImageField(upload_to='img/')
     body          = RichTextUploadingField()
     views         = models.IntegerField(default=0)
-    date_created  = models.DateTimeField(auto_now_add=True)
-    date_update   = models.DateField(auto_now=True)
+    date_created  = models.DateField(auto_now_add=True)
+    date_update   = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.title
