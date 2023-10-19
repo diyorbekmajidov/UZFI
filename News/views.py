@@ -11,7 +11,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 
 class NewsPagination(PageNumberPagination):
-    page_size = 10
+    page_size = 1
     page_size_query_param = 'page_size'
     max_page_size = 10000
 
@@ -25,6 +25,12 @@ class NewsContentListAPIView(ListAPIView):
     queryset = News_Content.objects.all()
     serializer_class = NewsContentSerializer
     pagination_class = NewsPagination
+
+    # def get(self, request, *args, **kwargs):
+    #     news_content_list = News_Content.objects.all()
+    #     serializer = NewsContentSerializer(news_content_list, many=True)
+    #     return Response(serializer.data )
+
     
 
 class NewsContentApiviewGet(APIView):

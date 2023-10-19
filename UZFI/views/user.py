@@ -31,7 +31,7 @@ def logout(request):
 class Dashboard(TemplateView):
     def get(self, request):
         user = self.request.user
-        if user.role == 'Dekan':
+        if user.role == 'DEKAN':
             dekan = Dekan.objects.filter(dekan=user).first()
             data = News_Content.objects.filter(dekan=dekan)
             serializers = UserNewsSerializer(data, many = True)

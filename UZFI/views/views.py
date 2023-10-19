@@ -15,13 +15,11 @@ from rest_framework.permissions import IsAuthenticated
 
 
 class Index(TemplateView):
-
     def get(self, request):
         faculty = Faculty.objects.all()
         serializers = FacultySerializer(faculty, many = True)
         direction  = Direction.objects.all()
         serializers1 = DirectionSerializer(direction, many = True)
-
         queryset = News_Content.objects.order_by('-date_created')[:10]
         serializer_class = NewsContentSerializer(queryset , many = True)
         return render(request, 'index.html',
