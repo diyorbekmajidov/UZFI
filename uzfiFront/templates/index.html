@@ -785,7 +785,7 @@
                 <div class="info-bx d-flex">
                   <div>
                     <div class="event-time">
-                      <div class="event-date">29</div>
+                      <div class="event-date"></div>
                       <div class="event-month">{{i.date_created}}</div>
                     </div>
                   </div>
@@ -794,22 +794,20 @@
                       <a href="/uzfi/news/{{i.id}}">{{i.title}}</a>
                     </h4>
                     <ul class="media-post">
-                      <li>
-                        <a href="#"
-                          ><i class="fa fa-clock-o"></i> 7:00am 8:00am</a
-                        >
-                      </li>
-                      <li>
+                       <li>
+                          <i class="fa fa-eye" aria-hidden="true"></i> {{i.views}}
+                      </li> 
+                      {% comment %} <li>
                         <a href="#"
                           ><i class="fa fa-map-marker"></i> Berlin,
                           Germany</a
                         >
-                      </li>
+                      </li> {% endcomment %}
                     </ul>
                     <p>
-                      <div class="text-center">
-                        <a href="/news.html" class="btn">Yangilikni o'qish</a>
-                      </div>
+                      {% comment %} <div class="text-center">
+                        <a href="/uzfi/news/{{i.id}}/" class="btn">Yangilikni o'qish</a>
+                      </div> {% endcomment %}
                     </p>
                   </div>
                 </div>
@@ -819,7 +817,7 @@
           </div>
         </div>
         <div class="text-center">
-          <a href="/news.html" class="btn">Barcha yangiliklarni ko'rish</a>
+          <a href="/uzfi/news/" class="btn">Barcha yangiliklarni ko'rish</a>
         </div>
       </div>
     </div>
