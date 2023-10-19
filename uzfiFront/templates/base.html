@@ -127,19 +127,25 @@
 			  <div class="topbar-right">
 				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
 					<input name="next" type="hidden" value="{{ redirect_to }}">
-					<select name="language">
+					<select name="language" class="header-lang-bx">
 						{% get_current_language as LANGUAGE_CODE %}
 						{% get_available_languages as LANGUAGES %}
 						{% get_language_info_list for LANGUAGES as languages %}
-
 						{% for language in languages %}
-							<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-								{{ language.name_local }} ({{ language.code }})
+							<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}  data-icon="flag flag-{{language.code}}">
+								{{ language.code }}
 							</option>
 						{% endfor %}
-
 					</select>
-					<input type="submit" value="Go">
+					 <script>
+						$('select[name="language"]').change(function() {
+							console.log("Hello")
+							  const url = window.location.href;
+							  const languageCode = url.match(/\/([a-z]{2})\//)[1];
+							  const newurl = url.replace('/' + languageCode + '/', '/' + (languageCode === 'uz' ? 'ru' : 'uz') + '/');
+							  window.location.href = newurl;
+						});
+					  </script>
 				</form>
 			  </div>
 			</div>

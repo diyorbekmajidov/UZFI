@@ -153,6 +153,7 @@
 	color: #000;
 }
 
+
 .header-lang-bx .dropdown-menu {
 	top: 10px !important;
 	right: 0;
@@ -174,7 +175,7 @@
 	margin-right: 2px;
 }
 
-.header-lang-bx .flag.flag-uk:after {
+.header-lang-bx .flag.flag-en:after {
 	background-image: url(../images/flag/united-kingdom.svg);
 }
 
