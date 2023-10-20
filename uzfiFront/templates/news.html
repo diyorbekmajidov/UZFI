@@ -28,19 +28,12 @@
     <div class="section-area section-sp1 gallery-bx">
       <div class="container">
         <div class="feature-filters clearfix center m-b40">
-          <ul class="filters" data-toggle="buttons">
-            <li data-filter="" class="btn active">
-              <input type="radio" />
-              <a href="#"><span>All</span></a>
-            </li>
-
-            {% for i in data.yangiliklar %}
-            <li data-filter="happening" class="btn">
-              <input type="radio" />
-              <a href="#"><span>Happening</span></a>
-            </li>
-            {% endfor %}
-          </ul>
+          {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
+              {% for i in category %}
+                <a href="/news/content/{{i.id}}">{{i.new_category}}</a>
+              
+              {% endfor %}
+          {% comment %} </ul> {% endcomment %}
         </div>
         <div class="clearfix">
           <ul id="masonry" class="ttr-gallery-listing magnific-image row">
