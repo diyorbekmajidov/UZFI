@@ -16,16 +16,7 @@ class NewsContentSerializer(serializers.ModelSerializer):
     def get_category(self, obj):
         return [x.new_category for x in obj.category.all() ]
     
-class NewsBycotegorySerializer(serializers.ModelSerializer):
-    category = serializers.SerializerMethodField()
 
-    class Meta:
-        models = News_Content
-        fields = ('id','category', 'news_title','news_content')
-
-    def get_category(self, obj):
-        categories = obj.category.all()
-        return [category.name for category in categories]
 class UserNewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News_Content
