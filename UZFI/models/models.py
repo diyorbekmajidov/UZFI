@@ -129,7 +129,7 @@ class CentersDepartments(models.Model):
         return self.name
     
 class CentersDepartmentsManager(models.Model):
-    centers_departments = models.ForeignKey(CentersDepartments, on_delete=models.CASCADE)
+    centers_departments = models.OneToOneField(CentersDepartments, on_delete=models.CASCADE)
     name                = models.CharField(max_length=100)
     email               = models.CharField(max_length=100)
     phone               = models.CharField(max_length=100)
