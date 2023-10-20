@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
+from rest_framework.response import Response
 from rest_framework.generics import ListCreateAPIView,ListAPIView
 from django.views.generic import ListView
 from .models import *
@@ -31,7 +32,13 @@ class NewsContentListAPIView(ListView):
             "page_obj":page.page(int(request.GET.get('page', 1)))
                     })
 
-# class NewsContentCategoryAPIView(ListView):
+class NewsContentCategoryAPIView(ListView):
+    def get(self, request, category):
+        data = News_Content.objects.filter(category__exact=category)
+        print(data)
+        return Response({"ok":200})
+
+
 
 
 class NewsContentApiviewGet(TemplateView):
@@ -41,7 +48,7 @@ class NewsContentApiviewGet(TemplateView):
         news_content.views = views
         news_content.save()
         serializer = NewsContentSerializer(news_content)
-        return render(request, '.html', {"data":serializer.data,})
+        return render(request, 'news-item.html', {"data":serializer.data,})
 
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]
