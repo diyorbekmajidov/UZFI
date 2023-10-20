@@ -78,7 +78,6 @@ class DekanSerializer(serializers.ModelSerializer):
 class GetDekanSerializer(serializers.ModelSerializer):
     dekan = UserSerializer1()
     faculty = FacultySerializer1()
-    # scientific_work = ScientificWorkSerializer()
     class Meta :
         model = Dekan
         fields = '__all__'
@@ -98,12 +97,15 @@ class KafedraManagerSerializer(serializers.ModelSerializer):
         model = KafedraManager
         fields = "__all__"
         
-
 class GetKafedraManagerSerializer(serializers.ModelSerializer):
     kafedramanager = UserSerializer1()
     kafedra = KafedraSerializer1()
-    scientific_work = ScientificWorkSerializer()
+    # scientific_work = ScientificWorkSerializer()
     class Meta :
         model = KafedraManager
         fields = "__all__"
 
+class LeadershipSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = Leadership
+        fields = "__all__"

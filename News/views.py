@@ -1,13 +1,10 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
-from django.urls import reverse_lazy
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView,ListAPIView
 from django.views.generic import ListView
 from .models import *
 from .serializers import *
+from django.core.paginator import Paginator
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 
@@ -23,19 +20,17 @@ class NewsCategoryListCreate(ListCreateAPIView):
 
 
 class NewsContentListAPIView(ListView):
-    # queryset = News_Content.objects.all()
-    # serializer_class = NewsContentSerializer
-    # pagination_class = NewsPagination
-    model = News_Content
-    paginate_by = 10
+    
     def get(self, request, *args, **kwargs):
         category = NewsCategory.objects.all()
+        page = Paginator(category, 3)
         serializer1 = NewsCategorySerializer(category, many = True)
         news_content_list = News_Content.objects.all()
         serializer = NewsContentSerializer(news_content_list, many=True)
         return render(request, 'news.html', {
             "data":serializer.data,
             "category":serializer1.data,
+            "page_obj":page.page(int(request.GET.get(' page')))
                     })
 
     
