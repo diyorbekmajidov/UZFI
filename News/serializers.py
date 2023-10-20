@@ -13,7 +13,7 @@ class NewsContentSerializer(serializers.ModelSerializer):
         model = News_Content
         fields = '__all__'
 
-    def get_yangiliklar(self, obj):
+    def get_category(self, obj):
         return [x.new_category for x in obj.category.all() ]
     
 class NewsBycotegorySerializer(serializers.ModelSerializer):
