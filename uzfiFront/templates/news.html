@@ -1,197 +1,96 @@
-{% extends "base.html" %}
-
-{% block title %}UZFI{% endblock %}
-
-{% block content %}
-
-{% load static %}
-{% load i18n %}
+{% extends "base.html" %} {% block title %}UZFI{% endblock %} {% block content %} {% load static %} {% load i18n %}
 
 <div class="page-content bg-white">
-    <!-- inner page banner -->
-    <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner2.jpg);">
-        <div class="container">
-            <div class="page-banner-entry">
-                <h1 class="text-white">Events</h1>
-             </div>
-        </div>
+  <!-- inner page banner -->
+  <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({% static "assets/images/645361781b285.jpg" %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">Yangiliklar</h1>
+      </div>
     </div>
-    <!-- Breadcrumb row -->
-    <div class="breadcrumb-row">
-        <div class="container">
-            <ul class="list-inline">
-                <li><a href="#">Home</a></li>
-                <li>Events</li>
-            </ul>
-        </div>
+  </div>
+  <!-- Breadcrumb row -->
+  <div class="breadcrumb-row">
+    <div class="container">
+      <ul class="list-inline">
+        <li><a href="#">Home</a></li>
+        <li>Events</li>
+      </ul>
     </div>
-    <!-- Breadcrumb row END -->
-    <!-- contact area -->
-    <div class="content-block">
-        <!-- Portfolio  -->
-        <div class="section-area section-sp1 gallery-bx">
-            <div class="container">
-                <div class="feature-filters clearfix center m-b40">
-                    <ul class="filters" data-toggle="buttons">
-                        <li data-filter="" class="btn active">
-                            <input type="radio">
-                            <a href="#"><span>All</span></a> 
-                        </li>
-                        
-                        {% for i in data.yangiliklar %}
-                        <li data-filter="happening" class="btn">
-                            <input type="radio">
-                            <a href="#"><span>Happening</span></a> 
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="clearfix">
-                    <ul id="masonry" class="ttr-gallery-listing magnific-image row">
-                        <li class="action-card col-lg-6 col-md-6 col-sm-12 happening">
-                            <div class="event-bx m-b30">
-                                <div class="action-box">
-                                    <img src="assets/images/event/pic1.jpg" alt="">
-                                </div>
-                                <div class="info-bx d-flex">
-                                    <div>
-                                        <div class="event-time">
-                                            <div class="event-date">29</div>
-                                            <div class="event-month">October</div>
-                                        </div>
-                                    </div>
-                                    <div class="event-info">
-                                        <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-                                        </ul>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="action-card col-lg-6 col-md-6 col-sm-12 upcoming">
-                            <div class="event-bx m-b30">
-                                <div class="action-box">
-                                    <img src="assets/images/event/pic2.jpg" alt="">
-                                </div>
-                                <div class="info-bx d-flex">
-                                    <div>
-                                        <div class="event-time">
-                                            <div class="event-date">29</div>
-                                            <div class="event-month">October</div>
-                                        </div>
-                                    </div>
-                                    <div class="event-info">
-                                        <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-                                        </ul>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="action-card col-lg-6 col-md-6 col-sm-12  upcoming">
-                            <div class="event-bx m-b30">
-                                <div class="action-box">
-                                    <img src="assets/images/event/pic3.jpg" alt="">
-                                </div>
-                                <div class="info-bx d-flex">
-                                    <div>
-                                        <div class="event-time">
-                                            <div class="event-date">29</div>
-                                            <div class="event-month">October</div>
-                                        </div>
-                                    </div>
-                                    <div class="event-info">
-                                        <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-                                        </ul>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="action-card col-lg-6 col-md-6 col-sm-12 happening">
-                            <div class="event-bx m-b30">
-                                <div class="action-box">
-                                    <img src="assets/images/event/pic4.jpg" alt="">
-                                </div>
-                                <div class="info-bx d-flex">
-                                    <div>
-                                        <div class="event-time">
-                                            <div class="event-date">29</div>
-                                            <div class="event-month">October</div>
-                                        </div>
-                                    </div>
-                                    <div class="event-info">
-                                        <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-                                        </ul>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="action-card col-lg-6 col-md-6 col-sm-12 expired">
-                            <div class="event-bx m-b30">
-                                <div class="action-box">
-                                    <img src="assets/images/event/pic2.jpg" alt="">
-                                </div>
-                                <div class="info-bx d-flex">
-                                    <div>
-                                        <div class="event-time">
-                                            <div class="event-date">29</div>
-                                            <div class="event-month">October</div>
-                                        </div>
-                                    </div>
-                                    <div class="event-info">
-                                        <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-                                        </ul>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="action-card col-lg-6 col-md-6 col-sm-12 happening">
-                            <div class="event-bx m-b30">
-                                <div class="action-box">
-                                    <img src="assets/images/event/pic1.jpg" alt="">
-                                </div>
-                                <div class="info-bx d-flex">
-                                    <div>
-                                        <div class="event-time">
-                                            <div class="event-date">29</div>
-                                            <div class="event-month">October</div>
-                                        </div>
-                                    </div>
-                                    <div class="event-info">
-                                        <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
-                                        <ul class="media-post">
-                                            <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
-                                            <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a></li>
-                                        </ul>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  </div>
+  <!-- Breadcrumb row END -->
+  <!-- contact area -->
+  <div class="content-block">
+    <!-- Portfolio  -->
+    <div class="section-area section-sp1 gallery-bx">
+      <div class="container">
+        <div class="feature-filters clearfix center m-b40">
+          <ul class="filters" data-toggle="buttons">
+            <li data-filter="" class="btn active">
+              <input type="radio" />
+              <a href="#"><span>All</span></a>
+            </li>
+
+            {% for i in data.yangiliklar %}
+            <li data-filter="happening" class="btn">
+              <input type="radio" />
+              <a href="#"><span>Happening</span></a>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
+        <div class="clearfix">
+          <ul id="masonry" class="ttr-gallery-listing magnific-image row">
+            {% for i in data %}
+            <li class="action-card col-lg-6 col-md-6 col-sm-12 happening">
+                <div class="event-bx news-content">
+                    <div class="action-box">
+                      <img
+                        src="{{i.img}}"
+                        alt=""
+                      /> 
+                    </div>
+                    <div class="info-bx d-flex">
+                      <div>
+                        <div class="event-time">
+                          <div class="event-date"></div>
+                          <div class="event-month">{{i.date_created}}</div>
+                        </div>
+                      </div>
+                      <div class="event-info">
+                        <h4 class="event-title">
+                          <a href="/news/content/{{i.id}}">{{i.title}}</a>
+                        </h4>
+                        <ul class="media-post">
+                           <li>
+                              <i class="fa fa-eye" aria-hidden="true"></i> {{i.views}}
+                          </li> 
+                          {% comment %} <li>
+                            <a href="#"
+                              ><i class="fa fa-map-marker"></i> Berlin,
+                              Germany</a
+                            >
+                          </li> {% endcomment %}
+                        </ul>
+                        <p>
+                          {% comment %} <div class="text-center">
+                            <a href="/uzfi/news/{{i.id}}/" class="btn">Yangilikni o'qish</a>
+                          </div> {% endcomment %}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- contact area END -->
+  </div>
+  <!-- contact area END -->
 </div>
 
 {% endblock %}

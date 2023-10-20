@@ -2599,6 +2599,11 @@ button.back-to-top {
 /* Event Box */
 .event-bx {
 	box-shadow: 0 0 15px 0 rgba(29, 25, 0, 0.25);
+	transition: .3s;
+	cursor: pointer;
+}
+.event-bx.news-content:hover {
+	transform: translateY(-3px);
 }
 
 .upcoming-event-carousel {
