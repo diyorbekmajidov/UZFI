@@ -23,14 +23,12 @@ class NewsContentListAPIView(ListView):
     
     def get(self, request, *args, **kwargs):
         category = NewsCategory.objects.all()
-        page = Paginator(category, 3)
+        news_content = News_Content.objects.all()
+        page = Paginator(news_content, 2)
         serializer1 = NewsCategorySerializer(category, many = True)
-        news_content_list = News_Content.objects.all()
-        serializer = NewsContentSerializer(news_content_list, many=True)
         return render(request, 'news.html', {
-            "data":serializer.data,
             "category":serializer1.data,
-            "page_obj":page.page(int(request.GET.get(' page')))
+            "page_obj":page.page(int(request.GET.get('page')))
                     })
 
     
