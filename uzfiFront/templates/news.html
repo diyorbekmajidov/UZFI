@@ -31,7 +31,6 @@
           {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
               {% for i in category %}
                 <a href="/news/content/{{i.id}}">{{i.new_category}}</a>
-              
               {% endfor %}
           {% comment %} </ul> {% endcomment %}
         </div>
@@ -80,6 +79,25 @@
             {% endfor %}
           </ul>
         </div>
+
+        <div class="pagination-bx rounded-sm gray clearfix">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Prev</a></li>
+                {% endif %}
+
+                {% for I in page_obj.pagination.page_range %}
+                    <script>
+                        console.log("HELLO")
+                    </script>
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <li class="next"><a href="{{ page_obj.next_page_number }}">Next <i class="ti-arrow-right"></i></a></li>
+                {% endif %}
+            </ul>
+        </div>
+
       </div>
     </div>
   </div>
