@@ -4102,3 +4102,7 @@ button.back-to-top {
 .councils-item:hover {
 	transform: translateY(-3px);
 }
+
+#masonry {
+	list-style-type: none!important;
+}
