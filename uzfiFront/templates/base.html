@@ -125,28 +125,36 @@
 				</ul>
 			  </div>
 			  <div class="topbar-right">
-				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-					<input name="next" type="hidden" value="{{ redirect_to }}">
-					<select name="language" class="header-lang-bx">
-						{% get_current_language as LANGUAGE_CODE %}
-						{% get_available_languages as LANGUAGES %}
-						{% get_language_info_list for LANGUAGES as languages %}
-						{% for language in languages %}
-							<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}  data-icon="flag flag-{{language.code}}">
-								{{ language.code }}
-							</option>
-						{% endfor %}
-					</select>
-					 <script>
-						$('select[name="language"]').change(function(e) {
-							  const url = window.location.href;
-							  const languageCode = url.match(/\/([a-z]{2})\//)[1];
-							  let newurl = this.value;
-							  if (languageCode == newurl) {console.log('Default')}
-							  else {window.location.href = url.replace('/' + languageCode + '/', '/' + newurl + '/')}
-						});
-					  </script>
-				</form>
+				<ul>
+					<li>
+						<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+							<input name="next" type="hidden" value="{{ redirect_to }}">
+							<select name="language" class="header-lang-bx">
+								{% get_current_language as LANGUAGE_CODE %}
+								{% get_available_languages as LANGUAGES %}
+								{% get_language_info_list for LANGUAGES as languages %}
+								{% for language in languages %}
+									<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}  data-icon="flag flag-{{language.code}}">
+										{{ language.code }}
+									</option>
+								{% endfor %}
+							</select>
+							<script>
+								$('select[name="language"]').change(function(e) {
+									const url = window.location.href;
+									const languageCode = url.match(/\/([a-z]{2})\//)[1];
+									let newurl = this.value;
+									if (languageCode == newurl) {console.log('Default')}
+									else {window.location.href = url.replace('/' + languageCode + '/', '/' + newurl + '/')}
+								});
+							</script>
+						</form>
+					</li>
+					<li>
+                        <li><a href="/accounts/login/">Kirish</a></li>
+					</li>
+				</ul>
+				
 			  </div>
 			</div>
 		  </div>
