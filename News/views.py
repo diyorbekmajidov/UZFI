@@ -48,7 +48,10 @@ class NewsContentApiviewGet(TemplateView):
         news_content.views = views
         news_content.save()
         serializer = NewsContentSerializer(news_content)
-        return render(request, 'news-item.html', {"data":serializer.data,})
+        queryset = News_Content.objects.order_by('-date_created')[:10]
+        serializer_class = NewsContentSerializer(queryset , many = True)
+        return render(request, 'news-item.html', {"data":serializer.data,
+                                                  "latest":serializer_class.data})
 
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]
