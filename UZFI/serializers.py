@@ -1,7 +1,5 @@
 from rest_framework import serializers
 from .models import *
-
-
 class CharterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Charter
@@ -100,7 +98,6 @@ class KafedraManagerSerializer(serializers.ModelSerializer):
 class GetKafedraManagerSerializer(serializers.ModelSerializer):
     kafedramanager = UserSerializer1()
     kafedra = KafedraSerializer1()
-    # scientific_work = ScientificWorkSerializer()
     class Meta :
         model = KafedraManager
         fields = "__all__"
@@ -108,4 +105,10 @@ class GetKafedraManagerSerializer(serializers.ModelSerializer):
 class LeadershipSerializer(serializers.ModelSerializer):
     class Meta :
         model = Leadership
+        fields = "__all__"
+
+
+class CentersDepartmentsSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = CentersDepartments
         fields = "__all__"
