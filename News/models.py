@@ -12,7 +12,7 @@ class News_Content(models.Model):
     category      = models.ManyToManyField(NewsCategory)
     dekan         = models.ForeignKey(Dekan, on_delete=models.CASCADE, blank=True, null=True)
     kafedramanager= models.ForeignKey(KafedraManager, on_delete=models.CASCADE, blank=True, null = True)
-    Leadership    = models.ForeignKey(Leadership, on_delete=models.CASCADE, blank=True, null = True)
+    leadership    = models.ForeignKey(Leadership, on_delete=models.CASCADE, blank=True, null = True)
     title         = models.CharField(max_length=255)
     img           = models.ImageField(upload_to='img/')
     body          = RichTextUploadingField()
