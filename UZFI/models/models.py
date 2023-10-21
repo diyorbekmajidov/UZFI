@@ -135,7 +135,7 @@ class CentersDepartmentsManager(models.Model):
     phone               = models.CharField(max_length=100)
     address             = models.CharField(max_length=100)
     img                 = models.ImageField(upload_to='img/')
-    Tasks               = RichTextUploadingField()
+    tasks               = RichTextUploadingField()
     date_created        = models.DateTimeField(auto_now_add=True)
     date_update         = models.DateTimeField(auto_now=True)
 

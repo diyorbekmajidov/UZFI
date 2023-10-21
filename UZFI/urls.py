@@ -23,6 +23,7 @@ from .views import (
     ScientificWorkAPIView,
     Register,
     logout,
+    CentersDepartmentApiView,
     Login,
     Dashboard
 
@@ -44,6 +45,8 @@ urlpatterns = [
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
 
     path('opendata/', OpenDataApview.as_view(), name='opendata'),
+
+    path('centersdepartment/', CentersDepartmentApiView.as_view()),
 
     path('faculty/', FacultyApview.as_view(), name='faculty'),
     path('faculty/<int:pk>/',FacultyByIdApview.as_view()),

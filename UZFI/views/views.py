@@ -5,8 +5,7 @@ from django.views.generic import TemplateView
 from rest_framework import status
 from UZFI.models.models import *
 from UZFI.serializers import *
-from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
-from django.urls import reverse_lazy
+from django.shortcuts import render
 from News.models import *
 from News.serializers import NewsContentSerializer
 
@@ -105,6 +104,12 @@ class KafedraApview(APIView):
         kafedra = Kafedra.objects.all()
         serializers = KafedraSerializer(kafedra, many = True)
         return render(request, '.html',{"data":serializers.data})
+
+class CentersDepartmentApiView(APIView):
+    def get(self, request):
+        centers_department = CentersDepartments.objects.all()
+        serializers = CentersDepartmentsSerializer(centers_department, many = True)
+        return Response({"ok":serializers.data})
 
 class ScientificWorkAPIView(APIView):
     authentication_classes = [TokenAuthentication]

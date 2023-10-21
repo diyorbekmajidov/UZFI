@@ -69,3 +69,11 @@ class ScientificWorkAdmin(TranslationAdmin):
 @admin.register(Leadership)
 class LeadershipAdmin(TranslationAdmin):
     list_display = ("address","acceptance","biography")
+
+@admin.register(CentersDepartments)
+class CentersDepartmentAdmin(TranslationAdmin):
+    list_display = ("name","body")
+
+@admin.register(CentersDepartmentsManager)
+class CentersDepartmentManagerAdmin(TranslationAdmin):
+    list_display = ("address","tasks")

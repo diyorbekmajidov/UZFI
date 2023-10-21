@@ -13,7 +13,9 @@ from .models import (
     Kafedra,
     KafedraManager,
     ScientificWork,
-    Leadership
+    Leadership,
+    CentersDepartments,
+    CentersDepartmentsManager
 )
 
 @register(OpenData)
@@ -38,11 +40,11 @@ class DocumentTranslationOptions(TranslationOptions):
 
 @register(Councils)
 class CouncilsTranslationOptions(TranslationOptions):
-    fields = ('title','body')
+    fields = ('title','body',)
 
 @register(Requisites)
 class RequisitesTranslationOptions(TranslationOptions):
-    fields = ('unversit_name','address')
+    fields = ('unversit_name','address',)
 
 @register(Faculty)
 class FacultyTranslationOptions(TranslationOptions):
@@ -50,7 +52,7 @@ class FacultyTranslationOptions(TranslationOptions):
 
 @register(Dekan)
 class DekanTranslationOptions(TranslationOptions):
-    fields = ('acceptance','address','duties')
+    fields = ('acceptance','address','duties',)
 
 @register(Kafedra)
 class KafedraTranslationOptions(TranslationOptions):
@@ -58,7 +60,7 @@ class KafedraTranslationOptions(TranslationOptions):
 
 @register(KafedraManager)
 class KafedraManagerTranslationOptions(TranslationOptions):
-    fields = ('acceptance','address','duties')
+    fields = ('acceptance','address','duties',)
 
 
 @register(Direction)
@@ -71,4 +73,12 @@ class ScientificWorkTranslationOptions(TranslationOptions):
 
 @register(Leadership)
 class LeadershipTranslationOptions(TranslationOptions):
-    fields = ("address","acceptance","biography")
+    fields = ("address","acceptance","biography",)
+
+@register(CentersDepartments)
+class CentersDepartmentTranslationOptions(TranslationOptions):
+    fields = ("name","body",)
+
+@register(CentersDepartmentsManager)
+class CentersDepartmentsManagerTranslationOptions(TranslationOptions):
+    fields = ("address", "tasks",)
