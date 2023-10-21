@@ -44,8 +44,22 @@ class Dashboard(TemplateView):
         if user.role == 'MANAGER':
             manager = KafedraManager.objects.filter(kafedra = user )
             serializers = GetKafedraManagerSerializer(manager , many = True)
+            data_news = News_Content.objects.filter(kafedramanager=manager)
+            serializers1 = UserNewsSerializer(data_news, many = True)
             return render(request, 'dashboard.html',
-            {'data_news':serializers.data,
+            {'data_news':serializers1.data,
+             'kafedramanger':serializers.data,
+                       })
+        
+        if user.role == 'REKTOR':
+            rector = Leadership.objects.filter(rector=user).first()
+            serializers = LeadershipSerializer(rector)
+
+            data_news =  News_Content.objects.filter(leadership=rector)
+            serializers1 = UserNewsSerializer(data_news, many = True)
+            return render(request, 'dashboard.html',
+            {'rector':serializers.data,
+             'data_news':serializers1.data,
                        })
 
         return render(request, 'dashboard.html')
