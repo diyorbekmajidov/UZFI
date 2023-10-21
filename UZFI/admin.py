@@ -13,7 +13,6 @@ class MyUserAdmin(UserAdmin):
     )
 
 admin.site.register(User,MyUserAdmin)
-admin.site.register(Leadership)
 
 @admin.register(OpenData)
 class OpenDataAdmin(TranslationAdmin):
@@ -66,3 +65,7 @@ class DirectionAdmin(TranslationAdmin):
 @admin.register(ScientificWork)
 class ScientificWorkAdmin(TranslationAdmin):
     list_display = ("article_name","article_level",)
+
+@admin.register(Leadership)
+class LeadershipAdmin(TranslationAdmin):
+    list_display = ("address","acceptance","biography")
