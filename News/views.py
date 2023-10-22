@@ -37,8 +37,8 @@ class NewsContentCategoryAPIView(ListView):
         cat = NewsCategory.objects.filter(new_category=category).last()
         data = News_Content.objects.filter(category=cat)
         page = Paginator(data, 10)
-        # serializers = NewsContentSerializer(data, many = True)
-        return render(request, '.html', {"page_obj":page.page(int(request.GET.get('page', 1)))
+        page_num = int(request.GET.get('page', 1))
+        return render(request, '.html', {"page_obj":page.page(page_num)
                     })
 
 
