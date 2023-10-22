@@ -6,6 +6,7 @@
 
 {% load static %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <div class="page-content bg-white">
     <!-- inner page banner -->
@@ -41,15 +42,12 @@
                             <div class="profile-info">
                                 <h4>{{dekan_data.name}}</h4>
                                 <script>console.log("{{dekan_data.dekan.img}}")</script>
-                                <span>mark.example@info.com</span>
+                                <span>{{dekan_data.email}}</span>
                             </div>
                             <div class="profile-social">
-                                <ul class="list-inline m-a0">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
+                                {% if dekan_data.faculty %}
+                                    <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{dekan_data.faculty.id}}/">{{dekan_data.faculty.name}}</a>
+                                {% endif %}
                             </div>
                             <div class="profile-tabnav">
                                 <ul class="nav nav-tabs">
@@ -78,16 +76,18 @@
                     <div class="col-lg-9 col-md-8 col-sm-12 m-b30">
                         <div class="profile-info">
                             <div class="profile-info-head">
-                                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">Missions</button>
-                                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">Biography</button>
+                                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">Vazifalar</button>
+                                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">Biografiya</button>
                                 <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">Scientific activity</button>
                             </div>
                             <div class="profile-info-body">
                                 <div id="profileInfoMissions">
-                                    1Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, exercitationem? Fugiat illum quaerat aut obcaecati eligendi. Nisi sequi repellat ipsa laboriosam repellendus, voluptatibus aliquam optio consequatur eveniet enim! Molestiae hic sit necessitatibus. Praesentium molestiae quis ducimus laborum, ipsa odio cupiditate voluptates eveniet earum, labore sequi autem. Ab, nemo provident. Eum, illum corporis, necessitatibus odit nam ipsam animi iste, inventore praesentium eos itaque dolor? Quo suscipit maiores similique adipisci praesentium vel, porro dolor deleniti deserunt error perspiciatis at enim sapiente ipsa tenetur cumque quasi, quibusdam voluptatibus accusantium voluptas! Consequuntur doloremque in, deserunt quaerat laboriosam qui est eum quibusdam quas numquam. Incidunt, in a! Autem, officia ut quibusdam illum deserunt et rem distinctio labore accusamus consectetur. Consectetur ab sit nesciunt, quisquam asperiores quibusdam et. Incidunt molestiae, dignissimos aliquid iste voluptatum ipsa accusamus ex voluptas mollitia quaerat aspernatur aut eaque nam cum reiciendis tenetur nemo fuga esse dolores. Odit, nesciunt fuga. Repudiandae dolorum ipsa quod magnam ex sunt repellat iusto expedita quidem provident molestiae quisquam vero, fugiat nemo? Saepe dolorem natus sit ex voluptatum distinctio voluptates sunt a reprehenderit commodi doloribus ullam quia nisi, consectetur, minus quasi non laboriosam temporibus optio, molestiae veritatis deserunt! Deserunt, maxime repellat. Odio aperiam deserunt non minus tempore!
+                                    
+                                    {{ dekan_data.duties|safe }}
+
                                 </div>
                                 <div id="profileInfoBio">
-                                    2Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis unde accusamus ut consectetur, fugit corporis deleniti velit inventore necessitatibus culpa beatae pariatur molestias maiores error eaque maxime eligendi veniam doloremque et? Similique fugit porro illo nulla necessitatibus aut vitae quasi sapiente modi eos. Autem culpa rerum neque? Possimus exercitationem praesentium beatae nemo! Eius molestias sed adipisci ad nisi earum laborum alias. Ducimus laborum at nulla corporis inventore corrupti laboriosam labore omnis tempore quam voluptas accusantium exercitationem accusamus ut quidem quasi sed, a aliquid quibusdam repellendus voluptate adipisci. Quaerat, iure quidem. Voluptatum doloribus voluptatibus earum! Vero earum, facilis eligendi expedita laboriosam officiis odit possimus error assumenda placeat, blanditiis dolores amet voluptas nostrum. Facilis, accusantium! Dolorem quis quam nam officia explicabo ea animi perferendis quo ad iste. Ea laboriosam ipsa nostrum. Commodi cum iste excepturi temporibus. Excepturi facere tempora aliquid maxime blanditiis voluptate, rerum repudiandae vitae esse temporibus et praesentium adipisci quidem voluptatum atque! Impedit sunt quas blanditiis eveniet quaerat laudantium reprehenderit. Quam quasi sint, ratione, mollitia quos ipsum ab dignissimos amet consequatur obcaecati ea incidunt adipisci distinctio eius suscipit odio officia voluptate cupiditate maxime voluptates eos. Maxime architecto enim, optio qui repellendus dolores aperiam, placeat ducimus corporis similique dicta. Rem, cumque.
+                                    {{dekan_data.biography|safe}}
                                 </div>
                                 <div id="profileInfoCompletedMissions">
                                     3Lorem ipsum, dolor sit amet consectetur adipisicing elit. At nobis tenetur explicabo sint odio magni ea dolore doloremque delectus recusandae reiciendis perferendis nisi cum voluptas sunt perspiciatis, et esse aspernatur minus minima laboriosam magnam. Accusamus perferendis quae voluptatum voluptatem doloremque sapiente at a ex aut quas facilis ipsum eligendi, hic libero ullam molestiae explicabo animi mollitia, amet quod quidem porro excepturi? Reiciendis vitae ut ab sunt, dolorum repudiandae voluptates obcaecati. Ab repellat nobis eum beatae dolor harum, odio et saepe ipsam nemo eius officia reiciendis nisi perferendis numquam sunt quo placeat explicabo! Nihil eaque eius eum blanditiis aut, rerum dicta omnis deleniti iste atque, illo alias sit, velit incidunt beatae numquam explicabo ut possimus voluptatum magni earum corrupti consequuntur nisi. Qui debitis iure, quam praesentium velit at enim, nesciunt odit a officia officiis recusandae repellendus reiciendis molestiae, optio accusamus ea fugit quia maiores! Autem aut iusto facere, animi doloribus aspernatur dignissimos ratione dolore amet minima consequuntur eaque esse architecto repudiandae tempora rerum quas sapiente accusantium consequatur corrupti ex officiis atque quasi eveniet! Veniam quis ea deleniti soluta labore natus est saepe amet tempora unde sint a necessitatibus reprehenderit excepturi adipisci explicabo distinctio, facilis tempore similique alias mollitia accusantium blanditiis eum.
