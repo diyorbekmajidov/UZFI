@@ -80,7 +80,7 @@ class OpenDataApview(APIView):
     def get(self, request):
         opendata = OpenData.objects.all()
         serializers = OpenDataSerializer(opendata, many = True)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'open-data.html',{"data":serializers.data})
 
 class FacultyApview(APIView):
     def get(self, request):
@@ -110,13 +110,24 @@ class KafedraApview(APIView):
     def get(self, request):
         kafedra = Kafedra.objects.all()
         serializers = KafedraSerializer(kafedra, many = True)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'departments.html',{"data":serializers.data})
+
+class KafedraByIDApview(APIView):
+    def get(self, request, pk):
+        department = Kafedra.objects.filter(id = pk).last()
+        return render(request, 'departments-item.html',{"data":department})
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):
         centers_department = CentersDepartments.objects.all()
         serializers = CentersDepartmentsSerializer(centers_department, many = True)
-        return Response({"ok":serializers.data})
+        print(centers_department)
+        return render(request, 'centers.html', {"data":serializers.data})
+
+class CentersDepartmentByIDApiView(APIView):
+    def get(self, request, pk):
+        center = CentersDepartments.objects.filter(id = pk).last()
+        return render(request, 'centers-item.html',{"data":center})
 
 class ScientificWorkAPIView(APIView):
     authentication_classes = [TokenAuthentication]

@@ -24,9 +24,11 @@ from .views import (
     Register,
     logout,
     CentersDepartmentApiView,
+    CentersDepartmentByIDApiView,
     Login,
     Dashboard,
-    LeadeshipAPIView
+    LeadeshipAPIView,
+    KafedraByIDApview
 
 )
 
@@ -47,15 +49,18 @@ urlpatterns = [
 
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
 
-    path('opendata/', OpenDataApview.as_view(), name='opendata'),
+    path('open-data/', OpenDataApview.as_view(), name='opendata'),
 
-    path('centersdepartment/', CentersDepartmentApiView.as_view()),
+    path('centers/', CentersDepartmentApiView.as_view()),
+    path('centers/<int:pk>/', CentersDepartmentByIDApiView.as_view()),
 
     path('faculty/', FacultyApview.as_view(), name='faculty'),
     path('faculty/<int:pk>/',FacultyByIdApview.as_view()),
 
     path('direction/<int:pk>/', DirectionApview.as_view(), name='direction'),
-    path('kafedra/', KafedraApview.as_view()),
+
+    path('departments/', KafedraApview.as_view()),
+    path('departments/<int:pk>/', KafedraByIDApview.as_view()),
 
     path('scientificwork/', ScientificWorkAPIView.as_view()),
 

@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}UZFI | Markazlar{% endblock %} 
+{%block content %} {% load static %}
+
+<div class="page-content">
+  <!-- Page Heading Box ==== -->
+  <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/councils.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">Markazlar</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Heading Box END ==== -->
+
+  <!-- Page Content Box ==== -->
+  <div class="content-block">
+    <!-- FAQS  News -->
+    <div class="section-area section-sp2">
+      <div class="container">
+        <div class="heading-bx left">
+          <h2 class="m-b10 title-head">Markazlar <span></span></h2>
+        </div>
+
+        <div class="p-3 h4">
+          {{data.title|safe}}
+
+          <br />
+
+          <div class="">{{data.body|safe}}</div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQS  News End -->
+
+    <!-- Our Story ==== -->
+    <div class="section-area section-sp1">
+      <div class="container"></div>
+    </div>
+    <!-- Our Story END ==== -->
+  </div>
+  <!-- Page Content Box END ==== -->
+</div>
+
+{% endblock %}

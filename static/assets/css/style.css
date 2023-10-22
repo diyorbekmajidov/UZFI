@@ -4106,3 +4106,16 @@ button.back-to-top {
 #masonry {
 	list-style-type: none!important;
 }
+
+.centers, .departments {
+
+	transition: .2s;
+}
+
+.centers:hover {
+	border-bottom: 1px solid black;
+}
+
+.departments:hover {
+	border-left: 1px solid black;
+}
