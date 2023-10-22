@@ -43,7 +43,7 @@
                                     <h6>Teglar</h6>
                                     <div class="tagcloud">
                                         {% for item in data.category %}
-                                            <a target="__blank" href="/news/category/{{item}}/">{{item}}</a> 
+                                            <a target="__blank" href="/{{LANGUAGE_CODE}}/news/category/{{item.id}}/">{{item}}</a> 
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                             <div class="ttr-post-media"> <img src="{{item.img}}" width="200" height="143" alt=""> </div>
                                             <div class="ttr-post-info">
                                                 <div class="ttr-post-header">
-                                                    <h6 class="post-title"><a href="">{{item.title}}</a></h6>
+                                                    <h6 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}">{{item.title}}</a></h6>
                                                 </div>
                                                 <ul class="media-post">
                                                     <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>

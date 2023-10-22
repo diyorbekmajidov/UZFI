@@ -12,7 +12,7 @@ urlpatterns = [
 
     # Categories
     path('category/', NewsCategoryListCreate.as_view(), name='news_category_list_create'),
-    path('category/<str:category>/', NewsContentCategoryAPIView.as_view()),
+    path('category/<int:category>/', NewsContentCategoryAPIView.as_view()),
 
     # Content
     path('content/', NewsContentListAPIView.as_view(), name='news_content_list_create'),

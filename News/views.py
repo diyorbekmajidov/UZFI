@@ -34,11 +34,19 @@ class NewsContentListAPIView(ListView):
 
 class NewsContentCategoryAPIView(ListView):
     def get(self, request, category):
-        cat = NewsCategory.objects.filter(new_category=category).last()
+
+        all_category = NewsCategory.objects.all()
+        cat = NewsCategory.objects.filter(id=category).last()
+        print(cat)
+
         data = News_Content.objects.filter(category=cat)
+
+        serializer1 = NewsCategorySerializer(all_category, many = True)
+
         page = Paginator(data, 10)
         page_num = int(request.GET.get('page', 1))
-        return render(request, '.html', {"page_obj":page.page(page_num)})
+            
+        return render(request, 'news-category.html', {"page_obj":page.page(page_num), "category":serializer1.data, "current":cat.new_category})
 
 
 class NewsContentApiviewGet(TemplateView):
