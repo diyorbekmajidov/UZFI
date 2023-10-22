@@ -27,10 +27,10 @@ class NewsContentListAPIView(ListView):
         news_content = News_Content.objects.all()
         page = Paginator(news_content, 10)
         serializer1 = NewsCategorySerializer(category, many = True)
+        page_num = int(request.GET.get('page', 1))
         return render(request, 'news.html', {
             "category":serializer1.data,
-            "page_obj":page.page(int(request.GET.get('page', 1)))
-                    })
+            "page_obj":page.page(page_num), "page_number":page_num})
 
 class NewsContentCategoryAPIView(ListView):
     def get(self, request, category):

@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}UZFI{% endblock %} {% block content %} {% load static %} {% load i18n %}
+{% extends "base.html" %} {% block title %}UZFI | Yangiliklar{% endblock %} {% block content %} {% load static %} {% load i18n %}
 
 <div class="page-content bg-white">
   <!-- inner page banner -->
@@ -12,16 +12,6 @@
       </div>
     </div>
   </div>
-  <!-- Breadcrumb row -->
-  <div class="breadcrumb-row">
-    <div class="container">
-      <ul class="list-inline">
-        <li><a href="#">Home</a></li>
-        <li>Events</li>
-      </ul>
-    </div>
-  </div>
-  <!-- Breadcrumb row END -->
   <!-- contact area -->
   <div class="content-block">
     <!-- Portfolio  -->
@@ -30,7 +20,7 @@
         <div class="feature-filters clearfix center m-b40">
           {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
               {% for i in category %}
-                <a href="/news/content/{{i.id}}">{{i.new_category}}</a>
+                <a href="/news/category/{{i.id}}" class="btn" target="__blank">{{i.new_category}}</a>
               {% endfor %}
           {% comment %} </ul> {% endcomment %}
         </div>
@@ -42,7 +32,7 @@
                     <div class="action-box">
                       <img
                         src="/media/{{i.img}}"
-                        alt=""
+                        alt="{{i.title}}"
                       /> 
                     </div>
                     <div class="info-bx d-flex">
@@ -81,19 +71,21 @@
         </div>
 
         <div class="pagination-bx rounded-sm gray clearfix">
-            <ul class="pagination">
+          <ul class="pagination">
+              {% comment %} <script>
+                console.log("{{ page_obj.previous_page_number }}")
+              </script> {% endcomment %}
                 {% if page_obj.has_previous %}
-                    <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Prev</a></li>
+                    <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Avvalgi</a></li>
                 {% endif %}
 
-                {% for I in page_obj.pagination.page_range %}
-                    <script>
-                        console.log("HELLO")
-                    </script>
+                {% for page in page_obj.paginator.page_range %}
+                    <li class="{% if page_number == page_obj.number %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
                 {% endfor %}
 
                 {% if page_obj.has_next %}
-                    <li class="next"><a href="{{ page_obj.next_page_number }}">Next <i class="ti-arrow-right"></i></a></li>
+                    <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i> Keyingi</a></li>
+
                 {% endif %}
             </ul>
         </div>
