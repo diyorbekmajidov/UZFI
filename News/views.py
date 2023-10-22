@@ -30,7 +30,7 @@ class NewsContentListAPIView(ListView):
         page_num = int(request.GET.get('page', 1))
         return render(request, 'news.html', {
             "category":serializer1.data,
-            "page_obj":page.page(page_num), "page_number":page_num})
+            "page_obj":page.page(page_num)})
 
 class NewsContentCategoryAPIView(ListView):
     def get(self, request, category):
@@ -38,7 +38,7 @@ class NewsContentCategoryAPIView(ListView):
         data = News_Content.objects.filter(category=cat)
         page = Paginator(data, 10)
         page_num = int(request.GET.get('page', 1))
-        return render(request, '.html', {"page_obj":page.page(page_num), "page_number":page_num})
+        return render(request, '.html', {"page_obj":page.page(page_num)})
 
 
 class NewsContentApiviewGet(TemplateView):
