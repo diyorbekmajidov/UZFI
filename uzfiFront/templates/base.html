@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,13 +12,13 @@
     <meta name="robots" content="" />
 
     <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
+    <meta name="description" content="UZFI" />
 
     <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
+    <meta property="og:title" content="UZFI" />
     <meta
       property="og:description"
-      content="EduChamp : Education HTML Template"
+      content="UZFI"
     />
     <meta property="og:image" content="" />
     <meta name="format-detection" content="telephone=no" />
@@ -26,8 +26,8 @@
     <!-- FAVICONS ICON ============================================= -->
     <link
       rel="icon"
-      href="{% static 'assets/images/favicon.ico"
-      type="image/x-icon' %}"
+      href="{% static 'assets/images/favicon.png' %}"
+	  type="image/x-icon"
     />
     <link
       rel="shortcut icon"
@@ -49,51 +49,43 @@
     <!-- All PLUGINS CSS ============================================= -->
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/css/assets.css' %}"
     />
 
     <!-- TYPOGRAPHY ============================================= -->
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/css/typography.css' %}"
     />
 
     <!-- SHORTCODES ============================================= -->
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/css/shortcodes/shortcodes.css' %}"
     />
 
     <!-- STYLESHEETS ============================================= -->
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/css/style.css' %}"
     />
     <link
       class="skin"
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/css/color/color-1.css' %}"
     />
 
     <!-- REVOLUTION SLIDER CSS ============================================= -->
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/vendors/revolution/css/layers.css'%}"
     />
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/vendors/revolution/css/settings.css'%}"
     />
     <link
       rel="stylesheet"
-      type="text/css"
       href="{% static 'assets/vendors/revolution/css/navigation.css'%}"
     />
     <!-- REVOLUTION SLIDER END -->
@@ -130,7 +122,6 @@
 						<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
 							<input name="next" type="hidden" value="{{ redirect_to }}">
 							<select name="language" class="header-lang-bx">
-								{% get_current_language as LANGUAGE_CODE %}
 								{% get_available_languages as LANGUAGES %}
 								{% get_language_info_list for LANGUAGES as languages %}
 								{% for language in languages %}
@@ -164,7 +155,7 @@
 			<div class="container clearfix">
 			  <!-- Header Logo ==== -->
 			  <div class="menu-logo">
-				<a href="/"><img src="{% static 'assets/images/uzfi.png' %}" alt="" /></a>
+				<a href="/{{LANGUAGE_CODE}}"><img src="{% static 'assets/images/uzfi.png' %}" alt="" /></a>
 			  </div>
 			  <!-- Mobile Nav Button ==== -->
 			  <button
@@ -225,7 +216,7 @@
 				id="menuDropdown"
 			  >
 				<div class="menu-logo">
-				  <a href="/"><img src="{% static 'assets/images/logo.png' %}" alt="" /></a>
+				  <a href="/{{LANGUAGE_CODE}}"><img src="{% static 'assets/images/logo.png' %}" alt="" /></a>
 				</div>
 				<ul class="nav navbar-nav">
 				  <li class="active">
@@ -233,17 +224,17 @@
 					  >UNIVERSITET <i class="fa fa-chevron-down"></i
 					></a>
 					<ul class="sub-menu">
-						<li><a href="/">Bosh sahifa</a></li>
-						<li><a href="/uzfi/charter/">Nizom</a></li>
-						<li><a href="/uzfi/documents/">Hujjatlar</a></li>
-						<li><a href="/uzfi/leadership/">Yetakchilar</a></li>
-						<li><a href="/uzfi/organization-structure/">Tashkiliy tuzilma</a></li>
-						<li><a href="/uzfi/councils/">Kengashlar</a></li>
-						<li><a href="/uzfi/requisties/">Rekvizitlar</a></li>
-						<li><a href="/uzfi/financial-reports/">Moliyaviy hisobotlar</a></li>
-						<li><a href="/uzfi/famous-graduators/">Taniqli bitiruvchilar</a></li>
-						<li><a href="/uzfi/open-data/">Ochiq ma'lumotlar</a></li>
-						<li><a href="/uzfi/departments/">Kafedralar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}">Bosh sahifa</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">Nizom</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">Hujjatlar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">Yetakchilar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/organization-structure/">Tashkiliy tuzilma</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">Kengashlar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">Rekvizitlar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-reports/">Moliyaviy hisobotlar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/famous-graduators/">Taniqli bitiruvchilar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">Ochiq ma'lumotlar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/departments/">Kafedralar</a></li>
 					</ul>
 				  </li>
 				  <li>
@@ -350,7 +341,7 @@
 			<div class="container">
 			  <div class="d-flex align-items-stretch">
 				<div class="pt-logo mr-auto">
-				  <a href="/"
+				  <a href="/{{LANGUAGE_CODE}}"
 					><img
 					  src="{% static 'assets/images/logo-white.png' %}"
 					  alt=""
@@ -441,9 +432,26 @@
 						<li><a href="/uzfi/training-program-for-foreign-pedagogues/">Xorijda pedagoglar uchun malaka oshirish dasturi</a></li>
 					  </ul>
 					</div>
-				  </div>
+				</div>
 			</div>
 		  </div>
+
+		  	<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h4>Manzil</h4>
+							<p>Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy</p>
+							<p>Phone: +998954108015</p>
+							<p>Email: devonxona@uzfi.uz</p>
+						</div>
+						<div class="col-md-9"> 
+		  					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.0442617391855!2d66.92115311473631!3d39.67121890856542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d192d50c43d2d%3A0xb165c3020cfe3714!2sSamDU%20O&#39;zbekiston-Finlandiya%20Pedagogika%20instituti!5e0!3m2!1sen!2s!4v1635831688417!5m2!1sen!2s" width="80%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	  </footer>
       <!-- Footer END ==== -->
