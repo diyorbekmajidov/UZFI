@@ -72,20 +72,16 @@
 
         <div class="pagination-bx rounded-sm gray clearfix">
           <ul class="pagination">
-              {% comment %} <script>
-                console.log("{{ page_obj.previous_page_number }}")
-              </script> {% endcomment %}
                 {% if page_obj.has_previous %}
                     <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Avvalgi</a></li>
                 {% endif %}
 
                 {% for page in page_obj.paginator.page_range %}
-                    <li class="{% if page_number == page_obj.number %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
+                    <li class="{% if page_obj.number == page %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
                 {% endfor %}
 
                 {% if page_obj.has_next %}
                     <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i> Keyingi</a></li>
-
                 {% endif %}
             </ul>
         </div>
