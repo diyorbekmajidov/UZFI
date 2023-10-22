@@ -61,7 +61,14 @@ class FinancialStatementsApview(APIView):
     def get(self, request):
         financialstatements = FinancialStatements.objects.all()
         serializers = FinancialStatementsSerializer(financialstatements, many = True)
+        return render(request, 'financial-statements.html',{"data":serializers.data})
+
+
+class LeadeshipAPIView(APIView):
+    def get(self, request):
+        financialstatements = Dekan.objects.all(), KafedraManager.objects.all()
         return render(request, '.html',{"data":serializers.data})
+
 
 class VacanciesApview(APIView):
     def get(self, request):

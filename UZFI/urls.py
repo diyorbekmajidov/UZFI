@@ -25,7 +25,8 @@ from .views import (
     logout,
     CentersDepartmentApiView,
     Login,
-    Dashboard
+    Dashboard,
+    LeadeshipAPIView
 
 )
 
@@ -40,7 +41,9 @@ urlpatterns = [
 
     path('requisties/', RequisitesApview.as_view(), name='requisties'),
 
-    path('financial-reports/', FinancialStatementsApview.as_view(), name='financial-reports'),
+    path('financial-statements/', FinancialStatementsApview.as_view(), name='financial-statements'),
+
+    path('leadership/', LeadeshipAPIView.as_view(), name='leadership'),
 
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
 
