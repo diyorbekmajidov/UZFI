@@ -122,7 +122,13 @@ class KafedraApview(APIView):
 class KafedraByIDApview(APIView):
     def get(self, request, pk):
         department = Kafedra.objects.filter(id = pk).last()
-        return render(request, 'departments-item.html',{"data":department})
+        serializers = KafedraSerializer(department)
+        manager = KafedraManager.objects.get(kafedra = pk)
+        serializers1 = KafedraManagerSerializer(manager)
+        return render(request, 'departments-item.html',{
+            "data":serializers.data,
+            "manager" : serializers1.data
+            })
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):

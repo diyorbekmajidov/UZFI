@@ -27,7 +27,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls')),
+    
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
@@ -40,6 +40,7 @@ urlpatterns = [
     path('uzfi/', include('UZFI.urls')),
     path('news/', include('News.urls')),
     path('', Index.as_view()),
+    path('accounts/', include('django.contrib.auth.urls')),
 )
 
 

@@ -35,8 +35,7 @@ class Dashboard(TemplateView):
             dekan = Dekan.objects.filter(dekan=user).first()
             data = News_Content.objects.filter(dekan=dekan)
             serializers = UserNewsSerializer(data, many = True)
-            dekan_data = Dekan.objects.filter(dekan=user).last()
-            serializers1 = GetDekanSerializer(dekan_data)
+            serializers1 = GetDekanSerializer(dekan)
             return render(request, 'dashboard.html',
             {'data_news':serializers.data,
             'dekan_data':serializers1.data
@@ -47,6 +46,16 @@ class Dashboard(TemplateView):
             return render(request, 'dashboard.html',
             {'data_news':serializers.data,
                        })
+        if user.role == 'REKTOR':
+            rektor = Leadership.objects.filter(rektor=user).first()
+            serializers = LeadershipSerializer(rektor)
+
+            new_rektor = News_Content.objects.filter(leadership=rektor)
+            serializers1 = UserNewsSerializer(new_rektor, many=True)
+            return render(request, 'dashboard.html', {
+                "leadership_rektor":serializers.data,
+                "news_rektor":serializers1.data
+                })
 
         return render(request, 'dashboard.html')
     
