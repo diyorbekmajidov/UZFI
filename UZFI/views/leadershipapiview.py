@@ -1,11 +1,15 @@
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
 from rest_framework.response import Response
-from rest_framework import status
 from UZFI.models import *
 from UZFI.serializers import *
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import render
 
-from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
+class LeadeshipAPIView(APIView):
+    def get(self, request):
+        try :
+            leadership = Leadership.objects.all()
+            serializers = LeadershipSerializer(leadership, many=True)
+            return render(request, '.html',{"data":serializers.data})
+        except Exception as e:
+            return Response({"ok":[]})

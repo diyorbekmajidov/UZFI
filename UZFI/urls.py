@@ -22,7 +22,6 @@ from .views import (
     GetAllKafedraManager,
     ScientificWorkAPIView,
     Register,
-    logout,
     CentersDepartmentApiView,
     CentersDepartmentByIDApiView,
     CentersDepartmentManagerpiView,
@@ -75,7 +74,6 @@ urlpatterns = [
     path('kafedramanager/', KafedraManagerApview.as_view(),),
 
     path('register/', Register.as_view()),
-    path('logout/', views.logout),
     path('login/', Login.as_view()),
     path('dashboard/', Dashboard.as_view(), name='dashboard')
 ]

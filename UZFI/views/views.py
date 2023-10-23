@@ -66,17 +66,6 @@ class FinancialStatementsApview(APIView):
         serializers = FinancialStatementsSerializer(financialstatements, many = True)
         return render(request, 'financial-statements.html',{"data":serializers.data})
 
-
-class LeadeshipAPIView(APIView):
-    def get(self, request):
-        try :
-            leadership = Leadership.objects.all()
-            serializers = LeadershipSerializer(leadership, many=True)
-            return render(request, '.html',{"data":serializers.data})
-        except Exception as e:
-            return Response({"ok":[]})
-
-
 class VacanciesApview(APIView):
     def get(self, request):
         vacancies = Vacancies.objects.all()
