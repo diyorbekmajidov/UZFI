@@ -5,7 +5,7 @@ from .models import *
 class NewsCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsCategory
-        fields = ["id", "new_category"]
+        fields = "__all__"
 
 class NewsContentSerializer(serializers.ModelSerializer):
     category = NewsCategorySerializer()
