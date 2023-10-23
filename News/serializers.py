@@ -8,7 +8,7 @@ class NewsCategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class NewsContentSerializer(serializers.ModelSerializer):
-    # category = serializers.SerializerMethodField()
+    category = NewsCategorySerializer
     class Meta:
         model = News_Content
         fields = '__all__'
