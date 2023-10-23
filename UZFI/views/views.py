@@ -142,8 +142,8 @@ class CentersDepartmentByIDApiView(APIView):
         departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
         serializers = CentersDepartmentsSerializer(center)
         serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
-        return render(request, 'centers.html', {"data":serializers.data,
-                                                "managers" : serializers1.data})
+        return render(request, 'centers-item.html', {"data":serializers.data,
+                                                "manager" : serializers1.data})
 
 class ScientificWorkAPIView(APIView):
     authentication_classes = [TokenAuthentication]
