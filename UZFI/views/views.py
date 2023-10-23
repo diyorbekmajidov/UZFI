@@ -21,10 +21,14 @@ class Index(TemplateView):
             serializers1 = DirectionSerializer(direction, many = True)
             queryset = News_Content.objects.order_by('-date_created')[:10]
             serializer_class = NewsContentSerializer(queryset , many = True)
+            popular_student  = PopularStudents.objects.order_by('-date_created')[:5]
+            serializer_popular_students = NewsContentSerializer(popular_student, many=True)
+                            
             return render(request, 'index.html',
                 {"faculty":serializers.data,
                 "direction":serializers1.data,
-                "news":serializer_class.data
+                "news":serializer_class.data,
+                'popular_student':serializer_popular_students.data,
                 })
         except Exception as e:
             return render(request, 'index.html')

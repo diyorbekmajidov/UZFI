@@ -3,6 +3,7 @@ from .views import (
     NewsCategoryListCreate,
     NewsContentListAPIView,
     NewsContentApiviewGet,
+    PopularStudents,
     GetUserNews,
     LastNewsApiview,
     NewsContentCategoryAPIView,
@@ -17,6 +18,8 @@ urlpatterns = [
     # Content
     path('content/', NewsContentListAPIView.as_view(), name='news_content_list_create'),
     path('content/<int:pk>/', NewsContentApiviewGet.as_view(), name='news_content_list_create'),
+
+    path('popular_students/', PopularStudents.as_view()),
 
     path('getusernews/', GetUserNews.as_view(),),
     path('lastnews/', LastNewsApiview.as_view()),
