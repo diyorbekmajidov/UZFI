@@ -4,7 +4,6 @@ from modeltranslation.admin import TranslationAdmin
 # Register your models here.
 from .models import *
 
-admin.site.register(PopularStudents)
 
 @admin.register(NewsCategory)
 class NewsCategoryAdmin(TranslationAdmin):
@@ -17,4 +16,8 @@ class NewsCategoryAdmin(TranslationAdmin):
 @admin.register(Vedio_New)
 class NewsCategoryAdmin(TranslationAdmin):
     list_display = ('title',)
+
+@admin.register(PopularStudents)
+class PopularStudentsAdmin(TranslationAdmin):
+    list_display = ('body',)
 
