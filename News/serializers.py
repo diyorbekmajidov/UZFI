@@ -5,10 +5,10 @@ from .models import *
 class NewsCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsCategory
-        fields = '__all__'
+        fields = ["id", "new_category"]
 
 class NewsContentSerializer(serializers.ModelSerializer):
-    category = NewsCategorySerializer
+    category = NewsCategorySerializer()
     class Meta:
         model = News_Content
         fields = '__all__'
