@@ -103,6 +103,7 @@ class GetKafedraManagerSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class LeadershipSerializer(serializers.ModelSerializer):
+    rector = UserSerializer1()
     class Meta :
         model = Leadership
         fields = "__all__"
