@@ -15,17 +15,20 @@ from rest_framework.permissions import IsAuthenticated
 
 class Index(TemplateView):
     def get(self, request):
-        faculty = Faculty.objects.all()
-        serializers = FacultySerializer(faculty, many = True)
-        direction  = Direction.objects.all()
-        serializers1 = DirectionSerializer(direction, many = True)
-        queryset = News_Content.objects.order_by('-date_created')[:10]
-        serializer_class = NewsContentSerializer(queryset , many = True)
-        return render(request, 'index.html',
-             {"faculty":serializers.data,
-              "direction":serializers1.data,
-              "news":serializer_class.data
-              })
+        try:
+            faculty = Faculty.objects.all()
+            serializers = FacultySerializer(faculty, many = True)
+            direction  = Direction.objects.all()
+            serializers1 = DirectionSerializer(direction, many = True)
+            queryset = News_Content.objects.order_by('-date_created')[:10]
+            serializer_class = NewsContentSerializer(queryset , many = True)
+            return render(request, 'index.html',
+                {"faculty":serializers.data,
+                "direction":serializers1.data,
+                "news":serializer_class.data
+                })
+        except Exception as e:
+            return render(request, 'index.html')
 
 class CharterApview(TemplateView):
     def get(self, request):
@@ -66,7 +69,7 @@ class FinancialStatementsApview(APIView):
 
 class LeadeshipAPIView(APIView):
     def get(self, request):
-        financialstatements = Dekan.objects.all(), KafedraManager.objects.all()
+        financialstatements = Leadership.objects.all()
         return render(request, '.html',{"data":serializers.data})
 
 
@@ -121,13 +124,16 @@ class CentersDepartmentApiView(APIView):
     def get(self, request):
         centers_department = CentersDepartments.objects.all()
         serializers = CentersDepartmentsSerializer(centers_department, many = True)
-        print(centers_department)
         return render(request, 'centers.html', {"data":serializers.data})
 
 class CentersDepartmentByIDApiView(APIView):
     def get(self, request, pk):
         center = CentersDepartments.objects.filter(id = pk).last()
-        return render(request, 'centers-item.html',{"data":center})
+        departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
+        serializers = CentersDepartmentsSerializer(center)
+        serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
+        return render(request, 'centers.html', {"data":serializers.data,
+                                                "managers" : serializers1.data})
 
 class ScientificWorkAPIView(APIView):
     authentication_classes = [TokenAuthentication]

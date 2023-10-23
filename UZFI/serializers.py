@@ -112,3 +112,8 @@ class CentersDepartmentsSerializer(serializers.ModelSerializer):
     class Meta :
         model = CentersDepartments
         fields = "__all__"
+
+class CentersDepartmentsManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CentersDepartmentsManager
+        fields = "__all__"
