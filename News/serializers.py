@@ -21,3 +21,8 @@ class UserNewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News_Content
         fields = '__all__'
+
+class PopularStudentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PopularStudents
+        fields = "__all__"

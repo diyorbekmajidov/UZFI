@@ -9,8 +9,7 @@ from django.shortcuts import render
 from News.models import *
 from News.serializers import NewsContentSerializer
 
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+
 
 
 class Index(TemplateView):
@@ -141,8 +140,7 @@ class CentersDepartmentManagerpiView(APIView):
         return render(request, ".html", {"departments_manager":serializers.data})
 
 class ScientificWorkAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    
     
     def post(self, request):
         data = request.data.copy()

@@ -39,6 +39,9 @@ class PopularStudents(models.Model):
     student_name  = models.CharField(max_length=150)
     body          = RichTextUploadingField()
     img           = models.ImageField(upload_to='img')
+    img1          = models.ImageField(upload_to='img', blank=True, null=True)
+    img2          = models.ImageField(upload_to='img', blank=True, null=True)
+    img3          = models.ImageField(upload_to='img', blank=True, null=True)
     date_created  = models.DateTimeField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
 
