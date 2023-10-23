@@ -14,7 +14,7 @@ class NewsContentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_category(self, obj):
-        return [{"category":x.category, "id":x.id} for x in obj.category.all() ]
+        return [{"category":x.new_category, "id":x.id} for x in obj.category.all() ]
     
 
 class UserNewsSerializer(serializers.ModelSerializer):
