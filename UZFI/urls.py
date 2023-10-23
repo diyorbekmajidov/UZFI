@@ -27,7 +27,7 @@ from .views import (
     CentersDepartmentManagerpiView,
     Login,
     Dashboard,
-    LeadeshipAPIView,
+    LeadershipAPIView,
     KafedraByIDApview
 
 )
@@ -45,7 +45,7 @@ urlpatterns = [
 
     path('financial-statements/', FinancialStatementsApview.as_view(), name='financial-statements'),
 
-    path('leadership/', LeadeshipAPIView.as_view(), name='leadership'),
+    path('leadership/', LeadershipAPIView.as_view(), name='leadership'),
 
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
 

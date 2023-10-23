@@ -5,7 +5,7 @@ from UZFI.models import *
 from UZFI.serializers import *
 from django.shortcuts import render
 
-class LeadeshipAPIView(APIView):
+class LeadershipAPIView(APIView):
     def get(self, request):
         try :
             leadership = Leadership.objects.all()
