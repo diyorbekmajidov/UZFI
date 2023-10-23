@@ -18,7 +18,7 @@ class Document(models.Model):
     document_type = models.CharField(max_length=100)
     document_name = models.CharField(max_length=500)
     document      = models.FileField(upload_to='pdf/')
-    date_created  = models.DateTimeField(auto_now_add=True)
+    date_created  = models.DateField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
 
     def __str__(self):
