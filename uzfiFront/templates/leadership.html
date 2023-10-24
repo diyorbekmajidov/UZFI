@@ -1,0 +1,85 @@
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}UZFI  | Markazlar{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">Rahbariyat</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+                
+
+
+
+
+                    <div class="heading-bx left">
+                        <h2 class="m-b10 title-head">Rahbariyat <span></span></h2>
+                    </div>
+                    
+                    
+                    {% for i in data %}
+    
+                    <div class="card my-3" >
+                        <div class="row p-3">
+                          <div class="col-md-4">
+                            <img class="rounded" src="{{i.img}}" style="width:300px" alt="" />
+                          </div>
+                          <div class="col-md-8">
+                            <h3><span class="text-secondary">{{i.rector.role}}</span> {{i.first_name}}</h3>
+                            <div >
+                              <span class="text-secondary">E-pochta: </span> {{i.email}}
+                            </div>
+                            <div >
+                              <span class="text-secondary">Telefon raqam: </span>
+                              {{i.phone}}
+                            </div>
+                            <div >
+                              <span class="text-secondary">Qabul kunlari: </span>
+                              {{i.acceptance}}
+                            </div>
+                            <div >
+                              <span class="text-secondary">Manzil: </span> {{i.address}}
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+    
+                    {% endfor %}
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}
