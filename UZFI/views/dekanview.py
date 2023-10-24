@@ -12,14 +12,14 @@ class AllDekan(ListCreateAPIView):
     queryset = Dekan.objects.all()
     serializer_class = GetDekanSerializer
 
-class GetDekanById(APIView):
-    def get(self, request, pk):
-        try:
-            data = Dekan.objects.get(id=pk)
-            serializers = GetDekanSerializer(data)
-            return Response(serializers.data)
-        except:
-            return Response({"403":"user topilmadi"})
+# class GetDekanById(APIView):
+#     def get(self, request, pk):
+#         try:
+#             data = Dekan.objects.get(id=pk)
+#             serializers = GetDekanSerializer(data)
+#             return Response(serializers.data)
+#         except:
+#             return Response({"403":"user topilmadi"})
 
     
 class DekanGetApiview(APIView):

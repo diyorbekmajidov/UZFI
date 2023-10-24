@@ -14,8 +14,8 @@ from .views import (
     FacultyByIdApview,
     DirectionApview,
     DekanGetApiview,
+    DekanById,
     AllDekan,
-    GetDekanById,
     KafedraApview,
     KafedraManagerById,
     KafedraManagerApview,
@@ -66,8 +66,8 @@ urlpatterns = [
     path('scientificwork/', ScientificWorkAPIView.as_view()),
 
     path('dekanget/', DekanGetApiview.as_view()),
+    path('dekan/<int:pk>/', DekanById.as_view()),
     path('alldekan/', AllDekan.as_view()),
-    path('getdekanbyid/<int:pk>/', GetDekanById.as_view()),
     
     path('kafedramanagerget/<int:pk>/', KafedraManagerById.as_view()),
     path('getallkafedramanager/', GetAllKafedraManager.as_view()),

@@ -24,9 +24,6 @@ class Register(APIView):
             return Response({'token': token.key}, status=status.HTTP_201_CREATED)
         return Response(serializer.error_messages)
     
-def logout(request):
-    logout(request)
-    return render(request, 'endix.html')
 
 class Dashboard(TemplateView):
     def get(self, request):

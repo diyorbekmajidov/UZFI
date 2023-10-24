@@ -98,6 +98,11 @@ class FacultyByIdApview(APIView):
              "dekan": serializers1.data
              })
 
+class DekanById(APIView):
+    def get(self, request, pk):
+        dekan = Dekan.objects.get(id=pk)
+        serializer = GetDekanSerializer(dekan)
+        return render(request, ".html", {"kafedra_manager":serializer.data})
 
 class DirectionApview(APIView):
     def get(self, request, pk):
@@ -150,7 +155,6 @@ class CentersDepartmentManagerpiView(APIView):
         return render(request, ".html", {"departments_manager":serializers.data})
 
 class ScientificWorkAPIView(APIView):
-    
     
     def post(self, request):
         data = request.data.copy()
