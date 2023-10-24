@@ -7,6 +7,7 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from drf_yasg import openapi
 from UZFI.views import Index
+from django.utils.translation import gettext_lazy as _
 
 
 schema_view = get_schema_view(
@@ -28,7 +29,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     
-    path('admin/', admin.site.urls),
+    path(_('admin/'), admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),

@@ -57,20 +57,24 @@ class NewsContentApiviewGet(TemplateView):
         return render(request, 'news-item.html', {"data":serializer.data,
                                                   "latest":serializer_class.data})
 
+class PopularStudents(TemplateView):
+    def get(self, request):
+        populars = PopularStudents.objects.all()
+        serializers = PopularStudentsSerializer(populars, many = True)
+        return  render(request, 'news-item.html', {"populars_student":serializers.data,})
+
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]
     pagination_class = NewsPagination
     serializer_class = UserNewsSerializer
 
-    def get_queryset(self):
+    def get_queryset(self, request):
         user = self.request.user
         dekan = Dekan.objects.filter(dekan=user).first()
         if dekan:
             return News_Content.objects.filter(dekan=dekan)
         else:
             return News_Content.objects.none()
-        
-
 
 class LastNewsApiview(ListAPIView):
     queryset = News_Content.objects.order_by('-date_created')[:10]
