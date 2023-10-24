@@ -37,6 +37,3 @@ class GetAllKafedraManager(ListCreateAPIView):
     queryset = KafedraManager.objects.all()
     serializer_class = GetKafedraManagerSerializer
 
-class KafedraManagerGet(RetrieveDestroyAPIView):
-    queryset = KafedraManager.objects.all()
-    serializer_class = GetKafedraManagerSerializer
