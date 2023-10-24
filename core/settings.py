@@ -137,7 +137,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 from django.utils.translation import gettext_lazy as _
 
-LANGUAGE_CODE = 'uz-uz'
+
 
 TIME_ZONE = 'UTC'
 
@@ -147,16 +147,23 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGE_CODE = 'uz'
+
+
 LANGUAGES = (
     ('uz',  _('Uzbek')),
     ('ru',  _('Russian')),
     ('en',  _('English')),
+    
+    
+    
 )
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+MODELTRANSLATION_DEFAULT_LANGUAGE = ('uz')
+
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 
