@@ -18,6 +18,7 @@ from .views import (
     GetDekanById,
     KafedraApview,
     KafedraManagerGet,
+    KafedraManagerById,
     KafedraManagerApview,
     GetAllKafedraManager,
     ScientificWorkAPIView,

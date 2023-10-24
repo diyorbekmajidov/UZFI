@@ -121,6 +121,12 @@ class KafedraByIDApview(APIView):
             "data":serializers.data,
             "manager" : serializers1.data
             })
+    
+class KafedraManagerById(APIView):
+    def get(self, request, pk):
+        manager = KafedraManager.objects.get(id = pk)
+        serializer = KafedraManagerSerializer(manager)
+        return render(request, ".html", {"kafedra_manager":serializer.data})
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):
