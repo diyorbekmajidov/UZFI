@@ -4099,7 +4099,11 @@ button.back-to-top {
 	transition: all 0.5s;
 }
 
-.councils-item:hover {
+.user-info-card {
+	transition: .2s;
+}
+
+.councils-item:hover, .user-info-card:hover {
 	transform: translateY(-3px);
 }
 

@@ -369,7 +369,8 @@
             </div>
             
             <!-- LAYER NR. 4 -->
-            <div
+            <a
+              href="/{{LANGUAGE_CODE}}/news/content/{{MAINPAGE.id}}"
               class="tp-caption Newspaper-Button rev-btn"
               id="slide-200-layer-5"
               data-x="['center','center','center','center']"
@@ -403,9 +404,10 @@
                 margin-right: 5px;
               "
             >
-              READ MORE
-            </div>
-            <div
+              Davomini o'qish
+            </a>
+            <a
+              href="/{{LANGUAGE_CODE}}/news/content/"
               class="tp-caption Newspaper-Button rev-btn"
               id="slide-200-layer-6"
               data-x="['center','center','center','center']"
@@ -436,8 +438,8 @@
                 border-radius: 30px;
               "
             >
-              CONTACT US
-            </div>
+              Barcha Yangiliklar
+            </a>
           </li>
           <!-- SLIDE  -->
         </ul>
@@ -534,17 +536,13 @@
         <p>O‘zbekiston-Finlyandiya instituti fakultet tarkibi.</p>
       </div>
 
-      <script>
-        console.log("{{kimsan}}")
-      </script>
-
       <div class="container text-center">
         <div class="row">
           
           {% for i in faculty %}
           
           <div class="col-md-6 faculty-item-bg">
-              <a href="/uzfi/faculty/{{i.id}}/">
+              <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.id}}/">
             <div
               class="faculty-item-hover my-3 rounded"
               style="
