@@ -137,7 +137,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 from django.utils.translation import gettext_lazy as _
 
-
+LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'UTC'
 
@@ -147,7 +147,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-LANGUAGE_CODE = 'uz'
+
 
 
 LANGUAGES = (
@@ -158,9 +158,9 @@ LANGUAGES = (
     
     
 )
-
-MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
 MODELTRANSLATION_DEFAULT_LANGUAGE = ('uz')
+MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
@@ -171,7 +171,6 @@ LOCALE_PATHS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-import os
 STATIC_URL = 'static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')

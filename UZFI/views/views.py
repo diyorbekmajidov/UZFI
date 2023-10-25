@@ -103,11 +103,14 @@ class FacultyByIdApview(APIView):
     def get(self, request, pk):
         faculty = Faculty.objects.get(id = pk)
         dekan = Dekan.objects.get(faculty = pk)
+        directions = Direction.objects.filter(faculty=pk)
+        serializers_directions = DirectionSerializer(directions, many = True)
         serializers1 = GetDekanSerializer(dekan)
         serializers = FacultySerializer(faculty)
         return render(request, 'faculties-item.html',
             {"faculty":serializers.data,
-             "dekan": serializers1.data
+             "dekan": serializers1.data,
+             "direction": serializers_directions.data
              })
 
 class DekanById(APIView):
