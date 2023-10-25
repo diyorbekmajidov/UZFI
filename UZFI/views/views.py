@@ -23,8 +23,16 @@ class Index(TemplateView):
             serializer_class = NewsContentSerializer(queryset , many = True)
             popular_student  = PopularStudents.objects.order_by('-date_created')[:5]
             serializer_popular_students = PopularStudentsSerializer(popular_student, many=True)
+
+            mainpage_category = NewsCategory.objects.filter(new_category="MAINPAGE")
             
-            return render(request, 'index.html', context={"faculty":serializers.data, "direction":serializers1.data, "news":serializer_class.data, 'popular_student':serializer_popular_students.data, })
+            context = {"faculty":serializers.data, "direction":serializers1.data, "news":serializer_class.data, 'popular_student':serializer_popular_students.data, }
+
+            if mainpage_category:
+                context["MAINPAGE"] = News_Content.objects.filter(category=mainpage_category.last()).last()
+
+
+            return render(request, 'index.html', context=context)
         except Exception as e:
             print(e)
             return render(request, 'index.html')
