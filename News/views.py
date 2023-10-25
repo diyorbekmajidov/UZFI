@@ -57,13 +57,14 @@ class NewsContentApiviewGet(TemplateView):
         return render(request, 'news-item.html', {"data":serializer.data,
                                                   "latest":serializer_class.data})
 
-class PopularStudents(TemplateView):
+class PopularStudentsApiView(TemplateView):
         def get(self, request):
             try:
                 populars = PopularStudents.objects.all()
                 serializers = PopularStudentsSerializer(populars, many = True)
-                return  render(request, 'news.html', {"populars_student":serializers.data,})
-            except:
+                return  render(request, 'popular-students.html', {"data":serializers.data,})
+            except Exception as e:
+                print(e)
                 return render(request,'50x.error.html')
             
 class PopularStudentsById(TemplateView):

@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block title %}
+  UZFI | Yangiliklar
+{% endblock %} {% block content %}
+  {% load static %} {% load i18n %}
+
+  <div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %})">
+      <div class="container">
+        <div class="page-banner-entry">
+          <h1 class="text-white">Yangiliklar</h1>
+        </div>
+      </div>
+    </div>
+    <!-- contact area -->
+    <div class="content-block">
+      <!-- Portfolio -->
+      <div class="section-area section-sp1 gallery-bx">
+        <div class="container">
+          <div class="feature-filters clearfix center m-b40">
+            {% comment %} <ul class="filters" data-toggle="buttons">
+              {% endcomment %}
+              {% for i in category %}
+                <a href="/news/category/{{ i.id }}#news_content" class="btn" target="__blank">{{ i.new_category }}</a>
+              {% endfor %}
+              {% comment %}
+            </ul> {% endcomment %}
+          </div>
+          <div class="clearfix">
+            <ul id="masonry" class="ttr-gallery-listing magnific-image row">
+              {% for i in page_obj %}
+              
+                <li class="action-card col-lg-6 col-md-6 col-sm-12 mt-4">
+                  <div class="event-bx news-content">
+                    <div class="action-box">
+                      <img src="/media/{{ i.img }}" alt="{{ i.title }}" />
+                    </div>
+                    <div class="info-bx d-flex">
+                      <div>
+                        {% comment %} <div class="event-time">
+                          <div class="event-date"></div>
+                          <div class="event-month">{{ i.date_created }}</div>
+                        </div> {% endcomment %}
+                      </div>
+                      <div class="event-info">
+                        <h4 class="event-title"><a href="/{{ LANGUAGE_CODE }}/news/content/{{ i.id }}">{{ i.title }}</a></h4>
+                        <ul class="media-post">
+                          <li>
+                            <i class="fa fa-clock-o"></i> {{ i.date_created }}
+                          </li>
+                          <li>
+                            <i class="fa fa-eye" aria-hidden="true"></i> {{ i.views }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              {% endfor %}
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- contact area END -->
+  </div>
+{% endblock %}
