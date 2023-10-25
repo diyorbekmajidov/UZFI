@@ -58,10 +58,22 @@ class NewsContentApiviewGet(TemplateView):
                                                   "latest":serializer_class.data})
 
 class PopularStudents(TemplateView):
-    def get(self, request):
-        populars = PopularStudents.objects.all()
-        serializers = PopularStudentsSerializer(populars, many = True)
-        return  render(request, 'news.html', {"populars_student":serializers.data,})
+        def get(self, request):
+            try:
+                populars = PopularStudents.objects.all()
+                serializers = PopularStudentsSerializer(populars, many = True)
+                return  render(request, 'news.html', {"populars_student":serializers.data,})
+            except:
+                return render(request,'50x.error.html')
+            
+class PopularStudentsById(TemplateView):
+    def get(self, request, pk):
+        try: 
+            populars = PopularStudents.objects.get(id=pk)
+            serializers = PopularStudentsSerializer(populars)
+            return  render(request, '.html', {"populars_student":serializers.data,})
+        except:
+            return render(request,'50x.error.html')
 
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]
