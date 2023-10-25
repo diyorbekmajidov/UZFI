@@ -61,7 +61,7 @@ class PopularStudents(TemplateView):
     def get(self, request):
         populars = PopularStudents.objects.all()
         serializers = PopularStudentsSerializer(populars, many = True)
-        return  render(request, 'news-item.html', {"populars_student":serializers.data,})
+        return  render(request, 'news.html', {"populars_student":serializers.data,})
 
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]
