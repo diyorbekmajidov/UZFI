@@ -4,21 +4,13 @@
 {% extends "base.html" %}
 
 {% block title %}UZFI{% endblock %}
-
+{% block trans %}{% endblock trans %}
 {% block content %}
 
 {% load static %}
 {% load i18n %}
 
 <div class="page-content bg-white">
-    <!-- inner page banner -->
-    <div class="page-banner ovbl-dark" style="background-image:url({{data.img}});">
-        <div class="container">
-            <div class="page-banner-entry">
-                <h1 class="text-white">{{data.title}}</h1>
-            </div>
-        </div>
-    </div>
     
     <div class="content-block">
         <div class="section-area section-sp1">
@@ -26,11 +18,38 @@
                 <div class="row">
                     <!-- Left part start -->
                     <div class="col-lg-8 col-xl-8">
+
+                        <h3>{{data.student_name}}</h3>
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img class="d-block w-100" src="{{data.img}}" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="{{data.img2}}" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="{{data.img3}}" alt="Third slide">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+
                         <!-- blog start -->
                         <div class="recent-news blog-lg">
-                            <div class="action-box blog-lg">
-                                <img src="assets/images/blog/default/thum1.jpg" alt="">
-                            </div>
                             <div class="info-bx">
                                 <ul class="media-post">
                                     <li><i class="fa fa-calendar"></i> {{data.date_created}}</li>
@@ -38,15 +57,6 @@
                                 </ul>
                                 <h5 class="post-title">{{data.title}}</h5>
                                 {{data.body|safe}}
-                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
-                                <div class="widget_tag_cloud">
-                                    <h6>Teglar</h6>
-                                    <div class="tagcloud">
-                                        {% for item in data.category %}
-                                            <a target="__blank" href="/{{LANGUAGE_CODE}}/news/category/{{item.id}}/">{{item.category}}</a> 
-                                        {% endfor %}
-                                    </div>
-                                </div>
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                     <h6>BIZ BILAN BO'LING </h6>
                                     <ul class="list-inline contact-social-bx">
@@ -67,12 +77,12 @@
                             <div class="widget recent-posts-entry">
                                 <h6 class="widget-title">Recent Posts</h6>
                                 <div class="widget-post-bx">
-                                    {% for item in latest %}
+                                    {% for item in pouplar %}
                                         <div class="widget-post clearfix">
                                             <div class="ttr-post-media"> <img src="{{item.img}}" width="200" height="143" alt=""> </div>
                                             <div class="ttr-post-info">
                                                 <div class="ttr-post-header">
-                                                    <h6 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}">{{item.title}}</a></h6>
+                                                    <h6 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/popular-students/{{item.id}}">{{item.student_name}}</a></h6>
                                                 </div>
                                                 <ul class="media-post">
                                                     <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
