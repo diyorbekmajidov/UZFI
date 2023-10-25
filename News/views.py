@@ -72,7 +72,12 @@ class PopularStudentsById(TemplateView):
         try: 
             populars = PopularStudents.objects.get(id=pk)
             serializers = PopularStudentsSerializer(populars)
-            return  render(request, 'popular-students-item.html', {"data":serializers.data,})
+            last_populars = PopularStudents.objects.order_by('-date_created')[:5]
+            serializer2 = PopularStudentsSerializer(last_populars, many = True)
+            return  render(request, 'popular-students-item.html', 
+                           {"data":serializers.data,
+                            "pouplar":serializer2.data
+                            })
         except:
             return render(request,'50x.error.html')
 
