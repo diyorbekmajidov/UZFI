@@ -42,7 +42,7 @@ class PopularStudents(models.Model):
     img1          = models.ImageField(upload_to='img', blank=True, null=True)
     img2          = models.ImageField(upload_to='img', blank=True, null=True)
     img3          = models.ImageField(upload_to='img', blank=True, null=True)
-    date_created  = models.DateTimeField(auto_now_add=True)
+    date_created  = models.DateField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:

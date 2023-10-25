@@ -28,12 +28,12 @@
           </div>
           <div class="clearfix">
             <ul id="masonry" class="ttr-gallery-listing magnific-image row">
-              {% for i in page_obj %}
-              
+              {% for i in data %}
+
                 <li class="action-card col-lg-6 col-md-6 col-sm-12 mt-4">
                   <div class="event-bx news-content">
                     <div class="action-box">
-                      <img src="/media/{{ i.img }}" alt="{{ i.title }}" />
+                      <img src="{{ i.img }}" alt="{{ i.title }}" />
                     </div>
                     <div class="info-bx d-flex">
                       <div>
