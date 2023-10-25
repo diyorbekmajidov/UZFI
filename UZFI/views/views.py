@@ -114,7 +114,7 @@ class DekanById(APIView):
     def get(self, request, pk):
         dekan = Dekan.objects.get(id=pk)
         serializer = GetDekanSerializer(dekan)
-        return render(request, ".html", {"kafedra_manager":serializer.data})
+        return render(request, ".html", {"dekan":serializer.data})
 
 class DirectionApview(APIView):
     def get(self, request, pk):
