@@ -29,7 +29,9 @@ class Index(TemplateView):
             context = {"faculty":serializers.data, "direction":serializers1.data, "news":serializer_class.data, 'popular_student':serializer_popular_students.data, }
 
             if mainpage_category:
-                context["MAINPAGE"] = News_Content.objects.filter(category=mainpage_category.last()).last()
+                mainpage_news = News_Content.objects.filter(category=mainpage_category.last()).last()
+                serializers_context = NewsContentSerializer(mainpage_news)
+                context['MAINPAGE'] = serializers_context.data
 
 
             return render(request, 'index.html', context=context)
