@@ -772,7 +772,7 @@
         <div class="row">
           <div class="col-md-12 text-white heading-bx left">
             <h2 class="title-head text-uppercase">
-              SPORTDAGI <span>yutuqlarimiz</span>
+              Mashhur <span>talabalarimiz</span>
             </h2>
             <p>
               Bizning g‘ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi
@@ -786,50 +786,32 @@
         <div
           class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0"
         >
-          <div class="item">
-            <div class="testimonial-bx">
-              <div class="testimonial-thumb">
-                <img
-                  src="https://storage.kun.uz/source/9/Ux-U2ZDN4ZR3YfWH_zguAFk3XJvGKcdK.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="testimonial-info">
-                <h5 class="name">Peter Packer</h5>
-                <p>-Art Director</p>
-              </div>
-              <div class="testimonial-content">
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s,
-                  when an unknown printer took a galley of type...
-                </p>
-              </div>
+          
+        
+        {% for item in popular_student %}
+
+        <div class="item">
+          <div class="testimonial-bx">
+            <div class="testimonial-thumb">
+              <img
+                src="{{item.img}}"
+                alt=""
+              />
+            </div>
+            <div class="testimonial-info">
+              <h5 class="name">{{item.student_name}}</h5>
+              {% comment %} <p>-Art Director</p> {% endcomment %}
+            </div>
+            <div class="testimonial-content">
+              <p>
+                {{ item.body|truncatechars:9 }}
+              </p>
             </div>
           </div>
-          <div class="item">
-            <div class="testimonial-bx">
-              <div class="testimonial-thumb">
-                <img
-                  src="https://storage.kun.uz/source/9/CIzzV1-ijGPilLtoxWPLgJjVTd010GJC.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="testimonial-info">
-                <h5 class="name">Peter Packer</h5>
-                <p>-Art Director</p>
-              </div>
-              <div class="testimonial-content">
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s,
-                  when an unknown printer took a galley of type...
-                </p>
-              </div>
-            </div>
-          </div>
+        </div>
+        {% endfor %}
+
+
         </div>
       </div>
     </div>
