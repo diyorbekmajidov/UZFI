@@ -71,7 +71,7 @@ class PopularStudentsById(TemplateView):
         try: 
             populars = PopularStudents.objects.get(id=pk)
             serializers = PopularStudentsSerializer(populars)
-            return  render(request, '.html', {"populars_student":serializers.data,})
+            return  render(request, 'popular-students-item.html', {"populars_student":serializers.data,})
         except:
             return render(request,'50x.error.html')
 
