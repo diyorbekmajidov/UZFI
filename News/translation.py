@@ -20,4 +20,4 @@ class Vedio_NewTranslationOptions(TranslationOptions):
 
 @register(PopularStudents)
 class PopularStudentsTranslationOptions(TranslationOptions):
-    fields = ('body',)
+    fields = ('body','description',)

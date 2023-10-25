@@ -17,5 +17,5 @@ class Vedio_NewAdmin(TranslationAdmin):
 
 @admin.register(PopularStudents)
 class PopularStudentsAdmin(TranslationAdmin):
-    list_display = ('body',)
+    list_display = ('body','description')
 

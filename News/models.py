@@ -38,6 +38,7 @@ class Vedio_New(models.Model):
 class PopularStudents(models.Model):
     student_name  = models.CharField(max_length=150)
     body          = RichTextUploadingField()
+    description   = models.CharField(max_length=300)
     img           = models.ImageField(upload_to='img')
     img1          = models.ImageField(upload_to='img', blank=True, null=True)
     img2          = models.ImageField(upload_to='img', blank=True, null=True)
