@@ -41,15 +41,21 @@ class Index(TemplateView):
 
 class CharterApview(TemplateView):
     def get(self, request):
-        charter = Charter.objects.all()
-        serializers = CharterSerializer(charter, many = True) 
-        return render(request, 'charter.html',{"data":serializers.data})
+        try:
+            charter = Charter.objects.all()
+            serializers = CharterSerializer(charter, many = True) 
+            return render(request, 'charter.html',{"data":serializers.data})
+        except:
+            return render(request,'50x.error.html')
 
 class DocumentCreateApview(APIView):
     def get(self,request):
-        document = Document.objects.all()
-        serializers = DocumentSerializer(document, many = True)
-        return render(request, 'documents.html',{"data":serializers.data})
+        try:
+            document = Document.objects.all()
+            serializers = DocumentSerializer(document, many = True)
+            return render(request, 'documents.html',{"data":serializers.data})
+        except:
+            return render(request,'50x.error.html')
 
 class CouncilsApview(APIView):
     def get(self, request):
