@@ -20,7 +20,7 @@
         <div class="feature-filters clearfix center m-b40">
           {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
               {% for i in category %}
-                <a href="/news/category/{{i.id}}#news_content" class="btn" target="__blank">{{i.new_category}}</a>
+                <a href="/{{LANGUAGE_CODE}}/news/category/{{i.id}}#news_content" class="btn" target="__blank">{{i.new_category}}</a>
               {% endfor %}
           {% comment %} </ul> {% endcomment %}
         </div>
