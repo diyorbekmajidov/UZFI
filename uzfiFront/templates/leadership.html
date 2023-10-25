@@ -5,22 +5,13 @@
 {% extends "base.html" %}
 
 {% block title %}UZFI  | Markazlar{% endblock %}
+{% block trans %}{% endblock trans %}
 
 {% block content %}
 
 {% load static %}
 
 <div class="page-content">
-    <!-- Page Heading Box ==== -->
-    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
-        <div class="container">
-            <div class="page-banner-entry">
-                <h1 class="text-white">Rahbariyat</h1>
-            </div>
-        </div>
-    </div>
-
-    <!-- Page Heading Box END ==== -->
 
 
     <!-- Page Content Box ==== -->
@@ -42,31 +33,33 @@
                     
                     {% for i in data %}
     
-                    <div class="card my-3" >
-                        <div class="row p-3">
-                          <div class="col-md-4">
-                            <img class="rounded" src="{{i.img}}" style="width:300px" alt="" />
-                          </div>
-                          <div class="col-md-8">
-                            <h3><span class="text-secondary">{{i.rector.role}}</span> {{i.first_name}}</h3>
-                            <div >
-                              <span class="text-secondary">E-pochta: </span> {{i.email}}
+                      <div class="card my-3 user-info-card" >
+                        <a class="row p-3" href="/{{ LANGUAGE_CODE }}/uzfi/leadership/{{ i.id }}">
+                          <div class="row p-3">
+                            <div class="col-md-4">
+                              <img class="rounded" src="{{i.img}}" style="width:300px" alt="" />
                             </div>
-                            <div >
-                              <span class="text-secondary">Telefon raqam: </span>
-                              {{i.phone}}
-                            </div>
-                            <div >
-                              <span class="text-secondary">Qabul kunlari: </span>
-                              {{i.acceptance}}
-                            </div>
-                            <div >
-                              <span class="text-secondary">Manzil: </span> {{i.address}}
-                            </div>
+                            <div class="col-md-8">
+                              <h3><span class="text-secondary">{{i.rector.role}}</span> {{i.first_name}}</h3>
+                              <div >
+                                <span class="text-secondary">E-pochta: </span> {{i.email}}
+                              </div>
+                              <div >
+                                <span class="text-secondary">Telefon raqam: </span>
+                                {{i.phone}}
+                              </div>
+                              <div >
+                                <span class="text-secondary">Qabul kunlari: </span>
+                                {{i.acceptance}}
+                              </div>
+                              <div >
+                                <span class="text-secondary">Manzil: </span> {{i.address}}
+                              </div>
 
 
+                            </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
     
                     {% endfor %}

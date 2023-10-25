@@ -1,20 +1,8 @@
-{% extends "base.html" %} {% block title %}UZFI | Markazlar{% endblock %} 
+{% extends "base.html" %} {% block title %}UZFI | {{data.name}}{% endblock %} 
 {%block content %} {% load static %}
+{% block trans %}{% endblock trans %}
 
 <div class="page-content">
-  <!-- Page Heading Box ==== -->
-  <div
-    class="page-banner ovbl-dark"
-    style="background-image: url({%static 'assets/images/councils.jpg' %})"
-  >
-    <div class="container">
-      <div class="page-banner-entry">
-        <h1 class="text-white">Markazlar</h1>
-      </div>
-    </div>
-  </div>
-
-  <!-- Page Heading Box END ==== -->
 
   <!-- Page Content Box ==== -->
   <div class="content-block">
@@ -25,9 +13,9 @@
           <h2 class="title-head">Markaz Rahbari</h2>
         </div>
 
-        <div class="card">
+        <div class="card user-info-card">
           <div class="row p-3">
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
               <img class="rounded" src="{{manager.img}}" alt="" />
             </div>
             <div class="col-md-8">
@@ -44,6 +32,26 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="ttr-accordion m-30 mt-5 faq-bx" id="charter_accordion">
+
+
+          <div class="panel">
+            <div class="acod-head">
+                <h6 class="acod-title">
+                    <a data-toggle="collapse" href="#faqmission" class="collapsed" data-parent="#faqmission">
+                        Vazifalar
+                    </a>
+                </h6>
+            </div>
+            <div id="faqmission" class="acod-body collapse">
+                <div class="acod-content">
+                    {{manager.tasks|safe}}
+                </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="heading-bx left mt-5">
