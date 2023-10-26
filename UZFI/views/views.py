@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.views.generic import TemplateView
@@ -199,10 +201,9 @@ class ScientificWorkAPIView(APIView):
         serializer = ScientificWorkSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"ok":serializer.data})
-        print(serializer.errors)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return HttpResponseRedirect(reverse_lazy('dashboard'))
+            
+        return render(request,'50x.error.html')
 
 
     def get(self, request):
