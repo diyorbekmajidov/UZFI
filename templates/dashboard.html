@@ -117,12 +117,12 @@
                                         
                                         
                                     </div>
-                                    <form class="edit-profile" method="post" action="/{{LANGUAGE_CODE}}/uzfi/scientificwork/">
+                                    <form class="edit-profile" method="post" enctype="multipart/form-data" action="/{{LANGUAGE_CODE}}/uzfi/scientificwork/">
                                         {% csrf_token %}
                                         <div class="">
                                             <div class="form-group row">
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                    <input type="text" name="id" id="id" style="display: none;" value="{{data.id}}">
+                                                    <input type="text" name="id" id="id" style="display: none;" value="{{data.rector.id}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">

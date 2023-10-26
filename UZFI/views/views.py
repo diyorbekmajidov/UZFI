@@ -172,24 +172,30 @@ class CentersDepartmentManagerpiView(APIView):
 class ScientificWorkAPIView(APIView):
     
     def post(self, request):
-        user_id = int(request.POST.get("id"))
+        user_id = request.POST.get("id")
         article_name = request.POST.get("article_name")
         article_level = request.POST.get("article_level")
         link = request.POST.get("link")
-        pdf_file = self.request.FILES.get('pdf_file')
+        pdf_file = request.FILES.get('pdf_file')
         publication_date = request.POST.get("publication_date")
+        
+        
+        data = {
+            "user" : user_id,
+            "article_name" : article_name,
+            "article_level" : article_level,
+            "link" : link,
+            "pdf_file" : pdf_file,
+            "publication_date" : publication_date
+        }
+        serializer = ScientificWorkSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"ok":serializer.data})
+        print(serializer.errors)
 
-        print(user_id, article_name,article_level,link,publication_date,pdf_file)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        # user = User.objects.get(id=user_id)
-        # scientific_work = ScientificWork.objects.filter(user=user)
-        # serializer = ScientificWorkSerializer(scientific_work, many = True)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        return Response({"ok":True})
 
     def get(self, request):
         data = ScientificWork.objects.filter(user=request.user)
