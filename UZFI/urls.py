@@ -47,7 +47,7 @@ urlpatterns = [
     path('financial-statements/', FinancialStatementsApview.as_view(), name='financial-statements'),
 
     path('leadership/', LeadershipAPIView.as_view(), name='leadership'),
-    path('leadership/<int:pk>', LeadershipByIdAPIView.as_view()),
+    path('leadership/<int:pk>/', LeadershipByIdAPIView.as_view()),
 
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
 
