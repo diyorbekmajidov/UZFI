@@ -1,18 +1,8 @@
-{% extends "base.html" %} {% block title %}UZFI | Kafedra{% endblock %} 
+{% extends "base.html" %} {% block title %}UZFI | {{data.first_name}}{% endblock %} 
+{% block trans %}{% endblock trans %}
 {%block content %} {% load static %}
 
 <div class="page-content">
-  <!-- Page Heading Box ==== -->
-  <div
-    class="page-banner ovbl-dark"
-    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
-  >
-    <div class="container">
-      <div class="page-banner-entry">
-        <h1 class="text-white">{{data.name}}</h1>
-      </div>
-    </div>
-  </div>
 
   <!-- Page Heading Box END ==== -->
 
@@ -22,29 +12,29 @@
     <div class="section-area section-sp2">
       <div class="container">
         <div class="heading-bx left">
-          <h2 class="title-head">Kafedra mudiri</h2>
+          <h2 class="title-head">{{data.rector.role}}</h2>
         </div>
 
         <div class="card">
           <div class="row p-3">
             <div class="col-md-4">
-              <img class="rounded" src="{{manager.img}}" alt="" />
+              <img class="rounded" src="{{data.img}}" alt="" />
             </div>
             <div class="col-md-8">
-              <h3>{{manager.name}}</h3>
+              <h3>{{data.first_name}}</h3>
               <div>
-                <span class="text-secondary">E-pochta: </span> {{manager.email}}
+                <span class="text-secondary">E-pochta: </span> {{data.email}}
               </div>
               <div>
                 <span class="text-secondary">Telefon raqam: </span>
-                {{manager.phone}}
+                {{data.phone}}
               </div>
               <div>
                 <span class="text-secondary">Qabul kunlari: </span>
-                {{manager.acceptance}}
+                {{data.acceptance}}
               </div>
               <div>
-                <span class="text-secondary">Manzil: </span> {{manager.address}}
+                <span class="text-secondary">Manzil: </span> {{data.address}}
               </div>
             </div>
           </div>
@@ -52,10 +42,31 @@
 
 
         <div class="heading-bx left mt-5">
-          <h2 class="title-head">Kafedra haqida</h2>
+          <h2 class="title-head">{{data.rector.role}} haqida</h2>
         </div>
 
-        <div class="py-3">{{data.about|safe}}</div>
+        <div class="profile-info">
+            <div class="profile-info-head">
+                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">Vazifalar</button>
+                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">Biografiya</button>
+                <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">Scientific activity</button>
+            </div>
+            <div class="profile-info-body">
+                <div id="profileInfoMissions">
+                    
+                    {{ data.duties|safe }}
+
+                </div>
+                <div id="profileInfoBio">
+                    {{data.biography|safe}}
+                </div>
+                <div id="profileInfoCompletedMissions">
+                    3Lorem ipsum, dolor sit amet consectetur adipisicing elit. At nobis tenetur explicabo sint odio magni ea dolore doloremque delectus recusandae reiciendis perferendis nisi cum voluptas sunt perspiciatis, et esse aspernatur minus minima laboriosam magnam. Accusamus perferendis quae voluptatum voluptatem doloremque sapiente at a ex aut quas facilis ipsum eligendi, hic libero ullam molestiae explicabo animi mollitia, amet quod quidem porro excepturi? Reiciendis vitae ut ab sunt, dolorum repudiandae voluptates obcaecati. Ab repellat nobis eum beatae dolor harum, odio et saepe ipsam nemo eius officia reiciendis nisi perferendis numquam sunt quo placeat explicabo! Nihil eaque eius eum blanditiis aut, rerum dicta omnis deleniti iste atque, illo alias sit, velit incidunt beatae numquam explicabo ut possimus voluptatum magni earum corrupti consequuntur nisi. Qui debitis iure, quam praesentium velit at enim, nesciunt odit a officia officiis recusandae repellendus reiciendis molestiae, optio accusamus ea fugit quia maiores! Autem aut iusto facere, animi doloribus aspernatur dignissimos ratione dolore amet minima consequuntur eaque esse architecto repudiandae tempora rerum quas sapiente accusantium consequatur corrupti ex officiis atque quasi eveniet! Veniam quis ea deleniti soluta labore natus est saepe amet tempora unde sint a necessitatibus reprehenderit excepturi adipisci explicabo distinctio, facilis tempore similique alias mollitia accusantium blanditiis eum.
+                </div>
+            </div>
+        </div>
+
+
       </div>
     </div>
     <!-- FAQS  News End -->
