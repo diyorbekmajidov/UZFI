@@ -13,3 +13,12 @@ class LeadershipAPIView(APIView):
             return render(request, 'leadership.html',{"data":serializers.data})
         except Exception as e:
             return Response({"ok":[]})
+        
+class LeadershipByIdAPIView(APIView):
+    def get(self, request, pk):
+        try :
+            leadership = Leadership.objects.get(id=pk)
+            serializers = LeadershipSerializer(leadership, many=True)
+            return render(request, 'leadership.html',{"data":serializers.data})
+        except Exception as e:
+            return Response({"ok":[]})
