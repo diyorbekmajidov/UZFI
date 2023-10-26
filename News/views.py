@@ -86,7 +86,7 @@ class VedioNews(TemplateView):
         vedio_news = Vedio_New.objects.all()
         page = Paginator(vedio_news, 10)
         page_num = int(request.GET.get('page', 1))
-        return render(request,'.html', {"page_obj":page.page(page_num)})
+        return render(request,'video-gallery.html', {"page_obj":page.page(page_num)})
     
 class VedioNewsByID(TemplateView):
     def get(self, request,pk):

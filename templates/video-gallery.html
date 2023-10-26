@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}UZFI | Video Galleriya{% endblock %} 
+{% block trans %}{% endblock trans %}
+{% block content %} {% load static %} {% load i18n %}
+
+<div class="page-content bg-white">
+  <!-- contact area -->
+  <div class="content-block">
+    <!-- Portfolio  -->
+    <div class="section-area section-sp1 gallery-bx">
+      <div class="container">
+       
+        <div class="clearfix">
+          <ul id="masonry" class="ttr-gallery-listing magnific-image row">
+            
+            {% for i in page_obj %}
+            <li class="action-card col-lg-6 col-md-6 col-sm-12 mt-4">
+                <div class="event-bx news-content">
+                    <div class="info-bx d-flex">
+                      <div>
+                        {% comment %} <div class="event-time">
+                          <div class="event-date"></div>
+                          <div class="event-month">{{i.date_created}}</div>
+                        </div> {% endcomment %}
+                      </div>
+                      <div class="event-info">
+                        <h4 class="event-title">
+                          <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}">{{i.title}}</a>
+                        </h4>
+                        <ul class="media-post">
+                          <li>
+                              <i class="fa fa-clock-o"></i> {{i.date_created}}
+                          </li>
+                           <li>
+                              <i class="fa fa-eye" aria-hidden="true"></i> {{i.views}}
+                          </li> 
+                        </ul>
+                        <p>
+                          {% comment %} <div class="text-center">
+                            <a href="/uzfi/news/{{i.id}}/" class="btn">Yangilikni o'qish</a>
+                          </div> {% endcomment %}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="pagination-bx rounded-sm gray clearfix">
+          <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Avvalgi</a></li>
+                {% endif %}
+
+                {% for page in page_obj.paginator.page_range %}
+                    <li class="{% if page_obj.number == page %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i> Keyingi</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- contact area END -->
+</div>
+
+{% endblock %}
