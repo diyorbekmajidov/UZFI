@@ -44,7 +44,9 @@ class Dashboard(TemplateView):
             {'data_news':serializers.data,
                        })
         if user.role == 'REKTOR':
-            rektor = Leadership.objects.filter(rektor=user).first()
+            print(user)
+            rektor = Leadership.objects.filter(rector=user).last()
+            print(rektor)
             serializers = LeadershipSerializer(rektor)
 
             new_rektor = News_Content.objects.filter(leadership=rektor)
