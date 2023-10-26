@@ -173,9 +173,11 @@ class ScientificWorkAPIView(APIView):
     
     def post(self, request):
         user_id = int(request.POST.get("id"))
-        article_name = int(request.POST.get("article_name"))
-        article_level = int(request.POST.get("article_level"))
-        link = int(request.POST.get("id"))
+        article_name = request.POST.get("article_name")
+        article_level = request.POST.get("article_level")
+        link = request.POST.get("link")
+        pdf_file = request.POST.get("pdf_file")
+        publication_date = request.POST.get("publication_date")
         user = User.objects.get(id=user_id)
         scientific_work = ScientificWork.objects.filter(user=user)
         serializer = ScientificWorkSerializer(scientific_work, many = True)
