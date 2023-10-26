@@ -70,7 +70,28 @@
                                     {{data.biography|safe}}
                                 </div>
                                 <div id="profileInfoCompletedMissions">
-                                    3Lorem ipsum, dolor sit amet consectetur adipisicing elit. At nobis tenetur explicabo sint odio magni ea dolore doloremque delectus recusandae reiciendis perferendis nisi cum voluptas sunt perspiciatis, et esse aspernatur minus minima laboriosam magnam. Accusamus perferendis quae voluptatum voluptatem doloremque sapiente at a ex aut quas facilis ipsum eligendi, hic libero ullam molestiae explicabo animi mollitia, amet quod quidem porro excepturi? Reiciendis vitae ut ab sunt, dolorum repudiandae voluptates obcaecati. Ab repellat nobis eum beatae dolor harum, odio et saepe ipsam nemo eius officia reiciendis nisi perferendis numquam sunt quo placeat explicabo! Nihil eaque eius eum blanditiis aut, rerum dicta omnis deleniti iste atque, illo alias sit, velit incidunt beatae numquam explicabo ut possimus voluptatum magni earum corrupti consequuntur nisi. Qui debitis iure, quam praesentium velit at enim, nesciunt odit a officia officiis recusandae repellendus reiciendis molestiae, optio accusamus ea fugit quia maiores! Autem aut iusto facere, animi doloribus aspernatur dignissimos ratione dolore amet minima consequuntur eaque esse architecto repudiandae tempora rerum quas sapiente accusantium consequatur corrupti ex officiis atque quasi eveniet! Veniam quis ea deleniti soluta labore natus est saepe amet tempora unde sint a necessitatibus reprehenderit excepturi adipisci explicabo distinctio, facilis tempore similique alias mollitia accusantium blanditiis eum.
+                                    <table class="table table-striped">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nomi</th>
+                                            <th scope="col">Darajasi</th>
+                                            <th scope="col">Chop etilgan sana</th>
+                                            <th scope="col">Yukalsh</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in scientificwork %}
+                                                <tr>
+                                                    <th scope="row">{{item.id}}</th>
+                                                    <td>{{item.article_name}}</td>
+                                                    <td>{{item.article_level}}</td>
+                                                    <td>{{item.publication_date}}</td>
+                                                    <td><a target="_blank" href="{{item.pdf_file}}"><i class="fa fa-file-pdf-o"></i></a></td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                      </table>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +154,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Nomi UZ</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Nomi UZ</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_name_uz">
                                                 </div>
@@ -141,7 +162,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Nomi EN</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Nomi EN</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_name_en">
                                                 </div>
@@ -149,7 +170,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Nomi RU</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Nomi RU</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_name_ru">
                                                 </div>
@@ -158,7 +179,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Darajasi UZ</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Darajasi UZ</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_level_uz">
                                                 </div>
@@ -166,7 +187,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Darajasi EN</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Darajasi EN</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_level_en">
                                                 </div>
@@ -174,7 +195,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Darajasi RU</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Darajasi RU</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_level_ru">
                                                 </div>
@@ -184,20 +205,19 @@
                                                     class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Link</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="link">
-                                                    <span class="help">If you want your invoices addressed to a
-                                                        company. Leave blank to use your full name.</span>
+                                                    <span class="help">Majburiy emas</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Fayl</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Fayl</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="file" name="pdf_file">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Chop etilgam sana</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Chop etilgam sana</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="datetime" name="publication_date">
                                                 </div>

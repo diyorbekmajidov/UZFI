@@ -4123,3 +4123,7 @@ button.back-to-top {
 .departments:hover {
 	border-left: 1px solid black;
 }
+.required::after {
+	content: ' *';
+	color: red;
+  }
