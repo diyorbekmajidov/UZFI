@@ -173,8 +173,12 @@ class ScientificWorkAPIView(APIView):
     
     def post(self, request):
         user_id = request.POST.get("id")
-        article_name = request.POST.get("article_name")
-        article_level = request.POST.get("article_level")
+        article_name_uz = request.POST.get("article_name_uz")
+        article_name_en = request.POST.get("article_name_en")
+        article_name_ru = request.POST.get("article_name_ru")
+        article_level_uz = request.POST.get("article_level_uz")
+        article_level_en = request.POST.get("article_level_en")
+        article_level_ru = request.POST.get("article_level_ru")
         link = request.POST.get("link")
         pdf_file = request.FILES.get('pdf_file')
         publication_date = request.POST.get("publication_date")
@@ -182,8 +186,12 @@ class ScientificWorkAPIView(APIView):
         
         data = {
             "user" : user_id,
-            "article_name" : article_name,
-            "article_level" : article_level,
+            "article_name_uz" : article_name_uz,
+            "article_name_en" : article_name_en,
+            "article_name_ru" : article_name_ru,
+            "article_level_uz" : article_level_uz,
+            "article_level_en" : article_level_en,
+            "article_level_ru" : article_level_ru,
             "link" : link,
             "pdf_file" : pdf_file,
             "publication_date" : publication_date

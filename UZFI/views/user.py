@@ -33,9 +33,13 @@ class Dashboard(TemplateView):
             data = News_Content.objects.filter(dekan=dekan)
             serializers = UserNewsSerializer(data, many = True)
             serializers1 = GetDekanSerializer(dekan)
+
+            scientific_work = ScientificWork.objects.filter(user = user)
+            serializers3 = ScientificWorkSerializer(scientific_work, many=True)
             return render(request, 'dashboard.html',
             {'data_news':serializers.data,
-            'data':serializers1.data
+            'data':serializers1.data,
+            "scientificwork":serializers3.data,
                        })
         if user.role == 'MANAGER':
             manager = KafedraManager.objects.filter(kafedra = user )
@@ -43,9 +47,13 @@ class Dashboard(TemplateView):
 
             news_manager = News_Content.objects.filter(kafedramanager = manager)
             serializers1 = UserNewsSerializer(news_manager)
+
+            scientific_work = ScientificWork.objects.filter(user = user)
+            serializers3 = ScientificWorkSerializer(scientific_work, many=True)
             return render(request, 'dashboard.html',
             {'data':serializers.data,
-             "data_news":serializers1.data
+             "data_news":serializers1.data,
+             "scientificwork":serializers3.data,
                        })
         if user.role == 'REKTOR':
             
