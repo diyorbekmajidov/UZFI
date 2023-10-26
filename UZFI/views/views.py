@@ -176,15 +176,20 @@ class ScientificWorkAPIView(APIView):
         article_name = request.POST.get("article_name")
         article_level = request.POST.get("article_level")
         link = request.POST.get("link")
-        pdf_file = request.POST.get("pdf_file")
+        pdf_file = self.request.FILES.get('pdf_file')
         publication_date = request.POST.get("publication_date")
-        user = User.objects.get(id=user_id)
-        scientific_work = ScientificWork.objects.filter(user=user)
-        serializer = ScientificWorkSerializer(scientific_work, many = True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        print(user_id, article_name,article_level,link,publication_date,pdf_file)
+
+        # user = User.objects.get(id=user_id)
+        # scientific_work = ScientificWork.objects.filter(user=user)
+        # serializer = ScientificWorkSerializer(scientific_work, many = True)
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({"ok":True})
 
     def get(self, request):
         data = ScientificWork.objects.filter(user=request.user)
