@@ -24,7 +24,7 @@ class LeadershipByIdAPIView(APIView):
             serializers1 = ScientificWorkSerializer(scientifi_work, many = True)
             return render(request, 'leadership-item.html',{
                 "data":serializers.data,
-                "scientificwork":serializers1.dat
+                "scientificwork":serializers1.data
                 })
         except Exception as e:
             print(e)
