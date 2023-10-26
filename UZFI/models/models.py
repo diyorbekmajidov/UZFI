@@ -83,7 +83,7 @@ class ScientificWork(models.Model):
     user            = models.ForeignKey(User, on_delete=models.CASCADE, related_name="scientific")
     article_name     = models.CharField(max_length=100, blank=True, null=True)
     article_level    = models.CharField(max_length=100, blank=True, null=True)
-    publication_date = models.DateField(blank=True, null=True)
+    publication_date = models.CharField(max_length=100, blank=True, null=True)
     link             = models.CharField(max_length=100, blank=True, null=True)
     pdf_file         = models.FileField(upload_to='pdf/', blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
