@@ -48,6 +48,11 @@ class Dashboard(TemplateView):
              "data_news":serializers1.data
                        })
         if user.role == 'REKTOR':
+            user = request.user
+            token = Token.objects.get(user=user)
+            if token:
+                token.delete()
+            token= Token.objects.create(user=user)
             rektor = Leadership.objects.filter(rector=user).last()
             serializers = LeadershipSerializer(rektor)
 
@@ -60,6 +65,7 @@ class Dashboard(TemplateView):
                 "data":serializers.data,
                 "data_news":serializers1.data,
                 "scientificwork":serializers3.data,
+                "token":token.key,
                 })
 
         return render(request, 'dashboard.html')

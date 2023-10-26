@@ -172,9 +172,13 @@ class CentersDepartmentManagerpiView(APIView):
 class ScientificWorkAPIView(APIView):
     
     def post(self, request):
-        data = request.data.copy()
-        data['user'] = request.user.id
-        serializer = ScientificWorkSerializer(data=data)
+        user_id = int(request.POST.get("id"))
+        article_name = int(request.POST.get("article_name"))
+        article_level = int(request.POST.get("article_level"))
+        link = int(request.POST.get("id"))
+        user = User.objects.get(id=user_id)
+        scientific_work = ScientificWork.objects.filter(user=user)
+        serializer = ScientificWorkSerializer(scientific_work, many = True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
