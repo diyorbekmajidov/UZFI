@@ -80,6 +80,27 @@ class PopularStudentsById(TemplateView):
                             })
         except:
             return render(request,'50x.error.html')
+        
+class VedioNews(TemplateView):
+    def get(self, request):
+        vedio_news = Vedio_New.objects.all()
+        page = Paginator(vedio_news, 10)
+        page_num = int(request.GET.get('page', 1))
+        return render(request,'.html', {"page_obj":page.page(page_num)})
+    
+class VedioNewsByID(TemplateView):
+    def get(self, request,pk):
+        try:
+            vedio_new = Vedio_New.objects.get(id=pk)
+            serializers = VedioNewSerializer(vedio_new)
+            vedio_news = Vedio_New.objects.all()
+            page = Paginator(vedio_news, 10)
+            page_num = int(request.GET.get('page', 1))
+            return render(request,'.html', {
+                "vedio_news":serializers.data,
+                "page_obj":page.page(page_num)})
+        except:
+            return render(request,'50x.error.html') 
 
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]

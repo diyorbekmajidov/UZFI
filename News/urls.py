@@ -8,6 +8,8 @@ from .views import (
     PopularStudentsById,
     LastNewsApiview,
     NewsContentCategoryAPIView,
+    VedioNewsByID,
+    VedioNews
 )
 
 urlpatterns = [
@@ -22,6 +24,9 @@ urlpatterns = [
 
     path('popular-students/', PopularStudentsApiView.as_view()),
     path('popular-students/<int:pk>/', PopularStudentsById.as_view()),
+
+    path('vedionews/', VedioNews.as_view()),
+    path('vedionews/<int:pk>/', VedioNewsByID.as_view()),
 
     path('getusernews/', GetUserNews.as_view(),),
     path('lastnews/', LastNewsApiview.as_view()),

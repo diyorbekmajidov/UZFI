@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import *
 
-
 class NewsCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsCategory
@@ -25,4 +24,9 @@ class UserNewsSerializer(serializers.ModelSerializer):
 class PopularStudentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PopularStudents
+        fields = "__all__"
+
+class VedioNewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vedio_New
         fields = "__all__"
