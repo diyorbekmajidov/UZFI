@@ -6,7 +6,7 @@ from .models import ScientificWork,Faculty, Kafedra
 
 class Leadership(models.Model):
     rector       = models.OneToOneField(User, on_delete=models.CASCADE , related_name="rector")
-    # scientific_work = models.ForeignKey(ScientificWork, on_delete=models.CASCADE, blank=True,null=True)
+    prorektor    = models.CharField(max_length=200, blank=True, null=True)
     first_name   = models.CharField(max_length=200, blank=True, null=True)
     email        = models.CharField(max_length=100, blank=True, null=True)
     phone        = models.CharField(max_length=100, blank=True, null=True)
