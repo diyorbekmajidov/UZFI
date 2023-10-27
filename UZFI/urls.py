@@ -63,7 +63,7 @@ urlpatterns = [
 
     path('departments/', KafedraApview.as_view()),
     path('departments/<int:pk>/', KafedraByIDApview.as_view()),
-    path('departmentsmanager/<int:pk>/', CentersDepartmentManagerpiView.as_view()),
+    path('department-manager/<int:pk>/', CentersDepartmentManagerpiView.as_view()),
 
     path('scientificwork/', ScientificWorkAPIView.as_view()),
 
