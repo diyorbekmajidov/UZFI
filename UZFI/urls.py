@@ -63,7 +63,7 @@ urlpatterns = [
 
     path('departments/', KafedraApview.as_view()),
     path('departments/<int:pk>/', KafedraByIDApview.as_view()),
-    path('department-manager/<int:pk>/', CentersDepartmentManagerpiView.as_view()),
+    path('departmentsmanager/<int:pk>/', CentersDepartmentManagerpiView.as_view()),
 
     path('scientificwork/', ScientificWorkAPIView.as_view()),
 
@@ -71,7 +71,7 @@ urlpatterns = [
     path('dekan/<int:pk>/', DekanById.as_view()),
     path('alldekan/', AllDekan.as_view()),
     
-    path('kafedramanagerget/<int:pk>/', KafedraManagerById.as_view()),
+    path('department-manager/<int:pk>/', KafedraManagerById.as_view()),
     path('getallkafedramanager/', GetAllKafedraManager.as_view()),
     path('kafedramanager/', KafedraManagerApview.as_view(),),
 
