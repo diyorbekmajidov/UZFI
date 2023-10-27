@@ -171,7 +171,7 @@ class KafedraManagerById(APIView):
         except:
             context['scientific_work'] = None
 
-        return render(request, "departmend-manager.html", context=context)
+        return render(request, "department-manager.html", context=context)
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):
