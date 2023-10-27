@@ -33,13 +33,13 @@
 
                     {% for i in data %}
     
-                    <a href="/{{LANGUAGE_CODE}}/uzfi/departments/{{i.id}}/">
                     <div class="col-md-12 councils-item p-5 my-3 departments">
+                        <a href="/{{LANGUAGE_CODE}}/uzfi/departments/{{i.id}}/">
                             <div class="councils-item-title">
                                 <h3>{{i.name|safe}}</h3>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
     
                     {% endfor %}
                 </div>

@@ -20,17 +20,12 @@
         </div>
 
         <div class="card">
-          <div class="p-3">
-
-            <h3 class="text-center">{{dekan.name}}</h3>
-
-
-            <div class="text-center px-5" style="">
+          <div class="row p-3">
+            <div class="col-md-4">
               <img class="rounded" src="{{dekan.img}}" alt="" />
             </div>
-
-
-            <div class="p-5">
+            <div class="col-md-8">
+              <h3>{{dekan.first_name}}</h3>
               <div>
                 <span class="text-secondary">E-pochta: </span> {{dekan.email}}
               </div>
@@ -52,41 +47,52 @@
         <div class="heading-bx left mt-5">
           <h2 class="title-head">Ko'proq ma'lumot</h2>
         </div>
-        <div class="ttr-accordion m-b30 faq-bx" id="charter_accordion">
+        
+        
+        <div class="profile-info">
+          <div class="profile-info-head">
+              <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">Vazifalar</button>
+              <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">Biografiya</button>
+              <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">Ilmiy faoliyat</button>
+          </div>
+          <div class="profile-info-body">
+              <div id="profileInfoMissions">
+                  
+                  {{ dekan.duties|safe }}
 
-
-          <div class="panel">
-            <div class="acod-head">
-                <h6 class="acod-title">
-                    <a data-toggle="collapse" href="#faqbio" class="collapsed" data-parent="#faqbio" >
-                        Biografiya
-                    </a>
-                </h6>
-            </div>
-            <div id="faqbio" class="acod-body collapse">
-                <div class="acod-content">
-                    {{dekan.biography|safe}}
-                </div>
+              </div>
+              <div id="profileInfoBio">
+                  {{dekan.biography|safe}}
+              </div>
+              <div id="profileInfoCompletedMissions">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nomi</th>
+                        <th scope="col">Darajasi</th>
+                        <th scope="col">Chop etilgan sana</th>
+                        <th scope="col">Yukalsh</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in scientificwork %}
+                            <tr>
+                                <th scope="row">{{item.id}}</th>
+                                <td>{{item.article_name}}</td>
+                                <td>{{item.article_level}}</td>
+                                <td>{{item.publication_date}}</td>
+                                <td><a target="_blank" href="{{item.pdf_file}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                                  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                                  </svg></a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
             </div>
           </div>
-
-
-          <div class="panel">
-            <div class="acod-head">
-                <h6 class="acod-title">
-                    <a data-toggle="collapse" href="#faqmission" class="collapsed" data-parent="#faqmission">
-                        Vazifalar
-                    </a>
-                </h6>
-            </div>
-            <div id="faqmission" class="acod-body collapse">
-                <div class="acod-content">
-                    {{dekan.duties|safe}}
-                </div>
-            </div>
-          </div>
-
-        </div>
+      </div>
 
 
 
