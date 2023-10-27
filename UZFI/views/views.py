@@ -124,12 +124,16 @@ class DekanById(APIView):
             dekan = Dekan.objects.get(id=pk)
             serializer = GetDekanSerializer(dekan)
             user = dekan.dekan.id
-            scientific_work = ScientificWork.objects.get(user = user)
-            serializer1= ScientificWorkSerializer(scientific_work, many = True)
-            return render(request, "dekan.html", {
-                "dekan":serializer.data,
-                "scientific_work":serializer1.data
-                })
+
+            context = {"dekan":serializer.data,}
+
+            try:
+                scientific_work = ScientificWork.objects.get(user = user)
+                serializer1= ScientificWorkSerializer(scientific_work, many = True)
+                context['scientific_work'] = serializer1.data
+            except:
+                context['scientific_work'] = None
+            return render(request, "dekan.html", context=context)
         except:
             return render(request,'50x.error.html')
 
