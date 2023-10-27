@@ -124,9 +124,7 @@ class DekanById(APIView):
             dekan = Dekan.objects.get(id=pk)
             serializer = GetDekanSerializer(dekan)
             user = dekan.dekan.id
-
             context = {"dekan":serializer.data,}
-
             try:
                 scientific_work = ScientificWork.objects.get(user = user)
                 serializer1= ScientificWorkSerializer(scientific_work, many = True)
@@ -165,13 +163,15 @@ class KafedraManagerById(APIView):
         manager = KafedraManager.objects.get(id = pk)
         serializer = KafedraManagerSerializer(manager)
         user = manager.kafedramanager.id
-        scientific_work = ScientificWork.objects.get(user = user)
-        serializer1= ScientificWorkSerializer(scientific_work, many = True)
+        context = {"kafedra_manager":serializer.data,}
+        try:
+            scientific_work = ScientificWork.objects.get(user = user)
+            serializer1= ScientificWorkSerializer(scientific_work, many = True)
+            context['scientific_work'] = serializer1.data
+        except:
+            context['scientific_work'] = None
 
-        return render(request, ".html", {
-            "kafedra_manager":serializer.data,
-            "scientific_work":serializer1.data
-            })
+        return render(request, ".html", context=context)
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):
