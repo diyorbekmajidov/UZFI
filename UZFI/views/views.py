@@ -160,7 +160,14 @@ class KafedraManagerById(APIView):
     def get(self, request, pk):
         manager = KafedraManager.objects.get(id = pk)
         serializer = KafedraManagerSerializer(manager)
-        return render(request, ".html", {"kafedra_manager":serializer.data})
+        user = manager.kafedramanager.id
+        scientific_work = ScientificWork.objects.get(user = user)
+        serializer1= ScientificWorkSerializer(scientific_work, many = True)
+
+        return render(request, ".html", {
+            "kafedra_manager":serializer.data,
+            "scientific_work":serializer1.data
+            })
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):
