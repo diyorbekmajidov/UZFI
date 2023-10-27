@@ -103,23 +103,35 @@ class FacultyApview(APIView):
     
 class FacultyByIdApview(APIView):
     def get(self, request, pk):
-        faculty = Faculty.objects.get(id = pk)
-        dekan = Dekan.objects.get(faculty = pk)
-        directions = Direction.objects.filter(faculty=pk)
-        serializers_directions = DirectionSerializer(directions, many = True)
-        serializers1 = GetDekanSerializer(dekan)
-        serializers = FacultySerializer(faculty)
-        return render(request, 'faculties-item.html',
-            {"faculty":serializers.data,
-             "dekan": serializers1.data,
-             "direction": serializers_directions.data
-             })
+        try:
+            faculty = Faculty.objects.get(id = pk)
+            dekan = Dekan.objects.get(faculty = pk)
+            directions = Direction.objects.filter(faculty=pk)
+            serializers_directions = DirectionSerializer(directions, many = True)
+            serializers1 = GetDekanSerializer(dekan)
+            serializers = FacultySerializer(faculty)
+            return render(request, 'faculties-item.html',
+                {"faculty":serializers.data,
+                "dekan": serializers1.data,
+                "direction": serializers_directions.data
+                })
+        except:
+            return render(request,'50x.error.html')
 
 class DekanById(APIView):
     def get(self, request, pk):
-        dekan = Dekan.objects.get(id=pk)
-        serializer = GetDekanSerializer(dekan)
-        return render(request, "dekan.html", {"dekan":serializer.data})
+        try:
+            dekan = Dekan.objects.get(id=pk)
+            serializer = GetDekanSerializer(dekan)
+            user = dekan.dekan.id
+            scientific_work = ScientificWork.objects.get(user = user)
+            serializer1= ScientificWorkSerializer(scientific_work, many = True)
+            return render(request, "dekan.html", {
+                "dekan":serializer.data,
+                "scientific_work":serializer1.data
+                })
+        except:
+            return render(request,'50x.error.html')
 
 class DirectionApview(APIView):
     def get(self, request, pk):
