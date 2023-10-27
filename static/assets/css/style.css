@@ -4053,13 +4053,20 @@ button.back-to-top {
 
 
 /* Faculties */
-.faculties .faculty-item {
+.faculty-item-bg a {
+	min-width: 100%;
+	display: inline-block;
+}
+.faculty-item-hover, .faculty-item, .faculty-item-bg a {
+	min-height: 100%;
+
+}
+.faculty-item {
 	cursor: pointer;
 	background-color: rgba(2, 0, 11, 0.8);
 	color: #ffffff;
 }
 .faculty-item-bg {
-
 	transition: .3s;
 }
 .faculty-item-bg:hover  {
