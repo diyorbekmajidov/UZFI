@@ -19,3 +19,6 @@ class Vedio_NewAdmin(TranslationAdmin):
 class PopularStudentsAdmin(TranslationAdmin):
     list_display = ('body','description')
 
+@admin.register(PendingEvents)
+class PendingEventsAdmin(TranslationAdmin):
+    list_display = ('body','event_name')

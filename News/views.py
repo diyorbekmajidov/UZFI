@@ -101,6 +101,10 @@ class VedioNewsByID(TemplateView):
                 "page_obj":page.page(page_num)})
         except:
             return render(request,'50x.error.html') 
+        
+class SearchNewsApiView(ListAPIView):
+    def get(self, request):
+        pass
 
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]

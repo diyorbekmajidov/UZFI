@@ -4,6 +4,7 @@ from .models import (
     News_Content,
     Vedio_New,
     PopularStudents,
+    PendingEvents
     )
 
 @register(NewsCategory)
@@ -21,3 +22,7 @@ class Vedio_NewTranslationOptions(TranslationOptions):
 @register(PopularStudents)
 class PopularStudentsTranslationOptions(TranslationOptions):
     fields = ('body','description',)
+
+@register(PendingEvents)
+class PendingEventsTranslationOptions(TranslationOptions):
+    fields = ('body','event_name',)
