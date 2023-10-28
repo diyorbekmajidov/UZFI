@@ -49,3 +49,14 @@ class PopularStudents(models.Model):
 
     def __str__(self) -> str:
         return self.student_name
+    
+class PendingEvents(models.Model):
+    event_name    = models.CharField(max_length=150)
+    place         = models.CharField(max_length=150)
+    start_date    = models.DateField()
+    body          = RichTextUploadingField()
+    date_created  = models.DateField(auto_now_add=True)
+    date_update   = models.DateTimeField(auto_now=True)
+
+    def __str__(self) ->str:
+        return self.event_name
