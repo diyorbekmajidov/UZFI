@@ -7,3 +7,6 @@ class RegulationOnSecondaryEducation(TemplateView):
     
 class WorkWithTheAnswerSheet(TemplateView):
     template_name = "abitur/work-with-the-answer-sheet.html"
+
+class FAQs(TemplateView):
+    template_name = "abitur/faqs.html"
