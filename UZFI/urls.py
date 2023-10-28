@@ -1,6 +1,5 @@
 from django.urls import path
-from . import views
-
+from .abitur import urlpatterns as abitur_urlpatterns
 from .views import (
     CharterApview,
     DocumentCreateApview,
@@ -78,4 +77,4 @@ urlpatterns = [
     path('register/', Register.as_view()),
     path('login/', Login.as_view()),
     path('dashboard/', Dashboard.as_view(), name='dashboard')
-]
+] + abitur_urlpatterns
