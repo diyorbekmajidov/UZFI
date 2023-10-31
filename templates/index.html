@@ -711,48 +711,38 @@
           <div
             class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0 m-b30"
           >
-            {% for i in news %}
+          
+          {% comment %} {% for  in  %} {% endcomment %}
 
-            <div class="item">
-              <div class="event-bx">
-                <div class="action-box">
-                  <img
-                    src="{{i.img}}"
-                    alt=""
-                  /> 
+          <div class="item">
+            <div class="event-bx">
+              <div class="action-box">
+                <img src="assets/images/event/pic4.jpg" alt="">
+              </div>
+              <div class="info-bx d-flex">
+                <div>
+                  <div class="event-time">
+                    <div class="event-date">29</div>
+                    <div class="event-month">October</div>
+                  </div>
                 </div>
-                <div class="info-bx d-flex">
-                  <div>
-                    <div class="event-time">
-                      <div class="event-date"></div>
-                      <div class="event-month">{{i.date_created}}</div>
-                    </div>
-                  </div>
-                  <div class="event-info">
-                    <h4 class="event-title">
-                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}">{{i.title}}</a>
-                    </h4>
-                    <ul class="media-post">
-                       <li>
-                          <i class="fa fa-eye" aria-hidden="true"></i> {{i.views}}
-                      </li> 
-                      {% comment %} <li>
-                        <a href="#"
-                          ><i class="fa fa-map-marker"></i> Berlin,
-                          Germany</a
-                        >
-                      </li> {% endcomment %}
-                    </ul>
-                    <p>
-                      {% comment %} <div class="text-center">
-                        <a href="/uzfi/news/{{i.id}}/" class="btn">Yangilikni o'qish</a>
-                      </div> {% endcomment %}
-                    </p>
-                  </div>
+                <div class="event-info">
+                  <h4 class="event-title"><a href="#">Education Autumn Tour 2019</a></h4>
+                  <ul class="media-post">
+                    <li><a href="#"><i class="fa fa-clock-o"></i> 7:00am 8:00am</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> Berlin, Germany</a>
+                    </li>
+                  </ul>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the..</p>
                 </div>
               </div>
             </div>
-            {% endfor %}
+          </div>
+
+          {% comment %} {% endfor %} {% endcomment %}
+
           </div>
         </div>
         <div class="text-center">

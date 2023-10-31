@@ -1,0 +1,42 @@
+{% for i in news %}
+
+            <div class="item">
+              <div class="event-bx">
+                <div class="action-box">
+                  <img
+                    src="{{i.img}}"
+                    alt=""
+                  /> 
+                </div>
+                <div class="info-bx d-flex">
+                  <div>
+                    <div class="event-time">
+                      <div class="event-date"></div>
+                      <div class="event-month">{{i.date_created}}</div>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <h4 class="event-title">
+                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}">{{i.title}}</a>
+                    </h4>
+                    <ul class="media-post">
+                       <li>
+                          <i class="fa fa-eye" aria-hidden="true"></i> {{i.views}}
+                      </li> 
+                      {% comment %} <li>
+                        <a href="#"
+                          ><i class="fa fa-map-marker"></i> Berlin,
+                          Germany</a
+                        >
+                      </li> {% endcomment %}
+                    </ul>
+                    <p>
+                      {% comment %} <div class="text-center">
+                        <a href="/uzfi/news/{{i.id}}/" class="btn">Yangilikni o'qish</a>
+                      </div> {% endcomment %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
