@@ -54,6 +54,7 @@ class PendingEvents(models.Model):
     event_name    = models.CharField(max_length=150)
     place         = models.CharField(max_length=150)
     start_date    = models.DateField()
+    views         = models.IntegerField(default=0)
     body          = RichTextUploadingField()
     date_created  = models.DateField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
