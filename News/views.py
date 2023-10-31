@@ -103,9 +103,14 @@ class VedioNewsByID(TemplateView):
             return render(request,'50x.error.html') 
         
 class SearchNewsApiView(ListAPIView):
-    def get(self, request):
-        pass
-
+    def get(self, request, text):
+        try :
+            queryset = News_Content.objects.filter(title__icontains=text)
+            serializers = NewsContentSerializer(queryset, many = True)
+            return Response({"ok":serializers.data})
+        except:
+            return render(request,'50x.error.html')
+        
 class GetUserNews(ListAPIView):
     permission_classes = [IsAuthenticated]
     pagination_class = NewsPagination
