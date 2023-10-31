@@ -1,6 +1,5 @@
 from django.urls import path, include
 from .views import (
-    NewsCategoryListCreate,
     NewsContentListAPIView,
     NewsContentApiviewGet,
     PopularStudentsApiView,
@@ -18,7 +17,6 @@ from .views import (
 urlpatterns = [
 
     # Categories
-    path('category/', NewsCategoryListCreate.as_view(), name='news_category_list_create'),
     path('category/<int:category>/', NewsContentCategoryAPIView.as_view()),
 
     # Content

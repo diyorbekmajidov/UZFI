@@ -15,22 +15,21 @@ class NewsPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 10000
 
-
-class NewsCategoryListCreate(ListCreateAPIView): 
-    queryset = NewsCategory.objects.all()
-    serializer_class = NewsCategorySerializer
-
-
 class NewsContentListAPIView(ListView):
     
     def get(self, request, *args, **kwargs):
         category = NewsCategory.objects.all()
         news_content = News_Content.objects.all()
         page = Paginator(news_content, 10)
+
         serializer1 = NewsCategorySerializer(category, many = True)
         page_num = int(request.GET.get('page', 1))
+
+        last_news = News_Content.objects.order_by('-date_created')[:3]
+        serializer3 = NewsContentSerializer(last_news, many = True)
         return render(request, 'news.html', {
             "category":serializer1.data,
+            "last_news":serializer3.data,
             "page_obj":page.page(page_num)})
 
 class NewsContentCategoryAPIView(ListView):
