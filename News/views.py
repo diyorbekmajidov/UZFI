@@ -8,6 +8,7 @@ from .serializers import *
 from django.core.paginator import Paginator
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
+from django.db.models import Q
 
 class NewsPagination(PageNumberPagination):
     page_size = 1
@@ -107,7 +108,7 @@ class SearchNewsApiView(ListAPIView):
         try :
             queryset = News_Content.objects.filter(title__icontains=text)
             serializers = NewsContentSerializer(queryset, many = True)
-            return Response({"ok":serializers.data})
+            return render(request, '.html', {"data":serializers.data})
         except:
             return render(request,'50x.error.html')
         
@@ -124,6 +125,26 @@ class GetUserNews(ListAPIView):
         else:
             return News_Content.objects.none()
 
-class LastNewsApiview(ListAPIView):
-    queryset = News_Content.objects.order_by('-date_created')[:10]
-    serializer_class = NewsContentSerializer
+class PendingEventApiviews(TemplateView):
+    def get(self, request):
+        pending_events = PendingEvents.objects.all()
+        serializers = PendingEventsSerializer(pending_events, many = True)
+        return render(request, '.html', {"data":serializers.data})
+    
+class PendingEventByIdApiviews(TemplateView):
+    def get(self, request, pk):
+        try:
+            pending_events = PendingEvents.objects.get(id = pk)
+            serializers = PendingEventsSerializer(pending_events)
+            return render(request, '.html', {"data":serializers.data})
+        except:
+            return render(request,'50x.error.html')
+
+class PendingEventSearchApiviews(ListAPIView):
+    def get(self, request, text):
+        try :
+            queryset = PendingEvents.objects.filter(event_name__=text)
+            serializers = PendingEventsSerializer(queryset, many = True)
+            return render(request, '.html', {"data":serializers.data})
+        except:
+            return render(request,'50x.error.html')

@@ -30,3 +30,8 @@ class VedioNewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vedio_New
         fields = "__all__"
+
+class PendingEventsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PendingEvents
+        fields = "__all__"
