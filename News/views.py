@@ -135,6 +135,8 @@ class PendingEventByIdApiviews(TemplateView):
     def get(self, request, pk):
         try:
             pending_events = PendingEvents.objects.get(id = pk)
+            views = pending_events.views+1
+            pending_events.views = views
             serializers = PendingEventsSerializer(pending_events)
             return render(request, '.html', {"data":serializers.data})
         except:

@@ -9,7 +9,7 @@ from UZFI.models.models import *
 from UZFI.serializers import *
 from django.shortcuts import render
 from News.models import *
-from News.serializers import NewsContentSerializer, PopularStudentsSerializer
+from News.serializers import NewsContentSerializer, PopularStudentsSerializer, PendingEventsSerializer
 
 
 
@@ -27,8 +27,16 @@ class Index(TemplateView):
             serializer_popular_students = PopularStudentsSerializer(popular_student, many=True)
 
             mainpage_category = NewsCategory.objects.filter(new_category="MAINPAGE")
+
+            pendingevents = PendingEvents.objects.order_by('-date_created')[:3]
+            serializer_pendingevents = PendingEventsSerializer(pendingevents, many=True)
             
-            context = {"faculty":serializers.data, "direction":serializers1.data, "news":serializer_class.data, 'popular_student':serializer_popular_students.data, }
+            context = {"faculty":serializers.data, 
+                       "direction":serializers1.data,
+                        "news":serializer_class.data, 
+                        "popular_student":serializer_popular_students.data, 
+                        "events":serializer_pendingevents.data
+                        }
 
             if mainpage_category:
                 mainpage_news = News_Content.objects.filter(category=mainpage_category.last()).last()
