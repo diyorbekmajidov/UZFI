@@ -33,8 +33,8 @@ urlpatterns = [
 
     path('getusernews/', GetUserNews.as_view()),
 
-    path('pendingevent/<int:pk>/', PendingEventByIdApiviews.as_view()),
-    path('pendingevent/<str:text>/', PendingEventSearchApiviews.as_view()),
-    path('pendingevent/', PendingEventApiviews.as_view()),
+    path('events/', PendingEventApiviews.as_view()),
+    path('events/<int:pk>/', PendingEventByIdApiviews.as_view()),
+    path('events/<str:text>/', PendingEventSearchApiviews.as_view()),
 
 ]

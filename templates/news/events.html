@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}UZFI | Kutilayotgan tadbirlar{% endblock %} 
+{% block trans %}{% endblock trans %}
+{%block content %} {% load static %} {% load i18n %}
+
+
+<div class="page-content bg-white">
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="/">Asosiy sahifa</a></li>
+                <li>Kutilayotgan tadbirlar</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading Box END ==== -->
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+        <!-- Blog Grid ==== -->
+        <div class="section-area section-sp1">
+            <div class="container">
+                <div class="ttr-blog-grid-3 row" id="masonry">
+
+                    {% for item in data %}
+
+                    <div class="post action-card col-lg-4 col-md-6 col-sm-12 col-xs-12 m-b40">
+                        <div class="recent-news">
+                            {% comment %} <div class="action-box">
+                                <img src="assets/images/blog/latest-blog/pic1.jpg" alt="">
+                            </div> {% endcomment %}
+
+                            <div class="info-bx">
+                                <ul class="media-post">
+                                    <li><i class="fa fa-calendar"></i>{{item.date_created}}</li>
+                                    <li><i class="fa fa-eye"></i>{{item.views}}</li>
+                                </ul>
+                                <h5 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}/">{{i.event_name}}</a></h5>
+                                <p>Knowing that, you’ve optimised your pages countless amount of times, written tons.</p>
+                                <div class="post-extra">
+                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}/" class="btn-link">READ MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <!-- Blog Grid END ==== -->
+    </div>
+    <!-- Page Content Box END ==== -->
+</div>
+
+
+
+{% endblock %}

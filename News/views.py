@@ -129,7 +129,7 @@ class PendingEventApiviews(TemplateView):
     def get(self, request):
         pending_events = PendingEvents.objects.all()
         serializers = PendingEventsSerializer(pending_events, many = True)
-        return render(request, '.html', {"data":serializers.data})
+        return render(request, 'news/events.html', {"data":serializers.data})
     
 class PendingEventByIdApiviews(TemplateView):
     def get(self, request, pk):
