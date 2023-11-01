@@ -93,13 +93,14 @@ class VedioNewsByID(TemplateView):
         try:
             vedio_new = Vedio_New.objects.get(id=pk)
             serializers = VedioNewSerializer(vedio_new)
-            vedio_news = Vedio_New.objects.all()
-            page = Paginator(vedio_news, 10)
+            video_vews = Vedio_New.objects.all().order_by("id")
+            page = Paginator(video_vews, 10)
             page_num = int(request.GET.get('page', 1))
-            return render(request,'video-gallery-item.html', {
+            return render(request,'news/video-gallery-item.html', {
                 "vedio_news":serializers.data,
                 "page_obj":page.page(page_num)})
-        except:
+        except Exception as e:
+            print(e)
             return render(request,'50x.error.html') 
         
 class SearchNewsApiView(ListAPIView):
