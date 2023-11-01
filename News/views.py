@@ -27,7 +27,7 @@ class NewsContentListAPIView(ListView):
 
         last_news = News_Content.objects.order_by('-date_created')[:3]
         serializer3 = NewsContentSerializer(last_news, many = True)
-        return render(request, 'news.html', {
+        return render(request, 'news/news.html', {
             "category":serializer1.data,
             "last_news":serializer3.data,
             "page_obj":page.page(page_num)})
@@ -42,7 +42,7 @@ class NewsContentCategoryAPIView(ListView):
         page = Paginator(data, 10)
         page_num = int(request.GET.get('page', 1))
             
-        return render(request, 'news-category.html', {"page_obj":page.page(page_num), "category":serializer1.data, "current":cat.new_category})
+        return render(request, 'news/news-category.html', {"page_obj":page.page(page_num), "category":serializer1.data, "current":cat.new_category})
 
 
 class NewsContentApiviewGet(TemplateView):
@@ -54,7 +54,7 @@ class NewsContentApiviewGet(TemplateView):
         serializer = NewsContentSerializer(news_content)
         queryset = News_Content.objects.order_by('-date_created')[:10]
         serializer_class = NewsContentSerializer(queryset , many = True)
-        return render(request, 'news-item.html', {"data":serializer.data,
+        return render(request, 'news/news-item.html', {"data":serializer.data,
                                                   "latest":serializer_class.data})
 
 class PopularStudentsApiView(TemplateView):
@@ -62,7 +62,7 @@ class PopularStudentsApiView(TemplateView):
             try:
                 populars = PopularStudents.objects.all()
                 serializers = PopularStudentsSerializer(populars, many = True)
-                return  render(request, 'popular-students.html', {"data":serializers.data,})
+                return  render(request, 'news/popular-students.html', {"data":serializers.data,})
             except Exception as e:
                 print(e)
                 return render(request,'50x.error.html')
@@ -74,7 +74,7 @@ class PopularStudentsById(TemplateView):
             serializers = PopularStudentsSerializer(populars)
             last_populars = PopularStudents.objects.order_by('-date_created')[:5]
             serializer2 = PopularStudentsSerializer(last_populars, many = True)
-            return  render(request, 'popular-students-item.html', 
+            return  render(request, 'news/popular-students-item.html', 
                            {"data":serializers.data,
                             "pouplar":serializer2.data
                             })
@@ -86,7 +86,7 @@ class VedioNews(TemplateView):
         vedio_news = Vedio_New.objects.all()
         page = Paginator(vedio_news, 10)
         page_num = int(request.GET.get('page', 1))
-        return render(request,'video-gallery.html', {"page_obj":page.page(page_num)})
+        return render(request,'news/video-gallery.html', {"page_obj":page.page(page_num)})
     
 class VedioNewsByID(TemplateView):
     def get(self, request,pk):
