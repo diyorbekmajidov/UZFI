@@ -38,7 +38,7 @@ class Vedio_New(models.Model):
     vedio         = models.FileField(upload_to='videos/', null=True, verbose_name="")
     body          = RichTextUploadingField(null=True,blank=True) 
     views         = models.IntegerField(default=0)
-    date_created  = models.DateTimeField(auto_now_add=True)
+    date_created  = models.DateField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
 
     def __str__(self):
