@@ -30,13 +30,12 @@
 
                             <div class="info-bx">
                                 <ul class="media-post">
-                                    <li><i class="fa fa-calendar"></i>{{item.date_created}}</li>
-                                    <li><i class="fa fa-eye"></i>{{item.views}}</li>
+                                    <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
+                                    <li><i class="fa fa-eye"></i> {{item.views}}</li>
                                 </ul>
-                                <h5 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}/">{{i.event_name}}</a></h5>
-                                <p>Knowing that, you’ve optimised your pages countless amount of times, written tons.</p>
+                                <div><a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/"> {{item.event_name}} </a></div>
                                 <div class="post-extra">
-                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}/" class="btn-link">READ MORE</a>
+                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/" class="btn-link">Davomini o'qish</a>
                                 </div>
                             </div>
                         </div>

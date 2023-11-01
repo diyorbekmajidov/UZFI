@@ -138,8 +138,13 @@ class PendingEventByIdApiviews(TemplateView):
             views = pending_events.views+1
             pending_events.views = views
             serializers = PendingEventsSerializer(pending_events)
-            return render(request, '.html', {"data":serializers.data})
-        except:
+
+            queryset = PendingEvents.objects.order_by('-date_created')[:3]
+            serializer_class = PendingEventsSerializer(queryset , many = True)
+
+            return render(request, 'news/events-item.html', {"data":serializers.data, "latest":serializer_class.data})
+        except Exception as e:
+            print(e)
             return render(request,'50x.error.html')
 
 class PendingEventSearchApiviews(ListAPIView):
