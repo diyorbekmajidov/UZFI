@@ -92,6 +92,8 @@ class VedioNewsByID(TemplateView):
     def get(self, request,pk):
         try:
             vedio_new = Vedio_New.objects.get(id=pk)
+            views = video_vews.views + 1
+            vedio_new.views = views
             serializers = VedioNewSerializer(vedio_new)
             video_vews = Vedio_New.objects.all().order_by("id")
             page = Paginator(video_vews, 10)
