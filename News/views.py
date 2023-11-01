@@ -96,7 +96,7 @@ class VedioNewsByID(TemplateView):
             vedio_news = Vedio_New.objects.all()
             page = Paginator(vedio_news, 10)
             page_num = int(request.GET.get('page', 1))
-            return render(request,'.html', {
+            return render(request,'video-gallery-item.html', {
                 "vedio_news":serializers.data,
                 "page_obj":page.page(page_num)})
         except:
