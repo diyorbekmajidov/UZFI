@@ -4,11 +4,11 @@ from django.urls import reverse_lazy
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.views.generic import TemplateView
-from rest_framework import status
 from UZFI.models.models import *
 from UZFI.serializers import *
 from django.shortcuts import render
 from News.models import *
+import requests
 from News.serializers import NewsContentSerializer, PopularStudentsSerializer, PendingEventsSerializer
 
 
@@ -30,12 +30,27 @@ class Index(TemplateView):
 
             pendingevents = PendingEvents.objects.order_by('-date_created')[:3]
             serializer_pendingevents = PendingEventsSerializer(pendingevents, many=True)
+
+            url_talabalr = 'https://student.uzfi.uz/rest/v1/public/stat-student'
+            url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'
+            url_xodimlar = 'https://student.uzfi.uz/rest/v1/public/stat-employee'
+            response_talabalar = requests.get(url_talabalr).json()
+            response_structure = requests.get(url_structure).json()
+            response_xodimlar = requests.get(url_xodimlar).json()
+
+            indicators = {
+                "response_talabalar": response_talabalar["data"]["education_type"]["Jami"],
+                "response_structure": response_structure["data"]["departments"],
+                "response_xodimlar": response_xodimlar["data"]["employment_form"],
+                "response_uqtuvchilar": response_xodimlar["data"]["position"]
+            }
             
             context = {"faculty":serializers.data, 
                        "direction":serializers1.data,
                         "news":serializer_class.data, 
                         "popular_student":serializer_popular_students.data, 
-                        "events":serializer_pendingevents.data
+                        "events":serializer_pendingevents.data,
+                        "indicators" : indicators
                         }
 
             if mainpage_category:
@@ -241,3 +256,22 @@ class ScientificWorkAPIView(APIView):
         data = ScientificWork.objects.filter(user=request.user)
         serializers = ScientificWorkSerializer(data, many = True)
         return Response(serializers.data)
+    
+
+class Indicators(APIView):
+    def get(self, request):
+        url_talabalr = 'https://student.uzfi.uz/rest/v1/public/stat-student'
+        url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'
+        url_xodimlar = 'https://student.uzfi.uz/rest/v1/public/stat-employee'
+        response_talabalar = requests.get(url_talabalr).json()
+        response_structure = requests.get(url_structure).json()
+        response_xodimlar = requests.get(url_xodimlar).json()
+
+        indicators = {
+            "response_talabalar": response_talabalar["data"]["education_type"]["Jami"],
+            "response_structure": response_structure["data"]["departments"],
+            "response_xodimlar": response_xodimlar["data"]["employment_form"],
+            "response_uqtuvchilar": response_xodimlar["data"]["position"]
+        }
+
+        return Response(indicators)

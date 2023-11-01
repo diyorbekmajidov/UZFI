@@ -8,3 +8,4 @@ django-modeltranslation
 drf-yasg
 django-jazzmin
 setuptools
+requests
