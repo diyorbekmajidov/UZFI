@@ -24,7 +24,7 @@ class FinancialStatementsAdmin(TranslationAdmin):
 
 @admin.register(Vacancies)
 class VacanciesAdmin(TranslationAdmin):
-    list_display = ('name','body','department',)
+    list_display = ('name','body',)
 
 @admin.register(Charter)
 class CharterAdmin(TranslationAdmin):

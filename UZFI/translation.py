@@ -28,7 +28,7 @@ class FinancialStatementsTranslationOptions(TranslationOptions):
 
 @register(Vacancies)
 class VacanciesTranslationOptions(TranslationOptions):
-    fields = ('name','body','department',)
+    fields = ('name','body',)
 
 @register(Charter)
 class CharterTranslationOptions(TranslationOptions):
