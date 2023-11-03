@@ -164,4 +164,4 @@ class Contact(TemplateView):
     def get(self, request):
         contact = Requisites.objects.all()
         serializers = RequisitesSerializer(contact, many = True)
-        return render(request, '.html', {"data":serializers.data})
+        return render(request, 'news/contacts.html', {"data":serializers.data})
