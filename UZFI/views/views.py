@@ -41,6 +41,7 @@ class Index(TemplateView):
             indicators = {
                 "response_talabalar": response_talabalar["data"]["education_type"]["Jami"],
                 "response_structure": response_structure["data"]["departments"],
+                "response_structure1": response_structure["data"]["auditoriums"],
                 "response_xodimlar": response_xodimlar["data"]["employment_form"],
                 "response_uqtuvchilar": response_xodimlar["data"]["position"]
             }
