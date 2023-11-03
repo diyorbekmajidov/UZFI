@@ -9,4 +9,4 @@ else  # for macOS/Linux
     source $ENV_PATH/bin/activate
 fi
 
-python $SCRIPT_PATH runserver
+python $SCRIPT_PATH runserver 0.0.0.0:8000
