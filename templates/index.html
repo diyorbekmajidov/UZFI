@@ -609,95 +609,59 @@
     </div>
     <!-- Destinations END -->
 
-    <!-- Slider -->
-    <div
-      class="section-area section-sp1 ovpr-dark online-cours"
-      style="position: relative; overflow: hidden"
-    >
-      <!-- VIDEO BACKGROUND -->
+    <!-- Informations END -->
 
-      <video
-        playsinline
-        autoplay
-        muted
-        loop
-        id="myVideo"
-        style="
-          position: absolute;
-          min-width: 100%;
-          min-height: 100%;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          -webkit-transform: translate(-50%, -50%);
-        "
-      >
-        <source
-          src="{% static 'assets\bg-videos\mixkit-behind-the-scenes-of-an-ad-for-a-watch-44066-medium.mp4' %}"
-          type="video/mp4"
-        />
-      </video>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center text-white">
-            <h2>O'ZBEKISTON - FINLANDIYA PEDAGOGIK INSTITUTI</h2>
-            <h5>Yangi ko'nikmalarni o'rganish xususiyatiga egalik qiling</h5>
-            <!-- <form class="cours-search">
-            <div class="input-group">
-              <input type="text" class="form-control"
-                placeholder="What do you want to learn today?	">
-              <div class="input-group-append">
-                <button class="btn" type="submit">Search</button>
-              </div>
-            </div>
-          </form> -->
+    <div class="container">
+      <div id="informations">
+        {{indicators}}
+        <div class="info-row">
+          
+          <div class="info-inner-col">
+            <div class="info-inner-row-item text-secondary">Fakultetlar</div>
+            <h2 class="info-inner-row-item text-primary">{{indicators.response_structure.3.count}}</h2>
+            <div class="info-inner-row-item text-secondary">Kafedralar</div>
+            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.4.count}}</h3>
           </div>
-        </div>
-        <div class="mw800 m-auto">
-          <div class="row">
-            <div class="col-md-4 col-sm-6">
-              <div class="cours-search-bx m-b30">
-                <div class="icon-box">
-                  <h3>
-                    <i class="ti-pencil-alt"></i
-                    ><span class="counter">15</span>
-                  </h3>
-                </div>
-                <span class="cours-search-text">15 ta Fakultet</span>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="cours-search-bx m-b30">
-                <div class="icon-box">
-                  <h3>
-                    <i class="ti-user"></i
-                    ><span class="counter">10</span>k
-                  </h3>
-                </div>
-                <span class="cours-search-text"
-                  >10 mingdan ortiq talabalar</span
-                >
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-              <div class="cours-search-bx m-b30">
-                <div class="icon-box">
-                  <h3>
-                    <i class="ti-id-badge"></i
-                    ><span class="counter">17</span>
-                  </h3>
-                </div>
-                <span class="cours-search-text">17 ta yo'nalish</span>
-              </div>
-            </div>
+          <div class="info-inner-col">
+            <div class="info-inner-row-item text-secondary">Bo'limlar va markazlar</div>
+            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.5.count}}</h3>
           </div>
+  
         </div>
+        <div class="info-row">
+          <div class="info-inner-col">
+            <div class="info-inner-row-item text-secondary">Xodimlar soni</div>
+            <h2 class="info-inner-row-item text-primary">
+              {% for k, v in indicators.response_xodimlar %}
+                {{k}}
+                {{v}}
+              {% endfor %}
+            </h2>
+            <div class="info-inner-row-item text-secondary">Kafedralar</div>
+            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.4.count}}</h3>
+          </div>
+          <div class="info-inner-col">
+            <div class="info-inner-row-item text-secondary">Bo'limlar va markazlar</div>
+            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.5.count}}</h3>
+          </div>
+          <div class="info-inner-col">
+            
+          </div>
+          <div class="info-inner-col">
+
+          </div>
+
+        </div>
+        <div class="info-row">
+  
+        </div>
+  
       </div>
     </div>
-    <!-- Slider END -->
+
+    <!-- Informations END -->
+    
+    
 
     <div class="section-area section-sp2">
       <div class="container">
