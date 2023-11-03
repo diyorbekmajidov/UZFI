@@ -108,7 +108,7 @@ class VacanciesApview(APIView):
     def get(self, request):
         vacancies = Vacancies.objects.all()
         serializers = VacanciesSerializer(vacancies, many = True)
-        return render(request, '.html',{"data":serializers.data})
+        return render(request, 'vacancies.html',{"data":serializers.data})
 
 class OpenDataApview(APIView):
     def get(self, request):
