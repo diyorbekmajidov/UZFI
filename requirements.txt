@@ -9,3 +9,4 @@ drf-yasg
 django-jazzmin
 setuptools
 requests
+django-mathfilters

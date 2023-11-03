@@ -52,7 +52,6 @@ class Index(TemplateView):
                         "events":serializer_pendingevents.data,
                         "indicators" : indicators
                         }
-
             if mainpage_category:
                 mainpage_news = News_Content.objects.filter(category=mainpage_category.last()).last()
                 serializers_context = NewsContentSerializer(mainpage_news)

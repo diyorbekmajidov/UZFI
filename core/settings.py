@@ -34,6 +34,7 @@ AUTH_USER_MODEL = 'UZFI.User'
 
 INSTALLED_APPS = [
     'jazzmin',
+    'mathfilters',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',

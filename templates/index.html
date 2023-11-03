@@ -7,6 +7,8 @@
 
 {% load static %}
 {% load i18n %}
+{% load mathfilters %}
+
 
 <div class="page-content bg-white">
   <!-- Main Slider -->
@@ -610,54 +612,94 @@
     <!-- Destinations END -->
 
     <!-- Informations END -->
-
+    
     <div class="container">
-      <div id="informations">
-        {{indicators}}
+      <div class="container heading-bx left">
+        <h2 class="title-head">Universitetning asosiy ko'rsatkichlari</h2>
+      </div>
+
+      <div id="information" data-aos="fade-right">
         <div class="info-row">
+
+          <div class="info-col">
+            <div class="info-inner-col">
+              <div class="info-inner-row-item text-secondary">Fakultetlar</div>
+              <div class="info-inner-row-item text-primary lg-1">{{indicators.response_structure.3.count}}</div>
+              <div class="info-inner-row-item text-secondary">Kafedralar</div>
+              <lg-2 class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.4.count}}</lg-2>
+            </div>
+            <div class="info-inner-col">
+
+              <div class="info-inner-row-item text-secondary">Bo'limlar va markazlar</div>
+              <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.5.count}}</div>
+            </div>
+          </div>
+          <div class="info-col">
+            <div class="info-inner-col">
+              <div class="info-inner-row-item text-secondary">Xodimlar soni</div>
+              <div class="info-inner-row-item text-primary lg-1">
+                {% for key,value in indicators.response_xodimlar.items %}
+                  {% if key == "Asosiy ish joy" %}
+                    {{value}}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              
+  
+              <div class="info-inner-row-item text-secondary">rahbariyat</div>
+              <div class="info-inner-row-item text-primary lg-2">
+                {{indicators.response_structure.0.count}}
+              </div>
+            </div>
+            <div class="info-inner-col">
+              <div class="info-row-item text-secondary">Texnik</div>
+              <div class="info-inner-row-item text-primary">..</div>
+
+              <div class="info-row-item text-secondary">Ilmiy</div>
+              <div class="info-inner-row-item text-primary">..</div>
+            </div>
+          </div>
           
-          <div class="info-inner-col">
-            <div class="info-inner-row-item text-secondary">Fakultetlar</div>
-            <h2 class="info-inner-row-item text-primary">{{indicators.response_structure.3.count}}</h2>
-            <div class="info-inner-row-item text-secondary">Kafedralar</div>
-            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.4.count}}</h3>
-          </div>
-          <div class="info-inner-col">
-            <div class="info-inner-row-item text-secondary">Bo'limlar va markazlar</div>
-            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.5.count}}</h3>
-          </div>
+          
   
         </div>
+        
         <div class="info-row">
-          <div class="info-inner-col">
-            <div class="info-inner-row-item text-secondary">Xodimlar soni</div>
-            <h2 class="info-inner-row-item text-primary">
-              {% for k, v in indicators.response_xodimlar %}
-                {{k}}
-                {{v}}
-              {% endfor %}
-            </h2>
-            <div class="info-inner-row-item text-secondary">Kafedralar</div>
-            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.4.count}}</h3>
-          </div>
-          <div class="info-inner-col">
-            <div class="info-inner-row-item text-secondary">Bo'limlar va markazlar</div>
-            <h3 class="info-inner-row-item text-primary">{{indicators.response_structure.5.count}}</h3>
-          </div>
-          <div class="info-inner-col">
-            
-          </div>
-          <div class="info-inner-col">
+          <div class="info-col">
+            <div class="info-inner-col">
+              <div class="info-row-item text-secondary">Talabalar soni</div>
+              <div class="info-row-item text-primary lg-1">{{indicators.response_talabalar.Erkak|addition:indicators.response_talabalar.Ayol}}</div>
 
+              <div class="info-row-item text-secondary">Yigit</div>
+              <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Erkak}}</div>
+            </div>
+            <div class="info-inner-col">
+              <div class="info-row-item text-secondary">Qiz</div>
+              <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Ayol}}</div>
+            </div>
           </div>
 
-        </div>
-        <div class="info-row">
-  
+
+          <div class="info-col">
+            <div class="info-inner-col">
+              <div class="info-row-item text-secondary">O'qituvchi va professor</div>
+              <div class="info-row-item text-primary lg-1">{{indicators.response_uqtuvchilar.Dotsent}}</div>
+
+              <div class="info-row-item text-secondary">Dotsent</div>
+              <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Dotsent}}</div>
+            </div>
+            <div class="info-inner-col">
+              <div class="info-row-item text-secondary">Professor</div>
+              <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Professor}}</div>
+            </div>
+          </div>
+
         </div>
   
       </div>
     </div>
+
+    {{indicators}}
 
     <!-- Informations END -->
     
@@ -681,7 +723,7 @@
           <div class="item">
             <div class="event-bx">
               <div class="action-box">
-                <img src="assets/images/event/pic4.jpg" alt="">
+                <img src="" alt="">
               </div>
               <div class="info-bx d-flex">
                 <div>
