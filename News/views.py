@@ -8,6 +8,8 @@ from .serializers import *
 from django.core.paginator import Paginator
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
+from UZFI.models import Requisites 
+from UZFI.serializers import RequisitesSerializer
 from django.db.models import Q
 
 class NewsPagination(PageNumberPagination):
@@ -157,3 +159,9 @@ class PendingEventSearchApiviews(ListAPIView):
             return render(request, '.html', {"data":serializers.data})
         except:
             return render(request,'50x.error.html')
+        
+class Contact(TemplateView):
+    def get(self, request):
+        contact = Requisites.objects.all()
+        serializers = RequisitesSerializer(contact, many = True)
+        return render(request, '.html', {"data":serializers.data})
