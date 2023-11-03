@@ -12,6 +12,7 @@ from .views import (
     PendingEventByIdApiviews,
     PendingEventApiviews,
     PendingEventSearchApiviews,
+    Contact,
 )
 
 urlpatterns = [
@@ -36,5 +37,7 @@ urlpatterns = [
     path('events/', PendingEventApiviews.as_view()),
     path('events/<int:pk>/', PendingEventByIdApiviews.as_view()),
     path('events/<str:text>/', PendingEventSearchApiviews.as_view()),
+
+    path('contact/', Contact.as_view()),
 
 ]
