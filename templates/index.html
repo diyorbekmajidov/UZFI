@@ -638,11 +638,7 @@
             <div class="info-inner-col">
               <div class="info-inner-row-item text-secondary">Xodimlar soni</div>
               <div class="info-inner-row-item text-primary lg-1">
-                {% for key,value in indicators.response_xodimlar.items %}
-                  {% if key == "Asosiy ish joy" %}
-                    {{value}}
-                  {% endif %}
-                {% endfor %}
+                
               </div>
               
   
@@ -683,7 +679,13 @@
           <div class="info-col">
             <div class="info-inner-col">
               <div class="info-row-item text-secondary">O'qituvchi va professor</div>
-              <div class="info-row-item text-primary lg-1">{{indicators.response_uqtuvchilar.Dotsent}}</div>
+              <div class="info-row-item text-primary lg-1">
+                {% for key,value in indicators.response_xodimlar.items %}
+                  {% if key == "Asosiy ish joy" %}
+                    {{value}}
+                  {% endif %}
+                {% endfor %}
+              </div>
 
               <div class="info-row-item text-secondary">Dotsent</div>
               <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Dotsent}}</div>
@@ -691,6 +693,15 @@
             <div class="info-inner-col">
               <div class="info-row-item text-secondary">Professor</div>
               <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Professor}}</div>
+
+              <div class="info-row-item text-secondary">Katta o‘qituvchi</div>
+              <div class="info-row-item text-primary lg-2">
+                {% for key,value in indicators.response_uqtuvchilar.items %}
+                  {% if key == "Katta o‘qituvchi" %}
+                    {{value}}
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
           </div>
 
@@ -718,17 +729,14 @@
             class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0 m-b30"
           >
           
-          {% comment %} {% for  in  %} {% endcomment %}
+          {% for item in  events %}
 
           <div class="item">
             <div class="event-bx">
-              <div class="action-box">
-                <img src="" alt="">
-              </div>
               <div class="info-bx d-flex">
                 <div>
                   <div class="event-time">
-                    <div class="event-date">29</div>
+                    <div class="event-date">{{item.date_created}}</div>
                     <div class="event-month">October</div>
                   </div>
                 </div>
@@ -747,7 +755,7 @@
             </div>
           </div>
 
-          {% comment %} {% endfor %} {% endcomment %}
+          {% endfor %}
 
           </div>
         </div>
