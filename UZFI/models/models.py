@@ -68,7 +68,7 @@ class OpenData(models.Model):
         return self.name
     
 class Vacancies(models.Model):
-    name         = RichTextField()
+    name         = models.CharField(max_length=100)
     body         = RichTextUploadingField()
     views        = models.IntegerField(default=0)
     salary       = models.CharField(max_length=100)
