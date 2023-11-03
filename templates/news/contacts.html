@@ -1,0 +1,71 @@
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}UZFI  | Bog'lanish{% endblock %}
+{% block trans %}{% endblock trans %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>{{data.unversit_name}}</h5> 
+                        <h5 >Manzil:<span class="text-secondary">{{data.address}}</span></h5> 
+                        <h5 >Telefon: <span class="text-secondary">{{data.phone}}</span></h5> 
+                        <h5 >Fax: <span class="text-secondary">{{data.email}}</span></h5> 
+                        <h5 >Hisob raqami: <span class="text-secondary">{{data.bank_account}}</span></h5> 
+                        <h5 >Bank: <span class="text-secondary">{{data.fax}}</span></h5> 
+                        <h5 >MFO: <span class="text-secondary">{{data.bank}}</span></h5> 
+                        <h5 >Shx/r: <span class="text-secondary">{{data.mfo}}</span></h5> 
+                        <h5 >INN: <span class="text-secondary">{{data.INN}}</span></h5> 
+                        <h5 >OKONX: <span class="text-secondary">{{data.OKONX}}</span></h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">To'liq ismingiz</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                            </div> 
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Email</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Murojaat</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>         
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}
