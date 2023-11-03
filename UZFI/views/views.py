@@ -9,7 +9,7 @@ from UZFI.serializers import *
 from django.shortcuts import render
 from News.models import *
 import requests
-from News.serializers import NewsContentSerializer, PopularStudentsSerializer, PendingEventsSerializer
+from News.serializers import NewsContentSerializer, PopularStudentsSerializer
 
 
 
@@ -28,8 +28,7 @@ class Index(TemplateView):
 
             mainpage_category = NewsCategory.objects.filter(new_category="MAINPAGE")
 
-            pendingevents = PendingEvents.objects.order_by('-date_created')[:3]
-            serializer_pendingevents = PendingEventsSerializer(pendingevents, many=True)
+            
 
             url_talabalr = 'https://student.uzfi.uz/rest/v1/public/stat-student'
             url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'
@@ -50,7 +49,6 @@ class Index(TemplateView):
                        "direction":serializers1.data,
                         "news":serializer_class.data, 
                         "popular_student":serializer_popular_students.data, 
-                        "events":serializer_pendingevents.data,
                         "indicators" : indicators
                         }
             if mainpage_category:
