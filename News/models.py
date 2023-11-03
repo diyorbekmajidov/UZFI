@@ -35,7 +35,7 @@ class News_Content(models.Model):
 
 class Vedio_New(models.Model):
     title         = models.CharField(max_length=255)
-    vedio         = models.FileField(upload_to='videos/', null=True, verbose_name="vedio_news")
+    vedio         = models.URLField(max_length = 255)
     body          = RichTextUploadingField(null=True,blank=True) 
     views         = models.IntegerField(default=0)
     date_created  = models.DateField(auto_now_add=True)
