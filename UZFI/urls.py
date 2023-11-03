@@ -8,6 +8,7 @@ from .views import (
     RequisitesApview,
     FinancialStatementsApview,
     VacanciesApview,
+    VacanciesByIdApview,
     OpenDataApview,
     FacultyApview,
     FacultyByIdApview,
@@ -50,6 +51,7 @@ urlpatterns = [
     path('leadership/<int:pk>/', LeadershipByIdAPIView.as_view()),
 
     path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
+    path('vacancies/<int:pk>/', VacanciesByIdApview.as_view()),
 
     path('open-data/', OpenDataApview.as_view(), name='opendata'),
 

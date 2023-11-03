@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.views.generic import TemplateView
+from django.core.paginator import Paginator
 from UZFI.models.models import *
 from UZFI.serializers import *
 from django.shortcuts import render
@@ -107,8 +108,15 @@ class FinancialStatementsApview(APIView):
 class VacanciesApview(APIView):
     def get(self, request):
         vacancies = Vacancies.objects.all()
-        serializers = VacanciesSerializer(vacancies, many = True)
-        return render(request, 'vacancies.html',{"data":serializers.data})
+        page = Paginator(vacancies, 10)
+        page_num = int(request.GET.get('page', 1))
+        return render(request, 'vacancies.html',{"page_obj":page.page(page_num)})
+    
+class VacanciesByIdApview(APIView):
+    def get(self, request, pk):
+        vacancy = Vacancies.objects.get(id=pk)
+        serializer = VacanciesSerializer(vacancy)
+        return render(request, '.html', {"data":serializer.data})
 
 class OpenDataApview(APIView):
     def get(self, request):
