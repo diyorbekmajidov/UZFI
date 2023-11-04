@@ -110,15 +110,16 @@ class VedioNewsByID(TemplateView):
 class SearchNewsApiView(ListAPIView):
     def get(self, request):
         try :
-            queryset = News_Content.objects.filter(title__icontains=request.POST.get("key", ''))
+            queryset = News_Content.objects.filter(title__icontains=request.POST.get("key", ""))
             serializers = NewsContentSerializer(queryset, many = True)
-            queryset1 = PendingEvents.objects.filter(event_name__=request.POST.get("key", ''))
+            queryset1 = PendingEvents.objects.filter(event_name__icontains=request.POST.get("key", ""))
             serializers1 = PendingEventsSerializer(queryset1, many = True)
-            return render(request, 'news/news.html', {
+            return render(request, 'news/search.html', {
                 "news":serializers.data,
                 "events" : serializers1.data
                 })
-        except:
+        except Exception as e:
+            print(e)
             return render(request,'50x.error.html')
         
 class GetUserNews(ListAPIView):
