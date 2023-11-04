@@ -10,3 +10,4 @@ django-jazzmin
 setuptools
 requests
 django-mathfilters
+python-gettext
