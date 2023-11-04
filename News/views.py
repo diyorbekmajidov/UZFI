@@ -112,7 +112,6 @@ class SearchNewsApiView(ListAPIView):
         try :
             queryset = News_Content.objects.filter(title__icontains=request.POST.get("key", ''))
             serializers = NewsContentSerializer(queryset, many = True)
-            print(serializers.data)
             return render(request, 'news/news.html', {"page_obj":serializers.data})
         except:
             return render(request,'50x.error.html')
