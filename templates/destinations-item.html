@@ -28,19 +28,26 @@
 
         <!-- FAQS  News -->
         <div class="section-area section-sp2">
-            <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="container">
 
-                <div class="container heading-bx left">
-                    <a href="/uzfi/faculty/{{data.faculty.id}}"><strong>{{data.faculty.name}}</strong> fakulteti sahifasiga tashrif buyurish </a>
+                        <div class="container heading-bx left">
+                            <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{data.faculty.id}}"><strong>{{data.faculty.name}}</strong> fakulteti sahifasiga tashrif buyurish </a>
+                        </div>
+        
+        
+                        
+                        <div>
+                            {{data.about|safe}}
+                        </div>
+        
+        
+                    </div>
                 </div>
-
-
-                
-                <div>
-                    {{data.about|safe}}
+                <div class="col-md-4">
+                    {% include "subtemplates/sidebar.html" %}
                 </div>
-
-
             </div>
         </div>
         <!-- FAQS  News End -->

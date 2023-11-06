@@ -144,7 +144,8 @@ class FacultyByIdApview(APIView):
                 "dekan": serializers1.data,
                 "direction": serializers_directions.data
                 })
-        except:
+        except Exception as e:
+            print(e)
             return render(request,'50x.error.html')
 
 class DekanById(APIView):
@@ -168,6 +169,7 @@ class DirectionApview(APIView):
     def get(self, request, pk):
         direction = Direction.objects.get(id=pk)
         serializers = DirectionSerializer(direction)
+        
         return render(request, 'destinations-item.html',{"data":serializers.data, })
 
 class KafedraApview(APIView):

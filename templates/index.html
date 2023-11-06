@@ -599,11 +599,11 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											<img src="{% static "assets/images/courses/pic1.jpg" %}" alt="">
-											<a href="/uzfi/direction/{{i.id}}/" class="btn">Ko'proq o'qish</a>
+											<a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/" class="btn">Ko'proq o'qish</a>
 										</div>
 										<div class="info-bx text-center">
-											<h5><a href="/uzfi/direction/{{i.id}}/">{{i.name}}</a></h5>
-											<span><a href="/uzfi/faculty/{{i.faculty.id}}/">{{i.faculty.name}}</a></span>
+											<h5><a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/">{{i.name}}</a></h5>
+											<span><a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.faculty.id}}/">{{i.faculty.name}}</a></span>
 										</div>
 										
 									</div>

@@ -152,11 +152,11 @@ USE_TZ = True
 LANGUAGES = (
     ('uz',  _('Uzbek')),
     ('ru',  _('Russian')),
-    ('en',  _('English')),
+    ('es',  _('Spanish')),
 )
 
 
-MODELTRANSLATION_LANGUAGES = ('en', 'uz', 'ru')
+MODELTRANSLATION_LANGUAGES = ('es', 'uz', 'ru')
 
 
 LOCALE_PATHS = (
