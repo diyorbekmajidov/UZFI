@@ -144,7 +144,7 @@
                 white-space: normal;
               "
             >
-            O‘ZBEKISTON - FINLANDIYA
+            {% blocktranslate %}O‘ZBEKISTON - FINLANDIYA{% endblocktranslate %}
             </div>
 
             <!-- LAYER NR. 3 -->
@@ -191,9 +191,7 @@
                 font-weight: 400;
               "
             >
-            Institutning maqsadi yuqori sifatli pedagogikani rivojlantirishdir
-            o'zbek milliyiga muvofiq mutaxassislar
-            xususiyatlari.
+            {% blocktranslate %}Institutning maqsadi yuqori sifatli pedagogikani rivojlantirishdir o'zbek milliyiga muvofiq mutaxassislar xususiyatlari.{% endblocktranslate %}
             </div>
             <!-- LAYER NR. 4 -->
             <div
@@ -230,7 +228,7 @@
                 margin-right: 5px;
               "
             >
-            {% blocktranslate %}  QABUL {% endblocktranslate %}
+            {% blocktranslate %}QABUL{% endblocktranslate %}
             </div>
             <a
               href="https://360.openconference.us/uzfi/"
@@ -265,7 +263,7 @@
                 border-radius: 30px;
               "
             >
-              VIRTUAL TUR
+              {% blocktranslate %}VIRTUAL TUR{%endblocktranslate%}
             </a>
           </li>
           <li
@@ -406,7 +404,7 @@
                 margin-right: 5px;
               "
             >
-              Davomini o'qish
+            {% blocktranslate %}Davomini o'qish{%endblocktranslate%}
             </a>
             <a
               href="/{{LANGUAGE_CODE}}/news/content/"
@@ -440,7 +438,8 @@
                 border-radius: 30px;
               "
             >
-              Barcha Yangiliklar
+              
+              {% blocktranslate %}Barcha Yangiliklar{%endblocktranslate%}
             </a>
           </li>
           <!-- SLIDE  -->
@@ -470,7 +469,7 @@
                 </div>
                 <h4>
                   <a href="https://interactive.uzfi.uz/"
-                    > {% blocktranslate %} Interaktiv xizmatlar {% endblocktranslate %}
+                    > {% blocktranslate %}Interaktiv xizmatlar{% endblocktranslate %}
                     </a
                   >
                 </h4>
@@ -478,7 +477,7 @@
                   href="https://interactive.uzfi.uz/"
                   class="btn radius-xl"
                   target="__blank"
-                  >BORISH</a
+                  >{% blocktranslate %}BORISH{%endblocktranslate%}</a
                 >
               </div>
             </div>
@@ -496,10 +495,10 @@
                   <i class="fa fa-book text-primary"></i>
                 </div>
                 <h4><a href="https://library.uzfi.uz/">
-                  {% blocktranslate %} e-Kutibxona {% endblocktranslate %}
+                  {% blocktranslate %}e-Kutibxona{% endblocktranslate %}
                 </a></h4>
                 <a href="https://library.uzfi.uz/" class="btn radius-xl"
-                  >KO'PROQ KO'RISH</a
+                  >{% blocktranslate %}KO'PROQ KO'RISH{%endblocktranslate%}</a
                 >
               </div>
             </div>
@@ -518,14 +517,14 @@
                 </div>
                 <h4>
                   <a href="https://interactive.uzfi.uz/acceptance"
-                    >{% blocktranslate %} Rahbariyatga murojaat {% endblocktranslate %}
+                    >{% blocktranslate %}Rahbariyatga murojaat{% endblocktranslate %}
                     </a
                   >
                 </h4>
                 <a
                   href="https://interactive.uzfi.uz/acceptance"
                   class="btn radius-xl"
-                  >BORISH</a
+                  >{% blocktranslate %}BORISH{%endblocktranslate%}</a
                 >
               </div>
             </div>
@@ -538,8 +537,8 @@
     <!-- #faculties  -->
     <div class="section-area section-sp2 faculties" id="faculties_page">
       <div class="container heading-bx left">
-        <h2 class="title-head">Fakultetlar</h2>
-        <p>O‘zbekiston-Finlyandiya instituti fakultet tarkibi.</p>
+        <h2 class="title-head">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</h2>
+        <p>{% blocktranslate %}O‘zbekiston-Finlyandiya instituti fakultet tarkibi.{%endblocktranslate%}</p>
       </div>
 
       <div class="container text-center">
@@ -581,12 +580,10 @@
         <div class="row">
           <div class="col-md-12 heading-bx left">
             <h2 class="title-head">
-              Institut <span>yo'nalishlari </span>
+              {% blocktranslate %}Institut yo'nalishlari{%endblocktranslate%}
             </h2>
             <p>
-              O'zbekistonning boy madaniyati va beg'ubor tabiati bilan tanishing
-               Institutda Finlyandiyaning tabiiy go'zalligi, Sharqiy va
-               G'arb unutilmas ta'lim sayohatini taklif qilish uchun birlashadi
+              {% blocktranslate %}O'zbekistonning boy madaniyati va beg'ubor tabiati bilan tanishing Institutda Finlyandiyaning tabiiy go'zalligi, Sharqiy va G'arb unutilmas ta'lim sayohatini taklif qilish uchun birlashadi{%endblocktranslate%}
             </p>
           </div>
         </div>
@@ -599,7 +596,7 @@
 									<div class="cours-bx">
 										<div class="action-box">
 											<img src="{% static "assets/images/courses/pic1.jpg" %}" alt="">
-											<a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/" class="btn">Ko'proq o'qish</a>
+											<a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/" class="btn">{% blocktranslate %}Ko'proq o'qish{%endblocktranslate%}</a>
 										</div>
 										<div class="info-bx text-center">
 											<h5><a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/">{{i.name}}</a></h5>
@@ -619,7 +616,7 @@
     
     <div class="container">
       <div class="container heading-bx left">
-        <h2 class="title-head">Universitetning asosiy ko'rsatkichlari</h2>
+        <h2 class="title-head">{% blocktranslate %}Universitetning asosiy ko'rsatkichlari{%endblocktranslate%}</h2>
       </div>
 
       <div class="row">
@@ -633,31 +630,31 @@
     
               <div class="info-col">
                 <div class="info-inner-col">
-                  <div class="info-inner-row-item text-secondary">Fakultetlar</div>
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</div>
                   <div class="info-inner-row-item text-primary lg-1">{{indicators.response_structure.3.count}}</div>
-                  <div class="info-inner-row-item text-secondary">Kafedralar</div>
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Kafedralar{%endblocktranslate%}</div>
                   <lg-2 class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.4.count}}</lg-2>
                 </div>
                 <div class="info-inner-col">
     
-                  <div class="info-inner-row-item text-secondary">Bo'limlar va markazlar</div>
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Bo'limlar va markazlar{%endblocktranslate%}</div>
                   <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.5.count}}</div>
                 </div>
               </div>
               <div class="info-col">
                 <div class="info-inner-col">
-                  <div class="info-inner-row-item text-secondary">Seminar xonalar</div>
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Seminar xonalar{%endblocktranslate%}</div>
                   <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.1.count}}</div>
                   
       
-                  <div class="info-inner-row-item text-secondary">Ma’ruza xonalar</div>
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Ma’ruza xonalar{%endblocktranslate%}</div>
                   <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.2.count}}</div>
                 </div>
                 <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">Laboratoriya xonalar</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Laboratoriya xonalar{%endblocktranslate%}</div>
                   <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.3.count}}</div>
     
-                  <div class="info-row-item text-secondary">Amaliyot xonalar</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Amaliyot xonalar{%endblocktranslate%}</div>
                   <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.4.count}}</div>
                 </div>
               </div>
@@ -669,14 +666,14 @@
             <div class="info-row">
               <div class="info-col">
                 <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">Talabalar soni</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Talabalar soni{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-1">{{indicators.response_talabalar.Erkak|addition:indicators.response_talabalar.Ayol}}</div>
     
-                  <div class="info-row-item text-secondary">Yigit</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Yigit{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Erkak}}</div>
                 </div>
                 <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">Qiz</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Qiz{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Ayol}}</div>
                 </div>
               </div>
@@ -684,7 +681,7 @@
     
               <div class="info-col">
                 <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">O'qituvchi va professor</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}O'qituvchi va professor{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-1">
                     {% for key,value in indicators.response_xodimlar.items %}
                       {% if key == "Asosiy ish joy" %}
@@ -693,14 +690,14 @@
                     {% endfor %}
                   </div>
     
-                  <div class="info-row-item text-secondary">Dotsent</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Dotsent{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Dotsent}}</div>
                 </div>
                 <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">Professor</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Professor{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Professor}}</div>
     
-                  <div class="info-row-item text-secondary">Katta o‘qituvchi</div>
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Katta o‘qituvchi{%endblocktranslate%}</div>
                   <div class="info-row-item text-primary lg-2">
                     {% for key,value in indicators.response_uqtuvchilar.items %}
                       {% if key == "Katta o‘qituvchi" %}
@@ -726,8 +723,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center heading-bx">
-            <h2 class="title-head m-b0">Yangiliklar <span></span></h2>
-            <p class="m-b0">Miyani oziqlantirish uchun so'nggi yangiliklar</p>
+            <h2 class="title-head m-b0">{% blocktranslate %}Yangiliklar{%endblocktranslate%} <span></span></h2>
+            <p class="m-b0">{% blocktranslate %}Miyani oziqlantirish uchun so'nggi yangiliklar{%endblocktranslate%} </p>
           </div>
         </div>
         <div class="row">
@@ -759,7 +756,7 @@
           </div>
         </div>
         <div class="text-center">
-          <a href="/news/content/" class="btn">Barcha yangiliklarni ko'rish</a>
+          <a href="/news/content/" class="btn">{% blocktranslate %}Barcha yangiliklarni ko'rish{%endblocktranslate%}</a>
         </div>
       </div>
     </div>
@@ -775,14 +772,10 @@
         <div class="row">
           <div class="col-md-12 text-white heading-bx left">
             <h2 class="title-head text-uppercase">
-              Mashhur <span>talabalarimiz</span>
+              {% blocktranslate %}Mashhur{%endblocktranslate%} <span>{% blocktranslate %}talabalarimiz{%endblocktranslate%}</span>
             </h2>
             <p>
-              Bizning g‘ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi
-               Respublika musobaqalarida qatnashgan talaba-sportchilar va
-               xalqaro miqyosda ham O‘zbekistonga shon-shuhrat keltirmoqda.
-               Biz eng yuqori darajadagi ta'lim va qo'llab-quvvatlashni ta'minlaymiz.
-               Sportchilarimiz o‘z sport turlari bo‘yicha yuksak natijalarga erishadilar.
+              {% blocktranslate %} Bizning g‘ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi  Respublika musobaqalarida qatnashgan talaba-sportchilar va xalqaro miqyosda ham O‘zbekistonga shon-shuhrat keltirmoqda. Biz eng yuqori darajadagi ta'lim va qo'llab-quvvatlashni ta'minlaymiz. Sportchilarimiz o‘z sport turlari bo‘yicha yuksak natijalarga erishadilar. {%endblocktranslate%}
             </p>
           </div>
         </div>
