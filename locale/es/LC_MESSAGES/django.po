@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-06 17:52+0500\n"
+"POT-Creation-Date: 2023-11-07 16:07+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1288,6 +1288,39 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+#: .\templates\abitur\faqs.html:3
+msgid "UZFI  | Tez-tez so'raladigan savollarga javoblar"
+msgstr ""
+
+#: .\templates\abitur\faqs.html:16 .\templates\base.html:323
+#: .\templates\base.html:458
+msgid "Tez-tez so'raladigan savollarga javoblar"
+msgstr ""
+
+#: .\templates\abitur\regulation-on-secondary-education.html:3
+msgid "UZFI  | Ikkinchi taʼlim to‘g‘risidagi nizom"
+msgstr ""
+
+#: .\templates\abitur\regulation-on-secondary-education.html:14
+#: .\templates\base.html:321 .\templates\base.html:456
+msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
+msgstr ""
+
+#: .\templates\abitur\regulation-on-secondary-education.html:30
+msgid "ZBEKISTON RESPUBLIKASI VAZIRLAR MAHKAMASINING"
+msgstr ""
+
+#: .\templates\abitur\regulation-on-secondary-education.html:30
+msgid "QARORI"
+msgstr ""
+
+#: .\templates\abitur\regulation-on-secondary-education.html:31
+msgid ""
+"ZBEKISTON RESPUBLIKASI OLIY TAʼLIM MUASSASALARIDA IKKINCHI VA UNDAN KEYINGI "
+"OLIY TAʼLIMNI OLISH TARTIBI TO&lsquo;G&lsquo;RISIDAGI NIZOMNI TASDIQLASH "
+"HAQIDA"
+msgstr ""
+
 #: .\templates\base.html:226
 msgid "UNIVERSITET "
 msgstr ""
@@ -1309,14 +1342,16 @@ msgid "Rahbariyat"
 msgstr ""
 
 #: .\templates\base.html:233 .\templates\base.html:401
+#: .\templates\councils.html:16
 msgid "Kengashlar"
 msgstr ""
 
-#: .\templates\base.html:234
+#: .\templates\base.html:234 .\templates\centers.html:18
 msgid "Markazlar"
 msgstr ""
 
 #: .\templates\base.html:235 .\templates\base.html:402
+#: .\templates\requesties.html:18
 msgid "Rekvizitlar"
 msgstr ""
 
@@ -1329,6 +1364,7 @@ msgid "Mashhur talabalar"
 msgstr ""
 
 #: .\templates\base.html:238 .\templates\base.html:405
+#: .\templates\open-data.html:18
 msgid "Ochiq ma'lumotlar"
 msgstr ""
 
@@ -1357,7 +1393,9 @@ msgid "O‘quv rejalar"
 msgstr ""
 
 #: .\templates\base.html:301 .\templates\base.html:428
-#: .\templates\index.html:726
+#: .\templates\dashboard.html:40 .\templates\index.html:726
+#: .\templates\news\news-category.html:11 .\templates\tmp.html:57
+#: .\templates\tmp.html:154
 msgid "Yangiliklar"
 msgstr ""
 
@@ -1365,7 +1403,7 @@ msgstr ""
 msgid "Video gallerya"
 msgstr ""
 
-#: .\templates\base.html:303
+#: .\templates\base.html:303 .\templates\news\events.html:11
 msgid "Kutilayotgan tadbirlar"
 msgstr ""
 
@@ -1401,16 +1439,8 @@ msgstr ""
 msgid "Abituriyentlarga"
 msgstr ""
 
-#: .\templates\base.html:321 .\templates\base.html:456
-msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
-msgstr ""
-
 #: .\templates\base.html:322 .\templates\base.html:457
 msgid "Javoblar varaqasi bilan ishlash"
-msgstr ""
-
-#: .\templates\base.html:323 .\templates\base.html:458
-msgid "Tez-tez so'raladigan savollarga javoblar"
 msgstr ""
 
 #: .\templates\base.html:398
@@ -1421,12 +1451,13 @@ msgstr ""
 msgid "TA'LIM"
 msgstr ""
 
-#: .\templates\base.html:413 .\templates\index.html:540
-#: .\templates\index.html:633
+#: .\templates\base.html:413 .\templates\faculties.html:18
+#: .\templates\index.html:540 .\templates\index.html:633
 msgid "Fakultetlar"
 msgstr ""
 
-#: .\templates\base.html:414 .\templates\index.html:635
+#: .\templates\base.html:414 .\templates\departments.html:18
+#: .\templates\index.html:635
 msgid "Kafedralar"
 msgstr ""
 
@@ -1450,6 +1481,289 @@ msgstr ""
 msgid " Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy "
 msgstr ""
 
+#: .\templates\centers-item.html:14
+msgid " rahbari"
+msgstr ""
+
+#: .\templates\centers-item.html:25 .\templates\dekan.html:30
+#: .\templates\department-manager.html:30 .\templates\departments-item.html:37
+#: .\templates\leadership-item.html:26 .\templates\leadership.html:45
+msgid "E-pochta: "
+msgstr ""
+
+#: .\templates\centers-item.html:28 .\templates\dekan.html:33
+#: .\templates\department-manager.html:33 .\templates\departments-item.html:40
+#: .\templates\leadership-item.html:29 .\templates\leadership.html:48
+msgid "Telefon raqam: "
+msgstr ""
+
+#: .\templates\centers-item.html:32 .\templates\dekan.html:41
+#: .\templates\department-manager.html:41 .\templates\departments-item.html:48
+#: .\templates\leadership-item.html:37 .\templates\leadership.html:56
+msgid "Manzil: "
+msgstr ""
+
+#: .\templates\centers-item.html:45 .\templates\dashboard.html:59
+#: .\templates\dekan.html:54 .\templates\department-manager.html:54
+#: .\templates\leadership-item.html:50
+msgid "Vazifalar"
+msgstr ""
+
+#: .\templates\centers.html:7 .\templates\leadership.html:7
+msgid "UZFI  | Markazlar"
+msgstr ""
+
+#: .\templates\centers.html:36
+msgid "Markazlar "
+msgstr ""
+
+#: .\templates\charter.html:3
+msgid "UZFI  | Institut nizomi"
+msgstr ""
+
+#: .\templates\charter.html:22
+msgid "Institut nizomi "
+msgstr ""
+
+#: .\templates\councils-item.html:1
+msgid "UZFI | Kengashlar"
+msgstr ""
+
+#: .\templates\councils.html:3
+msgid "UZFI  | Kengashlar"
+msgstr ""
+
+#: .\templates\councils.html:32
+msgid "Kengashlar "
+msgstr ""
+
+#: .\templates\dashboard.html:44
+msgid "Ilmiy ish sozlamalri"
+msgstr ""
+
+#: .\templates\dashboard.html:48 .\templates\dashboard.html:244
+msgid "Change Password"
+msgstr ""
+
+#: .\templates\dashboard.html:60 .\templates\dekan.html:55
+#: .\templates\department-manager.html:55 .\templates\leadership-item.html:51
+msgid "Biografiya"
+msgstr ""
+
+#: .\templates\dashboard.html:61
+msgid "Scientific activity"
+msgstr ""
+
+#: .\templates\dashboard.html:77 .\templates\dekan.html:72
+#: .\templates\department-manager.html:72 .\templates\leadership-item.html:68
+msgid "Nomi"
+msgstr ""
+
+#: .\templates\dashboard.html:78 .\templates\dekan.html:73
+#: .\templates\department-manager.html:73 .\templates\leadership-item.html:69
+msgid "Darajasi"
+msgstr ""
+
+#: .\templates\dashboard.html:79 .\templates\dekan.html:74
+#: .\templates\leadership-item.html:70
+msgid "Chop etilgan sana"
+msgstr ""
+
+#: .\templates\dashboard.html:80 .\templates\dekan.html:75
+#: .\templates\department-manager.html:75 .\templates\leadership-item.html:71
+msgid "Yukalsh"
+msgstr ""
+
+#: .\templates\dashboard.html:106
+msgid "Tegishli yangiliklar"
+msgstr ""
+
+#: .\templates\dashboard.html:133
+msgid "Ilmiy ishlar sozlamalri"
+msgstr ""
+
+#: .\templates\dashboard.html:151
+msgid "Ilmiy ish yuklash"
+msgstr ""
+
+#: .\templates\dashboard.html:157
+msgid "Nomi UZ"
+msgstr ""
+
+#: .\templates\dashboard.html:165
+msgid "Nomi EN"
+msgstr ""
+
+#: .\templates\dashboard.html:173
+msgid "Nomi RU"
+msgstr ""
+
+#: .\templates\dashboard.html:182
+msgid "Darajasi UZ"
+msgstr ""
+
+#: .\templates\dashboard.html:190
+msgid "Darajasi EN"
+msgstr ""
+
+#: .\templates\dashboard.html:198
+msgid "Darajasi RU"
+msgstr ""
+
+#: .\templates\dashboard.html:208
+msgid "Majburiy emas"
+msgstr ""
+
+#: .\templates\dashboard.html:213
+msgid "Fayl"
+msgstr ""
+
+#: .\templates\dashboard.html:220
+msgid "Chop etilgam sana"
+msgstr ""
+
+#: .\templates\dashboard.html:234 .\templates\dashboard.html:282
+msgid "Save changes"
+msgstr ""
+
+#: .\templates\dashboard.html:235
+msgid "Bekor qilish<"
+msgstr ""
+
+#: .\templates\dashboard.html:250
+msgid "Password"
+msgstr ""
+
+#: .\templates\dashboard.html:255
+msgid ""
+"Current\n"
+"                                                    Password"
+msgstr ""
+
+#: .\templates\dashboard.html:263
+msgid ""
+"New\n"
+"                                                    Password"
+msgstr ""
+
+#: .\templates\dashboard.html:271
+msgid ""
+"Re\n"
+"                                                    Type New Password"
+msgstr ""
+
+#: .\templates\dekan.html:19 .\templates\faculties-item.html:28
+msgid "Fakultet dekani"
+msgstr ""
+
+#: .\templates\dekan.html:37 .\templates\department-manager.html:37
+#: .\templates\departments-item.html:44 .\templates\leadership-item.html:33
+#: .\templates\leadership.html:52
+msgid "Qabul kunlari: "
+msgstr ""
+
+#: .\templates\dekan.html:48 .\templates\department-manager.html:48
+msgid "Ko'proq ma'lumot"
+msgstr ""
+
+#: .\templates\dekan.html:56 .\templates\department-manager.html:56
+#: .\templates\leadership-item.html:52
+msgid "Ilmiy faoliyat"
+msgstr ""
+
+#: .\templates\dekan.html:103
+msgid "Fakultet"
+msgstr ""
+
+#: .\templates\department-manager.html:19
+msgid "Kafedra menedjeri"
+msgstr ""
+
+#: .\templates\department-manager.html:74
+msgid "Chop etilgan sana<"
+msgstr ""
+
+#: .\templates\departments-item.html:1
+msgid "UZFI | Kafedra"
+msgstr ""
+
+#: .\templates\departments-item.html:25
+msgid "Kafedra mudiri"
+msgstr ""
+
+#: .\templates\departments-item.html:56
+msgid "Kafedra haqida"
+msgstr ""
+
+#: .\templates\departments.html:7
+msgid "UZFI  | Kafedralar"
+msgstr ""
+
+#: .\templates\destinations-item.html:36
+msgid "fakulteti sahifasiga tashrif buyurish "
+msgstr ""
+
+#: .\templates\documents.html:7
+msgid "UZFI  | Me'yoriy hujjatlar"
+msgstr ""
+
+#: .\templates\documents.html:28
+msgid "Hujjat turi"
+msgstr ""
+
+#: .\templates\documents.html:29
+msgid "Hujjat sanasi"
+msgstr ""
+
+#: .\templates\documents.html:30
+msgid "Hujjat nomi"
+msgstr ""
+
+#: .\templates\documents.html:31 .\templates\financial-statements.html:32
+msgid "Yuklash"
+msgstr ""
+
+#: .\templates\faculties-item.html:39
+msgid "E-pochta:"
+msgstr ""
+
+#: .\templates\faculties-item.html:42
+msgid "Telefon raqam:"
+msgstr ""
+
+#: .\templates\faculties-item.html:46
+msgid "Qabul kunlari:"
+msgstr ""
+
+#: .\templates\faculties-item.html:50 .\templates\news\contacts.html:28
+#: .\templates\requesties.html:35
+msgid "Manzil:"
+msgstr ""
+
+#: .\templates\faculties-item.html:57
+msgid "Fakultet haqida"
+msgstr ""
+
+#: .\templates\faculties.html:7
+msgid "UZFI  | Fakultetlar"
+msgstr ""
+
+#: .\templates\financial-statements.html:7
+msgid "UZFI  | Moliyaviy xisobotlar"
+msgstr ""
+
+#: .\templates\financial-statements.html:29
+msgid "Xisobot turi"
+msgstr ""
+
+#: .\templates\financial-statements.html:30
+msgid "Sana"
+msgstr ""
+
+#: .\templates\financial-statements.html:31
+msgid "Chorak"
+msgstr ""
+
 #: .\templates\index.html:147
 msgid "O‘ZBEKISTON - FINLANDIYA"
 msgstr ""
@@ -1468,7 +1782,7 @@ msgstr ""
 msgid "VIRTUAL TUR"
 msgstr ""
 
-#: .\templates\index.html:407
+#: .\templates\index.html:407 .\templates\news\events.html:39
 msgid "Davomini o'qish"
 msgstr ""
 
@@ -1590,4 +1904,166 @@ msgid ""
 "ham O‘zbekistonga shon-shuhrat keltirmoqda. Biz eng yuqori darajadagi ta'lim "
 "va qo'llab-quvvatlashni ta'minlaymiz. Sportchilarimiz o‘z sport turlari "
 "bo‘yicha yuksak natijalarga erishadilar. "
+msgstr ""
+
+#: .\templates\leadership-item.html:45
+msgid " haqida"
+msgstr ""
+
+#: .\templates\leadership.html:30
+msgid "Rahbariyat "
+msgstr ""
+
+#: .\templates\news\contacts.html:7
+msgid "UZFI  | Bog'lanish"
+msgstr ""
+
+#: .\templates\news\contacts.html:29 .\templates\requesties.html:36
+msgid "Telefon: "
+msgstr ""
+
+#: .\templates\news\contacts.html:30 .\templates\requesties.html:37
+msgid "Fax: "
+msgstr ""
+
+#: .\templates\news\contacts.html:31 .\templates\requesties.html:38
+msgid "Hisob raqami: "
+msgstr ""
+
+#: .\templates\news\contacts.html:32 .\templates\requesties.html:39
+msgid "Bank: "
+msgstr ""
+
+#: .\templates\news\contacts.html:33 .\templates\requesties.html:40
+msgid "MFO: "
+msgstr ""
+
+#: .\templates\news\contacts.html:34 .\templates\requesties.html:41
+msgid "Shx/r: "
+msgstr ""
+
+#: .\templates\news\contacts.html:35 .\templates\requesties.html:42
+msgid "INN: "
+msgstr ""
+
+#: .\templates\news\contacts.html:36 .\templates\requesties.html:43
+msgid "OKONX: "
+msgstr ""
+
+#: .\templates\news\contacts.html:42
+msgid "To'liq ismingiz"
+msgstr ""
+
+#: .\templates\news\contacts.html:48
+msgid "Email"
+msgstr ""
+
+#: .\templates\news\contacts.html:50
+msgid "We'll never share your email with anyone else."
+msgstr ""
+
+#: .\templates\news\contacts.html:55
+msgid "Telefon raqam"
+msgstr ""
+
+#: .\templates\news\contacts.html:61
+msgid "Murojaat"
+msgstr ""
+
+#: .\templates\news\contacts.html:64
+msgid "Submit"
+msgstr ""
+
+#: .\templates\news\events-item.html:34
+#: .\templates\news\popular-students-item.html:61
+msgid "BIZ BILAN BO'LING "
+msgstr ""
+
+#: .\templates\news\events-item.html:51
+msgid "So'nggi tadbirlar"
+msgstr ""
+
+#: .\templates\news\events.html:1
+msgid "UZFI | Kutilayotgan tadbirlar"
+msgstr ""
+
+#: .\templates\news\events.html:10
+msgid "Asosiy sahifa"
+msgstr ""
+
+#: .\templates\news\news-category.html:1 .\templates\news\news.html:1
+#: .\templates\news\search.html:1
+msgid "UZFI | Yangiliklar"
+msgstr ""
+
+#: .\templates\news\news-category.html:21 .\templates\tmp.html:164
+msgid "HAMMASI"
+msgstr ""
+
+#: .\templates\news\news-category.html:65 .\templates\news\news.html:63
+#: .\templates\news\video-gallery.html:58 .\templates\tmp.html:123
+#: .\templates\tmp.html:208 .\templates\vacancies.html:46
+msgid " Avvalgi"
+msgstr ""
+
+#: .\templates\news\news-category.html:73 .\templates\news\news.html:71
+#: .\templates\news\video-gallery.html:68 .\templates\tmp.html:131
+#: .\templates\tmp.html:216 .\templates\vacancies.html:54
+msgid " Keyingi"
+msgstr ""
+
+#: .\templates\news\news-item.html:6
+msgid "UZFI"
+msgstr ""
+
+#: .\templates\news\news-item.html:69
+#: .\templates\news\popular-students-item.html:78
+#: .\templates\news\video-gallery-item.html:69
+msgid "Recent Posts"
+msgstr ""
+
+#: .\templates\news\news.html:49 .\templates\news\search.html:40
+#: .\templates\vacancies.html:32
+msgid "DAVOMINI O'QISH"
+msgstr ""
+
+#: .\templates\news\news.html:83 .\templates\news\search.html:56
+msgid "Qidiring"
+msgstr ""
+
+#: .\templates\news\news.html:104 .\templates\news\search.html:77
+#: .\templates\vacancies.html:66
+msgid "So'nggi yangiliklar"
+msgstr ""
+
+#: .\templates\news\news.html:138
+msgid "Tags"
+msgstr ""
+
+#: .\templates\news\popular-students-item.html:43
+msgid "Previous"
+msgstr ""
+
+#: .\templates\news\popular-students-item.html:47
+msgid "Next"
+msgstr ""
+
+#: .\templates\news\popular-students.html:20
+msgid "Mashxur talabalar "
+msgstr ""
+
+#: .\templates\news\video-gallery.html:1
+msgid "UZFI | Video gallereya"
+msgstr ""
+
+#: .\templates\open-data.html:7
+msgid "UZFI  | Ochiq ma'lumotlar"
+msgstr ""
+
+#: .\templates\requesties.html:7
+msgid "UZFI  | Rekvizitlar"
+msgstr ""
+
+#: .\templates\subtemplates\sidebar.html:3
+msgid "Tezkor oyna"
 msgstr ""
