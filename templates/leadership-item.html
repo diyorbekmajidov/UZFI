@@ -23,18 +23,18 @@
             <div class="col-md-8">
               <h3>{{data.first_name}}</h3>
               <div>
-                <span class="text-secondary">E-pochta: </span> {{data.email}}
+                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{data.email}}
               </div>
               <div>
-                <span class="text-secondary">Telefon raqam: </span>
+                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
                 {{data.phone}}
               </div>
               <div>
-                <span class="text-secondary">Qabul kunlari: </span>
+                <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span>
                 {{data.acceptance}}
               </div>
               <div>
-                <span class="text-secondary">Manzil: </span> {{data.address}}
+                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{data.address}}
               </div>
             </div>
           </div>
@@ -42,14 +42,14 @@
 
 
         <div class="heading-bx left mt-5">
-          <h2 class="title-head">{{data.rector.role}} haqida</h2>
+          <h2 class="title-head">{{data.rector.role}}{% blocktranslate %} haqida{% endblocktranslate %}</h2>
         </div>
 
         <div class="profile-info">
             <div class="profile-info-head">
-                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">Vazifalar</button>
-                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">Biografiya</button>
-                <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">Ilmiy faoliyat</button>
+                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">{% blocktranslate %}Vazifalar{% endblocktranslate %}</button>
+                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">{% blocktranslate %}Biografiya{% endblocktranslate %}</button>
+                <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">{% blocktranslate %}Ilmiy faoliyat{% endblocktranslate %}</button>
             </div>
             <div class="profile-info-body">
                 <div id="profileInfoMissions">
@@ -65,10 +65,10 @@
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">Nomi</th>
-                          <th scope="col">Darajasi</th>
-                          <th scope="col">Chop etilgan sana</th>
-                          <th scope="col">Yukalsh</th>
+                          <th scope="col">{% blocktranslate %}Nomi{% endblocktranslate %}</th>
+                          <th scope="col">{% blocktranslate %}Darajasi{% endblocktranslate %}</th>
+                          <th scope="col">{% blocktranslate %}Chop etilgan sana{% endblocktranslate %}</th>
+                          <th scope="col">{% blocktranslate %}Yukalsh{% endblocktranslate %}</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}UZFI | Video gallereya{% endblock %}
+{% extends "base.html" %} {% block title %}{% blocktranslate %}UZFI | Video gallereya{% endblocktranslate %}{% endblock %}
 {% block trans %}{% endblock trans %} 
 
 {% block content %} {% load static %} {%load i18n %}
@@ -54,7 +54,7 @@
             {% if page_obj.has_previous %}
             <li class="previous">
               <a href="?page={{ page_obj.previous_page_number }}"
-                ><i class="ti-arrow-left"></i> Avvalgi</a
+                ><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a
               >
             </li>
             {% endif %} {% for page in page_obj.paginator.page_range %}
@@ -64,7 +64,7 @@
             {% endfor %} {% if page_obj.has_next %}
             <li class="previous">
               <a href="?page={{ page_obj.next_page_number }}"
-                ><i class="ti-arrow-right"></i> Keyingi</a
+                ><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a
               >
             </li>
             {% endif %}

@@ -40,11 +40,11 @@
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Previous</span>
+                              <span class="sr-only">{% blocktranslate %}Previous{% endblocktranslate %}</span>
                             </a>
                             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Next</span>
+                              <span class="sr-only">{% blocktranslate %}Next{% endblocktranslate %}</span>
                             </a>
                           </div>
 
@@ -58,7 +58,7 @@
                                 <h5 class="post-title">{{data.title}}</h5>
                                 {{data.body|safe}}
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
-                                    <h6>BIZ BILAN BO'LING </h6>
+                                    <h6>{% blocktranslate %}BIZ BILAN BO'LING {% endblocktranslate %}</h6>
                                     <ul class="list-inline contact-social-bx">
                                         <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
                                         <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
@@ -75,7 +75,7 @@
                     <div class="col-lg-4 col-xl-4">
                         <aside  class="side-bar sticky-top">
                             <div class="widget recent-posts-entry">
-                                <h6 class="widget-title">Recent Posts</h6>
+                                <h6 class="widget-title">{% blocktranslate %}Recent Posts{% endblocktranslate %}</h6>
                                 <div class="widget-post-bx">
                                     {% for item in pouplar %}
                                         <div class="widget-post clearfix">

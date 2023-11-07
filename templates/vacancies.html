@@ -29,7 +29,7 @@
                     </h5>
                     <div class="text-center" style="background-color: #00000026; font-size:24px; padding: 5px 0;">{{i.salary}} UZS</div>
                     <div class="post-extra">
-                      <a href="/{{LANGUAGE_CODE}}/uzfi/vacancies/{{i.id}}" class="btn-link">DAVOMINI O'QISH</a>
+                      <a href="/{{LANGUAGE_CODE}}/uzfi/vacancies/{{i.id}}" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
                     </div>
                   </div>
                 </div>
@@ -43,7 +43,7 @@
             <div class="pagination-bx rounded-sm gray clearfix">
               <ul class="pagination">
                     {% if page_obj.has_previous %}
-                        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Avvalgi</a></li>
+                        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
                     {% endif %}
     
                     {% for page in page_obj.paginator.page_range %}
@@ -51,7 +51,7 @@
                     {% endfor %}
     
                     {% if page_obj.has_next %}
-                        <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i> Keyingi</a></li>
+                        <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -63,7 +63,7 @@
           <div class="col-lg-4 col-xl-4 col-md-5 sticky-top">
             <aside class="side-bar sticky-top">
               <div class="widget recent-posts-entry">
-                <h6 class="widget-title">So'nggi yangiliklar</h6>
+                <h6 class="widget-title">{% blocktranslate %}So'nggi yangiliklar{% endblocktranslate %}</h6>
                 <div class="widget-post-bx">
                   
                   {% for item in last_news %}

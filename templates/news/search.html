@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}UZFI | Yangiliklar{% endblock %} 
+{% extends "base.html" %} {% block title %}{% blocktranslate %}UZFI | Yangiliklar{% endblocktranslate %}{% endblock %} 
 {% block trans %}{% endblock trans %}
 {%block content %} {% load static %} {% load i18n %}
 
@@ -37,7 +37,7 @@
                     </h5>
                     
                     <div class="post-extra">
-                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}" class="btn-link">DAVOMINI O'QISH</a>
+                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
           <div class="col-lg-4 col-xl-4 col-md-5 sticky-top">
             <aside class="side-bar sticky-top">
               <div class="widget">
-                <h6 class="widget-title">Qidiring</h6>
+                <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
                 <div class="search-bx style-1">
                   <form role="search" method="post">
                     <div class="input-group">
@@ -74,7 +74,7 @@
                 </div>
               </div>
               <div class="widget recent-posts-entry">
-                <h6 class="widget-title">So'nggi yangiliklar</h6>
+                <h6 class="widget-title">{% blocktranslate %}So'nggi yangiliklar{% endblocktranslate %}</h6>
                 <div class="widget-post-bx">
                   
                   {% for item in last_news %}

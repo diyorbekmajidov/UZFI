@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Markazlar{% endblock %}
+{% block title %}{% blocktranslate %}UZFI  | Markazlar{% endblocktranslate %}{% endblock %}
 
 {% block content %}
 
@@ -15,7 +15,7 @@
     <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
         <div class="container">
             <div class="page-banner-entry">
-                <h1 class="text-white">Markazlar</h1>
+                <h1 class="text-white">{% blocktranslate %}Markazlar{% endblocktranslate %}</h1>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                 
 
                 <div class="heading-bx left">
-                    <h2 class="m-b10 title-head">Markazlar <span></span></h2>
+                    <h2 class="m-b10 title-head">{% blocktranslate %}Markazlar {% endblocktranslate %} <span></span></h2>
                 </div>
 
                 <div class="row">

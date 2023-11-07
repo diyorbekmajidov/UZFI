@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Ochiq ma'lumotlar{% endblock %}
+{% block title %}{% blocktranslate %}UZFI  | Ochiq ma'lumotlar{% endblocktranslate %}{% endblock %}
 
 {% block content %}
 
@@ -15,7 +15,7 @@
     <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
         <div class="container">
             <div class="page-banner-entry">
-                <h1 class="text-white">Ochiq ma'lumotlar</h1>
+                <h1 class="text-white">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</h1>
             </div>
         </div>
     </div>

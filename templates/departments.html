@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Kafedralar{% endblock %}
+{% block title %}{% blocktranslate %}UZFI  | Kafedralar{% endblocktranslate %}{% endblock %}
 
 {% block content %}
 
@@ -15,7 +15,7 @@
     <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/645361781b285.jpg" %});">
         <div class="container">
             <div class="page-banner-entry">
-                <h1 class="text-white">Kafedralar</h1>
+                <h1 class="text-white">{% blocktranslate %}Kafedralar{% endblocktranslate %}</h1>
             </div>
         </div>
     </div>

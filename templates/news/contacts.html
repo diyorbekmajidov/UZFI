@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Bog'lanish{% endblock %}
+{% block title %}{% blocktranslate %}UZFI  | Bog'lanish{% endblocktranslate %}{% endblock %}
 {% block trans %}{% endblock trans %}
 
 {% block content %}
@@ -25,43 +25,43 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h5>{{data.unversit_name}}</h5> 
-                        <h5 >Manzil:<span class="text-secondary">{{data.address}}</span></h5> 
-                        <h5 >Telefon: <span class="text-secondary">{{data.phone}}</span></h5> 
-                        <h5 >Fax: <span class="text-secondary">{{data.email}}</span></h5> 
-                        <h5 >Hisob raqami: <span class="text-secondary">{{data.bank_account}}</span></h5> 
-                        <h5 >Bank: <span class="text-secondary">{{data.fax}}</span></h5> 
-                        <h5 >MFO: <span class="text-secondary">{{data.bank}}</span></h5> 
-                        <h5 >Shx/r: <span class="text-secondary">{{data.mfo}}</span></h5> 
-                        <h5 >INN: <span class="text-secondary">{{data.INN}}</span></h5> 
-                        <h5 >OKONX: <span class="text-secondary">{{data.OKONX}}</span></h5>
+                        <h5 >{% blocktranslate %}Manzil:{% endblocktranslate %}<span class="text-secondary">{{data.address}}</span></h5> 
+                        <h5 >{% blocktranslate %}Telefon: {% endblocktranslate %}<span class="text-secondary">{{data.phone}}</span></h5> 
+                        <h5 >{% blocktranslate %}Fax: {% endblocktranslate %}<span class="text-secondary">{{data.email}}</span></h5> 
+                        <h5 >{% blocktranslate %}Hisob raqami: {% endblocktranslate %}<span class="text-secondary">{{data.bank_account}}</span></h5> 
+                        <h5 >{% blocktranslate %}Bank: {% endblocktranslate %}<span class="text-secondary">{{data.fax}}</span></h5> 
+                        <h5 >{% blocktranslate %}MFO: {% endblocktranslate %}<span class="text-secondary">{{data.bank}}</span></h5> 
+                        <h5 >{% blocktranslate %}Shx/r: {% endblocktranslate %}<span class="text-secondary">{{data.mfo}}</span></h5> 
+                        <h5 >{% blocktranslate %}INN: {% endblocktranslate %}<span class="text-secondary">{{data.INN}}</span></h5> 
+                        <h5 >{% blocktranslate %}OKONX: {% endblocktranslate %}<span class="text-secondary">{{data.OKONX}}</span></h5>
                     </div>
 
                     <div class="col-md-6">
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">To'liq ismingiz</label>
+                                <label for="exampleInputEmail1">{% blocktranslate %}To'liq ismingiz{% endblocktranslate %}</label>
                                 <input name="full_name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                             </div> 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
+                                        <label for="exampleInputEmail1">{% blocktranslate %}Email{% endblocktranslate %}</label>
                                         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        <small id="emailHelp" class="form-text text-muted">{% blocktranslate %}We'll never share your email with anyone else.{% endblocktranslate %}</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputPhone1">Telefon raqam</label>
+                                        <label for="exampleInputPhone1">{% blocktranslate %}Telefon raqam{% endblocktranslate %}</label>
                                         <input name="phone_number" type="number" class="form-control" id="exampleInputPhone1" >
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Murojaat</label>
+                                <label for="exampleFormControlTextarea1">{% blocktranslate %}Murojaat{% endblocktranslate %}</label>
                                 <textarea name="appeal" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>         
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">{% blocktranslate %}Submit{% endblocktranslate %}</button>
                         </form>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}UZFI | Kafedra{% endblock %} 
+{% extends "base.html" %} {% block title %}{% blocktranslate %}UZFI | Kafedra{% endblocktranslate %}{% endblock %} 
 {%block content %} {% load static %}
 
 <div class="page-content">
@@ -22,7 +22,7 @@
     <div class="section-area section-sp2">
       <div class="container">
         <div class="heading-bx left">
-          <h2 class="title-head">Kafedra mudiri</h2>
+          <h2 class="title-head">{% blocktranslate %}Kafedra mudiri{% endblocktranslate %}</h2>
         </div>
 
         <div class="card">
@@ -34,18 +34,18 @@
               <a href="/{{LANGUAGE_CODE}}/uzfi/department-manager/{{manager.id}}"><h3>{{manager.name}}</h3></a>
               
               <div>
-                <span class="text-secondary">E-pochta: </span> {{manager.email}}
+                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
               </div>
               <div>
-                <span class="text-secondary">Telefon raqam: </span>
+                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
                 {{manager.phone}}
               </div>
               <div>
-                <span class="text-secondary">Qabul kunlari: </span>
+                <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span>
                 {{manager.acceptance}}
               </div>
               <div>
-                <span class="text-secondary">Manzil: </span> {{manager.address}}
+                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@
 
 
         <div class="heading-bx left mt-5">
-          <h2 class="title-head">Kafedra haqida</h2>
+          <h2 class="title-head">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</h2>
         </div>
 
         <div class="py-3">{{data.about|safe}}</div>

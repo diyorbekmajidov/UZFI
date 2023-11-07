@@ -37,15 +37,15 @@
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="tab" href="#courses"><i
-                                                class="ti-book"></i>Yangiliklar</a>
+                                                class="ti-book"></i>{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#edit-profile"><i
-                                                class="ti-pencil-alt"></i>Ilmiy ish sozlamalri</a>
+                                                class="ti-pencil-alt"></i>{% blocktranslate %}Ilmiy ish sozlamalri{% endblocktranslate %}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#change-password"><i
-                                                class="ti-lock"></i>Change Password</a>
+                                                class="ti-lock"></i>{% blocktranslate %}Change Password{% endblocktranslate %}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -56,9 +56,9 @@
                     <div class="col-lg-9 col-md-8 col-sm-12 m-b30">
                         <div class="profile-info">
                             <div class="profile-info-head">
-                                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">Vazifalar</button>
-                                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">Biografiya</button>
-                                <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">Scientific activity</button>
+                                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">{% blocktranslate %}Vazifalar{% endblocktranslate %}</button>
+                                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">{% blocktranslate %}Biografiya{% endblocktranslate %}</button>
+                                <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">{% blocktranslate %}Scientific activity{% endblocktranslate %}</button>
                             </div>
                             <div class="profile-info-body">
                                 <div id="profileInfoMissions">
@@ -74,10 +74,10 @@
                                         <thead>
                                           <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Nomi</th>
-                                            <th scope="col">Darajasi</th>
-                                            <th scope="col">Chop etilgan sana</th>
-                                            <th scope="col">Yukalsh</th>
+                                            <th scope="col">{% blocktranslate %}Nomi{% endblocktranslate %}</th>
+                                            <th scope="col">{% blocktranslate %}Darajasi{% endblocktranslate %}</th>
+                                            <th scope="col">{% blocktranslate %}Chop etilgan sana{% endblocktranslate %}</th>
+                                            <th scope="col">{% blocktranslate %}Yukalsh{% endblocktranslate %}/th>
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -103,7 +103,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="courses">
                                     <div class="profile-head">
-                                        <h3>Tegishli yangiliklar</h3>
+                                        <h3>{% blocktranslate %}Tegishli yangiliklar{% endblocktranslate %}</h3>
                                     </div>
                                     <div class="courses-filter">
                                         <div class="clearfix">
@@ -130,7 +130,7 @@
                                
                                 <div class="tab-pane" id="edit-profile">
                                     <div class="profile-head">
-                                        <h3>Ilmiy ishlar sozlamalri</h3>
+                                        <h3>{% blocktranslate %}Ilmiy ishlar sozlamalri{% endblocktranslate %}</h3>
                                         
                                         
                                         
@@ -148,13 +148,13 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                    <h3>Ilmiy ish yuklash</h3>
+                                                    <h3>{% blocktranslate %}Ilmiy ish yuklash{% endblocktranslate %}</h3>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Nomi UZ</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Nomi UZ{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_name_uz">
                                                 </div>
@@ -162,7 +162,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Nomi EN</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Nomi EN{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_name_en">
                                                 </div>
@@ -170,7 +170,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Nomi RU</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Nomi RU{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_name_ru">
                                                 </div>
@@ -179,7 +179,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Darajasi UZ</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Darajasi UZ{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_level_uz">
                                                 </div>
@@ -187,7 +187,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Darajasi EN</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Darajasi EN{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_level_en">
                                                 </div>
@@ -195,7 +195,7 @@
 
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Darajasi RU</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Darajasi RU{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="article_level_ru">
                                                 </div>
@@ -205,19 +205,19 @@
                                                     class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Link</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="text" name="link">
-                                                    <span class="help">Majburiy emas</span>
+                                                    <span class="help">{% blocktranslate %}Majburiy emas{% endblocktranslate %}</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Fayl</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Fayl{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="file" name="pdf_file">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">Chop etilgam sana</label>
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Chop etilgam sana{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-9 col-md-9 col-lg-7">
                                                     <input class="form-control" type="datetime" name="publication_date">
                                                 </div>
@@ -231,8 +231,8 @@
                                                     <div class="col-12 col-sm-3 col-md-3 col-lg-2">
                                                     </div>
                                                     <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <button type="submit" class="btn">Save changes</button>
-                                                        <button type="reset" class="btn-secondry">Bekor qilish</button>
+                                                        <button type="submit" class="btn">{% blocktranslate %}Save changes{% endblocktranslate %}</button>
+                                                        <button type="reset" class="btn-secondry">{% blocktranslate %}Bekor qilish<{% endblocktranslate %}/button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,35 +241,35 @@
                                 </div>
                                 <div class="tab-pane" id="change-password">
                                     <div class="profile-head">
-                                        <h3>Change Password</h3>
+                                        <h3>{% blocktranslate %}Change Password{% endblocktranslate %}</h3>
                                     </div>
                                     <form class="edit-profile">
                                         <div class="">
                                             <div class="form-group row">
                                                 <div class="col-12 col-sm-8 col-md-8 col-lg-9 ml-auto">
-                                                    <h3>Password</h3>
+                                                    <h3>{% blocktranslate %}Password{% endblocktranslate %}</h3>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Current
-                                                    Password</label>
+                                                    class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">{% blocktranslate %}Current
+                                                    Password{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-8 col-md-8 col-lg-7">
                                                     <input class="form-control" type="password" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">New
-                                                    Password</label>
+                                                    class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">{% blocktranslate %}New
+                                                    Password{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-8 col-md-8 col-lg-7">
                                                     <input class="form-control" type="password" value="">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label
-                                                    class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Re
-                                                    Type New Password</label>
+                                                    class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">{% blocktranslate %}Re
+                                                    Type New Password{% endblocktranslate %}</label>
                                                 <div class="col-12 col-sm-8 col-md-8 col-lg-7">
                                                     <input class="form-control" type="password" value="">
                                                 </div>
@@ -279,7 +279,7 @@
                                             <div class="col-12 col-sm-4 col-md-4 col-lg-3">
                                             </div>
                                             <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                <button type="reset" class="btn">Save changes</button>
+                                                <button type="reset" class="btn">{% blocktranslate %}Save changes{% endblocktranslate %}</button>
                                                 <button type="reset" class="btn-secondry">Cancel</button>
                                             </div>
                                         </div>

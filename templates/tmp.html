@@ -52,7 +52,7 @@
                 >
                   <div class="container">
                     <div class="page-banner-entry">
-                      <h1 class="text-white">Yangiliklar</h1>
+                      <h1 class="text-white">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</h1>
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@
                       <div class="pagination-bx rounded-sm gray clearfix">
                         <ul class="pagination">
                               {% if page_obj.has_previous %}
-                                  <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Avvalgi</a></li>
+                                  <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
                               {% endif %}
               
                               {% for page in page_obj.paginator.page_range %}
@@ -122,7 +122,7 @@
                               {% endfor %}
               
                               {% if page_obj.has_next %}
-                                  <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i> Keyingi</a></li>
+                                  <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
                               {% endif %}
                           </ul>
                       </div>
@@ -145,7 +145,7 @@
   >
     <div class="container">
       <div class="page-banner-entry">
-        <h1 class="text-white">Yangiliklar</h1>
+        <h1 class="text-white">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</h1>
       </div>
     </div>
   </div>
@@ -155,7 +155,7 @@
     <div class="section-area section-sp1 gallery-bx">
       <div class="container">
         <div class="feature-filters clearfix center m-b40">
-              <a href="/{{LANGUAGE_CODE}}/news/content/" class="btn">HAMMASI</a>
+              <a href="/{{LANGUAGE_CODE}}/news/content/" class="btn">{% blocktranslate %}HAMMASI{% endblocktranslate %}</a>
               {% for i in category %}
                 <a href="/{{LANGUAGE_CODE}}/news/category/{{i.id}}#news_content" class="btn" style="{% if i.new_category == current %}background-color:#4c1864; color:#ffffff;{% endif %}">{{i.new_category}}</a>
               {% endfor %}
@@ -199,7 +199,7 @@
         <div class="pagination-bx rounded-sm gray clearfix">
           <ul class="pagination">
                 {% if page_obj.has_previous %}
-                    <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> Avvalgi</a></li>
+                    <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
                 {% endif %}
 
                 {% for page in page_obj.paginator.page_range %}
@@ -207,7 +207,7 @@
                 {% endfor %}
 
                 {% if page_obj.has_next %}
-                    <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i> Keyingi</a></li>
+                    <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
                 {% endif %}
             </ul>
         </div>

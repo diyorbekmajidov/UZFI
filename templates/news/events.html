@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}UZFI | Kutilayotgan tadbirlar{% endblock %} 
+{% extends "base.html" %} {% block title %}{% blocktranslate %}UZFI | Kutilayotgan tadbirlar{% endblocktranslate %}{% endblock %} 
 {% block trans %}{% endblock trans %}
 {%block content %} {% load static %} {% load i18n %}
 
@@ -7,8 +7,8 @@
     <div class="breadcrumb-row">
         <div class="container">
             <ul class="list-inline">
-                <li><a href="/">Asosiy sahifa</a></li>
-                <li>Kutilayotgan tadbirlar</li>
+                <li><a href="/">{% blocktranslate %}Asosiy sahifa{% endblocktranslate %}</a></li>
+                <li>{% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}</li>
             </ul>
         </div>
     </div>
@@ -35,7 +35,7 @@
                                 </ul>
                                 <div><a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/"> {{item.event_name}} </a></div>
                                 <div class="post-extra">
-                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/" class="btn-link">Davomini o'qish</a>
+                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/" class="btn-link">{% blocktranslate %}Davomini o'qish{% endblocktranslate %}</a>
                                 </div>
                             </div>
                         </div>

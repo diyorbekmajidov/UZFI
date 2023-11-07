@@ -11,7 +11,7 @@
       <div class="container">
 
         <div class="heading-bx left">
-          <h2 class="title-head">{{data.name}} rahbari</h2>
+          <h2 class="title-head">{{data.name}}{% blocktranslate %} rahbari{% endblocktranslate %}</h2>
         </div>
 
         <div class="card user-info-card">
@@ -22,14 +22,14 @@
             <div class="col-md-8">
               <h3>{{manager.name}}</h3>
               <div>
-                <span class="text-secondary">E-pochta: </span> {{manager.email}}
+                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
               </div>
               <div>
-                <span class="text-secondary">Telefon raqam: </span>
+                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
                 {{manager.phone}}
               </div>
               <div>
-                <span class="text-secondary">Manzil: </span> {{manager.address}}
+                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@
             <div class="acod-head">
                 <h6 class="acod-title">
                     <a data-toggle="collapse" href="#faqmission" class="collapsed" data-parent="#faqmission">
-                        Vazifalar
+                      {% blocktranslate %}Vazifalar{% endblocktranslate %}
                     </a>
                 </h6>
             </div>

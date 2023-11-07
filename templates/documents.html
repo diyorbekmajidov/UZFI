@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Me'yoriy hujjatlar{% endblock %}
+{% block title %}{% blocktranslate %}UZFI  | Me'yoriy hujjatlar{% endblocktranslate %}{% endblock %}
 {% block trans %}{% endblock trans %}
 
 {% block content %}
@@ -25,10 +25,10 @@
                     <thead>
                         <tr>
                             <th class="table-info" scope="col">#</th>
-                            <th class="table-info" scope="col">Hujjat turi</th>
-                            <th class="table-info" scope="col">Hujjat sanasi</th>
-                            <th class="table-info" scope="col">Hujjat nomi</th>
-                            <th class="table-info" scope="col">Yuklash</th>
+                            <th class="table-info" scope="col">{% blocktranslate %}Hujjat turi{% endblocktranslate %}</th>
+                            <th class="table-info" scope="col">{% blocktranslate %}Hujjat sanasi{% endblocktranslate %}</th>
+                            <th class="table-info" scope="col">{% blocktranslate %}Hujjat nomi{% endblocktranslate %}</th>
+                            <th class="table-info" scope="col">{% blocktranslate %}Yuklash{% endblocktranslate %}</th>
                         </tr>
                     </thead>
                     <tbody>

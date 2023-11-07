@@ -4,7 +4,7 @@
 
 {% extends "base.html" %}
 
-{% block title %}UZFI  | Markazlar{% endblock %}
+{% block title %}{% blocktranslate %}UZFI  | Markazlar{% endblocktranslate %}{% endblock %}
 {% block trans %}{% endblock trans %}
 
 {% block content %}
@@ -27,7 +27,7 @@
 
 
                     <div class="heading-bx left">
-                        <h2 class="m-b10 title-head">Rahbariyat <span></span></h2>
+                        <h2 class="m-b10 title-head">{% blocktranslate %}Rahbariyat {% endblocktranslate %}<span></span></h2>
                     </div>
                     
                     
@@ -42,18 +42,18 @@
                             <div class="col-md-8">
                               <h3><span class="text-secondary">{{i.rector.role}}</span> {{i.first_name}}</h3>
                               <div >
-                                <span class="text-secondary">E-pochta: </span> {{i.email}}
+                                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{i.email}}
                               </div>
                               <div >
-                                <span class="text-secondary">Telefon raqam: </span>
+                                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
                                 {{i.phone}}
                               </div>
                               <div >
-                                <span class="text-secondary">Qabul kunlari: </span>
+                                <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span>
                                 {{i.acceptance}}
                               </div>
                               <div >
-                                <span class="text-secondary">Manzil: </span> {{i.address}}
+                                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{i.address}}
                               </div>
 
 
