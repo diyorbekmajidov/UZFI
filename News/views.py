@@ -72,8 +72,9 @@ class PopularStudentsApiView(TemplateView):
 class PopularStudentsById(TemplateView):
     def get(self, request, pk):
         try: 
-            img = PopularStudentImg.objects.get(id=pk)
+            img = PopularStudentImg.objects.get(popular=pk)
             serializer_img = PopularStudentImgSerializer(img)
+            print(serializer_img.data)
             populars = PopularStudents.objects.get(id=pk)
             serializers = PopularStudentsSerializer(populars)
             last_populars = PopularStudents.objects.order_by('-date_created')[:5]
@@ -81,7 +82,7 @@ class PopularStudentsById(TemplateView):
             return  render(request, 'news/popular-students-item.html', 
                            {"data":serializers.data,
                             "pouplar":serializer2.data,
-                            "img":serializer_img.data,
+                            # "img":serializer_img.data,
                             })
         except:
             return render(request,'50x.error.html')
