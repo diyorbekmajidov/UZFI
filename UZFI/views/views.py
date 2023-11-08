@@ -167,10 +167,14 @@ class DekanById(APIView):
 
 class DirectionApview(APIView):
     def get(self, request, pk):
-        direction = Direction.objects.get(id=pk)
-        serializers = DirectionSerializer(direction)
-        
-        return render(request, 'destinations-item.html',{"data":serializers.data, })
+        try :
+            direction = Direction.objects.get(id=pk)
+            serializers = DirectionSerializer(direction)
+            
+            return render(request, 'destinations-item.html',{"data":serializers.data, })
+        except Exception as e:
+            print(e)
+            return render(request, 'destinations-item.html')
 
 class KafedraApview(APIView):
     def get(self, request):
