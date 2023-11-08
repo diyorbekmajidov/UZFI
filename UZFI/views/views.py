@@ -146,7 +146,7 @@ class FacultyByIdApview(APIView):
                 })
         except Exception as e:
             print(e)
-            return render(request,'aculties-item.html')
+            return render(request,'faculties-item.html')
 
 class DekanById(APIView):
     def get(self, request, pk):
