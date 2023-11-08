@@ -146,7 +146,7 @@ class FacultyByIdApview(APIView):
                 })
         except Exception as e:
             print(e)
-            return render(request,'50x.error.html')
+            return render(request,'aculties-item.html')
 
 class DekanById(APIView):
     def get(self, request, pk):
@@ -184,17 +184,22 @@ class KafedraApview(APIView):
 
 class KafedraByIDApview(APIView):
     def get(self, request, pk):
-        department = Kafedra.objects.filter(id = pk).last()
-        serializers = KafedraSerializer(department)
-        manager = KafedraManager.objects.get(kafedra = pk)
-        serializers1 = KafedraManagerSerializer(manager)
-        return render(request, 'departments-item.html',{
-            "data":serializers.data,
-            "manager" : serializers1.data
-            })
+        try:
+            department = Kafedra.objects.filter(id = pk).last()
+            serializers = KafedraSerializer(department)
+            manager = KafedraManager.objects.get(kafedra = pk)
+            serializers1 = KafedraManagerSerializer(manager)
+            return render(request, 'departments-item.html',{
+                "data":serializers.data,
+                "manager" : serializers1.data
+                })
+        except Exception as e:
+            return render(request, 'departments-item.html')
+
     
 class KafedraManagerById(APIView):
     def get(self, request, pk):
+
         manager = KafedraManager.objects.get(id = pk)
         serializer = KafedraManagerSerializer(manager)
         user = manager.kafedramanager.id
@@ -216,12 +221,15 @@ class CentersDepartmentApiView(APIView):
 
 class CentersDepartmentByIDApiView(APIView):
     def get(self, request, pk):
-        center = CentersDepartments.objects.filter(id = pk).last()
-        departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
-        serializers = CentersDepartmentsSerializer(center)
-        serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
-        return render(request, 'centers-item.html', {"data":serializers.data,
-                                                "manager" : serializers1.data})
+        try:
+            center = CentersDepartments.objects.filter(id = pk).last()
+            departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
+            serializers = CentersDepartmentsSerializer(center)
+            serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
+            return render(request, 'centers-item.html', {"data":serializers.data,
+                                                    "manager" : serializers1.data})
+        except:
+            return render(request, 'centers-item.html')
     
 class CentersDepartmentManagerpiView(APIView):
     def get(self, request, pk):
