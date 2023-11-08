@@ -13,18 +13,16 @@ from .views import (
     FacultyApview,
     FacultyByIdApview,
     DirectionApview,
-    DekanGetApiview,
     DekanById,
     AllDekan,
     KafedraApview,
     KafedraManagerById,
-    KafedraManagerApview,
     GetAllKafedraManager,
     ScientificWorkAPIView,
     Register,
     CentersDepartmentApiView,
     CentersDepartmentByIDApiView,
-    CentersDepartmentManagerpiView,
+    CentersDepartmentManagerView,
     Login,
     Dashboard,
     LeadershipAPIView,
@@ -65,17 +63,15 @@ urlpatterns = [
 
     path('departments/', KafedraApview.as_view()),
     path('departments/<int:pk>/', KafedraByIDApview.as_view()),
-    path('departmentsmanager/<int:pk>/', CentersDepartmentManagerpiView.as_view()),
+    path('departmentsmanager/<int:pk>/', CentersDepartmentManagerView.as_view()),
 
     path('scientificwork/', ScientificWorkAPIView.as_view()),
 
-    path('dekanget/', DekanGetApiview.as_view()),
     path('dekan/<int:pk>/', DekanById.as_view()),
     path('alldekan/', AllDekan.as_view()),
     
     path('department-manager/<int:pk>/', KafedraManagerById.as_view()),
     path('getallkafedramanager/', GetAllKafedraManager.as_view()),
-    path('kafedramanager/', KafedraManagerApview.as_view(),),
 
     path('register/', Register.as_view()),
     path('login/', Login.as_view()),

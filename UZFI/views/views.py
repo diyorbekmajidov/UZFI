@@ -163,7 +163,7 @@ class DekanById(APIView):
                 context['scientific_work'] = None
             return render(request, "dekan.html", context=context)
         except:
-            return render(request,'50x.error.html')
+            return render(request,'dekan.html')
 
 class DirectionApview(APIView):
     def get(self, request, pk):
@@ -231,7 +231,7 @@ class CentersDepartmentByIDApiView(APIView):
         except:
             return render(request, 'centers-item.html')
     
-class CentersDepartmentManagerpiView(APIView):
+class CentersDepartmentManagerView(APIView):
     def get(self, request, pk):
         departments = CentersDepartmentsManager.objects.get(id = pk)
         serializers = CentersDepartmentsManagerSerializer(departments)
