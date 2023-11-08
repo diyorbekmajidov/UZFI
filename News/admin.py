@@ -24,9 +24,6 @@ class PopularStudentImgInline(admin.TabularInline):
     model = PopularStudentImg
     
 
-# class PopularStudentsAdmin(admin.ModelAdmin):
-#     inlines = [PopularStudentImgInline]
-
 class PopularStudentsAdmin(TranslationAdmin):
     list_display = ('body','description')
     inlines = [PopularStudentImgInline]

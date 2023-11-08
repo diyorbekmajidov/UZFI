@@ -22,15 +22,13 @@ class UserNewsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PopularStudentsSerializer(serializers.ModelSerializer):
-    popular = serializers.SerializerMethodField()
     class Meta:
         model = PopularStudents
         fields = "__all__"
-
-    def get_popular(self, obj):
-        [{"img":x.img, "id":x.id} for x in obj.popular.all() ]
-        
-
+class PopularStudentImgSerializer(serializers.ModelSerializer):
+    class Meta:
+        models = PopularStudentImg
+        fields = '__all__'
 class VedioNewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vedio_New
