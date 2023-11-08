@@ -1,10 +1,29 @@
 {% load i18n %}
 
+<style>
+    
+    
+    .sidebar-title {
+        /* border: 1px solid rgb(210, 196, 196); */
+        font-size: 25px;
+    }
+</style>
+
 <aside  class="side-bar sticky-top">
-    <div class="widget recent-posts-entry">
-        <h6 class="widget-title">{% blocktranslate %}Tezkor oyna{% endblocktranslate %}</h6>
-        <div class="widget-post-bx">
-            
+    <div class="widget recent-posts-entry card mx-3">
+        <div class="card-header bg-primary text-light sidebar-title">{% blocktranslate %}UNIVERSITET{% endblocktranslate %}</div>
+        <div class="fast_sidebar card-body">
+                <ul>
+                  <li><a href="/{{LANGUAGE_CODE}}/">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Mashhur talabalar{% endblocktranslate %}</a></li>
+                  <li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
+                </ul>
         </div>
     </div>
 </aside>
