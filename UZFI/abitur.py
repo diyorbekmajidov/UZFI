@@ -6,7 +6,8 @@ from .views.abitur import (
     FAQs,
     Acceptance,
     Regulation,
-    Commission
+    Commission,
+    Magistratura
 )
 from .views import(
     InternationalCooperation,
@@ -20,4 +21,5 @@ urlpatterns = [
     path("admission-quota/", Acceptance.as_view()),
     path("commission/", Commission.as_view()),
     path('charter-admission/', Regulation.as_view()),
+    path('magistrature/', Magistratura.as_view()),
 ]

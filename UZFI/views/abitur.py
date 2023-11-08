@@ -19,3 +19,6 @@ class Regulation(TemplateView):
 
 class Commission(TemplateView):
     template_name = "abitur/commission.html"
+
+class Magistratura(TemplateView):
+    template_name = 'magistr.html'
