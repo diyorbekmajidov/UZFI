@@ -8,6 +8,10 @@ from .views.abitur import (
     Regulation,
     Commission
 )
+from .views import(
+    InternationalCooperation,
+    InternationalMemorandum
+)
 
 urlpatterns = [
     path("regulation-on-secondary-education/", RegulationOnSecondaryEducation.as_view()),
