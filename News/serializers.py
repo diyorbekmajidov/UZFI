@@ -27,7 +27,7 @@ class PopularStudentsSerializer(serializers.ModelSerializer):
         fields = "__all__"
 class PopularStudentImgSerializer(serializers.ModelSerializer):
     class Meta:
-        models = PopularStudentImg
+        model = PopularStudentImg
         fields = '__all__'
 class VedioNewSerializer(serializers.ModelSerializer):
     class Meta:
