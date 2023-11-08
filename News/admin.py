@@ -15,10 +15,22 @@ class News_ContentAdmin(TranslationAdmin):
 class Vedio_NewAdmin(TranslationAdmin):
     list_display = ('title','body')
 
-@admin.register(PopularStudents)
-class PopularStudentsAdmin(TranslationAdmin):
-    list_display = ('body','description')
-
 @admin.register(PendingEvents)
 class PendingEventsAdmin(TranslationAdmin):
     list_display = ('body','event_name')
+
+
+class PopularStudentImgInline(admin.TabularInline):
+    model = PopularStudentImg
+    
+
+# class PopularStudentsAdmin(admin.ModelAdmin):
+#     inlines = [PopularStudentImgInline]
+
+class PopularStudentsAdmin(TranslationAdmin):
+    list_display = ('body','description')
+    inlines = [PopularStudentImgInline]
+
+admin.site.register(PopularStudents,PopularStudentsAdmin)
+
+

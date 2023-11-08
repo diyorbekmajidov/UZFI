@@ -12,7 +12,7 @@ class NewsCategory(models.Model):
 def validate_file_size(value):
     filesize = value.size
 
-    if filesize > 1000 * 1024:
+    if filesize > 1000 * 2024:
         raise ValidationError("The maximum file size that can be uploaded is 1mb")
     else:
         return value
@@ -49,15 +49,19 @@ class PopularStudents(models.Model):
     student_name  = models.CharField(max_length=150)
     body          = RichTextUploadingField()
     description   = models.CharField(max_length=300)
-    img           = models.ImageField(upload_to='img')
-    img1          = models.ImageField(upload_to='img', blank=True, null=True)
-    img2          = models.ImageField(upload_to='img', blank=True, null=True)
-    img3          = models.ImageField(upload_to='img', blank=True, null=True)
     date_created  = models.DateField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
         return self.student_name
+    
+class PopularStudentImg(models.Model):
+    popular = models.ForeignKey(PopularStudents,on_delete=models.CASCADE )
+    img     = models.ImageField(upload_to='img/', validators=[validate_file_size])
+
+    def __str__(self) -> str:
+        return self.popular.student_name
+
     
 class PendingEvents(models.Model):
     event_name    = models.CharField(max_length=150)
