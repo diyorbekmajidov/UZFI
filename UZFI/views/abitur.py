@@ -10,3 +10,12 @@ class WorkWithTheAnswerSheet(TemplateView):
 
 class FAQs(TemplateView):
     template_name = "abitur/faqs.html"
+
+class Acceptance(TemplateView):
+    template_name = "abitur/acceptance.html"
+
+class Regulation(TemplateView):
+    template_name = "abitur/regulation.html"
+
+class Commission(TemplateView):
+    template_name = "abitur/commission.html"

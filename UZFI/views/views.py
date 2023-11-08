@@ -70,7 +70,7 @@ class CharterApview(TemplateView):
             serializers = CharterSerializer(charter, many = True) 
             return render(request, 'charter.html',{"data":serializers.data})
         except:
-            return render(request,'50x.error.html')
+            return render(request,'charter.html')
 
 class DocumentCreateApview(APIView):
     def get(self,request):
@@ -79,7 +79,7 @@ class DocumentCreateApview(APIView):
             serializers = DocumentSerializer(document, many = True)
             return render(request, 'documents.html',{"data":serializers.data})
         except:
-            return render(request,'50x.error.html')
+            return render(request,'documents.html')
 
 class CouncilsApview(APIView):
     def get(self, request):
