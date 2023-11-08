@@ -67,7 +67,7 @@ class PopularStudentsApiView(TemplateView):
                 return  render(request, 'news/popular-students.html', {"data":serializers.data,})
             except Exception as e:
                 print(e)
-                return render(request,'50x.error.html')
+                return render(request,'.html')
             
 class PopularStudentsById(TemplateView):
     def get(self, request, pk):

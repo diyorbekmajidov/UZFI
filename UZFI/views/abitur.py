@@ -1,5 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
+from models import Direction
+from serializers import DirectionSerializer
 
 
 class RegulationOnSecondaryEducation(TemplateView):
@@ -24,5 +26,9 @@ class Magistratura(TemplateView):
     template_name = 'magistr.html'
 
 class Bakalavriar(TemplateView):
-    template_name = 'bachelor.html'
+    def get(self, request):
+        data = Direction.objects.all()
+        serializers = DirectionSerializer(data)
+        template_name = 'bachelor.html'
+        return render(request, '', {"data":serializers.data})
 
