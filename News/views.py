@@ -122,18 +122,6 @@ class SearchNewsApiView(ListAPIView):
             print(e)
             return render(request,'50x.error.html')
         
-class GetUserNews(ListAPIView):
-    permission_classes = [IsAuthenticated]
-    pagination_class = NewsPagination
-    serializer_class = UserNewsSerializer
-
-    def get_queryset(self, request):
-        user = self.request.user
-        dekan = Dekan.objects.filter(dekan=user).first()
-        if dekan:
-            return News_Content.objects.filter(dekan=dekan)
-        else:
-            return News_Content.objects.none()
 
 class PendingEventApiviews(TemplateView):
     def get(self, request):

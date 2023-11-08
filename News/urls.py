@@ -3,7 +3,6 @@ from .views import (
     NewsContentListAPIView,
     NewsContentApiviewGet,
     PopularStudentsApiView,
-    GetUserNews,
     PopularStudentsById,
     NewsContentCategoryAPIView,
     VedioNewsByID,
@@ -31,8 +30,6 @@ urlpatterns = [
     path('video-gallery/<int:pk>/', VedioNewsByID.as_view()),
 
     path('searchnews/', SearchNewsApiView.as_view()),
-
-    path('getusernews/', GetUserNews.as_view()),
 
     path('events/', PendingEventApiviews.as_view()),
     path('events/<int:pk>/', PendingEventByIdApiviews.as_view()),

@@ -22,3 +22,7 @@ class Commission(TemplateView):
 
 class Magistratura(TemplateView):
     template_name = 'magistr.html'
+
+class Bakalavriar(TemplateView):
+    template_name = 'bachelor.html'
+
