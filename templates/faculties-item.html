@@ -23,7 +23,12 @@
     <div class="content-block">
       <!-- FAQS News -->
       <div class="section-area section-sp2">
-        <div class="container">
+        
+
+
+        {% if data  %}
+                  
+            <div class="container">
           <div class="heading-bx left">
             <h2 class="title-head">{% blocktranslate %}Fakultet dekani{% endblocktranslate %}</h2>
           </div>
@@ -58,7 +63,14 @@
           </div>
 
           <div>{{ faculty.body|safe }}</div>
-        </div>
+        </div>       
+                  
+        {% else %}
+
+        {% blocktranslate %}<h1 class="text-center">Fakultet mavjud emas</h1>{% endblocktranslate %}
+
+        {% endif %}
+
       </div>
       <!-- FAQS News End -->
     </div>
