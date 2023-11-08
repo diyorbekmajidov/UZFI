@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from models import Direction
-from serializers import DirectionSerializer
+from ..models import Direction
+from ..serializers import DirectionSerializer
 
 
 class RegulationOnSecondaryEducation(TemplateView):
