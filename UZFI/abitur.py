@@ -10,10 +10,7 @@ from .views.abitur import (
     Magistratura,
     Bakalavriar
 )
-from .views import(
-    InternationalCooperation,
-    InternationalMemorandum
-)
+
 
 urlpatterns = [
     path("regulation-on-secondary-education/", RegulationOnSecondaryEducation.as_view()),
