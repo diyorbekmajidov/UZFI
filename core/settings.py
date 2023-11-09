@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'UZFI.apps.UzfiConfig',
     'News.apps.NewsConfig',
+    'International.apps.InternationalConfig'
 ]
 
 
