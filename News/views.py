@@ -71,10 +71,7 @@ class PopularStudentsApiView(TemplateView):
             
 class PopularStudentsById(TemplateView):
     def get(self, request, pk):
-        try: 
-            img = PopularStudentImg.objects.filter(popular=pk)
-            serializer_img = PopularStudentImgSerializer(img, many = True)
-            print(serializer_img.data)
+        try:
             populars = PopularStudents.objects.get(id=pk)
             serializers = PopularStudentsSerializer(populars)
             last_populars = PopularStudents.objects.order_by('-date_created')[:5]
@@ -82,11 +79,10 @@ class PopularStudentsById(TemplateView):
             return  render(request, 'news/popular-students-item.html', 
                            {"data":serializers.data,
                             "pouplar":serializer2.data,
-                            "img":serializer_img.data,
                             })
         except Exception as e:
             print(e)
-            return render(request,'50x.error.html')
+            return render(request,'news/popular-students-item.html')
         
 class VedioNews(TemplateView):
     def get(self, request):
