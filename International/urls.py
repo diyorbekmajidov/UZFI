@@ -7,8 +7,8 @@ from .views import(
 
 urlpatterns = [
     #International Relation views
-    path('internationalrelations/', InternationalRelationsViews.index, name='international_relations'),
-    path('internationalmemorandum/', InternationalMemorandumViews.add, name='add_international_relation'),
+    path('internationalrelations/', InternationalRelationsViews.as_view(), name='international_relations'),
+    path('internationalmemorandum/', InternationalMemorandumViews.as_view()),
     path('internationalgrant/', InternationalGrantViews.as_view()),
     
 ]
