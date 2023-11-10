@@ -19,22 +19,32 @@ class InternationalRelationsViews(TemplateView):
             print(e)
             return render(request,'international/InternationalRelations.html')
 
+class InternationalRelationsByIDViews(TemplateView):
+    def get(self, request, pk=1):
+        try:
+            internations = InternationalRelations.objects.filter(id=pk)
+            serializers = InternationalRelationsSerializers(internations)
+            return  render(request, '.html', {"data":serializers.data,})
+        except Exception as e:
+            print(e)
+            return render(request,'.html')
+
 class InternationalMemorandumViews(TemplateView):
     def get(self, request):
         try:
             internations = InternationalMemorandum.objects.all()
             serializers = InternationalMemorandumSerializers(internations, many = True)
-            return  render(request, '.html', {"data":serializers.data,})
+            return  render(request, 'international/Internationalmemorandum.html', {"data":serializers.data,})
         except Exception as e:
             print(e)
-            return render(request,'.html')
+            return render(request,'international/Internationalmemorandum.html')
         
 class InternationalGrantViews(TemplateView):
     def get(self, request):
         try:
             internations = InternationalGrant.objects.all()
             serializers = InternationalGrantSerializer(internations, many = True)
-            return  render(request, '.html', {"data":serializers.data,})
+            return  render(request, 'international/Internationalgrant.html', {"data":serializers.data,})
         except Exception as e:
             print(e)
-            return render(request,'.html')
+            return render(request,'international/Internationalgrant.html')
