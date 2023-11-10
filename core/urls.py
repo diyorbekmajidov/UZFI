@@ -12,6 +12,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('uzfi/', include('UZFI.urls')),
     path('news/', include('News.urls')),
+    path('international/', include('International.urls')),
     path('', Index.as_view()),
     path('accounts/', include('django.contrib.auth.urls')),
 )
