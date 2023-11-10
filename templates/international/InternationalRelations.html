@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI  | Xalqaro a'loqalar{% endblocktranslate %}{% endblock %}
+{% block trans %}{% endblock trans %}
+
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+   
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+                <div class="heading-bx left">
+                    <h2 class="m-b10 title-head">{% blocktranslate %}Xalqaro a'loqalar{% endblocktranslate %}<span></span></h2>
+                </div>
+
+
+                {{data}}
+
+                    {{data.body|safe}}
+
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+        </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+{% endblock %}

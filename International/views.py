@@ -14,10 +14,10 @@ class InternationalRelationsViews(TemplateView):
         try:
             internations = InternationalRelations.objects.all()
             serializers = InternationalRelationsSerializers(internations, many = True)
-            return  render(request, '.html', {"data":serializers.data,})
+            return  render(request, 'international/InternationalRelations.html', {"data":serializers.data,})
         except Exception as e:
             print(e)
-            return render(request,'.html')
+            return render(request,'international/InternationalRelations.html')
 
 class InternationalMemorandumViews(TemplateView):
     def get(self, request):

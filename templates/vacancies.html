@@ -1,6 +1,8 @@
-{% extends "base.html" %} {% block title %}UZFI | Yangiliklar{% endblock %} 
+{% extends "base.html" %} 
+{% load i18n %}
+{% block title %}UZFI | {% blocktranslate %}Vakansiyalar{%endblocktranslate%}{% endblock %} 
 {% block trans %}{% endblock trans %}
-{%block content %} {% load static %} {% load i18n %}
+{%block content %} {% load static %} 
 
 <div class="page-content bg-white">
   <div class="content-block">
