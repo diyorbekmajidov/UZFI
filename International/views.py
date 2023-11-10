@@ -28,3 +28,13 @@ class InternationalMemorandumViews(TemplateView):
         except Exception as e:
             print(e)
             return render(request,'.html')
+        
+class InternationalGrantViews(TemplateView):
+    def get(self, request):
+        try:
+            internations = InternationalGrant.objects.all()
+            serializers = InternationalGrantSerializer(internations, many = True)
+            return  render(request, '.html', {"data":serializers.data,})
+        except Exception as e:
+            print(e)
+            return render(request,'.html')
