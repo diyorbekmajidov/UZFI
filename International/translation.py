@@ -3,6 +3,7 @@ from .models import (
     InternationalRelations,
     InternationalMemorandum,
     InternationalGrant,
+    StudentGroups
     )
 
 @register(InternationalRelations)
@@ -15,4 +16,8 @@ class InternationalMemorandumTranslationOptions(TranslationOptions):
 
 @register(InternationalGrant)
 class InternationalGrantTranslationOptions(TranslationOptions):
+    fields = ('title','body',)
+
+@register(StudentGroups)
+class StudentGroupsTranslationOptions(TranslationOptions):
     fields = ('title','body',)

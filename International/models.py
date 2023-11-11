@@ -37,3 +37,10 @@ class InternationalGrantImg(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    
+class StudentGroups(models.Model):
+    title = models.CharField(max_length=100)
+    body = RichTextUploadingField()
+
+    def __str__(self) -> str:
+        return self.title 

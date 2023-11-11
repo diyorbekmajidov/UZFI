@@ -4,6 +4,7 @@ from .views import(
     InternationalRelationsByIDViews,
     InternationalMemorandumViews,
     InternationalGrantViews,
+    StudentGroupsViews,
 )
 
 urlpatterns = [
@@ -12,5 +13,6 @@ urlpatterns = [
     # path('internationalrelations/<int:pk>', InternationalRelationsByIDViews.as_view()),
     path('internationalmemorandum/', InternationalMemorandumViews.as_view()),
     path('internationalgrant/', InternationalGrantViews.as_view()),
+    path('studentgroups/', StudentGroupsViews.as_view()),
     
 ]

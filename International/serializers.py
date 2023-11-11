@@ -11,6 +11,11 @@ class InternationalMemorandumSerializers(serializers.ModelSerializer):
         model = InternationalMemorandum
         fields = "__all__"
 
+class StudentGroupsSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = StudentGroups
+        fields = "__all__"
+
 
 class InternationalGrantImgerializers(serializers.ModelSerializer):
     class Meta:

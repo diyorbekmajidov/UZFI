@@ -9,6 +9,9 @@ class InternationalRelationsAdmin(TranslationAdmin):
 @admin.register(InternationalMemorandum)
 class InternationalMemorandumAdmin(TranslationAdmin):
     list_display = ('title','body',)
+@admin.register(StudentGroups)
+class StudentGroupsAdmin(TranslationAdmin):
+    list_display = ('title','body',)
 
 class InternationalGrantImgInline(admin.TabularInline):
     model = InternationalGrantImg

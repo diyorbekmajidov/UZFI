@@ -39,6 +39,15 @@ class InternationalMemorandumViews(TemplateView):
             print(e)
             return render(request,'international/Internationalmemorandum.html')
         
+class StudentGroupsViews(TemplateView):
+    def get(self, request):
+        try:
+            internations = StudentGroups.objects.all()
+            serializers = StudentGroupsSerializers(internations, many = True)
+            return  render(request, '.html', {"data":serializers.data,})
+        except Exception as e:
+            return render(request,'.html')
+        
 class InternationalGrantViews(TemplateView):
     def get(self, request):
         try:
