@@ -215,9 +215,13 @@ class KafedraManagerById(APIView):
 
 class CentersDepartmentApiView(APIView):
     def get(self, request):
-        centers_department = CentersDepartments.objects.all()
-        serializers = CentersDepartmentsSerializer(centers_department, many = True)
-        return render(request, 'centers.html', {"data":serializers.data})
+        try:
+            centers_department = CentersDepartments.objects.all()
+            serializers = CentersDepartmentsSerializer(centers_department, many = True)
+            return render(request, 'centers.html', {"data":serializers.data})
+        except Exception as e:
+            print(e)
+            return render(request, 'centers.html')
 
 class CentersDepartmentByIDApiView(APIView):
     def get(self, request, pk):
@@ -233,18 +237,51 @@ class CentersDepartmentByIDApiView(APIView):
     
 class CentersDepartmentManagerView(APIView):
     def get(self, request, pk):
-        departments = CentersDepartmentsManager.objects.get(id = pk)
-        serializers = CentersDepartmentsManagerSerializer(departments)
-        return render(request, ".html", {"departments_manager":serializers.data})
+        try:
+            departments = CentersDepartmentsManager.objects.get(id = pk)
+            serializers = CentersDepartmentsManagerSerializer(departments)
+            return render(request, ".html", {"departments_manager":serializers.data})
+        except Exception as e:
+            print(e)
+            return render(request, '.html')
     
 class TutorAPIView(TemplateView):
     def get(self, request):
-
-        turor = Tutor.objects.all()
-        page = Paginator(turor, 10)
-        page_num = int(request.GET.get('page', 1))
+        try:
+            turor = Tutor.objects.all()
+            page = Paginator(turor, 10)
+            page_num = int(request.GET.get('page', 1))
+                
+            return render(request, 'tutors.html', {"page_obj":page.page(page_num)})
+        except Exception as e:
+            print(e)
+            return render(request,'tutors.html')
             
-        return render(request, 'tutors.html', {"page_obj":page.page(page_num)})
+class TutorByIdView(TemplateView):
+    def get(self, request, pk):
+        try:
+            tutor = Tutor.objects.get(id = pk)
+            serializer = TutorSerializer(tutor)
+            return render(request, 'tutors-item.html', {'tutor':serializer.data})
+        except Exception as e:
+                print(e)
+                return render(request,'tutors-item.html')
+
+    
+class TyutorApiviews(APIView):
+    def get(self, request):
+        url =  'https://student.uzfi.uz/rest/v1/data/employee-list?type=1&page=4&limit=200&_staff_position=34&_employee_type=10'
+        headers = {
+            'accept': 'application/json',
+            'Authorization': 'Bearer kTV3FiW3cCT2ZVGdk3d1AivEXiXi2uDp'
+        }
+        response = requests.get(url, headers=headers)
+        data = response.json()
+        for i in data['data']['items']:
+            print(i)
+        return Response({"ok":200})
+
+
 
 class ScientificWorkAPIView(APIView):
     
