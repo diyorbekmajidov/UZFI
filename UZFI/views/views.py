@@ -238,7 +238,7 @@ class CentersDepartmentManagerView(APIView):
         return render(request, ".html", {"departments_manager":serializers.data})
     
 class TutorAPIView(TemplateView):
-    def get(self, request, category):
+    def get(self, request):
 
         turor = Tutor.objects.all()
         page = Paginator(turor, 10)
