@@ -598,7 +598,7 @@
 											<img src="{% static "assets/images/courses/pic1.jpg" %}" alt="">
 											<a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/" class="btn">{% blocktranslate %}Ko'proq o'qish{%endblocktranslate%}</a>
 										</div>
-										<div class="info-bx text-center" style="height: 121px;">
+										<div class="info-bx text-center" style="height: 160px;">
 											<h5><a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/">{{i.name}}</a></h5>
 											<span><a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.faculty.id}}/">{{i.faculty.name}}</a></span>
 										</div>
@@ -790,7 +790,7 @@
           <div class="testimonial-bx">
             <div class="testimonial-thumb">
               <img
-                src="{% static "\assets\images\sports.jpg" %}"
+                src="{{item.img.0.img}}"
                 alt=""
               />
             </div>
@@ -800,7 +800,11 @@
             </div>
             <div class="testimonial-content">
               <p>
-                {{ item.description }}
+                {% if item.description|length > 230 %}
+                    {{item.description|slice:230}}...
+                {% else  %}
+                    {{item.description }}
+                {% endif %}
               </p>
             </div>
           </div>
