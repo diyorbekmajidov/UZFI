@@ -25,6 +25,8 @@
               
               {% for i in page_obj %}
 
+              {{i}}
+
               <div class="post action-card col-xl-6 col-lg-6 col-md-12 col-xs-12 m-b40">
                 <div class="recent-news">
                   <div class="action-box">
@@ -33,20 +35,16 @@
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        <i class="fa fa-calendar"></i> {{i.date_created}}
-                      </li>
-                      <li>
-                        <i class="fa fa-eye"></i> {{i.views}}
+                        {{i.tutor_groups}}
                       </li>
                     </ul>
                     <h5 class="post-title">
-                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}"
-                        >{{i.title}}</a
+                      <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}/">{{i.full_name}}</a
                       >
                     </h5>
                     
                     <div class="post-extra">
-                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
+                      <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}/" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
                     </div>
                   </div>
                 </div>
