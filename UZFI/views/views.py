@@ -244,7 +244,7 @@ class TutorAPIView(TemplateView):
         page = Paginator(turor, 10)
         page_num = int(request.GET.get('page', 1))
             
-        return render(request, '.html', {"page_obj":page.page(page_num)})
+        return render(request, 'tutors.html', {"page_obj":page.page(page_num)})
 
 class ScientificWorkAPIView(APIView):
     
