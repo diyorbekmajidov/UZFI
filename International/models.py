@@ -36,7 +36,7 @@ class InternationalGrantImg(models.Model):
     grant   = models.ForeignKey(InternationalGrant, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return self.title
+        return self.grant.id
     
 class StudentGroups(models.Model):
     title = models.CharField(max_length=100)
