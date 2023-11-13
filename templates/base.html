@@ -129,8 +129,12 @@
 								{% get_available_languages as LANGUAGES %}
 								{% get_language_info_list for LANGUAGES as languages %}
 								{% for language in languages %}
-									<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}  data-icon="flag flag-{{language.code}}">
-										{{ language.code }}
+									<option value="{{language.code}}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}  data-icon="flag flag-{% if language.code == 'es' %}en{% else %}{{ language.code }}{% endif %}">
+										{% if language.code == 'es' %}
+											en
+										{% else %}
+											{{ language.code }}
+										{% endif %}
 									</option>
 								{% endfor %}
 							</select>
@@ -147,6 +151,35 @@
 					</li>
 					<li>
                         <li><a href="/accounts/login/">Kirish</a></li>
+						<li>
+							<a
+							  target="__blank"
+							  href="https://www.facebook.com/UzFi.education/"
+							  class="btn-link"
+							  ><i class="fa fa-facebook"></i
+							></a>
+						  </li>
+						  <li>
+							<a
+							target="__blank"
+							href="https://www.youtube.com/@uzfi.education619"
+							class="btn-link"
+							><i class="fa fa-youtube-play"></i
+						  ></a>
+						  </li>
+						  <li>
+							<a target="__blank" href="https://t.me/UzFiPI" class="btn-link"
+							  ><i class="fa fa-telegram"></i
+							></a>
+						  </li>
+						  <li>
+							<a
+							  target="__blank"
+							  href="https://www.instagram.com/uzfi_education/"
+							  class="btn-link"
+							  ><i class="fa fa-instagram"></i
+							></a>
+						  </li>
 					</li>
 				</ul>
 				
