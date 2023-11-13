@@ -44,9 +44,10 @@ class StudentGroupsViews(TemplateView):
         try:
             internations = StudentGroups.objects.all()
             serializers = StudentGroupsSerializers(internations, many = True)
-            return  render(request, '.html', {"data":serializers.data,})
+            return  render(request, 'list-of-additional.html', {"data":serializers.data,})
         except Exception as e:
-            return render(request,'.html')
+            print(e)
+            return render(request,'list-of-additional.html')
         
 class InternationalGrantViews(TemplateView):
     def get(self, request):
