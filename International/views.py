@@ -58,3 +58,11 @@ class InternationalGrantViews(TemplateView):
         except Exception as e:
             print(e)
             return render(request,'international/international-grants.html')
+        
+    
+
+class LibraryViews(TemplateView):
+    template_name = ".html"
+
+class TtjViews(TemplateView):
+    template_name = ".html"

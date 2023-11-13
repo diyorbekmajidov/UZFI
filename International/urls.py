@@ -5,6 +5,8 @@ from .views import(
     InternationalMemorandumViews,
     InternationalGrantViews,
     StudentGroupsViews,
+    LibraryViews,
+    TtjViews
 )
 
 urlpatterns = [
@@ -14,5 +16,7 @@ urlpatterns = [
     path('internationalmemorandum/', InternationalMemorandumViews.as_view()),
     path('internationalgrant/', InternationalGrantViews.as_view()),
     path('studentgroups/', StudentGroupsViews.as_view()),
+    path('library/', LibraryViews.as_view()),
+    path('ttj/', TtjViews.as_view())
     
 ]
