@@ -236,6 +236,15 @@ class CentersDepartmentManagerView(APIView):
         departments = CentersDepartmentsManager.objects.get(id = pk)
         serializers = CentersDepartmentsManagerSerializer(departments)
         return render(request, ".html", {"departments_manager":serializers.data})
+    
+class TutorAPIView(TemplateView):
+    def get(self, request, category):
+
+        turor = Tutor.objects.all()
+        page = Paginator(turor, 10)
+        page_num = int(request.GET.get('page', 1))
+            
+        return render(request, '.html', {"page_obj":page.page(page_num)})
 
 class ScientificWorkAPIView(APIView):
     

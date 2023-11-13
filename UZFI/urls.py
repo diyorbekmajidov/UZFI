@@ -28,7 +28,8 @@ from .views import (
     LeadershipAPIView,
     LeadershipByIdAPIView,
     KafedraByIDApview,
-    Indicators
+    Indicators,
+    TutorAPIView
 
 )
 
@@ -77,5 +78,7 @@ urlpatterns = [
     path('login/', Login.as_view()),
     path('dashboard/', Dashboard.as_view(), name='dashboard'),
 
-    path('indicators/', Indicators.as_view())
+    path('indicators/', Indicators.as_view()),
+
+    path('tutor/', TutorAPIView.as_view())
 ] + abitur_urlpatterns
