@@ -53,7 +53,7 @@ class InternationalGrantViews(TemplateView):
         try:
             internations = InternationalGrant.objects.all()
             serializers = InternationalGrantSerializer(internations, many = True)
-            return  render(request, 'international/Internationalgrant.html', {"data":serializers.data,})
+            return  render(request, 'international/international-grants.html', {"data":serializers.data,})
         except Exception as e:
             print(e)
-            return render(request,'international/Internationalgrant.html')
+            return render(request,'international/international-grants.html')
