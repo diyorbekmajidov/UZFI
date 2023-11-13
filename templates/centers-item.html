@@ -11,7 +11,7 @@
       <div class="container">
 
         <div class="heading-bx left">
-          <h2 class="title-head">{{data.name}}{% blocktranslate %} rahbari{% endblocktranslate %}</h2>
+          <h2 class="title-head">{{data.name}}</h2>
         </div>
 
         
@@ -22,12 +22,15 @@
             </div>
             <div class="col-md-8">
               <h3>{{manager.name}}</h3>
+              <h6>{{data.name}} boshlig'i</h6>
               <div>
                 <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
               </div>
               <div>
-                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
-                {{manager.phone}}
+                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span> {{manager.phone}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Fax: {% endblocktranslate %}</span> {{manager.phone}}
               </div>
               <div>
                 <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
@@ -39,8 +42,8 @@
           </div>
         </div>
 
-        <div class="heading-bx left mt-5">
-          <h2 class="m-b10 title-head">{{data.name}} {% blocktranslate %}haqida{% endblocktranslate %} <span></span></h2>
+        <div class="text-center mt-5">
+          <h2 class="m-b10 title-head">{% blocktranslate %}Vazifalari{% endblocktranslate %} <span></span></h2>
         </div>
 
         <div class="p-3">

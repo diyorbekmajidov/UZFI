@@ -29,7 +29,7 @@ class PopularStudentsSerializer(serializers.ModelSerializer):
     img = serializers.SerializerMethodField()
     class Meta:
         model = PopularStudents
-        fields = ["id","student_name","body","description","img"]
+        fields = ["id","student_name","body","description","img","date_created"]
 
     def get_img(self, obj):
         image = PopularStudentImg.objects.filter(popular=obj.id)
