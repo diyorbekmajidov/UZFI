@@ -82,7 +82,7 @@ class CentersDepartmentTranslationOptions(TranslationOptions):
 
 @register(CentersDepartmentsManager)
 class CentersDepartmentsManagerTranslationOptions(TranslationOptions):
-    fields = ("address", "tasks","acceptance",)
+    fields = ("address","acceptance",)
 
 @register(Tutor)
 class TutorTranslationOptions(TranslationOptions):
