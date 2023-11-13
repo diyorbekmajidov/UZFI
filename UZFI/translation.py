@@ -15,7 +15,8 @@ from .models import (
     ScientificWork,
     Leadership,
     CentersDepartments,
-    CentersDepartmentsManager
+    CentersDepartmentsManager,
+    Tutor,
 )
 
 @register(OpenData)
@@ -82,3 +83,7 @@ class CentersDepartmentTranslationOptions(TranslationOptions):
 @register(CentersDepartmentsManager)
 class CentersDepartmentsManagerTranslationOptions(TranslationOptions):
     fields = ("address", "tasks",)
+
+@register(Tutor)
+class TutorTranslationOptions(TranslationOptions):
+    fields = ("address",)

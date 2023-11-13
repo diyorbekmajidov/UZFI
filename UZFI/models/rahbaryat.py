@@ -63,3 +63,16 @@ class KafedraManager(models.Model):
 
     def __str__(self):
         return self.name 
+    
+
+class Tutor(models.Model):
+    full_name      = models.CharField(max_length=100)
+    tutor_groups   = models.CharField(max_length=100000)
+    phone          = models.CharField(max_length=100, blank=True, null=True)
+    address        = models.CharField(max_length=100, blank=True, null=True)
+    img            = models.ImageField(upload_to='img/', blank=True, null=True, validators=[validate_file_size])
+    date_created   = models.DateTimeField(auto_now_add=True)
+    date_update    = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.full_name 
