@@ -278,7 +278,17 @@ class TyutorApiviews(APIView):
         response = requests.get(url, headers=headers)
         data = response.json()
         for i in data['data']['items']:
-            print(i)
+            data1 = {
+                'full_name':i['full_name'],
+                "tutor_groups":i['tutorGroups']
+            }
+            print(data1)
+            serializers = TutorSerializer(data=data1)
+            if serializers.is_valid():
+                serializers.save()
+            else:
+                print(serializers.errors)   
+            # print(i['full_name'])
         return Response({"ok":200})
 
 

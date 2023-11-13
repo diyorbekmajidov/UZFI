@@ -129,6 +129,7 @@ class CentersDepartments(models.Model):
     
 class CentersDepartmentsManager(models.Model):
     centers_departments = models.OneToOneField(CentersDepartments, on_delete=models.CASCADE)
+    acceptance     = models.CharField(max_length=200, blank=True, null=True)
     name                = models.CharField(max_length=100)
     email               = models.CharField(max_length=100)
     phone               = models.CharField(max_length=100)
