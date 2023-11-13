@@ -62,7 +62,7 @@ class InternationalGrantViews(TemplateView):
     
 
 class LibraryViews(TemplateView):
-    template_name = ".html"
+    template_name = "library.html"
 
 class TtjViews(TemplateView):
-    template_name = ".html"
+    template_name = "ttj.html"

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}UZFI  | {% blocktranslate %}Kutubxona{% endblocktranslate %}{% endblock %}
+{% block trans %}{% endblock trans %}
+
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+   
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">                
+
+                    <div class="heading-bx left">
+                        <h2 class="m-b10 title-head">{% blocktranslate %}Kutubxona{% endblocktranslate %}<span></span></h2>
+                    </div>
+
+                    <div class="container text-center">
+                        <section id="main-carousel3" class="splide"  data-splide='{"type":"loop"}'>
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{% static "assets\images\library\1.JPG" %}" alt="..."></li>
+                                    <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{% static "assets\images\library\2.JPG" %}" alt="..."></li>
+                                    <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{% static "assets\images\library\3.JPG" %}" alt="..."></li>
+                                    <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{% static "assets\images\library\4.JPG" %}" alt="..."></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+
+                    <p class="container text-justify pt-5">
+
+                        The bookstore at UZFI goes beyond just being a place to purchase books and study materials. It also serves as a hub for intellectual and cultural activities within the university community. The store frequently hosts author readings, book signings, and panel discussions on various topics related to economics, business, and literature.
+These events provide students, faculty, and staff with opportunities to engage with prominent authors, experts, and industry professionals. They offer valuable insights, spark discussions, and foster a deeper understanding of the subjects being explored. The bookstore's event calendar is often filled with a diverse range of activities, catering to different interests and promoting a vibrant academic and literary culture.
+In addition to physical books, the bookstore recognizes the growing importance of digital resources and offers e-books and digital subscriptions to academic journals. This allows students to access a vast collection of scholarly materials from their preferred digital devices. The store provides guidance and assistance to students in setting up and accessing these digital resources, ensuring a seamless transition to the digital learning environment.
+The bookstore's commitment to providing affordable resources is evident through its textbook buyback program. At the end of each semester, students can sell their used textbooks back to the bookstore, helping them recoup a portion of their expenses and allowing future students to purchase second-hand books at reduced prices. This sustainable approach not only benefits individual students but also contributes to the university's efforts to promote a culture of resourcefulness and cost-consciousness.
+Recognizing the importance of collaboration and partnerships, the bookstore actively works with faculty members to ensure that required course materials are available for students in a timely manner. This collaboration helps streamline the textbook adoption process, ensuring that students have the necessary resources at the start of each semester.
+Furthermore, the bookstore engages in philanthropic initiatives to support educational initiatives within the community. It donates books, stationery, and other resources to local schools and educational organizations, promoting literacy and access to quality education for all.
+In conclusion, the bookstore at UZFI is more than just a place to purchase books and study materials. It serves as a vibrant hub of intellectual exploration, hosting events and fostering a culture of academic engagement. By providing a diverse range of resources, embracing digital learning, promoting affordability, and supporting community initiatives, the bookstore contributes significantly to the overall educational experience of students at the university.
+                    </p>
+                    
+          
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+        </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+{% endblock %}
