@@ -9,6 +9,7 @@ class User(AbstractUser):
         REKTOR    = "REKTOR", "REKTOR"
         PROREKTOR = "PROREKTOR", "PROREKTOR"
         MANAGER   = "KAFEDRAMANAGER", "KAFEDRAMANAGER"
+        ADMIN     = "ADMIN", "ADMIN"
 
     role = models.CharField(max_length=50, choices=Role.choices)
 
