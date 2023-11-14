@@ -2282,14 +2282,7 @@ button.back-to-top {
 	padding: 20px 0 0 0;
 }
 
-.blog-post .post-title,
-.recent-news .post-title {
-	font-size: 24px;
-	margin-top: 0px;
-	margin-bottom: 6px;
-	font-family: roboto;
-	line-height: 34px;
-}
+
 
 .recent-news .info-bx {
 	padding: 20px;

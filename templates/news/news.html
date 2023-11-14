@@ -6,8 +6,7 @@
 
 <div class="page-content bg-white">
   <div class="content-block">
-    <div class="section-area section-sp1">
-      <div class="container">
+    <div class="section-area section-sp1 mx-3">
 
         <div class="feature-filters clearfix center m-b40">
           {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
@@ -19,13 +18,13 @@
 
         <div class="row">
           <!-- left part start -->
-          <div class="col-lg-8 col-xl-8 col-md-7">
+          <div class="col-lg-10 col-xl-10 col-md-8">
             <!-- blog grid -->
             <div id="masonry" class="ttr-blog-grid-3 row">
               
               {% for i in page_obj %}
 
-              <div class="post action-card col-xl-6 col-lg-6 col-md-12 col-xs-12 m-b40">
+              <div class="post action-card col-6 col-xl-3 col-lg-3 col-md-4 col-xs-6 col-sm-6 m-b40">
                 <div class="recent-news">
                   <div class="action-box">
                     <img src="/media/{{i.img}}" alt="" />
@@ -39,11 +38,17 @@
                         <i class="fa fa-eye"></i> {{i.views}}
                       </li>
                     </ul>
-                    <h5 class="post-title">
+                    <p class="post-title">
                       <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}"
-                        >{{i.title}}</a
+                        >
+                        {% if i.title|length > 130 %}
+                            {{i.title|slice:130}}...
+                        {% else  %}
+                            {{i.title }}
+                        {% endif %}
+                        </a
                       >
-                    </h5>
+                    </p>
                     
                     <div class="post-extra">
                       <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
@@ -77,7 +82,7 @@
           </div>
           <!-- left part END -->
           <!-- Side bar start -->
-          <div class="col-lg-4 col-xl-4 col-md-5 sticky-top">
+          <div class="col-lg-2 col-xl-2 col-md-4 sticky-top">
             <aside class="side-bar sticky-top">
               <div class="widget">
                 <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
@@ -146,7 +151,6 @@
           </div>
           <!-- Side bar END -->
         </div>
-      </div>
     </div>
   </div>
 </div>
