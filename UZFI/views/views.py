@@ -249,13 +249,29 @@ class TutorAPIView(TemplateView):
     def get(self, request):
         try:
             turor = Tutor.objects.all()
-            page = Paginator(turor, 10)
+            page = Paginator(turor, 9)
+            faculty = Faculty.objects.all()
+            serializer = FacultySerializer(faculty, many = True)
             page_num = int(request.GET.get('page', 1))
                 
-            return render(request, 'tutors.html', {"page_obj":page.page(page_num)})
+            return render(request, 'tutors.html', {"page_obj":page.page(page_num)
+            ,'faculties':serializer.data})
         except Exception as e:
             print(e)
             return render(request,'tutors.html')
+
+class TutorFilterAPIView(TemplateView):
+    def get(self, request, pk):
+        # try:
+            data =  Tutor.objects.filter(id=pk)
+            serializer = TutorSerializer(data=data, many = True)
+            if serializer.is_valid():
+                return Response({"ok":serializer.data})
+            return Response({"ok":serializer.errors})
+            # return render(request, '.html', {'data':serializer.data})
+        # except Exception as e:
+        #         print(e)
+        #         return render(request)
             
 class TutorByIdView(TemplateView):
     def get(self, request, pk):

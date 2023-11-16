@@ -31,7 +31,8 @@ from .views import (
     Indicators,
     TutorAPIView,
     TyutorApiviews,
-    TutorByIdView
+    TutorByIdView,
+    TutorFilterAPIView
 
 )
 
@@ -84,5 +85,6 @@ urlpatterns = [
 
     path('tutor/', TutorAPIView.as_view()),
     path("tyutor/", TyutorApiviews.as_view()),
-    path('tutor/<int:pk>', TutorByIdView.as_view())
+    path('tutor/<int:pk>/', TutorByIdView.as_view()),
+    path('tutorfaculty/<int:pk>/', TutorFilterAPIView.as_view())
 ] + abitur_urlpatterns

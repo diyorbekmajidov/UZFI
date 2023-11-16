@@ -66,6 +66,7 @@ class KafedraManager(models.Model):
     
 
 class Tutor(models.Model):
+    faculty        = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     full_name      = models.CharField(max_length=100)
     tutor_groups   = models.CharField(max_length=100000)
     phone          = models.CharField(max_length=100, blank=True, null=True)

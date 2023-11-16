@@ -19,21 +19,23 @@
 
         <div class="row">
           <!-- left part start -->
-          <div class="col-lg-8 col-xl-8 col-md-7">
+          <div class="col-lg-12 col-xl-12 col-md-12">
             <!-- blog grid -->
             <div id="masonry" class="ttr-blog-grid-3 row">
               
               {% for i in page_obj %}
 
-              <div class="post action-card col-xl-6 col-lg-6 col-md-12 col-xs-12 m-b40">
+              <div class="post action-card col-xl-4 col-lg-4 col-md-4 col-xs-12 m-b40">
                 <div class="recent-news">
                   <div class="action-box">
-                    <img src="/media/{{i.img}}" alt="" />
+                    <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}">  <img src="/media/{{i.img}}" alt="" /></a>
                   </div>
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        {{i.tutor_groups}}
+                        <b>{{i.faculty.name}}</b> <br>
+                       
+                        
                       </li>
                     </ul>
                     <h5 class="post-title">
@@ -41,9 +43,9 @@
                       >
                     </h5>
                     
-                    <div class="post-extra">
+                    {% comment %} <div class="post-extra">
                       <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
-                    </div>
+                    </div> {% endcomment %}
                   </div>
                 </div>
               </div>
@@ -73,73 +75,7 @@
           </div>
           <!-- left part END -->
           <!-- Side bar start -->
-          <div class="col-lg-4 col-xl-4 col-md-5 sticky-top">
-            <aside class="side-bar sticky-top">
-              <div class="widget">
-                <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
-                <div class="search-bx style-1">
-                  <form role="search" method="post">
-                    <div class="input-group">
-                      <input
-                        name="text"
-                        class="form-control"
-                        placeholder="Tezroq toping..."
-                        type="text"
-                      />
-                      <span class="input-group-btn">
-                        <button
-                          type="submit"
-                          class="fa fa-search text-primary"
-                        ></button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="widget recent-posts-entry">
-                <h6 class="widget-title">{% blocktranslate %}So'nggi yangiliklar{% endblocktranslate %}</h6>
-                <div class="widget-post-bx">
-                  
-                  {% for item in last_news %}
-
-                  <div class="widget-post clearfix">
-                    <div class="ttr-post-media">
-                      <img
-                        src="{{item.img}}"
-                        width="200"
-                        height="143"
-                        alt=""
-                      />
-                    </div>
-                    <div class="ttr-post-info">
-                      <div class="ttr-post-header">
-                        <h6 class="post-title">
-                          <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}"
-                            >{{item.title}}</a
-                          >
-                        </h6>
-                      </div>
-                      <ul class="media-post">
-                        <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
-                        <li><i class="fa fa-eye"></i> {{item.views}}</li>
-                      </ul>
-                    </div>
-                  </div>
-                  {% endfor %}
-
-                </div>
-              </div>
-              
-              <div class="widget widget_tag_cloud">
-                <h6 class="widget-title">{% blocktranslate %}Tags{% endblocktranslate %}</h6>
-                <div class="tagcloud">
-                    {% for i in category %}
-                      <a href="/{{LANGUAGE_CODE}}/news/category/{{i.id}}#news_content"  target="__blank">{{i.new_category}}</a>
-                    {% endfor %}
-                </div>
-              </div>
-            </aside>
-          </div>
+       
           <!-- Side bar END -->
         </div>
       </div>

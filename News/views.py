@@ -6,7 +6,6 @@ from django.views.generic import ListView
 from .models import *
 from .serializers import *
 from django.core.paginator import Paginator
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 from UZFI.models import Requisites 
 from UZFI.serializers import RequisitesSerializer

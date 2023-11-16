@@ -120,6 +120,7 @@ class CentersDepartmentsManagerSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class TutorSerializer(serializers.ModelSerializer):
+    faculty = FacultySerializer1()
     class Meta:
         model = Tutor
         fields = "__all__"
