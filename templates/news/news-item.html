@@ -13,7 +13,7 @@
 
 <div class="page-content bg-white">
     <!-- inner page banner -->
-    <div class="page-banner ovbl-dark" style="background-image:url({{data.img}});">
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets\images\832__85_1039998949.jpeg" %});">
         <div class="container">
             <div class="page-banner-entry">
                 <h1 class="text-white">{{data.title}}</h1>
@@ -38,6 +38,9 @@
                                     <li><i class="fa fa-eye"></i> {{data.views}}</li>
                                 </ul>
                                 <h5 class="post-title">{{data.title}}</h5>
+
+                                <img src="{{data.img}}" />
+
                                 {{data.body|safe}}
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 <div class="widget_tag_cloud">
