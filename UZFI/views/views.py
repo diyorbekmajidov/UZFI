@@ -260,18 +260,15 @@ class TutorAPIView(TemplateView):
             print(e)
             return render(request,'tutors.html')
 
-class TutorFilterAPIView(TemplateView):
+class TutorFilterAPIView(APIView):
     def get(self, request, pk):
-        # try:
-            data =  Tutor.objects.filter(id=pk)
-            serializer = TutorSerializer(data=data, many = True)
-            if serializer.is_valid():
-                return Response({"ok":serializer.data})
-            return Response({"ok":serializer.errors})
-            # return render(request, '.html', {'data':serializer.data})
-        # except Exception as e:
-        #         print(e)
-        #         return render(request)
+        try:
+            tutor =  Tutor.objects.filter(faculty=pk)
+            serializer = TutorSerializer(tutor, many = True)            
+            return render(request, '.html', {'tutor':serializer.data})
+        except Exception as e:
+                print(e)
+                return render(request, '.html')
             
 class TutorByIdView(TemplateView):
     def get(self, request, pk):
