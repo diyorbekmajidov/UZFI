@@ -17,7 +17,7 @@ class News_ContentTranslationOptions(TranslationOptions):
 
 @register(Vedio_New)
 class Vedio_NewTranslationOptions(TranslationOptions):
-    fields = ('title','body',)
+    fields = ('title',)
 
 @register(PopularStudents)
 class PopularStudentsTranslationOptions(TranslationOptions):

@@ -13,7 +13,7 @@ class News_ContentAdmin(TranslationAdmin):
 
 @admin.register(Vedio_New)
 class Vedio_NewAdmin(TranslationAdmin):
-    list_display = ('title','body')
+    list_display = ('title',)
 
 @admin.register(PendingEvents)
 class PendingEventsAdmin(TranslationAdmin):
