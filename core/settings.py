@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = 'UZFI.User'
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000/']
 
 
 # Application definition

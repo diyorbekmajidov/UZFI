@@ -38,6 +38,7 @@
 
                     <div class="col-md-6">
                         <form>
+                            {% csrf_token %}
                             <div class="form-group">
                                 <label for="exampleInputEmail1">{% blocktranslate %}To'liq ismingiz{% endblocktranslate %}</label>
                                 <input name="full_name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >

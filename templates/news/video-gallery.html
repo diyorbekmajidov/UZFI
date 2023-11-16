@@ -36,11 +36,11 @@
                   <div class="event-info">
                     <p >
                       <a href="/{{LANGUAGE_CODE}}/news/video-gallery/{{i.id}}"
-                        >{{i.title}}</a
+                        >{{i.title|truncatechars:90}}</a
                       >
                     </p>
                     <ul class="media-post">
-                      <li><i class="fa fa-clock-o"></i> {{i.date_created}}</li>
+                      <li><i class="fa fa-clock-o"></i> {{i.date_created|date:"m.d.Y"}}</li>
                       <li>
                         <i class="fa fa-eye" aria-hidden="true"></i> {{i.views}}
                       </li>
