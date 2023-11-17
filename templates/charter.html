@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}UZFI  | {% blocktranslate %}Institut nizomi{% endblocktranslate %}{% endblock %}
-{% block trans %}{% endblock trans %}
 
 
 {% block content %}
@@ -9,7 +8,16 @@
 {% load static %}
 
 <div class="page-content">
-   
+    <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{% blocktranslate %}Institut nizomi{% endblocktranslate %}</h1>
+      </div>
+    </div>
+  </div>
 
     <!-- Page Content Box ==== -->
     <div class="content-block">
@@ -19,7 +27,7 @@
             <div class="container">
 
                 <div class="heading-bx left">
-                    <h2 class="m-b10 title-head">{% blocktranslate %}Institut nizomi {% endblocktranslate %}<span></span></h2>
+                    <h2 class="m-b10 title-head">{% blocktranslate %}Institut nizomi{% endblocktranslate %}<span></span></h2>
                 </div>
 
 

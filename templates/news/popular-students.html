@@ -1,15 +1,25 @@
 {% extends 'base.html' %} {% block title %}
-  UZFI | Mashxur talabalar
+  UZFI | Iqtidorli talabalar
 {% endblock %} 
-{% block trans %}{% endblock trans %}
 
 {% block content %}
 {% load static %} {% load i18n %}
 
-
+ 
 
 
   <div class="page-content bg-white">
+    <div class="page-content">
+      <div
+      class="page-banner ovbl-dark"
+      style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+    >
+      <div class="container">
+        <div class="page-banner-entry">
+          <h1 class="text-white">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</h1>
+        </div>
+      </div>
+    </div>
     <!-- contact area -->
     <div class="content-block">
       <!-- Portfolio -->
@@ -17,7 +27,7 @@
         <div class="container">
 
           <div class="heading-bx left">
-            <h2 class="m-b10 title-head">{% blocktranslate %}Mashxur talabalar{% endblocktranslate %}<span></span></h2>
+            <h2 class="m-b10 title-head">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}<span></span></h2>
         </div>
           <div class="clearfix">
             <ul id="masonry" class="ttr-gallery-listing magnific-image row">
