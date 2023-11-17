@@ -2,7 +2,15 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields import RichTextField
 from .user import User
+from django.core.exceptions import ValidationError
 
+def validate_file_size(value):
+    filesize = value.size
+
+    if filesize > 1000 * 1024:
+        raise ValidationError("The maximum file size that can be uploaded is 1mb")
+    else:
+        return value
 
 
 class Charter(models.Model):
@@ -94,6 +102,7 @@ class ScientificWork(models.Model):
 class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     body = RichTextUploadingField(blank=True, null=True)
+    img  = models.ImageField(upload_to='img/',blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -110,6 +119,7 @@ class Kafedra(models.Model):
     
 class Direction(models.Model):
     faculty    = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    img        = models.ImageField(upload_to='img/', blank=True, null=True)
     name       = models.CharField(max_length=150)
     about      = RichTextUploadingField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
