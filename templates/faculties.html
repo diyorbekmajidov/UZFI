@@ -34,12 +34,16 @@
 
                     {% for i in data %}
     
-                    <div class="col-md-12 councils-item p-5 my-3 departments">
-                            <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.id}}/">
-                            <div class="councils-item-title">
-                                <h3>{{i.name|safe}}</h3>
+                    <div  class="col-md-5 councils-item mx-1">
+                        <div class="departments" style="background: url('{{i.img}}'); background-position: center center; " >
+                            <div class="p-5" style="background-color: rgba(0, 0, 0, 0.673); width:100%;">
+                                <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.id}}" style="">
+                                    <div class="councils-item-title">
+                                        <h5 style="color: #fff;">{{i.name}}</h5>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
     
                     {% endfor %}
