@@ -126,8 +126,12 @@ class SearchNewsApiView(ListAPIView):
 class PendingEventApiviews(TemplateView):
     def get(self, request):
         pending_events = PendingEvents.objects.all()
+        page = Paginator(pending_events, 9)
+        page_num = int(request.GET.get('page', 1))
         serializers = PendingEventsSerializer(pending_events, many = True)
-        return render(request, 'news/events.html', {"data":serializers.data})
+        return render(request, 'news/events.html', {
+            "data":serializers.data,
+            "page_obj":page.page(page_num)})
     
 class PendingEventByIdApiviews(TemplateView):
     def get(self, request, pk):
