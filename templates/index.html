@@ -594,8 +594,8 @@
           {% for i in direction %}
              <div class="item">
 									<div class="cours-bx">
-										<div class="action-box">
-											<img src="{% static "assets/images/courses/pic1.jpg" %}" alt="">
+										<div class="action-box" style="position: relative;overflow: hidden; width: auto; height: 190px;">
+											<img src="{{i.img}}" alt="">
 											<a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/" class="btn">{% blocktranslate %}Ko'proq o'qish{%endblocktranslate%}</a>
 										</div>
 										<div class="info-bx text-center" style="height: 160px;">
