@@ -83,6 +83,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 LOGIN_REDIRECT_URL = '/uzfi/login/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
