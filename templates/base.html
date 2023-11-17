@@ -150,7 +150,11 @@
 						</form>
 					</li>
 					<li>
-                        <li><a href="/accounts/login/">Kirish</a></li>
+						{% if user.is_authenticated %}
+							<li><a href="/accounts/login/">{% blocktranslate %}Chiqish{% endblocktranslate %}</a></li>
+						{% else %}
+							<li><a href="/accounts/login/">{% blocktranslate %}Kirish{% endblocktranslate %}</a></li>
+						{% endif %}
 						<li>
 							<a
 							  target="__blank"

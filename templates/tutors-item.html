@@ -2,7 +2,6 @@
 {% load i18n %}
 {% block title %}UZFI | {% blocktranslate %} Tutor {% endblocktranslate %}{% endblock %} 
 
-{% block trans %}{% endblock trans %}
 
 {%block content %} 
 {% load static %}
@@ -10,6 +9,16 @@
 
 
 <div class="page-content">
+  <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{% blocktranslate %} Tutor {% endblocktranslate %}</h1>
+      </div>
+    </div>
+  </div>
 
   <!-- Page Content Box ==== -->
   <div class="content-block">
@@ -28,14 +37,17 @@
             <div class="col-md-8">
               <h3>{{tutor.full_name}}</h3>
               <div>
-                <span class="text-secondary">{% blocktranslate %}Gruhlari: {% endblocktranslate %}</span> {{tutor.tutor_groups}}
+                <span style="font-weight: 600">{% blocktranslate %}Gruhlari: {% endblocktranslate %}</span> {{tutor.tutor_groups}}
               </div>
               <div>
-                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
+                <span style="font-weight: 600">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
                 {{tutor.phone}}
               </div>
               <div>
-                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{tutor.address}}
+                <span style="font-weight: 600">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{tutor.address}}
+              </div>
+              <div>
+                <span style="font-weight: 600">{% blocktranslate %}Fakultet: {% endblocktranslate %}</span> {{tutor.faculty.name}}
               </div>
             </div>
           </div>
@@ -45,8 +57,31 @@
     <!-- FAQS  News End -->
 
     <!-- Our Story ==== -->
-    <div class="section-area section-sp1">
-      <div class="container"></div>
+    <div >
+      <div class="container">
+
+        <div class="heading-bx left">
+          <h2 class="title-head">{% blocktranslate %}Ko'proq{% endblocktranslate %}</h2>
+        </div>
+
+        <div class="profile-info">
+          <div class="profile-info-head">
+              <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">{% blocktranslate %}Vazifalar{% endblocktranslate %}</button>
+              <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">{% blocktranslate %}Umumiy ma'lumot{% endblocktranslate %}</button>
+          </div>
+          <div class="profile-info-body">
+              <div id="profileInfoMissions">
+                  
+                {{tutor.Task_tutors|safe}}
+
+              </div>
+              <div id="profileInfoBio">
+                  {{tutor.general_information|safe}}
+              </div>
+          </div>
+      </div>
+
+      </div>
     </div>
     <!-- Our Story END ==== -->
   </div>
