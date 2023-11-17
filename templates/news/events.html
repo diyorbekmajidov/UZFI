@@ -1,68 +1,64 @@
-{% extends "base.html" %} 
-{% load i18n %}
-{% block title %}{% blocktranslate %}UZFI | Kutilayotgan tadbirlar{% endblocktranslate %}{% endblock %} 
-{%block content %} {% load static %} 
-
+{% extends "base.html" %} {% load i18n %} {% block title %}{% blocktranslate%}UZFI | Kutilayotgan tadbirlar{% endblocktranslate %}{% endblock %} 
+{%block content %} {% load static %}
 
 <div class="page-content bg-white">
-    <div class="page-content">
-        <div
-        class="page-banner ovbl-dark"
-        style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
-      >
-        <div class="container">
-          <div class="page-banner-entry">
-            <h1 class="text-white">{% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}</h1>
-          </div>
+  <div class="page-content">
+    <div
+      class="page-banner ovbl-dark"
+      style="background-image: url({% static 'assets/images/645361781b285.jpg' %})"
+    >
+      <div class="container">
+        <div class="page-banner-entry">
+          <h1 class="text-white">
+            {% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}
+          </h1>
         </div>
       </div>
+    </div>
     <div class="breadcrumb-row">
-        <div class="container">
-            <ul class="list-inline">
-                <li><a href="/">{% blocktranslate %}Asosiy sahifa{% endblocktranslate %}</a></li>
-                <li>{% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}</li>
-            </ul>
-        </div>
+      <div class="container">
+        <ul class="list-inline">
+          <li>
+            <a href="/"
+              >{% blocktranslate %}Asosiy sahifa{% endblocktranslate %}</a
+            >
+          </li>
+          <li>
+            {% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Page Heading Box END ==== -->
     <!-- Page Content Box ==== -->
     <div class="content-block">
-        <!-- Blog Grid ==== -->
-        <div class="section-area section-sp1">
-            <div class="container">
-                <div class="ttr-blog-grid-3 row" id="masonry">
+      <!-- Blog Grid ==== -->
+      <div class="section-area section-sp1">
+        <div class="container">
+          <div class="row">
+            {% for item in data %}
 
-                    {% for item in data %}
+            <div class="col-md-2">
+              <div class="card p-4">
 
-                    <div class="post action-card col-lg-4 col-md-6 col-sm-12 col-xs-12 m-b40">
-                        <div class="recent-news">
-                            {% comment %} <div class="action-box">
-                                <img src="assets/images/blog/latest-blog/pic1.jpg" alt="">
-                            </div> {% endcomment %}
-
-                            <div class="info-bx">
-                                <ul class="media-post">
-                                    <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
-                                    <li><i class="fa fa-eye"></i> {{item.views}}</li>
-                                </ul>
-                                <div><a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/"> {{item.event_name}} </a></div>
-                                <div class="post-extra">
-                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{item.id}}/" class="btn-link">{% blocktranslate %}Davomini o'qish{% endblocktranslate %}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {% endfor %}
-
-                </div>
+                <strong>{{item.date_created}}</strong>
+              </div>
             </div>
+            <div class="col-md-10">
+              <div class="card p-4">
+                <strong>{{item.event_name}}</strong> <br>
+                {{i}}
+              </div>
+            </div>
+
+            {% endfor %}
+          </div>
         </div>
-        <!-- Blog Grid END ==== -->
+      </div>
+      <!-- Blog Grid END ==== -->
     </div>
     <!-- Page Content Box END ==== -->
+  </div>
+
+  {% endblock %}
 </div>
-
-
-
-{% endblock %}
