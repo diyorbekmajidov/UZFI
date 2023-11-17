@@ -252,10 +252,7 @@ class TutorAPIView(TemplateView):
             page = Paginator(turor, 9)
             faculty = Faculty.objects.all()
             serializer = FacultySerializer(faculty, many = True)
-            page_num = int(request.GET.get('page', 1))
-                
-            return render(request, 'tutor_fac.html', {"page_obj":page.page(page_num)
-            ,'faculties':serializer.data})
+            return render(request, 'tutor_fac.html', {'faculties':serializer.data})
         except Exception as e:
             print(e)
             return render(request,'tutor_fac.html')

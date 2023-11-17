@@ -30,11 +30,12 @@
         <!-- FAQS  News -->
         <div class="section-area section-sp2">
             <div class="container">
-                <div class="row">
-                        <h1>Fakultetni tutorlari </h1>
+                <h1>Fakultetni tutorlari </h1>
+                <div style='box-sizing:border-box;' class="row">
+                        
                     {% for i in faculties %}
     
-                    <div class="col-md-12 councils-item p-5 my-3 departments">
+                    <div  class="col-md-6 councils-item p-5 mx-1 departments">
                             <a href="{% url 'tutor_det' i.id %}">
                             <div class="councils-item-title">
                                 <h3>{{i.name|safe}}</h3>
