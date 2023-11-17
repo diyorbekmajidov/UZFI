@@ -69,6 +69,7 @@ class PendingEvents(models.Model):
     start_date    = models.DateField()
     views         = models.IntegerField(default=0)
     body          = RichTextUploadingField()
+    img     = models.ImageField(upload_to='img/', validators=[validate_file_size])
     date_created  = models.DateField(auto_now_add=True)
     date_update   = models.DateTimeField(auto_now=True)
 
