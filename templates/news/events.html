@@ -1,11 +1,21 @@
 {% extends "base.html" %} 
 {% load i18n %}
 {% block title %}{% blocktranslate %}UZFI | Kutilayotgan tadbirlar{% endblocktranslate %}{% endblock %} 
-{% block trans %}{% endblock trans %}
 {%block content %} {% load static %} 
 
 
 <div class="page-content bg-white">
+    <div class="page-content">
+        <div
+        class="page-banner ovbl-dark"
+        style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+      >
+        <div class="container">
+          <div class="page-banner-entry">
+            <h1 class="text-white">{% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}</h1>
+          </div>
+        </div>
+      </div>
     <div class="breadcrumb-row">
         <div class="container">
             <ul class="list-inline">
