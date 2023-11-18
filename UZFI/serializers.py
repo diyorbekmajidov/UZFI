@@ -43,7 +43,7 @@ class FacultySerializer(serializers.ModelSerializer):
 class FacultySerializer1(serializers.ModelSerializer):
     class Meta:
         model = Faculty
-        fields = ['id', 'name']
+        fields = ['id', 'name','img']
 
 class DirectionSerializer(serializers.ModelSerializer):
     faculty = FacultySerializer1()
