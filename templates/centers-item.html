@@ -1,8 +1,18 @@
 {% extends "base.html" %} {% block title %}UZFI | {{data.name}}{% endblock %} 
 {%block content %} {% load static %} {% load i18n %}
-{% block trans %}{% endblock trans %}
 
 <div class="page-content">
+  <div class="page-content">
+    <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</h1>
+      </div>
+    </div>
+  </div>
 
   <!-- Page Content Box ==== -->
   <div class="content-block">
