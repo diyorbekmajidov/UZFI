@@ -277,32 +277,6 @@ class TutorByIdView(TemplateView):
                 print(e)
                 return render(request,'tutors-item.html')
 
-    
-class TyutorApiviews(APIView):
-    def get(self, request):
-        url =  'https://student.uzfi.uz/rest/v1/data/employee-list?type=1&page=4&limit=200&_staff_position=34&_employee_type=10'
-        headers = {
-            'accept': 'application/json',
-            'Authorization': 'Bearer kTV3FiW3cCT2ZVGdk3d1AivEXiXi2uDp'
-        }
-        response = requests.get(url, headers=headers)
-        data = response.json()
-        for i in data['data']['items']:
-            data1 = {
-                'full_name':i['full_name'],
-                "tutor_groups":i['tutorGroups']
-            }
-            print(data1)
-            serializers = TutorSerializer(data=data1)
-            if serializers.is_valid():
-                serializers.save()
-            else:
-                print(serializers.errors)   
-            # print(i['full_name'])
-        return Response({"ok":200})
-
-
-
 class ScientificWorkAPIView(APIView):
     
     def post(self, request):

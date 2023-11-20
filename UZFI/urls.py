@@ -30,7 +30,6 @@ from .views import (
     KafedraByIDApview,
     Indicators,
     TutorAPIView,
-    TyutorApiviews,
     TutorByIdView,
     TutorFilterAPIView
 
@@ -84,7 +83,6 @@ urlpatterns = [
     path('indicators/', Indicators.as_view()),
 
     path('tutor/', TutorAPIView.as_view()),
-    path("tyutor/", TyutorApiviews.as_view()),
     path('tutor/<int:pk>/', TutorByIdView.as_view()),
     path('tutorfaculty/<int:pk>/', TutorFilterAPIView.as_view(),name='tutor_det')
 ] + abitur_urlpatterns
