@@ -62,7 +62,7 @@
             <h2 class="title-head">{% blocktranslate %}Fakultet haqida{% endblocktranslate %}</h2>
           </div>
 
-          <div>{{ faculty.body|safe }}</div>
+          <div style="border-left: 1px solid red; margin-left: -20px; padding-left: 20px">{{ faculty.body|safe }}</div>
         </div>       
                   
         {% else %}
@@ -76,4 +76,26 @@
     </div>
     <!-- Page Content Box END ==== -->
   </div>
+  <script>
+    const boldTexts = document.querySelectorAll('strong')
+    
+    boldTexts.forEach(el => {
+      el.style.position = 'relative'
+      el.style.display = 'flex';
+      el.style.alignItems = 'center';
+      const div = document.createElement('div')
+      div.style.minWidth = '20px'
+      div.style.width = "20px"
+      div.style.height = "20px"
+      div.style.borderRadius = "10px"
+      div.style.background = 'red'
+      div.style.position = 'absolute';
+      div.style.left = "-30px"
+      div.style.top = 0;
+      el.appendChild(div)
+    }) 
+    console.log(boldTexts[0])
+  </script>
 {% endblock %}
+
+
