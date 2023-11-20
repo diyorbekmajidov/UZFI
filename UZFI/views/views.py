@@ -136,13 +136,16 @@ class FacultyByIdApview(APIView):
             faculty = Faculty.objects.get(id = pk)
             dekan = Dekan.objects.get(faculty = pk)
             directions = Direction.objects.filter(faculty=pk)
+            kafedra = Kafedra.objects.filter(faculty=pk)
+            serializers_kafedra = KafedraSerializer1(kafedra, many = True)
             serializers_directions = DirectionSerializer(directions, many = True)
             serializers1 = GetDekanSerializer(dekan)
             serializers = FacultySerializer(faculty)
             return render(request, 'faculties-item.html',
                 {"faculty":serializers.data,
                 "dekan": serializers1.data,
-                "direction": serializers_directions.data
+                "direction": serializers_directions.data,
+                "kafedra": serializers_kafedra.data
                 })
         except Exception as e:
             print(e)

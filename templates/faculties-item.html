@@ -8,6 +8,7 @@
   {% load static %}
   {% load i18n %}
   <div class="page-content">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Page Heading Box ==== -->
     <div class="page-banner ovbl-dark" style="background-image:url({{faculty.img}});">
       <div class="container">
@@ -57,12 +58,28 @@
               </div>
             </a>
           </div>
-
+          <ul class="nav nav-pills mt-5 mb-4 ">
+            <li class="nav-item mr-2">
+              <a class="nav-link active" data-bs-toggle="pill" href="#home">Fakultet haqida</a>
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" data-bs-toggle="pill" href="#menu1">Yo'nalishlar va Kafedralar</a>
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" data-bs-toggle="pill" href="#menu2">Dekan</a>
+            </li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane container active" id="home"><div style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{ faculty.body|safe }}</div></div>
+            <div class="tab-pane container fade" id="menu1"><div style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{ faculty.body|safe }}</div></div>
+            <div class="tab-pane container fade" id="menu2"><div style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{ faculty.body|safe }}</div></div>
+          </div>
           <div class="heading-bx left mt-5">
             <h2 class="title-head">{% blocktranslate %}Fakultet haqida{% endblocktranslate %}</h2>
           </div>
-
-          <div style="border-left: 1px solid red; margin-left: -20px; padding-left: 20px">{{ faculty.body|safe }}</div>
+          
         </div>       
                   
         {% else %}
@@ -88,7 +105,7 @@
       div.style.width = "20px"
       div.style.height = "20px"
       div.style.borderRadius = "10px"
-      div.style.background = 'red'
+      div.style.background = '#f7b205'
       div.style.position = 'absolute';
       div.style.left = "-30px"
       div.style.top = 0;
