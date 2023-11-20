@@ -188,15 +188,16 @@ class KafedraApview(APIView):
 class KafedraByIDApview(APIView):
     def get(self, request, pk):
         try:
-            department = Kafedra.objects.filter(id = pk).last()
+            department = Kafedra.objects.get(id = pk)
             serializers = KafedraSerializer(department)
-            manager = KafedraManager.objects.get(kafedra = pk)
+            manager = KafedraManager.objects.filter(kafedra = pk).last()
             serializers1 = KafedraManagerSerializer(manager)
             return render(request, 'departments-item.html',{
                 "data":serializers.data,
                 "manager" : serializers1.data
                 })
         except Exception as e:
+            print(e)
             return render(request, 'departments-item.html')
 
     
