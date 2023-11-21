@@ -53,11 +53,19 @@
             </div>
           </div>
         </div>
+        <ul class="nav nav-pills mt-5 mb-4 ">
+          <li class="nav-item mr-2">
+            <a class="nav-link active" data-bs-toggle="pill" href="#home">Kafedra haqida</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link" data-bs-toggle="pill" href="#menu2">Kafedra Mudiri</a>
+          </li>
+        </ul>
 
 
-        <div class="heading-bx left mt-5">
+        {% comment %} <div class="heading-bx left mt-5">
           <h2 class="title-head">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</h2>
-        </div>
+        </div> {% endcomment %}
 
         <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
       </div>
