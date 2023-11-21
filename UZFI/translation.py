@@ -13,6 +13,10 @@ from .models import (
     Kafedra,
     KafedraManager,
     ScientificWork,
+    Leadership,
+    CentersDepartments,
+    CentersDepartmentsManager,
+    Tutor,
 )
 
 @register(OpenData)
@@ -25,7 +29,7 @@ class FinancialStatementsTranslationOptions(TranslationOptions):
 
 @register(Vacancies)
 class VacanciesTranslationOptions(TranslationOptions):
-    fields = ('name','body','department',)
+    fields = ('name','body',)
 
 @register(Charter)
 class CharterTranslationOptions(TranslationOptions):
@@ -37,11 +41,11 @@ class DocumentTranslationOptions(TranslationOptions):
 
 @register(Councils)
 class CouncilsTranslationOptions(TranslationOptions):
-    fields = ('title','body')
+    fields = ('title','body',)
 
 @register(Requisites)
 class RequisitesTranslationOptions(TranslationOptions):
-    fields = ('unversit_name','address')
+    fields = ('unversit_name','address',)
 
 @register(Faculty)
 class FacultyTranslationOptions(TranslationOptions):
@@ -49,7 +53,7 @@ class FacultyTranslationOptions(TranslationOptions):
 
 @register(Dekan)
 class DekanTranslationOptions(TranslationOptions):
-    fields = ('acceptance','address','duties')
+    fields = ('acceptance','address','duties',)
 
 @register(Kafedra)
 class KafedraTranslationOptions(TranslationOptions):
@@ -57,7 +61,7 @@ class KafedraTranslationOptions(TranslationOptions):
 
 @register(KafedraManager)
 class KafedraManagerTranslationOptions(TranslationOptions):
-    fields = ('acceptance','address','duties')
+    fields = ('acceptance','address','duties',)
 
 
 @register(Direction)
@@ -67,3 +71,19 @@ class DirectionTranslationOptions(TranslationOptions):
 @register(ScientificWork)
 class ScientificWorkTranslationOptions(TranslationOptions):
     fields = ("article_name","article_level",)
+
+@register(Leadership)
+class LeadershipTranslationOptions(TranslationOptions):
+    fields = ("address","acceptance","biography","duties",)
+
+@register(CentersDepartments)
+class CentersDepartmentTranslationOptions(TranslationOptions):
+    fields = ("name","body",)
+
+@register(CentersDepartmentsManager)
+class CentersDepartmentsManagerTranslationOptions(TranslationOptions):
+    fields = ("address","acceptance",)
+
+@register(Tutor)
+class TutorTranslationOptions(TranslationOptions):
+    fields = ("address",)

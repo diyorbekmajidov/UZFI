@@ -1,0 +1,69 @@
+
+
+
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI  | Fakultetlar{% endblocktranslate %}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/645361781b285.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}Tutorlar ro'yxati{% endblocktranslate %}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2 mb-5">
+            <div class="container">
+                <h1>Fakultetni tutorlari </h1>
+                <div style='box-sizing:border-box;' class="row">
+                        
+                    {% for i in faculties %}
+    
+                    <div  class="col-md-5 councils-item mx-1">
+                    
+
+                        <div class="departments" style="background: url('{{i.img}}'); background-position: center center; " >
+                            <div class=" d-flex align-items-center justify-content-center " style="background-color: rgba(0, 0, 0, 0.673); width:100%; height: 120px;">
+                                <a href="{% url 'tutor_det' i.id %}" style="">
+                                    <div class="councils-item-title px-3">
+                                        <h5 style="color: #fff;">{{i.name}}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+	
+                        
+                            
+                    </div>
+    
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}

@@ -1,7 +1,5 @@
 from rest_framework import serializers
 from .models import *
-
-
 class CharterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Charter
@@ -45,7 +43,7 @@ class FacultySerializer(serializers.ModelSerializer):
 class FacultySerializer1(serializers.ModelSerializer):
     class Meta:
         model = Faculty
-        fields = ['id', 'name']
+        fields = ['id', 'name','img']
 
 class DirectionSerializer(serializers.ModelSerializer):
     faculty = FacultySerializer1()
@@ -64,7 +62,6 @@ class UserSerializer1(serializers.ModelSerializer):
         fields = ["id","username", "role"]
 
 class ScientificWorkSerializer(serializers.ModelSerializer):
-    # user = serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = ScientificWork
         fields = '__all__'      
@@ -78,13 +75,9 @@ class DekanSerializer(serializers.ModelSerializer):
 class GetDekanSerializer(serializers.ModelSerializer):
     dekan = UserSerializer1()
     faculty = FacultySerializer1()
-    scientific_work = ScientificWorkSerializer()
     class Meta :
         model = Dekan
-        fields = ["id", "dekan","scientific_work", "faculty", "name", "img", "phone","address_uz","address_en","address_ru", 
-                  "acceptance_uz","acceptance_ru","acceptance_en","duties_uz","duties_ru","duties_en",
-                  "date_created", "date_update",
-                  ]
+        fields = '__all__'
 
 class KafedraSerializer(serializers.ModelSerializer):
     class Meta :
@@ -101,12 +94,32 @@ class KafedraManagerSerializer(serializers.ModelSerializer):
         model = KafedraManager
         fields = "__all__"
         
-
 class GetKafedraManagerSerializer(serializers.ModelSerializer):
     kafedramanager = UserSerializer1()
     kafedra = KafedraSerializer1()
-    scientific_work = ScientificWorkSerializer()
     class Meta :
         model = KafedraManager
         fields = "__all__"
 
+class LeadershipSerializer(serializers.ModelSerializer):
+    rector = UserSerializer1()
+    class Meta :
+        model = Leadership
+        fields = "__all__"
+
+
+class CentersDepartmentsSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = CentersDepartments
+        fields = "__all__"
+
+class CentersDepartmentsManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CentersDepartmentsManager
+        fields = "__all__"
+
+class TutorSerializer(serializers.ModelSerializer):
+    faculty = FacultySerializer1()
+    class Meta:
+        model = Tutor
+        fields = "__all__"

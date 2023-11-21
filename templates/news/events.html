@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% load i18n %} {% block title %}{% blocktranslate%}UZFI | Kutilayotgan tadbirlar{% endblocktranslate %}{% endblock %} 
+{%block content %} {% load static %}
+
+<div class="page-content bg-white">
+  <div class="page-content">
+    <div
+      class="page-banner ovbl-dark"
+      style="background-image: url({% static 'assets/images/645361781b285.jpg' %})"
+    >
+      <div class="container">
+        <div class="page-banner-entry">
+          <h1 class="text-white">
+            {% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb-row">
+      <div class="container">
+        <ul class="list-inline">
+          <li>
+            <a href="/"
+              >{% blocktranslate %}Asosiy sahifa{% endblocktranslate %}</a
+            >
+          </li>
+          <li>
+            {% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Page Heading Box END ==== -->
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+      <!-- Blog Grid ==== -->
+      <div class="section-area section-sp1">
+        <div class="container">
+          <div id="masonry" class="ttr-blog-grid-3 row">
+            {% for i in data %}
+            <div class="post action-card  col-xl-4 col-lg-4 col-md-4 col-xs-12 col-sm-12 m-b40">
+              <div class="recent-news">
+                <div class="action-box" style=" position: relative;overflow: hidden; width: auto; height: 190px;" >
+                  <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}"
+                  > 
+                  <img style="object-fit: cover;" src="{{i.img}}" alt="" /> </a>
+                </div>
+                <div class="info-bx">
+                  <ul class="media-post">
+                    <li>
+                      <i class="fa fa-calendar"></i> {{i.date_created}}
+                    </li>
+                    <li>
+                      <i class="fa fa-eye"></i> {{i.views}}
+                    </li>
+                    <li>
+                      <i class="fa fa-building"></i> {{i.place}}
+                    </li>
+                  </ul>
+                  <p class="post-title " style="height: 60px">
+                    <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}"
+                      >
+                      
+                          {{i.event_name|truncatechars:65}}
+                   
+                      </a
+                    >
+                  </p>
+                  
+                  
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+      <!-- Blog Grid END ==== -->
+    </div>
+    <!-- Page Content Box END ==== -->
+  </div>
+
+  {% endblock %}
+</div>

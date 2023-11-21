@@ -2,7 +2,10 @@ from modeltranslation.translator import  TranslationOptions, register
 from .models import (
     NewsCategory,
     News_Content,
-    Vedio_New,)
+    Vedio_New,
+    PopularStudents,
+    PendingEvents
+    )
 
 @register(NewsCategory)
 class NewsCategoryTranslationOptions(TranslationOptions):
@@ -15,3 +18,11 @@ class News_ContentTranslationOptions(TranslationOptions):
 @register(Vedio_New)
 class Vedio_NewTranslationOptions(TranslationOptions):
     fields = ('title',)
+
+@register(PopularStudents)
+class PopularStudentsTranslationOptions(TranslationOptions):
+    fields = ('body','description',)
+
+@register(PendingEvents)
+class PendingEventsTranslationOptions(TranslationOptions):
+    fields = ('body','event_name',)

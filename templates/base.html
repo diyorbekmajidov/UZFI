@@ -1,0 +1,596 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="UZFI" />
+
+    <!-- OG -->
+    <meta property="og:title" content="UZFI" />
+    <meta
+      property="og:description"
+      content="UZFI"
+    />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link
+      rel="icon"
+      href="{% static 'assets/images/favicon.ico' %}"
+	  type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'assets/images/favicon.ico' %}"
+    />
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/assets.css' %}"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/typography.css' %}"
+    />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/shortcodes/shortcodes.css' %}"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/style.css' %}"
+    />
+    <link
+      class="skin"
+      rel="stylesheet"
+      href="{% static 'assets/css/color/color-1.css' %}"
+    />
+
+    <!-- REVOLUTION SLIDER CSS ============================================= -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/revolution/css/layers.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/revolution/css/settings.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/revolution/css/navigation.css'%}"
+    />
+    <!-- REVOLUTION SLIDER END -->
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <!-- CK EDITOR -->
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+  </head>
+
+  <body id="bg">
+    <div class="page-wraper">
+      <div id="loading-icon-bx"></div>
+
+      <!-- Header Top ==== -->
+      <header class="header rs-nav {% block trans %}header-transparent{% endblock trans %}">
+		<div class="top-bar">
+		  <div class="container">
+			<div class="row d-flex justify-content-between">
+			  <div class="topbar-left">
+				<ul>
+				  <li>
+					<a href="mailto:devonxona@uzfi.uz"
+					  ><i class="fa fa-envelope-o"></i>devonxona@uzfi.uz</a
+					>
+				  </li>
+				</ul>
+			  </div>
+			  <div class="topbar-right">
+				<ul>
+					<li>
+						<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+							<input name="next" type="hidden" value="{{ redirect_to }}">
+							<select name="language" class="header-lang-bx">
+								{% get_available_languages as LANGUAGES %}
+								{% get_language_info_list for LANGUAGES as languages %}
+								{% for language in languages %}
+									<option value="{{language.code}}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}  data-icon="flag flag-{% if language.code == 'es' %}en{% else %}{{ language.code }}{% endif %}">
+										{% if language.code == 'es' %}
+											en
+										{% else %}
+											{{ language.code }}
+										{% endif %}
+									</option>
+								{% endfor %}
+							</select>
+							<script>
+								$('select[name="language"]').change(function(e) {
+									const url = window.location.href;
+									const languageCode = url.match(/\/([a-z]{2})\//)[1];
+									let newurl = this.value;
+									if (languageCode == newurl) {console.log('Default')}
+									else {window.location.href = url.replace('/' + languageCode + '/', '/' + newurl + '/')}
+								});
+							</script>
+						</form>
+					</li>
+					<li>
+						{% if user.is_authenticated %}
+							<li><a href="/accounts/logout/">{% blocktranslate %}Chiqish{% endblocktranslate %}</a></li>
+						{% else %}
+							<li><a href="/accounts/login/">{% blocktranslate %}Kirish{% endblocktranslate %}</a></li>
+						{% endif %}
+						<li>
+							<a
+							  target="__blank"
+							  href="https://www.facebook.com/UzFi.education/"
+							  class="btn-link"
+							  ><i class="fa fa-facebook"></i
+							></a>
+						  </li>
+						  <li>
+							<a
+							target="__blank"
+							href="https://www.youtube.com/@uzfi.education619"
+							class="btn-link"
+							><i class="fa fa-youtube-play"></i
+						  ></a>
+						  </li>
+						  <li>
+							<a target="__blank" href="https://t.me/UzFiPI" class="btn-link"
+							  ><i class="fa fa-telegram"></i
+							></a>
+						  </li>
+						  <li>
+							<a
+							  target="__blank"
+							  href="https://www.instagram.com/uzfi_education/"
+							  class="btn-link"
+							  ><i class="fa fa-instagram"></i
+							></a>
+						  </li>
+					</li>
+				</ul>
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="sticky-header navbar-expand-lg">
+		  <div class="menu-bar clearfix">
+			<div class="container clearfix">
+			  <!-- Header Logo ==== -->
+			  <div class="menu-logo">
+				<a href="/{{LANGUAGE_CODE}}"><img src="{% static 'assets/images/uzfi.png' %}" alt="" /></a>
+			  </div>
+			  <!-- Mobile Nav Button ==== -->
+			  <button
+				class="navbar-toggler collapsed menuicon justify-content-end"
+				type="button"
+				data-toggle="collapse"
+				data-target="#menuDropdown"
+				aria-controls="menuDropdown"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			  >
+				<span></span>
+				<span></span>
+				<span></span>
+			  </button>
+			  <!-- Author Nav ==== -->
+			  <div class="secondary-menu">
+				<div class="secondary-inner">
+				  <ul>
+					<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+				  </ul>
+				</div>
+			  </div>
+			  <!-- Search Box ==== -->
+			  <div class="nav-search-bar">
+				<form action="/{{LANGUAGE_CODE}}/news/searchnews/">
+				  <input
+					name="key"
+					value=""
+					type="text"
+					class="form-control"
+					placeholder="Type to search"
+				  />
+				  <span><i class="ti-search"></i></span>
+				</form>
+				<span id="search-remove"><i class="ti-close"></i></span>
+			  </div>
+			  <!-- Navigation Menu ==== -->
+			  <div
+				class="menu-links navbar-collapse collapse justify-content-start"
+				id="menuDropdown"
+			  >
+				<div class="menu-logo">
+				  <a href="/{{LANGUAGE_CODE}}"><img src="{% static 'assets/images/uzfi.png' %}" alt="" /></a>
+				</div>
+				<ul class="nav navbar-nav">
+				  <li class="active">
+					<a href="javascript:;"
+					  >{% blocktranslate %}UNIVERSITET {% endblocktranslate %}<i class="fa fa-chevron-down"></i
+					></a>
+					<ul class="sub-menu">
+						<li><a href="/{{LANGUAGE_CODE}}">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
+					</ul>
+				  </li>
+				  <li>
+					<a href="javascript:;"
+					  >{% blocktranslate %}TA'LIM {% endblocktranslate %}<i class="fa fa-chevron-down"></i
+					></a>
+					<ul class="sub-menu">
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faculty/">{% blocktranslate %}Fakultetlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/departments/">{% blocktranslate %}Kafedralar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/bachelor/">{% blocktranslate %}Bakalavriat{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/magistrature/">{% blocktranslate %}Magistratura{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/tutor/">{% blocktranslate %}Tyutorlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
+					</ul>
+				  </li>
+				  <li>
+					<a href="javascript:;">Axborot Xizmatlari<i class="fa fa-chevron-down"></i></a>
+
+					<ul class="sub-menu">
+					  <li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
+					  <li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/">{% blocktranslate %}Video gallerya{% endblocktranslate %}</a></li>
+					  <li><a href="/{{LANGUAGE_CODE}}/news/events/">{% blocktranslate %}Kutilayotgan tadbirlar{% endblocktranslate %}</a></li>
+					  <li><a href="/{{LANGUAGE_CODE}}/news/contact/">{% blocktranslate %}Bog'lanish{% endblocktranslate %}</a></li>
+					</ul>
+
+				  </li>
+				  <li>
+					<a href="javascript:;">{% blocktranslate %}Xalqaro aloqalar{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
+					<ul class="sub-menu">
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalrelations/">Xalqaro aloqalar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalmemorandum/">{% blocktranslate %}Xalqaro memorandumlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalgrant/">{% blocktranslate %}Xalqaro grantlar{% endblocktranslate %}</a></li>
+					</ul>
+				  </li>
+				  <li>
+					<a href="javascript:;">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
+					<ul class="sub-menu">
+						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/library/">{% blocktranslate %}Kutubxona{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/ttj/">{% blocktranslate %}Talabalar Turar Joyi{% endblocktranslate %}</a></li>
+					</ul>
+				  </li>
+				  
+				 
+				  <li>
+					<a href="javascript:;">{% blocktranslate %}Abituriyentlarga{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
+					<ul class="sub-menu">
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/regulation-on-secondary-education/">{% blocktranslate %}Ikkinchi taʼlim to‘g‘risidagi nizom{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/work-with-the-answer-sheet/">{% blocktranslate %}Javoblar varaqasi bilan ishlash{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faqs/">{% blocktranslate %}Tez-tez so'raladigan savollarga javoblar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/commission/">{% blocktranslate %}Qabul komissiyasi joylashuv o'rni{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter-admission/">{% blocktranslate %}Qabul nizomi{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/admission-quota/">{% blocktranslate %}Qabul kvotasi{% endblocktranslate %}</a></li>
+					</ul>
+				  </li>
+				
+				
+				</ul>
+			  </div>
+			  <!-- Navigation Menu END ==== -->
+			</div>
+		  </div>
+		</div>
+	  </header>
+	  
+      <!-- Header Top END ==== -->
+
+      {% comment %} ckeditor {% endcomment %}
+
+      <!-- Content -->
+      {% block content %}
+      {% endblock %}
+      <!-- Content END-->
+
+      <!-- Footer ==== -->
+      <footer>
+		<div class="footer-top">
+		  <div class="pt-exebar">
+			<div class="container">
+			  <div class="d-flex align-items-stretch">
+				<div class="pt-logo mr-auto">
+				  <a href="/{{LANGUAGE_CODE}}"
+					><img
+					  src="{% static 'assets/images/uzfi.png' %}"
+					  alt=""
+					  style="width: auto; height: 100px"
+				  /></a>
+				</div>
+				<div class="pt-social-link">
+				  <ul class="list-inline m-a0">
+						<li>
+						  <a target="__blank" href="https://www.facebook.com/UzFi.education/" class="btn-link"
+							><i class="fa fa-facebook"></i
+						  ></a>
+						</li>
+						<a target="__blank" href="https://www.youtube.com/@uzfi.education619" class="btn-link"
+							><i class="fa fa-youtube-play"></i
+						  ></a>
+						<li>
+						  <a target="__blank" href="https://t.me/UzFiPI" class="btn-link"
+							><i class="fa fa-telegram"></i
+						  ></a>
+						</li>
+						<li>
+						  <a target="__blank" href="https://www.instagram.com/uzfi_education/" class="btn-link"
+							><i class="fa fa-instagram"></i
+						  ></a>
+						</li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="container">
+			<div class="row">
+			  
+			  <div class="col-12 col-lg-5 col-md-7 col-sm-12">
+				<div class="row">
+				  <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+					<div class="widget footer_widget">
+					  <h5 class="footer-title">UNIVERSITET</h5>
+					  <ul>
+						<li><a href="/{{LANGUAGE_CODE}}">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>	
+					  </ul>
+					</div>
+				  </div>
+				  <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+					<div class="widget footer_widget">
+					  <h5 class="footer-title">{% blocktranslate %}TA'LIM{% endblocktranslate %}</h5>
+					  <ul>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faculty/">{% blocktranslate %}Fakultetlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/departments/">{% blocktranslate %}Kafedralar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/bachelor/">{% blocktranslate %}Bakalavriat{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/magistrature/">{% blocktranslate %}Magistratura{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/tutor/">{% blocktranslate %}Tyutorlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
+					  </ul>
+					</div>
+				  </div>
+				  	<div class="col-4 col-lg-4 col-md-4 col-sm-4">
+						<div class="widget footer_widget">
+							<h5 class="footer-title">{% blocktranslate %}Axborot Xizmatlari{% endblocktranslate %}</h5>
+							
+							<ul>
+								<li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
+								<li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/">{% blocktranslate %}Video gallerya{% endblocktranslate %}</a></li>
+					  			<li><a href="/{{LANGUAGE_CODE}}/news/events/"{% blocktranslate %}>Kutilayotgan tadbirlar{% endblocktranslate %}</a></li>
+					  			<li><a href="/{{LANGUAGE_CODE}}/news/contact/">{% blocktranslate %}Bog'lanish{% endblocktranslate %}</a></li>
+								
+
+							</ul>
+						</div>
+				  	</div>
+				</div>
+			  </div>
+			  <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+					<div class="widget footer_widget">
+					  <h5 class="footer-title">{% blocktranslate %}Xalqaro aloqalar{% endblocktranslate %}</h5>
+					  <ul>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalrelations/">Xalqaro aloqalar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalmemorandum/">{% blocktranslate %}Xalqaro memorandumlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalgrant/">{% blocktranslate %}Xalqaro grantlar{% endblocktranslate %}</a></li>
+					  </ul>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+					<div class="widget footer_widget">
+					  <h5 class="footer-title">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}</h5>
+					  <ul>
+						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
+					  </ul>
+					</div>
+				</div>
+
+				
+		
+			</div>
+		  </div>
+
+		  	<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h4>{% blocktranslate %} Manzil {% endblocktranslate %} </h4>
+							<p>{% blocktranslate %} Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy {% endblocktranslate %} </p>
+							<p>Phone: +998954108015</p>
+							<p>Email: devonxona@uzfi.uz</p>
+						</div>
+						<div class="col-md-9"> 
+		  					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.0442617391855!2d66.92115311473631!3d39.67121890856542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d192d50c43d2d%3A0xb165c3020cfe3714!2sSamDU%20O&#39;zbekiston-Finlandiya%20Pedagogika%20instituti!5e0!3m2!1sen!2s!4v1635831688417!5m2!1sen!2s" width="80%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	  </footer>
+      <!-- Footer END ==== -->
+
+      <button class="back-to-top fa fa-chevron-up"></button>
+    </div>
+
+    <!-- External JavaScripts -->
+    <script src="{% static 'assets/js/render.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script>
+    <script src="{% static 'assets/vendors/magnific-popup/magnific-popup.js' %}"></script>
+    <script src="{% static 'assets/vendors/counter/waypoints-min.js' %}"></script>
+    <script src="{% static 'assets/vendors/counter/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/imagesloaded/imagesloaded.js' %}"></script>
+    <script src="{% static 'assets/vendors/masonry/masonry.js' %}"></script>
+    <script src="{% static 'assets/vendors/masonry/filter.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
+    <script src="{% static 'assets/js/functions.js' %}"></script>
+	<!-- <script src="{% static 'assets/vendors/switcher/switcher.js' %}"></script> -->    
+    <!-- Revolution JavaScripts Files -->
+    <script src="{% static 'assets/vendors/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+		new Splide( '.splide' ).mount();
+	</script>
+    <script>
+      jQuery(document).ready(function () {
+        var ttrevapi;
+        var tpj = jQuery;
+        if (tpj("#rev_slider_486_1").revolution == undefined) {
+          revslider_showDoubleJqueryError("#rev_slider_486_1");
+        } else {
+          ttrevapi = tpj("#rev_slider_486_1")
+            .show()
+            .revolution({
+              sliderType: "standard",
+              jsFileLocation: "{% static 'assets/vendors/revolution/js/' %}",
+              sliderLayout: "fullwidth",
+              dottedOverlay: "none",
+              delay: 9000,
+              navigation: {
+                keyboardNavigation: "on",
+                keyboard_direction: "horizontal",
+                mouseScrollNavigation: "off",
+                mouseScrollReverse: "default",
+                onHoverStop: "on",
+                touch: {
+                  touchenabled: "on",
+                  swipe_threshold: 75,
+                  swipe_min_touches: 1,
+                  swipe_direction: "horizontal",
+                  drag_block_vertical: false,
+                },
+                arrows: {
+                  style: "uranus",
+                  enable: true,
+                  hide_onmobile: false,
+                  hide_onleave: false,
+                  tmp: "",
+                  left: {
+                    h_align: "left",
+                    v_align: "center",
+                    h_offset: 10,
+                    v_offset: 0,
+                  },
+                  right: {
+                    h_align: "right",
+                    v_align: "center",
+                    h_offset: 10,
+                    v_offset: 0,
+                  },
+                },
+              },
+              viewPort: {
+                enable: true,
+                outof: "pause",
+                visible_area: "80%",
+                presize: false,
+              },
+              responsiveLevels: [1240, 1024, 778, 480],
+              visibilityLevels: [1240, 1024, 778, 480],
+              gridwidth: [1240, 1024, 778, 480],
+              gridheight: [768, 600, 600, 600],
+              lazyType: "none",
+              parallax: {
+                type: "scroll",
+                origo: "enterpoint",
+                speed: 400,
+                levels: [
+                  5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 46, 47, 48, 49, 50, 55,
+                ],
+                type: "scroll",
+              },
+              shadow: 0,
+              spinner: "off",
+              stopLoop: "off",
+              stopAfterLoops: -1,
+              stopAtSlide: -1,
+              shuffle: "off",
+              autoHeight: "off",
+              hideThumbsOnMobile: "off",
+              hideSliderAtLimit: 0,
+              hideCaptionAtLimit: 0,
+              hideAllCaptionAtLilmit: 0,
+              debugMode: false,
+              fallbacks: {
+                simplifyAll: "off",
+                nextSlideOnWindowFocus: "off",
+                disableFocusListener: false,
+              },
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

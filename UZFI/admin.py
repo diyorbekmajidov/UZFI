@@ -13,7 +13,6 @@ class MyUserAdmin(UserAdmin):
     )
 
 admin.site.register(User,MyUserAdmin)
-admin.site.register(Leadership)
 
 @admin.register(OpenData)
 class OpenDataAdmin(TranslationAdmin):
@@ -25,7 +24,7 @@ class FinancialStatementsAdmin(TranslationAdmin):
 
 @admin.register(Vacancies)
 class VacanciesAdmin(TranslationAdmin):
-    list_display = ('name','body','department',)
+    list_display = ('name','body',)
 
 @admin.register(Charter)
 class CharterAdmin(TranslationAdmin):
@@ -66,3 +65,20 @@ class DirectionAdmin(TranslationAdmin):
 @admin.register(ScientificWork)
 class ScientificWorkAdmin(TranslationAdmin):
     list_display = ("article_name","article_level",)
+
+@admin.register(Leadership)
+class LeadershipAdmin(TranslationAdmin):
+    list_display = ("address","acceptance","biography", "duties")
+
+@admin.register(CentersDepartments)
+class CentersDepartmentAdmin(TranslationAdmin):
+    list_display = ("name","body")
+
+@admin.register(CentersDepartmentsManager)
+class CentersDepartmentManagerAdmin(TranslationAdmin):
+    list_display = ("address","acceptance")
+
+
+@admin.register(Tutor)
+class TutorAdmin(TranslationAdmin):
+    list_display = ("address",)

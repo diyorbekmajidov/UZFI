@@ -1,0 +1,99 @@
+
+
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI{% endblocktranslate %}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+
+
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets\images\832__85_1039998949.jpeg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{{data.title}}</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="section-area section-sp1 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Left part start -->
+                    <div class="col-lg-8 col-xl-8">
+                        <!-- blog start -->
+                        <div class="recent-news blog-lg">
+                            <div class="action-box blog-lg">
+                                <img src="assets/images/blog/default/thum1.jpg" alt="">
+                            </div>
+                            <div class="info-bx">
+                                <ul class="media-post">
+                                    <li><i class="fa fa-calendar"></i> {{data.date_created}}</li>
+                                    <li><i class="fa fa-eye"></i> {{data.views}}</li>
+                                </ul>
+                                <h5 class="post-title">{{data.title}}</h5>
+
+                                <img src="{{data.img}}" />
+
+                                {{data.body|safe}}
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                <div class="widget_tag_cloud">
+                                    <h6>Teglar</h6>
+                                    <div class="tagcloud">
+                                        {% for item in data.category %}
+                                            <a target="__blank" href="/{{LANGUAGE_CODE}}/news/category/{{item.id}}/">{{item.category}}</a> 
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                    <h6>BIZ BILAN BO'LING </h6>
+                                    <ul class="list-inline contact-social-bx">
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                            </div>
+                        </div>
+                        <!-- blog END -->
+                    </div>
+                    <!-- Left part END -->
+                    <!-- Side bar start -->
+                    <div class="col-lg-4 col-xl-4">
+                        <aside  class="side-bar sticky-top">
+                            <div class="widget recent-posts-entry">
+                                <h6 class="widget-title">{% blocktranslate %}Recent Posts{% endblocktranslate %}</h6>
+                                <div class="widget-post-bx">
+                                    {% for item in latest %}
+                                        <div class="widget-post clearfix">
+                                            <div class="ttr-post-media"> <img src="{{item.img}}" width="200" height="143" alt=""> </div>
+                                            <div class="ttr-post-info">
+                                                <div class="ttr-post-header">
+                                                    <h6 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}">{{item.title}}</a></h6>
+                                                </div>
+                                                <ul class="media-post">
+                                                    <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <!-- Side bar END -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

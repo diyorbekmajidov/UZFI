@@ -1,0 +1,84 @@
+
+
+
+{% extends "base.html" %}
+
+{% block title %}UZFI{% endblock %}
+{% block content %}
+
+{% load static %}
+{% load i18n %}
+
+<div class="page-content bg-white">
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/645361781b285.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}Mashhur talabalarimiz{% endblocktranslate %}</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-block mt-5" >
+        <div class="section-area section-sp1">
+            <div class="container">
+                <div class="row">
+                    <!-- Left part start -->
+                    <div class="col-lg-8 col-xl-8">
+
+                        <h3>{{data.student_name}}</h3>
+
+                        <div class="">
+                            <style>
+                                .splide img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            </style>
+                            <section id="main-carousel{{data.id}}" class="splide"  data-splide='{"type":"loop","perPage":1}'>
+                                <div class="splide__track">
+                                      <ul class="splide__list">
+                                          {% for item in data.img %}
+                                            <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{{item.img}}" alt="..."></li>      
+                                          {% endfor %}
+                                      </ul>
+                                </div>
+                              </section>
+                        </div>
+
+                        <!-- blog start -->
+                        <div class="recent-news blog-lg">
+                            <div class="info-bx">
+                                <ul class="media-post">
+                                    <li><i class="fa fa-calendar"></i> {{data.date_created}}</li>
+                                </ul>
+                                <h5 class="post-title">{{data.title}}</h5>
+                                {{data.body|safe}}
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                    <h6>{% blocktranslate %}BIZ BILAN BO'LING {% endblocktranslate %}</h6>
+                                    <ul class="list-inline contact-social-bx">
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                            </div>
+                        </div>
+                        <!-- blog END -->
+                    </div>
+                    <!-- Left part END -->
+                    <!-- Side bar start -->
+                    <div class="col-lg-4 col-xl-4">
+                        <aside  class="side-bar sticky-top">
+                            {% include "subtemplates/sidebar.html" %}    
+                        </aside>
+                    </div>
+                    <!-- Side bar END -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

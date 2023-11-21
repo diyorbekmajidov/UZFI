@@ -1,0 +1,902 @@
+
+{% extends "base.html" %}
+
+{% block title %}UZFI{% endblock %}
+
+{% block content %}
+
+{% load static %}
+{% load i18n %}
+{% load mathfilters %}
+
+
+<div class="page-content bg-white">
+  <!-- Main Slider -->
+  <div class="rev-slider">
+    <div
+      id="rev_slider_486_1_wrapper"
+      class="rev_slider_wrapper fullwidthbanner-container"
+      data-alias="news-gallery36"
+      data-source="gallery"
+      style="
+        margin: 0px auto;
+        background-color: #ffffff;
+        padding: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      "
+    >
+      <!-- START REVOLUTION SLIDER 5.3.0.2 fullwidth mode -->
+      <div
+        id="rev_slider_486_1"
+        class="rev_slider fullwidthabanner"
+        style="display: none"
+        data-version="5.3.0.2"
+      >
+        <ul>
+          <!-- SLIDE  -->
+          <li
+            data-index="rs-100"
+            data-transition="fade"
+            data-slotamount="default"
+            data-hideafterloop="0"
+            data-hideslideonmobile="off"
+            data-easein="default"
+            data-easeout="default"
+            data-masterspeed="default"
+            data-thumb="error-404.html"
+            data-rotate="0"
+            data-fstransition="fade"
+            data-fsmasterspeed="1500"
+            data-fsslotamount="7"
+            data-saveperformance="off"
+            data-title="A STUDY ON HAPPINESS"
+            data-param1=""
+            data-param2=""
+            data-param3=""
+            data-param4=""
+            data-param5=""
+            data-param6=""
+            data-param7=""
+            data-param8=""
+            data-param9=""
+            data-param10=""
+            data-description="Science says that Women are generally happier"
+            style="position: relative"
+          >
+
+            <video
+              playsinline
+              autoplay
+              muted
+              loop
+              id="myVideo"
+              style="
+                position: absolute;
+                min-width: 100%;
+                min-height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+              "
+            >
+              <source
+                src="{% static 'assets\bg-videos\banner.mp4' %}"
+                type="video/mp4"
+              />
+            </video>
+
+            <!-- LAYER NR. 1 -->
+            <div
+              class="tp-caption tp-shape tp-shapewrapper"
+              id="slide-100-layer-1"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['0','0','0','0']"
+              data-width="full"
+              data-height="full"
+              data-whitespace="nowrap"
+              data-type="shape"
+              data-basealign="slide"
+              data-responsive_offset="off"
+              data-responsive="off"
+              data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+              data-textAlign="['left','left','left','left']"
+              data-paddingtop="[0,0,0,0]"
+              data-paddingright="[0,0,0,0]"
+              data-paddingbottom="[0,0,0,0]"
+              data-paddingleft="[0,0,0,0]"
+              style="
+                z-index: 5;
+                background-color: rgba(2, 0, 11, 0.8);
+                border-color: rgba(0, 0, 0, 0);
+                border-width: 0px;
+              "
+            ></div>
+            <!-- LAYER NR. 2 -->
+            <div
+              class="tp-caption Newspaper-Title tp-resizeme"
+              id="slide-100-layer-2"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['top','top','top','top']"
+              data-voffset="['250','250','250','240']"
+              data-fontsize="['50','50','50','30']"
+              data-lineheight="['55','55','55','35']"
+              data-width="full"
+              data-height="none"
+              data-whitespace="normal"
+              data-type="text"
+              data-responsive_offset="on"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[0,0,0,0]"
+              data-paddingright="[0,0,0,0]"
+              data-paddingbottom="[10,10,10,10]"
+              data-paddingleft="[0,0,0,0]"
+              style="
+                z-index: 6;
+                font-family: rubik;
+                font-weight: 700;
+                text-align: center;
+                white-space: normal;
+              "
+            >
+            {% blocktranslate %}O‘ZBEKISTON - FINLANDIYA{% endblocktranslate %}
+            </div>
+
+            <!-- LAYER NR. 3 -->
+            <!-- <div class="tp-caption Newspaper-Subtitle   tp-resizeme" id="slide-100-layer-3"
+            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+            data-y="['top','top','top','top']" data-voffset="['210','210','210','210']"
+            data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+            data-responsive_offset="on"
+            data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+            data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+            data-paddingleft="[0,0,0,0]"
+            style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
+            PEDAGOGICAL INSTITUTE OF
+          </div> -->
+
+            <!-- LAYER NR. 3 -->
+            <div
+              class="tp-caption Newspaper-Subtitle tp-resizeme"
+              id="slide-100-layer-4"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['top','top','top','top']"
+              data-voffset="['320','320','320','290']"
+              data-width="['800','800','700','420']"
+              data-height="['100','100','100','120']"
+              data-whitespace="unset"
+              data-type="text"
+              data-responsive_offset="on"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[0,0,0,0]"
+              data-paddingright="[0,0,0,0]"
+              data-paddingbottom="[0,0,0,0]"
+              data-paddingleft="[0,0,0,0]"
+              style="
+                z-index: 7;
+                text-transform: capitalize;
+                white-space: unset;
+                color: #fff;
+                font-family: rubik;
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 400;
+              "
+            >
+            {% blocktranslate %}Institutning maqsadi yuqori sifatli pedagogikani rivojlantirishdir o'zbek milliyiga muvofiq mutaxassislar xususiyatlari.{% endblocktranslate %}
+            </div>
+            <!-- LAYER NR. 4 -->
+            <div
+              class="tp-caption Newspaper-Button rev-btn"
+              id="slide-100-layer-5"
+              data-x="['center','center','center','center']"
+              data-hoffset="['90','80','75','90']"
+              data-y="['top','top','top','top']"
+              data-voffset="['400','400','400','420']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-type="button"
+              data-responsive_offset="on"
+              data-responsive="off"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[12,12,12,12]"
+              data-paddingright="[30,35,35,15]"
+              data-paddingbottom="[12,12,12,12]"
+              data-paddingleft="[30,35,35,15]"
+              style="
+                z-index: 8;
+                white-space: nowrap;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+                background-color: var(--primary) !important;
+                border: 0;
+                border-radius: 30px;
+                margin-right: 5px;
+              "
+            >
+            {% blocktranslate %}QABUL{% endblocktranslate %}
+            </div>
+            <a
+              href="https://360.openconference.us/uzfi/"
+              target="__blank"
+              class="tp-caption Newspaper-Button rev-btn"
+              id="slide-100-layer-6"
+              data-x="['center','center','center','center']"
+              data-hoffset="['-90','-80','-75','-90']"
+              data-y="['top','top','top','top']"
+              data-voffset="['400','400','400','420']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-type="button"
+              data-responsive_offset="on"
+              data-responsive="off"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[12,12,12,12]"
+              data-paddingright="[30,35,35,15]"
+              data-paddingbottom="[12,12,12,12]"
+              data-paddingleft="[30,35,35,15]"
+              style="
+                z-index: 8;
+                white-space: nowrap;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+                border-radius: 30px;
+              "
+            >
+              {% blocktranslate %}VIRTUAL TUR{%endblocktranslate%}
+            </a>
+          </li>
+          <li
+            data-index="rs-200"
+            data-transition="fade"
+            data-slotamount="default"
+            data-hideafterloop="0"
+            data-hideslideonmobile="off"
+            data-easein="default"
+            data-easeout="default"
+            data-masterspeed="default"
+            data-thumb="{% static 'assets/images/slider/slide1.jpg' %}"
+            data-rotate="0"
+            data-fstransition="fade"
+            data-fsmasterspeed="1500"
+            data-fsslotamount="7"
+            data-saveperformance="off"
+            data-title="A STUDY ON HAPPINESS"
+            data-param1=""
+            data-param2=""
+            data-param3=""
+            data-param4=""
+            data-param5=""
+            data-param6=""
+            data-param7=""
+            data-param8=""
+            data-param9=""
+            data-param10=""
+            data-description="Science says that Women are generally happier"
+          >
+            <!-- MAIN IMAGE -->
+            <img
+              src="{{MAINPAGE.img}}"
+              alt=""
+              data-bgposition="center center"
+              data-bgfit="cover"
+              data-bgrepeat="no-repeat"
+              data-bgparallax="10"
+              class="rev-slidebg"
+              data-no-retina
+            />
+
+            <!-- LAYER NR. 1 -->
+            <div
+              class="tp-caption tp-shape tp-shapewrapper"
+              id="slide-200-layer-1"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['0','0','0','0']"
+              data-width="full"
+              data-height="full"
+              data-whitespace="nowrap"
+              data-type="shape"
+              data-basealign="slide"
+              data-responsive_offset="off"
+              data-responsive="off"
+              data-frames='[{"from":"opacity:0;","speed":1,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:1;","ease":"Power4.easeOut"}]'
+              data-textAlign="['left','left','left','left']"
+              data-paddingtop="[0,0,0,0]"
+              data-paddingright="[0,0,0,0]"
+              data-paddingbottom="[0,0,0,0]"
+              data-paddingleft="[0,0,0,0]"
+              style="
+                z-index: 5;
+                background-color: rgba(2, 0, 11, 0.8);
+                border-color: rgba(0, 0, 0, 0);
+                border-width: 0px;
+              "
+            ></div>
+
+            <!-- LAYER NR. 2 -->
+            <div
+              class="tp-caption Newspaper-Title tp-resizeme"
+              id="slide-200-layer-2"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['top','top','top','top']"
+              data-voffset="['250','250','250','240']"
+              data-fontsize="['30','30','30','30']"
+              data-lineheight="['55','55','55','35']"
+              data-width="full"
+              data-height="none"
+              data-whitespace="normal"
+              data-type="text"
+              data-responsive_offset="on"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[0,0,0,0]"
+              data-paddingright="[0,0,0,0]"
+              data-paddingbottom="[10,10,10,10]"
+              data-paddingleft="[0,0,0,0]"
+              style="
+                z-index: 6;
+                font-family: rubik;
+                font-weight: 700;
+                text-align: center;
+                white-space: normal;
+                text-transform: uppercase;
+              ">
+            {{MAINPAGE.title}}
+              </script>
+            </div>
+            
+            <!-- LAYER NR. 4 -->
+            <a
+              href="/{{LANGUAGE_CODE}}/news/content/{{MAINPAGE.id}}"
+              class="tp-caption Newspaper-Button rev-btn"
+              id="slide-200-layer-5"
+              data-x="['center','center','center','center']"
+              data-hoffset="['90','80','75','90']"
+              data-y="['top','top','top','top']"
+              data-voffset="['400','400','400','420']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-type="button"
+              data-responsive_offset="on"
+              data-responsive="off"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[12,12,12,12]"
+              data-paddingright="[30,35,35,15]"
+              data-paddingbottom="[12,12,12,12]"
+              data-paddingleft="[30,35,35,15]"
+              style="
+                z-index: 8;
+                white-space: nowrap;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+                background-color: var(--primary) !important;
+                border: 0;
+                border-radius: 30px;
+                margin-right: 5px;
+              "
+            >
+            {% blocktranslate %}Davomini o'qish{%endblocktranslate%}
+            </a>
+            <a
+              href="/{{LANGUAGE_CODE}}/news/content/"
+              class="tp-caption Newspaper-Button rev-btn"
+              id="slide-200-layer-6"
+              data-x="['center','center','center','center']"
+              data-hoffset="['-90','-80','-75','-90']"
+              data-y="['top','top','top','top']"
+              data-voffset="['400','400','400','420']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-type="button"
+              data-responsive_offset="on"
+              data-responsive="off"
+              data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+              data-textAlign="['center','center','center','center']"
+              data-paddingtop="[12,12,12,12]"
+              data-paddingright="[30,35,35,15]"
+              data-paddingbottom="[12,12,12,12]"
+              data-paddingleft="[30,35,35,15]"
+              style="
+                z-index: 8;
+                white-space: nowrap;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+                border-radius: 30px;
+              "
+            >
+              
+              {% blocktranslate %}Barcha Yangiliklar{%endblocktranslate%}
+            </a>
+          </li>
+          <!-- SLIDE  -->
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+  </div>
+
+  <!-- Main Slider -->
+  <div class="content-block">
+    <!--First suggestions -->
+    <div class="section-area content-inner service-info-bx">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="service-bx">
+              <div class="action-box">
+                <img
+                  src="{% static 'assets/images/interactive.jpg' %}"
+                  alt=""
+                />
+              </div>
+              <div class="info-bx text-center">
+                <div class="feature-box-sm radius bg-white">
+                  <i class="fa fa-cog text-primary"></i>
+                </div>
+                <h4>
+                  <a href="https://interactive.uzfi.uz/"
+                    > {% blocktranslate %}Interaktiv xizmatlar{% endblocktranslate %}
+                    </a
+                  >
+                </h4>
+                <a
+                  href="https://interactive.uzfi.uz/"
+                  class="btn radius-xl"
+                  target="__blank"
+                  >{% blocktranslate %}BORISH{%endblocktranslate%}</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="service-bx">
+              <div class="action-box">
+                <img
+                  src="{% static 'assets/images/e-library.png' %}"
+                  alt=""
+                />
+              </div>
+              <div class="info-bx text-center">
+                <div class="feature-box-sm radius bg-white">
+                  <i class="fa fa-book text-primary"></i>
+                </div>
+                <h4><a href="https://library.uzfi.uz/">
+                  {% blocktranslate %}e-Kutubxona{% endblocktranslate %}
+                </a></h4>
+                <a href="https://library.uzfi.uz/" class="btn radius-xl"
+                  >{% blocktranslate %}KO'PROQ KO'RISH{%endblocktranslate%}</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="service-bx m-b0">
+              <div class="action-box">
+                <img
+                  src="{% static 'assets/images/appeal.png' %}"
+                  alt=""
+                />
+              </div>
+              <div class="info-bx text-center">
+                <div class="feature-box-sm radius bg-white">
+                  <i class="fa fa-file-text-o text-primary"></i>
+                </div>
+                <h4>
+                  <a href="https://interactive.uzfi.uz/acceptance"
+                    >{% blocktranslate %}Rahbariyatga murojaat{% endblocktranslate %}
+                    </a
+                  >
+                </h4>
+                <a
+                  href="https://interactive.uzfi.uz/acceptance"
+                  class="btn radius-xl"
+                  >{% blocktranslate %}BORISH{%endblocktranslate%}</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--First suggestions END -->
+
+    <!-- #faculties  -->
+    <div class="section-area section-sp2 faculties" id="faculties_page">
+      <div class="container heading-bx left">
+        <h2 class="title-head">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</h2>
+        <p>{% blocktranslate %}O‘zbekiston-Finlyandiya instituti fakultet tarkibi.{%endblocktranslate%}</p>
+      </div>
+
+      <div class="container text-center">
+        <div class="row">
+          
+          {% for i in faculty %}
+          
+          <div class="col-md-6 faculty-item-bg">
+              <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.id}}/">
+            <div
+              class="faculty-item-hover my-3 rounded"
+              style="
+                background: url({{i.img}});
+                background-position: center center;
+              "
+            >
+              <div class="py-5 rounded faculty-item">
+                <div class="text-center">
+                  {{ i.name }}
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+          
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+    <!-- #faculties end  -->
+
+    <!-- Destinations -->
+    <div
+      id="destinations"
+      class="section-area section-sp2 popular-courses-bx"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 heading-bx left">
+            <h2 class="title-head">
+              {% blocktranslate %}Institut yo'nalishlari{%endblocktranslate%}
+            </h2>
+            <p>
+              {% blocktranslate %}O'zbekistonning boy madaniyati va beg'ubor tabiati bilan tanishing Institutda Finlyandiyaning tabiiy go'zalligi, Sharqiy va G'arb unutilmas ta'lim sayohatini taklif qilish uchun birlashadi{%endblocktranslate%}
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0 put-destinations"
+          >
+          {% for i in direction %}
+             <div class="item">
+									<div class="cours-bx">
+										<div class="action-box" style="position: relative;overflow: hidden; width: auto; height: 190px;">
+											<img src="{{i.img}}" alt="">
+											<a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/" class="btn">{% blocktranslate %}Ko'proq o'qish{%endblocktranslate%}</a>
+										</div>
+										<div class="info-bx text-center" style="height: 160px;">
+											<h5><a href="/{{LANGUAGE_CODE}}/uzfi/direction/{{i.id}}/">{{i.name}}</a></h5>
+											<span><a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.faculty.id}}/">{{i.faculty.name}}</a></span>
+										</div>
+										
+									</div>
+								</div> 
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Destinations END -->
+
+    <!-- Informations END -->
+    
+    <div class="container">
+      <div class="container heading-bx left">
+        <h2 class="title-head">{% blocktranslate %}Universitetning asosiy ko'rsatkichlari{%endblocktranslate%}</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right" style="background-image: url({% static 'assets\images\645361781b285.jpg' %}); padding:0; background-size: cover;">
+          <div style="background-color: #090a097a; height: 100%; width:100%" > 
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div id="information" data-aos="fade-left">
+            <div class="info-row">
+    
+              <div class="info-col">
+                <div class="info-inner-col">
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</div>
+                  <div class="info-inner-row-item text-primary lg-1">{{indicators.response_structure.3.count}}</div>
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Kafedralar{%endblocktranslate%}</div>
+                  <lg-2 class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.4.count}}</lg-2>
+                </div>
+                <div class="info-inner-col">
+    
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Bo'limlar va markazlar{%endblocktranslate%}</div>
+                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.5.count}}</div>
+                </div>
+              </div>
+              <div class="info-col">
+                <div class="info-inner-col">
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Seminar xonalar{%endblocktranslate%}</div>
+                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.1.count}}</div>
+                  
+      
+                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Ma’ruza xonalar{%endblocktranslate%}</div>
+                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.2.count}}</div>
+                </div>
+                <div class="info-inner-col">
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Laboratoriya xonalar{%endblocktranslate%}</div>
+                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.3.count}}</div>
+    
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Amaliyot xonalar{%endblocktranslate%}</div>
+                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.4.count}}</div>
+                </div>
+              </div>
+              
+              
+      
+            </div>
+            
+            <div class="info-row">
+              <div class="info-col">
+                <div class="info-inner-col">
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Talabalar soni{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-1">{{indicators.response_talabalar.Erkak|addition:indicators.response_talabalar.Ayol}}</div>
+    
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Yigit{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Erkak}}</div>
+                </div>
+                <div class="info-inner-col">
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Qiz{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Ayol}}</div>
+                </div>
+              </div>
+    
+    
+              <div class="info-col">
+                <div class="info-inner-col">
+                  <div class="info-row-item text-secondary">{% blocktranslate %}O'qituvchi va professor{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-1">
+                    {% for key,value in indicators.response_xodimlar.items %}
+                      {% if key == "Asosiy ish joy" %}
+                        {{value}}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+    
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Dotsent{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Dotsent}}</div>
+                </div>
+                <div class="info-inner-col">
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Professor{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Professor}}</div>
+    
+                  <div class="info-row-item text-secondary">{% blocktranslate %}Katta o‘qituvchi{%endblocktranslate%}</div>
+                  <div class="info-row-item text-primary lg-2">
+                    {% for key,value in indicators.response_uqtuvchilar.items %}
+                      {% if key == "Katta o‘qituvchi" %}
+                        {{value}}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Informations END -->
+    
+    
+
+    <div class="section-area section-sp2 mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center heading-bx">
+            <h2 class="title-head m-b0">{% blocktranslate %}Yangiliklar{%endblocktranslate%} <span></span></h2>
+            <p class="m-b0">{% blocktranslate %}Miyani oziqlantirish uchun so'nggi yangiliklar{%endblocktranslate%} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0 m-b30"
+          >
+          
+          {% for item in  news %}
+
+          <div class="item">
+            <div class="event-bx">
+              <div class="action-box">
+                <img src="{{item.img}}" alt="">
+              </div>
+              <div class="info-bx d-flex">
+                <div class="event-info">
+                  <h4 class="event-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}/">{{item.title}}</a></h4>
+                  <ul class="media-post">
+                    <li><i class="fa fa-clock-o"></i> {{item.date_created}}</li>
+                    <li><i class="fa fa-eye"></i> {{item.views}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="/news/content/" class="btn">{% blocktranslate %}Barcha yangiliklarni ko'rish{%endblocktranslate%}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div
+      class="section-area section-sp2 bg-fix ovbl-dark pb-5"
+      style="
+        background-image: url({%static 'assets/images/sports.jpg' %});
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-white heading-bx left">
+            <h2 class="title-head text-uppercase">
+              {% blocktranslate %}Mashhur{%endblocktranslate%} <span>{% blocktranslate %}talabalarimiz{%endblocktranslate%}</span>
+            </h2>
+            <p>
+              {% blocktranslate %} Bizning g‘ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi  Respublika musobaqalarida qatnashgan talaba-sportchilar va xalqaro miqyosda ham O‘zbekistonga shon-shuhrat keltirmoqda. Biz eng yuqori darajadagi ta'lim va qo'llab-quvvatlashni ta'minlaymiz. Sportchilarimiz o‘z sport turlari bo‘yicha yuksak natijalarga erishadilar. {%endblocktranslate%}
+            </p>
+          </div>
+        </div>
+        <div
+          class="testimonial-carousel owl-carousel owl-btn-1 col-12 p-lr0"
+        >
+          
+        
+        {% for item in popular_student %}
+
+        <div class="item">
+          <div class="testimonial-bx">
+            <div class="testimonial-thumb">
+              <img
+                src="{{item.img.0.img}}"
+                alt=""
+              />
+            </div>
+            <div class="testimonial-info">
+              <a href='/{{LANGUAGE_CODE}}/news/popular-students/{{item.id}}/' class="name">{{item.student_name}}</a>
+              {% comment %} <p>-Art Director</p> {% endcomment %}
+            </div>
+            <div class="testimonial-content">
+              <p>
+                {% if item.description|length > 230 %}
+                    {{item.description|slice:230}}...
+                {% else  %}
+                    {{item.description }}
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+        </div>
+      </div>
+    </div>
+    <!-- Testimonials END -->
+
+    <div class="section-area section-sp2">
+      <div class="container">
+        <div class="heading-bx left">
+          <h2 class="m-b10 title-head">{% blocktranslate %} Rektor {% endblocktranslate %} <span> {% blocktranslate %} tashabbusi {% endblocktranslate %}</span></h2>
+        </div>
+        <div
+            class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0 put-destinations"
+          >
+          {% for i in REKTOR_TASHABBUSI %}
+             <div class="item">
+									<div class="cours-bx">
+										<div class="action-box" style="position: relative;overflow: hidden; width: auto; height: 190px;">
+											<img src="{{i.img}}" alt="">
+											<a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}/" class="btn">{% blocktranslate %}Ko'proq o'qish{%endblocktranslate%}</a>
+										</div>
+										<div class="info-bx text-center" style="height: 160px;">
+											<h5><a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}/">{{i.title}}</a></h5>
+										</div>
+										
+									</div>
+								</div> 
+          {% endfor %}
+          </div>
+      </div>
+    </div>
+
+    <!-- FAQS  News -->
+    <div class="section-area section-sp2">
+      <div class="container">
+        <div class="heading-bx left">
+          <h2 class="m-b10 title-head">{% blocktranslate %} Tez-tez so'raladigan savollarga {% endblocktranslate %} <span> {% blocktranslate %} javoblar {% endblocktranslate %}</span></h2>
+        </div>
+        <div class="ttr-accordion m-b30 faq-bx" id="accordion1">
+          <div class="panel">
+            <div class="acod-head">
+              <h6 class="acod-title">
+                <a
+                  data-toggle="collapse"
+                  href="#faq1"
+                  class="collapsed"
+                  data-parent="#faq1"
+                >
+                  {% blocktranslate %}O‘ZBEKISTON - Finlandiya pedagogika institutida oʼqish qaysi tillarda amalga oshiriladi?{% endblocktranslate %}
+                </a>
+              </h6>
+            </div>
+            <div id="faq1" class="acod-body collapse">
+              <div class="acod-content">
+                {% blocktranslate %}O‘ZBEKISTON - Finlandiya pedagogika institutida darslar oʼzbek, rus va tojik tillarida olib boriladi.{% endblocktranslate %}
+
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="acod-head">
+              <h6 class="acod-title">
+                <a
+                  data-toggle="collapse"
+                  href="#faq2"
+                  class="collapsed"
+                  data-parent="#faq2"
+                >
+                O‘ZBEKISTON - Finlandiya pedagogika institutida yotoqxona bilan taʼminlanishi qanday amalga oshiriladi?</a
+                >
+              </h6>
+            </div>
+            <div id="faq2" class="acod-body collapse">
+              <div class="acod-content">
+                
+                {% blocktranslate %}Talabalikka qabul qilingandan soʼng tegishli dekanatga yotoqxona talabnomasi bilan murojaat etiladi.{% endblocktranslate %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQS  News End -->
+  </div>
+  <!-- contact area END -->
+</div>
+
+{% endblock %}

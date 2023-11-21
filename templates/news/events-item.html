@@ -1,0 +1,56 @@
+
+
+
+{% extends "base.html" %}{% load i18n %}
+
+{% block title %}UZFI {% blocktranslate %} So'nggi tadbirlar {% endblocktranslate %}{% endblock %}
+{% block trans %}{% endblock trans %}
+{% block content %}
+
+{% load static %}
+
+
+
+<div class="page-content bg-white">
+    
+    <div class="content-block">
+        <div class="section-area section-sp1">
+            <div class="container">
+                <div class="row">
+                    <!-- Left part start -->
+                    <div>
+                        <!-- blog start -->
+                        <div class="recent-news blog-lg">
+                            <div class="info-bx">
+                                <ul class="media-post">
+                                    <li><i class="fa fa-calendar"></i> {{data.date_created}}</li>
+                                    <li><i class="fa fa-eye"></i> {{data.views}}</li>
+                                    <li><i class="fa fa-building"></i> {{data.place}}</li>
+                                </ul>
+                                <h5 class="post-title">{{data.event_name}}</h5>
+                                <img src="{{data.img}}" class="mb-3" />
+                                {{data.body|safe}}
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                    <h6>{% blocktranslate %}BIZ BILAN BO'LING {% endblocktranslate %}</h6>
+                                    <ul class="list-inline contact-social-bx">
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                            </div>
+                        </div>
+                        <!-- blog END -->
+                    </div>
+                    <!-- Left part END -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

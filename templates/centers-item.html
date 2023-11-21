@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}UZFI | {{data.name}}{% endblock %} 
+{%block content %} {% load static %} {% load i18n %}
+
+<div class="page-content">
+  <div class="page-content">
+    <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Content Box ==== -->
+  <div class="content-block">
+    <!-- FAQS  News -->
+    <div class="section-area section-sp2">
+      <div class="container">
+
+        <div class="heading-bx left">
+          <h2 class="title-head">{{data.name}}</h2>
+        </div>
+
+        
+        <div class="card p-3">
+          <div class="row">
+            <div class="col-md-4">
+              <img class="rounded" src="{{manager.img}}" width="300px" height="300px" alt="" />
+            </div>
+            <div class="col-md-8">
+              <h3>{{manager.name}}</h3>
+              <h6>{{data.name}} boshlig'i</h6>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span> {{manager.phone}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Fax: {% endblocktranslate %}</span> {{manager.phone}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span> {{manager.acceptance}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <h2 class="m-b10 title-head">{% blocktranslate %}Vazifalari{% endblocktranslate %} <span></span></h2>
+        </div>
+
+        <div class="p-3">
+          <div class="">{{data.body|safe}}</div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQS  News End -->
+
+    <!-- Our Story ==== -->
+    <div class="section-area section-sp1">
+      <div class="container"></div>
+    </div>
+    <!-- Our Story END ==== -->
+  </div>
+  <!-- Page Content Box END ==== -->
+</div>
+
+{% endblock %}

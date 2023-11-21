@@ -1,0 +1,150 @@
+{% extends "base.html" %} 
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI | Video - yangiliklar{% endblocktranslate %}{% endblock %} 
+{%block content %} {% load static %} 
+
+<div class="page-content bg-white">
+  <div class="page-content">
+    <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{% blocktranslate %}Video - yangiliklar{% endblocktranslate %}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="content-block">
+    <div class="section-area section-sp1 mx-3">
+
+        <div class="feature-filters clearfix center m-b40">
+          {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
+              {% for i in category %}
+                <a href="/{{LANGUAGE_CODE}}/news/category/{{i.id}}#news_content" class="btn" target="__blank">{{i.new_category}}</a>
+              {% endfor %}
+          {% comment %} </ul> {% endcomment %}
+        </div>
+
+        <div class="row">
+          <!-- left part start -->
+          <div class="col-lg-1 col-xl-1 col-md-1">
+          </div>
+          <div class="col-lg-8 col-xl-8 col-md-6 col-xs-12 col-sm-12">
+            <!-- blog grid -->
+            <div id="masonry" class="ttr-blog-grid-3 row" style="height:300px">
+              
+              {% for i in page_obj %}
+             
+              <div class="post action-card  col-xl-4 col-lg-4 col-md-4 col-xs-12 col-sm-12 m-b40">
+                <div class="recent-news">
+                  <div class="action-box" style="position: relative; overflow: hidden; width: auto; height: 21vh;">
+                    <a href="{{i.vedio}}" target="_blank">
+                      <img style="object-fit: cover;" src="/media/{{i.body}}" alt="" />
+                      <i class="fa fa-play-circle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; color: white;"></i>
+                    </a>
+                  </div>
+                  
+                  <div class="info-bx">
+                    <ul class="media-post">
+                      <li>
+                        <i class="fa fa-calendar"></i> {{i.date_created|date:"m.d.Y"}}
+                      </li>
+                      
+                    </ul>
+                    <p class="post-title" style="height:40px">
+                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}"
+                        >
+                        
+                         <span style="font-weight:bold"> {{i.title|truncatechars:60 }}</span>
+                     
+                        </a
+                      >
+                    </p>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+              {% endfor %}
+
+            </div>
+            <!-- blog grid END -->
+            <!-- Pagination -->
+            <div class="pagination-bx rounded-sm gray clearfix">
+              <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
+                    {% endif %}
+    
+                    {% for page in page_obj.paginator.page_range %}
+                        <li class="{% if page_obj.number == page %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
+                    {% endfor %}
+    
+                    {% if page_obj.has_next %}
+                        <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+            <!-- Pagination END -->
+          </div>
+          <!-- left part END -->
+          <!-- Side bar start -->
+          <div class="col-lg-2 col-xl-2 col-md-2 sticky-top ">
+            <aside class="side-bar ">
+              <div class="widget">
+                <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
+                <div class="search-bx style-1">
+                  <form role="search" method="post">
+                    <div class="input-group">
+                      <input
+                        name="text"
+                        class="form-control"
+                        placeholder="Tezroq toping..."
+                        type="text"
+                      />
+                      <span class="input-group-btn">
+                        <button
+                          type="submit"
+                          class="fa fa-search text-primary"
+                        ></button>
+                      </span>
+                    </div>
+                  </form>
+                </div>
+                
+              </div>
+              <hr>
+              <div class="widget recent-posts-entry ">
+                <aside  class="side-bar sticky-top">
+                  <div class="widget recent-posts-entry card  ">
+                      <div class="card-header bg-primary text-light sidebar-title">{% blocktranslate %}UNIVERSITET{% endblocktranslate %}</div>
+                      <div class="fast_sidebar card-body">
+                              <ul>
+                                <li><a href="/{{LANGUAGE_CODE}}/">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Mashhur talabalar{% endblocktranslate %}</a></li>
+                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
+                              </ul>
+                      </div>
+                  </div>
+              </aside>
+              </div>
+              <hr>
+            
+            </aside>
+          </div>
+          <!-- Side bar END -->
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

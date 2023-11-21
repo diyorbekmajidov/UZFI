@@ -1,0 +1,57 @@
+
+
+
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI  | Ochiq ma'lumotlar{% endblocktranslate %}{% endblock %}
+
+{% block content %} 
+
+{% load static %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+                <div class="row">
+
+                    {% for i in data %}
+    
+                    <div class="col-md-12 councils-item p-5 my-3">
+                            <div class="councils-item-title">
+                                <h5>{{i.name|safe}}</h5>
+                                <a target="__blank" href="{{i.pdf_file}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                            </div>
+                    </div>
+    
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}

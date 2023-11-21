@@ -1,0 +1,96 @@
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}UZFI  | {{data.name}}{% endblock %}
+
+{% block content %}
+
+{% load static %} 
+{% load i18n %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({{data.img}});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{{data.name}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="row">
+                <div class="col-md-8">
+                  
+                  {% if data  %}
+                  
+                    <div class="container">
+
+                      <div class="container heading-bx left">
+                        <div class="heading-bx left mt-5">
+                            <h2 class="title-head">{% blocktranslate %}Fakultet{% endblocktranslate %}</h2>
+                        </div>
+                        <div class="faculty-item-bg">
+                            <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{data.faculty.id}}">
+                              <div
+                                class="faculty-item-hover my-3 rounded"
+                                style="
+                                  background: url({{data.img}});
+                                  background-position: center center;
+                                "
+                              >
+                                <div class="p-5 rounded faculty-item">
+                                  <div class="h5 text-center">
+                                    {{data.faculty.name}}
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                    </div>
+                      <div class="heading-bx left mt-5">
+                              <h2 class="title-head">{% blocktranslate %}Ko'proq ma'lumot{% endblocktranslate %}</h2>
+                      </div>
+                      <div>
+                          {{data.about|safe}}
+                      </div>
+                    </div>
+                  
+                  {% else %}
+
+                  {% blocktranslate %}<h1 class="text-center">Yo'nalish mavjud emas</h1>{% endblocktranslate %}
+
+                  {% endif %}
+
+                </div>
+                <div class="col-md-4">
+                    {% include "subtemplates/sidebar.html" %}
+                </div>
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+<script>
+  const table = document.querySelectorAll('table')
+  console.log(table)
+  table.forEach(el => el.style.width = '100%')
+</script>
+
+
+{% endblock %}

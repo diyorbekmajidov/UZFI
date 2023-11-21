@@ -75,7 +75,7 @@
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 100%;
+	height: 30%;
 	z-index: 999;
 	display: none;
 	overflow: hidden;
@@ -153,6 +153,7 @@
 	color: #000;
 }
 
+
 .header-lang-bx .dropdown-menu {
 	top: 10px !important;
 	right: 0;
@@ -174,7 +175,7 @@
 	margin-right: 2px;
 }
 
-.header-lang-bx .flag.flag-uk:after {
+.header-lang-bx .flag.flag-en:after {
 	background-image: url(../images/flag/united-kingdom.svg);
 }
 
@@ -2281,14 +2282,7 @@ button.back-to-top {
 	padding: 20px 0 0 0;
 }
 
-.blog-post .post-title,
-.recent-news .post-title {
-	font-size: 24px;
-	margin-top: 0px;
-	margin-bottom: 6px;
-	font-family: roboto;
-	line-height: 34px;
-}
+
 
 .recent-news .info-bx {
 	padding: 20px;
@@ -2561,13 +2555,13 @@ button.back-to-top {
 
 /* section space */
 .section-sp1 {
-	padding-top: 80px;
-	padding-bottom: 50px;
+	/* padding-top: 80px; */
+	/* padding-bottom: 50px; */
 }
 
 .section-sp2 {
 	padding-top: 80px;
-	padding-bottom: 80px;
+	/* padding-bottom: 80px; */
 }
 
 .section-sp3 {
@@ -2598,6 +2592,11 @@ button.back-to-top {
 /* Event Box */
 .event-bx {
 	box-shadow: 0 0 15px 0 rgba(29, 25, 0, 0.25);
+	transition: .3s;
+	cursor: pointer;
+}
+.event-bx.news-content:hover {
+	transform: translateY(-3px);
 }
 
 .upcoming-event-carousel {
@@ -4047,10 +4046,24 @@ button.back-to-top {
 
 
 /* Faculties */
-.faculties .faculty-item {
+.faculty-item-bg a {
+	min-width: 100%;
+	display: inline-block;
+}
+.faculty-item-hover, .faculty-item, .faculty-item-bg a {
+	min-height: 100%;
+
+}
+.faculty-item {
 	cursor: pointer;
 	background-color: rgba(2, 0, 11, 0.8);
 	color: #ffffff;
+}
+.faculty-item-bg {
+	transition: .3s;
+}
+.faculty-item-bg:hover  {
+	transform: translateY(-3px);
 }
 
 
@@ -4080,12 +4093,66 @@ button.back-to-top {
 
 .councils-item {
 	/* box-shadow: 0 0 25px 0 rgba(29, 25, 0, 0.25); */
-	border: 1px solid rgba(159,171,185,.2);
-	background-color: #f9fafc;
 	cursor: pointer;
 	transition: all 0.5s;
 }
 
-.councils-item:hover {
+.user-info-card {
+	transition: .2s;
+}
+
+.councils-item:hover, .user-info-card:hover {
 	transform: translateY(-3px);
+}
+
+#masonry {
+	list-style-type: none!important;
+}
+
+.centers, .departments {
+
+	transition: .2s;
+}
+
+.centers:hover {
+	border-bottom: 1px solid black;
+}
+
+.departments:hover {
+	border-left: 1px solid black;
+}
+.required::after {
+	content: ' *';
+	color: red;
+  }
+
+  #information {
+	box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  }
+
+  #information .lg-1 {
+	font-size: 50px;
+	font-weight: 700;
+  }
+
+  #information .lg-2 {
+	font-size: 30px;
+  }
+
+#information .info-row:nth-of-type(1){
+	border-bottom: 1px solid gray;
+}
+
+#information .info-row .info-col {
+	padding: 20px;
+}
+
+#information .info-row .info-col, #information .info-row .info-inner-col{
+	display: inline-block;
+	width: 49%;
+	box-sizing: border-box;
+}
+
+#information .info-row .info-col:nth-of-type(1), #information .info-row .info-inner-col:nth-of-type(4) {
+	border-right: 1px solid gray;
 }

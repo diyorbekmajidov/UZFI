@@ -3,6 +3,11 @@
     overflow: hidden;
     position: relative;
 }
+
+.upcoming-event-carousel .action-box {
+    width: 554px !important;
+    height: 370px !important;
+}
 .ttr-box:hover .ttr-info-has,
 .action-box:hover .ttr-info-has {
     opacity: 1;

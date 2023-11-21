@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,14 +26,16 @@ SECRET_KEY = 'django-insecure-n7n#2gfmi$$h4in)l1dkm#gk%t%^5t=8no&qd&v4jsz5epegjp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = 'UZFI.User'
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000/']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'jazzmin',
+    'mathfilters',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,9 +51,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'UZFI.apps.UzfiConfig',
     'News.apps.NewsConfig',
-
-
-    'uzfiFront.apps.UzfifrontConfig'
+    'International.apps.InternationalConfig'
 ]
 
 
@@ -81,13 +82,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/uzfi/login/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 ROOT_URLCONF = 'core.urls'
-import os
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'uzfiFront/templates/')],
+        'DIRS': [os.path.join(BASE_DIR,'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,10 +137,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
+from django.utils.translation import gettext_lazy as _
+MODELTRANSLATION_DEFAULT_LANGUAGE  = ('uz')
 
-LANGUAGE_CODE = 'uz'
+LANGUAGE_CODE = 'uz-uz'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -147,18 +151,19 @@ USE_L10N = True
 USE_TZ = True
 
 
-gettext = lambda s: s
+
 LANGUAGES = (
-    ('uz',  gettext('Uzbek')),
-    ('ru',  gettext('Russian')),
-    ('en',  gettext('English')),
-    
+    ('uz',  _('Uzbek')),
+    ('ru',  _('Russian')),
+    ('es',  _('Spanish')),
 )
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
-MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+
+MODELTRANSLATION_LANGUAGES = ('es', 'uz', 'ru')
+
+
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 
@@ -166,7 +171,6 @@ LOCALE_PATHS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-import os
 STATIC_URL = 'static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')

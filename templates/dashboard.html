@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block title %}UZFI{% endblock %}
+{% block trans %}{% endblock trans %}
+{% block content %}
+
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<div class="page-content bg-white">
+    <div class="content-block">
+        <!-- About Us -->
+        <div class="section-area section-sp1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+                        <div class="profile-bx text-center">
+
+                                <img src="{{data.img}}" alt="{{data.name}}" />
+
+                            <div class="profile-info">
+                                <h4>{{data.first_name}}</h4>
+                                <span>{{data.email}}</span>
+                            </div>
+                            <div class="profile-social">
+                                {% if data.dekan.role == 'DEKAN' %}
+                                    <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{data.faculty.id}}/">{{data.faculty.name}}</a>
+                                {% else %}
+                                    {{data.rector.role}}
+                                {% endif %} 
+                            </div>
+
+
+                            <div class="profile-tabnav">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#courses"><i
+                                                class="ti-book"></i>{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#edit-profile"><i
+                                                class="ti-pencil-alt"></i>{% blocktranslate %}Ilmiy ish sozlamalri{% endblocktranslate %}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dashboard Bio -->
+                    <div class="col-lg-9 col-md-8 col-sm-12 m-b30">
+                        <div class="profile-info">
+                            <div class="profile-info-head">
+                                <button id="profileInfoMissionsBTN" class="profileInfoBTN" data-for="profileInfoMissions">{% blocktranslate %}Vazifalar{% endblocktranslate %}</button>
+                                <button id="profileInfoBioBTN" class="profileInfoBTN"  data-for="profileInfoBio">{% blocktranslate %}Biografiya{% endblocktranslate %}</button>
+                                <button id="profileInfoCompletedMissionsBTN" class="profileInfoBTN"  data-for="profileInfoCompletedMissions">{% blocktranslate %}Scientific activity{% endblocktranslate %}</button>
+                            </div>
+                            <div class="profile-info-body">
+                                <div id="profileInfoMissions">
+                                    
+                                    {{ data.duties|safe }}
+
+                                </div>
+                                <div id="profileInfoBio">
+                                    {{data.biography|safe}}
+                                </div>
+                                <div id="profileInfoCompletedMissions">
+                                    <table class="table table-striped">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">{% blocktranslate %}Nomi{% endblocktranslate %}</th>
+                                            <th scope="col">{% blocktranslate %}Darajasi{% endblocktranslate %}</th>
+                                            <th scope="col">{% blocktranslate %}Chop etilgan sana{% endblocktranslate %}</th>
+                                            <th scope="col">{% blocktranslate %}Yukalsh{% endblocktranslate %}/th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in scientificwork %}
+                                                <tr>
+                                                    <th scope="row">{{item.id}}</th>
+                                                    <td>{{item.article_name}}</td>
+                                                    <td>{{item.article_level}}</td>
+                                                    <td>{{item.publication_date}}</td>
+                                                    <td><a target="_blank" href="{{item.pdf_file}}"><i class="fa fa-file-pdf-o"></i></a></td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News -->
+                    <div class="col-md-12">
+                        <div class="profile-content-bx">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="courses">
+                                    <div class="profile-head">
+                                        <h3>{% blocktranslate %}Tegishli yangiliklar{% endblocktranslate %}</h3>
+                                    </div>
+                                    <div class="courses-filter">
+                                        <div class="clearfix">
+                                            <ul id="masonry" class="ttr-gallery-listing magnific-image row">
+                                                {% for i in data_news %}
+                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
+                                                        <a class="cours-bx" href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}/">
+                                                            <div class="action-box">
+                                                                <img src="{{i.img}}" alt="{{i.title}}">
+                                                            </div>
+                                                            <div class="info-bx text-center">
+                                                                <h5>{{i.title}}</h5>
+                                                            </div>
+                                                            <div class="cours-more-info">
+                                                                {{i.date_created}}
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="tab-pane" id="edit-profile">
+                                    <div class="profile-head">
+                                        <h3>{% blocktranslate %}Ilmiy ishlar sozlamalri{% endblocktranslate %}</h3>
+                                        
+                                        
+                                        
+                                         
+                                        
+                                        
+                                    </div>
+                                    <form class="edit-profile" method="post" enctype="multipart/form-data" action="/{{LANGUAGE_CODE}}/uzfi/scientificwork/">
+                                        {% csrf_token %}
+                                        <div class="">
+                                            <div class="form-group row">
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
+                                                    <input type="text" name="id" id="id" style="display: none;" value="{{data.rector.id}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
+                                                    <h3>{% blocktranslate %}Ilmiy ish yuklash{% endblocktranslate %}</h3>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Nomi UZ{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="article_name_uz">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Nomi EN{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="article_name_en">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Nomi RU{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="article_name_ru">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Darajasi UZ{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="article_level_uz">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Darajasi EN{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="article_level_en">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Darajasi RU{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="article_level_ru">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Link</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="text" name="link">
+                                                    <span class="help">{% blocktranslate %}Majburiy emas{% endblocktranslate %}</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Fayl{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="file" name="pdf_file">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label required">{% blocktranslate %}Chop etilgam sana{% endblocktranslate %}</label>
+                                                <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                    <input class="form-control" type="datetime" name="publication_date">
+                                                </div>
+                                            </div>
+
+                                            <div class="seperator"></div>
+                                        </div>
+                                        <div class="">
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-3 col-md-3 col-lg-2">
+                                                    </div>
+                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
+                                                        <button type="submit" class="btn">{% blocktranslate %}Save changes{% endblocktranslate %}</button>
+                                                        <button type="reset" class="btn-secondry">{% blocktranslate %}Bekor qilish<{% endblocktranslate %}/button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- News Bank -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact area END -->
+</div>
+
+{% endblock %}

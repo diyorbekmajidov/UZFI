@@ -1,0 +1,57 @@
+
+
+
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI  | Rekvizitlar{% endblocktranslate %}{% endblock %}
+
+{% block content %}
+
+{% load static %} 
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+
+            <h5>{{data.unversit_name}}</h5> 
+            <h5 >{% blocktranslate %}Manzil:{% endblocktranslate %}<span class="text-secondary">{{data.address}}</span></h5> 
+            <h5 >{% blocktranslate %}Telefon: {% endblocktranslate %}<span class="text-secondary">{{data.phone}}</span></h5> 
+            <h5 >{% blocktranslate %}Fax: {% endblocktranslate %}<span class="text-secondary">{{data.email}}</span></h5> 
+            <h5 >{% blocktranslate %}Hisob raqami: {% endblocktranslate %}<span class="text-secondary">{{data.bank_account}}</span></h5> 
+            <h5 >{% blocktranslate %}Bank: {% endblocktranslate %}<span class="text-secondary">{{data.fax}}</span></h5> 
+            <h5 >{% blocktranslate %}MFO: {% endblocktranslate %}<span class="text-secondary">{{data.bank}}</span></h5> 
+            <h5 >{% blocktranslate %}Shx/r: {% endblocktranslate %}<span class="text-secondary">{{data.mfo}}</span></h5> 
+            <h5 >{% blocktranslate %}INN: {% endblocktranslate %}<span class="text-secondary">{{data.INN}}</span></h5> 
+            <h5 >{% blocktranslate %}OKONX: {% endblocktranslate %}<span class="text-secondary">{{data.OKONX}}</span></h5></div>
+
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}

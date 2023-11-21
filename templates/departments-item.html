@@ -1,0 +1,119 @@
+{% extends "base.html" %} 
+{% load i18n %}
+{% block title %}UZFI | {% blocktranslate %}Kafedra{% endblocktranslate %}{% endblock %} 
+{%block content %} {% load static %} 
+
+
+<div class="page-content">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Page Heading Box ==== -->
+  <div
+    class="page-banner ovbl-dark"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+  >
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{{data.name}}</h1>
+      </div>
+    </div>
+  </div>
+  <!-- Page Heading Box END ==== -->
+
+  <!-- Page Content Box ==== -->
+  <div class="content-block">
+    <!-- FAQS  News -->
+    <div class="section-area section-sp2">
+      <div class="container">
+        
+
+        <ul class="nav nav-pills mt-5 mb-4 ">
+          <li class="nav-item mr-2">
+            <a class="nav-link active" data-bs-toggle="pill" href="#home">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link" data-bs-toggle="pill" href="#menu2">{% blocktranslate %}Kafedra Mudiri{% endblocktranslate %}</a>
+          </li>
+        </ul>
+
+
+        {% comment %} <div class="heading-bx left mt-5">
+          <h2 class="title-head">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</h2>
+        </div> {% endcomment %}
+
+        
+        <div class="tab-content">
+          <div class="tab-pane container fade" id="home">
+            <div class="heading-bx left">
+              <h2 class="title-head">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</h2>
+            </div>
+            <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
+          </div>
+          <div class="tab-pane container fade" id="menu2">
+            <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">
+              <div class="heading-bx left">
+                <h2 class="title-head">{% blocktranslate %}Kafedra mudiri{% endblocktranslate %}</h2>
+              </div>
+      
+              <div class="card">
+                <div class="row p-3">
+                  <div class="col-md-4">
+                    <img class="rounded" src="{{manager.img}}" alt="" />
+                  </div>
+                  <div class="col-md-8">
+                    <a href="/{{LANGUAGE_CODE}}/uzfi/department-manager/{{manager.id}}"><h3>{{manager.name}}</h3></a>
+                    
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
+                    </div>
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
+                      {{manager.phone}}
+                    </div>
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span>
+                      {{manager.acceptance}}
+                    </div>
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- FAQS  News End -->
+
+    <!-- Our Story ==== -->
+    <div class="section-area section-sp1">
+      <div class="container"></div>
+    </div>
+    <!-- Our Story END ==== -->
+  </div>
+  <!-- Page Content Box END ==== -->
+</div>
+<script>
+  const boldTexts = document.querySelectorAll('strong')
+  
+  boldTexts.forEach(el => {
+    el.style.position = 'relative'
+    el.style.display = 'flex';
+    el.style.alignItems = 'center';
+    const div = document.createElement('div')
+    div.style.minWidth = '20px'
+    div.style.width = "20px"
+    div.style.height = "20px"
+    div.style.borderRadius = "10px"
+    div.style.background = '#f7b205'
+    div.style.position = 'absolute';
+    div.style.left = "-30px"
+    div.style.top = 0;
+    el.appendChild(div)
+  }) 
+  console.log(boldTexts[0])
+</script>
+
+{% endblock %}

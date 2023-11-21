@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% block title %}
+  UZFI | Iqtidorli talabalar
+{% endblock %} 
+
+{% block content %}
+{% load static %} {% load i18n %}
+
+ 
+
+
+  <div class="page-content bg-white">
+    <div class="page-content">
+      <div
+      class="page-banner ovbl-dark"
+      style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
+    >
+      <div class="container">
+        <div class="page-banner-entry">
+          <h1 class="text-white">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</h1>
+        </div>
+      </div>
+    </div>
+    <!-- contact area -->
+    <div class="content-block">
+      <!-- Portfolio -->
+      <div class="section-area section-sp1 gallery-bx">
+        <div class="container">
+
+          <div class="heading-bx left">
+            <h2 class="m-b10 title-head">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}<span></span></h2>
+        </div>
+          <div class="clearfix">
+            <ul id="masonry" class="ttr-gallery-listing magnific-image row">
+              {% for i in data %}
+
+                <li class="action-card col-lg-6 col-md-6 col-sm-12 mt-4">
+                  
+                  <div class="event-bx news-content">
+                    <div class="action-box">
+
+                      <section id="main-carousel{{i.id}}" class="splide">
+                        <div class="splide__track">
+                              <ul class="splide__list">
+                                  {% for item in i.img %}
+                                    <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{{item.img}}" alt="..."></li>      
+                                  {% endfor %}
+                              </ul>
+                        </div>
+                      </section>
+                      
+                      
+                      
+                    </div>
+                    <div class="info-bx d-flex">
+                      <div class="event-info">
+                        <h4 class="event-title"><a href="/{{ LANGUAGE_CODE }}/news/popular-students/{{ i.id }}">{{ i.student_name }}</a></h4>
+                        <ul class="media-post">
+                          <li>
+                            <i class="fa fa-clock-o"></i> {{ i.date_created }}
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              {% endfor %}
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- contact area END -->
+  </div>
+{% endblock %}

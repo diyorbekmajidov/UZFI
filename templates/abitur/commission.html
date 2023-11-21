@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% blocktranslate %}UZFI  | QABUL KOMISSIYASI JOYLASHUV O'RNI{% endblocktranslate %}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/645361781b285.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}QABUL KOMISSIYASI JOYLASHUV O'RNI{% endblocktranslate %}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="container px-5">
+                            <p><strong>Bizning manzil</strong></p> <p><a href="https://www.google.com/maps/place/SamDU+O'zbekiston-Finlandiya+Pedagogika+instituti/@39.671295,66.923392,15z/data=!4m5!3m4!1s0x0:0xb165c3020cfe3714!8m2!3d39.6712949!4d66.9233917?hl=en">Samarqand shahri, Spitamenshox ko&lsquo;chasi 166-uy. Sh.Rashidov nomidagi SamDU O&lsquo;zbekiston-Finlandiya pedagogika instituti, Pedagogika fakulteti binosi 101-xona</a></p> <p>&nbsp;</p> <p><strong>Murojaat uchun telefonlar:&nbsp;&nbsp;</strong><em>+998954104011&nbsp; &nbsp;</em><strong>Email:&nbsp;</strong><em>devonxona@uzfi.uz</em></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        {% include "subtemplates/sidebar.html" %}
+                    </div>
+                </div>
+
+           
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}

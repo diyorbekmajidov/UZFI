@@ -1,0 +1,86 @@
+{% extends "base.html" %} 
+{% load i18n %}
+{% block title %}{% blocktranslate %}UZFI | Yangiliklar{% endblocktranslate %}{% endblock %} 
+{% block trans %}{% endblock trans %}
+{%block content %} {% load static %} 
+
+<div class="page-content bg-white">
+  <div class="content-block">
+    <div class="section-area section-sp1">
+      <div class="container">
+
+        <div class="feature-filters clearfix center m-b40">
+          {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
+              {% for i in category %}
+                <a href="/{{LANGUAGE_CODE}}/news/category/{{i.id}}#news_content" class="btn" target="__blank">{{i.new_category}}</a>
+              {% endfor %}
+          {% comment %} </ul> {% endcomment %}
+        </div>
+
+        <div class="row">
+          <!-- left part start -->
+          <div class="col-lg-12 col-xl-12 col-md-12">
+            <!-- blog grid -->
+            <div id="masonry" class="ttr-blog-grid-3 row">
+              
+              {% for i in tutor_det %}
+
+              <div class="post action-card col-xl-4 col-lg-4 col-md-4 col-xs-12 m-b40">
+                <div class="recent-news">
+                  <div class="action-box">
+                    <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}">  <img src="{{i.img}}" alt="" /></a>
+                  </div>
+                  <div class="info-bx">
+                    <ul class="media-post">
+                      <li>
+                        <b>{{i.faculty.name}}</b> <br>
+                       
+                        
+                      </li>
+                    </ul>
+                    <h5 class="post-title">
+                      <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}">{{i.full_name}}</a
+                      >
+                    </h5>
+                    
+                    {% comment %} <div class="post-extra">
+                      <a href="/{{LANGUAGE_CODE}}/uzfi/tutor/{{i.id}}" class="btn-link">{% blocktranslate %}DAVOMINI O'QISH{% endblocktranslate %}</a>
+                    </div> {% endcomment %}
+                  </div>
+                </div>
+              </div>
+
+              {% endfor %}
+
+            </div>
+            <!-- blog grid END -->
+            <!-- Pagination -->
+            <div class="pagination-bx rounded-sm gray clearfix">
+              <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
+                    {% endif %}
+    
+                    {% for page in page_obj.paginator.page_range %}
+                        <li class="{% if page_obj.number == page %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
+                    {% endfor %}
+    
+                    {% if page_obj.has_next %}
+                        <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+            <!-- Pagination END -->
+          </div>
+          <!-- left part END -->
+          <!-- Side bar start -->
+       
+          <!-- Side bar END -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
