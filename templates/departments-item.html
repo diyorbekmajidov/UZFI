@@ -17,9 +17,6 @@
       </div>
     </div>
   </div>
-
-  {{data}}
-
   <!-- Page Heading Box END ==== -->
 
   <!-- Page Content Box ==== -->
@@ -27,35 +24,8 @@
     <!-- FAQS  News -->
     <div class="section-area section-sp2">
       <div class="container">
-        <div class="heading-bx left">
-          <h2 class="title-head">{% blocktranslate %}Kafedra mudiri{% endblocktranslate %}</h2>
-        </div>
+        
 
-        <div class="card">
-          <div class="row p-3">
-            <div class="col-md-4">
-              <img class="rounded" src="{{manager.img}}" alt="" />
-            </div>
-            <div class="col-md-8">
-              <a href="/{{LANGUAGE_CODE}}/uzfi/department-manager/{{manager.id}}"><h3>{{manager.name}}</h3></a>
-              
-              <div>
-                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
-              </div>
-              <div>
-                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
-                {{manager.phone}}
-              </div>
-              <div>
-                <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span>
-                {{manager.acceptance}}
-              </div>
-              <div>
-                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
-              </div>
-            </div>
-          </div>
-        </div>
         <ul class="nav nav-pills mt-5 mb-4 ">
           <li class="nav-item mr-2">
             <a class="nav-link active" data-bs-toggle="pill" href="#home">Kafedra haqida</a>
@@ -73,10 +43,44 @@
         
         <div class="tab-content">
           <div class="tab-pane container fade" id="home">
+            <div class="heading-bx left">
+              <h2 class="title-head">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</h2>
+            </div>
             <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
           </div>
           <div class="tab-pane container fade" id="menu2">
-            <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
+            <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">
+              <div class="heading-bx left">
+                <h2 class="title-head">{% blocktranslate %}Kafedra mudiri{% endblocktranslate %}</h2>
+              </div>
+      
+              <div class="card">
+                <div class="row p-3">
+                  <div class="col-md-4">
+                    <img class="rounded" src="{{manager.img}}" alt="" />
+                  </div>
+                  <div class="col-md-8">
+                    {{manager}}
+                    <a href="/{{LANGUAGE_CODE}}/uzfi/department-manager/{{manager.id}}"><h3>{{manager.name}}</h3></a>
+                    
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
+                    </div>
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span>
+                      {{manager.phone}}
+                    </div>
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span>
+                      {{manager.acceptance}}
+                    </div>
+                    <div>
+                      <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
