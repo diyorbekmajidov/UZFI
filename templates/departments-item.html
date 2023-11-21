@@ -5,6 +5,7 @@
 
 
 <div class="page-content">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Page Heading Box ==== -->
   <div
     class="page-banner ovbl-dark"
@@ -16,6 +17,8 @@
       </div>
     </div>
   </div>
+
+  {{data}}
 
   <!-- Page Heading Box END ==== -->
 
@@ -67,7 +70,16 @@
           <h2 class="title-head">{% blocktranslate %}Kafedra haqida{% endblocktranslate %}</h2>
         </div> {% endcomment %}
 
-        <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
+        
+        <div class="tab-content">
+          <div class="tab-pane container fade" id="home">
+            <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
+          </div>
+          <div class="tab-pane container fade" id="menu2">
+            <div class="py-3" style="border-left: 1px solid #f7b205; margin-left: -20px; padding-left: 20px">{{data.about|safe}}</div>
+          </div>
+        </div>
+
       </div>
     </div>
     <!-- FAQS  News End -->
