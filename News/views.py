@@ -16,34 +16,41 @@ class NewsPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 10000
 
-class NewsContentListAPIView(ListView):
-    
+class NewsContentListAPIView(ListView):  
     def get(self, request, *args, **kwargs):
-        category = NewsCategory.objects.all()
-        news_content = News_Content.objects.all()
-        page = Paginator(news_content, 9)
+        try:
+            category = NewsCategory.objects.all()
+            news_content = News_Content.objects.all()
+            page = Paginator(news_content, 9)
 
-        serializer1 = NewsCategorySerializer(category, many = True)
-        page_num = int(request.GET.get('page', 1))
+            serializer1 = NewsCategorySerializer(category, many = True)
+            page_num = int(request.GET.get('page', 1))
 
-        last_news = News_Content.objects.order_by('-date_created')[:3]
-        serializer3 = NewsContentSerializer(last_news, many = True)
-        return render(request, 'news/news.html', {
-            "category":serializer1.data,
-            "last_news":serializer3.data,
-            "page_obj":page.page(page_num)})
+            last_news = News_Content.objects.order_by('-date_created')[:3]
+            serializer3 = NewsContentSerializer(last_news, many = True)
+            return render(request, 'news/news.html', {
+                "category":serializer1.data,
+                "last_news":serializer3.data,
+                "page_obj":page.page(page_num)})
+        except Exception as e:
+                print(e)
+                return render(request,'news/news.html')
+            
 
 class NewsContentCategoryAPIView(ListView):
     def get(self, request, category):
-
-        all_category = NewsCategory.objects.all()
-        cat = NewsCategory.objects.filter(id=category).last()
-        data = News_Content.objects.filter(category=cat)
-        serializer1 = NewsCategorySerializer(all_category, many = True)
-        page = Paginator(data, 9)
-        page_num = int(request.GET.get('page', 1))
-            
-        return render(request, 'news/news-category.html', {"page_obj":page.page(page_num), "category":serializer1.data, "current":cat.new_category})
+        try:
+            all_category = NewsCategory.objects.all()
+            cat = NewsCategory.objects.filter(id=category).last()
+            data = News_Content.objects.filter(category=cat)
+            serializer1 = NewsCategorySerializer(all_category, many = True)
+            page = Paginator(data, 9)
+            page_num = int(request.GET.get('page', 1))
+                
+            return render(request, 'news/news-category.html', {"page_obj":page.page(page_num), "category":serializer1.data, "current":cat.new_category})
+        except Exception as e:
+                print(e)
+                return render(request,'news/news-category.html')
 
 
 class NewsContentApiviewGet(TemplateView):
@@ -59,14 +66,14 @@ class NewsContentApiviewGet(TemplateView):
                                                   "latest":serializer_class.data})
 
 class PopularStudentsApiView(TemplateView):
-        def get(self, request):
-            try:
-                populars = PopularStudents.objects.all()
-                serializers = PopularStudentsSerializer(populars, many = True)
-                return  render(request, 'news/popular-students.html', {"data":serializers.data,})
-            except Exception as e:
-                print(e)
-                return render(request,'news/popular-students.html')
+    def get(self, request):
+        try:
+            populars = PopularStudents.objects.all()
+            serializers = PopularStudentsSerializer(populars, many = True)
+            return  render(request, 'news/popular-students.html', {"data":serializers.data,})
+        except Exception as e:
+            print(e)
+            return render(request,'news/popular-students.html')
             
 class PopularStudentsById(TemplateView):
     def get(self, request, pk):
@@ -156,7 +163,7 @@ class PendingEventByIdApiviews(TemplateView):
             return render(request, 'news/events-item.html', {"data":serializers.data, "latest":serializer_class.data})
         except Exception as e:
             print(e)
-            return render(request,'50x.error.html')
+            return render(request,'news/events-item.html')
 
 class PendingEventSearchApiviews(ListAPIView):
     def get(self, request, text):
@@ -169,6 +176,10 @@ class PendingEventSearchApiviews(ListAPIView):
         
 class Contact(TemplateView):
     def get(self, request):
-        contact = Requisites.objects.all()
-        serializers = RequisitesSerializer(contact, many = True)
-        return render(request, 'news/contacts.html', {"data":serializers.data})
+        try:
+            contact = Requisites.objects.all()
+            serializers = RequisitesSerializer(contact, many = True)
+            return render(request, 'news/contacts.html', {"data":serializers.data})
+        except Exception as e:
+            print(e)
+            return render(request,'news/contacts.html')
