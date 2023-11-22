@@ -33,8 +33,8 @@ class NewsContentListAPIView(ListView):
                 "last_news":serializer3.data,
                 "page_obj":page.page(page_num)})
         except Exception as e:
-                print(e)
-                return render(request,'news/news.html')
+            print(e)
+            return render(request,'news/news.html')
             
 
 class NewsContentCategoryAPIView(ListView):
@@ -49,8 +49,8 @@ class NewsContentCategoryAPIView(ListView):
                 
             return render(request, 'news/news-category.html', {"page_obj":page.page(page_num), "category":serializer1.data, "current":cat.new_category})
         except Exception as e:
-                print(e)
-                return render(request,'news/news-category.html')
+            print(e)
+            return render(request,'news/news-category.html')
 
 
 class NewsContentApiviewGet(TemplateView):
