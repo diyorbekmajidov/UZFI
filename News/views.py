@@ -124,18 +124,23 @@ class SearchNewsApiView(ListAPIView):
                 })
         except Exception as e:
             print(e)
-            return render(request,'50x.error.html')
+            return render(request,'news/search.html')
         
 
 class PendingEventApiviews(TemplateView):
     def get(self, request):
-        pending_events = PendingEvents.objects.all()
-        page = Paginator(pending_events, 9)
-        page_num = int(request.GET.get('page', 1))
-        serializers = PendingEventsSerializer(pending_events, many = True)
-        return render(request, 'news/events.html', {
-            "data":serializers.data,
-            "page_obj":page.page(page_num)})
+        try:
+            pending_events = PendingEvents.objects.all()
+            page = Paginator(pending_events, 9)
+            page_num = int(request.GET.get('page', 1))
+            serializers = PendingEventsSerializer(pending_events, many = True)
+            return render(request, 'news/events.html', {
+                "data":serializers.data,
+                "page_obj":page.page(page_num)})
+        except Exception as e:
+            print(e)
+            return render(request,'news/events.html')
+
     
 class PendingEventByIdApiviews(TemplateView):
     def get(self, request, pk):
