@@ -85,10 +85,14 @@ class PopularStudentsById(TemplateView):
         
 class VedioNews(TemplateView):
     def get(self, request):
-        vedio_news = Vedio_New.objects.all()
-        page = Paginator(vedio_news, 9)
-        page_num = int(request.GET.get('page', 1))
-        return render(request,'news/video-gallery.html', {"page_obj":page.page(page_num)})
+        try:
+            vedio_news = Vedio_New.objects.all()
+            page = Paginator(vedio_news, 9)
+            page_num = int(request.GET.get('page', 1))
+            return render(request,'news/video-gallery.html', {"page_obj":page.page(page_num)})
+        except Exception as e:
+            print(e)
+            return render(request,'news/video-gallery.html')
     
 class VedioNewsByID(TemplateView):
     def get(self, request,pk):
@@ -105,7 +109,7 @@ class VedioNewsByID(TemplateView):
                 "page_obj":page.page(page_num)})
         except Exception as e:
             print(e)
-            return render(request,'50x.error.html') 
+            return render(request,'news/video-gallery-item.html') 
         
 class SearchNewsApiView(ListAPIView):
     def get(self, request):
