@@ -177,8 +177,9 @@ class PendingEventSearchApiviews(ListAPIView):
 class Contact(TemplateView):
     def get(self, request):
         try:
-            contact = Requisites.objects.all()
-            serializers = RequisitesSerializer(contact, many = True)
+            contact = Requisites.objects.last()
+            serializers = RequisitesSerializer(contact)
+            print(serializers.data)
             return render(request, 'news/contacts.html', {"data":serializers.data})
         except Exception as e:
             print(e)
