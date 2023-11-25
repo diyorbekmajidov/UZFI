@@ -48,7 +48,7 @@ class FacultyAdmin(TranslationAdmin):
 
 @admin.register(Dekan)
 class DekanAdmin(TranslationAdmin):
-    list_display = ('acceptance','address','duties')
+    list_display = ('acceptance','address','duties', 'biography')
 
 @admin.register(Kafedra)
 class KafedraAdmin(TranslationAdmin):
@@ -56,7 +56,7 @@ class KafedraAdmin(TranslationAdmin):
 
 @admin.register(KafedraManager)
 class KafedraManagerAdmin(TranslationAdmin):
-    list_display = ('acceptance','address','duties')
+    list_display = ('acceptance','address','duties', "biography")
 
 @admin.register(Direction)
 class DirectionAdmin(TranslationAdmin):
