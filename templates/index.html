@@ -765,7 +765,7 @@
     <div
       class="section-area section-sp2 bg-fix ovbl-dark pb-5"
       style="
-        background-image: url({%static 'assets/images/sports.jpg' %});
+        background-image: url({% static 'assets/images/sports.jpg' %});
       "
     >
       <div class="container">
@@ -787,16 +787,16 @@
         {% for item in popular_student %}
 
         <div class="item">
-          <div class="testimonial-bx">
-            <div class="testimonial-thumb">
+          <div class="testimonial-bx"  style="height: 150px;">
+            <div class="testimonial-thumb" style="width: 100px; height: 100px;">
               <img
                 src="{{item.img.0.img}}"
                 alt=""
+                style="width: 100%; height: 100%;"
               />
             </div>
             <div class="testimonial-info">
               <a href='/{{LANGUAGE_CODE}}/news/popular-students/{{item.id}}/' class="name">{{item.student_name}}</a>
-              {% comment %} <p>-Art Director</p> {% endcomment %}
             </div>
             <div class="testimonial-content">
               <p>

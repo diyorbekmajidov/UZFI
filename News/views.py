@@ -69,7 +69,8 @@ class PopularStudentsApiView(TemplateView):
     def get(self, request):
         try:
             populars = PopularStudents.objects.all()
-            page = Paginator(populars, 9)
+            serializer = PopularStudentsSerializer(populars, many=True)
+            page = Paginator(serializer.data, 9)
             page_num = int(request.GET.get('page', 1))
             return  render(request, 'news/popular-students.html', {"page_obj":page.page(page_num)})
         except Exception as e:
