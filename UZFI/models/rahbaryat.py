@@ -58,6 +58,7 @@ class KafedraManager(models.Model):
     address        = models.CharField(max_length=100, blank=True, null=True)
     img            = models.ImageField(upload_to='img/', blank=True, null=True, validators=[validate_file_size])
     duties         = RichTextUploadingField(blank=True, null=True)
+    biography      = RichTextUploadingField(blank=True, null=True)
     date_created   = models.DateTimeField(auto_now_add=True)
     date_update    = models.DateTimeField(auto_now=True)
 
