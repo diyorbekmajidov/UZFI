@@ -39,7 +39,9 @@
                                       <ul class="splide__list">
                                           {% for item in data.img %}
                                             <li class="splide__slide">
-                                                <img src="{{item.img}}" alt="{{data.student_name}}"  style="overflow: hidden; height: 400px;" />
+                                                <div  style="overflow: hidden; height: 400px;">
+                                                    <img src="{{item.img}}" alt="{{data.student_name}}" />
+                                                </div>
                                             </li>      
                                           {% endfor %}
                                       </ul>
