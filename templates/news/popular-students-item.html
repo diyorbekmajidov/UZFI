@@ -38,7 +38,9 @@
                                 <div class="splide__track">
                                       <ul class="splide__list">
                                           {% for item in data.img %}
-                                            <li class="splide__slide" style="overflow: hidden; width:360px; height: 216px;"><img src="{{item.img}}" alt="{{data.student_name}}"  style="object-fit: cover;" /></li>      
+                                            <li class="splide__slide">
+                                                <img src="{{item.img}}" alt="{{data.student_name}}"  style="overflow: hidden; height: 400px;" />
+                                            </li>      
                                           {% endfor %}
                                       </ul>
                                 </div>
