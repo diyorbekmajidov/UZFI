@@ -24,13 +24,13 @@
             <div class="col-lg-8 col-xl-8">
               <h3>{{ data.student_name }}</h3>
 
-              <div class="text-center">
+              <div >
                 <section id="main-carousel{{ data.id }}" class="splide" data-splide='{"type":"loop","perPage":1}'>
                   <div class="splide__track">
                     <ul class="splide__list">
                       {% for item in data.img %}
                         <li class="splide__slide">
-                          <div style="overflow: hidden; height: 400px;">
+                          <div style="overflow: hidden; height: 400px; justify-content: center; display: flex;">
                             <img src="{{ item.img }}" alt="{{ data.student_name }}" />
                           </div>
                         </li>
