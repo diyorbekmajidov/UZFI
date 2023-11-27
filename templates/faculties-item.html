@@ -50,16 +50,14 @@
                     <h2 class="title-head">{% blocktranslate %}Fakultet yo'nalishlari{% endblocktranslate %}</h2>
                   </div>
                   {% for item in direction %}
-                    <a href="/{{ LANGUAGE_CODE }}/uzfi/direction/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
+                    <a href="/{{ LANGUAGE_CODE }}/uzfi/direction/{{ item.id }}" class="btn btn-secondary m-1">{{ item.name }}</a>
                   {% endfor %}
 
                   <div class="heading-bx left mt-5">
                     <h2 class="title-head">{% blocktranslate %}Kafedralar{% endblocktranslate %}</h2>
                   </div>
                   {% for item in kafedra %}
-                    <div>
-                      <a href="/{{ LANGUAGE_CODE }}/uzfi/departments/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
-                    </div>
+                      <a href="/{{ LANGUAGE_CODE }}/uzfi/departments/{{ item.id }}" class="btn btn-secondary m-1">{{ item.name }}</a>
                   {% endfor %}
                 </div>
               </div>
