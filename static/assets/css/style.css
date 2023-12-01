@@ -192,6 +192,11 @@
 	.secondary-menu {
 		margin-right: 5px;
 	}
+	.page-banner.ovbl-dark h1 {
+		font-size: 15px !important;
+		margin-top: 6rem;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
