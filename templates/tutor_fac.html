@@ -36,8 +36,10 @@
                     {% for i in faculties %}
     
                     <div  class="col-md-5 councils-item my-2 mx-1">
+                    
 
-                        <div  class="col-md-6 councils-item mb-4">
+                        
+
                             <div class="departments" style="background: url('{{i.img}}'); background-position: center center; background-size: cover; " >
                                 <div class=" d-flex align-items-center justify-content-center " style="background-color: rgba(0, 0, 0, 0.673); width:100%; height: 120px; padding: 20px">
                                     <a href="{% url 'tutor_det' i.id %}" style="">
@@ -47,7 +49,6 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
 	
                         
                             
