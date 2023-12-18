@@ -1,14 +1,19 @@
 {% extends "base.html" %} 
 {% block title %}UZFI | Kafedra{% endblock %} 
 
-{% block trans %}{% endblock trans %}
-
 {%block content %} 
 {% load static %}
 {% load i18n %}
 
 
 <div class="page-content">
+  <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %})">
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{{ kafedra_manager.name }}</h1>
+      </div>
+    </div>
+  </div>
 
   <!-- Page Content Box ==== -->
   <div class="content-block">
@@ -25,7 +30,7 @@
               <img class="rounded" src="{{kafedra_manager.img}}" alt="" />
             </div>
             <div class="col-md-8">
-              <h3>{{kafedra_manager.first_name}}</h3>
+              <h3>{{kafedra_manager.name}}</h3>
               <div>
                 <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{kafedra_manager.email}}
               </div>
