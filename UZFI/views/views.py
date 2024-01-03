@@ -34,7 +34,6 @@ class Index(TemplateView):
             url_xodimlar = 'https://student.uzfi.uz/rest/v1/public/stat-employee'
 
             try:
-                print('200')
                 response_talabalar = requests.get(url_talabalr).json()
                 response_structure = requests.get(url_structure).json()
                 response_xodimlar = requests.get(url_xodimlar).json()
@@ -47,7 +46,6 @@ class Index(TemplateView):
                     "all_students_count": response_talabalar["data"]["education_type"]["Jami"]['Erkak'] + response_talabalar["data"]["education_type"]["Jami"]['Ayol']
                 }
             except Exception as e:
-                print(e)
                 indicators = {
                     "response_talabalar": {
                         "Erkak":0,
