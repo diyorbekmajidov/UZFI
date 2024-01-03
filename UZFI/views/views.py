@@ -28,7 +28,6 @@ class Index(TemplateView):
             serializer_popular_students = PopularStudentsSerializer(popular_student, many=True)
 
             mainpage_category = NewsCategory.objects.get(new_category="MAINPAGE")
-            
 
             url_talabalr = 'https://student.uzfi.uz/rest/v1/public/stat-student'
             url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'
@@ -38,21 +37,19 @@ class Index(TemplateView):
                 response_talabalar = requests.get(url_talabalr).json()
                 response_structure = requests.get(url_structure).json()
                 response_xodimlar = requests.get(url_xodimlar).json()
-
                 indicators = {
                     "response_talabalar": response_talabalar["data"]["education_type"]["Jami"],
                     "response_structure": response_structure["data"]["departments"],
                     "response_structure1": response_structure["data"]["auditoriums"],
                     "response_xodimlar": response_xodimlar["data"]["employment_form"],
                     "response_uqtuvchilar": response_xodimlar["data"]["position"],
-                    "all_students_count": response_talabalar['Erkak'] + response_talabalar['Ayol']
+                    "all_students_count": response_talabalar["data"]["education_type"]["Jami"]['Erkak'] + response_talabalar["data"]["education_type"]["Jami"]['Ayol']
                 }
-            except:
+            except Exception as e:
                 indicators = {
                     "response_talabalar": {
                         "Erkak":0,
-                        "Ayol":0
-                    },
+                        "Ayol":0},
                     "response_structure": [
                         {'count':0},
                         {'count':0},
@@ -76,8 +73,7 @@ class Index(TemplateView):
                         "Professor":0,
                         "Katta o‘qituvchi":0
                     },
-                    "all_students_count": '000'
-                }
+                    "all_students_count": '000'}
             
             context = {"faculty":serializers.data, 
                        "direction":serializers1.data,
