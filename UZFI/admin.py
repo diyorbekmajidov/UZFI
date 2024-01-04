@@ -44,23 +44,23 @@ class RequisitesAdmin(TranslationAdmin):
 
 @admin.register(Faculty)
 class FacultyAdmin(TranslationAdmin):
-    list_display = ('name','body',)
+    list_display = ('name',)
 
 @admin.register(Dekan)
 class DekanAdmin(TranslationAdmin):
-    list_display = ('acceptance','address','duties', 'biography')
+    list_display = ('name',)
 
 @admin.register(Kafedra)
 class KafedraAdmin(TranslationAdmin):
-    list_display = ('name','about',)
+    list_display = ('name',)
 
 @admin.register(KafedraManager)
 class KafedraManagerAdmin(TranslationAdmin):
-    list_display = ('acceptance','address','duties', "biography")
+    list_display = ("name",)
 
 @admin.register(Direction)
 class DirectionAdmin(TranslationAdmin):
-    list_display = ('name','about',)
+    list_display = ('name',)
 
 @admin.register(ScientificWork)
 class ScientificWorkAdmin(TranslationAdmin):
@@ -72,11 +72,11 @@ class LeadershipAdmin(TranslationAdmin):
 
 @admin.register(CentersDepartments)
 class CentersDepartmentAdmin(TranslationAdmin):
-    list_display = ("name","body")
+    list_display = ("name",)
 
 @admin.register(CentersDepartmentsManager)
 class CentersDepartmentManagerAdmin(TranslationAdmin):
-    list_display = ("address","acceptance")
+    list_display = ("name",)
 
 
 @admin.register(Tutor)

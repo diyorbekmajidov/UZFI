@@ -36,22 +36,17 @@
                     <h2 class="m-b10 title-head">{% blocktranslate %}Markazlar {% endblocktranslate %} <span></span></h2>
                 </div>
 
-                <div class="row">
 
                     {% for i in data %}
     
-                    <div class="col-md-8 councils-item p-3 my-3 centers">
+                    <div class="councils-item my-3 p-3 centers">
                         <a href="/{{LANGUAGE_CODE}}/uzfi/centers/{{i.id}}/">
                             <div class="councils-item-title">
                                 <div class="h4">{{i.name}}</div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4">
-                        {% include 'subtemplates/sidebar.html' %}
-                    </div>
                     {% endfor %}
-                </div>
 
             </div>
         </div>
