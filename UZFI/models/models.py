@@ -106,7 +106,7 @@ class Faculty(models.Model):
         return self.name
     
 class Kafedra(models.Model):
-    # img          = models.ImageField(upload_to='img/',blank=None, null=True,validators=[validate_file_size])
+    img          = models.ImageField(upload_to='img/',blank=None, null=True,validators=[validate_file_size])
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     name         = models.CharField(max_length=100)
     about        = RichTextUploadingField(blank=True, null=True)
