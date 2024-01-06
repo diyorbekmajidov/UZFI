@@ -4,20 +4,20 @@ from modeltranslation.admin import TranslationAdmin
 
 @admin.register(InternationalRelations)
 class InternationalRelationsAdmin(TranslationAdmin):
-    list_display = ('title','body',)
+    list_display = ('title',)
 
 @admin.register(InternationalMemorandum)
 class InternationalMemorandumAdmin(TranslationAdmin):
-    list_display = ('title','body',)
+    list_display = ('title',)
 @admin.register(StudentGroups)
 class StudentGroupsAdmin(TranslationAdmin):
-    list_display = ('title','body',)
+    list_display = ('title',)
 
 class InternationalGrantImgInline(admin.TabularInline):
     model = InternationalGrantImg
 
 class InternationalGrantAdmin(TranslationAdmin):
-    list_display = ('title','body')
+    list_display = ('title',)
     inlines = [InternationalGrantImgInline]
 
 admin.site.register(InternationalGrant,InternationalGrantAdmin)

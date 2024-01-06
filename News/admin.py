@@ -17,7 +17,7 @@ class Vedio_NewAdmin(TranslationAdmin):
 
 @admin.register(PendingEvents)
 class PendingEventsAdmin(TranslationAdmin):
-    list_display = ('body','event_name')
+    list_display = ('event_name',)
 
 
 class PopularStudentImgInline(admin.TabularInline):

@@ -97,10 +97,11 @@
               <div class="widget">
                 <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
                 <div class="search-bx style-1">
-                  <form role="search" method="post">
+                  <form role="search" action="/{{LANGUAGE_CODE}}/news/searchnews/" method="get">
+                    {% csrf_token %}
                     <div class="input-group">
                       <input
-                        name="text"
+                        name="key"
                         class="form-control"
                         placeholder="Tezroq toping..."
                         type="text"

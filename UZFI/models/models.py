@@ -6,7 +6,6 @@ from django.core.exceptions import ValidationError
 
 def validate_file_size(value):
     filesize = value.size
-
     if filesize > 1000 * 1024:
         raise ValidationError("The maximum file size that can be uploaded is 1mb")
     else:
@@ -102,12 +101,13 @@ class ScientificWork(models.Model):
 class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     body = RichTextUploadingField(blank=True, null=True)
-    img  = models.ImageField(upload_to='img/',blank=True, null=True)
+    img  = models.ImageField(upload_to='img/',blank=True, null=True,validators=[validate_file_size])
 
     def __str__(self):
         return self.name
     
 class Kafedra(models.Model):
+    img          = models.ImageField(default=None, upload_to='img/', validators=[validate_file_size])
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     name         = models.CharField(max_length=100)
     about        = RichTextUploadingField(blank=True, null=True)
