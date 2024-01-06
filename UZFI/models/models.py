@@ -115,7 +115,6 @@ class Kafedra(models.Model):
     date_update  = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        
         return self.name
     
 class Direction(models.Model):
