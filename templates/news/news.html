@@ -94,30 +94,6 @@
           <!-- Side bar start -->
           <div class="col-lg-2 col-xl-2 col-md-2 sticky-top ">
             <aside class="side-bar ">
-              <div class="widget">
-                <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
-                <div class="search-bx style-1">
-                  <form role="search" action="/{{LANGUAGE_CODE}}/news/searchnews/" method="get">
-                    {% csrf_token %}
-                    <div class="input-group">
-                      <input
-                        name="key"
-                        class="form-control"
-                        placeholder="Tezroq toping..."
-                        type="text"
-                      />
-                      <span class="input-group-btn">
-                        <button
-                          type="submit"
-                          class="fa fa-search text-primary"
-                        ></button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-                
-              </div>
-              <hr>
               <div class="widget recent-posts-entry ">
                 <aside  class="side-bar sticky-top">
                   <div class="widget recent-posts-entry card  ">

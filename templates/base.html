@@ -193,7 +193,8 @@
 		</div>
 		<div class="sticky-header navbar-expand-lg">
 		  <div class="menu-bar clearfix">
-			<div class="container clearfix">
+
+			<div class=" {% if LANGUAGE_CODE == 'ru' %}mx-5 {% else %} container {% endif %} clearfix">
 			  <!-- Header Logo ==== -->
 			  <div class="menu-logo">
 				<a href="/{{LANGUAGE_CODE}}"><img src="{% static 'assets/images/uzfi.png' %}" alt="" /></a>
@@ -213,15 +214,15 @@
 				<span></span>
 			  </button>
 			  <!-- Author Nav ==== -->
-			  <div class="secondary-menu">
+			  {% comment %} <div class="secondary-menu">
 				<div class="secondary-inner">
 				  <ul>
 					<li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
 				  </ul>
 				</div>
-			  </div>
+			  </div> {% endcomment %}
 			  <!-- Search Box ==== -->
-			  <div class="nav-search-bar">
+			  {% comment %} <div class="nav-search-bar">
 				<form action="/{{LANGUAGE_CODE}}/news/searchnews/">
 				  <input
 					name="key"
@@ -233,7 +234,7 @@
 				  <span><i class="ti-search"></i></span>
 				</form>
 				<span id="search-remove"><i class="ti-close"></i></span>
-			  </div>
+			  </div> {% endcomment %}
 			  <!-- Navigation Menu ==== -->
 			  <div
 				class="menu-links navbar-collapse collapse justify-content-start"
@@ -273,7 +274,7 @@
 					</ul>
 				  </li>
 				  <li>
-					<a href="javascript:;">Axborot Xizmatlari<i class="fa fa-chevron-down"></i></a>
+					<a href="javascript:;">{% blocktranslate %}Axborot Xizmatlari{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 
 					<ul class="sub-menu">
 					  <li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
