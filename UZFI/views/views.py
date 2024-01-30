@@ -33,6 +33,7 @@ class Index(TemplateView):
             url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'
             url_xodimlar = 'https://student.uzfi.uz/rest/v1/public/stat-employee'
 
+
             try:
                 response_talabalar = requests.get(url_talabalr).json()
                 response_structure = requests.get(url_structure).json()
