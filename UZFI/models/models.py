@@ -118,7 +118,7 @@ class Kafedra(models.Model):
     
 class Direction(models.Model):
     faculty    = models.ForeignKey(Faculty, on_delete=models.CASCADE)
-    img        = models.ImageField(upload_to='img/', blank=True, null=True)
+    img        = models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size])
     name       = models.CharField(max_length=150)
     about      = RichTextUploadingField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -139,13 +139,13 @@ class CentersDepartments(models.Model):
 class CentersDepartmentsManager(models.Model):
     centers_departments = models.OneToOneField(CentersDepartments, on_delete=models.CASCADE)
     acceptance     = models.CharField(max_length=200, blank=True, null=True)
-    name                = models.CharField(max_length=100)
-    email               = models.CharField(max_length=100)
-    phone               = models.CharField(max_length=100)
-    address             = models.CharField(max_length=100)
-    img                 = models.ImageField(upload_to='img/')
-    date_created        = models.DateTimeField(auto_now_add=True)
-    date_update         = models.DateTimeField(auto_now=True)
+    name           = models.CharField(max_length=100)
+    email          = models.CharField(max_length=100)
+    phone          = models.CharField(max_length=100)
+    address        = models.CharField(max_length=100)
+    img            =models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size])
+    date_created   = models.DateTimeField(auto_now_add=True)
+    date_update    = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
