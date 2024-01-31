@@ -1,7 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from rest_framework.response import Response
-from rest_framework.generics import ListCreateAPIView,ListAPIView
+from rest_framework.generics import ListAPIView
 from django.views.generic import ListView
 from .models import *
 from .serializers import *
@@ -9,7 +8,6 @@ from django.core.paginator import Paginator
 from rest_framework.pagination import PageNumberPagination
 from UZFI.models import Requisites 
 from UZFI.serializers import RequisitesSerializer
-from django.db.models import Q
 
 class NewsPagination(PageNumberPagination):
     page_size = 1
@@ -60,7 +58,7 @@ class NewsContentApiviewGet(TemplateView):
         news_content.views = views
         news_content.save()
         serializer = NewsContentSerializer(news_content)
-        queryset = News_Content.objects.order_by('-date_created')[:10]
+        queryset = News_Content.objects.order_by('date_created')[:10]
         serializer_class = NewsContentSerializer(queryset , many = True)
         return render(request, 'news/news-item.html', {"data":serializer.data,
                                                   "latest":serializer_class.data})
@@ -159,7 +157,7 @@ class PendingEventByIdApiviews(TemplateView):
             pending_events.views = views
             serializers = PendingEventsSerializer(pending_events)
 
-            queryset = PendingEvents.objects.order_by('-date_created')[:3]
+            queryset = PendingEvents.objects.order_by('date_created')[:3]
             serializer_class = PendingEventsSerializer(queryset , many = True)
 
             return render(request, 'news/events-item.html', {"data":serializers.data, "latest":serializer_class.data})
