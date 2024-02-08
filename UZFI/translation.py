@@ -86,4 +86,4 @@ class CentersDepartmentsManagerTranslationOptions(TranslationOptions):
 
 @register(Tutor)
 class TutorTranslationOptions(TranslationOptions):
-    fields = ("address",)
+    fields = ("address","Task_tutors","general_information")

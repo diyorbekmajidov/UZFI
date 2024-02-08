@@ -40,7 +40,7 @@ class NewsContentCategoryAPIView(ListView):
         try:
             all_category = NewsCategory.objects.all()
             cat = NewsCategory.objects.filter(id=category).last()
-            data = News_Content.objects.filter(category=cat).order_by('-date_created')
+            data = News_Content.objects.filter(category=cat).order_by('date_created')
             serializer1 = NewsCategorySerializer(all_category, many = True)
             page = Paginator(data, 9)
             page_num = int(request.GET.get('page', 1))
