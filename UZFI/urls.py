@@ -13,6 +13,7 @@ from .views import (
     FacultyApview,
     FacultyByIdApview,
     DirectionApview,
+    DirectionMagistrApview,
     DekanById,
     AllDekan,
     KafedraApview,
@@ -36,6 +37,7 @@ from .views import (
 )
 
 urlpatterns = [
+    path('magistr/', DirectionMagistrApview.as_view(),),
     # path('', Index.as_view()),
     path('charter/', CharterApview.as_view(), name='charter'),
 

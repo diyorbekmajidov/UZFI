@@ -205,11 +205,20 @@ class DirectionApview(APIView):
         try :
             direction = Direction.objects.get(id=pk)
             serializers = DirectionSerializer(direction)
-            
             return render(request, 'destinations-item.html',{"data":serializers.data, })
         except Exception as e:
             print(e)
             return render(request, 'destinations-item.html')
+        
+
+class DirectionMagistrApview(APIView):
+    def  get(self, request):
+        try:
+            direction_magistr = Direction.objects.filter(direction_type='magistratura')
+            serializers = DirectionSerializer(direction_magistr,many=True)
+            return Response(serializers.data)
+        except Exception as e:
+            print(e)
 
 class KafedraApview(APIView):
     def get(self, request):
