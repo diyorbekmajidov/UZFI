@@ -120,6 +120,7 @@ class Direction(models.Model):
     faculty    = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     img        = models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size])
     name       = models.CharField(max_length=150)
+    direction_type= models.CharField(default="bakalavir", max_length=20) # direction or specialization
     about      = RichTextUploadingField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
