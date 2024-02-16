@@ -9,7 +9,7 @@ class NewsCategoryAdmin(TranslationAdmin):
 
 @admin.register(News_Content)
 class News_ContentAdmin(TranslationAdmin):
-    list_display = ('title','body',)
+    list_display = ('title',)
 
 @admin.register(Vedio_New)
 class Vedio_NewAdmin(TranslationAdmin):
