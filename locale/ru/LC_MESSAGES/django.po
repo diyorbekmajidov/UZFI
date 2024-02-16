@@ -365,7 +365,7 @@ msgstr "Адрес: г. Самарканд, улица Спитаменшох, �
 #: templates/department-manager.html:35 templates/leadership-item.html:35
 #: templates/leadership.html:55
 msgid "E-pochta: "
-msgstr "Электронная почта:"
+msgstr "Электронная почта: "
 
 #: templates/centers-item.html:40 templates/dekan.html:39
 #: templates/department-manager.html:38 templates/leadership-item.html:38
