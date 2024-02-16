@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 11:05+0500\n"
+"POT-Creation-Date: 2024-02-16 15:31+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr "Ответы на часто задаваемые вопросы"
 
 #: templates/abitur/faqs.html:15
 #, fuzzy
-msgid " Tez-tez so'raladigan savollarga javoblar"
+msgid " Tez-tez so'raladigan savollarga javoblar "
 msgstr "Ответы на часто задаваемые вопросы"
 
 #: templates/abitur/faqs.html:30 templates/index.html:849
@@ -151,9 +151,10 @@ msgstr "УСТАВ О ПРИЕМЕ"
 msgid "Javoblar varaqasi bilan ishlash"
 msgstr "Работа с листом ответов"
 
-#: templates/bachelor.html:1 templates/news/news-category.html:4
-#: templates/news/news.html:3 templates/news/popular-students.html:3
-#: templates/news/search.html:3 templates/tutors.html:3
+#: templates/bachelor.html:1 templates/magistr/mag.html:1
+#: templates/news/news-category.html:4 templates/news/news.html:3
+#: templates/news/popular-students.html:3 templates/news/search.html:3
+#: templates/tutors.html:3
 msgid "UZFI | Yangiliklar"
 msgstr "УЗФИ / Новости"
 
@@ -807,6 +808,10 @@ msgstr "Руководство"
 #: templates/magistr.html:4
 msgid "UZFI  | Magistratura"
 msgstr "УЗФИ / Магистратура"
+
+#: templates/magistr/mag.html:12
+msgid "Institut magistr ta&acute;lim yo'nalishlari"
+msgstr "Направления магистратуры института"
 
 #: templates/news/contacts.html:7
 msgid "UZFI  | Bog'lanish"

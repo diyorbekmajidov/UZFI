@@ -27,7 +27,7 @@ class Magistratura(TemplateView):
 
 class Bakalavriar(TemplateView):
     def get(self, request):
-        data = Direction.objects.all()
+        data = Direction.objects.filter(direction_type='bakalavir')
         serializers = DirectionSerializer(data, many=True)
         template_name = 'bachelor.html'
         return render(request, template_name, {"data":serializers.data})
