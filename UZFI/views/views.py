@@ -13,8 +13,6 @@ import requests
 from News.serializers import NewsContentSerializer, PopularStudentsSerializer
 
 
-
-
 class Index(TemplateView):
     def get(self, request):
         try:
@@ -216,7 +214,9 @@ class DirectionMagistrApview(APIView):
         try:
             direction_magistr = Direction.objects.filter(direction_type='magistratura')
             serializers = DirectionSerializer(direction_magistr,many=True)
-            return Response(serializers.data)
+            return render(request, 'magistr/mag.html',{
+                "data":serializers.data
+                })
         except Exception as e:
             print(e)
 
