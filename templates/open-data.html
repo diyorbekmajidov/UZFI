@@ -30,20 +30,83 @@
         <div class="section-area section-sp2">
             <div class="container">
                 <div class="row">
+<div class="col-md-9">
+    {% for i in data %}
+    
+    <div class="col-md-12 councils-item  my-3 " style="border-style: groove;border-radius: 3px;" >
+            <div class="councils-item-title">
 
-                    {% for i in data %}
-    
-                    <div class="col-md-12 councils-item p-5 my-3">
-                            <div class="councils-item-title">
-                                <h5>{{i.name|safe}}</h5>
-                                <a target="__blank" href="{{i.pdf_file}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
-                            </div>
-                    </div>
-    
-                    {% endfor %}
+                <ul >
+                    <li style="display: inline-block; "><a href="#home">  <a target="__blank"  href="{{i.pdf_file}}">  <h5 style="font-size: 19px;padding-top: 15px;">{{i.name|safe}}</h5></a></li>
+                    <li style="display: inline-block;padding-left: 10px;"><a href="#news"><i class="fa fa-file-pdf-o" style="font-size: 20px;" aria-hidden="true"></i></a></a></li>
+
+
+              
+               
+            </div>
+    </div>
+
+    {% endfor %}
+</div>
+<div class="col-md-3">
+
+    <!-- Side bar start -->
+   
+        <aside class="side-bar ">
+          <div class="widget">
+            <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
+            <div class="search-bx style-1">
+              <form role="search" method="post">
+                <div class="input-group">
+                  <input
+                    name="text"
+                    class="form-control"
+                    placeholder="Tezroq toping..."
+                    type="text"
+                  />
+                  <span class="input-group-btn">
+                    <button
+                      type="submit"
+                      class="fa fa-search text-primary"
+                    ></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+          <hr>
+          <div class="widget recent-posts-entry ">
+            <aside  class="side-bar sticky-top">
+              <div class="widget recent-posts-entry card  ">
+                  <div class="card-header bg-primary text-light sidebar-title">{% blocktranslate %}UNIVERSITET{% endblocktranslate %}</div>
+                  <div class="fast_sidebar card-body">
+                          <ul>
+                            <li><a href="/{{LANGUAGE_CODE}}/">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Mashhur talabalar{% endblocktranslate %}</a></li>
+                            <li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
+                          </ul>
+                  </div>
+              </div>
+          </aside>
+          </div>
+          <hr>
+        
+        </aside>
+     
+      <!-- Side bar END -->
+</div>
+                  
                 </div>
 
             </div>
+            
         </div>
         <!-- FAQS  News End -->
 

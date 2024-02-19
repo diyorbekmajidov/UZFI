@@ -67,7 +67,7 @@ class FinancialStatements(models.Model):
         return self.report_type
     
 class OpenData(models.Model):
-    name       = RichTextField()
+    name       = models.CharField(max_length=255)
     pdf_file   = models.FileField()
 
     def __str__(self):
