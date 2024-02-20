@@ -3,12 +3,17 @@ from .models import (
     InternationalRelations,
     InternationalMemorandum,
     InternationalGrant,
-    StudentGroups
+    StudentGroups,
+    Abitur
     )
 
 @register(InternationalRelations)
 class InternationalRelationsTranslationOptions(TranslationOptions):
     fields = ('title','body',)
+
+@register(Abitur)
+class AbiturTranslationOptions(TranslationOptions):
+    fields = ('title',"body",)
 
 @register(InternationalMemorandum)
 class InternationalMemorandumTranslationOptions(TranslationOptions):

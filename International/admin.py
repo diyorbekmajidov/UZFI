@@ -6,6 +6,10 @@ from modeltranslation.admin import TranslationAdmin
 class InternationalRelationsAdmin(TranslationAdmin):
     list_display = ('title',)
 
+@admin.register(Abitur)
+class AbiturAdmin(TranslationAdmin):
+    list_display = ('title',)
+
 @admin.register(InternationalMemorandum)
 class InternationalMemorandumAdmin(TranslationAdmin):
     list_display = ('title',)
