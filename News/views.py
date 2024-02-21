@@ -40,7 +40,7 @@ class NewsContentCategoryAPIView(ListView):
         try:
             all_category = NewsCategory.objects.all()
             cat = NewsCategory.objects.filter(id=category).last()
-            data = News_Content.objects.filter(category=cat).order_by('date_created')
+            data = News_Content.objects.filter(category=cat).order_by("date_created")[::-1]
             serializer1 = NewsCategorySerializer(all_category, many = True)
             page = Paginator(data, 9)
             page_num = int(request.GET.get('page', 1))
@@ -66,7 +66,7 @@ class NewsContentApiviewGet(TemplateView):
 class PopularStudentsApiView(TemplateView):
     def get(self, request):
         try:
-            populars = PopularStudents.objects.all()
+            populars = PopularStudents.objects.all().order_by("date_created")[::-1]
             serializer = PopularStudentsSerializer(populars, many=True)
             page = Paginator(serializer.data, 9)
             page_num = int(request.GET.get('page', 1))
@@ -93,7 +93,7 @@ class PopularStudentsById(TemplateView):
 class VedioNews(TemplateView):
     def get(self, request):
         try:
-            vedio_news = Vedio_New.objects.all()
+            vedio_news = Vedio_New.objects.all().order_by("date_created")[::-1]
             page = Paginator(vedio_news, 9)
             page_num = int(request.GET.get('page', 1))
             return render(request,'news/video-gallery.html', {"page_obj":page.page(page_num)})

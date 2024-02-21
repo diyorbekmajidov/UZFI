@@ -246,7 +246,7 @@
 				<ul class="nav navbar-nav">
 				  <li class="active">
 					<a href="javascript:;"
-					  >{% blocktranslate %}UNIVERSITET {% endblocktranslate %}<i class="fa fa-chevron-down"></i
+					  >{% blocktranslate %}Institut {% endblocktranslate %}<i class="fa fa-chevron-down"></i
 					></a>
 					<ul class="sub-menu">
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
@@ -276,7 +276,7 @@
 					</ul>
 				  </li>
 				  <li>
-					<a href="javascript:;">{% blocktranslate %}Axborot Xizmatlari{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
+					<a href="javascript:;">{% blocktranslate %}Axborot xizmatlari{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 
 					<ul class="sub-menu">
 					  <li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
@@ -308,12 +308,17 @@
 				  <li>
 					<a href="javascript:;">{% blocktranslate %}Abituriyentlarga{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 					<ul class="sub-menu">
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/regulation-on-secondary-education/">{% blocktranslate %}Ikkinchi taʼlim to‘g‘risidagi nizom{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/work-with-the-answer-sheet/">{% blocktranslate %}Javoblar varaqasi bilan ishlash{% endblocktranslate %}</a></li>
+						
+						{% for i in abt %}
+						<li><a href="/{{LANGUAGE_CODE}}/international/abitur/{{i.id}}/">{{i.title}}</a></li>
+						{% endfor%}
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faqs/">{% blocktranslate %}Tez-tez so'raladigan savollarga javoblar{% endblocktranslate %}</a></li>
+						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/regulation-on-secondary-education/">{% blocktranslate %}Ikkinchi taʼlim to‘g‘risidagi nizom{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/work-with-the-answer-sheet/">{% blocktranslate %}Javoblar varaqasi bilan ishlash{% endblocktranslate %}</a></li>
+						
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/commission/">{% blocktranslate %}Qabul komissiyasi joylashuv o'rni{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter-admission/">{% blocktranslate %}Qabul nizomi{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/admission-quota/">{% blocktranslate %}Qabul kvotasi{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/admission-quota/">{% blocktranslate %}Qabul kvotasi{% endblocktranslate %}</a></li> {% endcomment %}
 					</ul>
 				  </li>
 				
@@ -381,7 +386,7 @@
 				<div class="row">
 				  <div class="col-4 col-lg-4 col-md-4 col-sm-4">
 					<div class="widget footer_widget">
-					  <h5 class="footer-title">UNIVERSITET</h5>
+					  <h5 class="footer-title">Institut</h5>
 					  <ul>
 						<li><a href="/{{LANGUAGE_CODE}}">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>

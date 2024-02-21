@@ -2,9 +2,11 @@ from django.contrib import admin
 from .models import *
 from modeltranslation.admin import TranslationAdmin
 
-@admin.register(InternationalRelations)
-class InternationalRelationsAdmin(TranslationAdmin):
+@admin.register(InternationalRelation)
+class  InternationalRelationAdmin(TranslationAdmin):
     list_display = ('title',)
+
+
 
 @admin.register(Abitur)
 class AbiturAdmin(TranslationAdmin):

@@ -3,32 +3,45 @@ from django.views.generic import TemplateView
 from django.shortcuts import render
 from rest_framework.response import Response
 from django.views.generic import ListView
+from rest_framework.views import APIView
 from .models import *
 from .serializers import *
 from django.core.paginator import Paginator
 from rest_framework.pagination import PageNumberPagination
+   
 
+class AbiturViewsById(APIView):
+    def get(self, request, pk):
+        try:
+            abi = Abitur.objects.get(id=pk)
+            serializers = AbiturSerializers(abi)
+            return render(request, 'abitur/int_det.html',{"data":serializers.data})
+        except Exception as e:
+            return render(request,'abitur/int_det.html')
 
-class InternationalRelationsViews(TemplateView):
+class InternationalRelationViews(APIView):
     def get(self, request):
         try:
-            internations = InternationalRelations.objects.all()
-            serializers = InternationalRelationsSerializers(internations, many = True)
-            return  render(request, 'international/InternationalRelations.html', {"data":serializers.data,})
+            internations = InternationalRelation.objects.all().order_by("date_created")[::-1]
+            serializers = InternationalRelationSerializers(internations, many=True)
+            page = Paginator(serializers.data, 2)
+            page_num = int(request.GET.get('page', 1))
+            paginated_data = page.get_page(page_num)
+            # return Response(paginated_data.object_list)
+            return  render(request, 'International/InternationalNews.html', {"page_obj":page.page(page_num)})
         except Exception as e:
             print(e)
-            return render(request,'international/InternationalRelations.html')
+            return Response({"pk":200})
 
-class InternationalRelationsByIDViews(TemplateView):
-    def get(self, request, pk=1):
+class InternationalRelationByIdViews(APIView):
+    def get(self, request, pk):
         try:
-            internations = InternationalRelations.objects.filter(id=pk)
-            serializers = InternationalRelationsSerializers(internations)
-            return  render(request, '.html', {"data":serializers.data,})
+            internations = InternationalRelation.objects.get(id=pk)
+            serializers = InternationalRelationSerializers(internations)
+            return  render(request, 'International/int_det.html', {"data":serializers.data})
         except Exception as e:
             print(e)
-            return render(request,'.html')
-
+            return render(request, '.html')
 class InternationalMemorandumViews(TemplateView):
     def get(self, request):
         try:

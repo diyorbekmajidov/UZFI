@@ -9,13 +9,19 @@ def validate_file_size(value):
         raise ValidationError("The maximum file size that can be uploaded is 2mb")
     else:
         return value
+    
 
-class InternationalRelations(models.Model):
-    title = models.CharField(max_length=100)
-    body = RichTextUploadingField()
+class InternationalRelation(models.Model):
+    title         = models.CharField(max_length=255)
+    img           = models.ImageField(upload_to='img/', validators=[validate_file_size])
+    body          = RichTextUploadingField()
+    date_created  = models.DateField(auto_now_add=True)
+    date_update   = models.DateTimeField(auto_now=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.title
+
+
     
 class InternationalMemorandum(models.Model):
     title = models.CharField(max_length=100)
