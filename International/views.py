@@ -33,7 +33,7 @@ class InternationalRelationViews(APIView):
                             })
         except Exception as e:
             print(e)
-            return Response({"pk":200})
+            return  render(request, 'International/InternationalNews.html')
 
 class InternationalRelationByIdViews(APIView):
     def get(self, request, pk):
@@ -44,7 +44,7 @@ class InternationalRelationByIdViews(APIView):
             return  render(request, 'International/int_det.html', {"data":serializers.data,"last_news":last_news})
         except Exception as e:
             print(e)
-            return render(request, '.html')
+            return render(request, 'International/int_det.html')
 class InternationalMemorandumViews(TemplateView):
     def get(self, request):
         try:
