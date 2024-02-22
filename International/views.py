@@ -28,12 +28,10 @@ class InternationalRelationViews(APIView):
             page_num = int(request.GET.get('page', 1))
             
             return  render(request, 'International/InternationalNews.html', 
-                           {"page_obj":page.page(page_num),
-                            
-                            })
+                           {"page_obj":page.page(page_num)})
         except Exception as e:
             print(e)
-            return  render(request, 'International/InternationalNews.html')
+            return  render(request, '50x.error.html')
 
 class InternationalRelationByIdViews(APIView):
     def get(self, request, pk):
