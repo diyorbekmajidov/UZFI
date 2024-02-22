@@ -6,8 +6,6 @@ class InternationalRelationSerializers(serializers.ModelSerializer):
         model = InternationalRelation
         fields = "__all__"
 
-
-
 class AbiturSerializers(serializers.ModelSerializer):
     class Meta:
         model = Abitur
