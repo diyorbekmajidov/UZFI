@@ -18,7 +18,7 @@ class NewsContentListAPIView(ListView):
     def get(self, request, *args, **kwargs):
         try:
             category = NewsCategory.objects.all()
-            news_content = News_Content.objects.all()
+            news_content = News_Content.objects.all().order_by("date_created")[::-1]
             page = Paginator(news_content, 9)
 
             serializer1 = NewsCategorySerializer(category, many = True)
@@ -58,7 +58,7 @@ class NewsContentApiviewGet(TemplateView):
         news_content.views = views
         news_content.save()
         serializer = NewsContentSerializer(news_content)
-        queryset = News_Content.objects.order_by('date_created')[:10]
+        queryset = News_Content.objects.order_by("date_created")[:5:-1]
         serializer_class = NewsContentSerializer(queryset , many = True)
         return render(request, 'news/news-item.html', {"data":serializer.data,
                                                   "latest":serializer_class.data})
