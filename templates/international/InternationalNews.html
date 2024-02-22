@@ -46,7 +46,7 @@
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        <i class="fa fa-calendar"></i> {{i.date_created|date:"d.m.Y"}}
+                        <i class="fa fa-calendar"></i> {{i.date_created}}
                       </li>
                      
                     </ul>
@@ -116,7 +116,7 @@
               <div class="widget widget_tag_cloud">
 
                 
-                <h6 class="widget-title">{% blocktranslate %}Tags{% endblocktranslate %}</h6>
+                {% comment %} <h6 class="widget-title">{% blocktranslate %}Tags{% endblocktranslate %}</h6> {% endcomment %}
                 <div class="tagcloud">
 
                   

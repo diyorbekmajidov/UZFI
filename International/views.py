@@ -24,11 +24,13 @@ class InternationalRelationViews(APIView):
         try:
             internations = InternationalRelation.objects.all().order_by("date_created")[::-1]
             serializers = InternationalRelationSerializers(internations, many=True)
-            page = Paginator(serializers.data, 2)
+            page = Paginator(serializers.data, 6)
             page_num = int(request.GET.get('page', 1))
-            paginated_data = page.get_page(page_num)
-            # return Response(paginated_data.object_list)
-            return  render(request, 'International/InternationalNews.html', {"page_obj":page.page(page_num)})
+            
+            return  render(request, 'International/InternationalNews.html', 
+                           {"page_obj":page.page(page_num),
+                            
+                            })
         except Exception as e:
             print(e)
             return Response({"pk":200})
@@ -38,7 +40,8 @@ class InternationalRelationByIdViews(APIView):
         try:
             internations = InternationalRelation.objects.get(id=pk)
             serializers = InternationalRelationSerializers(internations)
-            return  render(request, 'International/int_det.html', {"data":serializers.data})
+            last_news = InternationalRelation.objects.order_by('date_created')[:3:-1]
+            return  render(request, 'International/int_det.html', {"data":serializers.data,"last_news":last_news})
         except Exception as e:
             print(e)
             return render(request, '.html')

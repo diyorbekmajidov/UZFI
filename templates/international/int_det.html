@@ -46,12 +46,7 @@
                                 {{data.body|safe}}
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 <div class="widget_tag_cloud">
-                                    <h6>Teglar</h6>
-                                    <div class="tagcloud">
-                                        {% for item in data.category %}
-                                            <a target="__blank" href="/{{LANGUAGE_CODE}}/news/category/{{item.id}}/">{{item.category}}</a> 
-                                        {% endfor %}
-                                    </div>
+                                    
                                 </div>
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                     <h6>BIZ BILAN BO'LING </h6>
@@ -73,12 +68,12 @@
                             <div class="widget recent-posts-entry">
                                 <h6 class="widget-title">{% blocktranslate %}Recent Posts{% endblocktranslate %}</h6>
                                 <div class="widget-post-bx">
-                                    {% for item in latest %}
+                                    {% for item in last_news %}
                                         <div class="widget-post clearfix">
-                                            <div class="ttr-post-media"> <img src="{{item.img}}" width="200" height="143" alt=""> </div>
+                                            <div class="ttr-post-media"> <img src="/media/{{item.img}}" width="200" height="143" alt=""> </div>
                                             <div class="ttr-post-info">
                                                 <div class="ttr-post-header">
-                                                    <h6 class="post-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}">{{item.title}}</a></h6>
+                                                    <h6 class="post-title"><a href="/{{LANGUAGE_CODE}}/international/int_det/{{item.id}}/">{{item.title}}</a></h6>
                                                 </div>
                                                 <ul class="media-post">
                                                     <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
