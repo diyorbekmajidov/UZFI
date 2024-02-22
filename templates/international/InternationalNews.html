@@ -1,6 +1,6 @@
 {% extends "base.html" %} 
 {% load i18n %}
-{% block title %}{% blocktranslate %}UZFI | Video - yangiliklar{% endblocktranslate %}{% endblock %} 
+{% block title %}{% blocktranslate %}UZFI | Yangiliklar{% endblocktranslate %}{% endblock %} 
 {%block content %} {% load static %} 
 
 <div class="page-content bg-white">
@@ -11,12 +11,12 @@
   >
     <div class="container">
       <div class="page-banner-entry">
-        <h1 class="text-white">{% blocktranslate %}Video - yangiliklar{% endblocktranslate %}</h1>
+        <h1 class="text-white">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</h1>
       </div>
     </div>
   </div>
   <div class="content-block">
-    <div class="section-area section-sp1 mx-3">
+    <div class="section-area section-sp1 mx-3 my-1">
 
         <div class="feature-filters clearfix center m-b40">
           {% comment %} <ul class="filters" data-toggle="buttons"> {% endcomment %}
@@ -32,31 +32,29 @@
           </div>
           <div class="col-lg-8 col-xl-8 col-md-6 col-xs-12 col-sm-12">
             <!-- blog grid -->
-            <div id="masonry" class="ttr-blog-grid-3 row" style="height:300px">
+            <div id="masonry" class="ttr-blog-grid-3 row">
               
               {% for i in page_obj %}
-             
+
               <div class="post action-card  col-xl-4 col-lg-4 col-md-4 col-xs-12 col-sm-12 m-b40">
                 <div class="recent-news">
-                  <div class="action-box" style="position: relative; overflow: hidden; width: auto; height: 21vh;">
-                    <a href="{{i.vedio}}" target="_blank">
-                      <img style="object-fit: cover;" src="/media/{{i.body}}" alt="" />
-                      <i class="fa fa-play-circle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; color: white;"></i>
-                    </a>
+                  <div class="action-box" style=" position: relative;overflow: hidden; width: auto; height: 190px;" >
+                    <a href="/{{LANGUAGE_CODE}}/international/int_det/{{i.id}}/"
+                    > 
+                    <img style="object-fit: cover;" src="{{i.img}}" alt="" /> </a>
                   </div>
-                  
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        <i class="fa fa-calendar"></i> {{i.date_created|date:"m.d.Y"}}
+                        <i class="fa fa-calendar"></i> {{i.date_created}}
                       </li>
-                      
+                     
                     </ul>
-                    <p class="post-title" style="height:80px">
-                      <a href="/{{LANGUAGE_CODE}}/news/video-gallery/{{i.id}}"
+                    <p class="post-title " style="height: 60px">
+                      <a href="/{{LANGUAGE_CODE}}/international/int_det/{{i.id}}/"
                         >
                         
-                         <span style="font-weight:bold"> {{i.title|truncatechars:120 }}</span>
+                            {{i.title|truncatechars:65}}
                      
                         </a
                       >
@@ -94,29 +92,6 @@
           <!-- Side bar start -->
           <div class="col-lg-2 col-xl-2 col-md-2 sticky-top ">
             <aside class="side-bar ">
-              <div class="widget">
-                <h6 class="widget-title">{% blocktranslate %}Qidiring{% endblocktranslate %}</h6>
-                <div class="search-bx style-1">
-                  <form role="search" method="post">
-                    <div class="input-group">
-                      <input
-                        name="text"
-                        class="form-control"
-                        placeholder="Tezroq toping..."
-                        type="text"
-                      />
-                      <span class="input-group-btn">
-                        <button
-                          type="submit"
-                          class="fa fa-search text-primary"
-                        ></button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-                
-              </div>
-              <hr>
               <div class="widget recent-posts-entry ">
                 <aside  class="side-bar sticky-top">
                   <div class="widget recent-posts-entry card  ">
@@ -138,7 +113,18 @@
               </aside>
               </div>
               <hr>
-            
+              <div class="widget widget_tag_cloud">
+
+                
+                {% comment %} <h6 class="widget-title">{% blocktranslate %}Tags{% endblocktranslate %}</h6> {% endcomment %}
+                <div class="tagcloud">
+
+                  
+                    {% for i in category %}
+                      <a href="/{{LANGUAGE_CODE}}/news/category/{{i.id}}#news_content"  target="__blank">{{i.new_category}}</a>
+                    {% endfor %}
+                </div>
+              </div>
             </aside>
           </div>
           <!-- Side bar END -->

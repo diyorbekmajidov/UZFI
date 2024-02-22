@@ -25,7 +25,7 @@ class PopularStudentImgInline(admin.TabularInline):
     
 
 class PopularStudentsAdmin(TranslationAdmin):
-    list_display = ('body','description')
+    list_display = ('student_name',)
     inlines = [PopularStudentImgInline]
 
 admin.site.register(PopularStudents,PopularStudentsAdmin)

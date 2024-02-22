@@ -36,7 +36,7 @@ class DocumentAdmin(TranslationAdmin):
 
 @admin.register(Councils)
 class CouncilsAdmin(TranslationAdmin):
-    list_display = ('title','body')
+    list_display = ('title',)
 
 @admin.register(Requisites)
 class RequisitesAdmin(TranslationAdmin):

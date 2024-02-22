@@ -1,9 +1,16 @@
 from rest_framework import serializers
 from .models import *
 
-class InternationalRelationsSerializers(serializers.ModelSerializer):
+class InternationalRelationSerializers(serializers.ModelSerializer):
     class Meta:
-        model = InternationalRelations
+        model = InternationalRelation
+        fields = "__all__"
+
+
+
+class AbiturSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Abitur
         fields = "__all__"
 
 class InternationalMemorandumSerializers(serializers.ModelSerializer):

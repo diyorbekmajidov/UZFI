@@ -1,14 +1,21 @@
 from modeltranslation.translator import  TranslationOptions, register
 from .models import (
-    InternationalRelations,
+    InternationalRelation,
     InternationalMemorandum,
     InternationalGrant,
-    StudentGroups
+    StudentGroups,
+    Abitur
     )
 
-@register(InternationalRelations)
-class InternationalRelationsTranslationOptions(TranslationOptions):
-    fields = ('title','body',)
+
+@register(InternationalRelation)
+class InternationalRelationTranslationOptions(TranslationOptions):
+    fields = ('title', 'body',)
+
+
+@register(Abitur)
+class AbiturTranslationOptions(TranslationOptions):
+    fields = ('title',"body",)
 
 @register(InternationalMemorandum)
 class InternationalMemorandumTranslationOptions(TranslationOptions):
