@@ -39,7 +39,7 @@ class InternationalRelationByIdViews(APIView):
             internations = InternationalRelation.objects.get(id=pk)
             serializers = InternationalRelationSerializers(internations)
             last_news = InternationalRelation.objects.order_by('date_created')[:3:-1]
-            return  render(request, 'International/int_det.html', {"data":serializers.data,"last_news":last_news})
+            return  render(request, 'international/int_det.html', {"data":serializers.data,"last_news":last_news})
         except Exception as e:
             print(e)
             return render(request, 'International/int_det.html')
