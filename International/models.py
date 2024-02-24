@@ -26,6 +26,9 @@ class InternationalRelation(models.Model):
 class InternationalMemorandum(models.Model):
     title = models.CharField(max_length=100)
     body = RichTextUploadingField()
+    img     = models.ImageField(upload_to='img/', validators=[validate_file_size])
+    date_created  = models.DateField(auto_now=True)
+    date_update   = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
         return self.title
