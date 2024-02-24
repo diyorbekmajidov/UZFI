@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-19 15:15+0500\n"
+"POT-Creation-Date: 2024-02-24 15:13+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/settings.py:159
+#: core/settings.py:160
 msgid "Uzbek"
 msgstr ""
 
-#: core/settings.py:160
+#: core/settings.py:161
 msgid "Russian"
 msgstr ""
 
-#: core/settings.py:161
+#: core/settings.py:162
 msgid "Spanish"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr "UZFI | LOCATION OF ADMISSION COMMISSION"
 msgid "QABUL KOMISSIYASI JOYLASHUV O'RNI"
 msgstr "LOCATION OF ADMISSION COMMISSION"
 
-#: templates/abitur/faqs.html:3 templates/base.html:313
+#: templates/abitur/faqs.html:3 templates/base.html:323
 msgid "Tez-tez so'raladigan savollarga javoblar"
 msgstr "Answers to frequently asked questions"
 
@@ -106,12 +106,15 @@ msgstr ""
 "After being accepted as a student, the relevant dean's office is addressed "
 "with a dormitory application."
 
+#: templates/abitur/int_det.html:3
+msgid "UZFI  | Xalqaro a'loqalar"
+msgstr "UZFI | International relations"
+
 #: templates/abitur/regulation-on-secondary-education.html:4
 msgid "UZFI  | Ikkinchi taʼlim to‘g‘risidagi nizom"
 msgstr "UZFI | Regulation on secondary education"
 
 #: templates/abitur/regulation-on-secondary-education.html:16
-#: templates/base.html:311
 msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
 msgstr "Regulation on secondary education"
 
@@ -149,14 +152,14 @@ msgid "QABUL NIZOMI"
 msgstr "REGULATION OF ADMISSION"
 
 #: templates/abitur/work-with-the-answer-sheet.html:3
-#: templates/abitur/work-with-the-answer-sheet.html:14 templates/base.html:312
+#: templates/abitur/work-with-the-answer-sheet.html:14
 msgid "Javoblar varaqasi bilan ishlash"
 msgstr "Work with the answer sheet"
 
-#: templates/bachelor.html:1 templates/magistr/mag.html:1
-#: templates/news/news-category.html:4 templates/news/news.html:3
-#: templates/news/popular-students.html:3 templates/news/search.html:3
-#: templates/tutors.html:3
+#: templates/bachelor.html:1 templates/international/InternationalNews.html:3
+#: templates/magistr/mag.html:1 templates/news/news-category.html:4
+#: templates/news/news.html:3 templates/news/popular-students.html:3
+#: templates/news/search.html:3 templates/tutors.html:3
 msgid "UZFI | Yangiliklar"
 msgstr "UZFI | News"
 
@@ -164,197 +167,206 @@ msgstr "UZFI | News"
 msgid "Institut ta&acute;lim yo'nalishlari"
 msgstr "Educational directions of the institute"
 
-#: templates/base.html:154
+#: templates/base.html:158
 msgid "Chiqish"
 msgstr "Exit"
 
-#: templates/base.html:156
+#: templates/base.html:160
 msgid "Kirish"
 msgstr "Enter"
 
-#: templates/base.html:251
-msgid "UNIVERSITET "
-msgstr "UNIVERSITET"
+#: templates/base.html:255
+#, fuzzy
+#| msgid "Institut nizomi"
+msgid "Institut "
+msgstr "Statute of the institute"
 
-#: templates/base.html:254 templates/base.html:390
+#: templates/base.html:258 templates/base.html:404
+#: templates/international/InternationalNews.html:106
 #: templates/leadership-item.html:11 templates/leadership.html:22
 #: templates/news/news-category.html:129 templates/news/news.html:108
 #: templates/news/popular-students.html:110
-#: templates/news/video-gallery.html:131 templates/subtemplates/sidebar.html:20
+#: templates/news/video-gallery.html:131 templates/open-data.html:88
+#: templates/subtemplates/sidebar.html:20
 msgid "Rahbariyat"
 msgstr "Leadership"
 
-#: templates/base.html:255 templates/base.html:391
+#: templates/base.html:259 templates/base.html:405
 #: templates/councils-item.html:3 templates/councils.html:5
-#: templates/councils.html:17 templates/news/news-category.html:130
-#: templates/news/news.html:109 templates/news/popular-students.html:111
-#: templates/news/video-gallery.html:132 templates/subtemplates/sidebar.html:21
+#: templates/councils.html:17
+#: templates/international/InternationalNews.html:107
+#: templates/news/news-category.html:130 templates/news/news.html:109
+#: templates/news/popular-students.html:111
+#: templates/news/video-gallery.html:132 templates/open-data.html:89
+#: templates/subtemplates/sidebar.html:21
 msgid "Kengashlar"
 msgstr "Councils"
 
-#: templates/base.html:256 templates/base.html:392
+#: templates/base.html:260 templates/base.html:406
 #: templates/centers-item.html:12
 msgid "Markazlar va bo'limlar"
 msgstr "Centers and departments"
 
-#: templates/base.html:257 templates/base.html:387
+#: templates/base.html:261 templates/base.html:401
+#: templates/international/InternationalNews.html:103
 #: templates/news/news-category.html:126 templates/news/news.html:105
 #: templates/news/popular-students.html:107
-#: templates/news/video-gallery.html:128 templates/subtemplates/sidebar.html:17
+#: templates/news/video-gallery.html:128 templates/open-data.html:85
+#: templates/subtemplates/sidebar.html:17
 msgid "Bosh sahifa"
 msgstr "Homepage"
 
-#: templates/base.html:258 templates/base.html:388
+#: templates/base.html:262 templates/base.html:402
+#: templates/international/InternationalNews.html:104
 #: templates/news/news-category.html:127 templates/news/news.html:106
 #: templates/news/popular-students.html:108
-#: templates/news/video-gallery.html:129 templates/subtemplates/sidebar.html:18
+#: templates/news/video-gallery.html:129 templates/open-data.html:86
+#: templates/subtemplates/sidebar.html:18
 msgid "Nizom"
 msgstr "Regulation"
 
-#: templates/base.html:259 templates/base.html:389 templates/documents.html:21
+#: templates/base.html:263 templates/base.html:403 templates/documents.html:21
 #: templates/international/international-grants.html:19
 msgid "Me'yoriy hujjatlar"
 msgstr "Regulatory documents"
 
-#: templates/base.html:260 templates/base.html:393
+#: templates/base.html:264 templates/base.html:407
+#: templates/international/InternationalNews.html:108
 #: templates/news/news-category.html:131 templates/news/news.html:110
 #: templates/news/popular-students.html:112
-#: templates/news/video-gallery.html:133 templates/requesties.html:18
-#: templates/subtemplates/sidebar.html:22
+#: templates/news/video-gallery.html:133 templates/open-data.html:90
+#: templates/requesties.html:18 templates/subtemplates/sidebar.html:22
 msgid "Rekvizitlar"
 msgstr "Props"
 
-#: templates/base.html:261 templates/base.html:394
+#: templates/base.html:267 templates/base.html:408
+#: templates/international/InternationalNews.html:109
 #: templates/news/news-category.html:132 templates/news/news.html:111
 #: templates/news/popular-students.html:113
-#: templates/news/video-gallery.html:134 templates/subtemplates/sidebar.html:23
+#: templates/news/video-gallery.html:134 templates/open-data.html:91
+#: templates/subtemplates/sidebar.html:23
 msgid "Moliyaviy hisobotlar"
 msgstr "Financial statements"
 
-#: templates/base.html:262 templates/base.html:395
+#: templates/base.html:268 templates/base.html:409
+#: templates/international/InternationalNews.html:111
 #: templates/news/news-category.html:134 templates/news/news.html:113
 #: templates/news/popular-students.html:115
 #: templates/news/video-gallery.html:136 templates/open-data.html:18
-#: templates/subtemplates/sidebar.html:25
+#: templates/open-data.html:93 templates/subtemplates/sidebar.html:25
 msgid "Ochiq ma'lumotlar"
 msgstr "Open data"
 
-#: templates/base.html:267
+#: templates/base.html:273
 msgid "TA'LIM "
 msgstr "EDUCATION"
 
-#: templates/base.html:270 templates/base.html:403 templates/faculties.html:19
+#: templates/base.html:276 templates/base.html:417 templates/faculties.html:19
 #: templates/index.html:540 templates/index.html:633
 msgid "Fakultetlar"
 msgstr "Faculties"
 
-#: templates/base.html:271 templates/base.html:404 templates/departments.html:7
+#: templates/base.html:277 templates/base.html:418 templates/departments.html:7
 #: templates/departments.html:18 templates/faculties-item.html:57
 #: templates/index.html:635
 msgid "Kafedralar"
 msgstr "Departments"
 
-#: templates/base.html:272 templates/base.html:405
+#: templates/base.html:278 templates/base.html:419
 msgid "Bakalavriat"
 msgstr "Bachelor"
 
-#: templates/base.html:273 templates/base.html:406 templates/magistr.html:15
+#: templates/base.html:279 templates/base.html:420 templates/magistr.html:15
 msgid "Magistratura"
 msgstr "Master's"
 
-#: templates/base.html:274 templates/base.html:407
+#: templates/base.html:280 templates/base.html:421
 msgid "Tyutorlar"
 msgstr "Tutors"
 
-#: templates/base.html:275 templates/base.html:408
+#: templates/base.html:283 templates/base.html:422
 msgid "O‘quv rejalari"
 msgstr "Educational plans"
 
-#: templates/base.html:279 templates/base.html:414
-msgid "Axborot Xizmatlari"
+#: templates/base.html:287
+#, fuzzy
+#| msgid "Axborot Xizmatlari"
+msgid "Axborot xizmatlari"
 msgstr "Information Services"
 
-#: templates/base.html:282 templates/base.html:417 templates/dashboard.html:40
+#: templates/base.html:290 templates/base.html:431 templates/dashboard.html:40
 #: templates/index.html:726 templates/news/news-category.html:11
 #: templates/news/news.html:14
 msgid "Yangiliklar"
 msgstr "News"
 
-#: templates/base.html:283 templates/base.html:418
+#: templates/base.html:291 templates/base.html:432
 msgid "Video gallerya"
 msgstr "Video gallery"
 
-#: templates/base.html:284 templates/base.html:419
+#: templates/base.html:292 templates/base.html:433
 #: templates/news/events-item.html:17 templates/news/events.html:13
 #: templates/news/events.html:27
 msgid "E'lonlar"
 msgstr ""
 
-#: templates/base.html:285 templates/base.html:420
+#: templates/base.html:293 templates/base.html:434
 #: templates/news/contacts.html:21
 msgid "Bog'lanish"
 msgstr "Connection"
 
-#: templates/base.html:290 templates/base.html:430
+#: templates/base.html:298 templates/base.html:444
 msgid "Xalqaro aloqalar"
 msgstr "International relations"
 
-#: templates/base.html:293 templates/base.html:433
+#: templates/base.html:301 templates/base.html:447
 #: templates/international/Internationalmemorandum.html:18
 msgid "Xalqaro memorandumlar"
 msgstr "International memorandums"
 
-#: templates/base.html:294 templates/base.html:434
+#: templates/base.html:302 templates/base.html:448
 msgid "Xalqaro grantlar"
 msgstr "International grants"
 
-#: templates/base.html:298 templates/base.html:441
+#: templates/base.html:306 templates/base.html:455
 msgid "Talabalar hayoti"
 msgstr "Student life"
 
-#: templates/base.html:300 templates/base.html:444
+#: templates/base.html:308 templates/base.html:458
 #: templates/list-of-additional.html:3 templates/list-of-additional.html:14
 msgid "To'garaklar ro'yxati"
 msgstr ""
 
-#: templates/base.html:301 templates/base.html:443
+#: templates/base.html:309 templates/base.html:457
 msgid "Iqtidorli talabalar"
 msgstr "Talented students"
 
-#: templates/base.html:302 templates/library.html:3 templates/library.html:14
+#: templates/base.html:310 templates/library.html:3 templates/library.html:14
 #: templates/library.html:28
 msgid "Kutubxona"
 msgstr "Library"
 
-#: templates/base.html:303 templates/ttj.html:3 templates/ttj.html:28
-msgid "Talabalar Turar Joyi"
-msgstr "Student Residence"
+#: templates/base.html:311 templates/ttj.html:14
+msgid "Talabalar turar joyi"
+msgstr "Student accommodation"
 
-#: templates/base.html:309
+#: templates/base.html:317
 msgid "Abituriyentlarga"
 msgstr "To applicants"
 
-#: templates/base.html:314
-msgid "Qabul komissiyasi joylashuv o'rni"
-msgstr "Admissions office location"
-
-#: templates/base.html:315
-msgid "Qabul nizomi"
-msgstr "Admission regulations"
-
-#: templates/base.html:316
-msgid "Qabul kvotasi"
-msgstr "Admission quota"
-
-#: templates/base.html:401
+#: templates/base.html:415
 msgid "TA'LIM"
 msgstr "EDUCATION"
 
-#: templates/base.html:458
+#: templates/base.html:428
+msgid "Axborot Xizmatlari"
+msgstr "Information Services"
+
+#: templates/base.html:472
 msgid " Manzil "
 msgstr "Address"
 
-#: templates/base.html:459
+#: templates/base.html:473
 msgid " Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy "
 msgstr "Address: 166, Spitamen Shah Street, Samarkand Sh"
 
@@ -776,13 +788,66 @@ msgstr "Rector"
 msgid " tashabbusi "
 msgstr "initiative"
 
-#: templates/international/InternationalRelations.html:3
-msgid "UZFI  | Xalqaro a'loqalar"
-msgstr "UZFI | International relations"
-
-#: templates/international/InternationalRelations.html:18
-msgid "Xalqaro a'loqalar"
+#: templates/international/InternationalNews.html:14
+#, fuzzy
+#| msgid "Xalqaro aloqalar"
+msgid "Xalqaro Aloqalar"
 msgstr "International relations"
+
+#: templates/international/InternationalNews.html:78
+#: templates/international/Internationalmemorandum.html:65
+#: templates/news/news-category.html:77 templates/news/news.html:80
+#: templates/news/popular-students.html:59 templates/news/video-gallery.html:80
+#: templates/tutors.html:64 templates/vacancies.html:48
+msgid " Avvalgi"
+msgstr "The former"
+
+#: templates/international/InternationalNews.html:86
+#: templates/international/Internationalmemorandum.html:73
+#: templates/news/news-category.html:85 templates/news/news.html:88
+#: templates/news/popular-students.html:67 templates/news/video-gallery.html:88
+#: templates/tutors.html:72 templates/vacancies.html:56
+msgid " Keyingi"
+msgstr "Next"
+
+#: templates/international/InternationalNews.html:100
+#: templates/news/news-category.html:123 templates/news/news.html:102
+#: templates/news/popular-students.html:104
+#: templates/news/video-gallery.html:125 templates/open-data.html:82
+#: templates/subtemplates/sidebar.html:14
+msgid "UNIVERSITET"
+msgstr "UNIVERSITY"
+
+#: templates/international/InternationalNews.html:105
+#: templates/news/news-category.html:128 templates/news/news.html:107
+#: templates/news/popular-students.html:109
+#: templates/news/video-gallery.html:130 templates/open-data.html:87
+#: templates/subtemplates/sidebar.html:19
+#, fuzzy
+#| msgid "Hujjat turi"
+msgid "Hujjatlar"
+msgstr "Document type"
+
+#: templates/international/InternationalNews.html:110
+#: templates/news/news-category.html:133 templates/news/news.html:112
+#: templates/news/popular-students.html:114
+#: templates/news/video-gallery.html:135 templates/open-data.html:92
+#: templates/subtemplates/sidebar.html:24
+#, fuzzy
+#| msgid "Iqtdorli talabalar"
+msgid "Mashhur talabalar"
+msgstr "Talented students"
+
+#: templates/international/Internationalmemorandum_det.html:6
+#: templates/international/int_det.html:6 templates/news/news-item.html:3
+msgid "UZFI"
+msgstr "UZFI"
+
+#: templates/international/Internationalmemorandum_det.html:67
+#: templates/international/int_det.html:69 templates/news/news-item.html:71
+#: templates/news/video-gallery-item.html:69
+msgid "Recent Posts"
+msgstr ""
 
 #: templates/international/international-grants.html:3
 msgid "UZFI  | Xalqaro grantlar"
@@ -884,56 +949,15 @@ msgstr "Main page"
 msgid "HAMMASI"
 msgstr "EVERYTHING"
 
-#: templates/news/news-category.html:77 templates/news/news.html:80
-#: templates/news/popular-students.html:59 templates/news/video-gallery.html:80
-#: templates/tutors.html:64 templates/vacancies.html:48
-msgid " Avvalgi"
-msgstr "The former"
-
-#: templates/news/news-category.html:85 templates/news/news.html:88
-#: templates/news/popular-students.html:67 templates/news/video-gallery.html:88
-#: templates/tutors.html:72 templates/vacancies.html:56
-msgid " Keyingi"
-msgstr "Next"
-
 #: templates/news/news-category.html:97 templates/news/popular-students.html:79
 #: templates/news/search.html:58 templates/news/video-gallery.html:100
+#: templates/open-data.html:57
 msgid "Qidiring"
 msgstr "Search"
-
-#: templates/news/news-category.html:123 templates/news/news.html:102
-#: templates/news/popular-students.html:104
-#: templates/news/video-gallery.html:125 templates/subtemplates/sidebar.html:14
-msgid "UNIVERSITET"
-msgstr "UNIVERSITY"
-
-#: templates/news/news-category.html:128 templates/news/news.html:107
-#: templates/news/popular-students.html:109
-#: templates/news/video-gallery.html:130 templates/subtemplates/sidebar.html:19
-#, fuzzy
-#| msgid "Hujjat turi"
-msgid "Hujjatlar"
-msgstr "Document type"
-
-#: templates/news/news-category.html:133 templates/news/news.html:112
-#: templates/news/popular-students.html:114
-#: templates/news/video-gallery.html:135 templates/subtemplates/sidebar.html:24
-#, fuzzy
-#| msgid "Iqtdorli talabalar"
-msgid "Mashhur talabalar"
-msgstr "Talented students"
 
 #: templates/news/news-category.html:144 templates/news/news.html:123
 msgid "Tags"
 msgstr "Tags"
-
-#: templates/news/news-item.html:6
-msgid "UZFI"
-msgstr "UZFI"
-
-#: templates/news/news-item.html:74 templates/news/video-gallery-item.html:69
-msgid "Recent Posts"
-msgstr ""
 
 #: templates/news/popular-students-item.html:14
 #: templates/news/popular-students.html:14
@@ -968,9 +992,9 @@ msgstr "UZFI | Open data"
 msgid "UZFI  | Rekvizitlar"
 msgstr "UZFI  | Rekvizitlar"
 
-#: templates/ttj.html:14
-msgid "Talabalar turar joyi"
-msgstr "Student accommodation"
+#: templates/ttj.html:3 templates/ttj.html:28
+msgid "Talabalar Turar Joyi"
+msgstr "Student Residence"
 
 #: templates/tutor_fac.html:19
 msgid "Tutorlar ro'yxati"
@@ -2261,3 +2285,18 @@ msgstr ""
 #: venv/lib/python3.9/site-packages/modeltranslation/widgets.py:24
 msgid "None"
 msgstr ""
+
+#~ msgid "UNIVERSITET "
+#~ msgstr "UNIVERSITET"
+
+#~ msgid "Qabul komissiyasi joylashuv o'rni"
+#~ msgstr "Admissions office location"
+
+#~ msgid "Qabul nizomi"
+#~ msgstr "Admission regulations"
+
+#~ msgid "Qabul kvotasi"
+#~ msgstr "Admission quota"
+
+#~ msgid "Xalqaro a'loqalar"
+#~ msgstr "International relations"
