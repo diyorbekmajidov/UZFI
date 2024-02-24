@@ -95,7 +95,11 @@
 
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-
+<style>
+	#st_txt{
+		text-transform: none;
+	}
+</style>
     <!-- CK EDITOR -->
 
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
@@ -249,16 +253,16 @@
 					  >{% blocktranslate %}Institut {% endblocktranslate %}<i class="fa fa-chevron-down"></i
 					></a>
 					<ul class="sub-menu">
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Me'yoriy hujjatlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/" id="st_txt">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/"id="st_txt">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/"id="st_txt">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
+						<li ><a href="/{{LANGUAGE_CODE}}" id="st_txt">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/"id="st_txt">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/"id="st_txt">{% blocktranslate %}Me'yoriy hujjatlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/"id="st_txt">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
 						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li> {% endcomment %}
-						<li><a href="https://drive.google.com/drive/folders/1P642MtI-I0XMWFfZFFKdwt5-KVyfXVQQ">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
+						<li><a href="https://drive.google.com/drive/folders/1P642MtI-I0XMWFfZFFKdwt5-KVyfXVQQ" id="st_txt">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/" id="st_txt">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
 					</ul>
 				  </li>
 				  <li>
@@ -272,7 +276,7 @@
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/magistr/">{% blocktranslate %}Magistratura{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/tutor/">{% blocktranslate %}Tyutorlar{% endblocktranslate %}</a></li>
 						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li> {% endcomment %}
-						<li><a href="https://drive.google.com/drive/folders/1B7Q9Vpc9f6YyfpKLpCUcmvUUBE2QjSBf">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
+						<li><a href="https://drive.google.com/drive/folders/1B7Q9Vpc9f6YyfpKLpCUcmvUUBE2QjSBf" id="st_txt">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
 					</ul>
 				  </li>
 				  <li>
@@ -280,7 +284,7 @@
 
 					<ul class="sub-menu">
 					  <li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
-					  <li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/">{% blocktranslate %}Video gallerya{% endblocktranslate %}</a></li>
+					  <li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/"id="st_txt">{% blocktranslate %}Video gallerya{% endblocktranslate %}</a></li>
 					  <li><a href="/{{LANGUAGE_CODE}}/news/events/">{% blocktranslate %}E'lonlar{% endblocktranslate %}</a></li>
 					  <li><a href="/{{LANGUAGE_CODE}}/news/contact/">{% blocktranslate %}Bog'lanish{% endblocktranslate %}</a></li>
 					</ul>
@@ -289,18 +293,18 @@
 				  <li>
 					<a href="javascript:;">{% blocktranslate %}Xalqaro aloqalar{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 					<ul class="sub-menu">
-						<li><a href="/{{LANGUAGE_CODE}}/international/internationalrelation/">Xalqaro aloqalar</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/internationalmemorandum/">{% blocktranslate %}Xalqaro memorandumlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/internationalgrant/">{% blocktranslate %}Xalqaro grantlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalrelation/"id="st_txt">Xalqaro aloqalar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalmemorandum/"id="st_txt">{% blocktranslate %}Xalqaro memorandumlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalgrant/"id="st_txt">{% blocktranslate %}Xalqaro grantlar{% endblocktranslate %}</a></li>
 					</ul>
 				  </li>
 				  <li>
 					<a href="javascript:;">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 					<ul class="sub-menu">
-						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/library/">{% blocktranslate %}Kutubxona{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/ttj/">{% blocktranslate %}Talabalar Turar Joyi{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/"id="st_txt">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/"id="st_txt">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/library/"id="st_txt">{% blocktranslate %}Kutubxona{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/ttj/" id="st_txt">{% blocktranslate %}Talabalar turar joyi{% endblocktranslate %}</a></li>
 					</ul>
 				  </li>
 				  
@@ -312,7 +316,7 @@
 						{% for i in abt %}
 						<li><a href="/{{LANGUAGE_CODE}}/international/abitur/{{i.id}}/">{{i.title}}</a></li>
 						{% endfor%}
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faqs/">{% blocktranslate %}Tez-tez so'raladigan savollarga javoblar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faqs/"id="st_txt">{% blocktranslate %}Tez-tez so'raladigan savollarga javoblar{% endblocktranslate %}</a></li>
 						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/regulation-on-secondary-education/">{% blocktranslate %}Ikkinchi taʼlim to‘g‘risidagi nizom{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/work-with-the-answer-sheet/">{% blocktranslate %}Javoblar varaqasi bilan ishlash{% endblocktranslate %}</a></li>
 						
@@ -388,15 +392,15 @@
 					<div class="widget footer_widget">
 					  <h5 class="footer-title">Institut</h5>
 					  <ul>
-						<li><a href="/{{LANGUAGE_CODE}}">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}"id="st_txt">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Me'yoriy hujjatlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/"id="st_txt">{% blocktranslate %}Me'yoriy hujjatlar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/"id="st_txt">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>	
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/"id="st_txt">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/"id="st_txt">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>	
 					  </ul>
 					</div>
 				  </div>
@@ -409,17 +413,17 @@
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/bachelor/">{% blocktranslate %}Bakalavriat{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/magistrature/">{% blocktranslate %}Magistratura{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/tutor/">{% blocktranslate %}Tyutorlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/"id="st_txt">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
 					  </ul>
 					</div>
 				  </div>
 				  	<div class="col-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="widget footer_widget">
-							<h5 class="footer-title">{% blocktranslate %}Axborot Xizmatlari{% endblocktranslate %}</h5>
+							<h5 class="footer-title"id="st_txt">{% blocktranslate %}Axborot Xizmatlari{% endblocktranslate %}</h5>
 							
 							<ul>
 								<li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
-								<li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/">{% blocktranslate %}Video gallerya{% endblocktranslate %}</a></li>
+								<li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/"id="st_txt">{% blocktranslate %}Video gallerya{% endblocktranslate %}</a></li>
 					  			<li><a href="/{{LANGUAGE_CODE}}/news/events/">{% blocktranslate %}E'lonlar{% endblocktranslate %}</a></li>
 					  			<li><a href="/{{LANGUAGE_CODE}}/news/contact/">{% blocktranslate %}Bog'lanish{% endblocktranslate %}</a></li>
 								
@@ -433,19 +437,19 @@
 					<div class="widget footer_widget">
 					  <h5 class="footer-title">{% blocktranslate %}Xalqaro aloqalar{% endblocktranslate %}</h5>
 					  <ul>
-						<li><a href="/{{LANGUAGE_CODE}}/international/internationalrelations/">Xalqaro aloqalar</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/internationalmemorandum/">{% blocktranslate %}Xalqaro memorandumlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/internationalgrant/">{% blocktranslate %}Xalqaro grantlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalrelations/"id="st_txt">Xalqaro aloqalar</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalmemorandum/"id="st_txt">{% blocktranslate %}Xalqaro memorandumlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/internationalgrant/"id="st_txt">{% blocktranslate %}Xalqaro grantlar{% endblocktranslate %}</a></li>
 					  </ul>
 					</div>
 				</div>
 
 				<div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
 					<div class="widget footer_widget">
-					  <h5 class="footer-title">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}</h5>
+					  <h5 class="footer-title"id="st_txt">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}</h5>
 					  <ul>
-						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/"id="st_txt">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/"id="st_txt">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
 					  </ul>
 					</div>
 				</div>
