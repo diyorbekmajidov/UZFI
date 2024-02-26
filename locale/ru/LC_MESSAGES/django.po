@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 15:13+0500\n"
+"POT-Creation-Date: 2024-02-26 17:10+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,6 @@ msgid "Tez-tez so'raladigan savollarga javoblar"
 msgstr "Ответы на часто задаваемые вопросы"
 
 #: templates/abitur/faqs.html:15
-#, fuzzy
 msgid " Tez-tez so'raladigan savollarga javoblar "
 msgstr "Ответы на часто задаваемые вопросы"
 
@@ -109,12 +108,12 @@ msgstr ""
 "заявлением о предоставлении общежития."
 
 #: templates/abitur/int_det.html:3
-msgid "UZFI  | Xalqaro a'loqalar"
+#, fuzzy
+#| msgid "UZFI  | Xalqaro a'loqalar"
+msgid "UZFI  | Xalqaro aloqalar"
 msgstr "УЗФИ / Международные отношения"
 
 #: templates/abitur/regulation-on-secondary-education.html:4
-#, fuzzy
-#| msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
 msgid "UZFI  | Ikkinchi taʼlim to‘g‘risidagi nizom"
 msgstr "Устав о втором образовании"
 
@@ -292,8 +291,6 @@ msgid "O‘quv rejalari"
 msgstr "Учебные планы"
 
 #: templates/base.html:287
-#, fuzzy
-#| msgid "Axborot Xizmatlari"
 msgid "Axborot xizmatlari"
 msgstr "Информационные услуги"
 
@@ -309,10 +306,11 @@ msgstr "Новости"
 msgid "Video gallerya"
 msgstr "Видеогалерея"
 
-#: templates/base.html:292 templates/base.html:433
-#: templates/news/events-item.html:17 templates/news/events.html:13
-#: templates/news/events.html:27
-msgid "E'lonlar"
+#: templates/base.html:292 templates/news/events-item.html:17
+#: templates/news/events.html:13
+#, fuzzy
+#| msgid "E'lonlar"
+msgid "E&acute;lonlar"
 msgstr "Объявления"
 
 #: templates/base.html:293 templates/base.html:434
@@ -366,6 +364,10 @@ msgstr "ОБРАЗОВАНИЕ"
 #: templates/base.html:428
 msgid "Axborot Xizmatlari"
 msgstr "Информационные услуги"
+
+#: templates/base.html:433 templates/news/events.html:27
+msgid "E'lonlar"
+msgstr "Объявления"
 
 #: templates/base.html:472
 msgid " Manzil "
@@ -652,7 +654,7 @@ msgid "Chorak"
 msgstr "Четверть"
 
 #: templates/index.html:147
-msgid "O‘ZBEKISTON - FINLANDIYA"
+msgid "O‘ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
 msgstr "Узбекско-Финский педагогический институт"
 
 #: templates/index.html:194
@@ -798,8 +800,6 @@ msgid " tashabbusi "
 msgstr "инициатива"
 
 #: templates/international/InternationalNews.html:14
-#, fuzzy
-#| msgid "Xalqaro aloqalar"
 msgid "Xalqaro Aloqalar"
 msgstr "Международные отношения"
 
