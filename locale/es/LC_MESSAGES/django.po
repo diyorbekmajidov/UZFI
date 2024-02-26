@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 15:13+0500\n"
+"POT-Creation-Date: 2024-02-26 17:13+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,9 @@ msgstr ""
 "with a dormitory application."
 
 #: templates/abitur/int_det.html:3
-msgid "UZFI  | Xalqaro a'loqalar"
+#, fuzzy
+#| msgid "UZFI  | Xalqaro a'loqalar"
+msgid "UZFI  | Xalqaro aloqalar"
 msgstr "UZFI | International relations"
 
 #: templates/abitur/regulation-on-secondary-education.html:4
@@ -119,8 +121,6 @@ msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
 msgstr "Regulation on secondary education"
 
 #: templates/abitur/regulation-on-secondary-education.html:32
-#, fuzzy
-#| msgid "ZBEKISTON RESPUBLIKASI VAZIRLAR MAHKAMASINING"
 msgid "O&lsquo;ZBEKISTON RESPUBLIKASI VAZIRLAR MAHKAMASINING"
 msgstr "OF THE COURT OF MINISTERS OF THE REPUBLIC OF UZBEKISTAN."
 
@@ -129,11 +129,6 @@ msgid "QARORI"
 msgstr "DECISION"
 
 #: templates/abitur/regulation-on-secondary-education.html:33
-#, fuzzy
-#| msgid ""
-#| "ZBEKISTON RESPUBLIKASI OLIY TAʼLIM MUASSASALARIDA IKKINCHI VA UNDAN "
-#| "KEYINGI OLIY TAʼLIMNI OLISH TARTIBI TO&lsquo;G&lsquo;RISIDAGI NIZOMNI "
-#| "TASDIQLASH HAQIDA"
 msgid ""
 "O&lsquo;ZBEKISTON RESPUBLIKASI OLIY TAʼLIM MUASSASALARIDA IKKINCHI VA UNDAN "
 "KEYINGI OLIY TAʼLIMNI OLISH TARTIBI TO&lsquo;G&lsquo;RISIDAGI NIZOMNI "
@@ -289,8 +284,6 @@ msgid "O‘quv rejalari"
 msgstr "Educational plans"
 
 #: templates/base.html:287
-#, fuzzy
-#| msgid "Axborot Xizmatlari"
 msgid "Axborot xizmatlari"
 msgstr "Information Services"
 
@@ -304,11 +297,12 @@ msgstr "News"
 msgid "Video gallerya"
 msgstr "Video gallery"
 
-#: templates/base.html:292 templates/base.html:433
-#: templates/news/events-item.html:17 templates/news/events.html:13
-#: templates/news/events.html:27
-msgid "E'lonlar"
-msgstr ""
+#: templates/base.html:292 templates/news/events-item.html:17
+#: templates/news/events.html:13
+#, fuzzy
+#| msgid "E'lonlar"
+msgid "E&acute;lonlar"
+msgstr "Announcements"
 
 #: templates/base.html:293 templates/base.html:434
 #: templates/news/contacts.html:21
@@ -361,6 +355,10 @@ msgstr "EDUCATION"
 #: templates/base.html:428
 msgid "Axborot Xizmatlari"
 msgstr "Information Services"
+
+#: templates/base.html:433 templates/news/events.html:27
+msgid "E'lonlar"
+msgstr "Announcements"
 
 #: templates/base.html:472
 msgid " Manzil "
@@ -642,8 +640,10 @@ msgid "Chorak"
 msgstr "A quarter"
 
 #: templates/index.html:147
-msgid "O‘ZBEKISTON - FINLANDIYA"
-msgstr "UZBEKISTAN - FINLAND"
+#, fuzzy
+#| msgid "O‘ZBEKISTON - FINLANDIYA"
+msgid "O‘ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
+msgstr "UZBEKISTAN - FINLAND PEDAGOGICAL INSTITUTE"
 
 #: templates/index.html:194
 msgid ""
