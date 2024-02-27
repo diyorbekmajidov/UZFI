@@ -143,7 +143,7 @@
                 text-align: center;
                 white-space: normal;
               "
-            >
+             >
             {% blocktranslate %}O‘ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI{% endblocktranslate %}
             </div>
 
@@ -189,6 +189,7 @@
                 font-size: 18px;
                 line-height: 28px;
                 font-weight: 400;
+                text-transform: none;
               "
             >
             {% blocktranslate %}Institutning maqsadi yuqori sifatli pedagogikani rivojlantirish va o'zbek milliyiga muvofiq mutaxassislar tayyorlash.{% endblocktranslate %}
@@ -538,7 +539,7 @@
     <div class="section-area section-sp2 faculties" id="faculties_page">
       <div class="container heading-bx left">
         <h2 class="title-head">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</h2>
-        <p>{% blocktranslate %}O‘zbekiston-Finlyandiya instituti fakultet tarkibi.{%endblocktranslate%}</p>
+        <p>{% blocktranslate %}O‘zbekiston-Finlyandiya pedagogika instituting fakultetlari quydagilar:{%endblocktranslate%}</p>
       </div>
 
       <div class="container text-center">
@@ -740,7 +741,7 @@
               </div>
               <div class="info-bx d-flex">
                 <div class="event-info">
-                  <h4 class="event-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}/">{{item.title}}</a></h4>
+                  <h6 class="event-title" style="font-size: 15px;"><a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}/">{{item.title}}</a></h6>
                   <ul class="media-post">
                     <li><i class="fa fa-clock-o"></i> {{item.date_created}}</li>
                     <li><i class="fa fa-eye"></i> {{item.views}}</li>
@@ -831,8 +832,8 @@
 											<img src="{{i.img}}" alt="">
 											<a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}/" class="btn">{% blocktranslate %}Ko'proq o'qish{%endblocktranslate%}</a>
 										</div>
-										<div class="info-bx text-center" style="height: 160px;">
-											<h5><a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}/">{{i.title|slice:100}}...</a></h5>
+										<div class="info-bx text-center" style="height: 160px;font-size: 3px;">
+											<p style="font-size: 3px;"><a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}/">{{i.title|slice:50}}...</a></p>
 										</div>
 										
 									</div>
