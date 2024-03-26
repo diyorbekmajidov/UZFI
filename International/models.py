@@ -15,7 +15,7 @@ class InternationalRelation(models.Model):
     title         = models.CharField(max_length=255)
     img           = models.ImageField(upload_to='img/', validators=[validate_file_size])
     body          = RichTextUploadingField()
-    date_created  = date_created  = models.DateField()
+    date_created  = models.DateField()
     date_update   = models.DateTimeField(auto_now=True)
 
     def __str__(self):

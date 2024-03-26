@@ -107,9 +107,7 @@ msgstr ""
 "with a dormitory application."
 
 #: templates/abitur/int_det.html:3
-#, fuzzy
-#| msgid "UZFI  | Xalqaro a'loqalar"
-msgid "UZFI  | Xalqaro aloqalar"
+msgid "UZFI  | Xalqaro a'loqalar"
 msgstr "UZFI | International relations"
 
 #: templates/abitur/regulation-on-secondary-education.html:4
@@ -171,9 +169,8 @@ msgid "Kirish"
 msgstr "Enter"
 
 #: templates/base.html:255
-#, fuzzy
-#| msgid "Institut nizomi"
-msgid "Institut "
+msgid "Institut nizomi"
+
 msgstr "Statute of the institute"
 
 #: templates/base.html:258 templates/base.html:404
@@ -299,8 +296,6 @@ msgstr "Video gallery"
 
 #: templates/base.html:292 templates/news/events-item.html:17
 #: templates/news/events.html:13
-#, fuzzy
-#| msgid "E'lonlar"
 msgid "E&acute;lonlar"
 msgstr "Announcements"
 
@@ -489,15 +484,11 @@ msgid "Darajasi UZ"
 msgstr "The degree is UZ"
 
 #: templates/dashboard.html:186
-#, fuzzy
-#| msgid "Darajasi"
-msgid "Darajasi EN"
+msgid "Darajasi"
 msgstr "Degree"
 
 #: templates/dashboard.html:194
-#, fuzzy
 #| msgid "Darajasi UZ"
-msgid "Darajasi RU"
 msgstr "The degree is UZ"
 
 #: templates/dashboard.html:204
@@ -640,8 +631,6 @@ msgid "Chorak"
 msgstr "A quarter"
 
 #: templates/index.html:147
-#, fuzzy
-#| msgid "O‘ZBEKISTON - FINLANDIYA"
 msgid "O‘ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
 msgstr "UZBEKISTAN - FINLAND PEDAGOGICAL INSTITUTE"
 
@@ -789,8 +778,6 @@ msgid " tashabbusi "
 msgstr "initiative"
 
 #: templates/international/InternationalNews.html:14
-#, fuzzy
-#| msgid "Xalqaro aloqalar"
 msgid "Xalqaro Aloqalar"
 msgstr "International relations"
 
@@ -823,9 +810,7 @@ msgstr "UNIVERSITY"
 #: templates/news/popular-students.html:109
 #: templates/news/video-gallery.html:130 templates/open-data.html:87
 #: templates/subtemplates/sidebar.html:19
-#, fuzzy
 #| msgid "Hujjat turi"
-msgid "Hujjatlar"
 msgstr "Document type"
 
 #: templates/international/InternationalNews.html:110
@@ -833,9 +818,7 @@ msgstr "Document type"
 #: templates/news/popular-students.html:114
 #: templates/news/video-gallery.html:135 templates/open-data.html:92
 #: templates/subtemplates/sidebar.html:24
-#, fuzzy
 #| msgid "Iqtdorli talabalar"
-msgid "Mashhur talabalar"
 msgstr "Talented students"
 
 #: templates/international/Internationalmemorandum_det.html:6
