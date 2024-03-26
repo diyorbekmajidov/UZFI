@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 17:10+0500\n"
+"POT-Creation-Date: 2024-03-26 12:47+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,48 +68,46 @@ msgstr "Ответы на часто задаваемые вопросы"
 msgid " Tez-tez so'raladigan savollarga javoblar "
 msgstr "Ответы на часто задаваемые вопросы"
 
-#: templates/abitur/faqs.html:30 templates/index.html:849
+#: templates/abitur/faqs.html:30 templates/index.html:850
 msgid " Tez-tez so'raladigan savollarga "
 msgstr "Часто задаваемые вопросы"
 
-#: templates/abitur/faqs.html:30 templates/index.html:849
+#: templates/abitur/faqs.html:30 templates/index.html:850
 msgid " javoblar "
 msgstr "Ответы"
 
-#: templates/abitur/faqs.html:42 templates/index.html:861
+#: templates/abitur/faqs.html:42
 msgid ""
-"O‘ZBEKISTON - Finlandiya pedagogika institutida oʼqish qaysi tillarda amalga "
-"oshiriladi?"
+"O&acute;ZBEKISTON - Finlandiya pedagogika institutida o&acute;qish qaysi "
+"tillarda amalga oshiriladi?"
 msgstr ""
 "На каких языках ведется обучение в Узбекско - Финском педагогическом "
 "институте?"
 
-#: templates/abitur/faqs.html:48 templates/index.html:867
+#: templates/abitur/faqs.html:48
 msgid ""
-"O‘ZBEKISTON - Finlandiya pedagogika institutida darslar oʼzbek, rus va tojik "
-"tillarida olib boriladi."
+"O&acute;ZBEKISTON - Finlandiya pedagogika institutida darslar o&acute;zbek, "
+"rus va tojik tillarida olib boriladi."
 msgstr ""
 "В Узбекско - Финском педагогическом институте занятия проводятся на "
 "узбекском, русском и таджикском языках."
 
-#: templates/abitur/faqs.html:62
+#: templates/abitur/faqs.html:62 templates/index.html:882
 msgid ""
-"O‘ZBEKISTON - Finlandiya pedagogika institutida yotoqxona bilan "
-"taʼminlanishi qanday amalga oshiriladi?"
+"O&acute;ZBEKISTON - Finlandiya pedagogika institutida yotoqxona bilan "
+"ta&acute;minlanishi qanday amalga oshiriladi?"
 msgstr ""
 "Как предоставляется общежитие в Узбекско - Финском педагогическом институте?"
 
-#: templates/abitur/faqs.html:69 templates/index.html:888
+#: templates/abitur/faqs.html:69
 msgid ""
-"Talabalikka qabul qilingandan soʼng tegishli dekanatga yotoqxona talabnomasi "
-"bilan murojaat etiladi."
+"Talabalikka qabul qilingandan so&acute;ng tegishli dekanatga yotoqxona "
+"talabnomasi bilan murojaat etiladi."
 msgstr ""
 "После зачисления в качестве студента в соответствующий деканат обращается с "
 "заявлением о предоставлении общежития."
 
 #: templates/abitur/int_det.html:3
-#, fuzzy
-#| msgid "UZFI  | Xalqaro a'loqalar"
 msgid "UZFI  | Xalqaro aloqalar"
 msgstr "УЗФИ / Международные отношения"
 
@@ -122,8 +120,6 @@ msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
 msgstr "Устав о втором образовании"
 
 #: templates/abitur/regulation-on-secondary-education.html:32
-#, fuzzy
-#| msgid "O'ZBEKISTON RESPUBLIKASI VAZIRLAR MAHKAMASINING"
 msgid "O&lsquo;ZBEKISTON RESPUBLIKASI VAZIRLAR MAHKAMASINING"
 msgstr "КАБИНЕТА МИНИСТРОВ РЕСПУБЛИКИ УЗБЕКИСТАН"
 
@@ -132,11 +128,6 @@ msgid "QARORI"
 msgstr "Решение"
 
 #: templates/abitur/regulation-on-secondary-education.html:33
-#, fuzzy
-#| msgid ""
-#| "ZBEKISTON RESPUBLIKASI OLIY TAʼLIM MUASSASALARIDA IKKINCHI VA UNDAN "
-#| "KEYINGI OLIY TAʼLIMNI OLISH TARTIBI TO&lsquo;G&lsquo;RISIDAGI NIZOMNI "
-#| "TASDIQLASH HAQIDA"
 msgid ""
 "O&lsquo;ZBEKISTON RESPUBLIKASI OLIY TAʼLIM MUASSASALARIDA IKKINCHI VA UNDAN "
 "KEYINGI OLIY TAʼLIMNI OLISH TARTIBI TO&lsquo;G&lsquo;RISIDAGI NIZOMNI "
@@ -165,7 +156,7 @@ msgstr "Работа с листом ответов"
 msgid "UZFI | Yangiliklar"
 msgstr "УЗФИ / Новости"
 
-#: templates/bachelor.html:12 templates/index.html:583
+#: templates/bachelor.html:12 templates/index.html:584
 msgid "Institut ta&acute;lim yo'nalishlari"
 msgstr "Образовательные направления института"
 
@@ -178,10 +169,8 @@ msgid "Kirish"
 msgstr "Вход"
 
 #: templates/base.html:255
-#, fuzzy
-#| msgid "Institut nizomi"
-msgid "Institut "
-msgstr "Устав института"
+msgid "Instituti "
+msgstr "Институт"
 
 #: templates/base.html:258 templates/base.html:404
 #: templates/international/InternationalNews.html:106
@@ -264,13 +253,13 @@ msgid "TA'LIM "
 msgstr "ОБРАЗОВАНИЕ"
 
 #: templates/base.html:276 templates/base.html:417 templates/faculties.html:19
-#: templates/index.html:540 templates/index.html:633
+#: templates/index.html:541 templates/index.html:634
 msgid "Fakultetlar"
 msgstr "Факультеты"
 
 #: templates/base.html:277 templates/base.html:418 templates/departments.html:7
 #: templates/departments.html:18 templates/faculties-item.html:57
-#: templates/index.html:635
+#: templates/index.html:636
 msgid "Kafedralar"
 msgstr "Кафедры"
 
@@ -295,21 +284,17 @@ msgid "Axborot xizmatlari"
 msgstr "Информационные услуги"
 
 #: templates/base.html:290 templates/base.html:431 templates/dashboard.html:40
-#: templates/index.html:726 templates/news/news-category.html:11
+#: templates/index.html:727 templates/news/news-category.html:11
 #: templates/news/news.html:14
 msgid "Yangiliklar"
 msgstr "Новости"
 
 #: templates/base.html:291 templates/base.html:432
-#, fuzzy
-#| msgid "Video gallereya"
 msgid "Video gallerya"
 msgstr "Видеогалерея"
 
 #: templates/base.html:292 templates/news/events-item.html:17
 #: templates/news/events.html:13
-#, fuzzy
-#| msgid "E'lonlar"
 msgid "E&acute;lonlar"
 msgstr "Объявления"
 
@@ -318,7 +303,8 @@ msgstr "Объявления"
 msgid "Bog'lanish"
 msgstr "Связь"
 
-#: templates/base.html:298 templates/base.html:444
+#: templates/base.html:298 templates/base.html:300 templates/base.html:444
+#: templates/base.html:446
 msgid "Xalqaro aloqalar"
 msgstr "Международные отношения"
 
@@ -474,8 +460,6 @@ msgid "Tegishli yangiliklar"
 msgstr "Новости по теме"
 
 #: templates/dashboard.html:129
-#, fuzzy
-#| msgid "Ilmiy ishlar sozlamalari"
 msgid "Ilmiy ishlar sozlamalri"
 msgstr "Настройки научных работ"
 
@@ -524,8 +508,6 @@ msgid "Save changes"
 msgstr "Сохранить изменения"
 
 #: templates/dashboard.html:231
-#, fuzzy
-#| msgid "Bekor qilish<"
 msgid "Bekor qilish"
 msgstr "Отменить"
 
@@ -581,8 +563,6 @@ msgid "Manzil:"
 msgstr "Адрес:"
 
 #: templates/destinations-item.html:72
-#, fuzzy
-#| msgid "Bu sahifa mavjud emas"
 msgid "Yo'nalish mavjud emas"
 msgstr "Данная страница не существует"
 
@@ -619,19 +599,16 @@ msgid "Dekan"
 msgstr "Декан"
 
 #: templates/faculties-item.html:50
-#, fuzzy
 msgid "Fakultet ta'lim yo'nalishlari yo'nalishlari"
 msgstr "Направления факультета"
 
 #: templates/faculties-item.html:99
-#, fuzzy
-#| msgid "Fakultet dekani"
 msgid "Fakultet mavjud emas"
-msgstr "Декан факультета"
+msgstr "факультета не существует"
 
 #: templates/faculties.html:7 templates/tutor_fac.html:7
 msgid "UZFI  | Fakultetlar"
-msgstr "УЗФИ / Факультеты"
+msgstr "Факультеты"
 
 #: templates/financial-statements.html:7
 msgid "UZFI  | Moliyaviy xisobotlar"
@@ -657,127 +634,128 @@ msgstr "Четверть"
 msgid "O‘ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
 msgstr "Узбекско-Финский педагогический институт"
 
-#: templates/index.html:194
+#: templates/index.html:195
 msgid ""
-"Institutning maqsadi yuqori sifatli pedagogikani rivojlantirish va o'zbek "
-"milliyiga muvofiq mutaxassislar tayyorlash."
+"Institutning maqsadi yuqori sifatli pedagogikani rivojlantirish va O'zbek "
+"milliyligiga muvofiq pedagogik mutaxasislarni tayyorlashdir."
 msgstr ""
 "Цель института – развитие качественной педагогики и узбекского языка."
 "Подготовка специалистов по национальным"
 
-#: templates/index.html:231
+#: templates/index.html:232
 msgid "QABUL"
 msgstr "ПРИЕМ"
 
-#: templates/index.html:266
+#: templates/index.html:267
 msgid "VIRTUAL TUR"
 msgstr "ВИРТУАЛЬНЫЙ ТУР"
 
-#: templates/index.html:407
+#: templates/index.html:408
 msgid "Davomini o'qish"
 msgstr "Читать продолжение"
 
-#: templates/index.html:442
+#: templates/index.html:443
 msgid "Barcha Yangiliklar"
 msgstr "Все новости"
 
-#: templates/index.html:472
+#: templates/index.html:473
 msgid "Interaktiv xizmatlar"
 msgstr "Интерактивные услуги"
 
-#: templates/index.html:480 templates/index.html:501 templates/index.html:527
+#: templates/index.html:481 templates/index.html:502 templates/index.html:528
 msgid "BATAFSIL"
 msgstr "ДЕТАЛИ"
 
-#: templates/index.html:498
-#, fuzzy
+#: templates/index.html:499
 msgid "e-Kutubxona"
 msgstr "Библиотека"
 
-#: templates/index.html:520
+#: templates/index.html:521
 msgid "Rahbariyatga murojaat"
 msgstr "Обращение к руководству"
 
-#: templates/index.html:541
-msgid "O‘zbekiston-Finlyandiya instituti fakultet tarkibi."
+#: templates/index.html:542
+msgid "O‘zbekiston-Finlyandiya pedagogika instituting fakultetlari quydagilar:"
 msgstr "Структура факультета Узбекско-Финский институт."
 
-#: templates/index.html:586
+#: templates/index.html:587
 msgid ""
-"O'zbekistonning boy madaniyati va beg'ubor tabiati bilan tanishing "
-"Institutda Finlyandiyaning tabiiy go'zalligi, Sharqiy va G'arb unutilmas "
-"ta'lim sayohatini taklif qilish uchun birlashadi"
-msgstr "Познакомьтесь с богатой культурой и нетронутой природой Узбекистана. "
+"O'zbekiston-Finlandiya pedagogika institutida O'zbekistonning boy "
+"madaniyatini  hamda O'zbek-Fin pedagogik ta'limini o'zida mujassamlashtirgan "
+"bakalavr va magistr yo'nalishlari mavjud. Institutda  Sharq va G'arbning "
+"zamonaviy pedagogika tajribalaridan foydalaniladigan quydagi "
+"yo'nalishlarimiz mavjud."
+msgstr "В Узбекско-финском педагогическом институте действуют курсы бакалавриата и магистратуры, сочетающие в себе богатую культуру Узбекистана и узбекско-финское педагогическое образование. В институте действуют следующие направления, использующие современный педагогический опыт Востока и Запада."
 
-#: templates/index.html:599 templates/index.html:832
+#: templates/index.html:600 templates/index.html:833
 msgid "Ko'proq o'qish"
 msgstr "Подробнее"
 
-#: templates/index.html:619
+#: templates/index.html:620
 msgid "Institutning asosiy ko&acute;rsatkichlari"
 msgstr "Основные показатели университета"
 
-#: templates/index.html:640
+#: templates/index.html:641
 msgid "Bo'limlar va markazlar"
 msgstr "Отделы и центры"
 
-#: templates/index.html:646
+#: templates/index.html:647
 msgid "Seminar xonalar"
 msgstr "Аудитории для семинарских занятий"
 
-#: templates/index.html:650
+#: templates/index.html:651
 msgid "Ma’ruza xonalar"
 msgstr "Аудитории для лекционных занятий"
 
-#: templates/index.html:654
+#: templates/index.html:655
 msgid "Laboratoriya xonalar"
 msgstr "Аудитория для лабораторных занятий"
 
-#: templates/index.html:657
+#: templates/index.html:658
 msgid "Amaliyot xonalar"
 msgstr "Аудитории для практических занятий"
 
-#: templates/index.html:669
+#: templates/index.html:670
 msgid "Talabalar soni"
 msgstr "Количество студентов"
 
-#: templates/index.html:672
+#: templates/index.html:673
 msgid "Yigit"
 msgstr "Парень"
 
-#: templates/index.html:676
+#: templates/index.html:677
 msgid "Qiz"
 msgstr "Девушка"
 
-#: templates/index.html:684
+#: templates/index.html:685
 msgid "O&acute;qituvchi va professor"
 msgstr "Преподаватели и профессора"
 
-#: templates/index.html:693
+#: templates/index.html:694
 msgid "Dotsent"
 msgstr "Доцент"
 
-#: templates/index.html:697
+#: templates/index.html:698
 msgid "Professor"
 msgstr "Профессор"
 
-#: templates/index.html:700
+#: templates/index.html:701
 msgid "Katta o‘qituvchi"
 msgstr "Старший преподаватель"
 
-#: templates/index.html:758
+#: templates/index.html:759
 msgid "Barcha yangiliklarni ko'rish"
 msgstr "Смотреть все новости"
 
-#: templates/index.html:774
+#: templates/index.html:775
 msgid "Mashhur"
 msgstr "Выдающиеся"
 
-#: templates/index.html:774
+#: templates/index.html:775
 msgid "talabalarimiz"
 msgstr "студенты"
 
-#: templates/index.html:777
+#: templates/index.html:778
 msgid ""
 " Bizning g‘ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi  "
 "Respublika musobaqalarida qatnashgan talaba-sportchilar va xalqaro miqyosda "
@@ -791,13 +769,37 @@ msgstr ""
 "поддержки. Наши спортсмены достигают высоких результатов в разных видах "
 "спорта"
 
-#: templates/index.html:822
+#: templates/index.html:823
 msgid " Rektor "
 msgstr "Инициатива ректора"
 
-#: templates/index.html:822
+#: templates/index.html:823
 msgid " tashabbusi "
 msgstr "инициатива"
+
+#: templates/index.html:862
+msgid ""
+"O‘ZBEKISTON - Finlandiya pedagogika institutida oʼqish qaysi tillarda amalga "
+"oshiriladi?"
+msgstr ""
+"На каких языках ведется обучение в Узбекско - Финском педагогическом "
+"институте?"
+
+#: templates/index.html:868
+msgid ""
+"O‘ZBEKISTON - Finlandiya pedagogika institutida darslar oʼzbek, rus va tojik "
+"tillarida olib boriladi."
+msgstr ""
+"В Узбекско - Финском педагогическом институте занятия проводятся на "
+"узбекском, русском и таджикском языках."
+
+#: templates/index.html:888
+msgid ""
+"Talabalikka qabul qilingandan soʼng tegishli dekanatga yotoqxona talabnomasi "
+"bilan murojaat etiladi."
+msgstr ""
+"После зачисления в качестве студента в соответствующий деканат обращается с "
+"заявлением о предоставлении общежития."
 
 #: templates/international/InternationalNews.html:14
 msgid "Xalqaro Aloqalar"
@@ -849,7 +851,7 @@ msgid "UZFI"
 msgstr "УЗФИ"
 
 #: templates/international/Internationalmemorandum_det.html:67
-#: templates/international/int_det.html:69 templates/news/news-item.html:71
+#: templates/international/int_det.html:69 templates/news/news-item.html:74
 #: templates/news/video-gallery-item.html:69
 msgid "Recent Posts"
 msgstr "Последние новости"
@@ -966,8 +968,6 @@ msgstr "Теги"
 
 #: templates/news/popular-students-item.html:14
 #: templates/news/popular-students.html:14
-#, fuzzy
-#| msgid "Iqtidorli talabalar"
 msgid "Iqtdorli talabalar"
 msgstr "Одаренные студенты"
 
@@ -2292,6 +2292,20 @@ msgstr ""
 #: venv/lib/python3.9/site-packages/modeltranslation/widgets.py:24
 msgid "None"
 msgstr ""
+
+
+
+#, fuzzy
+#~| msgid ""
+#~| "                O&acute;ZBEKISTON - Finlandiya pedagogika institutida "
+#~| "yotoqxona bilan ta&acute;minlanishi qanday amalga oshiriladi?"
+#~ msgid ""
+#~ "\n"
+#~ "                O&acute;ZBEKISTON - Finlandiya pedagogika institutida "
+#~ "yotoqxona bilan ta&acute;minlanishi qanday amalga oshiriladi?"
+#~ msgstr ""
+#~ "Как предоставляется общежитие в Узбекско - Финском педагогическом "
+#~ "институте?"
 
 #~ msgid "UNIVERSITET "
 #~ msgstr "УНИВЕРСИТЕТ"
