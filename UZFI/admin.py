@@ -68,7 +68,7 @@ class ScientificWorkAdmin(TranslationAdmin):
 
 @admin.register(Leadership)
 class LeadershipAdmin(TranslationAdmin):
-    list_display = ("first_name",)
+    list_display = ("first_name","id")
 
 @admin.register(CentersDepartments)
 class CentersDepartmentAdmin(TranslationAdmin):
