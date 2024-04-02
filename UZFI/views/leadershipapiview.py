@@ -8,7 +8,7 @@ from django.shortcuts import render
 class LeadershipAPIView(APIView):
     def get(self, request):
         try :
-            leadership = Leadership.objects.all()
+            leadership = Leadership.objects.all()[::-1]
             serializers = LeadershipSerializer(leadership, many=True)
             return render(request, 'leadership.html',{"data":serializers.data})
         except Exception as e:
