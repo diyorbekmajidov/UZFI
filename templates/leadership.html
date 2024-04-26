@@ -1,7 +1,3 @@
-
-
-
-
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}{% blocktranslate %}UZFI  | Rahbariyat{% endblocktranslate %}{% endblock %}
@@ -31,11 +27,6 @@
         <div class="section-area section-sp2">
             <div class="container">
 
-                
-
-
-
-
                     <div class="heading-bx left">
                         <h2 class="m-b10 title-head">{% blocktranslate %}Rahbariyat {% endblocktranslate %}<span></span></h2>
                     </div>
@@ -47,10 +38,15 @@
                         <a class="row p-3" href="/{{ LANGUAGE_CODE }}/uzfi/leadership/{{ i.id }}">
                           <div class="row p-3">
                             <div class="col-md-4">
-                              <img class="rounded" src="{{i.img}}" style="width:300px" alt="" />
+                              <img class="rounded" src="{{i.img}}" style="width:300px;" alt="" />
                             </div>
-                            <div class="col-md-8">
-                              <h3><span class="text-secondary">{{i.rector.role}}</span> {{i.first_name}}</h3>
+                            <div class="col-md-8 ">
+                              <h4><span class="text-secondary"></span>{{i.prorektor.title}}</h4>
+                              <hr>
+                              <h6><span class="text-secondary"></span>{{i.first_name}}</h6>
+                              {% comment %} <div >
+                                <span class="text-secondary">{% blocktranslate %}{{i.rector.role}} {% endblocktranslate %} {{i.first_name}}</span> 
+                              </div> {% endcomment %}
                               <div >
                                 <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{i.email}}
                               </div>
