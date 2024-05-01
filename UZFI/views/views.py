@@ -20,7 +20,7 @@ class Index(TemplateView):
             serializers = FacultySerializer(faculty, many = True)
             direction  = Direction.objects.filter(direction_type='bakalavir')
             serializers1 = DirectionSerializer(direction, many = True)
-            queryset = News_Content.objects.order_by("date_created")[:5]
+            queryset = News_Content.objects.order_by("-date_created")[:5]
             serializer_class = NewsContentSerializer(queryset , many = True)
             popular_student  = PopularStudents.objects.order_by("date_created")[:5]
             serializer_popular_students = PopularStudentsSerializer(popular_student, many=True)
