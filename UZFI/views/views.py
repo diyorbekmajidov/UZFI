@@ -83,9 +83,9 @@ class Index(TemplateView):
             if mainpage_category:
                 mainpage_news = News_Content.objects.filter(category=mainpage_category)
                 serializers_context = NewsContentSerializer(mainpage_news.last())
-                serializers_context2 = NewsContentSerializer(mainpage_news, many=True)
+                # serializers_context2 = NewsContentSerializer(mainpage_news, many=True)
                 context['MAINPAGE'] = serializers_context.data
-                context['REKTOR_TASHABBUSI'] = serializers_context2.data
+                # context['REKTOR_TASHABBUSI'] = serializers_context2.data
 
 
             return render(request, 'index.html', context=context)
