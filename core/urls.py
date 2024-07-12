@@ -10,7 +10,7 @@ from django.views.static import serve
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('uzfi/secretadmin', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     re_path('media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     re_path('^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
