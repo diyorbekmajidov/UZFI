@@ -72,22 +72,31 @@
             </div>
             <!-- blog grid END -->
             <!-- Pagination -->
-            <div class="pagination-bx rounded-sm gray clearfix">
-              <ul class="pagination">
-                    {% if page_obj.has_previous %}
-                        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
-                    {% endif %}
-    
-                    {% for page in page_obj.paginator.page_range %}
-                        <li class="{% if page_obj.number == page %}active{% endif %}"><a href="?page={{page}}">{{page}}</a></li>
-                    {% endfor %}
-    
-                    {% if page_obj.has_next %}
-                        <li class="previous"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            
+            <ul class="pagination">
+              {% block pagination %}
+                  {% if page_obj.has_previous %}
+                      <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
+                  {% endif %}
+          
+                  {% for page_number in page_obj.paginator.page_range %}
+                      {% if page_number == 1 or page_number == page_obj.paginator.num_pages or page_number >= page_obj.number|add:-2 and page_number <= page_obj.number|add:2 %}
+                          <li class="{% if page_number == page_obj.number %}active{% endif %}">
+                              <a href="?page={{ page_number }}">{{ page_number }}</a>
+                          </li>
+                      {% elif page_number == 2 or page_number == page_obj.paginator.num_pages|add:-1 %}
+                          <li>...</li>
+                      {% endif %}
+                  {% endfor %}
+          
+                  {% if page_obj.has_next %}
+                      <li class="next"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
+                  {% endif %}
+              {% endblock %}
+          </ul>
+          
+          
+          
+          
             <!-- Pagination END -->
           </div>
           <!-- left part END -->

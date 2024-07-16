@@ -3,8 +3,10 @@ from django.shortcuts import render
 from rest_framework.generics import ListAPIView
 from django.views.generic import ListView
 from .models import *
+from django.views import View
+
 from .serializers import *
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from rest_framework.pagination import PageNumberPagination
 from UZFI.models import Requisites 
 from UZFI.serializers import RequisitesSerializer
@@ -14,25 +16,33 @@ class NewsPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 10000
 
-class NewsContentListAPIView(ListView):  
+class NewsContentListAPIView(View):  
     def get(self, request, *args, **kwargs):
         try:
             category = NewsCategory.objects.all()
-            news_content = News_Content.objects.all().order_by("date_created")[::-1]
-            page = Paginator(news_content, 9)
+            news_content = News_Content.objects.all().order_by("-date_created")
+            paginator = Paginator(news_content, 9)
 
-            serializer1 = NewsCategorySerializer(category, many = True)
-            page_num = int(request.GET.get('page', 1))
+            page_num = request.GET.get('page', 1)
+            
+
+            try:
+                page_obj = paginator.page(page_num)
+            except PageNotAnInteger:
+                page_obj = paginator.page(1)
+            except EmptyPage:
+                page_obj = paginator.page(paginator.num_pages)
 
             last_news = News_Content.objects.order_by('-date_created')[:3]
-            serializer3 = NewsContentSerializer(last_news, many = True)
+
             return render(request, 'news/news.html', {
-                "category":serializer1.data,
-                "last_news":serializer3.data,
-                "page_obj":page.page(page_num)})
+                "category": category,
+                "last_news": last_news,
+                "page_obj": page_obj,
+            })
         except Exception as e:
             print(e)
-            return render(request,'news/news.html')
+            return render(request, 'news/news.html')
             
 
 class NewsContentCategoryAPIView(ListView):
@@ -137,13 +147,22 @@ class SearchNewsApiView(ListAPIView):
 class PendingEventApiviews(TemplateView):
     def get(self, request):
         try:
-            pending_events = PendingEvents.objects.all()
-            page = Paginator(pending_events, 9)
-            page_num = int(request.GET.get('page', 1))
+            pending_events = PendingEvents.objects.all().order_by("date_created")[::-1]
+            paginator = Paginator(pending_events, 9)
+
+            page_num = request.GET.get('page', 1)
+            
+
+            try:
+                page_obj = paginator.page(page_num)
+            except PageNotAnInteger:
+                page_obj = paginator.page(1)
+            except EmptyPage:
+                page_obj = paginator.page(paginator.num_pages)
             serializers = PendingEventsSerializer(pending_events, many = True)
             return render(request, 'news/events.html', {
                 "data":serializers.data,
-                "page_obj":page.page(page_num)})
+                "page_obj": page_obj,})
         except Exception as e:
             print(e)
             return render(request,'news/events.html')

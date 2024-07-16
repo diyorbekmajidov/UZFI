@@ -34,8 +34,13 @@
                                     <li><i class="fa fa-building"></i> {{data.place}}</li>
                                 </ul>
                                 <h5 class="post-title">{{data.event_name}}</h5>
-                                <img src="{{data.img}}" class="mb-3" />
-                                {{data.body|safe}}
+                                <div class="action-box" style="position: relative; overflow: hidden; width: 80%; height: 590px;">
+                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}">
+                                      <img style="object-fit: contain; width: 100%; height: 100%;" src="{{data.img}}" alt="" />
+                                    </a>
+                                  </div>
+                                {% comment %} <img src="{{data.img}}" class="mb-3" /> {% endcomment %}
+                                <p dir="auto">{{data.body|safe}}<p>
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
