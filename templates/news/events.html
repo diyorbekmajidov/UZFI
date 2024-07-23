@@ -1,128 +1,122 @@
-{% extends "base.html" %} {% load i18n %} {% block title %}{% blocktranslate%}UZFI | E'lonlar{% endblocktranslate %}{% endblock %} 
-{% block content %} {% load static %}
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
 
+{% block title %}{% blocktranslate%}UZFI | E'lonlar{% endblocktranslate %}{% endblock %} 
+
+{% block content %}
 <div class="page-content bg-white">
-  <div class="page-content">
-    <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %})">
-      <div class="container">
-        <div class="page-banner-entry">
-          <h1 class="text-white">{% blocktranslate %}E&acute;lonlar{% endblocktranslate %}</h1>
-        </div>
+  <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %})">
+    <div class="container">
+      <div class="page-banner-entry">
+        <h1 class="text-white">{% blocktranslate %}E&acute;lonlar{% endblocktranslate %}</h1>
       </div>
     </div>
-    <div class="breadcrumb-row">
-      <div class="container">
-        <ul class="list-inline">
-          <li>
-            <a href="/">{% blocktranslate %}Asosiy sahifa{% endblocktranslate %}</a>
-          </li>
-          <li>{% blocktranslate %}E'lonlar{% endblocktranslate %}</li>
-        </ul>
-      </div>
+  </div>
+
+  <div class="breadcrumb-row">
+    <div class="container">
+      <ul class="list-inline">
+        <li>
+          <a href="/">{% blocktranslate %}Asosiy sahifa{% endblocktranslate %}</a>
+        </li>
+        <li>{% blocktranslate %}E'lonlar{% endblocktranslate %}</li>
+      </ul>
     </div>
-    <div class="content-block">
-      <div class="section-area section-sp1 mx-3 my-1">
+  </div>
+
+  <div class="content-block">
+    <div class="section-area section-sp1 mx-3 my-1">
       <!-- Blog Grid ==== -->
       <div class="row">
         <!-- left part start -->
-        <div class="col-lg-1 col-xl-1 col-md-1">
-        </div>
+        <div class="col-lg-1 col-xl-1 col-md-1"></div>
         <div class="col-lg-8 col-xl-8 col-md-6 col-xs-12 col-sm-12">
           <!-- blog grid -->
           <div id="masonry" class="ttr-blog-grid-3 row">
-              
-              
-                {% for i in page_obj %}
-  
-                <div class="post action-card  col-xl-4 col-lg-4 col-md-4 col-xs-12 col-sm-12 m-b40">
-                  <div class="recent-news">
-                    <div class="action-box" style=" position: relative;overflow: hidden; width: auto; height: 190px;" >
-                      <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}"
-                      > 
-                      <img style="object-fit: cover;" src="/media/{{i.img}}" alt="" /> </a>
-                    </div>
-                    <div class="info-bx">
-                      <ul class="media-post">
-                        <li>
-                          <i class="fa fa-calendar"></i> {{i.date_created|date:"d.m.Y"}}
-                        </li>
-                        <li>
-                          <i class="fa fa-eye"></i> {{i.views}}
-                        </li>
-                        <li>
-                          <i class="fa fa-building"></i> {{i.place|truncatechars:15}}
-                        </li>
-                      </ul>
-                      <p class="post-title" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
-                        <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}">
-                          {{i.event_name|truncatechars:65}}
-                        </a>
-                      </p>
-                      <p class="post-description" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
-                        {{i.description|truncatechars:100}}
-                      </p>
-                      
-                      
-                    </div>
+            {% for i in page_obj %}
+              <div class="post action-card col-xl-4 col-lg-4 col-md-4 col-xs-12 col-sm-12 m-b40">
+                <div class="recent-news">
+                  <div class="action-box" style="position: relative; overflow: hidden; width: auto; height: 190px;">
+                    <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}">
+                      <img style="object-fit: cover;" src="/media/{{i.img}}" alt="" />
+                    </a>
+                  </div>
+                  <div class="info-bx">
+                    <ul class="media-post">
+                      <li><i class="fa fa-calendar"></i> {{i.date_created|date:"d.m.Y"}}</li>
+                      <li><i class="fa fa-eye"></i> {{i.views}}</li>
+                      <li><i class="fa fa-building"></i> {{i.place|truncatechars:15}}</li>
+                    </ul>
+                    <p class="post-title" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
+                      <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}">
+                        {{i.event_name|truncatechars:65}}
+                      </a>
+                    </p>
+                    <p class="post-description" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
+                      {{i.description|truncatechars:100}}
+                    </p>
                   </div>
                 </div>
-  
-                {% endfor %}
-  
               </div>
-
-            <ul class="pagination">
-              {% block pagination %}
-                  {% if page_obj.has_previous %}
-                      <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a></li>
-                  {% endif %}
-          
-                  {% for page_number in page_obj.paginator.page_range %}
-                      {% if page_number == 1 or page_number == page_obj.paginator.num_pages or page_number >= page_obj.number|add:-2 and page_number <= page_obj.number|add:2 %}
-                          <li class="{% if page_number == page_obj.number %}active{% endif %}">
-                              <a href="?page={{ page_number }}">{{ page_number }}</a>
-                          </li>
-                      {% elif page_number == 2 or page_number == page_obj.paginator.num_pages|add:-1 %}
-                          <li>...</li>
-                      {% endif %}
-                  {% endfor %}
-          
-                  {% if page_obj.has_next %}
-                      <li class="next"><a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a></li>
-                  {% endif %}
-              {% endblock %}
-          </ul>
-           <!-- Pagination END -->
+            {% endfor %}
           </div>
-          <div class="col-lg-2 col-xl-2 col-md-2 sticky-top ">
-            <aside class="side-bar ">
-              <div class="widget recent-posts-entry ">
-                <aside  class="side-bar sticky-top">
-                  <div class="widget recent-posts-entry card  ">
-                      <div class="card-header bg-primary text-light sidebar-title">{% blocktranslate %}UNIVERSITET{% endblocktranslate %}</div>
-                      <div class="fast_sidebar card-body">
-                              <ul>
-                                <li><a href="/{{LANGUAGE_CODE}}/">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Mashhur talabalar{% endblocktranslate %}</a></li>
-                                <li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
-                              </ul>
-                      </div>
+          
+          <ul class="pagination">
+            {% block pagination %}
+              {% if page_obj.has_previous %}
+                <li class="previous">
+                  <a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i>{% blocktranslate %} Avvalgi{% endblocktranslate %}</a>
+                </li>
+              {% endif %}
+
+              {% for page_number in page_obj.paginator.page_range %}
+                {% if page_number == 1 or page_number == page_obj.paginator.num_pages or page_number >= page_obj.number|add:-2 and page_number <= page_obj.number|add:2 %}
+                  <li class="{% if page_number == page_obj.number %}active{% endif %}">
+                    <a href="?page={{ page_number }}">{{ page_number }}</a>
+                  </li>
+                {% elif page_number == 2 or page_number == page_obj.paginator.num_pages|add:-1 %}
+                  <li>...</li>
+                {% endif %}
+              {% endfor %}
+
+              {% if page_obj.has_next %}
+                <li class="next">
+                  <a href="?page={{ page_obj.next_page_number }}"><i class="ti-arrow-right"></i>{% blocktranslate %} Keyingi{% endblocktranslate %}</a>
+                </li>
+              {% endif %}
+            {% endblock %}
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-xl-2 col-md-2 sticky-top">
+          <aside class="side-bar">
+            <div class="widget recent-posts-entry">
+              <aside class="side-bar sticky-top">
+                <div class="widget recent-posts-entry card">
+                  <div class="card-header bg-primary text-light sidebar-title">{% blocktranslate %}UNIVERSITET{% endblocktranslate %}</div>
+                  <div class="fast_sidebar card-body">
+                    <ul>
+                      <li><a href="/{{LANGUAGE_CODE}}/">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/">{% blocktranslate %}Hujjatlar{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/news/popular-students/">{% blocktranslate %}Mashhur talabalar{% endblocktranslate %}</a></li>
+                      <li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
+                    </ul>
                   </div>
+                </div>
               </aside>
-              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Blog Grid END ==== -->
-       
     </div>
     <!-- Page Content Box END ==== -->
   </div>
 </div>
-
 {% endblock %}
