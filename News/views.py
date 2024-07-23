@@ -9,6 +9,7 @@ from .serializers import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from rest_framework.pagination import PageNumberPagination
 from UZFI.models import Requisites 
+from django.shortcuts import get_object_or_404
 from UZFI.serializers import RequisitesSerializer
 
 class NewsPagination(PageNumberPagination):
@@ -62,16 +63,25 @@ class NewsContentCategoryAPIView(ListView):
 
 
 class NewsContentApiviewGet(TemplateView):
+    template_name = 'news/news-item.html'
+    
     def get(self, request, pk):
-        news_content = News_Content.objects.get(pk=pk)
-        views = news_content.views+1
-        news_content.views = views
+        news_content = get_object_or_404(News_Content, pk=pk)
+        news_content.views += 1
         news_content.save()
+
+        # Main content
         serializer = NewsContentSerializer(news_content)
-        queryset = News_Content.objects.order_by("date_created")[:5:-1]
-        serializer_class = NewsContentSerializer(queryset , many = True)
-        return render(request, 'news/news-item.html', {"data":serializer.data,
-                                                  "latest":serializer_class.data})
+        # Latest 5 items
+        latest_queryset = News_Content.objects.order_by("-date_created")[:5]
+        latest_serializer = NewsContentSerializer(latest_queryset, many=True)
+
+        context = {
+            "data": serializer.data,
+            "latest": latest_serializer.data
+        }
+        return render(request, self.template_name, context)
+
 
 class PopularStudentsApiView(TemplateView):
     def get(self, request):
