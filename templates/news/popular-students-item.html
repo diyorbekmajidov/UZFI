@@ -31,7 +31,19 @@
                       {% for item in data.img %}
                         <li class="splide__slide">
                           <div style="overflow: hidden; height: 400px; justify-content: center; display: flex;">
-                            <img src="{{ item.img }}" alt="{{ data.student_name }}" />
+                            <img class="image" src="{{ item.img }}" alt="{{ data.student_name }}" />
+                            <style>
+                              .image {
+                                  object-fit: content;
+                                  width: 100%;
+                                  height: 500px;
+                              }
+                              @media only screen and (max-width: 500px) {
+                                  .image {
+                                      height: 250px;
+                                  }
+                              }
+                          </style>
                           </div>
                         </li>
                       {% endfor %}

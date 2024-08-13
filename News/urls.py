@@ -1,39 +1,37 @@
 from django.urls import path, include
 from .views import (
-    NewsContentListAPIView,
-    NewsContentApiviewGet,
-    PopularStudentsApiView,
-    PopularStudentsById,
-    NewsContentCategoryAPIView,
-    VedioNewsByID,
-    VedioNews,
-    SearchNewsApiView,
-    PendingEventByIdApiviews,
-    PendingEventApiviews,
-    PendingEventSearchApiviews,
+    NewsContentView,
+    NewsContentByIdView,
+    PopularStudentsView,
+    # PopularStudentsById,
+    NewsContentCategoryView,
+    # VedioNewsByID,
+    VedioNewsView,
+    SearchNews,
+    PendingEventById,
+    PendingEvent,
     Contact,
 )
 
 urlpatterns = [
 
     # Categories
-    path('category/<int:category>/', NewsContentCategoryAPIView.as_view()),
+    path('category/<int:category>/', NewsContentCategoryView.as_view()),
 
     # Content
-    path('content/', NewsContentListAPIView.as_view(), name='news_content_list_create'),
-    path('content/<int:pk>/', NewsContentApiviewGet.as_view(), name='news_content_list_create'),
+    path('content/', NewsContentView.as_view(), name='news_content_list_create'),
+    path('content/<int:pk>/', NewsContentByIdView.as_view(), name='news_content_list_create'),
 
-    path('popular-students/', PopularStudentsApiView.as_view()),
-    path('popular-students/<int:pk>/', PopularStudentsById.as_view()),
+    path('popular-students/', PopularStudentsView.as_view()),
+    path('popular-students/<int:pk>/', PopularStudentsView.as_view()),
 
-    path('video-gallery/', VedioNews.as_view()),
-    path('video-gallery/<int:pk>/', VedioNewsByID.as_view()),
+    path('video-gallery/', VedioNewsView.as_view()),
+    path('video-gallery/<int:pk>/', VedioNewsView.as_view()),
 
-    path('searchnews/', SearchNewsApiView.as_view()),
+    path('searchnews/', SearchNews.as_view()),
 
-    path('events/', PendingEventApiviews.as_view()),
-    path('events/<int:pk>/', PendingEventByIdApiviews.as_view()),
-    path('events/<str:text>/', PendingEventSearchApiviews.as_view()),
+    path('events/', PendingEvent.as_view()),
+    path('events/<int:pk>/', PendingEventById.as_view()),
 
     path('contact/', Contact.as_view()),
 

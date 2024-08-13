@@ -1,8 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from rest_framework.generics import ListAPIView
-from django.views.generic import ListView
-from .models import *
+from .models import (NewsCategory, News_Content, Vedio_New, PopularStudents, PopularStudentImg,  PendingEvents)
 from django.views import View
 
 from .serializers import *
@@ -12,41 +10,40 @@ from UZFI.models import Requisites
 from django.shortcuts import get_object_or_404
 from UZFI.serializers import RequisitesSerializer
 
-class NewsPagination(PageNumberPagination):
-    page_size = 1
-    page_size_query_param = 'page_size'
-    max_page_size = 10000
+# class NewsPagination(PageNumberPagination):
+#     page_size = 1
+#     page_size_query_param = 'page_size'
+#     max_page_size = 10000
 
-class NewsContentListAPIView(View):  
-    def get(self, request, *args, **kwargs):
+class NewsContentView(TemplateView):
+    template_name = 'news/news.html'
+    paginate_by = 9
+
+    def get(self, request):
+        context = self.get_context_data(request)
+        return render(request, self.template_name, context)
+
+    def get_context_data(self, request):
+        context = {}
         try:
-            category = NewsCategory.objects.all()
+            context['category'] = NewsCategory.objects.all()
             news_content = News_Content.objects.all().order_by("-date_created")
-            paginator = Paginator(news_content, 9)
+            paginator = Paginator(news_content, self.paginate_by)
 
             page_num = request.GET.get('page', 1)
-            
-
             try:
-                page_obj = paginator.page(page_num)
+                context['page_obj'] = paginator.page(page_num)
             except PageNotAnInteger:
-                page_obj = paginator.page(1)
-            except EmptyPage:
-                page_obj = paginator.page(paginator.num_pages)
+                context['page_obj'] = paginator.page(1)
 
-            last_news = News_Content.objects.order_by('-date_created')[:3]
-
-            return render(request, 'news/news.html', {
-                "category": category,
-                "last_news": last_news,
-                "page_obj": page_obj,
-            })
+            context['last_news'] = News_Content.objects.order_by('-date_created')[:3]
         except Exception as e:
-            print(e)
-            return render(request, 'news/news.html')
+            print(f"Error retrieving news content: {e}")
+
+        return context
             
 
-class NewsContentCategoryAPIView(ListView):
+class NewsContentCategoryView(TemplateView):
     def get(self, request, category):
         try:
             all_category = NewsCategory.objects.all()
@@ -62,7 +59,7 @@ class NewsContentCategoryAPIView(ListView):
             return render(request,'news/news-category.html')
 
 
-class NewsContentApiviewGet(TemplateView):
+class NewsContentByIdView(TemplateView):
     template_name = 'news/news-item.html'
     
     def get(self, request, pk):
@@ -83,35 +80,61 @@ class NewsContentApiviewGet(TemplateView):
         return render(request, self.template_name, context)
 
 
-class PopularStudentsApiView(TemplateView):
-    def get(self, request):
+class PopularStudentsView(TemplateView):
+    template_name = 'news/popular-students.html'
+
+    def get(self, request, pk=None):
+        if pk is not None:
+            try:
+                popular = PopularStudents.objects.get(id=pk)
+                popular_serializer = PopularStudentsSerializer(popular)
+                # Get the last 5 popular students
+                last_populars = PopularStudents.objects.order_by('-date_created')[:5]
+                last_populars_serializer = PopularStudentsSerializer(last_populars, many=True)
+                context = {
+                    "data": popular_serializer.data,
+                    "populars": last_populars_serializer.data,
+                }
+                return render(request, 'news/popular-students-item.html', context)
+            except PopularStudents.DoesNotExist:
+                # Handle the case where the object does not exist
+                return render(request, 'news/popular-students-item.html', {'error': 'Popular student not found'})
         try:
-            populars = PopularStudents.objects.all().order_by("date_created")[::-1]
+            populars = PopularStudents.objects.all().order_by('-date_created')
             serializer = PopularStudentsSerializer(populars, many=True)
-            page = Paginator(serializer.data, 9)
+            paginator = Paginator(serializer.data, 9)
             page_num = int(request.GET.get('page', 1))
-            return  render(request, 'news/popular-students.html', {"page_obj":page.page(page_num)})
-        except Exception as e:
-            print(e)
-            return render(request,'news/popular-students.html')
+            page_obj = paginator.get_page(page_num)
             
-class PopularStudentsById(TemplateView):
-    def get(self, request, pk):
-        try:
-            populars = PopularStudents.objects.get(id=pk)
-            serializers = PopularStudentsSerializer(populars)
-            last_populars = PopularStudents.objects.order_by('-date_created')[:5]
-            serializer2 = PopularStudentsSerializer(last_populars, many = True)
-            return  render(request, 'news/popular-students-item.html', 
-                           {"data":serializers.data,
-                            "pouplar":serializer2.data,
-                            })
+            context = {
+                "page_obj": page_obj
+            }
+            return render(request, 'news/popular-students.html', context)
         except Exception as e:
+            # Log the error properly
             print(e)
-            return render(request,'news/popular-students-item.html')
+            return render(request, 'news/popular-students.html', {'error': 'An error occurred'})
+            
         
-class VedioNews(TemplateView):
-    def get(self, request):
+class VedioNewsView(TemplateView):
+    def get(self, request, pk=None):
+        if pk is not None:
+            try:
+                video = Vedio_New.objects.get(id=pk)
+                views = video+1
+                video.views = views
+                video.save()
+                video_serializer = VedioNewSerializer(video)
+                video_news = Vedio_New.objects.order_by('id')
+                page = Paginator(video_news, 9)
+                page_num = int(request.GET.get('page', 1))
+                return render(request,'news/video-gallery-item.html', {
+                    "vedio_news":serializers.data,
+                    "page_obj":page.page(page_num)})
+            except Exception as e:
+                print(e)
+                return render(request,'news/video-gallery-item.html') 
+
         try:
             vedio_news = Vedio_New.objects.all().order_by("date_created")[::-1]
             page = Paginator(vedio_news, 9)
@@ -138,7 +161,7 @@ class VedioNewsByID(TemplateView):
             print(e)
             return render(request,'news/video-gallery-item.html') 
         
-class SearchNewsApiView(ListAPIView):
+class SearchNews(TemplateView):
     def get(self, request):
         try :
             queryset = News_Content.objects.filter(title__icontains=request.POST.get("key", ""))
@@ -154,15 +177,13 @@ class SearchNewsApiView(ListAPIView):
             return render(request,'news/search.html')
         
 
-class PendingEventApiviews(TemplateView):
+class PendingEvent(TemplateView):
     def get(self, request):
         try:
             pending_events = PendingEvents.objects.all().order_by("date_created")[::-1]
             paginator = Paginator(pending_events, 9)
 
             page_num = request.GET.get('page', 1)
-            
-
             try:
                 page_obj = paginator.page(page_num)
             except PageNotAnInteger:
@@ -178,7 +199,7 @@ class PendingEventApiviews(TemplateView):
             return render(request,'news/events.html')
 
     
-class PendingEventByIdApiviews(TemplateView):
+class PendingEventById(TemplateView):
     def get(self, request, pk):
         try:
             pending_events = PendingEvents.objects.get(id = pk)
@@ -194,14 +215,6 @@ class PendingEventByIdApiviews(TemplateView):
             print(e)
             return render(request,'news/events-item.html')
 
-class PendingEventSearchApiviews(ListAPIView):
-    def get(self, request, text):
-        try :
-            queryset = PendingEvents.objects.filter(event_name__=text)
-            serializers = PendingEventsSerializer(queryset, many = True)
-            return render(request, '.html', {"data":serializers.data})
-        except:
-            return render(request,'50x.error.html')
         
 class Contact(TemplateView):
     def get(self, request):
