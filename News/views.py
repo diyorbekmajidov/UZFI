@@ -1,3 +1,6 @@
+from typing import Any
+from django.http import HttpRequest
+from django.http.response import HttpResponse as HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from .models import (NewsCategory, News_Content, Vedio_New, PopularStudents, PopularStudentImg,  PendingEvents)
@@ -41,7 +44,6 @@ class NewsContentView(TemplateView):
             print(f"Error retrieving news content: {e}")
 
         return context
-            
 
 class NewsContentCategoryView(TemplateView):
     def get(self, request, category):
@@ -121,16 +123,19 @@ class VedioNewsView(TemplateView):
         if pk is not None:
             try:
                 video = Vedio_New.objects.get(id=pk)
-                views = video+1
+                views = video.views+1
                 video.views = views
                 video.save()
-                video_serializer = VedioNewSerializer(video)
-                video_news = Vedio_New.objects.order_by('id')
-                page = Paginator(video_news, 9)
-                page_num = int(request.GET.get('page', 1))
-                return render(request,'news/video-gallery-item.html', {
-                    "vedio_news":serializers.data,
-                    "page_obj":page.page(page_num)})
+                lastest = Vedio_New.objects.order_by("-id")[:5]
+                lastest_serializer = VedioNewSerializer(lastest, many=True)
+                return render(
+                    request,
+                    'news/video-gallery-item.html', 
+                    {
+                        "vedio_news":video,
+                        "lastest":lastest_serializer.data
+                    }
+                )
             except Exception as e:
                 print(e)
                 return render(request,'news/video-gallery-item.html') 
@@ -144,22 +149,22 @@ class VedioNewsView(TemplateView):
             print(e)
             return render(request,'news/video-gallery.html')
     
-class VedioNewsByID(TemplateView):
-    def get(self, request,pk):
-        try:
-            vedio_new = Vedio_New.objects.get(id=pk)
-            views = video_vews.views + 1
-            vedio_new.views = views
-            serializers = VedioNewSerializer(vedio_new)
-            video_vews = Vedio_New.objects.all().order_by("id")
-            page = Paginator(video_vews, 9)
-            page_num = int(request.GET.get('page', 1))
-            return render(request,'news/video-gallery-item.html', {
-                "vedio_news":serializers.data,
-                "page_obj":page.page(page_num)})
-        except Exception as e:
-            print(e)
-            return render(request,'news/video-gallery-item.html') 
+# class VedioNewsByID(TemplateView):
+#     def get(self, request,pk):
+#         try:
+#             vedio_new = Vedio_New.objects.get(id=pk)
+#             views = video_vews.views + 1
+#             vedio_new.views = views
+#             serializers = VedioNewSerializer(vedio_new)
+#             video_vews = Vedio_New.objects.all().order_by("id")
+#             page = Paginator(video_vews, 9)
+#             page_num = int(request.GET.get('page', 1))
+#             return render(request,'news/video-gallery-item.html', {
+#                 "vedio_news":serializers.data,
+#                 "page_obj":page.page(page_num)})
+#         except Exception as e:
+#             print(e)
+#             return render(request,'news/video-gallery-item.html') 
         
 class SearchNews(TemplateView):
     def get(self, request):

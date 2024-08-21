@@ -7,17 +7,14 @@ from .views import(
     LibraryViews,
     TtjViews,
     AbiturViewsById,
-    InternationalRelationViews,
-    InternationalRelationByIdViews
+    XalqaroHamkorlik
 )
 
 urlpatterns = [
     #International Relation views
-    # path('internationalrelations/', InternationalRelationsViews.as_view(), name='international_relations'),
-    path('internationalrelation/', InternationalRelationViews.as_view()),
+    path('internationalrelation/', XalqaroHamkorlik.as_view()),
     path('internationalmemorandum/', InternationalMemorandumViews.as_view()),
     path('internationalmemorandum/<int:pk>/', InternationalMemorandumViewsById.as_view()),
-    path('int_det/<int:pk>/', InternationalRelationByIdViews.as_view(),),
     path('abitur/<int:pk>/', AbiturViewsById.as_view(),),
     path('internationalgrant/', InternationalGrantViews.as_view()),
     path('studentgroups/', StudentGroupsViews.as_view()),
