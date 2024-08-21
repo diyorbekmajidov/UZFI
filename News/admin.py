@@ -5,11 +5,11 @@ from .models import *
 
 @admin.register(NewsCategory)
 class NewsCategoryAdmin(TranslationAdmin):
-    list_display = ('new_category',)
+    list_display = ('new_category','id',)
 
 @admin.register(News_Content)
 class News_ContentAdmin(TranslationAdmin):
-    list_display = ('title',)
+    list_display = ('title', 'id',)
 
 @admin.register(Vedio_New)
 class Vedio_NewAdmin(TranslationAdmin):
