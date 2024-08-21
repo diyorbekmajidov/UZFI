@@ -21,11 +21,10 @@ class AbiturViewsById(APIView):
 class XalqaroHamkorlik(TemplateView):
     def get(self, request) :
         try:
-            category = News_Content.objects.filter(category=1).order_by("date_created")[::-1]
+            category = News_Content.objects.filter(category=6).order_by("date_created")[::-1]
             serializer = NewsContentSerializer(category, many = True)
             page = Paginator(category, 9)
             page_num = int(request.GET.get('page', 1))
-            print(serializer.data, 234412)
             return render(request, 'international/InternationalNews.html', {"page_obj":page.page(page_num), "category":serializer.data})
         except Exception as e:
             print(f"Error retrieving news content: {e}")
@@ -35,7 +34,7 @@ class InternationalMemorandumViews(TemplateView):
         try:
             internations = InternationalMemorandum.objects.all()
             serializers = InternationalMemorandumSerializers(internations, many = True)
-            page = Paginator(serializers.data, 2)
+            page = Paginator(serializers.data, 4)
             page_num = int(request.GET.get('page', 1))
             return  render(request, 'international/Internationalmemorandum.html', {"page_obj":page.page(page_num)})
         except Exception as e:
