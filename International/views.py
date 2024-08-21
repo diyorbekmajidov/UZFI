@@ -21,7 +21,7 @@ class AbiturViewsById(APIView):
 class XalqaroHamkorlik(TemplateView):
     def get(self, request) :
         try:
-            category = News_Content.objects.filter(category=6).order_by("date_created")[::-1]
+            category = News_Content.objects.filter(category=10).order_by("date_created")[::-1]
             serializer = NewsContentSerializer(category, many = True)
             page = Paginator(category, 9)
             page_num = int(request.GET.get('page', 1))
