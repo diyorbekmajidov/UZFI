@@ -1,13 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from rest_framework.response import Response
-from django.views.generic import ListView
 from rest_framework.views import APIView
 from .models import *
 from .serializers import *
 from django.core.paginator import Paginator
-from rest_framework.pagination import PageNumberPagination
 from News.models import News_Content
 from News.serializers import NewsContentSerializer
    
@@ -20,31 +17,19 @@ class AbiturViewsById(APIView):
             return render(request, 'abitur/int_det.html',{"data":serializers.data})
         except Exception as e:
             return render(request,'abitur/int_det.html')
-
-class InternationalRelationViews(APIView):
-    def get(self, request):
+        
+class XalqaroHamkorlik(TemplateView):
+    def get(self, request) :
         try:
-            internations = InternationalRelation.objects.all().order_by("date_created")[::-1]
-            serializers = InternationalRelationSerializers(internations, many=True)
-            page = Paginator(serializers.data, 6)
+            category = News_Content.objects.filter(category=1).order_by("date_created")[::-1]
+            serializer = NewsContentSerializer(category, many = True)
+            page = Paginator(category, 9)
             page_num = int(request.GET.get('page', 1))
-            
-            return  render(request, 'international/InternationalNews.html', 
-                           {"page_obj":page.page(page_num)})
+            print(serializer.data, 234412)
+            return render(request, 'international/InternationalNews.html', {"page_obj":page.page(page_num), "category":serializer.data})
         except Exception as e:
-            print(e)
-            return  render(request, '404.html')
-
-class InternationalRelationByIdViews(APIView):
-    def get(self, request, pk):
-        try:
-            internations = InternationalRelation.objects.get(id=pk)
-            serializers = InternationalRelationSerializers(internations)
-            last_news = InternationalRelation.objects.order_by('date_created')[:3:-1]
-            return  render(request, 'international/int_det.html', {"data":serializers.data,"last_news":last_news})
-        except Exception as e:
-            print(e)
-            return render(request, '404.html')
+            print(f"Error retrieving news content: {e}")
+            return render(request,'international/internationalrelation.html')
 class InternationalMemorandumViews(TemplateView):
     def get(self, request):
         try:

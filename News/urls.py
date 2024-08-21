@@ -3,18 +3,14 @@ from .views import (
     NewsContentView,
     NewsContentByIdView,
     PopularStudentsView,
-    # PopularStudentsById,
     NewsContentCategoryView,
-    # VedioNewsByID,
     VedioNewsView,
-    SearchNews,
     PendingEventById,
     PendingEvent,
     Contact,
 )
 
 urlpatterns = [
-
     # Categories
     path('category/<int:category>/', NewsContentCategoryView.as_view()),
 
@@ -27,8 +23,6 @@ urlpatterns = [
 
     path('video-gallery/', VedioNewsView.as_view()),
     path('video-gallery/<int:pk>/', VedioNewsView.as_view()),
-
-    path('searchnews/', SearchNews.as_view()),
 
     path('events/', PendingEvent.as_view()),
     path('events/<int:pk>/', PendingEventById.as_view()),
