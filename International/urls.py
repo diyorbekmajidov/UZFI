@@ -1,21 +1,28 @@
 from django.urls import path, include
 from .views import(
-    InternationalMemorandumViews,
-    InternationalMemorandumViewsById,
-    InternationalGrantViews,
-    StudentGroupsViews,
+    InternationalMemorandumViews,InternationalMemorandumApiViews,
+    InternationalGrantViews,InternationalGrantApiViews,
+    StudentGroupsViews,StudentGroupsApiViews,
     LibraryViews,
     TtjViews,
-    AbiturViewsById,
-    XalqaroHamkorlik
+    AbiturViewsById,AbiturViewsByIdApi,
+    XalqaroHamkorlik,XalqaroHamkorlikApi
 )
 
 urlpatterns = [
+    #api uchun
+    path('abitur/api/<int:pk>/', AbiturViewsByIdApi.as_view()),
+    path('internationalrelation/api/', XalqaroHamkorlikApi.as_view()),
+    path('internationalmemorandum/api/', InternationalMemorandumApiViews.as_view()),
+    path('internationalmemorandum/api/<int:pk>/', InternationalMemorandumApiViews.as_view()),
+    path('studentgroups/api/', StudentGroupsApiViews.as_view()),
+    path('internationalgrant/api/', InternationalGrantApiViews.as_view()),
+    # end api
     #International Relation views
     path('internationalrelation/', XalqaroHamkorlik.as_view()),
     path('internationalmemorandum/', InternationalMemorandumViews.as_view()),
-    path('internationalmemorandum/<int:pk>/', InternationalMemorandumViewsById.as_view()),
-    path('abitur/<int:pk>/', AbiturViewsById.as_view(),),
+    path('internationalmemorandum/<int:pk>/', InternationalMemorandumViews.as_view()),
+    path('abitur/<int:pk>/', AbiturViewsById.as_view()),
     path('internationalgrant/', InternationalGrantViews.as_view()),
     path('studentgroups/', StudentGroupsViews.as_view()),
     path('library/', LibraryViews.as_view()),
