@@ -1,11 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
 from rest_framework.response import Response
+from django.views.generic import TemplateView
 from UZFI.models import *
 from UZFI.serializers import *
 from django.shortcuts import render
 
-class LeadershipAPIView(APIView):
+class LeadershipAPIView(TemplateView):
     def get(self, request):
         try :
             leadership = Leadership.objects.all().order_by('id')
@@ -17,7 +18,7 @@ class LeadershipAPIView(APIView):
             # return Response(request, 'kd')
             return render(request, 'leadership.html')
         
-class LeadershipByIdAPIView(APIView):
+class LeadershipByIdAPIView(TemplateView):
     def get(self, request, pk):
         try :
             leadership = Leadership.objects.get(id=pk)

@@ -1,22 +1,71 @@
-from typing import Any
 from django.http import HttpRequest
 from django.http.response import HttpResponse as HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from .models import (NewsCategory, News_Content, Vedio_New, PopularStudents, PopularStudentImg,  PendingEvents)
-from django.views import View
+from rest_framework.views import APIView
 
 from .serializers import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from rest_framework.pagination import PageNumberPagination
 from UZFI.models import Requisites 
 from django.shortcuts import get_object_or_404
 from UZFI.serializers import RequisitesSerializer
+from rest_framework.response import Response
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 
 # class NewsPagination(PageNumberPagination):
 #     page_size = 1
 #     page_size_query_param = 'page_size'
 #     max_page_size = 10000
+
+class NewsContentApiView(APIView):
+    @swagger_auto_schema(
+        operation_description="Bu view uchun Swagger dokumentatsiyasi",
+        responses={200: openapi.Response('List of news content')}
+    )
+    def get(self, request, pk=None):
+        if pk is None:
+            news_content = News_Content.objects.all().order_by("-date_created")
+            serializer = NewsContentSerializer(news_content, many=True)
+            return Response(serializer.data)
+        news_content = get_object_or_404(News_Content, pk=pk)
+        serializer = NewsContentSerializer(news_content)
+        return Response(serializer.data)
+    
+
+class NewsCategoryApiView(APIView):
+    def get(self, request, pk=None):
+        if pk is None:
+            news_category = NewsCategory.objects.all()
+            serializer = NewsCategorySerializer(news_category, many=True)
+            return Response(serializer.data)
+        news_category = get_object_or_404(NewsCategory, pk=pk)
+        serializer = NewsCategorySerializer(news_category)
+        return Response(serializer.data)
+    
+class VideoNewsApiView(APIView):
+    def get(self, request, pk=None):
+        if pk is None:
+            video_news = Vedio_New.objects.all()
+            serializer = VedioNewSerializer(video_news, many=True)
+            return Response(serializer.data)
+        video_news = get_object_or_404(Vedio_New, pk=pk)
+        serializer = VedioNewSerializer(video_news)
+        return Response(serializer.data)
+    
+class EventApiView(APIView):
+    def get(self, request, pk=None):
+        if pk is None:
+            event = PendingEvents.objects.all()
+            serializer = PendingEventsSerializer(event, many=True)
+            return Response(serializer.data)
+        event = get_object_or_404(PendingEvents, pk=pk)
+        serializer = PendingEventsSerializer(event)
+        return Response(serializer.data)
+
+
+        # api end ###############################
 
 class NewsContentView(TemplateView):
     template_name = 'news/news.html'
