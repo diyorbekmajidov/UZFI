@@ -1,66 +1,84 @@
 from django.urls import path
 from .abitur import urlpatterns as abitur_urlpatterns
 from .views import (
-    CharterApview,
-    DocumentCreateApview,
-    CouncilsApview,
-    RequisitesApview,
-    FinancialStatementsApview,
-    VacanciesApview,
-    OpenDataApview,
-    FacultyApview,
-    DirectionApview,
-    DirectionMagistrApview,
-    DekanById,
-    KafedraApview,
-    KafedraManagerById,
-    ScientificWorkAPIView,
+    Charterview,
+    DocumentCreateview,DocumentCreateApiview,
+    Councilsview,CouncilsApiview,
+    Requisitesview,RequisitesApiview,
+    FinancialStatementsview,
+    Vacanciesview,
+    OpenDataview,OpenDataApiview,
+    Facultyview,FacultyApiview,
+    Directionview,DirectionApiview,
+    DirectionMagistrview,DirectionMagistrApiview,
+    DekanById,DekanByIdApi,
+    Kafedraview,KafedraApiview,
+    KafedraManagerById,KafedraManagerByIdApi,
+    ScientificWorkView,
     Register,
-    CentersDepartmentApiView,
+    CentersDepartmentView,CentersDepartmentApiView,
     Login,
     Dashboard,
     LeadershipAPIView,
     LeadershipByIdAPIView,
     Indicators,
-    TutorAPIView,
-    TutorFilterAPIView
+    TutorView,TutorApiView,
+    TutorFilterView
 
 )
 
 urlpatterns = [
-    path('magistr/', DirectionMagistrApview.as_view(),),
-    # path('', Index.as_view()),
-    path('charter/', CharterApview.as_view(), name='charter'),
+    # api url uchun 
+    path('documents/api/', DocumentCreateApiview.as_view(), name='document'),
+    path('councils/api/', CouncilsApiview.as_view()),
+    path('requisties/api', RequisitesApiview.as_view(), name='requisties'),
+    path('open-data/api', OpenDataApiview.as_view(), name='opendata'),
+    path('faculty/api/', FacultyApiview.as_view(), name='faculty'),
+    path('faculty/api/<int:pk>/',FacultyApiview.as_view()),
+    path('dekan/api/<int:pk>/', DekanByIdApi.as_view()),
+    path('direction/api/<int:pk>/', DirectionApiview.as_view(), name='direction'),
+    path('direction/magistr/api/', DirectionMagistrApiview.as_view()),
+    path('kafedra/api/', KafedraApiview.as_view()),
+    path('kafedra/api/<int:pk>/', KafedraApiview.as_view()),
+    path('kafedra-manager/<int:pk>/', KafedraManagerByIdApi.as_view()),
+    path('centers/api/', CentersDepartmentApiView.as_view()),
+    path('centers/api/<int:pk>/', CentersDepartmentApiView.as_view()),
+    path('tutor/api/', TutorApiView.as_view()),
+    path('tutor/api/<int:pk>/', TutorApiView.as_view()),
+    ##### api end
 
-    path('documents/', DocumentCreateApview.as_view(), name='document'),
+    path('magistr/', DirectionMagistrview.as_view(),),
+    path('charter/', Charterview.as_view(), name='charter'),
 
-    path('councils/', CouncilsApview.as_view(), name='councils'),
-    path('councils/<int:pk>/', CouncilsApview.as_view()),
+    path('documents/', DocumentCreateview.as_view(), name='document'),
 
-    path('requisties/', RequisitesApview.as_view(), name='requisties'),
+    path('councils/', Councilsview.as_view(), name='councils'),
+    path('councils/<int:pk>/', Councilsview.as_view()),
 
-    path('financial-statements/', FinancialStatementsApview.as_view(), name='financial-statements'),
+    path('requisties/', Requisitesview.as_view(), name='requisties'),
+
+    path('financial-statements/', FinancialStatementsview.as_view(), name='financial-statements'),
 
     path('leadership/', LeadershipAPIView.as_view(), name='leadership'),
     path('leadership/<int:pk>/', LeadershipByIdAPIView.as_view()),
 
-    path('vacancies/', VacanciesApview.as_view(), name='vacancies'),
-    path('vacancies/<int:pk>/', VacanciesApview.as_view()),
+    path('vacancies/', Vacanciesview.as_view(), name='vacancies'),
+    path('vacancies/<int:pk>/', Vacanciesview.as_view()),
 
-    path('open-data/', OpenDataApview.as_view(), name='opendata'),
+    path('open-data/', OpenDataview.as_view(), name='opendata'),
 
-    path('centers/', CentersDepartmentApiView.as_view()),
-    path('centers/<int:pk>/', CentersDepartmentApiView.as_view()),
+    path('centers/', CentersDepartmentView.as_view()),
+    path('centers/<int:pk>/', CentersDepartmentView.as_view()),
 
-    path('faculty/', FacultyApview.as_view(), name='faculty'),
-    path('faculty/<int:pk>/',FacultyApview.as_view()),
+    path('faculty/', Facultyview.as_view(), name='faculty'),
+    path('faculty/<int:pk>/',Facultyview.as_view()),
 
-    path('direction/<int:pk>/', DirectionApview.as_view(), name='direction'),
+    path('direction/<int:pk>/', Directionview.as_view(), name='direction'),
 
-    path('departments/', KafedraApview.as_view()),
-    path('departments/<int:pk>/', KafedraApview.as_view()),
+    path('departments/', Kafedraview.as_view()),
+    path('departments/<int:pk>/', Kafedraview.as_view()),
 
-    path('scientificwork/', ScientificWorkAPIView.as_view()),
+    path('scientificwork/', ScientificWorkView.as_view()),
 
     path('dekan/<int:pk>/', DekanById.as_view()),
     
@@ -72,6 +90,7 @@ urlpatterns = [
 
     path('indicators/', Indicators.as_view()),
 
-    path('tutor/', TutorAPIView.as_view()),
-    path('tutorfaculty/<int:pk>/', TutorFilterAPIView.as_view(),name='tutor_det')
+    path('tutor/', TutorView.as_view()),
+    path('tutor/<int:pk>/', TutorView.as_view()),
+    path('tutorfaculty/<int:pk>/', TutorFilterView.as_view(),name='tutor_det')
 ] + abitur_urlpatterns

@@ -6,10 +6,11 @@ from .models import *
 from .serializers import *
 from django.core.paginator import Paginator
 from News.models import News_Content
+from rest_framework.response import Response
 from News.serializers import NewsContentSerializer
    
 
-class AbiturViewsById(APIView):
+class AbiturViewsById(TemplateView):
     def get(self, request, pk):
         try:
             abi = Abitur.objects.get(id=pk)
@@ -17,6 +18,15 @@ class AbiturViewsById(APIView):
             return render(request, 'abitur/int_det.html',{"data":serializers.data})
         except Exception as e:
             return render(request,'abitur/int_det.html')
+        
+class AbiturViewsByIdApi(APIView):
+    def get(self, request, pk):
+        try:
+            abi = Abitur.objects.get(id=pk)
+            serializers = AbiturSerializers(abi)
+            return Response({"data":serializers.data})
+        except Exception as e:
+            return Response({403:"ma'lumot topilmadi"})
         
 class XalqaroHamkorlik(TemplateView):
     def get(self, request) :
@@ -29,20 +39,31 @@ class XalqaroHamkorlik(TemplateView):
         except Exception as e:
             print(f"Error retrieving news content: {e}")
             return render(request,'international/internationalrelation.html')
-class InternationalMemorandumViews(TemplateView):
-    def get(self, request):
-        try:
-            internations = InternationalMemorandum.objects.all()
-            serializers = InternationalMemorandumSerializers(internations, many = True)
-            page = Paginator(serializers.data, 4)
-            page_num = int(request.GET.get('page', 1))
-            return  render(request, 'international/Internationalmemorandum.html', {"page_obj":page.page(page_num)})
-        except Exception as e:
-            print(e)
-            return render(request,'international/Internationalmemorandum.html')
         
-class InternationalMemorandumViewsById(TemplateView):
-    def get(self, request, pk):
+class XalqaroHamkorlikApi(APIView):
+    def get(self, request) :
+        try:
+            category = News_Content.objects.filter(category=10).order_by("date_created")[::-1]
+            serializer = NewsContentSerializer(category, many = True)
+            page = Paginator(category, 9)
+            page_num = int(request.GET.get('page', 1))
+            return Response({"page_obj":page.page(page_num), "category":serializer.data})
+        except Exception as e:
+            print(f"Error retrieving news content: {e}")
+            return Response({403:"ma'lumot topilmadi"})
+        
+class InternationalMemorandumViews(TemplateView):
+    def get(self, request, pk = None):
+        if pk is None:
+            try:
+                internations = InternationalMemorandum.objects.all()
+                serializers = InternationalMemorandumSerializers(internations, many = True)
+                page = Paginator(serializers.data, 4)
+                page_num = int(request.GET.get('page', 1))
+                return  render(request, 'international/Internationalmemorandum.html', {"page_obj":page.page(page_num)})
+            except Exception as e:
+                print(e)
+                return render(request,'international/Internationalmemorandum.html')
         try:
             internations = InternationalMemorandum.objects.get(id=pk)
             serializers = InternationalMemorandumSerializers(internations)
@@ -54,6 +75,25 @@ class InternationalMemorandumViewsById(TemplateView):
         except Exception as e:
             return render(request, '404.html')
         
+class InternationalMemorandumApiViews(APIView):
+    def get(self, request, pk = None):
+        if pk is None:
+            try:
+                internations = InternationalMemorandum.objects.all()
+                serializers = InternationalMemorandumSerializers(internations, many = True)
+                page = Paginator(serializers.data, 4)
+                page_num = int(request.GET.get('page', 1))
+                return  Response({"page_obj":page.page(page_num)})
+            except Exception as e:
+                return Response({403:"ma'lumot topilmadi"})
+        try:
+            internations = InternationalMemorandum.objects.get(id=pk)
+            serializers = InternationalMemorandumSerializers(internations)
+            return  Response(
+                            {"data":serializers.data})
+        except Exception as e:
+            return Response({403:"ma'lumot topilmadi"})
+        
 class StudentGroupsViews(TemplateView):
     def get(self, request):
         try:
@@ -61,8 +101,16 @@ class StudentGroupsViews(TemplateView):
             serializers = StudentGroupsSerializers(internations, many = True)
             return  render(request, 'list-of-additional.html', {"data":serializers.data,})
         except Exception as e:
-            print(e)
             return render(request,'list-of-additional.html')
+        
+class StudentGroupsApiViews(APIView):
+    def get(self, request):
+        try:
+            internations = StudentGroups.objects.all()
+            serializers = StudentGroupsSerializers(internations, many = True)
+            return  Response({"data":serializers.data,})
+        except Exception as e:
+            return Response({403:"ma'lumot topilmadi"})
         
 class InternationalGrantViews(TemplateView):
     def get(self, request):
@@ -74,7 +122,14 @@ class InternationalGrantViews(TemplateView):
             print(e)
             return render(request,'international/international-grants.html')
         
-    
+class InternationalGrantApiViews(APIView):
+    def get(self, request):
+        try:
+            internations = InternationalGrant.objects.all()
+            serializers = InternationalGrantSerializer(internations, many = True)
+            return  render({"data":serializers.data,})
+        except Exception as e:
+            return Response({403:"ma'lumot topilmadi"})
 
 class LibraryViews(TemplateView):
     template_name = "library.html"
