@@ -11,8 +11,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework.authtoken.models import Token
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView
-from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
-from django.contrib.auth import logout
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 class Register(APIView):
     def post(self, request):
         data = request.data

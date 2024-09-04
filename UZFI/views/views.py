@@ -102,7 +102,7 @@ class CharterApview(TemplateView):
         except:
             return render(request,'charter.html')
 
-class DocumentCreateApview(APIView):
+class DocumentCreateApview(TemplateView):
     def get(self,request):
         try:
             document = Document.objects.all()
@@ -111,57 +111,56 @@ class DocumentCreateApview(APIView):
         except:
             return render(request,'documents.html')
 
-class CouncilsApview(APIView):
-    def get(self, request):
-        councils = Councils.objects.all()
-        serializers = CouncilsSerializer(councils, many = True)
-        return render(request, 'councils.html',{"data":serializers.data})
-    
-class CouncilsByIdApview(APIView):
-    def get(self, request, pk):
+class CouncilsApview(TemplateView):
+    def get(self, request, pk = None):
+        if pk is None:
+            councils = Councils.objects.all()
+            serializers = CouncilsSerializer(councils, many = True)
+            return render(request, 'councils.html',{"data":serializers.data})
+        
         councils = Councils.objects.get(id = pk)
         serializers = CouncilsSerializer(councils)
         return render(request, 'councils-item.html',{"data":serializers.data})
     
-class RequisitesApview(APIView):
+        
+    
+class RequisitesApview(TemplateView):
     def get(self, request):
         requisites = Requisites.objects.last()
         serializers = RequisitesSerializer(requisites)
         return render(request, 'requesties.html',{"data":serializers.data})
 
-class FinancialStatementsApview(APIView):
+class FinancialStatementsApview(TemplateView):
     def get(self, request):
         financialstatements = FinancialStatements.objects.all()
         serializers = FinancialStatementsSerializer(financialstatements, many = True)
         return render(request, 'financial-statements.html',{"data":serializers.data})
 
-class VacanciesApview(APIView):
-    def get(self, request):
-        vacancies = Vacancies.objects.all()
-        page = Paginator(vacancies, 10)
-        page_num = int(request.GET.get('page', 1))
-        return render(request, 'vacancies.html',{"page_obj":page.page(page_num)})
-    
-class VacanciesByIdApview(APIView):
-    def get(self, request, pk):
+class VacanciesApview(TemplateView):
+    def get(self, request, pk=None):
+        if pk is None:
+            vacancies = Vacancies.objects.all()
+            page = Paginator(vacancies, 10)
+            page_num = int(request.GET.get('page', 1))
+            return render(request, 'vacancies.html',{"page_obj":page.page(page_num)})
+        
         vacancy = Vacancies.objects.get(id=pk)
         serializer = VacanciesSerializer(vacancy)
         return render(request, '.html', {"data":serializer.data})
 
-class OpenDataApview(APIView):
+class OpenDataApview(TemplateView):
     def get(self, request):
         opendata = OpenData.objects.all()
         serializers = OpenDataSerializer(opendata, many = True)
         return render(request, 'open-data.html',{"data":serializers.data})
 
-class FacultyApview(APIView):
-    def get(self, request):
-        faculty = Faculty.objects.all()
-        serializers = FacultySerializer(faculty, many = True)
-        return render(request, 'faculties.html',{"data":serializers.data})
-    
-class FacultyByIdApview(APIView):
-    def get(self, request, pk):
+class FacultyApview(TemplateView):
+    def get(self, request, pk=None):
+        if pk is None:
+            faculty = Faculty.objects.all()
+            serializers = FacultySerializer(faculty, many = True)
+            return render(request, 'faculties.html',{"data":serializers.data})
+        
         try:
             faculty = Faculty.objects.get(id = pk)
             dekan = Dekan.objects.get(faculty = pk)
@@ -181,7 +180,7 @@ class FacultyByIdApview(APIView):
             print(e)
             return render(request,'faculties-item.html')
 
-class DekanById(APIView):
+class DekanById(TemplateView):
     def get(self, request, pk):
         try:
             dekan = Dekan.objects.get(id=pk)
@@ -198,7 +197,7 @@ class DekanById(APIView):
         except:
             return render(request,'dekan.html')
 
-class DirectionApview(APIView):
+class DirectionApview(TemplateView):
     def get(self, request, pk):
         try :
             direction = Direction.objects.get(id=pk)
@@ -209,7 +208,7 @@ class DirectionApview(APIView):
             return render(request, 'destinations-item.html')
         
 
-class DirectionMagistrApview(APIView):
+class DirectionMagistrApview(TemplateView):
     def  get(self, request):
         try:
             direction_magistr = Direction.objects.filter(direction_type='magistratura')
@@ -220,14 +219,13 @@ class DirectionMagistrApview(APIView):
         except Exception as e:
             print(e)
 
-class KafedraApview(APIView):
-    def get(self, request):
-        kafedra = Kafedra.objects.all()
-        serializers = KafedraSerializer(kafedra, many = True)
-        return render(request, 'departments.html',{"data":serializers.data})
+class KafedraApview(TemplateView):
+    def get(self, request, pk=None):
+        if pk is None:
+            kafedra = Kafedra.objects.all()
+            serializers = KafedraSerializer(kafedra, many = True)
+            return render(request, 'departments.html',{"data":serializers.data})
 
-class KafedraByIDApview(APIView):
-    def get(self, request, pk):
         try:
             department = Kafedra.objects.get(id = pk)
             serializers = KafedraSerializer(department)
@@ -240,9 +238,8 @@ class KafedraByIDApview(APIView):
         except Exception as e:
             print(e)
             return render(request, 'departments-item.html')
-
     
-class KafedraManagerById(APIView):
+class KafedraManagerById(TemplateView):
     def get(self, request, pk):
 
         manager = KafedraManager.objects.get(id = pk)
@@ -258,8 +255,18 @@ class KafedraManagerById(APIView):
 
         return render(request, "department-manager.html", context=context)
 
-class CentersDepartmentApiView(APIView):
-    def get(self, request):
+class CentersDepartmentApiView(TemplateView):
+    def get(self, request, pk=None):
+        if pk is not None:
+            try:
+                center = CentersDepartments.objects.filter(id = pk).last()
+                departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
+                serializers = CentersDepartmentsSerializer(center)
+                serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
+                return render(request, 'centers-item.html', {"data":serializers.data,
+                                                        "manager" : serializers1.data})
+            except:
+                return render(request, 'centers-item.html')
         try:
             centers_department = CentersDepartments.objects.all()
             serializers = CentersDepartmentsSerializer(centers_department, many = True)
@@ -268,41 +275,40 @@ class CentersDepartmentApiView(APIView):
             print(e)
             return render(request, 'centers.html')
 
-class CentersDepartmentByIDApiView(APIView):
-    def get(self, request, pk):
-        try:
-            center = CentersDepartments.objects.filter(id = pk).last()
-            departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
-            serializers = CentersDepartmentsSerializer(center)
-            serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
-            return render(request, 'centers-item.html', {"data":serializers.data,
-                                                    "manager" : serializers1.data})
-        except:
-            return render(request, 'centers-item.html')
+
     
-class CentersDepartmentManagerView(APIView):
-    def get(self, request, pk):
-        try:
-            departments = CentersDepartmentsManager.objects.get(id = pk)
-            serializers = CentersDepartmentsManagerSerializer(departments)
-            return render(request, ".html", {"departments_manager":serializers.data})
-        except Exception as e:
-            print(e)
-            return render(request, '.html')
+# class CentersDepartmentManagerView(TemplateView):
+#     def get(self, request, pk):
+#         try:
+#             departments = CentersDepartmentsManager.objects.get(id = pk)
+#             serializers = CentersDepartmentsManagerSerializer(departments)
+#             return render(request, ".html", {"departments_manager":serializers.data})
+#         except Exception as e:
+#             print(e)
+#             return render(request, '.html')
     
 class TutorAPIView(TemplateView):
-    def get(self, request):
+    def get(self, request, pk=None):
+        if pk is None:
+            try:
+                turor = Tutor.objects.all()
+                page = Paginator(turor, 9)
+                faculty = Faculty.objects.all()
+                serializer = FacultySerializer(faculty, many = True)
+                return render(request, 'tutor_fac.html', {'faculties':serializer.data})
+            except Exception as e:
+                print(e)
+                return render(request,'tutor_fac.html')
+            
         try:
-            turor = Tutor.objects.all()
-            page = Paginator(turor, 9)
-            faculty = Faculty.objects.all()
-            serializer = FacultySerializer(faculty, many = True)
-            return render(request, 'tutor_fac.html', {'faculties':serializer.data})
+            tutor = Tutor.objects.get(id = pk)
+            serializer = TutorSerializer(tutor)
+            return render(request, 'tutors-item.html', {'tutor':serializer.data})
         except Exception as e:
-            print(e)
-            return render(request,'tutor_fac.html')
+                print(e)
+                return render(request,'tutors-item.html')
 
-class TutorFilterAPIView(APIView):
+class TutorFilterAPIView(TemplateView):
     def get(self, request, pk):
         try:
             tutor =  Tutor.objects.filter(faculty=pk)
@@ -312,17 +318,8 @@ class TutorFilterAPIView(APIView):
                 print(e)
                 return render(request, 'tutors.html')
             
-class TutorByIdView(TemplateView):
-    def get(self, request, pk):
-        try:
-            tutor = Tutor.objects.get(id = pk)
-            serializer = TutorSerializer(tutor)
-            return render(request, 'tutors-item.html', {'tutor':serializer.data})
-        except Exception as e:
-                print(e)
-                return render(request,'tutors-item.html')
 
-class ScientificWorkAPIView(APIView):
+class ScientificWorkAPIView(TemplateView):
     
     def post(self, request):
         user_id = request.POST.get("id")
@@ -363,7 +360,7 @@ class ScientificWorkAPIView(APIView):
         return Response(serializers.data)
     
 
-class Indicators(APIView):
+class Indicators(TemplateView):
     def get(self, request):
         url_talabalr = 'https://student.uzfi.uz/rest/v1/public/stat-student'
         url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'

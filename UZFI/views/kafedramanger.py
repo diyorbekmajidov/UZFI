@@ -33,7 +33,5 @@ class KafedraManagerApview(APIView):
         kafedramanager.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class GetAllKafedraManager(ListCreateAPIView):
-    queryset = KafedraManager.objects.all()
-    serializer_class = GetKafedraManagerSerializer
+
 
