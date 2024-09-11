@@ -3,6 +3,9 @@ from modeltranslation.admin import TranslationAdmin
 
 from .models import *
 
+@admin.register(UploadFile)
+class UploadFileAdmin(admin.ModelAdmin):
+    list_display = ("title",'get_file_link',)
 @admin.register(NewsCategory)
 class NewsCategoryAdmin(TranslationAdmin):
     list_display = ('new_category','id',)

@@ -61,6 +61,18 @@ class PopularStudentImg(models.Model):
 
     def __str__(self) -> str:
         return self.popular.student_name
+    
+
+class UploadFile(models.Model):
+    file = models.FileField(upload_to='files/')
+    title = models.CharField(max_length=255)
+    date_created  = models.DateField(auto_now_add=True)
+    date_update   = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.file.name
+    def get_file_link(self):
+        return 'https://uzfi.uz/'+self.file.url
 
     
 class PendingEvents(models.Model):
