@@ -24,6 +24,11 @@ class Index(TemplateView):
             serializer_class = NewsContentSerializer(queryset , many = True)
             popular_student  = PopularStudents.objects.order_by("date_created")[:5]
             serializer_popular_students = PopularStudentsSerializer(popular_student, many=True)
+            
+
+            charter = Charter.objects.order_by("-date_created")[:5] # unversity nizomi
+            charter_serializers = CharterSerializer(charter, many = True) 
+            print(charter_serializers.data)
 
             mainpage_category = NewsCategory.objects.get(new_category="MAINPAGE")
 
@@ -78,14 +83,13 @@ class Index(TemplateView):
                        "direction":serializers1.data,
                         "news":serializer_class.data, 
                         "popular_student":serializer_popular_students.data, 
-                        "indicators" : indicators
+                        "indicators" : indicators,
+                        "charter":charter_serializers.data
                         }
             if mainpage_category:
                 mainpage_news = News_Content.objects.filter(category=mainpage_category)
                 serializers_context = NewsContentSerializer(mainpage_news.last())
-                # serializers_context2 = NewsContentSerializer(mainpage_news, many=True)
                 context['MAINPAGE'] = serializers_context.data
-                # context['REKTOR_TASHABBUSI'] = serializers_context2.data
 
 
             return render(request, 'index.html', context=context)
