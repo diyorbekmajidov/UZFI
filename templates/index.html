@@ -586,7 +586,7 @@
 
     <!-- Informations END -->
     
-    <div style="position: relative; height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover; width: 100%; background-image: url({% static 'assets/images/645361781b285.jpg' %});">
+    <div style="position: relative; height: 800px; background-position: center; background-repeat: no-repeat; background-size: cover; width: 100%; background-image: url({% static 'assets/images/645361781b285.jpg' %})">
       <div class="container">
         <div class="row">
           <div style="background-color: black;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -722,94 +722,6 @@
 
       </div>
     </div>
-        {% comment %} <div class="col-md-8">
-          <div id="information" data-aos="fade-left">
-            <div class="info-row">
-    
-              <div class="info-col">
-                <div class="info-inner-col">
-                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</div>
-                  <div class="info-inner-row-item text-primary lg-1">{{indicators.response_structure.3.count}}</div>
-                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Kafedralar{%endblocktranslate%}</div>
-                  <lg-2 class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.4.count}}</lg-2>
-                </div>
-                <div class="info-inner-col">
-    
-                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Bo'limlar va markazlar{%endblocktranslate%}</div>
-                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure.5.count}}</div>
-                </div>
-              </div>
-              <div class="info-col">
-                <div class="info-inner-col">
-                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Seminar xonalar{%endblocktranslate%}</div>
-                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.1.count}}</div>
-                  
-      
-                  <div class="info-inner-row-item text-secondary">{% blocktranslate %}Ma’ruza xonalar{%endblocktranslate%}</div>
-                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.2.count}}</div>
-                </div>
-                <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Laboratoriya xonalar{%endblocktranslate%}</div>
-                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.3.count}}</div>
-    
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Amaliyot xonalar{%endblocktranslate%}</div>
-                  <div class="info-inner-row-item text-primary lg-2">{{indicators.response_structure1.4.count}}</div>
-                </div>
-              </div>
-              
-              
-      
-            </div>
-            
-            <div class="info-row">
-              <div class="info-col">
-                <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Talabalar soni{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-1">{{indicators.all_students_count}}</div>
-    
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Yigit{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Erkak}}</div>
-                </div>
-                <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Qiz{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-2">{{indicators.response_talabalar.Ayol}}</div>
-                </div>
-              </div>
-    
-    
-              <div class="info-col">
-                <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">{% blocktranslate %}O&acute;qituvchi va professor{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-1">
-                    {% for key,value in indicators.response_xodimlar.items %}
-                      {% if key == "Asosiy ish joy" %}
-                        {{value}}
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-    
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Dotsent{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Dotsent}}</div>
-                </div>
-                <div class="info-inner-col">
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Professor{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-2">{{indicators.response_uqtuvchilar.Professor}}</div>
-    
-                  <div class="info-row-item text-secondary">{% blocktranslate %}Katta o‘qituvchi{%endblocktranslate%}</div>
-                  <div class="info-row-item text-primary lg-2">
-                    {% for key,value in indicators.response_uqtuvchilar.items %}
-                      {% if key == "Katta o‘qituvchi" %}
-                        {{value}}
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-    
-            </div>
-      
-          </div>
-        </div> {% endcomment %}
       </div>
     </div>
 
@@ -874,8 +786,7 @@
     <div
       class="section-area section-sp2 bg-fix ovbl-dark pb-5"
       style="
-        background-image: url({% static 'assets/images/sports.jpg' %});
-      "
+        background-image: url({% static 'assets/images/sports.jpg' %});"
     >
       <div class="container">
         <div class="row">
@@ -932,47 +843,26 @@
           <h2 class="m-b10 title-head">{% blocktranslate %} Tez-tez so'raladigan savollarga {% endblocktranslate %} <span> {% blocktranslate %} javoblar {% endblocktranslate %}</span></h2>
         </div>
         <div class="ttr-accordion m-b30 faq-bx" id="accordion1">
+          {% for i in charter %}
           <div class="panel">
             <div class="acod-head">
               <h6 class="acod-title">
-                <a
-                  data-toggle="collapse"
-                  href="#faq1"
-                  class="collapsed"
-                  data-parent="#faq1"
-                >
-                  {% blocktranslate %}O‘ZBEKISTON - Finlandiya pedagogika institutida oʼqish qaysi tillarda amalga oshiriladi?{% endblocktranslate %}
+                <a data-toggle="collapse" href="#faq{{ forloop.counter }}" class="collapsed" data-parent="#accordion1">
+                  {{ i.title }}
                 </a>
               </h6>
             </div>
-            <div id="faq1" class="acod-body collapse">
+            <div id="faq{{ forloop.counter }}" class="acod-body collapse">
               <div class="acod-content">
-                {% blocktranslate %}O‘ZBEKISTON - Finlandiya pedagogika institutida darslar oʼzbek, rus va tojik tillarida olib boriladi.{% endblocktranslate %}
-
+                {{ i.body|safe }}
               </div>
             </div>
           </div>
-          <div class="panel">
-            <div class="acod-head">
-              <h6 class="acod-title">
-                <a
-                  data-toggle="collapse"
-                  href="#faq2"
-                  class="collapsed"
-                  data-parent="#faq2"
-                >
-                {% blocktranslate %}O&acute;ZBEKISTON - Finlandiya pedagogika institutida yotoqxona bilan ta&acute;minlanishi qanday amalga oshiriladi?{% endblocktranslate %}</a>
-              </h6>
-            </div>
-            <div id="faq2" class="acod-body collapse">
-              <div class="acod-content">
-                
-                {% blocktranslate %}Talabalikka qabul qilingandan soʼng tegishli dekanatga yotoqxona talabnomasi bilan murojaat etiladi.{% endblocktranslate %}
-
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
+
+          </div>
+        
       </div>
     </div>
     <!-- FAQS  News End -->
