@@ -23,7 +23,21 @@
 /*=================================
 	1. HEADER
 =================================*/
-
+.post:hover {
+	transform: scale(1.03);
+	transition: transform 0.2s ease-in-out;
+  }
+  
+  .post img {
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+  }
+  
+  .post:hover img {
+	opacity: 0.8;
+	cursor: pointer;
+  }
+  
 * {
 	scroll-behavior: smooth !important;
 }
@@ -1539,7 +1553,6 @@ body, html {
 .share-btn ul li {
 	display: inline-block;
 	margin-left: -40px;
-	float: left;
 	transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-o-transition: all 0.5s;
@@ -2564,10 +2577,10 @@ button.back-to-top {
 }
 
 /* section space */
-.section-sp1 {
+/* .section-sp1 { */
 	/* padding-top: 80px; */
 	/* padding-bottom: 50px; */
-}
+/* } */
 
 .section-sp2 {
 	padding-top: 80px;
@@ -3432,7 +3445,7 @@ button.back-to-top {
 	border-bottom: 1px black solid;
 }
 
-.profileInfoBTN:first-child {}
+/* .profileInfoBTN:first-child {} */
 
 .user-profile-thumb {
 	width: 100px;

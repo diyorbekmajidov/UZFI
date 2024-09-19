@@ -13,6 +13,7 @@ def validate_file_size(value):
         return value
 
 class Leadership(models.Model):
+    number =    models.IntegerField(blank=True, null=True)
     rector       = models.OneToOneField(User, on_delete=models.CASCADE , related_name="rector")
     prorektor    = models.CharField(max_length=200, blank=True, null=True)
     first_name   = models.CharField(max_length=200, blank=True, null=True)
