@@ -1,6 +1,3 @@
-
-
-
 {% extends "base.html" %}{% load i18n %}
 
 {% block title %}UZFI {% blocktranslate %} E'lonlar {% endblocktranslate %}{% endblock %}
@@ -8,23 +5,21 @@
 
 {% load static %}
 
-
-
 <div class="page-content bg-white">
-    <div class="page-banner ovbl-dark" style="background-image: url({% static "assets/images/645361781b285.jpg" %})">
+    <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %}); background-size: cover; margin-bottom: 0;">
         <div class="container">
-          <div class="page-banner-entry">
-            <h1 class="text-white">{% blocktranslate %}E&acute;lonlar{% endblocktranslate %}</h1>
-          </div>
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}E'lonlar{% endblocktranslate %}</h1>
+            </div>
         </div>
-      </div>
+    </div>
     
     <div class="content-block">
         <div class="section-area section-sp1">
             <div class="container">
                 <div class="row">
                     <!-- Left part start -->
-                    <div>
+                    <div class="col-lg-12">
                         <!-- blog start -->
                         <div class="recent-news blog-lg">
                             <div class="info-bx">
@@ -34,23 +29,24 @@
                                     <li><i class="fa fa-building"></i> {{data.place}}</li>
                                 </ul>
                                 <h5 class="post-title">{{data.event_name}}</h5>
-                                <div class="action-box" style="position: relative; overflow: hidden; width: 80%; height: 590px;">
-                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{i.id}}">
-                                      <img style="object-fit: contain; width: 100%; height: 100%;" src="{{data.img}}" alt="" />
+
+                                <!-- Rasm uchun style -->
+                                <div class="action-box" style="position: relative; overflow: hidden; width: 100%; max-width: 100%; height: auto;">
+                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{data.id}}">
+                                        <img style="object-fit: contain; width: 100%; height: auto; max-height: 500px;" src="{{data.img}}" alt="{{data.event_name}}" />
                                     </a>
-                                  </div>
-                                {% comment %} <img src="{{data.img}}" class="mb-3" /> {% endcomment %}
-                                <p dir="auto">{{data.body|safe}}<p>
+                                </div>
+
+                                <p dir="auto">{{data.body|safe}}</p>
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 
-                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
-                                    <h6>{% blocktranslate %}BIZ BILAN BO'LING {% endblocktranslate %}</h6>
-                                    <ul class="list-inline contact-social-bx">
-                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
+                                <h6>{% blocktranslate %}BIZ BILAN BO'LING {% endblocktranslate %}</h6>
+                                <ul class="list-inline contact-social-bx">
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                             </div>
                         </div>
@@ -62,6 +58,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
