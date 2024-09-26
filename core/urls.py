@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from UZFI.views import Index
 # from django.conf.urls import url
+from django.views.i18n import set_language
 from django.views.static import serve
 
 
@@ -18,6 +19,7 @@ urlpatterns = [
 
 ]+i18n_patterns (
     path('i18n/', include('django.conf.urls.i18n')),
+    path('i18n/', set_language, name='set_language'),
     path('uzfi/', include('UZFI.urls')),
     path('news/', include('News.urls')),
     path('international/', include('International.urls')),
