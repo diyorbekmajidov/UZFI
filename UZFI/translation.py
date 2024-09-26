@@ -74,7 +74,7 @@ class ScientificWorkTranslationOptions(TranslationOptions):
 
 @register(Leadership)
 class LeadershipTranslationOptions(TranslationOptions):
-    fields = ("address","acceptance","biography","duties","prorektor",)
+    fields = ("address","acceptance","biography","duties","prorektor","first_name",)
 
 @register(CentersDepartments)
 class CentersDepartmentTranslationOptions(TranslationOptions):

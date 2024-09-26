@@ -1,16 +1,34 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-from ckeditor.fields import RichTextField
+from django.utils.translation import gettext_lazy as _
 from .user import User
 from django.core.exceptions import ValidationError
+
+COMMON_FIELDS_TRANSLATIONS = {
+    "title": _('title'),
+    "faculty": _('faculty'),
+    "about": _('about'),
+    "body": _('body'),
+    "quarter": _('quarter'),
+    "date_created": _('date_created'),
+    "date_update": _('date_update'),
+    "name": _('name'),
+    "description": _('description'),
+    "document_type": _('document_type',), 
+    "document_name": _('document_name'),
+    "address": _('address'),
+    "start_date": _("start_date"),
+    "direction_type": _('direction_type'),
+    "centers_departments": _('centers_departments'),
+    "acceptance": _('acceptance'),
+}
+
 def validate_file_size(value):
     filesize = value.size
     if filesize > 1000 * 1024:
         raise ValidationError("The maximum file size that can be uploaded is 1mb")
     else:
         return value
-
-
 class Charter(models.Model):
     title        = models.CharField(max_length=255)
     body         = RichTextUploadingField()
