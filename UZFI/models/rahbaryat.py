@@ -28,7 +28,7 @@ class Leadership(models.Model):
     date_update  = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.first_name
+        return self.first_name or ""
     
 
 class Dekan(models.Model):
