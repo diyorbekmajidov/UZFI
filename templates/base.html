@@ -265,7 +265,7 @@
 						<li ><a href="/{{LANGUAGE_CODE}}" id="st_txt">{% blocktranslate %}Bosh sahifa{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/leadership/" id="st_txt">{% blocktranslate %}Rahbariyat{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/councils/"id="st_txt">{% blocktranslate %}Kengashlar{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/"id="st_txt">{% blocktranslate %}Markazlar va bo'limlar{% endblocktranslate %}</a></li>
+						<li><a href="/{{LANGUAGE_CODE}}/uzfi/centers/"id="st_txt">{% blocktranslate %}Markaz va bo'limlar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/"id="st_txt">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/"id="st_txt">{% blocktranslate %}Me'yoriy hujjatlar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/"id="st_txt">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
@@ -289,12 +289,12 @@
 					</ul>
 				  </li>
 				  <li>
-					<a href="javascript:;">{% blocktranslate %}Axborot xizmatlari{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
+					<a href="javascript:;">{% blocktranslate %}Axborot xizmati{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 
 					<ul class="sub-menu">
 					  <li><a href="/{{LANGUAGE_CODE}}/news/content/">{% blocktranslate %}Yangiliklar{% endblocktranslate %}</a></li>
 					  <li><a href="/{{LANGUAGE_CODE}}/news/video-gallery/"id="st_txt">{% blocktranslate %}Video galereya{% endblocktranslate %}</a></li>
-					  <li><a href="/{{LANGUAGE_CODE}}/news/events/">{% blocktranslate %}E&acute;lonlar{% endblocktranslate %}</a></li>
+					  <li><a href="/{{LANGUAGE_CODE}}/news/events/">{% blocktranslate %}E&#39;lonlar{% endblocktranslate %}</a></li>
 					  <li><a href="/{{LANGUAGE_CODE}}/news/contact/">{% blocktranslate %}Bog'lanish{% endblocktranslate %}</a></li>
 					</ul>
 
@@ -310,7 +310,7 @@
 				  <li>
 					<a href="javascript:;">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 					<ul class="sub-menu">
-						<li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/"id="st_txt">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li>
+						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/"id="st_txt">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li> {% endcomment %}
 						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/"id="st_txt">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/international/library/"id="st_txt">{% blocktranslate %}Kutubxona{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/international/ttj/" id="st_txt">{% blocktranslate %}Talabalar turar joyi{% endblocktranslate %}</a></li>
@@ -326,12 +326,6 @@
 						<li><a href="/{{LANGUAGE_CODE}}/international/abitur/{{i.id}}/">{{i.title}}</a></li>
 						{% endfor%}
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/faqs/"id="st_txt">{% blocktranslate %}Tez-tez so'raladigan savollarga javoblar{% endblocktranslate %}</a></li>
-						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/regulation-on-secondary-education/">{% blocktranslate %}Ikkinchi taʼlim to‘g‘risidagi nizom{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/work-with-the-answer-sheet/">{% blocktranslate %}Javoblar varaqasi bilan ishlash{% endblocktranslate %}</a></li>
-						
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/commission/">{% blocktranslate %}Qabul komissiyasi joylashuv o'rni{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter-admission/">{% blocktranslate %}Qabul nizomi{% endblocktranslate %}</a></li>
-						<li><a href="/{{LANGUAGE_CODE}}/uzfi/admission-quota/">{% blocktranslate %}Qabul kvotasi{% endblocktranslate %}</a></li> {% endcomment %}
 					</ul>
 				  </li>
 				

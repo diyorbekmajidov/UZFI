@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 15:02+0500\n"
+"POT-Creation-Date: 2024-10-04 14:48+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,6 +67,18 @@ msgstr "manzil"
 #: News/models.py:20 UZFI/models/models.py:20
 msgid "start_date"
 msgstr "boshlanish kuni"
+
+#: News/models.py:46
+msgid "News_Content"
+msgstr ""
+
+#: News/models.py:49
+msgid "News Content"
+msgstr ""
+
+#: News/models.py:50
+msgid "News Contents"
+msgstr ""
 
 #: UZFI/models/models.py:9
 msgid "faculty"
@@ -144,7 +156,7 @@ msgstr "UZFI | LOCATION OF ADMISSION COMMISSION"
 msgid "QABUL KOMISSIYASI JOYLASHUV O'RNI"
 msgstr "LOCATION OF ADMISSION COMMISSION"
 
-#: templates/abitur/faqs.html:3 templates/base.html:335
+#: templates/abitur/faqs.html:3 templates/base.html:336
 msgid "Tez-tez so'raladigan savollarga javoblar"
 msgstr "Answers to frequently asked questions"
 
@@ -156,7 +168,7 @@ msgstr "Answers to frequently asked questions"
 msgid " Tez-tez so'raladigan savollarga "
 msgstr "To frequently asked questions"
 
-#: templates/abitur/faqs.html:30 templates/index.html:848
+#: templates/abitur/faqs.html:30
 msgid " javoblar "
 msgstr "answers"
 
@@ -258,7 +270,7 @@ msgstr "Enter"
 msgid "Institut "
 msgstr "Instituti"
 
-#: templates/base.html:270 templates/base.html:413
+#: templates/base.html:270 templates/base.html:407
 #: templates/international/InternationalNews.html:104
 #: templates/news/events.html:127 templates/news/news-category.html:126
 #: templates/news/news.html:130 templates/news/popular-students.html:88
@@ -267,7 +279,7 @@ msgstr "Instituti"
 msgid "Bosh sahifa"
 msgstr "Homepage"
 
-#: templates/base.html:271 templates/base.html:416
+#: templates/base.html:271 templates/base.html:410
 #: templates/international/InternationalNews.html:107
 #: templates/leadership-item.html:11 templates/leadership.html:18
 #: templates/news/events.html:130 templates/news/news-category.html:129
@@ -277,7 +289,7 @@ msgstr "Homepage"
 msgid "Rahbariyat"
 msgstr "Administration"
 
-#: templates/base.html:272 templates/base.html:417
+#: templates/base.html:272 templates/base.html:411
 #: templates/councils-item.html:3 templates/councils.html:5
 #: templates/councils.html:17
 #: templates/international/InternationalNews.html:108
@@ -288,12 +300,11 @@ msgstr "Administration"
 msgid "Kengashlar"
 msgstr "Councils"
 
-#: templates/base.html:273 templates/base.html:418
-#: templates/centers-item.html:12
-msgid "Markazlar va bo'limlar"
-msgstr "Centers and departments"
+#: templates/base.html:273
+msgid "Markaz va bo'limlar"
+msgstr "Center and departments"
 
-#: templates/base.html:274 templates/base.html:414
+#: templates/base.html:274 templates/base.html:408
 #: templates/international/InternationalNews.html:105
 #: templates/news/events.html:128 templates/news/news-category.html:127
 #: templates/news/news.html:131 templates/news/popular-students.html:89
@@ -302,12 +313,12 @@ msgstr "Centers and departments"
 msgid "Nizom"
 msgstr "Regulation"
 
-#: templates/base.html:275 templates/base.html:415 templates/documents.html:21
+#: templates/base.html:275 templates/base.html:409 templates/documents.html:21
 #: templates/international/international-grants.html:19
 msgid "Me'yoriy hujjatlar"
 msgstr "Regulatory documents"
 
-#: templates/base.html:276 templates/base.html:419
+#: templates/base.html:276 templates/base.html:413
 #: templates/international/InternationalNews.html:109
 #: templates/news/events.html:132 templates/news/news-category.html:131
 #: templates/news/news.html:135 templates/news/popular-students.html:93
@@ -316,7 +327,7 @@ msgstr "Regulatory documents"
 msgid "Rekvizitlar"
 msgstr "Props"
 
-#: templates/base.html:279 templates/base.html:420
+#: templates/base.html:279 templates/base.html:414
 #: templates/international/InternationalNews.html:110
 #: templates/news/events.html:133 templates/news/news-category.html:132
 #: templates/news/news.html:136 templates/news/popular-students.html:94
@@ -325,7 +336,7 @@ msgstr "Props"
 msgid "Moliyaviy hisobotlar"
 msgstr "Financial statements"
 
-#: templates/base.html:280 templates/base.html:421
+#: templates/base.html:280 templates/base.html:415
 #: templates/international/InternationalNews.html:112
 #: templates/news/events.html:135 templates/news/news-category.html:134
 #: templates/news/news.html:138 templates/news/popular-students.html:96
@@ -338,113 +349,117 @@ msgstr "Open data"
 msgid "TA'LIM "
 msgstr "EDUCATION"
 
-#: templates/base.html:288 templates/base.html:429 templates/faculties.html:19
+#: templates/base.html:288 templates/base.html:423 templates/faculties.html:19
 #: templates/index.html:512
 msgid "Fakultetlar"
 msgstr "Faculties"
 
-#: templates/base.html:289 templates/base.html:430 templates/departments.html:7
+#: templates/base.html:289 templates/base.html:424 templates/departments.html:7
 #: templates/departments.html:18 templates/faculties-item.html:57
 msgid "Kafedralar"
 msgstr "Departments"
 
-#: templates/base.html:290 templates/base.html:431
+#: templates/base.html:290 templates/base.html:425
 msgid "Bakalavriat"
 msgstr "Bachelor"
 
-#: templates/base.html:291 templates/base.html:432 templates/magistr.html:15
+#: templates/base.html:291 templates/base.html:426 templates/magistr.html:15
 msgid "Magistratura"
 msgstr "Master's"
 
-#: templates/base.html:292 templates/base.html:433
+#: templates/base.html:292 templates/base.html:427
 msgid "Tyutorlar"
 msgstr "Tutors"
 
-#: templates/base.html:295 templates/base.html:434
+#: templates/base.html:295 templates/base.html:428
 msgid "O‘quv rejalari"
 msgstr "Educational plans"
 
 #: templates/base.html:299
-msgid "Axborot xizmatlari"
+msgid "Axborot xizmati"
 msgstr "Information Services"
 
-#: templates/base.html:302 templates/base.html:443 templates/dashboard.html:40
+#: templates/base.html:302 templates/base.html:437 templates/dashboard.html:40
 #: templates/index.html:740 templates/news/news-category.html:11
 #: templates/news/news.html:47 templates/news/news.html:56
 msgid "Yangiliklar"
 msgstr "News"
 
-#: templates/base.html:303 templates/base.html:444
+#: templates/base.html:303 templates/base.html:438
 msgid "Video galereya"
 msgstr "Video gallery"
 
-#: templates/base.html:304 templates/news/events.html:44
-msgid "E&acute;lonlar"
+#: templates/base.html:304
+msgid "E&#39;lonlar"
 msgstr "Announcements"
 
-#: templates/base.html:305 templates/base.html:446
+#: templates/base.html:305 templates/base.html:440
 #: templates/news/contacts.html:21
 msgid "Bog'lanish"
 msgstr "Connection"
 
-#: templates/base.html:310 templates/base.html:312 templates/base.html:456
-#: templates/base.html:458
+#: templates/base.html:310 templates/base.html:312 templates/base.html:450
+#: templates/base.html:452
 msgid "Xalqaro hamkorlik"
 msgstr "International cooperation"
 
-#: templates/base.html:313 templates/base.html:459
+#: templates/base.html:313 templates/base.html:453
 #: templates/international/Internationalmemorandum.html:18
 msgid "Xalqaro memorandumlar"
 msgstr "International memorandums"
 
-#: templates/base.html:314 templates/base.html:460
+#: templates/base.html:314 templates/base.html:454
 msgid "Xalqaro grantlar"
 msgstr "International grants"
 
-#: templates/base.html:318 templates/base.html:467
+#: templates/base.html:318 templates/base.html:461
 msgid "Talabalar hayoti"
 msgstr "Student life"
 
-#: templates/base.html:320 templates/base.html:470
-#: templates/list-of-additional.html:3 templates/list-of-additional.html:14
-msgid "To'garaklar ro'yxati"
-msgstr "List of circles"
-
-#: templates/base.html:321 templates/base.html:469
+#: templates/base.html:322 templates/base.html:463
 msgid "Iqtidorli talabalar"
 msgstr "Talented students"
 
-#: templates/base.html:322 templates/library.html:3 templates/library.html:14
+#: templates/base.html:323 templates/library.html:3 templates/library.html:14
 #: templates/library.html:28
 msgid "Kutubxona"
 msgstr "Library"
 
-#: templates/base.html:323 templates/ttj.html:14
+#: templates/base.html:324 templates/ttj.html:14
 msgid "Talabalar turar joyi"
 msgstr "Student accommodation"
 
-#: templates/base.html:329
+#: templates/base.html:330
 msgid "Abituriyentlarga"
 msgstr "To applicants"
 
-#: templates/base.html:427
+#: templates/base.html:412 templates/centers-item.html:12
+msgid "Markazlar va bo'limlar"
+msgstr "Centers and departments"
+
+#: templates/base.html:421
 msgid "TA'LIM"
 msgstr "EDUCATION"
 
-#: templates/base.html:440
+#: templates/base.html:434
 msgid "Axborot Xizmatlari"
 msgstr "Information Services"
 
-#: templates/base.html:445 templates/news/events-item.html:12
+#: templates/base.html:439 templates/news/events-item.html:12
 #: templates/news/events.html:53
 msgid "E'lonlar"
 msgstr "Announcements"
 
-#: templates/base.html:484
+#: templates/base.html:464 templates/list-of-additional.html:3
+#: templates/list-of-additional.html:14
+msgid "To'garaklar ro'yxati"
+msgstr "List of circles"
+
+#: templates/base.html:478
 msgid " Manzil "
 msgstr "Address"
 
-#: templates/base.html:485
+#: templates/base.html:479
 msgid " Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy "
 msgstr "Address: 166, Spitamen Shah Street, Samarkand Sh"
 
@@ -789,7 +804,7 @@ msgid ""
 msgstr "Faculty composition of the Uzbekistan-Finland Institute."
 
 #: templates/index.html:555
-msgid "Institut ta&acute;lim yo&#39;nalishlari"
+msgid "Institut ta&#39;lim yo&#39;nalishlari"
 msgstr "Educational directions of the institute"
 
 #: templates/index.html:572
@@ -803,14 +818,14 @@ msgstr "Faculty composition of the Uzbekistan-Finland Institute."
 #: templates/index.html:624
 msgid ""
 "Oʻzbekiston-Finlandiya pedagogika instituti (OʻzFIPI) Oʻzbekiston "
-"Respublikasi Prezidentining „Pedagogik taʼlim sifatini oshirish va pedagogik "
-"kadrlar tayyorlovchi oliy taʼlim muassasalari faoliyatini yanada "
-"rivojlantirish chora-tadbirlari toʻgʻrisida“gi 2022-yil 21-iyundagi PQ-289-"
-"sonli qarori asosida tashkil etilgan. Institut davlat oliy taʼlim muassasasi "
-"hisoblanib, pedagogika sohasi boʻyicha tarbiya va oʻqitish usullari, taʼlim "
-"jarayonida zamonaviy pedagogik texnologiyalarni qoʻllash koʻnikmalariga ega "
-"professional oliy maʼlumotli kadrlarni tayyorlash Institutmizning asosiy "
-"vazifalaridan biri."
+"Respublikasi Prezidentining 2022-yil 21-iyundagi PQ-289-sonli «Pedagogik "
+"taʼlim sifatini oshirish va pedagogik kadrlar tayyorlovchi oliy taʼlim "
+"muassasalari faoliyatini yanada rivojlantirish chora-tadbirlari "
+"toʻgʻrisida»gi qarori asosida tashkil etilgan. Institut davlat oliy taʼlim "
+"muassasasi hisoblanib, pedagogika sohasi boʻyicha tarbiya va oʻqitish "
+"usullari, taʼlim jarayonida zamonaviy pedagogik texnologiyalarni qoʻllash "
+"koʻnikmalariga ega professional oliy maʼlumotli kadrlarni tayyorlashni oʻz "
+"oldiga maqsad qilib qoʻygan"
 msgstr ""
 
 #: templates/index.html:784
@@ -818,29 +833,20 @@ msgid "Barcha yangiliklarni ko&#39;rish"
 msgstr "View all news"
 
 #: templates/index.html:799
-msgid "Mashhur"
-msgstr "Famous"
-
-#: templates/index.html:799
-msgid "talabalarimiz"
-msgstr "our students"
+msgid "Mashhur talabalarimiz"
+msgstr "Talented students"
 
 #: templates/index.html:802
 msgid ""
-" Bizning g&#39;ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi  "
-"Respublika musobaqalarida qatnashgan talaba-sportchilar va xalqaro miqyosda "
-"ham O&#39;zbekistonga shon-shuhrat keltirmoqda. Biz eng yuqori darajadagi "
-"ta&#39;lim va qo&#39;llab-quvvatlashni ta&#39;minlaymiz. Sportchilarimiz o‘z "
-"sport turlari bo‘yicha yuksak natijalarga erishadilar. "
+" \n"
+"O'zbekiston-Finlandiya pedagogika institutining ilmda, sportda, xalqaro "
+"hayotda va tashkiliy jarayonlardagi yetkachi, harakatchan va shijoatli "
+"yoshlari bilan tanishing!"
 msgstr ""
-"Our pride lies in our incredible achievements Student-athletes who "
-"participated in national and international competitionsalso brings glory to "
-"Uzbekistan. We are the highest level of educationand provide support. Our "
-"athletes have their own sports.achieve high results in"
 
-#: templates/index.html:848
-msgid " Tez-tez so&#39;raladigan savollarga "
-msgstr "To frequently asked questions"
+#: templates/index.html:849
+msgid " Tez-tez so&#39;raladigan savollarga javoblar "
+msgstr "Answers to frequently asked questions"
 
 #: templates/international/InternationalNews.html:3
 #: templates/international/InternationalNews.html:14
@@ -1039,6 +1045,10 @@ msgstr "BE WITH US"
 #: templates/news/events.html:5
 msgid "UZFI | E'lonlar"
 msgstr "UZFI | Announcements"
+
+#: templates/news/events.html:44
+msgid "E&acute;lonlar"
+msgstr "Announcements"
 
 #: templates/news/events.html:52 templates/news/news.html:55
 msgid "Asosiy sahifa"
@@ -2416,6 +2426,28 @@ msgstr ""
 #: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:55
 msgid "Powered by "
 msgstr ""
+
+#~ msgid "Mashhur"
+#~ msgstr "Famous"
+
+#~ msgid "talabalarimiz"
+#~ msgstr "our students"
+
+#~ msgid ""
+#~ " Bizning g&#39;ururimiz zamirida erishayotgan beqiyos yutuqlarimiz "
+#~ "yotadi  Respublika musobaqalarida qatnashgan talaba-sportchilar va "
+#~ "xalqaro miqyosda ham O&#39;zbekistonga shon-shuhrat keltirmoqda. Biz eng "
+#~ "yuqori darajadagi ta&#39;lim va qo&#39;llab-quvvatlashni ta&#39;"
+#~ "minlaymiz. Sportchilarimiz o‘z sport turlari bo‘yicha yuksak natijalarga "
+#~ "erishadilar. "
+#~ msgstr ""
+#~ "Our pride lies in our incredible achievements Student-athletes who "
+#~ "participated in national and international competitionsalso brings glory "
+#~ "to Uzbekistan. We are the highest level of educationand provide support. "
+#~ "Our athletes have their own sports.achieve high results in"
+
+#~ msgid " Tez-tez so&#39;raladigan savollarga "
+#~ msgstr "To frequently asked questions"
 
 #~ msgid "Xalqaro Aloqalar"
 #~ msgstr "International relations"
