@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 16:35+0500\n"
+"POT-Creation-Date: 2024-10-04 16:42+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -850,6 +850,38 @@ msgid ""
 "ko'nikmalariga ega professional oliy ma'lumotli kadrlarni tayyorlashni o'z "
 "oldiga maqsad qilib qo'ygan"
 msgstr ""
+
+#: templates/index.html:643
+msgid "Talabalar soni"
+msgstr "Количество студентов"
+
+#: templates/index.html:658
+#, fuzzy
+#| msgid "Yo'nalishlar"
+msgid "Yo&#39;nalishlar soni"
+msgstr "Направления"
+
+#: templates/index.html:671
+#, fuzzy
+#| msgid "Fakultetlar"
+msgid "Fakultetlar soni"
+msgstr "Факультеты"
+
+#: templates/index.html:686
+msgid "O&#39;qituvchilar"
+msgstr ""
+
+#: templates/index.html:699
+#, fuzzy
+#| msgid "E'lonlar"
+msgid "Bo&#39;limlar soni"
+msgstr "Объявления"
+
+#: templates/index.html:714
+#, fuzzy
+#| msgid "E'lonlar"
+msgid "O&#39;quv xonalar"
+msgstr "Объявления"
 
 #: templates/index.html:784
 #, fuzzy
@@ -2544,9 +2576,6 @@ msgstr ""
 #~ msgid "Amaliyot xonalar"
 #~ msgstr "Аудитории для практических занятий"
 
-#~ msgid "Talabalar soni"
-#~ msgstr "Количество студентов"
-
 #~ msgid "Yigit"
 #~ msgstr "Парень"
 
@@ -2640,9 +2669,6 @@ msgstr ""
 
 #~ msgid "UZFI  | O'rta ta'lim to'g'risidagi nizom"
 #~ msgstr "УЗФИ | Устав о среднем образовании"
-
-#~ msgid "Yo'nalishlar"
-#~ msgstr "Направления"
 
 #~ msgid "BORISH"
 #~ msgstr "Подробнее"
