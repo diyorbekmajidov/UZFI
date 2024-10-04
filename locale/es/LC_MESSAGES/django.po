@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 16:36+0500\n"
+"POT-Creation-Date: 2024-10-04 16:42+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -830,13 +830,37 @@ msgid ""
 msgstr ""
 "The Uzbek-Finnish Pedagogical Institute (UzFIPI) was established on the "
 "basis of the decision of the President of the Republic of Uzbekistan dated "
-"June 21, 2022 No. PD-289 \"On measures to increase the quality of pedagogical "
-"education and further develop the activities of higher educational institutions "
-"that prepare pedagogical personnel.\" The institute is considered a state higher "
-"educational institution and aims to train professional highly educated personnel "
-"with the skills of education and teaching methods in the field of pedagogy and the "
-"use of modern pedagogical technologies in the educational process."
+"June 21, 2022 No. PD-289 \"On measures to increase the quality of "
+"pedagogical education and further develop the activities of higher "
+"educational institutions that prepare pedagogical personnel.\" The institute "
+"is considered a state higher educational institution and aims to train "
+"professional highly educated personnel with the skills of education and "
+"teaching methods in the field of pedagogy and the use of modern pedagogical "
+"technologies in the educational process."
 
+#: templates/index.html:643
+msgid "Talabalar soni"
+msgstr "Number of students"
+
+#: templates/index.html:658
+msgid "Yo&#39;nalishlar soni"
+msgstr "Number of directions"
+
+#: templates/index.html:671
+msgid "Fakultetlar soni"
+msgstr "Number of Faculties"
+
+#: templates/index.html:686
+msgid "O&#39;qituvchilar"
+msgstr "Teachers"
+
+#: templates/index.html:699
+msgid "Bo&#39;limlar soni"
+msgstr "Number of Sections"
+
+#: templates/index.html:714
+msgid "O&#39;quv xonalar"
+msgstr "Study rooms"
 
 #: templates/index.html:784
 msgid "Barcha yangiliklarni ko&#39;rish"
@@ -2513,9 +2537,6 @@ msgstr ""
 
 #~ msgid "Amaliyot xonalar"
 #~ msgstr "Practice rooms"
-
-#~ msgid "Talabalar soni"
-#~ msgstr "Number of students"
 
 #~ msgid "Yigit"
 #~ msgstr "Boy"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 16:35+0500\n"
+"POT-Creation-Date: 2024-10-04 16:42+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -816,6 +816,30 @@ msgid ""
 "usullari, ta'lim jarayonida zamonaviy pedagogik texnologiyalarni qo'llash "
 "ko'nikmalariga ega professional oliy ma'lumotli kadrlarni tayyorlashni o'z "
 "oldiga maqsad qilib qo'ygan"
+msgstr ""
+
+#: templates/index.html:643
+msgid "Talabalar soni"
+msgstr ""
+
+#: templates/index.html:658
+msgid "Yo&#39;nalishlar soni"
+msgstr ""
+
+#: templates/index.html:671
+msgid "Fakultetlar soni"
+msgstr ""
+
+#: templates/index.html:686
+msgid "O&#39;qituvchilar"
+msgstr ""
+
+#: templates/index.html:699
+msgid "Bo&#39;limlar soni"
+msgstr ""
+
+#: templates/index.html:714
+msgid "O&#39;quv xonalar"
 msgstr ""
 
 #: templates/index.html:784
