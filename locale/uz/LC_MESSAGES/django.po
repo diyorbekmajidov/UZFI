@@ -2,6 +2,8 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -14,9 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: News/models.py:8 UZFI/models/models.py:8
 msgid "title"
@@ -31,10 +31,8 @@ msgid "category"
 msgstr ""
 
 #: News/models.py:11
-#, fuzzy
-#| msgid "Kafedralar"
 msgid "kafedramanager"
-msgstr "Кафедры"
+msgstr ""
 
 #: News/models.py:12
 msgid "leadership"
@@ -134,98 +132,91 @@ msgstr ""
 
 #: templates/404.html:3 templates/international/Internationalmemorandum.html:3
 msgid "UZFI  | Xalqaro memorandumlar"
-msgstr "УЗФИ | Международные меморандумы"
+msgstr ""
 
 #: templates/404.html:18
 msgid "404"
-msgstr "404"
+msgstr ""
 
 #: templates/404.html:32
 msgid "Bu sahifa mavjud emas"
-msgstr "Данная страница не существует"
+msgstr ""
 
 #: templates/abitur/acceptance.html:4
 msgid "UZFI  | QABUL KVOTASI"
-msgstr "УЗФИ | КВОТА ПРИЕМА"
+msgstr ""
 
 #: templates/abitur/acceptance.html:15
 msgid "QABUL KVOTASI"
-msgstr "КВОТА ПРИЕМА"
+msgstr ""
 
 #: templates/abitur/commission.html:4
 msgid "UZFI  | QABUL KOMISSIYASI JOYLASHUV O'RNI"
-msgstr "УЗФИ | МЕСТО РАСПОЛОЖЕНИЯ ПРИЕМНОЙ КОМИССИИ"
+msgstr ""
 
 #: templates/abitur/commission.html:15
 msgid "QABUL KOMISSIYASI JOYLASHUV O'RNI"
-msgstr "МЕСТО РАСПОЛОЖЕНИЯ ПРИЕМНОЙ КОМИССИИ"
+msgstr ""
 
 #: templates/abitur/faqs.html:3 templates/base.html:336
 msgid "Tez-tez so'raladigan savollarga javoblar"
-msgstr "Ответы на часто задаваемые вопросы"
+msgstr ""
 
 #: templates/abitur/faqs.html:15
 msgid " Tez-tez so'raladigan savollarga javoblar "
-msgstr "Ответы на часто задаваемые вопросы"
+msgstr ""
 
 #: templates/abitur/faqs.html:30
 msgid " Tez-tez so'raladigan savollarga "
-msgstr "Часто задаваемые вопросы"
+msgstr ""
 
 #: templates/abitur/faqs.html:30
 msgid " javoblar "
-msgstr "Ответы"
+msgstr ""
 
 #: templates/abitur/faqs.html:42
 msgid ""
 "O&acute;ZBEKISTON - Finlandiya pedagogika institutida o&acute;qish qaysi "
 "tillarda amalga oshiriladi?"
 msgstr ""
-"На каких языках ведется обучение в Узбекско - Финском педагогическом "
-"институте?"
 
 #: templates/abitur/faqs.html:48
 msgid ""
 "O&acute;ZBEKISTON - Finlandiya pedagogika institutida darslar o&acute;zbek, "
 "rus va tojik tillarida olib boriladi."
 msgstr ""
-"В Узбекско - Финском педагогическом институте занятия проводятся на "
-"узбекском, русском и таджикском языках."
 
 #: templates/abitur/faqs.html:62
 msgid ""
 "O&acute;ZBEKISTON - Finlandiya pedagogika institutida yotoqxona bilan "
 "ta&acute;minlanishi qanday amalga oshiriladi?"
 msgstr ""
-"Как предоставляется общежитие в Узбекско - Финском педагогическом институте?"
 
 #: templates/abitur/faqs.html:69
 msgid ""
 "Talabalikka qabul qilingandan so&acute;ng tegishli dekanatga yotoqxona "
 "talabnomasi bilan murojaat etiladi."
 msgstr ""
-"После зачисления в качестве студента в соответствующий деканат обращается с "
-"заявлением о предоставлении общежития."
 
 #: templates/abitur/int_det.html:3
 msgid "UZFI  | Xalqaro aloqalar"
-msgstr "УЗФИ / Международные отношения"
+msgstr ""
 
 #: templates/abitur/regulation-on-secondary-education.html:4
 msgid "UZFI  | Ikkinchi taʼlim to‘g‘risidagi nizom"
-msgstr "Устав о втором образовании"
+msgstr ""
 
 #: templates/abitur/regulation-on-secondary-education.html:16
 msgid "Ikkinchi taʼlim to‘g‘risidagi nizom"
-msgstr "Устав о втором образовании"
+msgstr ""
 
 #: templates/abitur/regulation-on-secondary-education.html:32
 msgid "O&lsquo;ZBEKISTON RESPUBLIKASI VAZIRLAR MAHKAMASINING"
-msgstr "КАБИНЕТА МИНИСТРОВ РЕСПУБЛИКИ УЗБЕКИСТАН"
+msgstr ""
 
 #: templates/abitur/regulation-on-secondary-education.html:32
 msgid "QARORI"
-msgstr "Решение"
+msgstr ""
 
 #: templates/abitur/regulation-on-secondary-education.html:33
 msgid ""
@@ -233,44 +224,42 @@ msgid ""
 "KEYINGI OLIY TAʼLIMNI OLISH TARTIBI TO&lsquo;G&lsquo;RISIDAGI NIZOMNI "
 "TASDIQLASH HAQIDA"
 msgstr ""
-"Об утверждении устава 'О порядке получения второго и последующего высшего "
-"образования в высших учебных заведениях Республики Узбекистан'"
 
 #: templates/abitur/regulation.html:4
 msgid "UZFI  | QABUL NIZOMI"
-msgstr "УЗФИ / УСТАВ О ПРИЕМЕ"
+msgstr ""
 
 #: templates/abitur/regulation.html:16
 msgid "QABUL NIZOMI"
-msgstr "УСТАВ О ПРИЕМЕ"
+msgstr ""
 
 #: templates/abitur/work-with-the-answer-sheet.html:3
 #: templates/abitur/work-with-the-answer-sheet.html:14
 msgid "Javoblar varaqasi bilan ishlash"
-msgstr "Работа с листом ответов"
+msgstr ""
 
 #: templates/bachelor.html:1 templates/magistr/mag.html:1
 #: templates/news/news-category.html:4 templates/news/news.html:5
 #: templates/news/popular-students.html:3 templates/news/search.html:3
 #: templates/tutors.html:3
 msgid "UZFI | Yangiliklar"
-msgstr "УЗФИ / Новости"
+msgstr ""
 
 #: templates/bachelor.html:12
 msgid "Institut ta&acute;lim yo'nalishlari"
-msgstr "Образовательные направления института"
+msgstr ""
 
 #: templates/base.html:160
 msgid "Chiqish"
-msgstr "Выход"
+msgstr ""
 
 #: templates/base.html:162
 msgid "Kirish"
-msgstr "Вход"
+msgstr ""
 
 #: templates/base.html:267
 msgid "Institut "
-msgstr "Институт"
+msgstr ""
 
 #: templates/base.html:270 templates/base.html:407
 #: templates/international/InternationalNews.html:104
@@ -279,7 +268,7 @@ msgstr "Институт"
 #: templates/news/video-gallery.html:128 templates/open-data.html:85
 #: templates/subtemplates/sidebar.html:17
 msgid "Bosh sahifa"
-msgstr "Главная страница"
+msgstr ""
 
 #: templates/base.html:271 templates/base.html:410
 #: templates/international/InternationalNews.html:107
@@ -289,7 +278,7 @@ msgstr "Главная страница"
 #: templates/news/video-gallery.html:131 templates/open-data.html:88
 #: templates/subtemplates/sidebar.html:20
 msgid "Rahbariyat"
-msgstr "Руководство"
+msgstr ""
 
 #: templates/base.html:272 templates/base.html:411
 #: templates/councils-item.html:3 templates/councils.html:5
@@ -300,13 +289,11 @@ msgstr "Руководство"
 #: templates/news/video-gallery.html:132 templates/open-data.html:89
 #: templates/subtemplates/sidebar.html:21
 msgid "Kengashlar"
-msgstr "Советы"
+msgstr ""
 
 #: templates/base.html:273
-#, fuzzy
-#| msgid "Markazlar va bo'limlar"
 msgid "Markaz va bo'limlar"
-msgstr "Центры и отделы"
+msgstr ""
 
 #: templates/base.html:274 templates/base.html:408
 #: templates/international/InternationalNews.html:105
@@ -315,12 +302,12 @@ msgstr "Центры и отделы"
 #: templates/news/video-gallery.html:129 templates/open-data.html:86
 #: templates/subtemplates/sidebar.html:18
 msgid "Nizom"
-msgstr "Устав"
+msgstr ""
 
 #: templates/base.html:275 templates/base.html:409 templates/documents.html:21
 #: templates/international/international-grants.html:19
 msgid "Me'yoriy hujjatlar"
-msgstr "Нормативные документы"
+msgstr ""
 
 #: templates/base.html:276 templates/base.html:413
 #: templates/international/InternationalNews.html:109
@@ -329,7 +316,7 @@ msgstr "Нормативные документы"
 #: templates/news/video-gallery.html:133 templates/open-data.html:90
 #: templates/requesties.html:18 templates/subtemplates/sidebar.html:22
 msgid "Rekvizitlar"
-msgstr "Реквизиты"
+msgstr ""
 
 #: templates/base.html:279 templates/base.html:414
 #: templates/international/InternationalNews.html:110
@@ -338,7 +325,7 @@ msgstr "Реквизиты"
 #: templates/news/video-gallery.html:134 templates/open-data.html:91
 #: templates/subtemplates/sidebar.html:23
 msgid "Moliyaviy hisobotlar"
-msgstr "Финансовые отчеты"
+msgstr ""
 
 #: templates/base.html:280 templates/base.html:415
 #: templates/international/InternationalNews.html:112
@@ -347,131 +334,125 @@ msgstr "Финансовые отчеты"
 #: templates/news/video-gallery.html:136 templates/open-data.html:18
 #: templates/open-data.html:93 templates/subtemplates/sidebar.html:25
 msgid "Ochiq ma'lumotlar"
-msgstr "Открытые данные"
+msgstr ""
 
 #: templates/base.html:285
 msgid "TA'LIM "
-msgstr "ОБРАЗОВАНИЕ"
+msgstr ""
 
 #: templates/base.html:288 templates/base.html:423 templates/faculties.html:19
 #: templates/index.html:512
 msgid "Fakultetlar"
-msgstr "Факультеты"
+msgstr ""
 
 #: templates/base.html:289 templates/base.html:424 templates/departments.html:7
 #: templates/departments.html:18 templates/faculties-item.html:57
 msgid "Kafedralar"
-msgstr "Кафедры"
+msgstr ""
 
 #: templates/base.html:290 templates/base.html:425
 msgid "Bakalavriat"
-msgstr "Бакалавриат"
+msgstr ""
 
 #: templates/base.html:291 templates/base.html:426 templates/magistr.html:15
 msgid "Magistratura"
-msgstr "Магистратура"
+msgstr ""
 
 #: templates/base.html:292 templates/base.html:427
 msgid "Tyutorlar"
-msgstr "Тьюторы"
+msgstr ""
 
 #: templates/base.html:295 templates/base.html:428
 msgid "O‘quv rejalari"
-msgstr "Учебные планы"
+msgstr ""
 
 #: templates/base.html:299
-#, fuzzy
-#| msgid "Axborot xizmatlari"
 msgid "Axborot xizmati"
-msgstr "Информационные услуги"
+msgstr ""
 
 #: templates/base.html:302 templates/base.html:437 templates/dashboard.html:40
 #: templates/index.html:740 templates/news/news-category.html:11
 #: templates/news/news.html:47 templates/news/news.html:56
 msgid "Yangiliklar"
-msgstr "Новости"
+msgstr ""
 
 #: templates/base.html:303 templates/base.html:438
 msgid "Video galereya"
-msgstr "Видеогалерея"
+msgstr ""
 
 #: templates/base.html:304
-#, fuzzy
-#| msgid "E'lonlar"
 msgid "E&#39;lonlar"
-msgstr "Объявления"
+msgstr ""
 
 #: templates/base.html:305 templates/base.html:440
 #: templates/news/contacts.html:21
 msgid "Bog'lanish"
-msgstr "Связь"
+msgstr ""
 
 #: templates/base.html:310 templates/base.html:312 templates/base.html:450
 #: templates/base.html:452
-#, fuzzy
-#| msgid "Xalqaro aloqalar"
 msgid "Xalqaro hamkorlik"
-msgstr "Международные отношения"
+msgstr ""
 
 #: templates/base.html:313 templates/base.html:453
 #: templates/international/Internationalmemorandum.html:18
 msgid "Xalqaro memorandumlar"
-msgstr "Международные меморандумы"
+msgstr ""
 
 #: templates/base.html:314 templates/base.html:454
 msgid "Xalqaro grantlar"
-msgstr "Международные гранты"
+msgstr ""
 
 #: templates/base.html:318 templates/base.html:461
 msgid "Talabalar hayoti"
-msgstr "Студенческая жизнь"
+msgstr ""
 
 #: templates/base.html:322 templates/base.html:463
 msgid "Iqtidorli talabalar"
-msgstr "Одаренные студенты"
+msgstr ""
 
 #: templates/base.html:323 templates/library.html:3 templates/library.html:14
 #: templates/library.html:28
 msgid "Kutubxona"
-msgstr "Библиотека"
+msgstr ""
 
 #: templates/base.html:324 templates/ttj.html:14
 msgid "Talabalar turar joyi"
-msgstr "Студенческое общежитие"
+msgstr ""
 
 #: templates/base.html:330
 msgid "Abituriyentlarga"
-msgstr "Абитуриентам"
+msgstr ""
 
 #: templates/base.html:412 templates/centers-item.html:12
 msgid "Markazlar va bo'limlar"
-msgstr "Центры и отделы"
+msgstr ""
 
 #: templates/base.html:421
 msgid "TA'LIM"
-msgstr "ОБРАЗОВАНИЕ"
+msgstr ""
 
 #: templates/base.html:434
 msgid "Axborot Xizmatlari"
-msgstr "Информационные услуги"
+msgstr ""
 
 #: templates/base.html:439 templates/news/events-item.html:12
 #: templates/news/events.html:53
 msgid "E'lonlar"
-msgstr "Объявления"
+msgstr ""
 
 #: templates/base.html:464 templates/list-of-additional.html:3
 #: templates/list-of-additional.html:14
 msgid "To'garaklar ro'yxati"
-msgstr "Список кружков"
+msgstr ""
 
 #: templates/base.html:478
 msgid " Manzil "
-msgstr "Адрес"
+msgstr ""
 
 #: templates/base.html:479
 msgid " Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy "
-msgstr "Адрес: г. Самарканд, улица Спитаменшох, дом 166"
+msgstr ""
 
 #: templates/centers-item.html:35
 msgid " boshlig'i"
@@ -481,274 +462,272 @@ msgstr ""
 #: templates/department-manager.html:35 templates/leadership-item.html:35
 #: templates/leadership.html:52
 msgid "E-pochta: "
-msgstr "Электронная почта: "
+msgstr ""
 
 #: templates/centers-item.html:40 templates/dekan.html:39
 #: templates/department-manager.html:38 templates/leadership-item.html:38
 #: templates/leadership.html:55 templates/tutors-item.html:43
 msgid "Telefon raqam: "
-msgstr "Номер телефона"
+msgstr ""
 
 #: templates/centers-item.html:43 templates/news/contacts.html:40
 #: templates/requesties.html:37
 msgid "Fax: "
-msgstr "Fax:"
+msgstr ""
 
 #: templates/centers-item.html:46 templates/dekan.html:47
 #: templates/department-manager.html:46 templates/leadership-item.html:46
 #: templates/leadership.html:63 templates/tutors-item.html:47
 msgid "Manzil: "
-msgstr "Адрес:"
+msgstr ""
 
 #: templates/centers-item.html:49 templates/dekan.html:43
 #: templates/department-manager.html:42 templates/leadership-item.html:42
 #: templates/leadership.html:59
 msgid "Qabul kunlari: "
-msgstr "Дни приема:"
+msgstr ""
 
 #: templates/centers-item.html:56
 msgid "Vazifalari"
-msgstr "Задачи"
+msgstr ""
 
 #: templates/centers.html:7
 msgid "UZFI  | Markazlar"
-msgstr "УзФИ / Центры"
+msgstr ""
 
 #: templates/centers.html:18
 msgid "Markazlar"
-msgstr "Центры"
+msgstr ""
 
 #: templates/centers.html:36
 msgid "Markazlar "
-msgstr "Центры"
+msgstr ""
 
 #: templates/charter.html:3 templates/charter.html:17 templates/charter.html:30
 msgid "Institut nizomi"
-msgstr "Устав института"
+msgstr ""
 
 #: templates/councils.html:33
 msgid "Kengashlar "
-msgstr "Советы"
+msgstr ""
 
 #: templates/dashboard.html:44
 msgid "Ilmiy ish sozlamalri"
-msgstr "Настройки научной работы"
+msgstr ""
 
 #: templates/dashboard.html:55 templates/dekan.html:60
 #: templates/department-manager.html:59 templates/leadership-item.html:60
 #: templates/tutors-item.html:69
 msgid "Vazifalar"
-msgstr "Задачи"
+msgstr ""
 
 #: templates/dashboard.html:56 templates/dekan.html:61
 #: templates/department-manager.html:60 templates/leadership-item.html:61
 msgid "Biografiya"
-msgstr "Биография"
+msgstr ""
 
 #: templates/dashboard.html:57
 msgid "Scientific activity"
-msgstr "Научная деятельность"
+msgstr ""
 
 #: templates/dashboard.html:73 templates/dekan.html:78
 #: templates/department-manager.html:77 templates/leadership-item.html:78
 msgid "Nomi"
-msgstr "Название"
+msgstr ""
 
 #: templates/dashboard.html:74 templates/dekan.html:79
 #: templates/department-manager.html:78 templates/leadership-item.html:79
 msgid "Darajasi"
-msgstr "Степень"
+msgstr ""
 
 #: templates/dashboard.html:75 templates/dekan.html:80
 #: templates/department-manager.html:79 templates/leadership-item.html:80
 msgid "Chop etilgan sana"
-msgstr "Дата публикации"
+msgstr ""
 
 #: templates/dashboard.html:76 templates/dekan.html:81
 #: templates/department-manager.html:80
 msgid "Yukalsh"
-msgstr "Загрузить"
+msgstr ""
 
 #: templates/dashboard.html:102
 msgid "Tegishli yangiliklar"
-msgstr "Новости по теме"
+msgstr ""
 
 #: templates/dashboard.html:129
 msgid "Ilmiy ishlar sozlamalri"
-msgstr "Настройки научных работ"
+msgstr ""
 
 #: templates/dashboard.html:147
 msgid "Ilmiy ish yuklash"
-msgstr "Скачать нацчную работу"
+msgstr ""
 
 #: templates/dashboard.html:153
 msgid "Nomi UZ"
-msgstr "Название УЗ"
+msgstr ""
 
 #: templates/dashboard.html:161
 msgid "Nomi EN"
-msgstr "Название АНГ"
+msgstr ""
 
 #: templates/dashboard.html:169
 msgid "Nomi RU"
-msgstr "Название РУ"
+msgstr ""
 
 #: templates/dashboard.html:178
 msgid "Darajasi UZ"
-msgstr "Степень УЗ"
+msgstr ""
 
 #: templates/dashboard.html:186
 msgid "Darajasi EN"
-msgstr "Степень АНГ"
+msgstr ""
 
 #: templates/dashboard.html:194
 msgid "Darajasi RU"
-msgstr "Степень РУ"
+msgstr ""
 
 #: templates/dashboard.html:204
 msgid "Majburiy emas"
-msgstr "Необязательно"
+msgstr ""
 
 #: templates/dashboard.html:209
 msgid "Fayl"
-msgstr "Файл"
+msgstr ""
 
 #: templates/dashboard.html:216
 msgid "Chop etilgam sana"
-msgstr "Дата публикации"
+msgstr ""
 
 #: templates/dashboard.html:230
 msgid "Save changes"
-msgstr "Сохранить изменения"
+msgstr ""
 
 #: templates/dashboard.html:231
 msgid "Bekor qilish"
-msgstr "Отменить"
+msgstr ""
 
 #: templates/dekan.html:25 templates/faculties-item.html:67
 msgid "Fakultet dekani"
-msgstr "Декан факультета"
+msgstr ""
 
 #: templates/dekan.html:54 templates/department-manager.html:53
 #: templates/destinations-item.html:63
 msgid "Ko'proq ma'lumot"
-msgstr "Подробнее"
+msgstr ""
 
 #: templates/dekan.html:62 templates/department-manager.html:61
 #: templates/leadership-item.html:62
 msgid "Ilmiy faoliyat"
-msgstr "Научная деятельность"
+msgstr ""
 
 #: templates/dekan.html:109 templates/destinations-item.html:41
 msgid "Fakultet"
-msgstr "Факультет"
+msgstr ""
 
 #: templates/department-manager.html:24
 msgid "Kafedra menedjeri"
-msgstr "Менеджер кафедры"
+msgstr ""
 
 #: templates/departments-item.html:4
 msgid "Kafedra"
-msgstr "Кафедра"
+msgstr ""
 
 #: templates/departments-item.html:28
 msgid "Kafedra haqida"
-msgstr "О кафедре"
+msgstr ""
 
 #: templates/departments-item.html:31 templates/departments-item.html:44
 msgid "Kafedra mudiri"
-msgstr "Заведующий кафедрой"
+msgstr ""
 
 #: templates/departments-item.html:55 templates/faculties-item.html:78
 msgid "E-pochta:"
-msgstr "Электронная почта"
+msgstr ""
 
 #: templates/departments-item.html:58 templates/faculties-item.html:81
 msgid "Telefon raqam:"
-msgstr "Номер телефона"
+msgstr ""
 
 #: templates/departments-item.html:62 templates/faculties-item.html:85
 msgid "Qabul kunlari:"
-msgstr "Дни приема"
+msgstr ""
 
 #: templates/departments-item.html:66 templates/faculties-item.html:89
 #: templates/news/contacts.html:38 templates/requesties.html:35
 msgid "Manzil:"
-msgstr "Адрес:"
+msgstr ""
 
 #: templates/destinations-item.html:72
 msgid "Yo'nalish mavjud emas"
-msgstr "Данная страница не существует"
+msgstr ""
 
 #: templates/documents.html:7
 msgid "UZFI  | Me'yoriy hujjatlar"
-msgstr "УЗФИ / Нормативные документы"
+msgstr ""
 
 #: templates/documents.html:37
 msgid "Hujjat turi"
-msgstr "Тип документа"
+msgstr ""
 
 #: templates/documents.html:38
 msgid "Hujjat sanasi"
-msgstr "Дата документа"
+msgstr ""
 
 #: templates/documents.html:39
 msgid "Hujjat nomi"
-msgstr "Дата документа"
+msgstr ""
 
 #: templates/documents.html:40 templates/financial-statements.html:43
 msgid "Yuklash"
-msgstr "Скачать"
+msgstr ""
 
 #: templates/faculties-item.html:32
 msgid "Fakultet haqida"
-msgstr "О факультете"
+msgstr ""
 
 #: templates/faculties-item.html:35
 msgid "Yo'nalishlar va Kafedralar"
-msgstr "Направления и кафедры"
+msgstr ""
 
 #: templates/faculties-item.html:38
 msgid "Dekan"
-msgstr "Декан"
+msgstr ""
 
 #: templates/faculties-item.html:50
 msgid "Fakultet ta'lim yo'nalishlari yo'nalishlari"
-msgstr "Направления факультета"
+msgstr ""
 
 #: templates/faculties-item.html:99
 msgid "Fakultet mavjud emas"
-msgstr "факультета не существует"
+msgstr ""
 
 #: templates/faculties.html:7 templates/tutor_fac.html:7
 msgid "UZFI  | Fakultetlar"
-msgstr "Факультеты"
+msgstr ""
 
 #: templates/financial-statements.html:7
 msgid "UZFI  | Moliyaviy xisobotlar"
-msgstr "УЗФИ / Финансовые отчеты"
+msgstr ""
 
 #: templates/financial-statements.html:22
 msgid "Moliyaviy xisobotlar"
-msgstr "Финансовые отчеты"
+msgstr ""
 
 #: templates/financial-statements.html:40
 msgid "Xisobot turi"
-msgstr "Тип отчета"
+msgstr ""
 
 #: templates/financial-statements.html:41
 msgid "Sana"
-msgstr "Дата"
+msgstr ""
 
 #: templates/financial-statements.html:42
 msgid "Chorak"
-msgstr "Четверть"
+msgstr ""
 
 #: templates/index.html:147
-#, fuzzy
-#| msgid "O‘ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
 msgid "O&#39;ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
-msgstr "Узбекско-Финский педагогический институт"
+msgstr ""
 
 #: templates/index.html:201
 msgid "QABUL 2024-2025"
@@ -756,87 +735,75 @@ msgstr ""
 
 #: templates/index.html:236
 msgid "VIRTUAL TUR"
-msgstr "ВИРТУАЛЬНЫЙ ТУР"
+msgstr ""
 
 #: templates/index.html:378
 msgid "Davomini o'qish"
-msgstr "Читать продолжение"
+msgstr ""
 
 #: templates/index.html:413
 msgid "Barcha Yangiliklar"
-msgstr "Все новости"
+msgstr ""
 
 #: templates/index.html:435
 msgid "Yagona portal"
-msgstr "Единый портал"
+msgstr ""
 
 #: templates/index.html:436
 msgid "UZFI interaktiv xizmatlar portali"
-msgstr "Интерактивные услуги"
+msgstr ""
 
 #: templates/index.html:448
 msgid "Elektron kutubxona"
-msgstr "Библиотека"
+msgstr ""
 
 #: templates/index.html:449
-#, fuzzy
-#| msgid "Yogona elektron kutubxona axborot tizimi"
 msgid "Yagona elektron kutubxona axborot tizimi"
-msgstr "Единая электронно-библиотечная информационная система"
+msgstr ""
 
 #: templates/index.html:461
 msgid "Dars jadvali"
-msgstr "Расписание занятий"
+msgstr ""
 
 #: templates/index.html:462
 msgid "UZFI dars jadvali"
-msgstr "Расписание занятий УЗФИ"
+msgstr ""
 
 #: templates/index.html:474 templates/index.html:475
 msgid "Korporativ elektron pochta"
-msgstr "Корпоративная электронная почта"
+msgstr ""
 
 #: templates/index.html:487
 msgid "KPI tizimi"
-msgstr "система КПЭ"
+msgstr ""
 
 #: templates/index.html:488
 msgid "Hodimlarni baholash va nazorat qilish tizimi"
-msgstr "Система оценки и контроля сотрудников"
+msgstr ""
 
 #: templates/index.html:500
 msgid "TTJ"
-msgstr "ТТЖ"
+msgstr ""
 
 #: templates/index.html:501
 msgid "Talabalar yotoqxonasi uchun online ariza"
-msgstr "Онлайн-заявка на студенческое общежитие"
+msgstr ""
 
 #: templates/index.html:513
-#, fuzzy
-#| msgid ""
-#| "O‘zbekiston-Finlyandiya pedagogika instituting fakultetlari quydagilar:"
 msgid "O‘zbekiston-Finlandiya pedagogika instituting fakultetlari quyidagilar:"
-msgstr "Структура факультета Узбекско-Финский институт."
+msgstr ""
 
 #: templates/index.html:555
-#, fuzzy
-#| msgid "Institut ta&acute;lim yo'nalishlari"
 msgid "Institut ta&#39;lim yo&#39;nalishlari"
-msgstr "Образовательные направления института"
+msgstr ""
 
 #: templates/index.html:572
-#, fuzzy
-#| msgid "Ko'proq o'qish"
 msgid "Ko&#39;proq o&#39;qish"
-msgstr "Подробнее"
+msgstr ""
 
 #: templates/index.html:623
-#, fuzzy
-#| msgid ""
-#| "O‘zbekiston-Finlyandiya pedagogika instituting fakultetlari quydagilar:"
 msgid "O'zbekiston-Finlandiya pedagogika instituti"
-msgstr "Структура факультета Узбекско-Финский институт."
+msgstr ""
 
 #: templates/index.html:624
 msgid ""
@@ -852,14 +819,12 @@ msgid ""
 msgstr ""
 
 #: templates/index.html:784
-#, fuzzy
-#| msgid "Barcha yangiliklarni ko'rish"
 msgid "Barcha yangiliklarni ko&#39;rish"
-msgstr "Смотреть все новости"
+msgstr ""
 
 #: templates/index.html:799
 msgid "Mashhur talabalarimiz"
-msgstr "Популярные студенты"
+msgstr ""
 
 #: templates/index.html:802
 msgid ""
@@ -870,17 +835,13 @@ msgid ""
 msgstr ""
 
 #: templates/index.html:849
-#, fuzzy
-#| msgid " Tez-tez so'raladigan savollarga javoblar "
 msgid " Tez-tez so&#39;raladigan savollarga javoblar "
-msgstr "Ответы на часто задаваемые вопросы"
+msgstr ""
 
 #: templates/international/InternationalNews.html:3
 #: templates/international/InternationalNews.html:14
-#, fuzzy
-#| msgid "Xalqaro aloqalar"
 msgid "Xalqaro Hamkorlik"
-msgstr "Международные отношения"
+msgstr ""
 
 #: templates/international/InternationalNews.html:70
 #: templates/international/Internationalmemorandum.html:65
@@ -889,7 +850,7 @@ msgstr "Международные отношения"
 #: templates/news/video-gallery.html:80 templates/tutors.html:64
 #: templates/vacancies.html:48
 msgid " Avvalgi"
-msgstr "Предыдущий"
+msgstr ""
 
 #: templates/international/InternationalNews.html:84
 #: templates/international/Internationalmemorandum.html:73
@@ -898,7 +859,7 @@ msgstr "Предыдущий"
 #: templates/news/video-gallery.html:88 templates/tutors.html:72
 #: templates/vacancies.html:56
 msgid " Keyingi"
-msgstr "Следующий"
+msgstr ""
 
 #: templates/international/InternationalNews.html:101
 #: templates/news/events.html:124 templates/news/news-category.html:123
@@ -906,7 +867,7 @@ msgstr "Следующий"
 #: templates/news/video-gallery.html:125 templates/open-data.html:82
 #: templates/subtemplates/sidebar.html:14
 msgid "UNIVERSITET"
-msgstr "УНИВЕРСИТЕТ"
+msgstr ""
 
 #: templates/international/InternationalNews.html:106
 #: templates/news/events.html:129 templates/news/news-category.html:128
@@ -914,7 +875,7 @@ msgstr "УНИВЕРСИТЕТ"
 #: templates/news/video-gallery.html:130 templates/open-data.html:87
 #: templates/subtemplates/sidebar.html:19
 msgid "Hujjatlar"
-msgstr "Документы"
+msgstr ""
 
 #: templates/international/InternationalNews.html:111
 #: templates/news/events.html:134 templates/news/news-category.html:133
@@ -922,29 +883,29 @@ msgstr "Документы"
 #: templates/news/video-gallery.html:135 templates/open-data.html:92
 #: templates/subtemplates/sidebar.html:24
 msgid "Mashhur talabalar"
-msgstr "Популярные студенты"
+msgstr ""
 
 #: templates/international/Internationalmemorandum_det.html:6
 #: templates/international/int_det.html:6 templates/news/news-item.html:3
 msgid "UZFI"
-msgstr "УЗФИ"
+msgstr ""
 
 #: templates/international/Internationalmemorandum_det.html:67
 #: templates/international/int_det.html:69 templates/news/news-item.html:83
 msgid "Recent Posts"
-msgstr "Последние новости"
+msgstr ""
 
 #: templates/international/international-grants.html:3
 msgid "UZFI  | Xalqaro grantlar"
-msgstr "УЗФИ / Международные гранты"
+msgstr ""
 
 #: templates/leadership.html:3
 msgid "UZFI  | Rahbariyat"
-msgstr "УЗФИ / Руководство"
+msgstr ""
 
 #: templates/leadership.html:31
 msgid "Rahbariyat "
-msgstr "Руководство"
+msgstr ""
 
 #: templates/library.html:46
 msgid ""
@@ -1001,63 +962,63 @@ msgstr ""
 
 #: templates/magistr.html:4
 msgid "UZFI  | Magistratura"
-msgstr "УЗФИ / Магистратура"
+msgstr ""
 
 #: templates/magistr/mag.html:12
 msgid "Institut magistr ta&acute;lim yo'nalishlari"
-msgstr "Направления магистратуры института"
+msgstr ""
 
 #: templates/news/contacts.html:7
 msgid "UZFI  | Bog'lanish"
-msgstr "УЗФИ / Связь"
+msgstr ""
 
 #: templates/news/contacts.html:39 templates/requesties.html:36
 msgid "Telefon: "
-msgstr "Телефон:"
+msgstr ""
 
 #: templates/news/contacts.html:41 templates/requesties.html:38
 msgid "Hisob raqami: "
-msgstr "Номер счета: "
+msgstr ""
 
 #: templates/news/contacts.html:42 templates/requesties.html:39
 msgid "Bank: "
-msgstr "Банк: "
+msgstr ""
 
 #: templates/news/contacts.html:43 templates/requesties.html:40
 msgid "MFO: "
-msgstr "МФО: "
+msgstr ""
 
 #: templates/news/contacts.html:44 templates/requesties.html:41
 msgid "Shx/r: "
-msgstr "ЛР/С: "
+msgstr ""
 
 #: templates/news/contacts.html:45 templates/requesties.html:42
 msgid "INN: "
-msgstr "ИНН: "
+msgstr ""
 
 #: templates/news/contacts.html:46 templates/requesties.html:43
 msgid "OKONX: "
-msgstr "ОКОНХ: "
+msgstr ""
 
 #: templates/news/contacts.html:53
 msgid "To'liq ismingiz"
-msgstr "Полное имя"
+msgstr ""
 
 #: templates/news/contacts.html:59
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: templates/news/contacts.html:61
 msgid "We'll never share your email with anyone else."
-msgstr "Мы никогда не передадим вашу электронную почту кому-либо еще."
+msgstr ""
 
 #: templates/news/contacts.html:66
 msgid "Telefon raqam"
-msgstr "Номер телефона"
+msgstr ""
 
 #: templates/news/contacts.html:72
 msgid "Murojaat"
-msgstr "Обращение"
+msgstr ""
 
 #: templates/news/contacts.html:75
 msgid "Submit"
@@ -1065,37 +1026,37 @@ msgstr ""
 
 #: templates/news/events-item.html:3
 msgid " E'lonlar "
-msgstr "Объявления"
+msgstr ""
 
 #: templates/news/events-item.html:43
 msgid "BIZ BILAN BO'LING "
-msgstr "ОСТАВАЙСЯ С НАМИ"
+msgstr ""
 
 #: templates/news/events.html:5
 msgid "UZFI | E'lonlar"
-msgstr "УЗФИ / Объявления"
+msgstr ""
 
 #: templates/news/events.html:44
 msgid "E&acute;lonlar"
-msgstr "Объявления"
+msgstr ""
 
 #: templates/news/events.html:52 templates/news/news.html:55
 msgid "Asosiy sahifa"
-msgstr "Главная страница"
+msgstr ""
 
 #: templates/news/news-category.html:21
 msgid "HAMMASI"
-msgstr "ВСЕ"
+msgstr ""
 
 #: templates/news/news-category.html:97 templates/news/popular-students.html:69
 #: templates/news/search.html:58 templates/news/video-gallery.html:100
 #: templates/open-data.html:57
 msgid "Qidiring"
-msgstr "Искать"
+msgstr ""
 
 #: templates/news/news-category.html:144 templates/news/news-item.html:56
 msgid "Tags"
-msgstr "Теги"
+msgstr ""
 
 #: templates/news/news-item.html:65
 msgid "Share This Post"
@@ -1104,79 +1065,79 @@ msgstr ""
 #: templates/news/popular-students-item.html:14
 #: templates/news/popular-students.html:15
 msgid "Iqtdorli talabalar"
-msgstr "Одаренные студенты"
+msgstr ""
 
 #: templates/news/popular-students-item.html:72
 msgid "BIZ BILAN BO'LING"
-msgstr "ОСТАВАЙСЯ С НАМИ"
+msgstr ""
 
 #: templates/news/search.html:42 templates/vacancies.html:34
 msgid "DAVOMINI O'QISH"
-msgstr "Читать продолжение"
+msgstr ""
 
 #: templates/news/search.html:79 templates/vacancies.html:68
 msgid "So'nggi yangiliklar"
-msgstr "Последние новости"
+msgstr ""
 
 #: templates/news/video-gallery-item.html:4
 msgid "Video News"
-msgstr "Видео новости"
+msgstr ""
 
 #: templates/news/video-gallery-item.html:52
 msgid "Oxirgi videolar"
-msgstr "Последние видео"
+msgstr ""
 
 #: templates/news/video-gallery.html:3
 msgid "UZFI | Video - yangiliklar"
-msgstr "УЗФИ / Видео-новости"
+msgstr ""
 
 #: templates/news/video-gallery.html:14
 msgid "Video - yangiliklar"
-msgstr "Видео-новости"
+msgstr ""
 
 #: templates/open-data.html:7
 msgid "UZFI  | Ochiq ma'lumotlar"
-msgstr "УЗФИ / Открытые данные"
+msgstr ""
 
 #: templates/requesties.html:7
 msgid "UZFI  | Rekvizitlar"
-msgstr "УЗФИ / Реквизиты"
+msgstr ""
 
 #: templates/ttj.html:3 templates/ttj.html:28
 msgid "Talabalar Turar Joyi"
-msgstr "Студенческое общежитие"
+msgstr ""
 
 #: templates/tutor_fac.html:19
 msgid "Tutorlar ro'yxati"
-msgstr "Список тьюторов"
+msgstr ""
 
 #: templates/tutors-item.html:3 templates/tutors-item.html:18
 msgid " Tyutor "
-msgstr "Тьютор"
+msgstr ""
 
 #: templates/tutors-item.html:29
 msgid "Tyutor"
-msgstr "Тьютор"
+msgstr ""
 
 #: templates/tutors-item.html:40
 msgid "Gruhlari: "
-msgstr "Группы"
+msgstr ""
 
 #: templates/tutors-item.html:50
 msgid "Fakultet: "
-msgstr "Факультет: "
+msgstr ""
 
 #: templates/tutors-item.html:64
 msgid "Ko'proq"
-msgstr "Больше "
+msgstr ""
 
 #: templates/tutors-item.html:70
 msgid "Umumiy ma'lumot"
-msgstr "Общие сведения"
+msgstr ""
 
 #: templates/vacancies.html:3
 msgid "Vakansiyalar"
-msgstr "Вакансии"
+msgstr ""
 
 #: venv/lib/python3.9/site-packages/ckeditor_uploader/forms.py:6
 msgid "Search files"
@@ -2455,203 +2416,3 @@ msgstr ""
 #: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:55
 msgid "Powered by "
 msgstr ""
-
-#~ msgid "Mashhur"
-#~ msgstr "Выдающиеся"
-
-#~ msgid "talabalarimiz"
-#~ msgstr "студенты"
-
-#, fuzzy
-#~| msgid ""
-#~| " Bizning g‘ururimiz zamirida erishayotgan beqiyos yutuqlarimiz yotadi  "
-#~| "Respublika musobaqalarida qatnashgan talaba-sportchilar va xalqaro "
-#~| "miqyosda ham O‘zbekistonga shon-shuhrat keltirmoqda. Biz eng yuqori "
-#~| "darajadagi ta'lim va qo'llab-quvvatlashni ta'minlaymiz. Sportchilarimiz "
-#~| "o‘z sport turlari bo‘yicha yuksak natijalarga erishadilar. "
-#~ msgid ""
-#~ " Bizning g&#39;ururimiz zamirida erishayotgan beqiyos yutuqlarimiz "
-#~ "yotadi  Respublika musobaqalarida qatnashgan talaba-sportchilar va "
-#~ "xalqaro miqyosda ham O&#39;zbekistonga shon-shuhrat keltirmoqda. Biz eng "
-#~ "yuqori darajadagi ta&#39;lim va qo&#39;llab-quvvatlashni ta&#39;"
-#~ "minlaymiz. Sportchilarimiz o‘z sport turlari bo‘yicha yuksak natijalarga "
-#~ "erishadilar. "
-#~ msgstr ""
-#~ "В основе нашей гордости лежат несравненные достижения, которых мы "
-#~ "достигаем. Студенты-спортсмены, участвующие в республиканских "
-#~ "соревнованиях, также приносят Узбекистану славу. Мы обеспечиваем "
-#~ "высочайший уровень образования и поддержки. Наши спортсмены достигают "
-#~ "высоких результатов в разных видах спорта"
-
-#, fuzzy
-#~| msgid " Tez-tez so'raladigan savollarga "
-#~ msgid " Tez-tez so&#39;raladigan savollarga "
-#~ msgstr "Часто задаваемые вопросы"
-
-#~ msgid "Xalqaro Aloqalar"
-#~ msgstr "Международные отношения"
-
-#~ msgid "Avvalgi"
-#~ msgstr "Предыдущий"
-
-#~ msgid "Keyingi"
-#~ msgstr "Следующий"
-
-#~ msgid ""
-#~ "Institutning maqsadi yuqori sifatli pedagogikani rivojlantirish va O'zbek "
-#~ "milliyligiga muvofiq pedagogik mutaxasislarni tayyorlashdir."
-#~ msgstr ""
-#~ "Цель института – развитие качественной педагогики и узбекского языка."
-#~ "Подготовка специалистов по национальным"
-
-#~ msgid "QABUL"
-#~ msgstr "ПРИЕМ"
-
-#~ msgid "BATAFSIL"
-#~ msgstr "ДЕТАЛИ"
-
-#~ msgid "Rahbariyatga murojaat"
-#~ msgstr "Обращение к руководству"
-
-#~ msgid ""
-#~ "O'zbekiston-Finlandiya pedagogika institutida O'zbekistonning boy "
-#~ "madaniyatini  hamda O'zbek-Fin pedagogik ta'limini o'zida "
-#~ "mujassamlashtirgan bakalavr va magistr yo'nalishlari mavjud. Institutda  "
-#~ "Sharq va G'arbning zamonaviy pedagogika tajribalaridan foydalaniladigan "
-#~ "quydagi yo'nalishlarimiz mavjud."
-#~ msgstr ""
-#~ "В Узбекско-финском педагогическом институте действуют курсы бакалавриата "
-#~ "и магистратуры, сочетающие в себе богатую культуру Узбекистана и узбекско-"
-#~ "финское педагогическое образование. В институте действуют следующие "
-#~ "направления, использующие современный педагогический опыт Востока и "
-#~ "Запада."
-
-#~ msgid "Institutning asosiy ko&acute;rsatkichlari"
-#~ msgstr "Основные показатели университета"
-
-#~ msgid "Bo'limlar va markazlar"
-#~ msgstr "Отделы и центры"
-
-#~ msgid "Seminar xonalar"
-#~ msgstr "Аудитории для семинарских занятий"
-
-#~ msgid "Ma’ruza xonalar"
-#~ msgstr "Аудитории для лекционных занятий"
-
-#~ msgid "Laboratoriya xonalar"
-#~ msgstr "Аудитория для лабораторных занятий"
-
-#~ msgid "Amaliyot xonalar"
-#~ msgstr "Аудитории для практических занятий"
-
-#~ msgid "Talabalar soni"
-#~ msgstr "Количество студентов"
-
-#~ msgid "Yigit"
-#~ msgstr "Парень"
-
-#~ msgid "Qiz"
-#~ msgstr "Девушка"
-
-#~ msgid "O&acute;qituvchi va professor"
-#~ msgstr "Преподаватели и профессора"
-
-#~ msgid "Dotsent"
-#~ msgstr "Доцент"
-
-#~ msgid "Professor"
-#~ msgstr "Профессор"
-
-#~ msgid "Katta o‘qituvchi"
-#~ msgstr "Старший преподаватель"
-
-#~ msgid " Rektor "
-#~ msgstr "Инициатива ректора"
-
-#~ msgid " tashabbusi "
-#~ msgstr "инициатива"
-
-#~ msgid ""
-#~ "O‘ZBEKISTON - Finlandiya pedagogika institutida oʼqish qaysi tillarda "
-#~ "amalga oshiriladi?"
-#~ msgstr ""
-#~ "На каких языках ведется обучение в Узбекско - Финском педагогическом "
-#~ "институте?"
-
-#~ msgid ""
-#~ "O‘ZBEKISTON - Finlandiya pedagogika institutida darslar oʼzbek, rus va "
-#~ "tojik tillarida olib boriladi."
-#~ msgstr ""
-#~ "В Узбекско - Финском педагогическом институте занятия проводятся на "
-#~ "узбекском, русском и таджикском языках."
-
-#~ msgid ""
-#~ "Talabalikka qabul qilingandan soʼng tegishli dekanatga yotoqxona "
-#~ "talabnomasi bilan murojaat etiladi."
-#~ msgstr ""
-#~ "После зачисления в качестве студента в соответствующий деканат обращается "
-#~ "с заявлением о предоставлении общежития."
-
-#, fuzzy
-#~| msgid ""
-#~| "                O&acute;ZBEKISTON - Finlandiya pedagogika institutida "
-#~| "yotoqxona bilan ta&acute;minlanishi qanday amalga oshiriladi?"
-#~ msgid ""
-#~ "\n"
-#~ "                O&acute;ZBEKISTON - Finlandiya pedagogika institutida "
-#~ "yotoqxona bilan ta&acute;minlanishi qanday amalga oshiriladi?"
-#~ msgstr ""
-#~ "Как предоставляется общежитие в Узбекско - Финском педагогическом "
-#~ "институте?"
-
-#~ msgid "UNIVERSITET "
-#~ msgstr "УНИВЕРСИТЕТ"
-
-#~ msgid "Qabul komissiyasi joylashuv o'rni"
-#~ msgstr "Место расположения приемной комиссии"
-
-#~ msgid "Qabul nizomi"
-#~ msgstr "Устав приема"
-
-#~ msgid "Qabul kvotasi"
-#~ msgstr "Квота приема"
-
-#~ msgid ">E'lonlar"
-#~ msgstr "Объявления"
-
-#~ msgid "Chop etilgan sana<"
-#~ msgstr "Дата публикации"
-
-#~ msgid "<h1 class=\"text-center\">Yo'nalish mavjud emas</h1>"
-#~ msgstr "Направление не существует"
-
-#~ msgid "<h1 class=\"text-center\">Fakultet mavjud emas</h1>"
-#~ msgstr "Факультет не существует"
-
-#~ msgid "Xalqaro a'loqalar"
-#~ msgstr "Международные отношения"
-
-#~ msgid "Institut ta'lim yo'nalishlari"
-#~ msgstr "Основные показатели университета"
-
-#, fuzzy
-#~ msgid "Образовательные направления института"
-#~ msgstr "Направления института"
-
-#~ msgid "UZFI  | O'rta ta'lim to'g'risidagi nizom"
-#~ msgstr "УЗФИ | Устав о среднем образовании"
-
-#~ msgid "Yo'nalishlar"
-#~ msgstr "Направления"
-
-#~ msgid "BORISH"
-#~ msgstr "Подробнее"
-
-#~ msgid "Е-Kutubxona"
-#~ msgstr "Электронная библиотека"
-
-#~ msgid "KO'PROQ KO'RISH"
-#~ msgstr "Подробнее"
-
-#~ msgid "Miyani oziqlantirish uchun so'nggi yangiliklar"
-#~ msgstr "Последние новости одля питания мозга"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 14:48+0500\n"
+"POT-Creation-Date: 2024-10-04 16:36+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -555,7 +555,7 @@ msgid "Chop etilgan sana"
 msgstr "Date of publication"
 
 #: templates/dashboard.html:76 templates/dekan.html:81
-#: templates/department-manager.html:80 templates/leadership-item.html:81
+#: templates/department-manager.html:80
 msgid "Yukalsh"
 msgstr "Upload"
 
@@ -799,8 +799,7 @@ msgid "Talabalar yotoqxonasi uchun online ariza"
 msgstr "Online application for student dormitory"
 
 #: templates/index.html:513
-msgid ""
-"O‘zbekiston-Finlyandiya pedagogika instituting fakultetlari quyidagilar:"
+msgid "O‘zbekiston-Finlandiya pedagogika instituting fakultetlari quyidagilar:"
 msgstr "Faculty composition of the Uzbekistan-Finland Institute."
 
 #: templates/index.html:555
@@ -812,21 +811,32 @@ msgid "Ko&#39;proq o&#39;qish"
 msgstr "Read more"
 
 #: templates/index.html:623
-msgid "O‘zbekiston-Finlandiya pedagogika instituti"
+#, fuzzy
+#| msgid "O‘zbekiston-Finlandiya pedagogika instituti"
+msgid "O'zbekiston-Finlandiya pedagogika instituti"
 msgstr "Faculty composition of the Uzbekistan-Finland Institute."
 
 #: templates/index.html:624
 msgid ""
-"Oʻzbekiston-Finlandiya pedagogika instituti (OʻzFIPI) Oʻzbekiston "
+"O'zbekiston-Finlandiya pedagogika instituti (O'zFIPI) O'zbekiston "
 "Respublikasi Prezidentining 2022-yil 21-iyundagi PQ-289-sonli «Pedagogik "
-"taʼlim sifatini oshirish va pedagogik kadrlar tayyorlovchi oliy taʼlim "
+"ta'lim sifatini oshirish va pedagogik kadrlar tayyorlovchi oliy ta'lim "
 "muassasalari faoliyatini yanada rivojlantirish chora-tadbirlari "
-"toʻgʻrisida»gi qarori asosida tashkil etilgan. Institut davlat oliy taʼlim "
-"muassasasi hisoblanib, pedagogika sohasi boʻyicha tarbiya va oʻqitish "
-"usullari, taʼlim jarayonida zamonaviy pedagogik texnologiyalarni qoʻllash "
-"koʻnikmalariga ega professional oliy maʼlumotli kadrlarni tayyorlashni oʻz "
-"oldiga maqsad qilib qoʻygan"
+"to'g'risida»gi qarori asosida tashkil etilgan. Institut davlat oliy ta'lim "
+"muassasasi hisoblanib, pedagogika sohasi bo'yicha tarbiya va o'qitish "
+"usullari, ta'lim jarayonida zamonaviy pedagogik texnologiyalarni qo'llash "
+"ko'nikmalariga ega professional oliy ma'lumotli kadrlarni tayyorlashni o'z "
+"oldiga maqsad qilib qo'ygan"
 msgstr ""
+"The Uzbek-Finnish Pedagogical Institute (UzFIPI) was established on the "
+"basis of the decision of the President of the Republic of Uzbekistan dated "
+"June 21, 2022 No. PD-289 \"On measures to increase the quality of pedagogical "
+"education and further develop the activities of higher educational institutions "
+"that prepare pedagogical personnel.\" The institute is considered a state higher "
+"educational institution and aims to train professional highly educated personnel "
+"with the skills of education and teaching methods in the field of pedagogy and the "
+"use of modern pedagogical technologies in the educational process."
+
 
 #: templates/index.html:784
 msgid "Barcha yangiliklarni ko&#39;rish"
