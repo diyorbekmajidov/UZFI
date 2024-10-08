@@ -811,8 +811,6 @@ msgid "Ko&#39;proq o&#39;qish"
 msgstr "Read more"
 
 #: templates/index.html:623
-#, fuzzy
-#| msgid "O‘zbekiston-Finlandiya pedagogika instituti"
 msgid "O'zbekiston-Finlandiya pedagogika instituti"
 msgstr "Faculty composition of the Uzbekistan-Finland Institute."
 
