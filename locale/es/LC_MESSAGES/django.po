@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 16:42+0500\n"
+"POT-Creation-Date: 2024-10-08 09:56+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -498,7 +498,7 @@ msgstr "Reception days:"
 
 #: templates/centers-item.html:56
 msgid "Vazifalari"
-msgstr "Tasks"
+msgstr "Duties"
 
 #: templates/centers.html:7
 msgid "UZFI  | Markazlar"
@@ -703,7 +703,9 @@ msgid "Dekan"
 msgstr "Dekan"
 
 #: templates/faculties-item.html:50
-msgid "Fakultet ta'lim yo'nalishlari yo'nalishlari"
+#, fuzzy
+#| msgid "Fakultet ta'lim yo'nalishlari yo'nalishlari"
+msgid "Fakultet ta'lim yo'nalishlari"
 msgstr "Fakultet ta'lim yo'nalishlari yo'nalishlari"
 
 #: templates/faculties-item.html:99
