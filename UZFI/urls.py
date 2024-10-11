@@ -23,12 +23,17 @@ from .views import (
     LeadershipByIdAPIView,
     Indicators,
     TutorView,TutorApiView,
-    TutorFilterView
+    TutorFilterView,
+
+    # app api
+    UzfiStatistika,
 
 )
 
 urlpatterns = [
     # api url uchun 
+    path('statistics/api/', UzfiStatistika.as_view(), name='statistics'),
+
     path('documents/api/', DocumentCreateApiview.as_view(), name='document'),
     path('councils/api/', CouncilsApiview.as_view()),
     path('requisties/api', RequisitesApiview.as_view(), name='requisties'),
