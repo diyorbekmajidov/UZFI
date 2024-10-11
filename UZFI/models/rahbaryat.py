@@ -46,7 +46,7 @@ class Dekan(models.Model):
     date_update  = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.faculty.name
     
 
 class KafedraManager(models.Model):
@@ -64,7 +64,7 @@ class KafedraManager(models.Model):
     date_update    = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name 
+        return self.kafedra.name 
     
 
 class Tutor(models.Model):
