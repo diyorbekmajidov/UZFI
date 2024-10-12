@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 09:56+0500\n"
+"POT-Creation-Date: 2024-10-12 09:39+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -705,7 +705,9 @@ msgid "Fakultet haqida"
 msgstr "О факультете"
 
 #: templates/faculties-item.html:35
-msgid "Yo'nalishlar va Kafedralar"
+#, fuzzy
+#| msgid "Yo'nalishlar va Kafedralar"
+msgid "Yo'nalishlar va kafedralar"
 msgstr "Направления и кафедры"
 
 #: templates/faculties-item.html:38

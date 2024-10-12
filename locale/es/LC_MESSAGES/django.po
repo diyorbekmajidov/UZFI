@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 09:56+0500\n"
+"POT-Creation-Date: 2024-10-12 09:40+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -695,12 +695,12 @@ msgid "Fakultet haqida"
 msgstr "About the faculty"
 
 #: templates/faculties-item.html:35
-msgid "Yo'nalishlar va Kafedralar"
+msgid "Yo'nalishlar va kafedralar"
 msgstr "Directions and Departments"
 
 #: templates/faculties-item.html:38
 msgid "Dekan"
-msgstr ""Dean"
+msgstr "Dean"
 
 #: templates/faculties-item.html:50
 msgid "Fakultet ta'lim yo'nalishlari"
