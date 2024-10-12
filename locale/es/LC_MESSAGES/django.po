@@ -528,7 +528,7 @@ msgstr "Scientific work settings"
 #: templates/department-manager.html:59 templates/leadership-item.html:60
 #: templates/tutors-item.html:69
 msgid "Vazifalar"
-msgstr "Tasks"
+msgstr "Duties"
 
 #: templates/dashboard.html:56 templates/dekan.html:61
 #: templates/department-manager.html:60 templates/leadership-item.html:61
@@ -700,13 +700,11 @@ msgstr "Directions and Departments"
 
 #: templates/faculties-item.html:38
 msgid "Dekan"
-msgstr "Dekan"
+msgstr ""Dean"
 
 #: templates/faculties-item.html:50
-#, fuzzy
-#| msgid "Fakultet ta'lim yo'nalishlari yo'nalishlari"
 msgid "Fakultet ta'lim yo'nalishlari"
-msgstr "Fakultet ta'lim yo'nalishlari yo'nalishlari"
+msgstr "Faculty educational directions"
 
 #: templates/faculties-item.html:99
 msgid "Fakultet mavjud emas"
