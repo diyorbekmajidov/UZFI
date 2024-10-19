@@ -26,7 +26,7 @@ class NewsContentApiView(APIView):
     )
     def get(self, request, pk=None):
         if pk is None:
-            news_content = News_Content.objects.all().order_by("-date_created")
+            news_content = News_Content.objects.all().order_by("-date_created")[:5:]
             serializer = NewsContentSerializer(news_content, many=True)
             return Response(serializer.data)
         news_content = get_object_or_404(News_Content, pk=pk)

@@ -27,12 +27,14 @@ from .views import (
 
     # app api
     UzfiStatistika,
+    RapidlyApps,
 
 )
 
 urlpatterns = [
     # api url uchun 
     path('statistics/api/', UzfiStatistika.as_view(), name='statistics'),
+    path('rapidly/api/', RapidlyApps.as_view(), name='tezkor ilovallar'),
 
     path('documents/api/', DocumentCreateApiview.as_view(), name='document'),
     path('councils/api/', CouncilsApiview.as_view()),
