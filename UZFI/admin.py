@@ -76,9 +76,9 @@ class CentersDepartmentAdmin(TranslationAdmin):
 
 @admin.register(CentersDepartmentsManager)
 class CentersDepartmentManagerAdmin(TranslationAdmin):
-    list_display = ("name","email")
+    list_display = ("name","email",)
 
 
 @admin.register(Tutor)
 class TutorAdmin(TranslationAdmin):
-    list_display = ("full_name","phone")
+    list_display = ("full_name","phone",)
