@@ -1,18 +1,17 @@
 from rest_framework.views import APIView
-from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
 from rest_framework.response import Response
-from rest_framework import status
 from UZFI.models import *
 from UZFI.serializers import *
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
-
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 import requests
 
 
 class UzfiStatistika(APIView):
+    @swagger_auto_schema(
+        operation_description="Bu view uchun Swagger dokumentatsiyasi",
+        responses={200: openapi.Response('List of news content')}
+    )
     def get(self, request):
         url_talabalr = 'https://student.uzfi.uz/rest/v1/public/stat-student'
         url_xodimlar = 'https://student.uzfi.uz/rest/v1/public/stat-employee'
@@ -85,6 +84,10 @@ class UzfiStatistika(APIView):
     
 
 class   RapidlyApps(APIView):
+    @swagger_auto_schema(
+        operation_description="Bu view uchun Swagger dokumentatsiyasi",
+        responses={200: openapi.Response('List of news content')}
+    )
     def get(self, request):
         respons = {
             "status": "Tezkor havolalar",
