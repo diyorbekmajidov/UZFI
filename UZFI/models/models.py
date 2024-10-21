@@ -167,5 +167,5 @@ class CentersDepartmentsManager(models.Model):
     date_update    = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return  "none"
+        return  self.email
     
