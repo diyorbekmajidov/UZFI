@@ -7,7 +7,7 @@
   <!-- Page Heading Box ==== -->
   <div
     class="page-banner ovbl-dark"
-    style="background-image: url({%static 'assets/images/councils.jpg' %})"
+    style="background-image: url({%static 'assets/images/645361781b285.jpg' %})"
   >
     <div class="container">
       <div class="page-banner-entry">
@@ -27,8 +27,35 @@
         <div class="h3 my-5">
           {{data.title}}
         </div>
-          
-
+        <div class="card p-3">
+          <div class="row">
+            <div class="col-md-4">
+              <img class="rounded" src="{{manager.img}}" width="300px" height="300px" alt="" />
+            </div>
+            <div class="col-md-8">
+              <h3>{{manager.name}}</h3>
+              <h6>{{data.title}}</h6>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}E-pochta: {% endblocktranslate %}</span> {{manager.email}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Telefon raqam: {% endblocktranslate %}</span> {{manager.phone}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Fax: {% endblocktranslate %}</span> {{manager.phone}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Manzil: {% endblocktranslate %}</span> {{manager.address}}
+              </div>
+              <div>
+                <span class="text-secondary">{% blocktranslate %}Qabul kunlari: {% endblocktranslate %}</span> {{manager.acceptance}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <h2 class="m-b10 title-head">{% blocktranslate %}Vazifalari{% endblocktranslate %} <span></span></h2>
+        </div>
           <div class="">{{data.body|safe}}</div>
 
           {% comment %} <div class="text-secondary">{{data.date_created|safe}}</div> {% endcomment %}

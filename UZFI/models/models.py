@@ -3,25 +3,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils.translation import gettext_lazy as _
 from .user import User
 from django.core.exceptions import ValidationError
-
-COMMON_FIELDS_TRANSLATIONS = {
-    "title": _('title'),
-    "faculty": _('faculty'),
-    "about": _('about'),
-    "body": _('body'),
-    "quarter": _('quarter'),
-    "date_created": _('date_created'),
-    "date_update": _('date_update'),
-    "name": _('name'),
-    "description": _('description'),
-    "document_type": _('document_type',), 
-    "document_name": _('document_name'),
-    "address": _('address'),
-    "start_date": _("start_date"),
-    "direction_type": _('direction_type'),
-    "centers_departments": _('centers_departments'),
-    "acceptance": _('acceptance'),
-}
+  
 
 def validate_file_size(value):
     filesize = value.size
@@ -147,6 +129,10 @@ class Direction(models.Model):
         return self.name
 
 class CentersDepartments(models.Model):
+    class Role(models.TextChoices):
+        MARKAZ     = "MARKAZ", "MARKAZ"
+        BULIM     = "BO'LIM", "BO'LIM"
+    role = models.CharField(max_length=50, choices=Role.choices, blank=True, null=True)
     name = models.CharField(max_length=100)
     body = RichTextUploadingField()
     date_created = models.DateTimeField(auto_now_add=True)
@@ -156,7 +142,8 @@ class CentersDepartments(models.Model):
         return self.name
     
 class CentersDepartmentsManager(models.Model):
-    centers_departments = models.OneToOneField(CentersDepartments, on_delete=models.CASCADE)
+    councils = models.OneToOneField(Councils, on_delete=models.CASCADE, blank=True, null=True)
+    centers_departments = models.OneToOneField(CentersDepartments, on_delete=models.CASCADE, blank=True, null=True)
     acceptance     = models.CharField(max_length=200, blank=True, null=True)
     name           = models.CharField(max_length=100)
     email          = models.CharField(max_length=100)

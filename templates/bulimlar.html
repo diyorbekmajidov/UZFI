@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+
+{% block title %}{% blocktranslate %}UZFI  | Bo'limlar{% endblocktranslate %}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="page-content">
+    <!-- Page Heading Box ==== -->
+    <div class="page-banner ovbl-dark" style="background-image:url({% static "assets/images/documents.jpg" %});">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">{% blocktranslate %}Bo'limlar{% endblocktranslate %}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Heading Box END ==== -->
+
+
+    <!-- Page Content Box ==== -->
+    <div class="content-block">
+
+        <!-- FAQS  News -->
+        <div class="section-area section-sp2">
+            <div class="container">
+
+                
+
+                <div class="heading-bx left">
+                    <h2 class="m-b10 title-head">{% blocktranslate %}Markazlar {% endblocktranslate %} <span></span></h2>
+                </div>
+
+
+                    {% for i in data %}
+    
+                    <div class="councils-item my-3 p-3 centers">
+                        <a href="/{{LANGUAGE_CODE}}/uzfi/centers/{{i.id}}/">
+                            <div class="councils-item-title">
+                                <div class="h4">{{i.name}}</div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+            </div>
+        </div>
+        <!-- FAQS  News End -->
+
+
+    </div>
+    <!-- Page Content Box END ==== -->
+
+</div>
+
+
+{% endblock %}

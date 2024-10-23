@@ -16,7 +16,7 @@ from .views import (
     KafedraManagerById,KafedraManagerByIdApi,
     ScientificWorkView,
     Register,
-    CentersDepartmentView,CentersDepartmentApiView,
+    CentersDepartmentView,CentersDepartmentApiView,DepartmentsView,
     Login,
     Dashboard,
     LeadershipAPIView,
@@ -38,6 +38,7 @@ urlpatterns = [
 
     path('documents/api/', DocumentCreateApiview.as_view(), name='document'),
     path('councils/api/', CouncilsApiview.as_view()),
+    path('councils/api/<int:pk>/', CouncilsApiview.as_view()),
     path('requisties/api', RequisitesApiview.as_view(), name='requisties'),
     path('open-data/api', OpenDataApiview.as_view(), name='opendata'),
     path('faculty/api/', FacultyApiview.as_view(), name='faculty'),
@@ -75,6 +76,7 @@ urlpatterns = [
     path('open-data/', OpenDataview.as_view(), name='opendata'),
 
     path('centers/', CentersDepartmentView.as_view()),
+    path('departments/', DepartmentsView.as_view()),
     path('centers/<int:pk>/', CentersDepartmentView.as_view()),
 
     path('faculty/', Facultyview.as_view(), name='faculty'),
