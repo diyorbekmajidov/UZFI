@@ -28,7 +28,6 @@ class Index(TemplateView):
 
             charter = Charter.objects.order_by("-date_created")[:5] # unversity nizomi
             charter_serializers = CharterSerializer(charter, many = True) 
-            print(charter_serializers.data)
 
             mainpage_category = NewsCategory.objects.get(new_category="MAINPAGE")
 
@@ -132,8 +131,10 @@ class Councilsview(TemplateView):
             return render(request, 'councils.html',{"data":serializers.data})
         
         councils = Councils.objects.get(id = pk)
+        councils_manager = CentersDepartmentsManager.objects.get(councils = pk)
+        serializers_councils = CentersDepartmentsManagerSerializer(councils_manager)
         serializers = CouncilsSerializer(councils)
-        return render(request, 'councils-item.html',{"data":serializers.data})
+        return render(request, 'councils-item.html',{"data":serializers.data, "manager":serializers_councils.data})
     
 class CouncilsApiview(APIView):
     def get(self, request, pk = None):
@@ -143,8 +144,11 @@ class CouncilsApiview(APIView):
             return Response({"data":serializers.data})
         
         councils = Councils.objects.get(id = pk)
+        councils_manager = CentersDepartmentsManager.objects.get(councils = pk)
+        serializers_councils = CentersDepartmentsManagerSerializer(councils_manager)
         serializers = CouncilsSerializer(councils)
-        return Response({"data":serializers.data})
+        return Response({"data":serializers.data,"manager":serializers_councils.data})
+    
 class Requisitesview(TemplateView):
     def get(self, request):
         requisites = Requisites.objects.last()
@@ -379,18 +383,28 @@ class CentersDepartmentView(TemplateView):
             except:
                 return render(request, 'centers-item.html')
         try:
-            centers_department = CentersDepartments.objects.all()
+            centers_department = CentersDepartments.objects.filter(role = "MARKAZ")
             serializers = CentersDepartmentsSerializer(centers_department, many = True)
             return render(request, 'centers.html', {"data":serializers.data})
         except Exception as e:
             print(e)
             return render(request, 'centers.html')
         
-class CentersDepartmentApiView(TemplateView):
+class DepartmentsView(TemplateView):
+    def get(self, request):
+        try:
+            centers_department = CentersDepartments.objects.filter(role = "BO'LIM")
+            serializers = CentersDepartmentsSerializer(centers_department, many = True)
+            return render(request, 'bulimlar.html', {"data":serializers.data})
+        except Exception as e:
+            print(e)
+            return render(request, 'bulimlar.html')
+        
+class CentersDepartmentApiView(APIView):
     def get(self, request, pk=None):
         if pk is not None:
             try:
-                center = CentersDepartments.objects.filter(id = pk)
+                center = CentersDepartments.objects.get(id = pk)
                 departmentmanager = CentersDepartmentsManager.objects.get(centers_departments = pk)
                 serializers = CentersDepartmentsSerializer(center)
                 serializers1 = CentersDepartmentsManagerSerializer(departmentmanager)
@@ -398,7 +412,7 @@ class CentersDepartmentApiView(TemplateView):
             except:
                 return Response({403:"ma'lumot topilmadi"})
         try:
-            centers_department = CentersDepartments.objects.all()
+            centers_department = CentersDepartments.objects.filter(role = "MARKAZ")
             serializers = CentersDepartmentsSerializer(centers_department, many = True)
             return Response({"centers_department":serializers.data})
         except Exception as e:
