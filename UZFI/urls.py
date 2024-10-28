@@ -84,8 +84,8 @@ urlpatterns = [
 
     path('direction/<int:pk>/', Directionview.as_view(), name='direction'),
 
-    path('departments/', Kafedraview.as_view()),
-    path('departments/<int:pk>/', Kafedraview.as_view()),
+    path('department/', Kafedraview.as_view()),
+    path('department/<int:pk>/', Kafedraview.as_view()),
 
     path('scientificwork/', ScientificWorkView.as_view()),
 
