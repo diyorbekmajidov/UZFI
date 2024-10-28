@@ -126,7 +126,7 @@ class DocumentCreateApiview(APIView):
 class Councilsview(TemplateView):
     def get(self, request, pk = None):
         if pk is None:
-            councils = Councils.objects.all()
+            councils = Councils.objects.all().order_by('number')
             serializers = CouncilsSerializer(councils, many = True)
             return render(request, 'councils.html',{"data":serializers.data})
         
@@ -139,7 +139,7 @@ class Councilsview(TemplateView):
 class CouncilsApiview(APIView):
     def get(self, request, pk = None):
         if pk is None:
-            councils = Councils.objects.all()
+            councils = Councils.objects.all().order_by('number')
             serializers = CouncilsSerializer(councils, many = True)
             return Response({"data":serializers.data})
         
@@ -383,7 +383,7 @@ class CentersDepartmentView(TemplateView):
             except:
                 return render(request, 'centers-item.html')
         try:
-            centers_department = CentersDepartments.objects.filter(role = "MARKAZ")
+            centers_department = CentersDepartments.objects.filter(role = "MARKAZ").order_by('number')
             serializers = CentersDepartmentsSerializer(centers_department, many = True)
             return render(request, 'centers.html', {"data":serializers.data})
         except Exception as e:
@@ -393,7 +393,7 @@ class CentersDepartmentView(TemplateView):
 class DepartmentsView(TemplateView):
     def get(self, request):
         try:
-            centers_department = CentersDepartments.objects.filter(role = "BO'LIM")
+            centers_department = CentersDepartments.objects.filter(role = "BO'LIM").order_by('number')
             serializers = CentersDepartmentsSerializer(centers_department, many = True)
             return render(request, 'bulimlar.html', {"data":serializers.data})
         except Exception as e:
@@ -412,7 +412,7 @@ class CentersDepartmentApiView(APIView):
             except:
                 return Response({403:"ma'lumot topilmadi"})
         try:
-            centers_department = CentersDepartments.objects.filter(role = "MARKAZ")
+            centers_department = CentersDepartments.objects.filter(role = "MARKAZ").order_by('number')
             serializers = CentersDepartmentsSerializer(centers_department, many = True)
             return Response({"centers_department":serializers.data})
         except Exception as e:
