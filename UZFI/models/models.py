@@ -134,6 +134,7 @@ class CentersDepartments(models.Model):
         BULIM     = "BO'LIM", "BO'LIM"
     role = models.CharField(max_length=50, choices=Role.choices, blank=True, null=True)
     name = models.CharField(max_length=100)
+    number = models.IntegerField(blank=True, null=True)
     body = RichTextUploadingField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_update  = models.DateTimeField(auto_now=True)
@@ -145,6 +146,7 @@ class CentersDepartmentsManager(models.Model):
     councils = models.OneToOneField(Councils, on_delete=models.CASCADE, blank=True, null=True)
     centers_departments = models.OneToOneField(CentersDepartments, on_delete=models.CASCADE, blank=True, null=True)
     acceptance     = models.CharField(max_length=200, blank=True, null=True)
+    lavozim        = models.CharField(max_length=30, blank=True, null=True)
     name           = models.CharField(max_length=100)
     email          = models.CharField(max_length=100)
     phone          = models.CharField(max_length=100)
