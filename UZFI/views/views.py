@@ -126,7 +126,7 @@ class DocumentCreateApiview(APIView):
 class Councilsview(TemplateView):
     def get(self, request, pk = None):
         if pk is None:
-            councils = Councils.objects.all().order_by('number')
+            councils = Councils.objects.all().order_by('id')
             serializers = CouncilsSerializer(councils, many = True)
             return render(request, 'councils.html',{"data":serializers.data})
         
@@ -317,6 +317,7 @@ class Kafedraview(TemplateView):
 
         try:
             department = Kafedra.objects.get(id = pk)
+            print(department,'salom')
             serializers = KafedraSerializer(department)
             manager = KafedraManager.objects.filter(kafedra = pk).last()
             serializers1 = KafedraManagerSerializer(manager)
