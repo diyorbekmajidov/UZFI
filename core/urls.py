@@ -23,6 +23,7 @@ urlpatterns = [
     path('uzfi/', include('UZFI.urls')),
     path('news/', include('News.urls')),
     path('international/', include('International.urls')),
+    path('rosetta/', include('rosetta.urls')),
     path('', Index.as_view()),
     path('accounts/', include('django.contrib.auth.urls')),
 )

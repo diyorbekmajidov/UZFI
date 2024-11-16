@@ -11,3 +11,4 @@ setuptools
 requests
 django-mathfilters
 python-gettext
+django-rosetta
