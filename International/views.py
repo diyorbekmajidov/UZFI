@@ -40,6 +40,20 @@ class XalqaroHamkorlik(TemplateView):
             print(f"Error retrieving news content: {e}")
             return render(request,'international/internationalrelation.html')
         
+
+
+class CorruptionEvent(TemplateView):
+    def get(self, request) :
+        try:
+            category = News_Content.objects.filter(category=14).order_by("date_created")[::-1]
+            serializer = NewsContentSerializer(category, many = True)
+            page = Paginator(category, 9)
+            page_num = int(request.GET.get('page', 1))
+            return render(request, 'international/corruption-event.html', {"page_obj":page.page(page_num), "category":serializer.data})
+        except Exception as e:
+            print(f"Error retrieving news content: {e}")
+            return render(request,'international/corruption-event.html')
+        
 class XalqaroHamkorlikApi(APIView):
     def get(self, request) :
         try:
@@ -136,3 +150,6 @@ class LibraryViews(TemplateView):
 
 class TtjViews(TemplateView):
     template_name = "ttj.html"
+
+class CorruptionLaw(TemplateView):
+    template_name = 'international/corruption-law.html'

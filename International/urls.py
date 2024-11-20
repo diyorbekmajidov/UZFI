@@ -5,6 +5,8 @@ from .views import(
     StudentGroupsViews,StudentGroupsApiViews,
     LibraryViews,
     TtjViews,
+    CorruptionEvent,
+    CorruptionLaw,
     AbiturViewsById,AbiturViewsByIdApi,
     XalqaroHamkorlik,XalqaroHamkorlikApi
 )
@@ -17,6 +19,7 @@ urlpatterns = [
     path('internationalmemorandum/api/<int:pk>/', InternationalMemorandumApiViews.as_view()),
     path('studentgroups/api/', StudentGroupsApiViews.as_view()),
     path('internationalgrant/api/', InternationalGrantApiViews.as_view()),
+    path('corruption/event/', CorruptionEvent.as_view()),
     # end api
     #International Relation views
     path('internationalrelation/', XalqaroHamkorlik.as_view()),
@@ -26,6 +29,6 @@ urlpatterns = [
     path('internationalgrant/', InternationalGrantViews.as_view()),
     path('studentgroups/', StudentGroupsViews.as_view()),
     path('library/', LibraryViews.as_view()),
-    path('ttj/', TtjViews.as_view())
-    
+    path('ttj/', TtjViews.as_view()),
+    path('corruption/law/', CorruptionLaw.as_view())
 ]
