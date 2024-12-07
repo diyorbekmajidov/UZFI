@@ -125,7 +125,7 @@ class ScientificWork(models.Model):
 class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True, verbose_name="nomi")
     body = RichTextUploadingField(blank=True, null=True, verbose_name='matn tanasi')
-    img  = models.ImageField(upload_to='img/',validators=[validate_file_size], verbose_name='rasm')
+    img  = models.ImageField(upload_to='img/',validators=[validate_file_size])
 
     def __str__(self):
         return self.name
@@ -134,7 +134,7 @@ class Faculty(models.Model):
         verbose_name = "Fakultetlar"
     
 class Kafedra(models.Model):
-    img          = models.ImageField(upload_to='img/',blank=None, null=True,validators=[validate_file_size], verbose_name='rasm')
+    img          = models.ImageField(upload_to='img/',blank=None, null=True,validators=[validate_file_size])
     faculty      = models.ForeignKey(Faculty, on_delete=models.CASCADE, verbose_name='fakultet')
     name         = models.CharField(max_length=100, verbose_name='nomi')
     about        = RichTextUploadingField(blank=True, null=True, verbose_name='fakultet haqida')
@@ -149,7 +149,7 @@ class Kafedra(models.Model):
     
 class Direction(models.Model):
     faculty    = models.ForeignKey(Faculty, on_delete=models.CASCADE, verbose_name="fakultet")
-    img        = models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size], verbose_name='rasm')
+    img        = models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size])
     name       = models.CharField(max_length=150, verbose_name='nomi')
     direction_type= models.CharField(default="bakalavir", max_length=20, verbose_name="yo'nalish_turi") # direction or specialization
     about      = RichTextUploadingField(blank=True, null=True, verbose_name="yo'nalish_haqida")
@@ -186,7 +186,7 @@ class CentersDepartmentsManager(models.Model):
     email          = models.CharField(max_length=100)
     phone          = models.CharField(max_length=100, verbose_name="telfon_raqam")
     address        = models.CharField(max_length=100, verbose_name="manzil")
-    img            =models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size], verbose_name="rasm")
+    img            =models.ImageField(upload_to='img/', blank=True, null=True,validators=[validate_file_size])
     date_created   = models.DateTimeField(auto_now_add=True)
     date_update    = models.DateTimeField(auto_now=True)
 
