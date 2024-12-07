@@ -23,6 +23,20 @@
 /*=================================
 	1. HEADER
 =================================*/
+.white-link {
+    color: white; /* Matn va ikon rangini oq qilish */
+    text-decoration: none; /* Pastki chiziqni olib tashlash */
+}
+
+.white-link:hover {
+    text-decoration: underline;
+	color: white;
+}
+
+.custom-icons .fa{
+    color: #007bff; /* Ko'k rang */
+    margin-right: 8px; /* Matndan ajratish */
+}
 .post:hover {
 	transform: scale(1.03);
 	transition: transform 0.2s ease-in-out;
