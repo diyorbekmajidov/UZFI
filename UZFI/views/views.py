@@ -95,6 +95,19 @@ class Index(TemplateView):
         except Exception as e:
             print(e)
             return render(request, 'index.html')
+        
+
+class BaseAdminData(TemplateView):
+    def get(self, request):
+        departments = CentersDepartments.objects.filter(role="BO'LIM")
+        center = CentersDepartments.objects.filter(role="MARKAZ")
+        councils = Councils.objects.all()
+        context = {
+            "departments":departments,
+            "center":center,
+            "councils":councils,
+        }
+        return render(request, 'base.html', context)
 
 class Charterview(TemplateView):
     def get(self, request):
