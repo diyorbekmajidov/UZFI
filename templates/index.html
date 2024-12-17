@@ -492,40 +492,39 @@
     </div>
 
     <!-- #faculties  -->
+
     <div class="section-area section-sp2 faculties" id="faculties_page">
-      <div class="container heading-bx left">
-        <h2 class="title-head">{% blocktranslate %}Fakultetlar{%endblocktranslate%}</h2>
-        <p>{% blocktranslate %}O‘zbekiston-Finlandiya pedagogika instituting fakultetlari quyidagilar:{%endblocktranslate%}</p>
-      </div>
-
-      <div class="container text-center">
-        <div class="row">
-          
-          {% for i in faculty %}
-          
-          <div class="col-md-6 faculty-item-bg">
-              <a href="/{{LANGUAGE_CODE}}/uzfi/faculty/{{i.id}}/">
-            <div
-              class="faculty-item-hover my-3 rounded"
-              style="
-                background: url({{i.img}}); background-position: center center; background-size: cover;
-                background-position: center center;
-              "
-            >
-              <div class="py-5 rounded faculty-item">
-                <div class="text-center">
-                  {{ i.name }}
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-          
-          {% endfor %}
-
+        <div class="container heading-bx left">
+            <h2 class="title-head">{% blocktranslate %}Fakultetlar{% endblocktranslate %}</h2>
+            <p>{% blocktranslate %}O‘zbekiston-Finlandiya pedagogika instituting fakultetlari quyidagilar:{% endblocktranslate %}</p>
         </div>
-      </div>
+
+        <div class="container text-center">
+            <div class="row">
+                {% for i in faculty %}
+                <div class="col-md-6 faculty-item-bg">
+                    <a href="/{{ LANGUAGE_CODE }}/uzfi/faculty/{{ i.id }}/">
+                        <div
+                            class="faculty-item-hover my-3 rounded"
+                            style="
+                                background: url({{ i.img.url }}); 
+                                background-position: center; 
+                                background-size: cover;
+                            "
+                        >
+                            <div class="py-5 rounded faculty-item">
+                                <div class="text-center">
+                                    {{ i.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
+
     <!-- #faculties end  -->
 
     <!-- Destinations -->
