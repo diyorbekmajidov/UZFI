@@ -13,34 +13,49 @@
             </div>
         </div>
     </div>
-    
-    <div class="content-block">
-        <div class="section-area section-sp1">
+    <!-- 11-->
+
+    <div class="content-block" style="padding-top: 0;">
+        <div class="section-area section-sp1 mt-1">
             <div class="container">
                 <div class="row">
                     <!-- Left part start -->
-                    <div class="col-lg-12">
+                    <div class="col-lg-8 col-xl-8">
                         <!-- blog start -->
                         <div class="recent-news blog-lg">
                             <div class="info-bx">
-                                <ul class="media-post">
+                                <ul class="media-post" style="margin-bottom: 10px;">
                                     <li><i class="fa fa-calendar"></i> {{data.date_created}}</li>
                                     <li><i class="fa fa-eye"></i> {{data.views}}</li>
                                     <li><i class="fa fa-building"></i> {{data.place}}</li>
                                 </ul>
-                                <h5 class="post-title">{{data.event_name}}</h5>
+                                <h5 class="post-title" style="margin-bottom: 10px;">{{data.event_name}}</h5>
 
-                                <!-- Rasm uchun style -->
-                                <div class="action-box" style="position: relative; overflow: hidden; width: 100%; max-width: 100%; height: auto;">
-                                    <a href="/{{LANGUAGE_CODE}}/news/events/{{data.id}}">
-                                        <img style="object-fit: contain; width: 100%; height: auto; max-height: 500px;" src="{{data.img}}" alt="{{data.event_name}}" />
-                                    </a>
+                                <div style="display: flex; justify-content: center; align-items: center;">  
+                                    <img class="image" src="{{data.img}}" alt="{{data.event_name}}" style="object-fit: contain; width: 100%; height: auto; max-height: 500px;">
                                 </div>
-
-                                <p dir="auto">{{data.body|safe}}</p>
-                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 
-                                <h6>{% blocktranslate %}BIZ BILAN BO'LING {% endblocktranslate %}</h6>
+                                <style>
+                                    .image {
+                                        width: 100%;
+                                        object-fit: contain; /* Rasm qirqilmasligi uchun */
+                                    }
+                                    @media only screen and (max-width: 768px) {
+                                        .image {
+                                            height: auto;
+                                        }
+                                    }
+                                </style>
+
+                                <hr>
+                                <p style="padding-top: 10px;">
+                                    {{data.body|safe}}
+                                </p>
+                                
+                                
+
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                <h6>{% blocktranslate %}Share This Post{% endblocktranslate %}</h6>
                                 <ul class="list-inline contact-social-bx">
                                     <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
@@ -53,10 +68,39 @@
                         <!-- blog END -->
                     </div>
                     <!-- Left part END -->
+
+                    <!-- Sidebar start -->
+                    <div class="col-lg-4 col-xl-4">
+                        <aside class="side-bar sticky-top">
+                            <div class="widget recent-posts-entry">
+                                <h6 class="widget-title">{% blocktranslate %}Oxirgi xabarlar{% endblocktranslate %}</h6>
+                                <div class="widget-post-bx">
+                                    {% for item in latest %}
+                                        <div class="widget-post clearfix">
+                                            <div class="ttr-post-media">
+                                                <img src="{{item.img}}" width="200" height="143" alt="{{item.title}}">
+                                            </div>
+                                            <div class="ttr-post-info">
+                                                <div class="ttr-post-header">
+                                                    <h6 class="post-title">
+                                                        <a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}">{{item.title}}</a>
+                                                    </h6>
+                                                </div>
+                                                <ul class="media-post">
+                                                    <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <!-- Sidebar END -->
                 </div>
             </div>
         </div>
-    </div>
+    <!---->
 </div>
 
 {% endblock %}
