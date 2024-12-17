@@ -198,22 +198,6 @@ class VedioNewsView(TemplateView):
             print(e)
             return render(request,'news/video-gallery.html')
     
-# class VedioNewsByID(TemplateView):
-#     def get(self, request,pk):
-#         try:
-#             vedio_new = Vedio_New.objects.get(id=pk)
-#             views = video_vews.views + 1
-#             vedio_new.views = views
-#             serializers = VedioNewSerializer(vedio_new)
-#             video_vews = Vedio_New.objects.all().order_by("id")
-#             page = Paginator(video_vews, 9)
-#             page_num = int(request.GET.get('page', 1))
-#             return render(request,'news/video-gallery-item.html', {
-#                 "vedio_news":serializers.data,
-#                 "page_obj":page.page(page_num)})
-#         except Exception as e:
-#             print(e)
-#             return render(request,'news/video-gallery-item.html') 
         
 class SearchNews(TemplateView):
     def get(self, request):
@@ -261,7 +245,7 @@ class PendingEventById(TemplateView):
             pending_events.views = views
             serializers = PendingEventsSerializer(pending_events)
 
-            queryset = PendingEvents.objects.order_by('date_created')[:3]
+            queryset = PendingEvents.objects.order_by("-date_created")[:5]
             serializer_class = PendingEventsSerializer(queryset , many = True)
 
             return render(request, 'news/events-item.html', {"data":serializers.data, "latest":serializer_class.data})
