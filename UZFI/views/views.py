@@ -35,7 +35,6 @@ class Index(TemplateView):
             url_structure = 'https://student.uzfi.uz/rest/v1/public/stat-structure'
             url_xodimlar = 'https://student.uzfi.uz/rest/v1/public/stat-employee'
 
-
             try:
                 response_talabalar = requests.get(url_talabalr).json()
                 response_structure = requests.get(url_structure).json()
@@ -83,31 +82,33 @@ class Index(TemplateView):
                         "news":serializer_class.data, 
                         "popular_student":serializer_popular_students.data, 
                         "indicators" : indicators,
-                        "charter":charter_serializers.data
+                        "charter":charter_serializers.data,
                         }
             if mainpage_category:
                 mainpage_news = News_Content.objects.filter(category=mainpage_category)
                 serializers_context = NewsContentSerializer(mainpage_news.last())
                 context['MAINPAGE'] = serializers_context.data
 
+        
 
             return render(request, 'index.html', context=context)
         except Exception as e:
             print(e)
             return render(request, 'index.html')
-        
 
-class BaseAdminData(TemplateView):
-    def get(self, request):
-        departments = CentersDepartments.objects.filter(role="BO'LIM")
-        center = CentersDepartments.objects.filter(role="MARKAZ")
-        councils = Councils.objects.all()
-        context = {
-            "departments":departments,
-            "center":center,
-            "councils":councils,
-        }
-        return render(request, 'base.html', context)
+
+
+# class BaseAdminData(TemplateView):
+#     def get(self, request):
+#         departments = CentersDepartments.objects.filter(role="BO'LIM")
+#         center = CentersDepartments.objects.filter(role="MARKAZ")
+#         councils = Councils.objects.all()
+#         context = {
+#             "departments":departments,
+#             "center":center,
+#             "councils":councils,
+#         }
+#         return render(request, 'base.html', context)
 
 class Charterview(TemplateView):
     def get(self, request):

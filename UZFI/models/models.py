@@ -11,6 +11,26 @@ def validate_file_size(value):
         raise ValidationError("The maximum file size that can be uploaded is 1mb")
     else:
         return value
+    
+class Menu(models.Model):
+    title = models.CharField(max_length=50)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_update  = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return self.title
+
+class SubMenu(models.Model):
+    title = models.CharField(max_length=50, verbose_name='Nomi')
+    sub_menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    url = models.CharField(max_length=50,null=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_update  = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
 class Charter(models.Model):
     title        = models.CharField(max_length=255, verbose_name="sarlavha")
     body         = RichTextUploadingField(verbose_name="matn tanasi")
