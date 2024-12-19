@@ -13,6 +13,8 @@ class MyUserAdmin(UserAdmin):
     )
 
 admin.site.register(User,MyUserAdmin)
+admin.site.register(Menu)
+admin.site.register(SubMenu)
 
 @admin.register(OpenData)
 class OpenDataAdmin(TranslationAdmin):

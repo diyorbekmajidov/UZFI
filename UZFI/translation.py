@@ -17,7 +17,17 @@ from .models import (
     CentersDepartments,
     CentersDepartmentsManager,
     Tutor,
+    Menu,
+    SubMenu,
 )
+
+@register(Menu)
+class MenuTranationOtions(TranslationOptions):
+    fields = ('title',)
+
+@register(SubMenu)
+class SubMenuTranslationOptions(TranslationOptions):
+    fields = ('title',)
 
 @register(OpenData)
 class OpenDataTranslationOptions(TranslationOptions):

@@ -275,7 +275,43 @@
 				<div class="menu-logo">
 				  <a href="/{{LANGUAGE_CODE}}"><img src="{% static 'assets/images/uzfi.png' %}" alt="" /></a>
 				</div>
-				<ul class="nav navbar-nav">
+
+					<ul class="nav navbar-nav">
+						{% for menu in menus %}
+						<li>
+							<a href="javascript:;">{{ menu.title }} <i class="fa fa-chevron-down"></i></a>
+							<ul class="sub-menu">
+								{% for submenu in menu.submenu_set.all %}
+									<li>
+										<a href="/{{ LANGUAGE_CODE }}/uzfi/{{ submenu.url }}/">{{ submenu.title }}</a>
+										{% if submenu.extra_submenu %}
+											<ul class="sub-menu">
+												{% for item in submenu.extra_submenu %}
+													<li>
+														<a href="{{ item.url }}" id="st_txt">{{ item.title }}</a>
+													</li>
+												{% endfor %}
+											</ul>
+										{% endif %}
+									</li>
+								{% endfor %}
+
+							</ul>
+						</li>
+						
+						{% endfor %}
+						<li>
+							<a href="javascript:;">{% blocktranslate %}Abituriyentlarga{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
+							<ul class="sub-menu">
+								
+								{% for i in abt %}
+								<li><a style="text-transform: none;" href="/{{LANGUAGE_CODE}}/international/abitur/{{i.id}}/">{{i.title}}</a></li>
+								{% endfor%}
+								<li><a href="/{{LANGUAGE_CODE}}/uzfi/faqs/"id="st_txt">{% blocktranslate %}Tez-tez so'raladigan savollarga javoblar{% endblocktranslate %}</a></li>
+							</ul>
+						  </li>
+					</ul>
+				{% comment %} <ul class="nav navbar-nav">
 				  <li class="active">
 					<a href="javascript:;"
 					  >{% blocktranslate %}Institut {% endblocktranslate %}<i class="fa fa-chevron-down"></i
@@ -289,7 +325,6 @@
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/charter/"id="st_txt">{% blocktranslate %}Nizom{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/documents/"id="st_txt">{% blocktranslate %}Me'yoriy hujjatlar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/requisties/"id="st_txt">{% blocktranslate %}Rekvizitlar{% endblocktranslate %}</a></li>
-						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/financial-statements/">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li> {% endcomment %}
 						<li><a href="https://drive.google.com/drive/folders/1P642MtI-I0XMWFfZFFKdwt5-KVyfXVQQ" id="st_txt">{% blocktranslate %}Moliyaviy hisobotlar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/open-data/" id="st_txt">{% blocktranslate %}Ochiq ma'lumotlar{% endblocktranslate %}</a></li>
 					</ul>
@@ -304,7 +339,6 @@
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/bachelor/">{% blocktranslate %}Bakalavriat{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/magistr/">{% blocktranslate %}Magistratura{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/uzfi/tutor/">{% blocktranslate %}Tyutorlar{% endblocktranslate %}</a></li>
-						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/uzfi/">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li> {% endcomment %}
 						<li><a href="https://drive.google.com/drive/folders/1B7Q9Vpc9f6YyfpKLpCUcmvUUBE2QjSBf" id="st_txt">{% blocktranslate %}O‘quv rejalari{% endblocktranslate %}</a></li>
 					</ul>
 				  </li>
@@ -339,7 +373,6 @@
 				  <li>
 					<a href="javascript:;">{% blocktranslate %}Talabalar hayoti{% endblocktranslate %}<i class="fa fa-chevron-down"></i></a>
 					<ul class="sub-menu">
-						{% comment %} <li><a href="/{{LANGUAGE_CODE}}/international/studentgroups/"id="st_txt">{% blocktranslate %}To'garaklar ro'yxati{% endblocktranslate %}</a></li> {% endcomment %}
 						<li><a href="/{{LANGUAGE_CODE}}/news/popular-students/"id="st_txt">{% blocktranslate %}Iqtidorli talabalar{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/international/library/"id="st_txt">{% blocktranslate %}Kutubxona{% endblocktranslate %}</a></li>
 						<li><a href="/{{LANGUAGE_CODE}}/international/ttj/" id="st_txt">{% blocktranslate %}Talabalar turar joyi{% endblocktranslate %}</a></li>
@@ -359,7 +392,7 @@
 				  </li>
 				
 				
-				</ul>
+				</ul> {% endcomment %}
 			  </div>
 			  <!-- Navigation Menu END ==== -->
 			</div>
