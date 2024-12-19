@@ -283,7 +283,7 @@
 							<ul class="sub-menu">
 								{% for submenu in menu.submenu_set.all %}
 									<li>
-										<a href="/{{ LANGUAGE_CODE }}/uzfi/{{ submenu.url }}/">{{ submenu.title }}</a>
+										<a href="/{{ LANGUAGE_CODE }}{{ submenu.url }}/">{{ submenu.title }}</a>
 										{% if submenu.extra_submenu %}
 											<ul class="sub-menu">
 												{% for item in submenu.extra_submenu %}
