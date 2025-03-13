@@ -10,13 +10,13 @@ from .models import (
     Dekan,
     Kafedra,
     KafedraManager,
-    ScientificWork,
     Leadership,
     CentersDepartments,
     CentersDepartmentsManager,
     Tutor,
     Menu,
     SubMenu,
+    GreenInstitute,
 )
 
 @register(Menu)
@@ -27,17 +27,14 @@ class MenuTranationOtions(TranslationOptions):
 class SubMenuTranslationOptions(TranslationOptions):
     fields = ('title',)
 
+@register(GreenInstitute)
+class GreenInstituteTranslationOptions(TranslationOptions):
+    fields = ('title','body',)
+
 @register(OpenData)
 class OpenDataTranslationOptions(TranslationOptions):
     fields = ('name',)
 
-# @register(FinancialStatements)
-# class FinancialStatementsTranslationOptions(TranslationOptions):
-#     fields = ('report_type','quarter',)
-
-# @register(Vacancies)
-# class VacanciesTranslationOptions(TranslationOptions):
-#     fields = ('name','body',)
 
 @register(Charter)
 class CharterTranslationOptions(TranslationOptions):
@@ -76,9 +73,6 @@ class KafedraManagerTranslationOptions(TranslationOptions):
 class DirectionTranslationOptions(TranslationOptions):
     fields = ('name','about',)
 
-@register(ScientificWork)
-class ScientificWorkTranslationOptions(TranslationOptions):
-    fields = ("article_name","article_level",)
 
 @register(Leadership)
 class LeadershipTranslationOptions(TranslationOptions):

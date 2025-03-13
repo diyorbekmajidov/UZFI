@@ -97,18 +97,25 @@ class Index(TemplateView):
             return render(request, 'index.html')
 
 
+def green_institute(request):
+    try:
+        green_institute = GreenInstitute.objects.first()
 
-# class BaseAdminData(TemplateView):
-#     def get(self, request):
-#         departments = CentersDepartments.objects.filter(role="BO'LIM")
-#         center = CentersDepartments.objects.filter(role="MARKAZ")
-#         councils = Councils.objects.all()
-#         context = {
-#             "departments":departments,
-#             "center":center,
-#             "councils":councils,
-#         }
-#         return render(request, 'base.html', context)
+        category = News_Content.objects.filter(category=1).order_by("-date_created")  # So‘ngi yangiliklar birinchi chiqadi
+        serializer = NewsContentSerializer(category, many=True)
+        page = Paginator(category, 6)
+        page_num = int(request.GET.get('page', 1))
+
+        return render(request, 'green-institute.html', {
+            "page_obj": page.page(page_num),
+            "category": serializer.data,  
+            "green_institute": green_institute  
+        })
+    except Exception as e:
+        print(f"Error retrieving news content: {e}")
+        return render(request, 'green-institute.html')
+
+
 
 class Charterview(TemplateView):
     def get(self, request):
@@ -248,14 +255,7 @@ class DekanById(TemplateView):
         try:
             dekan = Dekan.objects.get(id=pk)
             serializer = GetDekanSerializer(dekan)
-            user = dekan.dekan.id
             context = {"dekan":serializer.data,}
-            try:
-                scientific_work = ScientificWork.objects.get(user = user)
-                serializer1= ScientificWorkSerializer(scientific_work, many = True)
-                context['scientific_work'] = serializer1.data
-            except:
-                context['scientific_work'] = None
             return render(request, "dekan.html", context=context)
         except:
             return render(request,'dekan.html')
@@ -354,14 +354,7 @@ class KafedraManagerById(TemplateView):
 
         manager = KafedraManager.objects.get(id = pk)
         serializer = KafedraManagerSerializer(manager)
-        user = manager.kafedramanager.id
         context = {"kafedra_manager":serializer.data,}
-        try:
-            scientific_work = ScientificWork.objects.get(user = user)
-            serializer1= ScientificWorkSerializer(scientific_work, many = True)
-            context['scientific_work'] = serializer1.data
-        except:
-            context['scientific_work'] = None
 
         return render(request, "department-manager.html", context=context)
     
@@ -472,45 +465,9 @@ class TutorFilterView(TemplateView):
                 return render(request, 'tutors.html')
             
 
-class ScientificWorkView(TemplateView):
-    
-    def post(self, request):
-        user_id = request.POST.get("id")
-        article_name_uz = request.POST.get("article_name_uz")
-        article_name_en = request.POST.get("article_name_en")
-        article_name_ru = request.POST.get("article_name_ru")
-        article_level_uz = request.POST.get("article_level_uz")
-        article_level_en = request.POST.get("article_level_en")
-        article_level_ru = request.POST.get("article_level_ru")
-        link = request.POST.get("link")
-        pdf_file = request.FILES.get('pdf_file')
-        publication_date = request.POST.get("publication_date")
+
         
         
-        data = {
-            "user" : user_id,
-            "article_name_uz" : article_name_uz,
-            "article_name_en" : article_name_en,
-            "article_name_ru" : article_name_ru,
-            "article_level_uz" : article_level_uz,
-            "article_level_en" : article_level_en,
-            "article_level_ru" : article_level_ru,
-            "link" : link,
-            "pdf_file" : pdf_file,
-            "publication_date" : publication_date
-        }
-        serializer = ScientificWorkSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return HttpResponseRedirect(reverse_lazy('dashboard'))
-            
-        return render(request,'50x.error.html')
-
-
-    def get(self, request):
-        data = ScientificWork.objects.filter(user=request.user)
-        serializers = ScientificWorkSerializer(data, many = True)
-        return Response(serializers.data)
     
 class Indicators(TemplateView):
     def get(self, request):

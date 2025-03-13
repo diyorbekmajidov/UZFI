@@ -13,20 +13,23 @@ class MyUserAdmin(UserAdmin):
     )
 
 admin.site.register(User,MyUserAdmin)
-admin.site.register(Menu)
-admin.site.register(SubMenu)
+
+@admin.register(Menu)
+class OpenDataAdmin(TranslationAdmin):
+    list_display = ('title',)
+
+@admin.register(SubMenu)
+class OpenDataAdmin(TranslationAdmin):
+    list_display = ('title',)
+
+@admin.register(GreenInstitute)
+class OpenDataAdmin(TranslationAdmin):
+    list_display = ('title','body',)
 
 @admin.register(OpenData)
 class OpenDataAdmin(TranslationAdmin):
     list_display = ('name',)
 
-# @admin.register(FinancialStatements)
-# class FinancialStatementsAdmin(TranslationAdmin):
-#     list_display = ('report_type','quarter',)
-
-# @admin.register(Vacancies)
-# class VacanciesAdmin(TranslationAdmin):
-#     list_display = ('name','body',)
 
 @admin.register(Charter)
 class CharterAdmin(TranslationAdmin):
@@ -64,9 +67,6 @@ class KafedraManagerAdmin(TranslationAdmin):
 class DirectionAdmin(TranslationAdmin):
     list_display = ('name',)
 
-@admin.register(ScientificWork)
-class ScientificWorkAdmin(TranslationAdmin):
-    list_display = ("article_name","article_level",)
 
 @admin.register(Leadership)
 class LeadershipAdmin(TranslationAdmin):
