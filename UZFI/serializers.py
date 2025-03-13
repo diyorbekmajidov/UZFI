@@ -20,20 +20,16 @@ class RequisitesSerializer(serializers.ModelSerializer):
         model = Requisites
         fields = '__all__'
 
-class FinancialStatementsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = FinancialStatements
-        fields = '__all__'
 
 class OpenDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = OpenData
         fields = '__all__'
 
-class VacanciesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Vacancies
-        fields = '__all__'
+# class VacanciesSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Vacancies
+#         fields = '__all__'
 
 class FacultySerializer(serializers.ModelSerializer):
     class Meta:

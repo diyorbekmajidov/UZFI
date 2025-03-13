@@ -175,23 +175,9 @@ class RequisitesApiview(APIView):
         serializers = RequisitesSerializer(requisites)
         return Response({"data":serializers.data})
 
-class FinancialStatementsview(TemplateView):
-    def get(self, request):
-        financialstatements = FinancialStatements.objects.all()
-        serializers = FinancialStatementsSerializer(financialstatements, many = True)
-        return render(request, 'financial-statements.html',{"data":serializers.data})
 
-class Vacanciesview(TemplateView):
-    def get(self, request, pk=None):
-        if pk is None:
-            vacancies = Vacancies.objects.all()
-            page = Paginator(vacancies, 10)
-            page_num = int(request.GET.get('page', 1))
-            return render(request, 'vacancies.html',{"page_obj":page.page(page_num)})
-        
-        vacancy = Vacancies.objects.get(id=pk)
-        serializer = VacanciesSerializer(vacancy)
-        return render(request, '.html', {"data":serializer.data})
+
+
 
 class OpenDataview(TemplateView):
     def get(self, request):

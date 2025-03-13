@@ -20,13 +20,13 @@ admin.site.register(SubMenu)
 class OpenDataAdmin(TranslationAdmin):
     list_display = ('name',)
 
-@admin.register(FinancialStatements)
-class FinancialStatementsAdmin(TranslationAdmin):
-    list_display = ('report_type','quarter',)
+# @admin.register(FinancialStatements)
+# class FinancialStatementsAdmin(TranslationAdmin):
+#     list_display = ('report_type','quarter',)
 
-@admin.register(Vacancies)
-class VacanciesAdmin(TranslationAdmin):
-    list_display = ('name','body',)
+# @admin.register(Vacancies)
+# class VacanciesAdmin(TranslationAdmin):
+#     list_display = ('name','body',)
 
 @admin.register(Charter)
 class CharterAdmin(TranslationAdmin):

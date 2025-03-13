@@ -1,8 +1,6 @@
 from modeltranslation.translator import  TranslationOptions, register
 from .models import (
     OpenData,
-    FinancialStatements,
-    Vacancies,
     Charter,
     Document,
     Councils,
@@ -33,13 +31,13 @@ class SubMenuTranslationOptions(TranslationOptions):
 class OpenDataTranslationOptions(TranslationOptions):
     fields = ('name',)
 
-@register(FinancialStatements)
-class FinancialStatementsTranslationOptions(TranslationOptions):
-    fields = ('report_type','quarter',)
+# @register(FinancialStatements)
+# class FinancialStatementsTranslationOptions(TranslationOptions):
+#     fields = ('report_type','quarter',)
 
-@register(Vacancies)
-class VacanciesTranslationOptions(TranslationOptions):
-    fields = ('name','body',)
+# @register(Vacancies)
+# class VacanciesTranslationOptions(TranslationOptions):
+#     fields = ('name','body',)
 
 @register(Charter)
 class CharterTranslationOptions(TranslationOptions):
