@@ -31,6 +31,19 @@ class SubMenu(models.Model):
     def __str__(self):
         return self.title
 
+class GreenInstitute(models.Model):
+    title = models.CharField(max_length=50, verbose_name='Nomi')
+    body = RichTextUploadingField(blank=True, null=True, verbose_name='matn tanasi')
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_update  = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Yashil institut"
+        verbose_name_plural = "Yashil institut"
+
 class Charter(models.Model):
     title        = models.CharField(max_length=255, verbose_name="sarlavha")
     body         = RichTextUploadingField(verbose_name="matn tanasi")
@@ -42,6 +55,7 @@ class Charter(models.Model):
     
     class Meta:
         verbose_name = "Nizom"
+        verbose_name_plural = "Nizom"
     
 class Document(models.Model):
     document_type = models.CharField(max_length=100, verbose_name='hujjat turi')
@@ -89,17 +103,6 @@ class Requisites(models.Model):
     class Meta:
         verbose_name = "Rekvizitlar"
     
-# class FinancialStatements(models.Model):
-#     report_type = models.CharField(max_length=100, verbose_name='hisobot turi')
-#     quarter     = models.CharField(max_length=100, verbose_name='chorak')
-#     pdf_file    = models.FileField(upload_to='pdf/')
-#     date_created = models.DateTimeField(auto_now_add=True)
-#     date_update  = models.DateTimeField(auto_now=True)
-
-#     def __str__(self):
-#         return self.report_type
-#     class Meta:
-#         verbose_name = "Moliyaviy_hisobotlar"
     
     
 class OpenData(models.Model):
@@ -114,21 +117,6 @@ class OpenData(models.Model):
     
 
     
-class ScientificWork(models.Model):
-    user            = models.ForeignKey(User, on_delete=models.CASCADE, related_name="scientific")
-    article_name     = models.CharField(max_length=100, blank=True, null=True)
-    article_level    = models.CharField(max_length=100, blank=True, null=True)
-    publication_date = models.CharField(max_length=100, blank=True, null=True)
-    link             = models.CharField(max_length=100, blank=True, null=True)
-    pdf_file         = models.FileField(upload_to='pdf/', blank=True, null=True)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_update  = models.DateTimeField(auto_now=True)
-
-    def __str__(self) -> str:
-        return self.article_name
-    
-    class Meta:
-        verbose_name = "Ilmiy_ish"
 
 class Faculty(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True, verbose_name="nomi")

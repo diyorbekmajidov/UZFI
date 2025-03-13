@@ -56,11 +56,7 @@ class UserSerializer1(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id","username", "role"]
-
-class ScientificWorkSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ScientificWork
-        fields = '__all__'      
+   
 
 class DekanSerializer(serializers.ModelSerializer):
     

@@ -12,16 +12,15 @@ from .views import (
     DekanById,DekanByIdApi,
     Kafedraview,KafedraApiview,
     KafedraManagerById,KafedraManagerByIdApi,
-    ScientificWorkView,
     # Register,
     CentersDepartmentView,CentersDepartmentApiView,DepartmentsView,
-    Login,
     # Dashboard,
     LeadershipAPIView,
     LeadershipByIdAPIView,
     Indicators,
     TutorView,TutorApiView,
     TutorFilterView,
+    green_institute,
 
     # app api
     UzfiStatistika,
@@ -81,15 +80,12 @@ urlpatterns = [
     path('department/', Kafedraview.as_view()),
     path('department/<int:pk>/', Kafedraview.as_view()),
 
-    path('scientificwork/', ScientificWorkView.as_view()),
 
     path('dekan/<int:pk>/', DekanById.as_view()),
     
     path('department-manager/<int:pk>/', KafedraManagerById.as_view()),
 
-    # path('register/', Register.as_view()),
-    path('login/', Login.as_view()),
-    # path('dashboard/', Dashboard.as_view(), name='dashboard'),
+    path('green-institute/', green_institute),
 
     path('indicators/', Indicators.as_view()),
 

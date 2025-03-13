@@ -1,0 +1,69 @@
+{% extends "base.html" %} 
+{% load i18n %}
+{% block title %}{% blocktranslate %}Yashil institut{% endblocktranslate %}{% endblock %} 
+{% block content %} {% load static %} 
+
+<div class="page-content bg-white">
+  <div class="page-content">
+    <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %}); background-size: cover; background-position: center;">
+      <div class="container">
+        <div class="page-banner-entry text-center">
+          <h1 class="text-white">{% blocktranslate %}Yashil institut{% endblocktranslate %}</h1>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container py-5">
+      {% if green_institute %}
+        <div class="text-center mb-5">
+          <h2 class="mb-3">{{ green_institute.title }}</h2>
+          <div class="content-body">{{ green_institute.body|safe }}</div>
+        </div>
+      {% endif %}
+      
+      <div class="row g-4">
+        {% for i in page_obj %}
+        <div class="col-lg-4 col-md-6">
+          <div class="card shadow-sm border-0">
+            <div class="action-box" style="position: relative; overflow: hidden; height: 190px;">
+                <a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}">
+                  <img style="object-fit: cover; width: 100%;" src="/media/{{i.img}}" alt="{{i.title}}" />
+                </a>
+              </div>
+            <div class="card-body text-center">
+              <ul class="list-inline small text-muted mb-2">
+                <li class="list-inline-item"><i class="fa fa-calendar"></i> {{ i.date_created|date:"d.m.Y" }}</li>
+                <li class="list-inline-item"><i class="fa fa-eye"></i> {{ i.views }}</li>
+              </ul>
+              <h5 class="card-title"><a href="/{{LANGUAGE_CODE}}/news/content/{{i.id}}" class="text-dark">{{ i.title|truncatechars:50 }}</a></h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Pagination -->
+      <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+          {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; {% blocktranslate %}Avvalgi{% endblocktranslate %}</a></li>
+          {% endif %}
+          {% for page_number in page_obj.paginator.page_range %}
+            {% if page_number == 1 or page_number == page_obj.paginator.num_pages or page_number >= page_obj.number|add:-2 and page_number <= page_obj.number|add:2 %}
+              <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+              </li>
+            {% elif page_number == 2 or page_number == page_obj.paginator.num_pages|add:-1 %}
+              <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% blocktranslate %}Keyingi{% endblocktranslate %} &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
