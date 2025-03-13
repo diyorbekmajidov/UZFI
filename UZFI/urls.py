@@ -5,8 +5,6 @@ from .views import (
     DocumentCreateview,DocumentCreateApiview,
     Councilsview,CouncilsApiview,
     Requisitesview,RequisitesApiview,
-    FinancialStatementsview,
-    Vacanciesview,
     OpenDataview,OpenDataApiview,
     Facultyview,FacultyApiview,
     Directionview,DirectionApiview,
@@ -15,10 +13,10 @@ from .views import (
     Kafedraview,KafedraApiview,
     KafedraManagerById,KafedraManagerByIdApi,
     ScientificWorkView,
-    Register,
+    # Register,
     CentersDepartmentView,CentersDepartmentApiView,DepartmentsView,
     Login,
-    Dashboard,
+    # Dashboard,
     LeadershipAPIView,
     LeadershipByIdAPIView,
     Indicators,
@@ -65,13 +63,9 @@ urlpatterns = [
 
     path('requisties/', Requisitesview.as_view(), name='requisties'),
 
-    path('financial-statements/', FinancialStatementsview.as_view(), name='financial-statements'),
 
     path('leadership/', LeadershipAPIView.as_view(), name='leadership'),
     path('leadership/<int:pk>/', LeadershipByIdAPIView.as_view()),
-
-    path('vacancies/', Vacanciesview.as_view(), name='vacancies'),
-    path('vacancies/<int:pk>/', Vacanciesview.as_view()),
 
     path('open-data/', OpenDataview.as_view(), name='opendata'),
 
@@ -93,9 +87,9 @@ urlpatterns = [
     
     path('department-manager/<int:pk>/', KafedraManagerById.as_view()),
 
-    path('register/', Register.as_view()),
+    # path('register/', Register.as_view()),
     path('login/', Login.as_view()),
-    path('dashboard/', Dashboard.as_view(), name='dashboard'),
+    # path('dashboard/', Dashboard.as_view(), name='dashboard'),
 
     path('indicators/', Indicators.as_view()),
 

@@ -89,17 +89,17 @@ class Requisites(models.Model):
     class Meta:
         verbose_name = "Rekvizitlar"
     
-class FinancialStatements(models.Model):
-    report_type = models.CharField(max_length=100, verbose_name='hisobot turi')
-    quarter     = models.CharField(max_length=100, verbose_name='chorak')
-    pdf_file    = models.FileField(upload_to='pdf/')
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_update  = models.DateTimeField(auto_now=True)
+# class FinancialStatements(models.Model):
+#     report_type = models.CharField(max_length=100, verbose_name='hisobot turi')
+#     quarter     = models.CharField(max_length=100, verbose_name='chorak')
+#     pdf_file    = models.FileField(upload_to='pdf/')
+#     date_created = models.DateTimeField(auto_now_add=True)
+#     date_update  = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.report_type
-    class Meta:
-        verbose_name = "Moliyaviy_hisobotlar"
+#     def __str__(self):
+#         return self.report_type
+#     class Meta:
+#         verbose_name = "Moliyaviy_hisobotlar"
     
     
 class OpenData(models.Model):
@@ -112,18 +112,6 @@ class OpenData(models.Model):
     class Meta:
         verbose_name = "Ochiq_ma'lumotlar"
     
-class Vacancies(models.Model):
-    name         = models.CharField(max_length=100)
-    body         = RichTextUploadingField(verbose_name="matn tanasi")
-    views        = models.IntegerField(default=0, verbose_name="ko'rishlar soni")
-    salary       = models.CharField(max_length=100, verbose_name="maosh")
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_update  = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-    class Meta:
-        verbose_name = "Bo'sh ish o'rinlari"
 
     
 class ScientificWork(models.Model):
