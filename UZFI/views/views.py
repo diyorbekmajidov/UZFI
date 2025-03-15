@@ -101,7 +101,7 @@ def green_institute(request):
     try:
         green_institute = GreenInstitute.objects.first()
 
-        category = News_Content.objects.filter(category=1).order_by("-date_created")  # So‘ngi yangiliklar birinchi chiqadi
+        category = News_Content.objects.filter(category=15).order_by("-date_created")  # So‘ngi yangiliklar birinchi chiqadi
         serializer = NewsContentSerializer(category, many=True)
         page = Paginator(category, 6)
         page_num = int(request.GET.get('page', 1))
