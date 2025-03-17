@@ -24,6 +24,7 @@ class Menu(models.Model):
 class SubMenu(models.Model):
     title = models.CharField(max_length=50, verbose_name='Nomi')
     sub_menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    number = models.IntegerField(blank=True, null=True, verbose_name="id")
     url = models.CharField(max_length=50,null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update  = models.DateTimeField(auto_now=True)

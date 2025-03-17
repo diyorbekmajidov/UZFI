@@ -267,7 +267,7 @@
 						<li>
 							<a href="javascript:;">{{ menu.title }} <i class="fa fa-chevron-down"></i></a>
 							<ul class="sub-menu">
-								{% for submenu in menu.submenu_set.all %}
+								{% for submenu in menu.sorted_submenus %}
 									<li>
 										<a style="text-transform: none;" href="/{{ LANGUAGE_CODE }}{{ submenu.url }}/">{{ submenu.title }}</a>
 										{% if submenu.extra_submenu %}
