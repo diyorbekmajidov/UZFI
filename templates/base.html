@@ -142,7 +142,7 @@
 			  </div>
 			  <div class="topbar-right">
 				<ul>
-					<li style="color: red; text-align: center; margin-right:170px;">Sayt test rejimida ishlamoqda !!!</li> 
+					{% comment %} <li style="color: red; text-align: center; margin-right:170px;">Sayt test rejimida ishlamoqda !!!</li>  {% endcomment %}
 					<li>
 						<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
 							<input name="next" type="hidden" value="{{ redirect_to }}">
@@ -438,7 +438,7 @@
 						</p>
 						<p>
 							<i class="fa fa-phone" aria-hidden="true"></i> 
-							{% blocktranslate %}Telfon raqam:{% endblocktranslate %} +998953242418
+							{% blocktranslate %}Telfon raqam:{% endblocktranslate %} +998958268212
 						</p>
 						<p>
 							<i class="fa fa-envelope" aria-hidden="true"></i> 
