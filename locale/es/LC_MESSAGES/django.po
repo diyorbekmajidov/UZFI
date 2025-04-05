@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-16 22:52+0500\n"
+"POT-Creation-Date: 2025-04-05 12:11+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/settings.py:162
+msgid "Uzbek"
+msgstr ""
+
+#: core/settings.py:163
+msgid "Spanish"
+msgstr ""
+
+#: core/settings.py:164
+msgid "Russian"
+msgstr ""
 
 #: templates/404.html:3 templates/international/Internationalmemorandum.html:3
 msgid "UZFI  | Xalqaro memorandumlar"
@@ -44,7 +56,7 @@ msgstr "UZFI | LOCATION OF ADMISSION COMMISSION"
 msgid "QABUL KOMISSIYASI JOYLASHUV O'RNI"
 msgstr "LOCATION OF ADMISSION COMMISSION"
 
-#: templates/abitur/faqs.html:3 templates/base.html:339
+#: templates/abitur/faqs.html:3 templates/base.html:302
 msgid "Tez-tez so'raladigan savollarga javoblar"
 msgstr "Answers to frequently asked questions"
 
@@ -143,224 +155,53 @@ msgstr "Educational directions of the institute"
 msgid "Institut ta&acute;lim yo'nalishlari"
 msgstr "Educational directions of the institute"
 
-#: templates/base.html:160
-msgid "Chiqish"
-msgstr "Exit"
-
-#: templates/base.html:162
-msgid "Kirish"
-msgstr "Enter"
-
-#: templates/base.html:267
-msgid "Institut "
-msgstr "Instituti"
-
-#: templates/base.html:270 templates/base.html:410
-#: templates/international/InternationalNews.html:104
-#: templates/news/events.html:127 templates/news/news-category.html:126
-#: templates/news/news.html:130 templates/news/popular-students.html:88
-#: templates/news/video-gallery.html:128 templates/open-data.html:85
-#: templates/subtemplates/sidebar.html:17
-msgid "Bosh sahifa"
-msgstr "Homepage"
-
-#: templates/base.html:271 templates/base.html:413
-#: templates/international/InternationalNews.html:107
-#: templates/leadership-item.html:11 templates/leadership.html:18
-#: templates/news/events.html:130 templates/news/news-category.html:129
-#: templates/news/news.html:133 templates/news/popular-students.html:91
-#: templates/news/video-gallery.html:131 templates/open-data.html:88
-#: templates/subtemplates/sidebar.html:20
-msgid "Rahbariyat"
-msgstr "Administration"
-
-#: templates/base.html:272 templates/base.html:414
-#: templates/councils-item.html:3 templates/councils.html:5
-#: templates/councils.html:17
-#: templates/international/InternationalNews.html:108
-#: templates/news/events.html:131 templates/news/news-category.html:130
-#: templates/news/news.html:134 templates/news/popular-students.html:92
-#: templates/news/video-gallery.html:132 templates/open-data.html:89
-#: templates/subtemplates/sidebar.html:21
-msgid "Kengashlar"
-msgstr "Councils"
-
-#: templates/base.html:273 templates/base.html:415 templates/centers.html:18
-msgid "Markazlar"
-msgstr "Centers"
-
-#: templates/base.html:274 templates/base.html:416
-#, fuzzy
-#| msgid "Markaz va bo'limlar"
-msgid "Boshqarma va bo'limlar"
-msgstr "Center and departments"
-
-#: templates/base.html:275 templates/base.html:411
-#: templates/international/InternationalNews.html:105
-#: templates/news/events.html:128 templates/news/news-category.html:127
-#: templates/news/news.html:131 templates/news/popular-students.html:89
-#: templates/news/video-gallery.html:129 templates/open-data.html:86
-#: templates/subtemplates/sidebar.html:18
-msgid "Nizom"
-msgstr "Regulation"
-
-#: templates/base.html:276 templates/base.html:412 templates/documents.html:21
-#: templates/international/international-grants.html:19
-msgid "Me'yoriy hujjatlar"
-msgstr "Regulatory documents"
-
-#: templates/base.html:277 templates/base.html:417
-#: templates/international/InternationalNews.html:109
-#: templates/news/events.html:132 templates/news/news-category.html:131
-#: templates/news/news.html:135 templates/news/popular-students.html:93
-#: templates/news/video-gallery.html:133 templates/open-data.html:90
-#: templates/requesties.html:18 templates/subtemplates/sidebar.html:22
-msgid "Rekvizitlar"
-msgstr "Props"
-
-#: templates/base.html:280 templates/base.html:418
-#: templates/international/InternationalNews.html:110
-#: templates/news/events.html:133 templates/news/news-category.html:132
-#: templates/news/news.html:136 templates/news/popular-students.html:94
-#: templates/news/video-gallery.html:134 templates/open-data.html:91
-#: templates/subtemplates/sidebar.html:23
-msgid "Moliyaviy hisobotlar"
-msgstr "Financial statements"
-
-#: templates/base.html:281 templates/base.html:419
-#: templates/international/InternationalNews.html:112
-#: templates/news/events.html:135 templates/news/news-category.html:134
-#: templates/news/news.html:138 templates/news/popular-students.html:96
-#: templates/news/video-gallery.html:136 templates/open-data.html:18
-#: templates/open-data.html:93 templates/subtemplates/sidebar.html:25
-msgid "Ochiq ma'lumotlar"
-msgstr "Open data"
-
-#: templates/base.html:286
-msgid "TA'LIM "
-msgstr "EDUCATION"
-
-#: templates/base.html:289 templates/base.html:427 templates/faculties.html:19
-#: templates/index.html:496
-msgid "Fakultetlar"
-msgstr "Faculties"
-
-#: templates/base.html:290 templates/base.html:428 templates/departments.html:7
-#: templates/departments.html:18 templates/faculties-item.html:57
-msgid "Kafedralar"
-msgstr "Departments"
-
-#: templates/base.html:291 templates/base.html:429
-msgid "Bakalavriat"
-msgstr "Bachelor"
-
-#: templates/base.html:292 templates/base.html:430 templates/magistr.html:15
-msgid "Magistratura"
-msgstr "Master's"
-
-#: templates/base.html:293 templates/base.html:431
-msgid "Tyutorlar"
-msgstr "Tutors"
-
-#: templates/base.html:296 templates/base.html:432
-msgid "O‘quv rejalari"
-msgstr "Educational plans"
-
-#: templates/base.html:300
-msgid "Axborot xizmati"
-msgstr "Information Services"
-
-#: templates/base.html:303 templates/base.html:441 templates/dashboard.html:40
-#: templates/index.html:724 templates/news/news-category.html:11
-#: templates/news/news.html:47 templates/news/news.html:56
-msgid "Yangiliklar"
-msgstr "News"
-
-#: templates/base.html:304 templates/base.html:442
-msgid "Video galereya"
-msgstr "Video gallery"
-
-#: templates/base.html:305
-msgid "E&#39;lonlar"
-msgstr "Announcements"
-
-#: templates/base.html:306 templates/base.html:444
-#: templates/news/contacts.html:21
-msgid "Bog'lanish"
-msgstr "Connection"
-
-#: templates/base.html:311 templates/base.html:313 templates/base.html:454
-msgid "Xalqaro faoliyat"
-msgstr "International activity"
-
-#: templates/base.html:314 templates/base.html:457
-#: templates/international/Internationalmemorandum.html:18
-msgid "Xalqaro memorandumlar"
-msgstr "International memorandums"
-
-#: templates/base.html:315 templates/base.html:458
-msgid "Xalqaro grantlar"
-msgstr "International grants"
-
-#: templates/base.html:316 templates/dekan.html:62
-#: templates/department-manager.html:61 templates/leadership-item.html:62
-msgid "Ilmiy faoliyat"
-msgstr "Scientific activity"
-
-#: templates/base.html:317
-msgid "Ma'naviy-marifiy faoliyat"
-msgstr "Spiritual educational activity"
-
-#: templates/base.html:321 templates/base.html:465
-msgid "Talabalar hayoti"
-msgstr "Student life"
-
-#: templates/base.html:325 templates/base.html:467
-msgid "Iqtidorli talabalar"
-msgstr "Talented students"
-
-#: templates/base.html:326 templates/library.html:3 templates/library.html:14
-#: templates/library.html:28
-msgid "Kutubxona"
-msgstr "Library"
-
-#: templates/base.html:327 templates/ttj.html:14
-msgid "Talabalar turar joyi"
-msgstr "Student accommodation"
-
-#: templates/base.html:333
+#: templates/base.html:296
 msgid "Abituriyentlarga"
 msgstr "To applicants"
 
-#: templates/base.html:425
-msgid "TA'LIM"
-msgstr "EDUCATION"
+#: templates/base.html:412
+msgid " Ijtimoiy tarmoqlar "
+msgstr "Social networks"
 
-#: templates/base.html:438
-msgid "Axborot Xizmatlari"
-msgstr "Information Services"
+#: templates/base.html:417
+#, fuzzy
+#| msgid "Telefon raqam"
+msgid "Telegram"
+msgstr "Phone number"
 
-#: templates/base.html:443 templates/news/events-item.html:12
-#: templates/news/events.html:53
-msgid "E'lonlar"
-msgstr "Announcements"
+#: templates/base.html:423
+msgid "Facebook"
+msgstr ""
 
-#: templates/base.html:456
-msgid "Xalqaro hamkorlik"
-msgstr "International cooperation"
+#: templates/base.html:430
+msgid "Youtube"
+msgstr ""
 
-#: templates/base.html:468 templates/list-of-additional.html:3
-#: templates/list-of-additional.html:14
-msgid "To'garaklar ro'yxati"
-msgstr "List of circles"
+#: templates/base.html:436
+msgid "Instagram"
+msgstr ""
 
-#: templates/base.html:482
-msgid " Manzil "
-msgstr "Address"
+#: templates/base.html:441
+msgid " Bizning manzil "
+msgstr "Our address"
 
-#: templates/base.html:483
-msgid " Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy "
+#: templates/base.html:445
+#, fuzzy
+#| msgid " Manzil: Samarqand sh., Spitamen shoh ko‘chasi, 166-uy "
+msgid " Manzil: Samarqand sh, Spitamen shoh ko‘chasi, 166-uy "
 msgstr "Address: 166, Spitamen Shah Street, Samarkand Sh"
+
+#: templates/base.html:449
+#, fuzzy
+#| msgid "Telefon raqam:"
+msgid "Telfon raqam:"
+msgstr "Phone number:"
+
+#: templates/base.html:453
+#, fuzzy
+#| msgid "Email"
+msgid "Email:"
+msgstr "Email"
 
 #: templates/bulimlar.html:7
 msgid "UZFI  | Bo'limlar"
@@ -417,13 +258,34 @@ msgstr "Duties"
 msgid "UZFI  | Markazlar"
 msgstr "UZFI | Centers"
 
+#: templates/centers.html:18
+msgid "Markazlar"
+msgstr "Centers"
+
 #: templates/charter.html:3 templates/charter.html:17 templates/charter.html:30
 msgid "Institut nizomi"
 msgstr "Statute of the institute"
 
+#: templates/councils-item.html:3 templates/councils.html:5
+#: templates/councils.html:17
+#: templates/international/InternationalNews.html:108
+#: templates/international/corruption-event.html:108
+#: templates/news/events.html:131 templates/news/news-category.html:130
+#: templates/news/news.html:134 templates/news/popular-students.html:92
+#: templates/news/video-gallery.html:132 templates/open-data.html:89
+#: templates/subtemplates/sidebar.html:21
+msgid "Kengashlar"
+msgstr "Councils"
+
 #: templates/councils.html:33
 msgid "Kengashlar "
 msgstr "Councils"
+
+#: templates/dashboard.html:40 templates/index.html:724
+#: templates/news/news-category.html:11 templates/news/news.html:47
+#: templates/news/news.html:56
+msgid "Yangiliklar"
+msgstr "News"
 
 #: templates/dashboard.html:44
 msgid "Ilmiy ish sozlamalri"
@@ -525,9 +387,14 @@ msgid "Fakultet dekani"
 msgstr "Dean of the faculty"
 
 #: templates/dekan.html:54 templates/department-manager.html:53
-#: templates/destinations-item.html:63
+#: templates/destinations-item.html:59
 msgid "Ko'proq ma'lumot"
 msgstr "More information"
+
+#: templates/dekan.html:62 templates/department-manager.html:61
+#: templates/leadership-item.html:62
+msgid "Ilmiy faoliyat"
+msgstr "Scientific activity"
 
 #: templates/dekan.html:109 templates/destinations-item.html:41
 msgid "Fakultet"
@@ -566,13 +433,30 @@ msgstr "Reception days:"
 msgid "Manzil:"
 msgstr "Address:"
 
-#: templates/destinations-item.html:72
+#: templates/departments.html:7 templates/departments.html:18
+#: templates/departments.html:66 templates/faculties-item.html:57
+msgid "Kafedralar"
+msgstr "Departments"
+
+#: templates/departments.html:67
+#, fuzzy
+#| msgid ""
+#| "O‘zbekiston-Finlandiya pedagogika instituting fakultetlari quyidagilar:"
+msgid "O‘zbekiston-Finlandiya pedagogika instituting kafedralari quyidagilar:"
+msgstr "Faculty composition of the Uzbekistan-Finland Institute."
+
+#: templates/destinations-item.html:68
 msgid "Yo'nalish mavjud emas"
 msgstr "No direction available"
 
 #: templates/documents.html:7
 msgid "UZFI  | Me'yoriy hujjatlar"
 msgstr "UZFI | Regulatory documents"
+
+#: templates/documents.html:21
+#: templates/international/international-grants.html:19
+msgid "Me'yoriy hujjatlar"
+msgstr "Regulatory documents"
 
 #: templates/documents.html:37
 msgid "Hujjat turi"
@@ -614,6 +498,10 @@ msgstr "The faculty does not exist"
 msgid "UZFI  | Fakultetlar"
 msgstr "UZFI | Faculties"
 
+#: templates/faculties.html:19 templates/index.html:498
+msgid "Fakultetlar"
+msgstr "Faculties"
+
 #: templates/financial-statements.html:7
 msgid "UZFI  | Moliyaviy xisobotlar"
 msgstr "UZFI | Financial reports"
@@ -634,71 +522,83 @@ msgstr "The date"
 msgid "Chorak"
 msgstr "A quarter"
 
-#: templates/index.html:147
+#: templates/green-institute.html:3 templates/green-institute.html:11
+msgid "Yashil institut"
+msgstr ""
+
+#: templates/green-institute.html:49
+msgid "Avvalgi"
+msgstr "The former"
+
+#: templates/green-institute.html:61
+msgid "Keyingi"
+msgstr "Next"
+
+#: templates/index.html:148
 msgid "O&#39;ZBEKISTON - FINLANDIYA PEDAGOGIKA INSTITUTI"
 msgstr "UZBEKISTAN - FINLAND PEDAGOGICAL INSTITUTE"
 
-#: templates/index.html:185
+#: templates/index.html:186
 msgid "QABUL 2024-2025"
 msgstr ""
 
-#: templates/index.html:220
+#: templates/index.html:221
 msgid "VIRTUAL TUR"
 msgstr "VIRTUAL TUR"
 
-#: templates/index.html:362
+#: templates/index.html:363
 msgid "Davomini o'qish"
 msgstr "Read more"
 
-#: templates/index.html:397
+#: templates/index.html:398
 msgid "Barcha Yangiliklar"
 msgstr "All News"
 
-#: templates/index.html:419
+#: templates/index.html:420
 msgid "Yagona portal"
 msgstr "A single portal"
 
-#: templates/index.html:420
+#: templates/index.html:421
 msgid "UZFI interaktiv xizmatlar portali"
 msgstr "UZFI interactive services portal"
 
-#: templates/index.html:432
+#: templates/index.html:433
 msgid "Elektron kutubxona"
 msgstr "Electronic library"
 
-#: templates/index.html:433
+#: templates/index.html:434
 msgid "Yagona elektron kutubxona axborot tizimi"
 msgstr "Unified electronic library information system"
 
-#: templates/index.html:445
+#: templates/index.html:446
 msgid "Dars jadvali"
 msgstr "Lesson schedule"
 
-#: templates/index.html:446
+#: templates/index.html:447
 msgid "UZFI dars jadvali"
 msgstr "UZFI lesson schedule"
 
-#: templates/index.html:458 templates/index.html:459
+#: templates/index.html:459 templates/index.html:460
 msgid "Korporativ elektron pochta"
 msgstr "Corporate email"
 
-#: templates/index.html:471
+#: templates/index.html:472
 msgid "KPI tizimi"
 msgstr "KPI system"
 
-#: templates/index.html:472
+#: templates/index.html:473
 msgid "Hodimlarni baholash va nazorat qilish tizimi"
 msgstr "Employee evaluation and control system"
 
-#: templates/index.html:484
+#: templates/index.html:485
 msgid "TTJ"
 msgstr "TTJ"
 
-#: templates/index.html:485
+#: templates/index.html:486
 msgid "Talabalar yotoqxonasi uchun online ariza"
 msgstr "Online application for student dormitory"
 
-#: templates/index.html:497
+#: templates/index.html:499
 msgid "O‘zbekiston-Finlandiya pedagogika instituting fakultetlari quyidagilar:"
 msgstr "Faculty composition of the Uzbekistan-Finland Institute."
 
@@ -787,6 +687,7 @@ msgstr "International Cooperation"
 
 #: templates/international/InternationalNews.html:70
 #: templates/international/Internationalmemorandum.html:65
+#: templates/international/corruption-event.html:70
 #: templates/news/events.html:96 templates/news/news-category.html:77
 #: templates/news/news.html:99 templates/news/popular-students.html:52
 #: templates/news/video-gallery.html:80 templates/tutors.html:64
@@ -796,6 +697,7 @@ msgstr "The former"
 
 #: templates/international/InternationalNews.html:84
 #: templates/international/Internationalmemorandum.html:73
+#: templates/international/corruption-event.html:84
 #: templates/news/events.html:112 templates/news/news-category.html:85
 #: templates/news/news.html:115 templates/news/popular-students.html:58
 #: templates/news/video-gallery.html:88 templates/tutors.html:72
@@ -804,6 +706,7 @@ msgid " Keyingi"
 msgstr "Next"
 
 #: templates/international/InternationalNews.html:101
+#: templates/international/corruption-event.html:101
 #: templates/news/events.html:124 templates/news/news-category.html:123
 #: templates/news/news.html:127 templates/news/popular-students.html:85
 #: templates/news/video-gallery.html:125 templates/open-data.html:82
@@ -811,7 +714,26 @@ msgstr "Next"
 msgid "UNIVERSITET"
 msgstr "UNIVERSITY"
 
+#: templates/international/InternationalNews.html:104
+#: templates/international/corruption-event.html:104
+#: templates/news/events.html:127 templates/news/news-category.html:126
+#: templates/news/news.html:130 templates/news/popular-students.html:88
+#: templates/news/video-gallery.html:128 templates/open-data.html:85
+#: templates/subtemplates/sidebar.html:17
+msgid "Bosh sahifa"
+msgstr "Homepage"
+
+#: templates/international/InternationalNews.html:105
+#: templates/international/corruption-event.html:105
+#: templates/news/events.html:128 templates/news/news-category.html:127
+#: templates/news/news.html:131 templates/news/popular-students.html:89
+#: templates/news/video-gallery.html:129 templates/open-data.html:86
+#: templates/subtemplates/sidebar.html:18
+msgid "Nizom"
+msgstr "Regulation"
+
 #: templates/international/InternationalNews.html:106
+#: templates/international/corruption-event.html:106
 #: templates/news/events.html:129 templates/news/news-category.html:128
 #: templates/news/news.html:132 templates/news/popular-students.html:90
 #: templates/news/video-gallery.html:130 templates/open-data.html:87
@@ -819,7 +741,36 @@ msgstr "UNIVERSITY"
 msgid "Hujjatlar"
 msgstr "Document type"
 
+#: templates/international/InternationalNews.html:107
+#: templates/international/corruption-event.html:107
+#: templates/leadership-item.html:11 templates/leadership.html:18
+#: templates/news/events.html:130 templates/news/news-category.html:129
+#: templates/news/news.html:133 templates/news/popular-students.html:91
+#: templates/news/video-gallery.html:131 templates/open-data.html:88
+#: templates/subtemplates/sidebar.html:20
+msgid "Rahbariyat"
+msgstr "Administration"
+
+#: templates/international/InternationalNews.html:109
+#: templates/international/corruption-event.html:109
+#: templates/news/events.html:132 templates/news/news-category.html:131
+#: templates/news/news.html:135 templates/news/popular-students.html:93
+#: templates/news/video-gallery.html:133 templates/open-data.html:90
+#: templates/requesties.html:18 templates/subtemplates/sidebar.html:22
+msgid "Rekvizitlar"
+msgstr "Props"
+
+#: templates/international/InternationalNews.html:110
+#: templates/international/corruption-event.html:110
+#: templates/news/events.html:133 templates/news/news-category.html:132
+#: templates/news/news.html:136 templates/news/popular-students.html:94
+#: templates/news/video-gallery.html:134 templates/open-data.html:91
+#: templates/subtemplates/sidebar.html:23
+msgid "Moliyaviy hisobotlar"
+msgstr "Financial statements"
+
 #: templates/international/InternationalNews.html:111
+#: templates/international/corruption-event.html:111
 #: templates/news/events.html:134 templates/news/news-category.html:133
 #: templates/news/news.html:137 templates/news/popular-students.html:95
 #: templates/news/video-gallery.html:135 templates/open-data.html:92
@@ -827,14 +778,40 @@ msgstr "Document type"
 msgid "Mashhur talabalar"
 msgstr "Talented students"
 
+#: templates/international/InternationalNews.html:112
+#: templates/international/corruption-event.html:112
+#: templates/news/events.html:135 templates/news/news-category.html:134
+#: templates/news/news.html:138 templates/news/popular-students.html:96
+#: templates/news/video-gallery.html:136 templates/open-data.html:18
+#: templates/open-data.html:93 templates/subtemplates/sidebar.html:25
+msgid "Ochiq ma'lumotlar"
+msgstr "Open data"
+
+#: templates/international/Internationalmemorandum.html:18
+msgid "Xalqaro memorandumlar"
+msgstr "International memorandums"
+
 #: templates/international/Internationalmemorandum_det.html:6
 #: templates/international/int_det.html:6 templates/news/news-item.html:3
 msgid "UZFI"
 msgstr "UZFI"
 
 #: templates/international/Internationalmemorandum_det.html:67
-#: templates/international/int_det.html:69 templates/news/news-item.html:83
+#: templates/international/int_det.html:69
 msgid "Recent Posts"
+msgstr ""
+
+#: templates/international/corruption-event.html:3
+#: templates/international/corruption-event.html:14
+msgid "O'tkazilayotgan tadbirlar"
+msgstr ""
+
+#: templates/international/corruption-law.html:4
+msgid "UZFI  | Korrupsiyaga qarshi kurash"
+msgstr ""
+
+#: templates/international/corruption-law.html:16
+msgid "Korrupsiyaga qarshi kurash"
 msgstr ""
 
 #: templates/international/international-grants.html:3
@@ -848,6 +825,10 @@ msgstr "UZFI | Administration"
 #: templates/leadership.html:31
 msgid "Rahbariyat "
 msgstr "Administration"
+
+#: templates/library.html:3 templates/library.html:14 templates/library.html:28
+msgid "Kutubxona"
+msgstr "Library"
 
 #: templates/library.html:46
 msgid ""
@@ -902,9 +883,17 @@ msgid ""
 "                   "
 msgstr ""
 
+#: templates/list-of-additional.html:3 templates/list-of-additional.html:14
+msgid "To'garaklar ro'yxati"
+msgstr "List of circles"
+
 #: templates/magistr.html:4
 msgid "UZFI  | Magistratura"
 msgstr "UZFI | Master's"
+
+#: templates/magistr.html:15
+msgid "Magistratura"
+msgstr "Master's"
 
 #: templates/magistr/mag.html:1 templates/news/news-category.html:4
 #: templates/news/news.html:5 templates/news/popular-students.html:3
@@ -919,6 +908,10 @@ msgstr "Educational directions of the institute"
 #: templates/news/contacts.html:7
 msgid "UZFI  | Bog'lanish"
 msgstr "UZFI | Connection"
+
+#: templates/news/contacts.html:21
+msgid "Bog'lanish"
+msgstr "Connection"
 
 #: templates/news/contacts.html:39 templates/requesties.html:36
 msgid "Telefon: "
@@ -976,9 +969,19 @@ msgstr "Submit"
 msgid " E'lonlar "
 msgstr "Announcements"
 
-#: templates/news/events-item.html:43
-msgid "BIZ BILAN BO'LING "
-msgstr "BE WITH US"
+#: templates/news/events-item.html:12 templates/news/events.html:53
+msgid "E'lonlar"
+msgstr "Announcements"
+
+#: templates/news/events-item.html:58 templates/news/news-item.html:65
+msgid "Share This Post"
+msgstr ""
+
+#: templates/news/events-item.html:76 templates/news/news-item.html:83
+#, fuzzy
+#| msgid "Oxirgi videolar"
+msgid "Oxirgi xabarlar"
+msgstr "Latest videos"
 
 #: templates/news/events.html:5
 msgid "UZFI | E'lonlar"
@@ -1005,10 +1008,6 @@ msgstr "Search"
 #: templates/news/news-category.html:144 templates/news/news-item.html:56
 msgid "Tags"
 msgstr "Tags"
-
-#: templates/news/news-item.html:65
-msgid "Share This Post"
-msgstr ""
 
 #: templates/news/popular-students-item.html:14
 #: templates/news/popular-students.html:15
@@ -1055,6 +1054,10 @@ msgstr "UZFI  | Rekvizitlar"
 msgid "Talabalar Turar Joyi"
 msgstr "Student Residence"
 
+#: templates/ttj.html:14
+msgid "Talabalar turar joyi"
+msgstr "Student accommodation"
+
 #: templates/tutor_fac.html:19
 msgid "Tutorlar ro'yxati"
 msgstr "List of tutors"
@@ -1086,6 +1089,1357 @@ msgstr "General information"
 #: templates/vacancies.html:3
 msgid "Vakansiyalar"
 msgstr "Vacancies"
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/contrib/messages/apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.9/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/paginator.py:57
+msgid "That page contains no results"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:104
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:751
+msgid "Enter a valid URL."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:164
+msgid "Enter a valid integer."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:175
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.9/site-packages/django/core/validators.py:256
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:264
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:276
+#: venv/lib/python3.9/site-packages/django/core/validators.py:284
+#: venv/lib/python3.9/site-packages/django/core/validators.py:313
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:293
+#: venv/lib/python3.9/site-packages/django/core/validators.py:314
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:305
+#: venv/lib/python3.9/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:348
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:354
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:389
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:398
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:407
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:417
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:435
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:458
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:347
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:386
+msgid "Enter a number."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:460
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:465
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:470
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:539
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/core/validators.py:600
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/base.py:1401
+#: venv/lib/python3.9/site-packages/django/forms/models.py:899
+msgid "and"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/base.py:1403
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:129
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:130
+msgid "This field cannot be null."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:131
+msgid "This field cannot be blank."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:132
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:136
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:174
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1065
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1066
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1068
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1118
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1222
+msgid "Comma-separated integers"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1323
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1327
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1462
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1331
+msgid "Date (without time)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1458
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1466
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1471
+msgid "Date (with time)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1595
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1597
+msgid "Decimal number"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1754
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1758
+msgid "Duration"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1810
+#, fuzzy
+#| msgid "address"
+msgid "Email address"
+msgstr "manzil"
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1835
+msgid "File path"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1913
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1915
+msgid "Floating point number"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1955
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1957
+msgid "Integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2049
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2066
+msgid "Small integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2074
+#, fuzzy
+#| msgid "address"
+msgid "IPv4 address"
+msgstr "manzil"
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2105
+#, fuzzy
+#| msgid "address"
+msgid "IP address"
+msgstr "manzil"
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2198
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2199
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2201
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2252
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2267
+msgid "Positive integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2282
+msgid "Positive small integer"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2298
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2334
+msgid "Text"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2409
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2413
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2417
+msgid "Time"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2525
+msgid "URL"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2549
+msgid "Raw binary data"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2614
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2616
+msgid "Universally unique identifier"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/files.py:232
+msgid "File"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/files.py:392
+msgid "Image"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/json.py:18
+msgid "A JSON object"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/related.py:920
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/related.py:922
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1229
+msgid "One-to-one relationship"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1286
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1288
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1336
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: venv/lib/python3.9/site-packages/django/forms/boundfield.py:176
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:467
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:1240
+msgid "Enter a valid date."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:490
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:1241
+msgid "Enter a valid time."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:618
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:619
+msgid "No file was submitted."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:620
+msgid "The submitted file is empty."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:622
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:627
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:693
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:856
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:948
+#: venv/lib/python3.9/site-packages/django/forms/models.py:1572
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:950
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:1069
+#: venv/lib/python3.9/site-packages/django/forms/models.py:1570
+msgid "Enter a list of values."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:1070
+msgid "Enter a complete value."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:1309
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/fields.py:1339
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.9/site-packages/django/forms/forms.py:98
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/forms.py:248
+#: venv/lib/python3.9/site-packages/django/forms/forms.py:332
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/forms/formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/forms/formsets.py:483
+#: venv/lib/python3.9/site-packages/django/forms/formsets.py:490
+msgid "Order"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/formsets.py:496
+msgid "Delete"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:892
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:897
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:904
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:913
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:1344
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:1435
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/models.py:1574
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/widgets.py:439
+msgid "Clear"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/widgets.py:440
+msgid "Currently"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/widgets.py:441
+msgid "Change"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/widgets.py:770
+msgid "Unknown"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/widgets.py:771
+msgid "Yes"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/forms/widgets.py:772
+#, fuzzy
+#| msgid "Nomi"
+msgid "No"
+msgstr "Name"
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:853
+msgid "yes,no,maybe"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:883
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:900
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:902
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:904
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:906
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:908
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/template/defaultfilters.py:910
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dateformat.py:77
+msgid "p.m."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dateformat.py:78
+msgid "a.m."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dateformat.py:83
+msgid "PM"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dateformat.py:84
+msgid "AM"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dateformat.py:155
+msgid "midnight"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dateformat.py:157
+msgid "noon"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/text.py:252
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.9/site-packages/django/utils/text.py:271
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:94
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:349
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/modeltranslation/widgets.py:24
+msgid "None"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:28
+msgid "Logout"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:30
+msgid "Session Login"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:41
+msgid "You are logged in as: "
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:43
+msgid "Viewing as an anoymous user"
+msgstr ""
+
+#: venv/lib/python3.9/site-packages/rest_framework_swagger/templates/rest_framework_swagger/index.html:55
+msgid "Powered by "
+msgstr ""
+
+#~ msgid "Chiqish"
+#~ msgstr "Exit"
+
+#~ msgid "Kirish"
+#~ msgstr "Enter"
+
+#~ msgid "Institut "
+#~ msgstr "Instituti"
+
+#, fuzzy
+#~| msgid "Markaz va bo'limlar"
+#~ msgid "Boshqarma va bo'limlar"
+#~ msgstr "Center and departments"
+
+#~ msgid "TA'LIM "
+#~ msgstr "EDUCATION"
+
+#~ msgid "Bakalavriat"
+#~ msgstr "Bachelor"
+
+#~ msgid "Tyutorlar"
+#~ msgstr "Tutors"
+
+#~ msgid "O‘quv rejalari"
+#~ msgstr "Educational plans"
+
+#~ msgid "Axborot xizmati"
+#~ msgstr "Information Services"
+
+#~ msgid "Video galereya"
+#~ msgstr "Video gallery"
+
+#~ msgid "E&#39;lonlar"
+#~ msgstr "Announcements"
+
+#~ msgid "Xalqaro faoliyat"
+#~ msgstr "International activity"
+
+#~ msgid "Xalqaro grantlar"
+#~ msgstr "International grants"
+
+#~ msgid "Ma'naviy-marifiy faoliyat"
+#~ msgstr "Spiritual educational activity"
+
+#~ msgid "Talabalar hayoti"
+#~ msgstr "Student life"
+
+#~ msgid "Iqtidorli talabalar"
+#~ msgstr "Talented students"
+
+#~ msgid "TA'LIM"
+#~ msgstr "EDUCATION"
+
+#~ msgid "Axborot Xizmatlari"
+#~ msgstr "Information Services"
+
+#~ msgid "Xalqaro hamkorlik"
+#~ msgstr "International cooperation"
+
+#~ msgid " Manzil "
+#~ msgstr "Address"
+
+#~ msgid "BIZ BILAN BO'LING "
+#~ msgstr "BE WITH US"
 
 #~ msgid "title"
 #~ msgstr "sarlavha"
@@ -1147,9 +2501,6 @@ msgstr "Vacancies"
 #~ msgid "document_name"
 #~ msgstr "Hujjat nomi"
 
-#~ msgid "address"
-#~ msgstr "manzil"
-
 #~ msgid "acceptance"
 #~ msgstr "qabul qilish"
 
@@ -1177,12 +2528,6 @@ msgstr "Vacancies"
 
 #~ msgid "Xalqaro Aloqalar"
 #~ msgstr "International relations"
-
-#~ msgid "Avvalgi"
-#~ msgstr "The former"
-
-#~ msgid "Keyingi"
-#~ msgstr "Next"
 
 #~ msgid ""
 #~ "Institutning maqsadi yuqori sifatli pedagogikani rivojlantirish va O'zbek "
