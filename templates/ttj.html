@@ -51,7 +51,7 @@
     <div class="bg-light p-5 rounded shadow-sm">
         <h4 class="mb-4 text-primary">{% blocktranslate %}Talabalar Turar Joyi haqida batafsil{% endblocktranslate %}</h4>
         <p class="text-justify">
-         {{ ttj.body }}
+         {{ ttj.body|safe }}
         </p>
     </div>
 </div>
