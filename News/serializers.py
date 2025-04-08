@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from .models import (NewsCategory, Vedio_New, News_Content, PopularStudentImg, PendingEvents, PopularStudents)
 
 class NewsCategorySerializer(serializers.ModelSerializer):
     class Meta:

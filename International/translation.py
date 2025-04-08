@@ -4,7 +4,8 @@ from .models import (
     InternationalMemorandum,
     InternationalGrant,
     StudentGroups,
-    Abitur
+    Abitur,
+    CommonInfo
     )
 
 
@@ -12,6 +13,9 @@ from .models import (
 class InternationalRelationTranslationOptions(TranslationOptions):
     fields = ('title', 'body',)
 
+@register(CommonInfo)
+class CommonInfoTranslationOption(TranslationOptions):
+    fields = ('title', 'body',)
 
 @register(Abitur)
 class AbiturTranslationOptions(TranslationOptions):

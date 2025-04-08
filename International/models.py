@@ -10,13 +10,17 @@ def validate_file_size(value):
     else:
         return value
     
+class TimeStampModel(models.Model):
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_update  = models.DateTimeField(auto_now=True)
 
-class InternationalRelation(models.Model):
+    class Meta:
+        abstract = True
+class InternationalRelation(TimeStampModel):
     title         = models.CharField(max_length=255, verbose_name='sarlavha')
     img           = models.ImageField(upload_to='img/', validators=[validate_file_size], verbose_name='rasm')
     body          = RichTextUploadingField(verbose_name='matn_tanasi')
-    date_created  = models.DateField()
-    date_update   = models.DateTimeField(auto_now=True)
+    
 
     def __str__(self):
         return self.title
@@ -25,12 +29,11 @@ class InternationalRelation(models.Model):
         verbose_name = "Xalqaro_aloqalar"
 
     
-class InternationalMemorandum(models.Model):
+class InternationalMemorandum(TimeStampModel):
     title = models.CharField(max_length=100, verbose_name='sarlavha')
     body = RichTextUploadingField(verbose_name='matn_tanasi')
     img     = models.ImageField(upload_to='img/', validators=[validate_file_size], verbose_name='rasm')
-    date_created  = models.DateField(auto_now=True)
-    date_update   = models.DateTimeField(auto_now=True)
+    
 
     def __str__(self) -> str:
         return self.title
@@ -77,3 +80,16 @@ class StudentGroups(models.Model):
     
     class Meta:
         verbose_name="Talabalar_guruhlari"
+
+
+class CommonInfo(TimeStampModel):
+    class StatusChoise(models.TextChoices):
+        LIBARY  = "Libary", "Libary"
+        TTJ = "Ttj", "Ttj"
+
+    status = models.CharField(max_length=20, choices=StatusChoise.choices)
+    title = models.CharField(max_length=100, verbose_name="sarlavha")
+    body = RichTextUploadingField(verbose_name="matn_tanasi")
+
+    class Meta:
+        verbose_name_plural = "Ttj-Kutubhona"

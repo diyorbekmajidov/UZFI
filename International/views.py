@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.shortcuts import HttpResponse
 from django.shortcuts import render
 from rest_framework.views import APIView
-from .models import *
-from .serializers import *
+from .models import (InternationalGrant, InternationalMemorandum,
+                    Abitur, StudentGroups, CommonInfo
+                      )
+from .serializers import (AbiturSerializers, InternationalMemorandumSerializers,StudentGroupsSerializers, InternationalGrantSerializer)
 from django.core.paginator import Paginator
 from News.models import News_Content
 from rest_framework.response import Response
@@ -145,11 +148,14 @@ class InternationalGrantApiViews(APIView):
         except Exception as e:
             return Response({403:"ma'lumot topilmadi"})
 
-class LibraryViews(TemplateView):
-    template_name = "library.html"
+def LibraryViews(request):
+    libary = CommonInfo.objects.filter(status = 'Libary').first()
+    return render(request, 'library.html', {"library":libary})
 
-class TtjViews(TemplateView):
-    template_name = "ttj.html"
+
+def TtjViews(request):
+    ttj = CommonInfo.objects.filter(status = 'Ttj').first()
+    return render(request, 'ttj.html', {"ttj":ttj})
 
 class CorruptionLaw(TemplateView):
     template_name = 'international/corruption-law.html'

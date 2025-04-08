@@ -2,7 +2,9 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from modeltranslation.admin import TranslationAdmin
 from .models.models import User
-from .models import *
+from .models import (Menu, SubMenu, GreenInstitute, OpenData, Charter, Kafedra, Dekan, Direction, Document,
+                     KafedraManager, Leadership, Faculty, Requisites, CentersDepartments, Tutor, CentersDepartmentsManager, Councils
+                     )
 
 class MyUserAdmin(UserAdmin):
     model = User
@@ -15,15 +17,15 @@ class MyUserAdmin(UserAdmin):
 admin.site.register(User,MyUserAdmin)
 
 @admin.register(Menu)
-class OpenDataAdmin(TranslationAdmin):
+class MenuAdmin(TranslationAdmin):
     list_display = ('title',)
 
 @admin.register(SubMenu)
-class OpenDataAdmin(TranslationAdmin):
+class SubMenuAdmin(TranslationAdmin):
     list_display = ('title',)
 
 @admin.register(GreenInstitute)
-class OpenDataAdmin(TranslationAdmin):
+class GreenInstituteAdmin(TranslationAdmin):
     list_display = ('title','body',)
 
 @admin.register(OpenData)

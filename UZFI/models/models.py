@@ -1,6 +1,5 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-from django.utils.translation import gettext_lazy as _
 from .user import User
 from django.core.exceptions import ValidationError
   
