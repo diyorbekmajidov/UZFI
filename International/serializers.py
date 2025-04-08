@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import *
+from .models import (InternationalGrant, InternationalGrantImg, InternationalMemorandum,
+                      InternationalRelation, Abitur, StudentGroups
+                      )
 
 class InternationalRelationSerializers(serializers.ModelSerializer):
     class Meta:

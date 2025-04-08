@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from .views import(
     InternationalMemorandumViews,InternationalMemorandumApiViews,
     InternationalGrantViews,InternationalGrantApiViews,
@@ -28,7 +28,7 @@ urlpatterns = [
     path('abitur/<int:pk>/', AbiturViewsById.as_view()),
     path('internationalgrant/', InternationalGrantViews.as_view()),
     path('studentgroups/', StudentGroupsViews.as_view()),
-    path('library/', LibraryViews.as_view()),
-    path('ttj/', TtjViews.as_view()),
+    path('library/', LibraryViews),
+    path('ttj/', TtjViews),
     path('corruption/law/', CorruptionLaw.as_view())
 ]
