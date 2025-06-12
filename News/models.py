@@ -36,6 +36,20 @@ class News_Content(models.Model):
     def __str__(self):
         return self.title or ""
     
+class News_Comment(models.Model):
+    news          = models.ForeignKey(News_Content, on_delete=models.CASCADE, verbose_name='yangilik')
+    name          = models.CharField(max_length=150, verbose_name='ism')
+    email         = models.EmailField(verbose_name='email')
+    comment       = models.TextField(verbose_name='izoh')
+    date_created  = models.DateField(auto_now_add=True)
+    date_update   = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Yangiliklar_izohi"
+    
+    def __str__(self):
+        return self.name
+    
 
 class Vedio_New(models.Model):
     title         = models.CharField(max_length=255, verbose_name='sarlavha')

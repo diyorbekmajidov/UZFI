@@ -22,6 +22,12 @@ class Vedio_NewAdmin(TranslationAdmin):
 class PendingEventsAdmin(TranslationAdmin):
     list_display = ('event_name',)
 
+@admin.register(News_Comment)
+class News_CommentAdmin(admin.ModelAdmin):
+    list_display = ('news', 'name', 'email', 'date_created', 'date_update')
+    search_fields = ('name', 'email')
+    list_filter = ('date_created',)
+
 
 class PopularStudentImgInline(admin.TabularInline):
     model = PopularStudentImg

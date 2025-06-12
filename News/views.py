@@ -1,8 +1,8 @@
 from django.http import HttpRequest
 from django.http.response import HttpResponse as HttpResponse
 from django.views.generic import TemplateView
-from django.shortcuts import render
-from .models import (NewsCategory, News_Content, Vedio_New, PopularStudents, PopularStudentImg,  PendingEvents)
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import (NewsCategory, News_Content, Vedio_New, PopularStudents, PopularStudentImg,  PendingEvents, News_Comment)
 from rest_framework.views import APIView
 
 from .serializers import *
@@ -13,6 +13,7 @@ from UZFI.serializers import RequisitesSerializer
 from rest_framework.response import Response
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
+from .forms import NewsCommentForm
 
 # class NewsPagination(PageNumberPagination):
 #     page_size = 1
@@ -110,25 +111,36 @@ class NewsContentCategoryView(TemplateView):
             return render(request,'news/news-category.html')
 
 
-class NewsContentByIdView(TemplateView):
-    template_name = 'news/news-item.html'
     
-    def get(self, request, pk):
-        news_content = get_object_or_404(News_Content, pk=pk)
-        news_content.views += 1
-        news_content.save()
+def news_items(request, pk):
+    news_content = get_object_or_404(News_Content, pk=pk)
+    news_content.views += 1
+    news_content.save()
 
-        # Main content
-        serializer = NewsContentSerializer(news_content)
-        # Latest 5 items
-        latest_queryset = News_Content.objects.order_by("-date_created")[:5]
-        latest_serializer = NewsContentSerializer(latest_queryset, many=True)
+    serializer = NewsContentSerializer(news_content)
+    latest_queryset = News_Content.objects.order_by("-date_created")[:5]
+    latest_serializer = NewsContentSerializer(latest_queryset, many=True)
+    comments = News_Comment.objects.filter(news=news_content).order_by("-date_created")[:5]
 
-        context = {
-            "data": serializer.data,
-            "latest": latest_serializer.data
-        }
-        return render(request, self.template_name, context)
+    if request.method == 'POST':
+        
+            form = NewsCommentForm(request.POST)
+            if form.is_valid():
+                comment = form.save(commit=False)
+                comment.news = news_content
+                comment.save()
+                return redirect('news_content_detail', pk=news_content.pk)
+    else:
+        form = NewsCommentForm()
+
+    
+
+    context = {
+        "data": serializer.data,
+        "latest": latest_serializer.data,
+        "comments": comments,
+    }
+    return render(request, 'news/news-item.html', context)
 
 
 class PopularStudentsView(TemplateView):
@@ -264,3 +276,5 @@ class Contact(TemplateView):
         except Exception as e:
             print(e)
             return render(request,'news/contacts.html')
+
+
