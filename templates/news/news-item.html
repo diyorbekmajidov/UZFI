@@ -6,11 +6,10 @@
 {% load static %}
 
 <div class="page-content bg-white">
-    <!-- inner page banner -->
     <div class="page-banner ovbl-dark" style="background-image:url({% static 'assets/images/832__85_1039998949.jpeg' %}); background-size: cover; margin-bottom: 0;">
         <div class="container">
             <div class="page-banner-entry">
-                <h1 class="text-white">{{data.title}}</h1>
+                <h1 class="text-white">{{ data.title }}</h1>
             </div>
         </div>
     </div>
@@ -21,23 +20,22 @@
                 <div class="row">
                     <!-- Left part start -->
                     <div class="col-lg-8 col-xl-8">
-                        <!-- blog start -->
                         <div class="recent-news blog-lg">
                             <div class="info-bx">
                                 <ul class="media-post" style="margin-bottom: 10px;">
-                                    <li><i class="fa fa-calendar"></i> {{data.date_created}}</li>
-                                    <li><i class="fa fa-eye"></i> {{data.views}}</li>
+                                    <li><i class="fa fa-calendar"></i> {{ data.date_created }}</li>
+                                    <li><i class="fa fa-eye"></i> {{ data.views }}</li>
                                 </ul>
-                                <h5 class="post-title" style="margin-bottom: 10px;">{{data.title}}</h5>
+                                <h5 class="post-title" style="margin-bottom: 10px;">{{ data.title }}</h5>
 
                                 <div style="display: flex; justify-content: center; align-items: center;">  
-                                    <img class="image" src="{{data.img}}" alt="{{data.title}}" style="object-fit: contain; width: 100%; height: auto; max-height: 500px;">
+                                    <img class="image" src="{{ data.img }}" alt="{{ data.title }}" style="object-fit: contain; width: 100%; height: auto; max-height: 500px;">
                                 </div>
-                                
+
                                 <style>
                                     .image {
                                         width: 100%;
-                                        object-fit: contain; /* Rasm qirqilmasligi uchun */
+                                        object-fit: contain;
                                     }
                                     @media only screen and (max-width: 768px) {
                                         .image {
@@ -48,15 +46,54 @@
 
                                 <hr>
                                 <p style="padding-top: 10px;">
-                                    {{data.body|safe}}
+                                    {{ data.body|safe }}
                                 </p>
                                 
+                                
+
+                                {% if data.category.0.category == 'Yozgi maktab' %}
+                                <!-- Comment Form -->
+                                <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
+                                <h6>{% blocktranslate %}Izoh qoldiring!{% endblocktranslate %}</h6>
+                                <div class="comment-form mb-4">
+                                    <form method="post" action="">
+                                        {% csrf_token %}
+                                        <div class="mb-2">
+                                            <label for="name">Ismingiz:</label>
+                                            <input type="text" id="name" name="name" class="form-control" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="email">Email manzilingiz:</label>
+                                            <input type="email" id="email" name="email" class="form-control" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="comment">Izohingiz:</label>
+                                            <textarea id="comment" name="comment" class="form-control" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Yuborish</button>
+                                    </form>
+                                </div>
+
+                                <!-- Comments -->
+                                <div>
+                                    <h6>{% blocktranslate %}Foydalanuvchi izohlari{% endblocktranslate %}</h6>
+                                    {% for comment in comments %}
+                                        <div class="border rounded p-3 mb-3 shadow-sm">
+                                            <strong>{{ comment.name }}</strong>
+                                            <small class="text-muted">({{ comment.date_created }})</small>
+                                            <p class="mb-0">{{ comment.comment }}</p>
+                                        </div>
+                                    {% empty %}
+                                        <p>{% blocktranslate %}Hozircha izoh yoʻq.{% endblocktranslate %}</p>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                                 <div class="widget_tag_cloud">
                                     <h6>{% blocktranslate %}Tags{% endblocktranslate %}</h6>
                                     <div class="tagcloud">
                                         {% for item in data.category %}
-                                            <a target="__blank" href="/{{LANGUAGE_CODE}}/news/category/{{item.id}}/">{{item.category}}</a> 
+                                            <a target="__blank" href="/{{ LANGUAGE_CODE }}/news/category/{{ item.id }}/">{{ item.category }}</a>
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -72,12 +109,11 @@
                                 <div class="ttr-divider bg-gray"><i class="icon-dot c-square"></i></div>
                             </div>
                         </div>
-                        <!-- blog END -->
                     </div>
                     <!-- Left part END -->
 
                     <!-- Sidebar start -->
-                    <div class="col-lg-4 col-xl-4">
+                    <div class="col-lg-4 col-xl-4 mt-6">
                         <aside class="side-bar sticky-top">
                             <div class="widget recent-posts-entry">
                                 <h6 class="widget-title">{% blocktranslate %}Oxirgi xabarlar{% endblocktranslate %}</h6>
@@ -85,16 +121,16 @@
                                     {% for item in latest %}
                                         <div class="widget-post clearfix">
                                             <div class="ttr-post-media">
-                                                <img src="{{item.img}}" width="200" height="143" alt="{{item.title}}">
+                                                <img src="{{ item.img }}" width="200" height="143" alt="{{ item.title }}">
                                             </div>
                                             <div class="ttr-post-info">
                                                 <div class="ttr-post-header">
                                                     <h6 class="post-title">
-                                                        <a href="/{{LANGUAGE_CODE}}/news/content/{{item.id}}">{{item.title}}</a>
+                                                        <a href="/{{ LANGUAGE_CODE }}/news/content/{{ item.id }}">{{ item.title }}</a>
                                                     </h6>
                                                 </div>
                                                 <ul class="media-post">
-                                                    <li><i class="fa fa-calendar"></i> {{item.date_created}}</li>
+                                                    <li><i class="fa fa-calendar"></i> {{ item.date_created }}</li>
                                                 </ul>
                                             </div>
                                         </div>

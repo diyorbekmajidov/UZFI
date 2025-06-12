@@ -20,7 +20,7 @@ schema_view = get_schema_view(
 
 from .views import (
     NewsContentView,
-    NewsContentByIdView,
+    news_items,
     PopularStudentsView,
     NewsContentCategoryView,
     VedioNewsView,
@@ -51,12 +51,13 @@ urlpatterns = [
     path('event/api/<int:pk>/', EventApiView.as_view()),
 
 
+
     # Categories
     path('category/<int:category>/', NewsContentCategoryView.as_view()),
 
     # Content
     path('content/', NewsContentView.as_view(), name='news_content_list_create'),
-    path('content/<int:pk>/', NewsContentByIdView.as_view(), name='news_content_list_create'),
+    path('content/<int:pk>/', news_items, name='news_content_detail'),
 
     path('popular-students/', PopularStudentsView.as_view()),
     path('popular-students/<int:pk>/', PopularStudentsView.as_view()),
