@@ -21,6 +21,7 @@ from .views import (
     TutorView,TutorApiView,
     TutorFilterView,
     green_institute,
+    eco_students,
 
     # app api
     UzfiStatistika,
@@ -86,6 +87,7 @@ urlpatterns = [
     path('department-manager/<int:pk>/', KafedraManagerById.as_view()),
 
     path('green-institute/', green_institute),
+    path('eco-students/', eco_students),
 
     path('indicators/', Indicators.as_view()),
 

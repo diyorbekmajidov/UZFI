@@ -114,6 +114,22 @@ def green_institute(request):
     except Exception as e:
         print(f"Error retrieving news content: {e}")
         return render(request, 'green-institute.html')
+    
+
+def eco_students(request):
+    try:
+        category = News_Content.objects.filter(category=18).order_by("-date_created")
+        serializers = NewsContentSerializer(category, many=True)
+        page = Paginator(category, 6)
+        page_num = int(request.GET.get('page', 1))
+        return render(request, 'eco-student.html',context={
+            "page_obj": page.page(page_num),
+            "category":serializers.data,
+
+        })
+    except Exception as e:
+        print(f"Error retrieving news content: {e}")
+        return render(request, 'eco-student.html')
 
 
 
