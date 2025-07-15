@@ -1,0 +1,48 @@
+{% extends "base.html" %} 
+{% load i18n static %}
+{% block title %}{% blocktranslate %}Institut tuzilmasi{% endblocktranslate %}{% endblock %} 
+
+{% block content %} 
+
+<div class="page-content bg-white">
+  <div class="page-banner ovbl-dark" style="background-image: url({% static 'assets/images/645361781b285.jpg' %}); background-size: cover; background-position: center;">
+    <div class="container">
+      <div class="page-banner-entry text-center">
+        <h1 class="text-white">{% blocktranslate %}Institut tuzilmasi{% endblocktranslate %}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Rasm 1 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm rounded-4 border-0 h-100">
+          <img src="{% static 'assets/images/structure1.jpg' %}" class="card-img-top rounded-top-4" alt="Institut strukturasi 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">{% blocktranslate %}1-Rasm: Boshqaruv tuzilmasi{% endblocktranslate %}</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rasm 2 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm rounded-4 border-0 h-100">
+          <img src="{% static 'assets/images/structure2.jpg' %}" class="card-img-top rounded-top-4" alt="Institut strukturasi 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">{% blocktranslate %}2-Rasm: Bo'limlar joylashuvi{% endblocktranslate %}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDF Fayl -->
+    <div class="text-center mt-5">
+      <a href="{% static 'assets/docs/structure.pdf' %}" class="btn btn-primary btn-lg px-4 py-2 shadow-sm" target="_blank">
+        📄 {% blocktranslate %}Institut tuzilmasi Yuklab olish(PDF){% endblocktranslate %}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

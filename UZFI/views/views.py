@@ -115,6 +115,8 @@ def green_institute(request):
         print(f"Error retrieving news content: {e}")
         return render(request, 'green-institute.html')
     
+def structure_institute(request):
+    return render(request, 'structure.html')
 
 def eco_students(request):
     try:

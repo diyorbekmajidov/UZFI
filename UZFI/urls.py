@@ -22,6 +22,7 @@ from .views import (
     TutorFilterView,
     green_institute,
     eco_students,
+    structure_institute,
 
     # app api
     UzfiStatistika,
@@ -88,6 +89,7 @@ urlpatterns = [
 
     path('green-institute/', green_institute),
     path('eco-students/', eco_students),
+    path('structural/', structure_institute),
 
     path('indicators/', Indicators.as_view()),
 
