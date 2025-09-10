@@ -31,7 +31,8 @@ from .views import (
     NewsContentApiView,
     NewsCategoryApiView,
     VideoNewsApiView,
-    EventApiView
+    EventApiView,
+    applyfogrant
 )
 
 
@@ -69,5 +70,6 @@ urlpatterns = [
     path('events/<int:pk>/', PendingEventById.as_view()),
 
     path('contact/', Contact.as_view()),
+    path('redistribution/', applyfogrant, name='apply_for_grant'),
 
 ]
