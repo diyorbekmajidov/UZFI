@@ -34,7 +34,8 @@ class NewsContentApiView(APIView):
         serializer = NewsContentSerializer(news_content)
         return Response(serializer.data)
     
-
+def applyfogrant(request):
+    return render(request, 'news/applyforgrant.html')
 class NewsCategoryApiView(APIView):
     def get(self, request, pk=None):
         if pk is None:
